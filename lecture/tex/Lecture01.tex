@@ -10,9 +10,9 @@
 	\frametitle{What is an electrical machine ?}
 	\begin{columns}
 		\begin{column}{0.5\textwidth}
-			\begin{defi}{Electrical machine}{elec_machine}
-			   An electrical machine is a device that \hl{converts electrical energy into  mechanical energy} or vice versa.
-			\end{defi}
+			\begin{varblock}{Electrical machine}
+				An electrical machine is a device that converts electrical energy into  mechanical energy or vice versa.
+			\end{varblock}
 			\vspace{0.25cm}
 			\begin{itemize}
 				\item Electrical energy is routed via machine's external wiring connected to the terminal box.
@@ -29,6 +29,29 @@
 		\end{columns}
 \end{frame}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% The motor as an electrical-mechanical converter %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{The motor as an electrical-mechanical converter}
+	\begin{figure}
+		\centering
+		\begin{subfigure}[b]{0.49\textwidth}
+			\centering
+			\includegraphics[width=0.5\textwidth]{fig/lec01/Electric_Car_recharging.jpg}
+			\caption{Translational converter}
+		\end{subfigure}
+		\hfill
+		\begin{subfigure}[b]{0.49\textwidth}
+			\centering
+			\includegraphics[width=0.5\textwidth]{fig/lec01/sky-farm-windmill.jpg}
+			\caption{Rotary converter}
+		\end{subfigure}
+		\caption{Electrically and mechanically free body diagrams of motors as energy converters} 
+        \label{fig:free_body_diagrams_motor}
+	\end{figure}
+\end{frame}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% What is an electrical drive ? %%
@@ -37,9 +60,9 @@
 	\frametitle{What is an electrical drive ?}
 	\begin{columns}
 		\begin{column}{0.4\textwidth}
-			\begin{defi}{Electrical drive}{elec_drive}
-			   An electrical drive is a system that \hl{controls the torque, speed or position of an electrical machine} connected to some mechanical process.
-			\end{defi}
+			\begin{varblock}{Electrical drive}
+			   An electrical drive is a system that controls the torque, speed or position of an electrical machine connected to some mechanical process.
+			\end{varblock}
 			\vspace{0.25cm}
 			\begin{itemize}
 				\item Integrates the 'stupid' electrical machine into an 'intelligent' controlled system.
@@ -152,4 +175,56 @@
 	\begin{varblock}{Energy efficiency and sustainability is key}
 		Electric machines and drives utilize  approx. 50\,\% of the global electricity with about 8 billion electric motors in use in the EU (source: \href{https://commission.europa.eu/energy-climate-change-environment/standards-tools-and-labels/products-labelling-rules-and-requirements/energy-label-and-ecodesign/energy-efficient-products/electric-motors-and-variable-speed-drives_en}{European Commission} and \href{https://iea.blob.core.windows.net/assets/d69b2a76-feb9-4a74-a921-2490a8fefcdf/EE_for_ElectricSystems.pdf}{International Energy Agency}). Therefore, improving their efficiency is an essential factor to reduce the global energy consumption and the associated CO$_2$ emissions.
 	\end{varblock}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Learning objectives %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Learning objectives}
+	\begin{itemize}
+		\item Understand the generation of magnetic fields, force formation and voltage induction in electrical machines.
+		\item Differentiate the main types of electrical machines and drives:
+		\begin{itemize}
+			\item DC machines. 
+			\item Induction machines.
+			\item Synchronous machines.
+			\item And their plentiful variants \ldots
+		\end{itemize}
+		\item Understand their basic design and operation principles.
+		\item Analyze the operation of electrical machines and drives:
+		\begin{itemize}
+			\item in steady state and
+			\item in transient conditions.
+		\end{itemize} 
+		\item Have fun learning about electrical machines and drives.
+	\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Necessary prior knowledge %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Necessary prior knowledge}
+	\begin{itemize}
+		\item Linear differential equations (modeling, solution techniques)
+		\item Linear algebra basics (e.g., vector and matrix operations)
+		\item Basic signal theory knowledge (e.g., Fourier series, Laplace transform)
+		\item Basic knowledge of electrical circuit theory
+		\item Basic knowledge of mechanics
+	\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Recommended reading %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Recommended reading}
+	\begin{itemize}
+		\item A. Binder, Elektrische Maschinen und Antriebe (in German), Vol. 2, Springer, 2017
+		\item D. Schr\"oder and R. Kennel, Elektrische Antriebe: Grundlagen (in German), Vol. 7, Springer Vieweg, 2021
+		\item A. Huges and B. Drury, Electric Motors and Drives: Fundamentals, Types and Applications, Vol. 5, Newnes, 2019
+		\item S. Chapman, Electric Machinery Fundamentals, Vol. 5, McGraw-Hill, 2011
+		\item I. Boldea and S. Nasar, Electric Drives, Vol. 3, CRC Press, 2022
+	\end{itemize}
 \end{frame}
