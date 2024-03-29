@@ -21,7 +21,7 @@
 \usepackage{amsmath}
 \usepackage{booktabs}
 \usepackage{amsfonts}
-\usepackage{subfig}
+\usepackage{subcaption}
 \usepackage{ragged2e}
 \usepackage{array}
 \usepackage{hhline}
@@ -90,6 +90,21 @@
 %%General blocks
 \setbeamercolor{block title}{fg=white,bg=black!60}
 \setbeamercolor{block body}{fg=black,bg=gray!15} 
+
+%Centered block with adjustable width
+\newenvironment<>{varblock}[2][.9\textwidth]{
+\begin{center}
+  \begin{minipage}{#1}
+    \begin{actionenv}#3%
+      \def\insertblocktitle{#2}%
+      \par%
+      \usebeamertemplate{block begin}}
+    {\par%
+      \usebeamertemplate{block end}%
+    \end{actionenv}
+  \end{minipage}
+\end{center}
+}
 
 %Math. definitions
 \newtcbtheorem[number within=part, reset counter on overlays=true]{defi}{Definition}{grow to left by=0.15cm, grow to right by=0.15cm, left=0.05cm, right=0.05cm,bottom=0.05cm, top=0.05cm,arc=1mm, colback = gray!15, colframe = black!60}{defi}
