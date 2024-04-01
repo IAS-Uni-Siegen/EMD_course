@@ -30,26 +30,136 @@
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% The motor as an electrical-mechanical converter %%
+%% Some exemplary electrical machines %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
-	\frametitle{The motor as an electrical-mechanical converter}
+	\frametitle{Some exemplary electrical machines}
+	% 2x2 grid of figures with linear and rotational machines
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% The machine as an electrical-mechanical converter %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{The machine as an electrical-mechanical converter}
 	\begin{figure}
 		\centering
 		\begin{subfigure}[b]{0.49\textwidth}
 			\centering
-			\includegraphics[width=0.5\textwidth]{fig/lec01/Electric_Car_recharging.jpg}
+			\includegraphics[width=0.9\textwidth]{fig/lec01/Block_diagram_translational_converter.pdf}
 			\caption{Translational converter}
 		\end{subfigure}
 		\hfill
 		\begin{subfigure}[b]{0.49\textwidth}
 			\centering
-			\includegraphics[width=0.5\textwidth]{fig/lec01/sky-farm-windmill.jpg}
-			\caption{Rotary converter}
+			\includegraphics[width=0.9\textwidth]{fig/lec01/Block_diagram_rotational_converter.pdf}
+			\caption{rotational converter}
 		\end{subfigure}
-		\caption{Electrically and mechanically free body diagrams of motors as energy converters} 
+		\caption{Electrically and mechanically free body diagrams of motors as energy converters  with variable notation: time $t$, voltage $u$, current $i$, force $F$, displacement $x$, torque $T$ and rational speed $\omega$ (adapted from J.~B\"ocker, \textit{Elektrische Antriebstechnik}, Paderborn University, 2020)} 
         \label{fig:free_body_diagrams_motor}
 	\end{figure}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Some basic mechanical terms (recap) %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Some basic mechanical terms (recap)}
+	\vspace{-0.15cm}
+	\begin{table}
+		\centering
+		\begin{tabular}{lll}
+			& Translational converter & Rotational converter \\
+			\toprule
+			Kinematic quantities & & \\
+			
+			Displacement / angle & $x$ & $\varepsilon$ \\
+			Velocity & $v=\dot{x}$ & $\omega=\dot{\varepsilon}$ \\
+			Acceleration & $a=\dot{v}=\ddot{x}$ & $\alpha=\dot{\omega}=\ddot{\varepsilon}$ \\
+			Jerk & $j=\dot{a}=\ddot{v}=\dddot{x}$ & $\rho=\dot{\alpha}=\ddot{\omega}=\dddot{\varepsilon}$ \\
+			\midrule
+			Dynamical quantities & & \\
+			Force / torque & $F$ & $T$ \\
+			Mass / inertia & $m$ & $J$ \\
+			\midrule
+			Mechanical power & $P_\mathrm{me}=F v$ & $P_\mathrm{me}=T \omega$ \\
+			Work & $W[t_0,t]=\int_{t_0}^t P_\mathrm{me}(\tau)\,\mathrm{d}\tau$ & $W[t_0,t]=\int_{t_0}^t P_\mathrm{me}(\tau)\,\mathrm{d}\tau$ \\
+			Momentum / rotational momentum & $p = m v$ & $L = \omega J$ \\
+			Kinetic energy & $E_\mathrm{kin} = \frac{1}{2} m v^2$ & $E_\mathrm{kin} = \frac{1}{2} J \omega^2$ \\
+			\bottomrule
+		\end{tabular}
+		\caption{Basic mechanical terms for translational and rotational converters}
+		\label{tab:basic_mechanical_terms}
+	\end{table}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Work vs. energy (recap) %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Work vs. energy (recap)}
+	\begin{columns}
+		\begin{column}{0.5\textwidth}
+			\begin{varblock}{Work}
+				Work is the integral of the power over a time integral (or force over distance) and is a measure of the energy transfer.
+			\end{varblock}
+		\end{column}
+		\begin{column}{0.5\textwidth}
+			\begin{varblock}{Energy}
+				Energy is the capacity to do work, that is, a quantity depending on the state of a system at a given point of time.				
+			\end{varblock}
+		\end{column}
+		\end{columns}
+		\vspace{0.5cm}
+		\begin{figure}
+			\centering
+			\includegraphics[width=0.6\textwidth]{fig/lec01/Work_Energy.pdf}
+			\caption{Illustration addressing the work vs. energy terminology (simplified Sankey diagram)}
+			\label{fig:work_vs_energy}
+		\end{figure}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Power balance of an electrical machine %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Power balance of an electrical machine}
+	\begin{figure}
+		\centering
+		\includegraphics[width=0.45\textwidth]{fig/lec01/Power_balance_machine.pdf}
+		\caption{Power balance of an electrical machine (illustrated in motoric operation)}
+		\label{fig:power_balance_machine}
+	\end{figure}
+	The power balance
+	\begin{equation}
+		P_\mathrm{el}(t) = P_\mathrm{me}(t) + P_\mathrm{l}(t) + \frac{\mathrm{d}}{\mathrm{d}t}E_\mathrm{i}(t)
+	\end{equation}
+	must hold for any point in time as energy is conserved, that is, not created or destroyed.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Four quadrants of machine operation %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Four quadrants of machine operation}
+	\begin{columns}
+		\begin{column}{0.5\textwidth}
+			For the steady state ($\dot{E}_{\mathrm{i}}(t)=0$), we define the \hl{machine efficiency} as the ratio of the converted energy to the input energy:
+			\begin{align}
+				\eta_\mathrm{mot} &= \frac{P_{\mathrm{me}}}{P_{\mathrm{el}}} = 1- \frac{P_{\mathrm{l}}}{P_{\mathrm{el}}},\\[0.5em]
+				\eta_\mathrm{gen} &= \frac{P_{\mathrm{el}}}{P_{\mathrm{me}}} = 1- \frac{P_{\mathrm{l}}}{P_{\mathrm{me}}}.
+			\end{align}
+			Hence, we need to consider in which \hl{quadrant} the machine operates as this will influence the power flow direction.
+		\end{column}
+		\begin{column}{0.5\textwidth}
+			\begin{figure}
+				\centering
+				\includegraphics[width=0.75\textwidth]{fig/lec01/Machine_quadrants.pdf}
+				\caption{Machine quadrants (derived from \href{https://de.wikipedia.org/wiki/Datei:Vierquadranten.svg}{Wikimedia Commons}, K. Pitter, \href{https://creativecommons.org/licenses/by-sa/3.0/deed.de}{CC BY-SA 3.0})}
+			\end{figure}
+		\end{column}
+		\end{columns}
 \end{frame}
 
 
@@ -156,10 +266,11 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
 	\frametitle{A broad range of nominal power ratings}
+	\vspace{-0.1cm}
 	\begin{figure}
 		\centering
 		\includegraphics[height=0.7\textheight]{fig/lec01/Power_Classes_Examples.pdf}
-		\caption{Power range overview (sources: \href{https://www.flickr.com/photos/arthurwolf/5393520058/}{A. Wolf}, \href{https://commons.wikimedia.org/wiki/File:Wald_am_Arlberg-OeBB_Spullersee_power_plant-M1-Rotor-11ASD.jpg}{Asurnipal}, \href{https://www.flickr.com/photos/mouser-nerdbot/7042785635}{M. Williams}, \href{https://de.m.wikipedia.org/wiki/Datei:Stick_blender_Electrolux_AEG_HB_9807_-_stator_of_the_electric_motor-4313.jpg}{R. Spekking}, \href{https://commons.wikimedia.org/wiki/File:Electric_motor_and_transmission_in_a_truck.jpg}{Foxcorner}, \href{https://commons.wikimedia.org/wiki/File:E-bike_electric_motor_shimano_ep_8.jpg}{A.~Tredz} and \href{https://commons.wikimedia.org/wiki/File:2023_Corsair_SP120_RGB_Elite.jpg}{J. Halicki} under varying CC licenses) }
+		\caption{Power range overview (inspired  from A.~Binder, \textit{Elektrische Maschinen und Antriebe}, Darmstadt University, 2022 with additional figure sources: \href{https://www.flickr.com/photos/arthurwolf/5393520058/}{A. Wolf}, \href{https://commons.wikimedia.org/wiki/File:Wald_am_Arlberg-OeBB_Spullersee_power_plant-M1-Rotor-11ASD.jpg}{Asurnipal}, \href{https://www.flickr.com/photos/mouser-nerdbot/7042785635}{M. Williams}, \href{https://de.m.wikipedia.org/wiki/Datei:Stick_blender_Electrolux_AEG_HB_9807_-_stator_of_the_electric_motor-4313.jpg}{R. Spekking}, \href{https://commons.wikimedia.org/wiki/File:Electric_motor_and_transmission_in_a_truck.jpg}{Foxcorner}, \href{https://commons.wikimedia.org/wiki/File:E-bike_electric_motor_shimano_ep_8.jpg}{A.~Tredz} and \href{https://commons.wikimedia.org/wiki/File:2023_Corsair_SP120_RGB_Elite.jpg}{J. Halicki} under varying CC licenses) }
 		\label{Power_Classes_Examples}
 	\end{figure}
 \end{frame}
@@ -205,13 +316,20 @@
 %% Necessary prior knowledge %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
-	\frametitle{Necessary prior knowledge}
+	\frametitle{Necessary prior knowledge for this course}
+	You should have a basic understanding of the following topics:
 	\begin{itemize}
 		\item Linear differential equations (modeling, solution techniques)
 		\item Linear algebra basics (e.g., vector and matrix operations)
 		\item Basic signal theory knowledge (e.g., Fourier series, Laplace transform)
 		\item Basic knowledge of electrical circuit theory
 		\item Basic knowledge of mechanics
+	\end{itemize}
+	\vspace{0.5cm}
+	What we will \underline{not} cover, that is, you do not need to know (covered in separate courses):
+	\begin{itemize}
+		\item Control engineering (design drive controllers)
+		\item Power electronics (design switchable actuators)
 	\end{itemize}
 \end{frame}
 

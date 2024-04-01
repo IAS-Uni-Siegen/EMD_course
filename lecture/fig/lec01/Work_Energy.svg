@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="71.768387mm"
+   height="18.15246mm"
+   viewBox="0 0 71.768387 18.15246"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
+   sodipodi:docname="Work_Energy.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     inkscape:document-units="mm"
+     inkscape:zoom="2.8649134"
+     inkscape:cx="121.29512"
+     inkscape:cy="49.390673"
+     inkscape:window-width="2560"
+     inkscape:window-height="1351"
+     inkscape:window-x="2551"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1">
+    <linearGradient
+       id="linearGradient3"
+       inkscape:collect="always">
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="0"
+         id="stop3" />
+      <stop
+         style="stop-color:#7f1414;stop-opacity:0.98910081;"
+         offset="1"
+         id="stop4" />
+    </linearGradient>
+    <inkscape:path-effect
+       effect="bspline"
+       id="path-effect3"
+       is_visible="true"
+       lpeversion="1.3"
+       weight="33.333333"
+       steps="2"
+       helper_size="0"
+       apply_no_weight="true"
+       apply_with_weight="true"
+       only_selected="false"
+       uniform="false" />
+    <marker
+       style="overflow:visible"
+       id="Triangle"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Triangle arrow"
+       markerWidth="0.30000001"
+       markerHeight="0.30000001"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.5)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 5.77,0 -2.88,5 V -5 Z"
+         id="path135" />
+    </marker>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3"
+       id="linearGradient4"
+       x1="46.689228"
+       y1="54.89621"
+       x2="71.099251"
+       y2="54.89621"
+       gradientUnits="userSpaceOnUse" />
+    <marker
+       style="overflow:visible"
+       id="Triangle-3"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Triangle arrow"
+       markerWidth="0.5"
+       markerHeight="0.5"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.5)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 5.77,0 -2.88,5 V -5 Z"
+         id="path135-8" />
+    </marker>
+  </defs>
+  <g
+     inkscape:label="Ebene 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-20.229743,-43.827769)">
+    <ellipse
+       style="fill:#5b5b5b;fill-opacity:1;stroke:#000000;stroke-width:0.253;stroke-dasharray:none"
+       id="path1-2"
+       cx="82.274147"
+       cy="49.955765"
+       rx="9.5974836"
+       ry="4.6772261" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:3.453;stroke-dasharray:none;marker-end:url(#Triangle)"
+       d="M 45.820182,49.976989 H 69.061461"
+       id="path2" />
+    <path
+       style="fill:none;stroke:url(#linearGradient4);stroke-width:1.753;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Triangle)"
+       d="m 46.701778,50.644684 c 5.320868,-0.07619 10.641633,-0.152373 13.995025,0.383357 3.353393,0.535731 4.739121,1.683312 5.851065,2.866647 1.111944,1.183336 1.949988,2.402309 2.788049,3.621307"
+       id="path3"
+       inkscape:path-effect="#path-effect3"
+       inkscape:original-d="m 46.701778,50.644684 c 5.320868,-0.07619 10.641633,-0.152373 15.962607,-0.228562 1.385811,1.147649 2.771539,2.29523 4.157349,3.44288 0.838078,1.219022 1.676122,2.437995 2.514183,3.656993"
+       transform="translate(-0.881596,1.6815633)"
+       sodipodi:nodetypes="cccc" />
+    <path
+       style="fill:none;stroke:#731212;stroke-width:1.9;stroke-dasharray:none;stroke-opacity:0.988235;marker-end:url(#Triangle-3)"
+       d="m 67.507018,57.841865 c 0.50412,0.707375 0.717451,1.020329 0.947303,1.355693"
+       id="path2-5"
+       sodipodi:nodetypes="cc" />
+    <text
+       xml:space="preserve"
+       style="font-size:3.52778px;line-height:1;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;text-anchor:middle;fill:none;stroke:#731212;stroke-width:3.453;stroke-dasharray:none;stroke-opacity:0.988235"
+       x="82.154427"
+       y="50.873882"
+       id="text4-6"><tspan
+         sodipodi:role="line"
+         id="tspan4-8"
+         style="font-size:3.52778px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:3.453"
+         x="82.154427"
+         y="50.873882">Energy</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:3.52778px;line-height:1;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;text-anchor:middle;fill:none;stroke:#731212;stroke-width:3.453;stroke-dasharray:none;stroke-opacity:0.988235"
+       x="58.131538"
+       y="47.747559"
+       id="text4-6-7"><tspan
+         sodipodi:role="line"
+         id="tspan4-8-8"
+         style="font-size:3.52778px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:3.453"
+         x="58.131538"
+         y="47.747559">Work</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:3.52778px;line-height:1;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;text-anchor:middle;fill:#731212;fill-opacity:1;stroke:#731212;stroke-width:3.453;stroke-dasharray:none;stroke-opacity:0.988235"
+       x="60.095791"
+       y="60.323353"
+       id="text4-6-7-5"><tspan
+         sodipodi:role="line"
+         id="tspan4-8-8-6"
+         style="font-size:3.52778px;fill:#731212;fill-opacity:1;stroke:none;stroke-width:3.453"
+         x="60.095791"
+         y="60.323353">Heat</tspan></text>
+    <ellipse
+       style="fill:#5b5b5b;fill-opacity:1;stroke:#000000;stroke-width:0.253;stroke-dasharray:none"
+       id="path1"
+       cx="33.655075"
+       cy="50.459991"
+       rx="13.298832"
+       ry="6.505722" />
+    <text
+       xml:space="preserve"
+       style="font-size:3.52778px;line-height:1;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;text-anchor:middle;fill:none;stroke:#731212;stroke-width:3.453;stroke-dasharray:none;stroke-opacity:0.988235"
+       x="33.705116"
+       y="51.562801"
+       id="text4"><tspan
+         sodipodi:role="line"
+         id="tspan4"
+         style="font-size:3.52778px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:3.453"
+         x="33.705116"
+         y="51.562801">Energy</tspan></text>
+  </g>
+</svg>
