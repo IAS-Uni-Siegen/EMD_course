@@ -17,7 +17,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%% Basic packages %%%%%%%%%
 \usepackage[boxed, noend, noline]{algorithm2e}
-\usepackage[ansinew]{inputenc}
+\usepackage[utf8]{inputenc}
 \usepackage{amsmath}
 \usepackage{booktabs}
 \usepackage{amsfonts}
@@ -30,6 +30,7 @@
 \usepackage{bm}
 \usepackage{animate}
 \usepackage{multirow}
+\usepackage[automake]{glossaries-extra}
 \usepackage{upgreek}
 \definecolor{links}{HTML}{2A1B81}
 \definecolor{mygreen}{RGB}{0,95,0}
@@ -204,9 +205,11 @@
 %\includeonly{tex/Lecture01}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{document}
-\include{tex/Lecture01}
+\makeglossaries
 
+\begin{document}
+\include{tex/Lecture01} % Overview / introduction
+\include{tex/dict} % English-German dictionary
 
 \end{document}
 

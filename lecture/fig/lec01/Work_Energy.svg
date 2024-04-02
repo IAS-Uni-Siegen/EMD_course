@@ -24,9 +24,9 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#505050"
      inkscape:document-units="mm"
-     inkscape:zoom="2.8649134"
-     inkscape:cx="121.29512"
-     inkscape:cy="49.390673"
+     inkscape:zoom="5.7298267"
+     inkscape:cx="145.99045"
+     inkscape:cy="66.057844"
      inkscape:window-width="2560"
      inkscape:window-height="1351"
      inkscape:window-x="2551"
@@ -43,7 +43,7 @@
          offset="0"
          id="stop3" />
       <stop
-         style="stop-color:#7f1414;stop-opacity:0.98910081;"
+         style="stop-color:#a21111;stop-opacity:1;"
          offset="1"
          id="stop4" />
     </linearGradient>
@@ -113,7 +113,7 @@
      id="layer1"
      transform="translate(-20.229743,-43.827769)">
     <ellipse
-       style="fill:#5b5b5b;fill-opacity:1;stroke:#000000;stroke-width:0.253;stroke-dasharray:none"
+       style="fill:#a7a7a7;fill-opacity:1;stroke:#000000;stroke-width:0.253;stroke-dasharray:none"
        id="path1-2"
        cx="82.274147"
        cy="49.955765"
@@ -132,7 +132,7 @@
        transform="translate(-0.881596,1.6815633)"
        sodipodi:nodetypes="cccc" />
     <path
-       style="fill:none;stroke:#731212;stroke-width:1.9;stroke-dasharray:none;stroke-opacity:0.988235;marker-end:url(#Triangle-3)"
+       style="fill:none;stroke:#941010;stroke-width:1.9;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Triangle-3)"
        d="m 67.507018,57.841865 c 0.50412,0.707375 0.717451,1.020329 0.947303,1.355693"
        id="path2-5"
        sodipodi:nodetypes="cc" />
@@ -160,17 +160,17 @@
          y="47.747559">Work</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:3.52778px;line-height:1;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;text-anchor:middle;fill:#731212;fill-opacity:1;stroke:#731212;stroke-width:3.453;stroke-dasharray:none;stroke-opacity:0.988235"
+       style="font-size:3.52778px;line-height:1;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;text-anchor:middle;fill:#941010;fill-opacity:1;stroke:#731212;stroke-width:3.453;stroke-dasharray:none;stroke-opacity:0.988235"
        x="60.095791"
        y="60.323353"
        id="text4-6-7-5"><tspan
          sodipodi:role="line"
          id="tspan4-8-8-6"
-         style="font-size:3.52778px;fill:#731212;fill-opacity:1;stroke:none;stroke-width:3.453"
+         style="font-size:3.52778px;fill:#941010;fill-opacity:1;stroke:none;stroke-width:3.453"
          x="60.095791"
          y="60.323353">Heat</tspan></text>
     <ellipse
-       style="fill:#5b5b5b;fill-opacity:1;stroke:#000000;stroke-width:0.253;stroke-dasharray:none"
+       style="fill:#a7a7a7;fill-opacity:1;stroke:#000000;stroke-width:0.253;stroke-dasharray:none"
        id="path1"
        cx="33.655075"
        cy="50.459991"
