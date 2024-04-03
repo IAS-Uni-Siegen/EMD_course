@@ -25,12 +25,16 @@
 \usepackage{ragged2e}
 \usepackage{array}
 \usepackage{hhline}
-\usepackage{units}
 \usepackage{color}
 \usepackage{bm}
 \usepackage{animate}
 \usepackage{multirow}
 \usepackage[automake]{glossaries-extra}
+\usepackage{siunitx}
+\sisetup{
+  per-mode=fraction,
+  fraction-function=\tfrac
+}
 \usepackage{upgreek}
 \definecolor{links}{HTML}{2A1B81}
 \definecolor{mygreen}{RGB}{0,95,0}
@@ -209,6 +213,7 @@
 
 \begin{document}
 \include{tex/Lecture01} % Overview / introduction
+\include{tex/Lecture02} % Fundamental electromagnetic principles
 \include{tex/dict} % English-German dictionary
 
 \end{document}
