@@ -114,7 +114,6 @@
             \begin{align}
                 \Psi = N  \Phi.
             \end{align}
-
 		\end{column}
         \hfill
 		\begin{column}{0.425\textwidth}
@@ -123,6 +122,74 @@
 				\centering
 				\includegraphics[height=0.68\textheight]{fig/lec02/Solenoid_Flux.pdf}
 				\caption{Magnetic flux $\Phi$ evaluated at the surface $\bm{S}$  (adapted from: \href{https://commons.wikimedia.org/wiki/File:Solenoid_and_Ampere_Law.png}{Wikimedia Commons}, Goodphy, \href{https://creativecommons.org/licenses/by-sa/4.0/deed.en}{CC BY-SA 4.0})}
+			\end{figure}
+		\end{column}
+		\end{columns}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Boosting the magnet field with ferromagnetic materials %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Boosting the magnet field with ferromagnetic materials}
+	\begin{columns}
+		\begin{column}{0.575\textwidth}
+			While $\bm{H}$ depends on the free currents applied to an object, $\bm{B}$ depends on the material properties of the object. In free space (vacuum), the relation is linear and represented by the magnetic constant $\mu_0$:
+            \begin{align}
+                \bm{B} = \mu_0 \bm{H} \quad \mbox{with} \quad \mu_0 \approx \SI{4 \pi e-7}{\newton\per\ampere\squared}.
+            \end{align}
+            To boost $\bm{B}$ for a given $\bm{H}$, ferromagnetic materials are typically used. These materials have a high relative magnetic permeability $\mu_{\mathrm{r}}$:
+            \begin{align}
+                \bm{B} = \mu \bm{H} = \mu_0 \mu_{\mathrm{r}} \bm{H}.
+                \label{eq:linear_permeability} 
+            \end{align}
+            Note that $\mu_{\mathrm{r}}$ is a dimensionless quantity and that \eqref{eq:linear_permeability} assumes linear material behavior.
+		\end{column}
+        \hfill
+		\begin{column}{0.425\textwidth}
+            \vspace{-0.2cm}
+			\begin{figure}
+				\centering
+				\includegraphics[height=0.68\textheight]{fig/lec02/Electromagnet_with_gap.pdf}
+				\caption{Simplified magnetic field lines of an iron yoke with a coil  (adapted from: \href{https://en.m.wikipedia.org/wiki/File:Electromagnet_with_gap.svg}{Wikimedia Commons}, public domain)}
+			\end{figure}
+		\end{column}
+		\end{columns}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Relative permeability and magnetic saturation %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Relative permeability and magnetic saturation}
+	\begin{columns}
+		\begin{column}{0.575\textwidth}
+			\begin{table}
+            \centering
+            \begin{tabular}{lc}
+                \toprule
+                Material & $\mu_{\mathrm{r}}$ (range)\\
+                \midrule
+                Air / copper / aluminum & 1 \\ 
+                Iron (99.8\,\% pure) & 5000\\
+                Electrical steel & 2000 - 35000\\
+                Ferrite & 200 - 20000\\
+                \bottomrule
+            \end{tabular}
+            \caption{Typical relative permeabilities of materials}
+            \label{tab:rel_permeabilities}
+            \end{table}
+        Linear magnetic behavior ($\mu_{\mathrm{r}}=\mbox{const.}$) is only a local approximation. When considering larger $H$ ranges, the (differential) permeability becomes nonlinear:
+        \begin{align}
+            \mu_\mathrm{r}(H) =  \frac{\mathrm{d}B}{\mathrm{d}H}.
+        \end{align}
+		\end{column}
+        \hfill
+		\begin{column}{0.425\textwidth}
+			\begin{figure}
+				\centering
+				\includegraphics[height=0.5\textheight]{fig/lec02/Permeability_of_ferromagnet.pdf}
+				\caption{Illustrative magnetisation curves for ferromagnets (and ferrimagnets) and corresponding permeabilities  (adapted from: \href{https://commons.wikimedia.org/wiki/File:Permeability_of_ferromagnet_by_Zureks.svg}{Wikimedia Commons}, public domain)}
 			\end{figure}
 		\end{column}
 		\end{columns}
