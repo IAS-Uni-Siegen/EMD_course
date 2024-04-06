@@ -1,5 +1,5 @@
-\part{Fundamental electromagnetic principles}
-\title[Fundamental electromagnetic principles]{Fundamental electromagnetic principles}  
+\part{Fundamental electromagnetic principles and magnetic materials}
+\title[Electromagnetic and material fundamentals]{Fundamental electromagnetic principles and magnetic materials}  
 \date{}  
 \frame{\titlepage} 
 
@@ -19,7 +19,7 @@
             \vspace{0.25cm}
             \begin{itemize}
                 \item Free current: current that is not bound to a material (i.e., without polarization and magnetization currents).
-                \item SI-unit: $[H] = \si{\ampere}$
+                \item SI-unit: $[H] = \si{\ampere\per\metre}$
             \end{itemize}
 		\end{column}
         \hfill
@@ -78,7 +78,7 @@
             Here, $\mu_0$ is the permeability of free space, $\bm{J}$ is the total current density and $I$ is the total current enclosed by the loop $\mathcal{C}$. 
             \vspace{0.25cm}
             \begin{itemize}
-                \item SI-unit: $[B] = \si{\tesla} = \si{\kilogram\per\ampere\second\squared}$
+                \item SI-unit: $[B] = \si{\tesla} = \si{\volt\second\per\metre\squared} = \si{\newton\per\ampere\per\metre}$
                 \item Example contour $\mathcal{C}$  on the right covering $N$ turns and length $l$ (flux density within solenoid):
             \end{itemize}
             $$\oint_{\mathcal{C}} \bm{B} \cdot \mathrm{d}\bm{l} = N \mu_0 I  \Leftrightarrow B = \frac{N \mu_0 I}{l}$$
@@ -212,7 +212,6 @@
     \begin{column}{0.52\textwidth}
         \begin{figure}
             \centering
-            %\animategraphics[loop,autoplay, height=0.3\textheight]{8}{fig/lec02/Moving_magnetic_domains/Moving_magnetic_domains-}{0}{14}
             \movie{\includegraphics[height=0.3\textheight]{fig/lec02/Moving_magnetic_domains_preview.png}}{fig/lec02/Moving_magnetic_domains.gif}
             \caption{Animation of moving domain walls (source: \href{https://commons.wikimedia.org/wiki/File:Moving_magnetic_domains_by_Zureks.gif}{Wikimedia Commons}, Zureks, \href{https://creativecommons.org/licenses/by-sa/3.0/deed.en}{CC BY-SA 3.0})}
         \end{figure}
@@ -263,7 +262,8 @@
 		\begin{column}{0.575\textwidth}
             \begin{itemize}
                 \item Material defects lead to small, random jumps in magnetization called Barkhausen jumps.
-                \item Domain walls move there irregular and depend on the history of the magnetization process (dynamic system).
+                \item Domain walls move irregularly.
+                \item Process also depends on the history of the magnetization process (dynamic system).
             \end{itemize}
 			\begin{figure}
                 \centering
@@ -283,3 +283,176 @@
 		\end{columns}
 \end{frame}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Hysteresis curve and losses %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Hysteresis curve and losses}
+	\begin{columns}
+		\begin{column}{0.5\textwidth}
+            \begin{itemize}
+                \item With an external and varying field $H$, a closed hysteresis curve is obtained.
+                \item Traversing through the curve requires to move the domain walls and rotate the elementary magnets within the domains.
+                \item This process requires work and leads to heat dissipation (losses).
+                \item The area enclosed by the hysteresis curve is identical to the relative remagnetization work (per volume, that is, $[w_{\mathrm{h}}]=\si{\joule\per\metre\cubed}$):
+            \end{itemize}
+            \begin{align}
+                w_{\mathrm{h}} = \oint \bm{H} \cdot \mathrm{d}\bm{B}.
+            \end{align}
+		\end{column}
+        \hfill
+		\begin{column}{0.475\textwidth}
+            \vspace{-0.2cm}
+			\begin{figure}
+				\centering
+				\includegraphics[height=0.55\textheight]{fig/lec02/Hyteresis_curve_full.pdf}
+				\caption{Exemplary hysteresis curve with $B_\mathrm{r}$ being the remanence field density and $H_\mathrm{c}$ the coercivity field strength}
+			\end{figure}
+		\end{column}
+		\end{columns}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% How can we model the hysteresis losses? %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{How can we model the hysteresis losses?}
+	\begin{columns}
+		\begin{column}{0.5\textwidth}
+            \vspace{-0.15cm}
+            \begin{enumerate}
+                \item \textbf{Data look-up table:} Measure the hysteresis curve and its losses directly on a test bench (cf. \href{https://www.princeton.edu/~minjie/magnet.html}{MagNet project data hub}).
+                \item \textbf{Loss-fitted models:} Use empirical models to fit the hysteresis losses (e.g., Steinmetz model):
+                $$P_{\mathrm{h}} = kf^a \max\{B\}^b.$$
+                \item \textbf{Curve-fitted models:} Use empirical models to describe the hysteresis curve and derive the losses (e.g., ODE as in the Jiles-Atherton model):
+                $$\frac{\mathrm{d}B}{\mathrm{d}H} = f(B,H).$$
+            \end{enumerate}
+		\end{column}
+        \hfill
+		\begin{column}{0.475\textwidth}
+            \vspace{-0.2cm}
+			\begin{figure}
+				\centering
+				\includegraphics[height=0.55\textheight]{fig/lec02/Hysteresis_curve_Serrano_et_al.pdf}
+				\caption{Measured $B$-$H$ loops for sinusoidal excitation at different frequencies (source: \href{https://ieeexplore.ieee.org/abstract/document/10169101}{IEEE TPEL}, Serrano et al., \href{https://creativecommons.org/licenses/by/4.0/}{CC BY 4.0})}
+			\end{figure}
+		\end{column}
+		\end{columns}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Alternative to boost the magnet field: permanent magnets %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Alternative to boost the magnet field: permanent magnets (PMs)}
+    \begin{columns}
+        \begin{column}{0.48\textwidth}
+        \begin{itemize}
+            \item Create own persistent magnetic fields.
+            \item Consist of hard ferromagnetic (or ferrimagnetic) materials.
+            \item Nearly constant magnetiziation offset $\bm{B}_\mathrm{PM}$ in the usual operating range:
+            \begin{align}
+                \bm{B} = \mu_0 \mu_{\mathrm{r}} \bm{H} \approx \mu_0 \bm{H} + \bm{B}_\mathrm{PM}.
+            \end{align}
+        \end{itemize}
+        \end{column}
+        \hfill
+        \begin{column}{0.4\textwidth}
+            \begin{figure}
+                \centering
+                \includegraphics[width=0.65\textwidth]{fig/lec02/PM_rotor_example.jpg}
+                \caption{PMs on a rotor (source: \href{https://www.flickr.com/photos/aidg/2382339376}{flickr.com}, AIDG, \href{https://creativecommons.org/licenses/by-nc-sa/2.0/}{CC BY-NC-SA 2.0})}
+            \end{figure}
+        \end{column}
+    \end{columns}
+    \begin{figure}
+    \begin{columns}
+        \begin{column}{0.6\textwidth}
+                \centering
+                \includegraphics[width=0.9\textwidth]{fig/lec02/Coil_magnet_comparison.pdf}
+        \end{column}
+        \begin{column}{0.35\textwidth}
+            \caption{\raggedright Permanent magnets as alternatives to current-based excitation  (source: \href{https://commons.wikimedia.org/wiki/File:VFPt_cylindrical_tightly-wound_coil-and-bar-magnet-comparison.svg}{Wikimedia Commons}, M. Run, \href{https://creativecommons.org/licenses/by-sa/3.0/deed.en}{CC BY-SA 3.0})}
+        \end{column}
+    \end{columns}
+    \end{figure}
+    \end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Hyteresis curve of permanent magnets %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Hyteresis curve of permanent magnets}
+	\begin{columns}
+		\begin{column}{0.45\textwidth}
+            \begin{itemize}
+                \item PM's magnetization is nearly  completely saturated and constant in common operation area.
+                \item The greater the coercivity $H_\mathrm{c}$, the greater the resistance of the PM to demagnetization by external fields.
+                \item Beyond the so-called knee point, PMs are (partially) demagnetized.
+                \item Important figure of merit is the so called energy product:
+                \begin{align}
+                    (BH)_{\max} = \max \left\{- B H \right\}.
+                \end{align}
+                \item The higher $(BH)_{\max}$ the less PM material is needed for an application.
+            \end{itemize}
+		\end{column}
+        \hfill
+		\begin{column}{0.42\textwidth}
+            \vspace{-0.2cm}
+			\begin{figure}
+				\centering
+				\includegraphics[height=0.6\textheight]{fig/lec02/Hyteresis_curve_PM.pdf}
+				\caption{Exemplary hysteresis curve of a permanent magnet}
+			\end{figure}
+		\end{column}
+		\end{columns}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Hyteresis curve of permanent magnets (temperature dependence) %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Hyteresis curve of permanent magnets (temperature dependence)}
+	\begin{columns}
+		\begin{column}{0.4\textwidth}
+            \begin{itemize}
+                \item Besides pressure and vibrations, PMs are also sensitive to temperature.
+                \item The coercivity $H_\mathrm{c}$ and the remanence $B_\mathrm{r}$ decrease with increasing temperature.
+                \item Hence, with higher temperatures, a PM gets more susceptible to demagnetization.
+            \end{itemize}
+		\end{column}
+        \hspace{0.25cm}
+		\begin{column}{0.4\textwidth}
+			\begin{figure}
+				\centering
+				\includegraphics[height=0.4\textheight]{fig/lec02/Hyteresis_curve_PM_temperature.pdf}
+				\caption{Qualitative representation of the temperature dependence of permanent magnets}
+			\end{figure}
+		\end{column}
+		\end{columns}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Energy product overview of permanent magnets %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Energy product overview of permanent magnets}
+        \begin{figure}
+            \centering
+            \includegraphics[height=0.65\textheight]{fig/lec02/PM_energy_product.pdf}
+            \caption{Historic development of PM materials and their energy product (source: \href{https://commons.wikimedia.org/wiki/File:Magnetische_Energiedichte.svg}{Wikimedia Commons}, Kopiersperre, \href{https://creativecommons.org/licenses/by-sa/4.0/deed.en}{CC BY-SA 4.0})}
+        \end{figure}
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Manufacturing process of NdFeB permanent magnets %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Manufacturing process of NdFeB permanent magnets}
+        \begin{figure}
+            \centering
+            \includegraphics[height=0.65\textheight]{fig/lec02/Production_process_NdFeB_magnets.png}
+            \caption{Basic process steps for the NdFeB-based magnets (source: \href{https://link.springer.com/article/10.1007/S11837-022-05156-9}{Springer JOM}, J. Cui et al., \href{https://creativecommons.org/licenses/by/4.0/}{CC BY 4.0})}
+        \end{figure}
+\end{frame}
