@@ -12,10 +12,10 @@
 		\begin{column}{0.55\textwidth}
 			Relates the circulation of a magnetic field around a closed loop to the electric current passing through the loop:
             \begin{align}
-                \mbox{Integral form:} \quad &\oint_{\mathcal{C}} \bm{H} \cdot \mathrm{d}\bm{l} = I_{\mathrm{f}},\\
+                \mbox{Integral form:} \quad &\oint_{\partial S} \bm{H} \cdot \mathrm{d}\bm{s} = I_{\mathrm{f}},\\
                 \mbox{Differential form:} \quad &\nabla \times \bm{H} = \bm{J}_{\mathrm{f}}. 
             \end{align}
-            Here, $\bm{H}$ is the magnetic field strength, $\bm{J}_{\mathrm{f}}$ is the free current density, and $I_{\mathrm{f}}$ is the free current enclosed by the loop $\mathcal{C}$. 
+            Here, $\bm{H}$ is the magnetic field strength, $\bm{J}_{\mathrm{f}}$ is the free current density, and $I_{\mathrm{f}}$ is the free current enclosed by the loop $\partial S$. 
             \vspace{0.25cm}
             \begin{itemize}
                 \item Free current: current that is not bound to a material (i.e., without polarization and magnetization currents).
@@ -40,11 +40,11 @@
 	\frametitle{Amp\`ere's circuital law: magnetic field strength example}
 	\begin{columns}
 		\begin{column}{0.55\textwidth}
-			What is the free current $I_{\mathrm{f}}$ enclosed by the loop $\mathcal{C}$?
+			What is the free current $I_{\mathrm{f}}$ enclosed by the loop $\partial S$?
             \begin{itemize}
-                \item The current $I_1$ flows in the direction of the loop $\mathcal{C}$ (according to right-hand rule).
-                \item The current $I_1$ must be counted $N$ times due to the $N$ turns of wire around the loop $\mathcal{C}$.
-                \item The current $I_2$ flows in the opposite direction of the loop $\mathcal{C}$ (according to right-hand rule).
+                \item The current $I_1$ flows in the direction of the loop $\partial S$ (according to right-hand rule).
+                \item The current $I_1$ must be counted $N$ times due to the $N$ turns of wire around the loop $\partial S$.
+                \item The current $I_2$ flows in the opposite direction of the loop $\partial S$ (according to right-hand rule).
                 \item Result:
             \end{itemize}
             \vspace{0.25cm}
@@ -72,16 +72,16 @@
 		\begin{column}{0.575\textwidth}
 			Variant for magnetic flux density $\bm{B}$:
             \begin{align}
-                \mbox{Integral form:} \quad &\oint_{\mathcal{C}} \bm{B} \cdot \mathrm{d}\bm{l} = \mu_0 I,\\
+                \mbox{Integral form:} \quad &\oint_{\partial S} \bm{B} \cdot \mathrm{d}\bm{l} = \mu_0 I,\\
                 \mbox{Differential form:} \quad &\nabla \times \bm{B} = \mu_0\bm{J}. 
             \end{align}
-            Here, $\mu_0$ is the permeability of free space, $\bm{J}$ is the total current density and $I$ is the total current enclosed by the loop $\mathcal{C}$. 
+            Here, $\mu_0$ is the permeability of free space, $\bm{J}$ is the total current density and $I$ is the total current enclosed by the loop $\partial S$. 
             \vspace{0.25cm}
             \begin{itemize}
                 \item SI-unit: $[B] = \si{\tesla} = \si{\volt\second\per\metre\squared} = \si{\newton\per\ampere\per\metre}$
-                \item Example contour $\mathcal{C}$  on the right covering $N$ turns and length $l$ (flux density within solenoid):
+                \item Example contour $\partial S$  on the right covering $N$ turns and length $l$ (flux density within solenoid):
             \end{itemize}
-            $$\oint_{\mathcal{C}} \bm{B} \cdot \mathrm{d}\bm{l} = N \mu_0 I  \Leftrightarrow B = \frac{N \mu_0 I}{l}$$
+            $$\oint_{\partial S} \bm{B} \cdot \mathrm{d}\bm{l} = N \mu_0 I  \Leftrightarrow B = \frac{N \mu_0 I}{l}$$
 		\end{column}
         \hfill
 		\begin{column}{0.425\textwidth}
@@ -455,4 +455,97 @@
             \includegraphics[height=0.65\textheight]{fig/lec02/Production_process_NdFeB_magnets.png}
             \caption{Basic process steps for the NdFeB-based magnets (source: \href{https://link.springer.com/article/10.1007/S11837-022-05156-9}{Springer JOM}, J. Cui et al., \href{https://creativecommons.org/licenses/by/4.0/}{CC BY 4.0})}
         \end{figure}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Electromagnetic induction %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Electromagnetic induction}
+    \begin{columns}
+		\begin{column}{0.6\textwidth}
+            A changing magnetic field induces an electric field according to the Maxwell–Faraday equation:
+            \begin{align}
+                \mbox{Integral form:} \quad & \oint_{\partial S} \bm{E} \cdot \mathrm{d}\bm{s} = -\int_{S}\frac{\partial \bm{B}}{\partial t}\cdot\mathrm{d}\bm{S},\\
+                \mbox{Differential form:} \quad &\nabla \times \bm{E} = -\frac{\partial \bm{B}}{\partial t}.
+            \end{align}
+            Here, $\bm{E}$ is the electric field strength and $\bm{S}$ is the surface enclosed by the loop $\partial\mathcal{S}$.
+            \begin{itemize}
+                \item Lentz's law: The induced electric field opposes the change in magnetic field (negative sign above).
+                \item SI-unit: $[E] = \si{\volt\per\metre}$
+            \end{itemize}
+		\end{column}
+        \hfill
+		\begin{column}{0.38\textwidth}
+			\begin{figure}
+				\centering
+				\includegraphics[height=0.6\textheight]{fig/lec02/Electromagnetic_induction.pdf}
+				\caption{Representation of the magnetic and electric field relation (adapted from: \href{https://commons.wikimedia.org/wiki/File:Electromagnetic_induction.svg}{Wikimedia Commons}, Qniemiec, \href{https://creativecommons.org/licenses/by-sa/3.0/deed.en}{CC BY-SA 3.0})}
+			\end{figure}
+		\end{column}
+		\end{columns}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Electromotive force (EMF) and electromagnetic induction %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Electromotive force (EMF) and electromagnetic induction}
+    \begin{columns}
+		\begin{column}{0.55\textwidth}
+            If the integration path $\partial S$ is identical to a conductor loop, the changing magnetic field induces a voltage $u_\mathrm{i}$ (electromotive force, EMF) according to Faraday's law:
+            \begin{align*}
+                u_\mathrm{i} =\oint_{\partial\mathcal{S}} \bm{E} \cdot \mathrm{d}\bm{s} = -\int_{S}\frac{\partial \bm{B}}{\partial t}\cdot\mathrm{d}\bm{S}.
+            \end{align*}
+        \begin{itemize}
+            \item Despite its name, the term EMF does not describe a force in the physical sense (as $u_\mathrm{i}$ is obviously a voltage).
+            \item The term remains a historical artifact from the early days of electrical engineering, but is still frequently used in today's literature. 
+        \end{itemize}
+		\end{column}
+        \hfill
+		\begin{column}{0.45\textwidth}
+			\begin{figure}
+				\centering
+				\includegraphics[height=0.6\textheight]{fig/lec02/Conductor_loop_induction.pdf}
+				\caption{Induced voltage / EMF in a rotating conductor loop (adapted from: \href{https://commons.wikimedia.org/wiki/File:Leiterschleife.svg}{Wikimedia Commons}, M. Lenz, \href{https://creativecommons.org/publicdomain/zero/1.0/deed.en}{CC0 1.0})}
+			\end{figure}
+		\end{column}
+		\end{columns}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Intermediate wrap up: electromagnetic principles and magnetic materials (in inductive systems) %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Intermediate wrap up: electromagnetic principles and magnetic materials }
+    \begin{figure}
+        \centering
+        \includegraphics[height=0.5\textheight]{fig/lec02/Induction_material_ampere.pdf}
+        \caption{Illustration of the connections between the phenomena discussed previously (derived from: \href{https://de.wikipedia.org/wiki/Datei:Kausalität.svg}{Wikimedia Commons}, M. Lenz, \href{https://creativecommons.org/publicdomain/zero/1.0/deed.de}{CC0 1.0})}
+    \end{figure}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Eddy currents %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Eddy currents}
+    \begin{columns}
+		\begin{column}{0.5\textwidth}
+            \begin{itemize}
+                \item  A changing magnetic field induces a voltage.
+                \item In bulky conductive materials (e.g., electromagnetic steel) this voltage drives currents called eddy currents.
+                \item Eddy currents lead to energy losses and heat dissipation.
+                \item To reduce eddy currents, laminated cores are used as they decrease the effective current path width and, therefore, increase the effective resistance per sheet.
+            \end{itemize}
+		\end{column}
+        \hfill
+		\begin{column}{0.49\textwidth}
+			\begin{figure}
+				\centering
+				\includegraphics[height=0.36\textheight]{fig/lec02/Laminated_core_eddy_currents.pdf}
+				\caption{Eddy current formations in solid and laminated steel cores (source: \href{https://commons.wikimedia.org/wiki/File:Laminated_core_eddy_currents.svg}{Wikimedia Commons}, Chetvorno, \href{https://creativecommons.org/publicdomain/zero/1.0/deed.en}{CC0})}
+			\end{figure}
+		\end{column}
+		\end{columns}
 \end{frame}
