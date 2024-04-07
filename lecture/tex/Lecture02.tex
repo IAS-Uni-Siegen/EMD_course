@@ -323,7 +323,7 @@
             \begin{enumerate}
                 \item \textbf{Data look-up table:} Measure the hysteresis curve and its losses directly on a test bench (cf. \href{https://www.princeton.edu/~minjie/magnet.html}{MagNet project data hub}).
                 \item \textbf{Loss-fitted models:} Use empirical models to fit the hysteresis losses (e.g., Steinmetz model):
-                $$P_{\mathrm{h}} = kf^a \max\{B\}^b.$$
+                $$P_{\mathrm{h}} = k_{\mathrm{h}}f^a \max\{B\}^b.$$
                 \item \textbf{Curve-fitted models:} Use empirical models to describe the hysteresis curve and derive the losses (e.g., ODE as in the Jiles-Atherton model):
                 $$\frac{\mathrm{d}B}{\mathrm{d}H} = f(B,H).$$
             \end{enumerate}
@@ -468,6 +468,7 @@
             \begin{align}
                 \mbox{Integral form:} \quad & \oint_{\partial S} \bm{E} \cdot \mathrm{d}\bm{s} = -\int_{S}\frac{\partial \bm{B}}{\partial t}\cdot\mathrm{d}\bm{S},\\
                 \mbox{Differential form:} \quad &\nabla \times \bm{E} = -\frac{\partial \bm{B}}{\partial t}.
+                \label{eq:induction_law}
             \end{align}
             Here, $\bm{E}$ is the electric field strength and $\bm{S}$ is the surface enclosed by the loop $\partial\mathcal{S}$.
             \begin{itemize}
@@ -548,4 +549,75 @@
 			\end{figure}
 		\end{column}
 		\end{columns}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Eddy currents: single sheet example %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Eddy currents: single sheet example}
+    \begin{columns}
+		\begin{column}{0.5\textwidth}
+            \begin{varblock}{Assumption}
+                Sheet's thickness $d$ is much smaller than the sheet's width $w$ and the magnetic flux density $\bm{B}$ is homogenous in the normal direction of $S$ and introduces a sinusoidal excitation $\bm{B}(x,y,t) = \hat{B}\sin(\omega t)$.
+             \end{varblock}
+            From \eqref{eq:induction_law} integrating over $S$, we get
+            $$
+                2wE(x,t) = -\frac{\partial B}{\partial t}2xw
+           $$
+           with $2w$ being the effective contour length of $\partial S$ and  $2xw$ being the effective surface area.
+    
+        \end{column}
+        \hfill
+		\begin{column}{0.49\textwidth}
+			\begin{figure}
+				\centering
+				\includegraphics[height=0.3\textheight]{fig/lec02/Eddy_currents_single_sheet.pdf}
+				\caption{Single sheet and induced eddy currents}
+			\end{figure}
+		\end{column}
+		\end{columns}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Eddy currents: single sheet example (cont.) %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Eddy currents: single sheet example (cont.)}
+    With Ohm's law and the material conductivity $\sigma$, we get the current density $J$:
+              $$
+                 J(x,t) = \sigma E(x,t) = -x\sigma\frac{\partial B}{\partial t}.
+              $$ 
+    Inserting the assumed magnetic flux density distribution it follows:
+    $$
+        J(x,t) = -x\sigma\omega\hat{B}\cos(\omega t).
+    $$
+    The relative power loss (per volume) density $p(x,t)$ results in:
+    $$
+    p(x,t) = \frac{1}{\sigma} J^2(x,t) = x^2\sigma\omega^2\hat{B}^2\cos^2(\omega t).
+    $$
+    The average power loss per volume (considering the $x$-direction) is:
+    $$
+    p(t) = \frac{1}{d} \int_{-d/2}^{d/2} p(x,t) \mathrm{d}x = \frac{1}{12}\sigma\omega^2 d^2 \hat{B}^2\cos^2(\omega t).
+    $$
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Eddy currents: single sheet example (cont.) %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Eddy currents: single sheet example (cont.)}
+     The average power loss per volume and time is then:
+    $$
+        p = \frac{1}{T}\int_0^T p(t) \mathrm{d}t = \frac{1}{24}\sigma\left(\omega d \hat{B}\right)^2.
+    $$
+    Although this is a simplified model, it shows the significance of
+    \begin{itemize}
+        \item the sheet's thickness $d$,
+        \item and excitation conditions $\omega$ and $\hat{B}$.
+    \end{itemize}
+    \vspace{1em}
+    This finding motivated empirical fitting approaches, like Bertotti's 
+    model for the eddy currents: $$p_{\mathrm{e}}\approx k_{\mathrm{e}} f^2 \hat{B}^2 .$$
+
 \end{frame}
