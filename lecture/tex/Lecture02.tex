@@ -14,12 +14,13 @@
             \begin{align}
                 \mbox{Integral form:} \quad &\oint_{\partial S} \bm{H} \cdot \mathrm{d}\bm{s} = I_{\mathrm{f}},\\
                 \mbox{Differential form:} \quad &\nabla \times \bm{H} = \bm{J}_{\mathrm{f}}. 
+                \label{eq:ampere_law}
             \end{align}
             Here, $\bm{H}$ is the magnetic field strength, $\bm{J}_{\mathrm{f}}$ is the free current density, and $I_{\mathrm{f}}$ is the free current enclosed by the loop $\partial S$. 
             \vspace{0.25cm}
             \begin{itemize}
                 \item Free current: current that is not bound to a material (i.e., without polarization and magnetization currents).
-                \item SI-unit: $[H] = \si{\ampere\per\metre}$
+                \item SI-units: $[H] = \si{\ampere\per\metre}$, $[J] = \si{\ampere\per\metre\squared}$
             \end{itemize}
 		\end{column}
         \hfill
@@ -34,10 +35,10 @@
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Ampere's circuital law %%
+%% Ampere's circuital law: free current example %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
-	\frametitle{Amp\`ere's circuital law: magnetic field strength example}
+	\frametitle{Amp\`ere's circuital law: free current example}
 	\begin{columns}
 		\begin{column}{0.55\textwidth}
 			What is the free current $I_{\mathrm{f}}$ enclosed by the loop $\partial S$?
@@ -64,13 +65,13 @@
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Ampere's circuital law: magnetic flux %%
+%% Ampere's circuital law example: simple solenoid  %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
-	\frametitle{Magnetic flux and flux linkage}
+	\frametitle{Ampere's circuital law example: simple solenoid}
 	\begin{columns}
 		\begin{column}{0.575\textwidth}
-			Variant for magnetic flux density $\bm{B}$:
+			Ampere's law for magnetic flux density $\bm{B}$ in vacuum:
             \begin{align}
                 \mbox{Integral form:} \quad &\oint_{\partial S} \bm{B} \cdot \mathrm{d}\bm{l} = \mu_0 I,\\
                 \mbox{Differential form:} \quad &\nabla \times \bm{B} = \mu_0\bm{J}. 
@@ -93,6 +94,81 @@
 			\end{figure}
 		\end{column}
 		\end{columns}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Shortcomings of the Ampere's circuital law %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Shortcomings of the Amp\`ere's circuital law}
+	\begin{columns}
+		\begin{column}{0.55\textwidth}
+			Applying Amp\`ere's circuital law to a capacitor with a changing electric field $\bm{E}$ leads to a contradiction:
+            \begin{itemize}
+                \item Applying \eqref{eq:ampere_law} to $S_1$ yields:
+                $$\oint_{\partial S_1} \bm{H} \cdot \mathrm{d}\bm{s} = I.$$
+                \item In the case of $S_2$ we receive:
+                $$\oint_{\partial S_2} \bm{H} \cdot \mathrm{d}\bm{s} = 0.$$
+                \item However, both surfaces share the same bounding contour $\partial S$.
+                \item Issue: The magnetic field strength $\bm{H}$ is not able to describe the displacement current.
+            \end{itemize}
+		\end{column}
+        \hfill
+		\begin{column}{0.45\textwidth}
+			\begin{figure}
+				\centering
+				\includegraphics[height=0.55\textheight]{fig/lec02/Displacement_current_in_capacitor.pdf}
+				\caption{Surfaces $S_1$ and $S_2$ share the same bounding contour $\partial S$. However, $S_1$ is pierced by conduction current, while $S_2$ is pierced by displacement current (adapted from: \href{https://commons.wikimedia.org/wiki/File:Displacement_current_in_capacitor.svg}{Wikimedia Commons}, public domain).}
+			\end{figure}
+		\end{column}
+		\end{columns}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% The Ampere--Maxwell equation %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{The Amp\`ere -- Maxwell equation}
+	\begin{columns}
+		\begin{column}{0.6\textwidth}
+			Charge of capacitor:
+            $$Q = \oint_{S_2} \bm{D}\cdot \mathrm{d}\bm{S}$$
+            If the electric field ($\bm{D} = \varepsilon_0\varepsilon_\mathrm{r} \bm{E}$) changes, a displacement current results:
+            $$I_{\mathrm{d}} = \frac{\mathrm{d}}{\mathrm{d} t} \oint_{S_2} \bm{D}\cdot \mathrm{d}\bm{S}$$
+            \begin{itemize}
+                \item Is not a real current but a term to describe the changing electric field.
+                \item Above, $\varepsilon_0$ is the vacuum permittivity and $\varepsilon_\mathrm{r}$ is the relative permittivity of a material.
+            \end{itemize}
+		\end{column}
+        \hfill
+		\begin{column}{0.4\textwidth}
+			\begin{figure}
+				\centering
+				\includegraphics[height=0.65\textheight]{fig/lec02/Maxwell_integral_displacement_current.pdf}
+				\caption{Illustration for calculation the displacement current (adapted from: \href{https://commons.wikimedia.org/wiki/File:Maxwell_integral_displacement_current.svg}{Wikimedia Commons}, public domain).}
+			\end{figure}
+		\end{column}
+		\end{columns}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% The Ampere--Maxwell equation (cont.)%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{The Amp\`ere -- Maxwell equation (cont.)}
+        Adding the displacement current to \eqref{eq:ampere_law} we receive the Amp\`ere -- Maxwell equation:
+            \begin{align}    
+            \mbox{Integral form:} \quad  &\int_{\partial S} \bm{H} \cdot \mathrm{d}\bm{s} = \iint_{S}\left(\bm{J}_\mathrm{f} + \frac{\mathrm{d}}{\mathrm{d} t} \bm{D} \right)\cdot\mathrm{d}\bm{S}, \\
+            \mbox{Differential form:} \quad &\nabla \times \bm{H} = \bm{J}_\mathrm{f} +  \frac{\partial\bm{D}}{\partial t}. 
+            \label{eq:ampere_maxwell_law}
+        \end{align}
+        Above, $\bm{D}$ is the electric displacement field.
+        \vspace{0.5cm}
+        \begin{itemize}
+            \item SI-unit: $[D] = \si{\coulomb\per\metre\squared}$
+            \item SI-unit: $[E] = \si{\volt\per\metre}$
+            \item $\varepsilon_0 \approx \SI{8.854e-12}{\farad\per\metre}$
+        \end{itemize}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -458,22 +534,21 @@
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Electromagnetic induction %%
+%% Electromagnetic induction (Maxwell–-Faraday equation) %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
-	\frametitle{Electromagnetic induction}
+	\frametitle{Electromagnetic induction (Maxwell -- Faraday equation)}
     \begin{columns}
 		\begin{column}{0.6\textwidth}
-            A changing magnetic field induces an electric field according to the Maxwell–Faraday equation:
+            A changing magnetic field induces an electric field according to the Maxwell -- Faraday equation:
             \begin{align}
-                \mbox{Integral form:} \quad & \oint_{\partial S} \bm{E} \cdot \mathrm{d}\bm{s} = -\int_{S}\frac{\partial \bm{B}}{\partial t}\cdot\mathrm{d}\bm{S},\\
+                \mbox{Integral form:} \quad & \oint_{\partial S} \bm{E} \cdot \mathrm{d}\bm{s} = -\frac{\mathrm{d}}{\mathrm{d}t}\iint_{S}\bm{B}\cdot\mathrm{d}\bm{S},\\
                 \mbox{Differential form:} \quad &\nabla \times \bm{E} = -\frac{\partial \bm{B}}{\partial t}.
                 \label{eq:induction_law}
             \end{align}
             Here, $\bm{E}$ is the electric field strength and $\bm{S}$ is the surface enclosed by the loop $\partial\mathcal{S}$.
             \begin{itemize}
                 \item Lentz's law: The induced electric field opposes the change in magnetic field (negative sign above).
-                \item SI-unit: $[E] = \si{\volt\per\metre}$
             \end{itemize}
 		\end{column}
         \hfill
@@ -496,7 +571,7 @@
 		\begin{column}{0.55\textwidth}
             If the integration path $\partial S$ is identical to a conductor loop, the changing magnetic field induces a voltage $u_\mathrm{i}$ (electromotive force, EMF) according to Faraday's law:
             \begin{align*}
-                u_\mathrm{i} =\oint_{\partial\mathcal{S}} \bm{E} \cdot \mathrm{d}\bm{s} = -\int_{S}\frac{\partial \bm{B}}{\partial t}\cdot\mathrm{d}\bm{S}.
+                u_\mathrm{i} =\oint_{\partial\mathcal{S}} \bm{E} \cdot \mathrm{d}\bm{s} = -\frac{\mathrm{d}}{\mathrm{d}t}\iint_{S}\bm{B}\cdot\mathrm{d}\bm{S}.
             \end{align*}
         \begin{itemize}
             \item Despite its name, the term EMF does not describe a force in the physical sense (as $u_\mathrm{i}$ is obviously a voltage).
