@@ -15,9 +15,9 @@
 			\end{varblock}
 			\vspace{0.25cm}
 			\begin{itemize}
-				\item Electrical energy is routed via machine's external wiring connected to the terminal box.
-				\item Mechanical energy is transferred via the shaft (if it is a rotatory machine).
-				\item Historic timetable of the electrical machine development: \href{https://www.eti.kit.edu/english/1376.php}{KIT article (by M.~Doppelbauer)}
+				\item<2-> Electrical energy is routed via machine's external wiring connected to the terminal box.
+				\item<3-> Mechanical energy is transferred via the shaft (if it is a rotatory machine).
+				\item<4-> Historic timetable of the electrical machine development: \href{https://www.eti.kit.edu/english/1376.php}{KIT article (by M.~Doppelbauer)}
 			\end{itemize}
 		\end{column}
 		\begin{column}{0.5\textwidth}
@@ -75,14 +75,14 @@
 		\centering
 		\begin{subfigure}[b]{0.49\textwidth}
 			\centering
-			\includegraphics[width=0.9\textwidth]{fig/lec01/Block_diagram_translational_converter.pdf}
-			\caption{Translational converter}
+			\includegraphics[width=0.9\textwidth]{fig/lec01/Block_diagram_rotational_converter.pdf}
+			\caption{rotational converter}
 		\end{subfigure}
 		\hfill
 		\begin{subfigure}[b]{0.49\textwidth}
 			\centering
-			\includegraphics[width=0.9\textwidth]{fig/lec01/Block_diagram_rotational_converter.pdf}
-			\caption{rotational converter}
+			\includegraphics[width=0.9\textwidth]{fig/lec01/Block_diagram_translational_converter.pdf}
+			\caption{Translational converter}
 		\end{subfigure}
 		\caption{Electrically and mechanically free body diagrams of motors as energy converters  with variable notation: time $t$, voltage $u$, current $i$, force $F$, displacement $x$, torque $T$ and rational speed $\omega$ (adapted from J.~B\"ocker, \textit{Elektrische Antriebstechnik}, Paderborn University, 2020)} 
         \label{fig:free_body_diagrams_motor}
@@ -101,20 +101,19 @@
 			& Translational converter & Rotational converter \\
 			\toprule
 			Kinematic quantities & & \\
-			
 			Displacement / angle & $x$ & $\varepsilon$ \\
 			Velocity & $v=\dot{x}$ & $\omega=\dot{\varepsilon}$ \\
 			Acceleration & $a=\dot{v}=\ddot{x}$ & $\alpha=\dot{\omega}=\ddot{\varepsilon}$ \\
-			Jerk & $j=\dot{a}=\ddot{v}=\dddot{x}$ & $\rho=\dot{\alpha}=\ddot{\omega}=\dddot{\varepsilon}$ \\
+			Jerk & $j=\dot{a}=\ddot{v}=\dddot{x}$ & $\rho=\dot{\alpha}=\ddot{\omega}=\dddot{\varepsilon}$ \onslide<2-> \\
 			\midrule
 			Dynamical quantities & & \\
 			Force / torque & $F$ & $T$ \\
-			Mass / inertia & $m$ & $J$ \\
+			Mass / inertia & $m$ & $J$ \onslide<3-> \\
 			\midrule
-			Mechanical power & $P_\mathrm{me}=F v$ & $P_\mathrm{me}=T \omega$ \\
-			Work & $W[t_0,t]=\int_{t_0}^t P_\mathrm{me}(\tau)\,\mathrm{d}\tau$ & $W[t_0,t]=\int_{t_0}^t P_\mathrm{me}(\tau)\,\mathrm{d}\tau$ \\
-			Momentum / rotational momentum & $p = m v$ & $L = \omega J$ \\
-			Kinetic energy & $E_\mathrm{kin} = \frac{1}{2} m v^2$ & $E_\mathrm{kin} = \frac{1}{2} J \omega^2$ \\
+			Mechanical power & $P_\mathrm{me}=F v$ & $P_\mathrm{me}=T \omega$ \onslide<4-> \\
+			Work & $W[t_0,t]=\int_{t_0}^t P_\mathrm{me}(\tau)\,\mathrm{d}\tau$ & $W[t_0,t]=\int_{t_0}^t P_\mathrm{me}(\tau)\,\mathrm{d}\tau$ \onslide<5-> \\
+			Momentum / rotational momentum & $p = m v$ & $L = \omega J$ \onslide<6-> \\
+			Kinetic energy & $E_\mathrm{kin} = \frac{1}{2} m v^2$ & $E_\mathrm{kin} = \frac{1}{2} J \omega^2$\\
 			\bottomrule
 		\end{tabular}
 		\caption{Basic mechanical terms for translational and rotational converters}
@@ -175,13 +174,13 @@
 		\begin{column}{0.5\textwidth}
 			For the steady state ($\dot{E}_{\mathrm{i}}(t)=0$), we define the \hl{machine efficiency} as the ratio of the converted energy to the input energy:
 			\begin{align}
-				\eta_\mathrm{mot} &= \frac{P_{\mathrm{me}}}{P_{\mathrm{el}}} = 1- \frac{P_{\mathrm{l}}}{P_{\mathrm{el}}},\\[0.5em]
-				\eta_\mathrm{gen} &= \frac{P_{\mathrm{el}}}{P_{\mathrm{me}}} = 1- \frac{P_{\mathrm{l}}}{P_{\mathrm{me}}}.
+				\eta_\mathrm{mot} &= \frac{P_{\mathrm{me}}}{P_{\mathrm{el}}} = 1- \frac{P_{\mathrm{l}}}{P_{\mathrm{el}}},  \\[0.5em] 
+				\onslide<2->{\eta_\mathrm{gen} &= \frac{P_{\mathrm{el}}}{P_{\mathrm{me}}} = 1- \frac{P_{\mathrm{l}}}{P_{\mathrm{me}}}.}
 			\end{align}
-			Hence, we need to consider in which \hl{quadrant} the machine operates as this will influence the power flow direction.
+			\onslide<3->{Hence, we need to consider in which \hl{quadrant} the machine operates as this will influence the power flow direction.}
 		\end{column}
 		\begin{column}{0.5\textwidth}
-			\begin{figure}
+			\onslide<3->\begin{figure}
 				\centering
 				\includegraphics[width=0.75\textwidth]{fig/lec01/Machine_quadrants.pdf}
 				\caption{Machine quadrants (derived from \href{https://de.wikipedia.org/wiki/Datei:Vierquadranten.svg}{Wikimedia Commons}, K. Pitter, \href{https://creativecommons.org/licenses/by-sa/3.0/deed.de}{CC BY-SA 3.0})}
@@ -203,8 +202,8 @@
 			\end{varblock}
 			\vspace{0.25cm}
 			\begin{itemize}
-				\item Integrates the 'stupid' electrical machine into an 'intelligent' controlled system.
-				\item The energy source and mechanical process ('load') are not part of the drive system.
+				\item<2-> Integrates the 'stupid' electrical machine into an 'intelligent' controlled system.
+				\item<3-> The energy source and mechanical process ('load') are not part of the drive system.
 			\end{itemize}
 		\end{column}
 		\begin{column}{0.6\textwidth}
@@ -311,7 +310,7 @@
 	\begin{varblock}{Electric machines and drives are an essential pillar of the modern society}
 		Without electric machines and drives, our todays' society would not be possible. Starting from providing electricity via electrical generators to powering electric vehicles, tools and entire factory production lines, electric machines and drives are everywhere, that is, they enable our today's living standard. 
 	\end{varblock}
-	\begin{varblock}{Energy efficiency and sustainability is key}
+	\begin{varblock}{Energy efficiency and sustainability is key}<2->
 		Electric machines and drives utilize  approx. 50\,\% of the global electricity with about 8 billion electric motors in use in the EU (source: \href{https://commission.europa.eu/energy-climate-change-environment/standards-tools-and-labels/products-labelling-rules-and-requirements/energy-label-and-ecodesign/energy-efficient-products/electric-motors-and-variable-speed-drives_en}{European Commission} and \href{https://iea.blob.core.windows.net/assets/d69b2a76-feb9-4a74-a921-2490a8fefcdf/EE_for_ElectricSystems.pdf}{International Energy Agency}). Therefore, improving their efficiency is an essential factor to reduce the global energy consumption and the associated CO$_2$ emissions.
 	\end{varblock}
 \end{frame}
@@ -323,20 +322,20 @@
 	\frametitle{Learning objectives}
 	\begin{itemize}
 		\item Understand the generation of magnetic fields, force formation and voltage induction in electrical machines.
-		\item Differentiate the main types of electrical machines and drives:
+		\item<2-> Differentiate the main types of electrical machines and drives:
 		\begin{itemize}
 			\item DC machines. 
 			\item Induction machines.
 			\item Synchronous machines.
 			\item And their plentiful variants \ldots
 		\end{itemize}
-		\item Understand their basic design and operation principles.
-		\item Analyze the operation of electrical machines and drives:
+		\item<3-> Understand their basic design and operation principles.
+		\item<4-> Analyze the operation of electrical machines and drives:
 		\begin{itemize}
 			\item in steady state and
 			\item in transient conditions.
 		\end{itemize} 
-		\item Have fun learning about electrical machines and drives.
+		\item<5-> Have fun learning about electrical machines and drives.
 	\end{itemize}
 \end{frame}
 
@@ -349,12 +348,13 @@
 	\begin{itemize}
 		\item Linear differential equations (modeling, solution techniques)
 		\item Linear algebra basics (e.g., vector and matrix operations)
+		\item Vector analysis (differentiation and integration of vector fields)
 		\item Basic signal theory knowledge (e.g., Fourier series, Laplace transform)
 		\item Basic knowledge of electrical circuit theory
 		\item Basic knowledge of mechanics
 	\end{itemize}
 	\vspace{0.5cm}
-	What we will \underline{not} cover, that is, you do not need to know (covered in separate courses):
+	\onslide<2->What we will \underline{not} cover, that is, you do not need to know (covered in separate courses):
 	\begin{itemize}
 		\item Control engineering (design drive controllers)
 		\item Power electronics (design switchable actuators)
