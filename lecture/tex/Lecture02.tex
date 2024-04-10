@@ -694,5 +694,79 @@
     \vspace{1em}
     This finding motivated empirical fitting approaches, like Bertotti's 
     model for the eddy currents: $$p_{\mathrm{e}}\approx k_{\mathrm{e}} f^2 \hat{B}^2 .$$
+\end{frame}
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Lorentz force %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Lorentz force}
+    \begin{columns}
+		\begin{column}{0.6\textwidth}
+        The force $\bm{F}$ acting on a particle of electric charge $q$ with instantaneous velocity $\bm{v}$, due to an external electric field $\bm{E}$ and magnetic field $\bm{B}$, is given by
+            \begin{equation}
+                \bm{F} = q\left(\bm{E} + \bm{v}\times\bm{B}\right).
+            \end{equation}
+            \begin{itemize}
+                \item The term $q\bm{E}$  is called the electric force.
+                \item The term $q\left(\bm{v}\times\bm{B}\right)$ is called the magnetic force.
+                \item In Cartesian coordinates, the Lorentz force is given by:
+            \end{itemize}
+            \begin{equation}
+                \begin{aligned}
+                    F_x &= q\left(E_x + v_yB_z - v_zB_y\right),\\
+                    F_y &= q\left(E_y + v_zB_x - v_xB_z\right),\\
+                    F_z &= q\left(E_z + v_xB_y - v_yB_x\right).
+                \end{aligned}
+            \end{equation}
+		\end{column}
+        \hfill
+		\begin{column}{0.40\textwidth}
+			\begin{figure}
+				\centering
+				\includegraphics[height=0.5\textheight]{fig/lec02/Lorentz_force_particle.pdf}
+				\caption{Lorentz force $\bm{F}$ on a particle (of charge $q$) in motion (instantaneous velocity $\bm{v}$) with given $\bm{E}$ and $\bm{B}$ fields (adapted from: \href{https://commons.wikimedia.org/wiki/File:Lorentz_force_particle.svg}{Wikimedia Commons}, Maschen, \href{https://creativecommons.org/publicdomain/zero/1.0/deed.en}{CC0})}
+			\end{figure}
+		\end{column}
+		\end{columns}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Hand rule of the magnetic Lorentz force %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Hand rule of the magnetic Lorentz force}
+    \begin{figure}
+        \centering
+        \includegraphics[height=0.6\textheight]{fig/lec02/Hand-rule-charges-both-hands.pdf}
+        \caption{Right and left hand rule for the magnetic Lorentz force $q\left(\bm{v}\times\bm{B}\right)$ (adapted from: \href{https://commons.wikimedia.org/wiki/File:Right-hand-rule-charges-both-hands.svg}{Wikimedia Commons}, M. Run, \href{https://creativecommons.org/licenses/by-sa/3.0/deed.en}{CC BY-SA 3.0})}
+    \end{figure}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Lorentz force density for a continuous charge distribution %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Lorentz force density for a continuous charge distribution}
+    \begin{columns}
+		\begin{column}{0.5\textwidth}
+         For a continuous charge distribution in motion, the Lorentz force density (force per unit volume) becomes: 
+            \begin{equation}
+                \bm{f} = \rho\bm{E} + \bm{J}\times\bm{B}.
+            \end{equation}
+            \begin{itemize}
+                \item $\rho$ is the charge density (charge per unit volume).
+                \item $\bm{J} = \rho \bm{v}$ is the current density.
+            \end{itemize}
+		\end{column}
+        \hfill
+		\begin{column}{0.5\textwidth}
+			\begin{figure}
+				\centering
+				\includegraphics[height=0.6\textheight]{fig/lec02/Lorentz_force_continuum.pdf}
+				\caption{Lorentz force density $\bm{f}$ on a continuous charge distribution (charge density $\rho$) in motion (adapted from: \href{https://commons.wikimedia.org/wiki/File:Lorentz_force_continuum.svg}{Wikimedia Commons}, Maschen, \href{https://creativecommons.org/publicdomain/zero/1.0/deed.en}{CC0})}
+			\end{figure}
+		\end{column}
+		\end{columns}
 \end{frame}
