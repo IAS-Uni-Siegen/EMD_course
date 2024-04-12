@@ -68,7 +68,7 @@
 %% Ampere's circuital law: simple solenoid  example%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
-	\frametitle{Ampere's circuital law: simple solenoid example}
+	\frametitle{Amp\`ere's circuital law: simple solenoid example}
 	\begin{columns}
 		\begin{column}{0.575\textwidth}
 			Ampere's law for magnetic flux density $\bm{B}$ in vacuum:
@@ -178,17 +178,17 @@
 	\frametitle{Magnetic flux and flux linkage}
 	\begin{columns}
 		\begin{column}{0.575\textwidth}
-			The magnetic flux $\Phi$ is the surface integral of the normal component of $\bm{B}$ over that surface:
+			The magnetic flux $\phi$ is the surface integral of the normal component of $\bm{B}$ over that surface:
             \begin{align}
-                \Phi = \iint_{S} \bm{B} \cdot \mathrm{d}\bm{S}. 
+                \phi = \iint_{S} \bm{B} \cdot \mathrm{d}\bm{S}. 
             \end{align}
             \onslide<2->{As there are no magnetic monopoles, the magnetic flux through a closed surface (which is covering a volume without holes) is always zero:
             \begin{align}
                 \oint_{S} \bm{B} \cdot \mathrm{d}\bm{S} = 0.
             \end{align}}
-            \onslide<3->{The flux linkage $\Psi$ is the product of the magnetic flux $\Phi$ and the number of turns $N$ of a coil:
+            \onslide<3->{The flux linkage $\psi$ is the product of the magnetic flux $\phi$ and the number of turns $N$ of a coil:
             \begin{align}
-                \Psi = N  \Phi.
+                \psi = N  \phi.
             \end{align}}
 		\end{column}
         \hfill
@@ -197,7 +197,7 @@
 			\begin{figure}
 				\centering
 				\includegraphics[height=0.68\textheight]{fig/lec02/Solenoid_Flux.pdf}
-				\caption{Magnetic flux $\Phi$ evaluated at the surface $\bm{S}$  (adapted from: \href{https://commons.wikimedia.org/wiki/File:Solenoid_and_Ampere_Law.png}{Wikimedia Commons}, Goodphy, \href{https://creativecommons.org/licenses/by-sa/4.0/deed.en}{CC BY-SA 4.0})}
+				\caption{Magnetic flux $\phi$ evaluated at the surface $\bm{S}$  (adapted from: \href{https://commons.wikimedia.org/wiki/File:Solenoid_and_Ampere_Law.png}{Wikimedia Commons}, Goodphy, \href{https://creativecommons.org/licenses/by-sa/4.0/deed.en}{CC BY-SA 4.0})}
 			\end{figure}
 		\end{column}
 		\end{columns}
@@ -603,6 +603,211 @@
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Lorentz force %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Lorentz force}
+    \begin{columns}
+		\begin{column}{0.6\textwidth}
+        The force $\bm{F}$ acting on a particle of electric charge $q$ with instantaneous velocity $\bm{v}$, due to an external electric field $\bm{E}$ and magnetic field $\bm{B}$, is given by
+            \begin{equation}
+                \bm{F} = q\left(\bm{E} + \bm{v}\times\bm{B}\right).
+            \end{equation}
+            \begin{itemize}
+                \item The term $q\bm{E}$  is called the electric force.
+                \item The term $q\left(\bm{v}\times\bm{B}\right)$ is called the magnetic force.
+                \item In Cartesian coordinates, the Lorentz force is given by:
+            \end{itemize}
+            \begin{equation}
+                \begin{aligned}
+                    F_x &= q\left(E_x + v_yB_z - v_zB_y\right),\\
+                    F_y &= q\left(E_y + v_zB_x - v_xB_z\right),\\
+                    F_z &= q\left(E_z + v_xB_y - v_yB_x\right).
+                \end{aligned}
+            \end{equation}
+		\end{column}
+        \hfill
+		\begin{column}{0.40\textwidth}
+			\begin{figure}
+				\centering
+				\includegraphics[height=0.5\textheight]{fig/lec02/Lorentz_force_particle.pdf}
+				\caption{Lorentz force $\bm{F}$ on a particle (of charge $q$) in motion (instantaneous velocity $\bm{v}$) with given $\bm{E}$ and $\bm{B}$ fields (adapted from: \href{https://commons.wikimedia.org/wiki/File:Lorentz_force_particle.svg}{Wikimedia Commons}, Maschen, \href{https://creativecommons.org/publicdomain/zero/1.0/deed.en}{CC0})}
+			\end{figure}
+		\end{column}
+		\end{columns}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Hand rule of the magnetic Lorentz force %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Hand rule of the magnetic Lorentz force}
+    \begin{figure}
+        \centering
+        \includegraphics[height=0.6\textheight]{fig/lec02/Hand-rule-charges-both-hands.pdf}
+        \caption{Right and left hand rule for the magnetic Lorentz force $q\left(\bm{v}\times\bm{B}\right)$ (adapted from: \href{https://commons.wikimedia.org/wiki/File:Right-hand-rule-charges-both-hands.svg}{Wikimedia Commons}, M. Run, \href{https://creativecommons.org/licenses/by-sa/3.0/deed.en}{CC BY-SA 3.0})}
+    \end{figure}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Lorentz force density for a continuous charge distribution %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Lorentz force density for a continuous charge distribution}
+    \begin{columns}
+		\begin{column}{0.5\textwidth}
+         For a continuous charge distribution in motion, the Lorentz force density (force per unit volume) becomes: 
+            \begin{equation}
+                \bm{f} = \rho\bm{E} + \bm{J}\times\bm{B}.
+            \end{equation}
+            \begin{itemize}
+                \item $\rho$ is the charge density (charge per unit volume).
+                \item $\bm{J} = \rho \bm{v}$ is the current density.
+            \end{itemize}
+		\end{column}
+        \hfill
+		\begin{column}{0.5\textwidth}
+			\begin{figure}
+				\centering
+				\includegraphics[height=0.6\textheight]{fig/lec02/Lorentz_force_continuum.pdf}
+				\caption{Lorentz force density $\bm{f}$ on a continuous charge distribution (charge density $\rho$) in motion (adapted from: \href{https://commons.wikimedia.org/wiki/File:Lorentz_force_continuum.svg}{Wikimedia Commons}, Maschen, \href{https://creativecommons.org/publicdomain/zero/1.0/deed.en}{CC0})}
+			\end{figure}
+		\end{column}
+		\end{columns}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Magnetic networks %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Magnetic networks}
+	\begin{columns}
+		\begin{column}{0.575\textwidth}
+			\begin{itemize}
+                \item \textbf{Motivation}: Model magnetic systems with a simplified lumped-parameter approach and apply analysis techniques analogous to electric networks.
+                \item \textbf{Assumption}: magnetic field is homogenous within a lumped element (cf. \figref{fig:Reluctance_element}).
+                \item The magnetic flux per element is:
+                \begin{equation}
+                    \phi_k = A_k B_k .
+                \end{equation}
+                \item The magnetic voltage (magnetomotive force -- MMF) per element is:
+                \begin{equation}
+                    \theta_k = l_k H_k .
+                \end{equation}
+            \end{itemize}
+		\end{column}
+        \hfill
+		\begin{column}{0.425\textwidth}
+			\begin{figure}
+				\centering
+				\includegraphics[height=0.4\textheight]{fig/lec02/Reluctance_element.pdf}
+				\caption{Magnetic element with homogenous magnetic field}
+                \label{fig:Reluctance_element}
+			\end{figure}
+		\end{column}
+		\end{columns}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Magnetic networks (cont.) %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Magnetic networks (cont.)}
+	\begin{columns}
+		\begin{column}{0.575\textwidth}
+			\begin{itemize}
+                \item The magnetic reluctance per element is:
+                \begin{equation}
+                    R_k = \frac{\theta_k}{\phi_k} = \frac{l_k}{\mu_0\mu_{\mathrm{r}k}A_k}.
+                \end{equation}
+                \item The magnetic conductivity (or permeance) per element is:
+                \begin{equation}
+                    \Lambda_k = \frac{1}{R_k} = \frac{\mu_0\mu_{\mathrm{r}k}A_k}{l_k}.
+                \end{equation}
+                \item As the magnetic field is free of sources ($\nabla \cdot \bm{B}=0$), it follows (node rule -- analogous to Kirchhoff's first law):
+                \begin{equation}
+                    \sum_k \phi_k = 0.
+                \end{equation}
+            \end{itemize}
+		\end{column}
+        \hfill
+		\begin{column}{0.425\textwidth}
+			\begin{figure}
+				\centering
+				\includegraphics[height=0.4\textheight]{fig/lec02/Reluctance_element.pdf}
+            \end{figure}
+		\end{column}
+		\end{columns}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Magnetic networks (cont.) %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Magnetic networks (cont.)}
+    Considering magnetostatic situations where the displacement current can be neglected, Amp\`ere's law reads:
+    \begin{equation}
+        \oint_{\partial S} \bm{H} \cdot \mathrm{d}\bm{s} = I_{\mathrm{f}} = N I = \sum_k  \theta_k = \sum_k l_k H_k.
+    \end{equation}
+    So far, the equation has not the structure of the second Kirchhoff’s law (loop rule). However, we can force this desired format by placing the term with the electric currents on the left-hand side of the equation:
+    \begin{equation}
+         \sum_k \theta_k - \theta_0 = 0 \quad \mbox{with} \quad \theta_0 = N I \,\,\mbox{(MMF term)}.
+    \end{equation}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Comparison: electric and magnetic network quantities %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Comparison: electric and magnetic network quantities}
+    \begin{table}
+        \centering
+        \begin{tabular}{lcclcc}
+            \toprule
+            \textbf{Electric network} & & & \textbf{Magnetic network} & & \\
+            \midrule
+            Voltage & $u = \int \bm{E} \cdot \mathrm{d}\bm{s}$ & \si{\volt}&  Magnetomotive force & $\theta = \int \bm{H} \cdot \mathrm{d}\bm{s}$  & \si{\ampere}\\
+            Electric field & $\bm{E}$ & \si{\volt\per\metre} & Magnetic field  & $\bm{H}$ & \si{\ampere\per\metre}\\
+            Current & $i$ & \si{\ampere} & Magnetic flux & $\phi$  & \si{\volt\second}\\
+            Resistance & $R$ & \si{\ohm} & Reluctance & $R$  & \si{\per\henry}\\
+            Conductance & $G$ & \si{\siemens} & Permeance & $\Lambda$ &  \si{\henry}\\
+            Conductivity & $\sigma$ & \si{\siemens\per\metre} & Permeability & $\mu$ &\si{\henry\per\metre}\\
+            Ohm's law & $u = R i$ & & Hopkinson's law & $\theta = R \phi$ &\\
+            Kirchoff'S first law & $\sum i_k = 0$ & & Kirchoff's first law & $\sum \phi_k = 0$ &\\
+            Kirchoff's second law & $\sum u_k = 0$ & & Kirchoff's second law & $\sum \theta_k - \theta_0 = 0$ &\\
+            \bottomrule
+        \end{tabular}
+        \caption{Electric and magnetic network quantities and their analogies}
+        \label{eq:network_quantities}
+    \end{table}
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Comparison: electric and magnetic network quantities %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Magnetic network example: simple magnetic actuator}
+    \begin{figure}
+		\centering
+		\begin{subfigure}[b]{0.49\textwidth}
+			\centering
+			\includegraphics[width=0.7\textwidth]{fig/lec02/Magnetic_actuator_example.pdf}
+            \vspace{0.4cm}
+			\caption{Simple magnetic actuator}
+		\end{subfigure}
+		\hfill
+		\begin{subfigure}[b]{0.49\textwidth}
+			\centering
+			\includegraphics[width=0.8\textwidth]{fig/lec02/Magnetic_actuator_example_reluctance_network.pdf}
+			\caption{Magnetic network representation of the actuator}
+		\end{subfigure}
+		\caption{Example for a simple magnetic actuator and its magnetic network representation} 
+        \label{fig:magnetic_reluctance_network_examples}
+	\end{figure}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Eddy currents %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
@@ -694,79 +899,4 @@
     \vspace{1em}
     This finding motivated empirical fitting approaches, like Bertotti's 
     model for the eddy currents: $$p_{\mathrm{e}}\approx k_{\mathrm{e}} f^2 \hat{B}^2 .$$
-\end{frame}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Lorentz force %%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}
-	\frametitle{Lorentz force}
-    \begin{columns}
-		\begin{column}{0.6\textwidth}
-        The force $\bm{F}$ acting on a particle of electric charge $q$ with instantaneous velocity $\bm{v}$, due to an external electric field $\bm{E}$ and magnetic field $\bm{B}$, is given by
-            \begin{equation}
-                \bm{F} = q\left(\bm{E} + \bm{v}\times\bm{B}\right).
-            \end{equation}
-            \begin{itemize}
-                \item The term $q\bm{E}$  is called the electric force.
-                \item The term $q\left(\bm{v}\times\bm{B}\right)$ is called the magnetic force.
-                \item In Cartesian coordinates, the Lorentz force is given by:
-            \end{itemize}
-            \begin{equation}
-                \begin{aligned}
-                    F_x &= q\left(E_x + v_yB_z - v_zB_y\right),\\
-                    F_y &= q\left(E_y + v_zB_x - v_xB_z\right),\\
-                    F_z &= q\left(E_z + v_xB_y - v_yB_x\right).
-                \end{aligned}
-            \end{equation}
-		\end{column}
-        \hfill
-		\begin{column}{0.40\textwidth}
-			\begin{figure}
-				\centering
-				\includegraphics[height=0.5\textheight]{fig/lec02/Lorentz_force_particle.pdf}
-				\caption{Lorentz force $\bm{F}$ on a particle (of charge $q$) in motion (instantaneous velocity $\bm{v}$) with given $\bm{E}$ and $\bm{B}$ fields (adapted from: \href{https://commons.wikimedia.org/wiki/File:Lorentz_force_particle.svg}{Wikimedia Commons}, Maschen, \href{https://creativecommons.org/publicdomain/zero/1.0/deed.en}{CC0})}
-			\end{figure}
-		\end{column}
-		\end{columns}
-\end{frame}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Hand rule of the magnetic Lorentz force %%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}
-	\frametitle{Hand rule of the magnetic Lorentz force}
-    \begin{figure}
-        \centering
-        \includegraphics[height=0.6\textheight]{fig/lec02/Hand-rule-charges-both-hands.pdf}
-        \caption{Right and left hand rule for the magnetic Lorentz force $q\left(\bm{v}\times\bm{B}\right)$ (adapted from: \href{https://commons.wikimedia.org/wiki/File:Right-hand-rule-charges-both-hands.svg}{Wikimedia Commons}, M. Run, \href{https://creativecommons.org/licenses/by-sa/3.0/deed.en}{CC BY-SA 3.0})}
-    \end{figure}
-\end{frame}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Lorentz force density for a continuous charge distribution %%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}
-	\frametitle{Lorentz force density for a continuous charge distribution}
-    \begin{columns}
-		\begin{column}{0.5\textwidth}
-         For a continuous charge distribution in motion, the Lorentz force density (force per unit volume) becomes: 
-            \begin{equation}
-                \bm{f} = \rho\bm{E} + \bm{J}\times\bm{B}.
-            \end{equation}
-            \begin{itemize}
-                \item $\rho$ is the charge density (charge per unit volume).
-                \item $\bm{J} = \rho \bm{v}$ is the current density.
-            \end{itemize}
-		\end{column}
-        \hfill
-		\begin{column}{0.5\textwidth}
-			\begin{figure}
-				\centering
-				\includegraphics[height=0.6\textheight]{fig/lec02/Lorentz_force_continuum.pdf}
-				\caption{Lorentz force density $\bm{f}$ on a continuous charge distribution (charge density $\rho$) in motion (adapted from: \href{https://commons.wikimedia.org/wiki/File:Lorentz_force_continuum.svg}{Wikimedia Commons}, Maschen, \href{https://creativecommons.org/publicdomain/zero/1.0/deed.en}{CC0})}
-			\end{figure}
-		\end{column}
-		\end{columns}
 \end{frame}
