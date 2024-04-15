@@ -48,7 +48,7 @@
 			\begin{figure}
 				\centering
 				\includegraphics[width=0.8\textwidth]{fig/lec03/Faraday_disk_generator.jpg}
-				\caption{The Faraday disk: another homopolar machine (source: \href{https://commons.wikimedia.org/wiki/File:Faraday_disk_generator.jpg}{Wikimedia Commons}, Public domain)}
+				\caption{The Faraday disk: another homopolar machine (source: \href{https://commons.wikimedia.org/wiki/File:Faraday_disk_generator.jpg}{Wikimedia Commons}, public domain)}
 			\end{figure}
 		\end{column}
 		\end{columns}
@@ -67,9 +67,9 @@
 			\end{equation}  
 			The torque $T$ on the conductor loop is given by
 			\begin{equation}
-				T = 2 F \frac{d}{2} \cos\alpha r = i_\mathrm{A} B l d \cos\left(\alpha\right).
+				T = 2 F \frac{d}{2} \cos\left(\alpha\right) = i_\mathrm{A} B l d \cos\left(\alpha\right).
 			\end{equation}
-			If the coils spins with an angular velocity $\omega$, mechanical power $P_\mathrm{me} = T\omega$ is produced. 
+			If the loop spins with an angular velocity $\omega$, mechanical power $P_\mathrm{me} = T\omega$ is produced. 
 			\\[1em]
 			\textbf{Question:} What is happening if the coil is outside the magnetic field?
 		\end{column}
@@ -83,4 +83,87 @@
 			\end{figure}
 		\end{column}
 		\end{columns}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% DC-machine cross section %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{DC-machine cross section}
+    \begin{columns}
+		\begin{column}{0.42\textwidth}
+            \begin{itemize}
+				\item To ensure a quasi-continous torque, the current through the conductor loop(s) in the rotor must have a constant direction.
+				\item This is achieved by using a commutator (brushes).
+				\item Compared to homopolar machines, DC machines require a mechanical rectification of the current.
+			\end{itemize}
+		\end{column}
+        \hfill
+		\begin{column}{0.55\textwidth}
+			\begin{figure}
+				\centering
+				\includegraphics[width=0.925\textwidth]{fig/lec03/DC_machine_cross_section.pdf}
+				\caption{DC machine cross section (adapted from J.~B\"ocker, \textit{Elektrische Antriebstechnik}, Paderborn University, 2020)}
+				\label{fig:Simple_yoke_coil}
+			\end{figure}
+		\end{column}
+		\end{columns}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Commutation %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Commutation}
+    \begin{figure}
+		\centering
+		\movie{\includegraphics[height=0.65\textheight]{fig/lec03/DC_machine_simple_animation.jpeg}}{fig/lec03/DC_machine_simple_animation.gif}
+		\caption{Animation of the commutation process \\(source: \href{https://commons.wikimedia.org/wiki/File:Animation_einer_Gleichstrommaschine_(Variante-Langsam).gif}{Wikimedia Commons}, M. Frey, \href{https://creativecommons.org/licenses/by-sa/3.0/deed.en}{CC BY-SA 3.0})}
+	\end{figure}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Armature and commutator %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Armature and commutator}
+    \begin{figure}
+		\centering
+		\begin{subfigure}[b]{0.49\textwidth}
+			\centering
+			\includegraphics[width=0.85\textwidth]{fig/lec03/Commutator_Universalmachine.jpg}
+			\caption{Commutator with brushes and springs (source: \href{https://commons.wikimedia.org/wiki/File:Kommutator_eines_Universalmotor.JPGg}{Wikimedia Commons}, Marrrci, \href{https://creativecommons.org/licenses/by-sa/3.0/deed.en}{CC BY-SA 3.0})}
+		\end{subfigure}
+		\hfill
+		\begin{subfigure}[b]{0.49\textwidth}
+			\centering
+			\includegraphics[width=0.85\textwidth]{fig/lec03/DC_armature_example.jpg}
+			\caption{DC machine armature with commutator (source: \href{https://commons.wikimedia.org/wiki/File:Motor_rotor.jpg}{Wikimedia Commons}, public domain)}
+		\end{subfigure}
+		\caption{Examples of commutators and armatures} 
+        \label{fig:Armature_and_commutator}
+	\end{figure}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Armature and commutator (cont.) %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Armature and commutator (cont.)}
+    \begin{figure}
+		\centering
+		\begin{subfigure}[b]{0.49\textwidth}
+			\centering
+			\includegraphics[width=0.85\textwidth]{fig/lec03/Stator_Rotor_Universalmachine.jpg}
+			\caption{Armature inside stator (source: \href{https://commons.wikimedia.org/wiki/File:Universalmotor_1.JPG}{Wikimedia Commons}, Marrrci, \href{https://creativecommons.org/licenses/by-sa/3.0/deed.en}{CC BY-SA 3.0})}
+		\end{subfigure}
+		\hfill
+		\begin{subfigure}[b]{0.49\textwidth}
+			\centering
+			\includegraphics[width=0.85\textwidth]{fig/lec03/Commutator_and_brushes_DC_motor.jpg}
+			\caption{DC machine with brush set (source: \href{https://commons.wikimedia.org/wiki/File:Commutator_and_brushes_DC_motor.jpg}{Wikimedia Commons}, C. Kral, \href{https://creativecommons.org/licenses/by/4.0/deed.en}{CC BY-SA 4.0})}
+		\end{subfigure}
+		\caption{Examples of commutators and armatures (cont.)} 
+        \label{fig:Armature_and_commutator_02}
+	\end{figure}
 \end{frame}
