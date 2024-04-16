@@ -24,14 +24,14 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#505050"
      inkscape:zoom="3.1266662"
-     inkscape:cx="124.25375"
-     inkscape:cy="111.7804"
-     inkscape:window-width="1920"
-     inkscape:window-height="991"
-     inkscape:window-x="-9"
+     inkscape:cx="141.68446"
+     inkscape:cy="144.40301"
+     inkscape:window-width="2560"
+     inkscape:window-height="1351"
+     inkscape:window-x="2551"
      inkscape:window-y="-9"
      inkscape:window-maximized="1"
-     inkscape:current-layer="g105">
+     inkscape:current-layer="g130">
     <inkscape:page
        x="0"
        y="0"
@@ -744,15 +744,9 @@
          style="fill:#ffcc99 icc-color(sRGB-IEC61966-2, 0.1, 1, 0.79998779, 0.59999084);fill-opacity:1;fill-rule:evenodd;stroke:#000000 icc-color(Gray-Gamma-2, 0.2, 0);stroke-width:0.75;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:8;stroke-dasharray:none;stroke-opacity:1"
          transform="matrix(1.3333333,0,0,-1.3333333,-238.78533,676.18533)" />
       <path
-         id="path127"
-         d="M 0,0 6.4,-0.028"
-         style="fill:none;stroke:#8496b0 icc-color(sRGB-IEC61966-2, 0.1, 0.51799011, 0.58799744, 0.68998718);stroke-width:1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:8;stroke-dasharray:none;stroke-opacity:1"
-         transform="matrix(1.3333333,0,0,-1.3333333,120.81453,30.987867)" />
-      <path
          id="path128"
-         d="M 0,0 -5.987,3.026 0.026,6 Z"
-         style="fill:#8496b0 icc-color(sRGB-IEC61966-2, 0.1, 0.51799011, 0.58799744, 0.68998718);fill-opacity:1;fill-rule:evenodd;stroke:none"
-         transform="matrix(1.3333333,0,0,-1.3333333,122.13053,34.993333)" />
+         d="m 114.18253,34.993333 7.98267,-4.034667 -8.01734,-3.965333 z"
+         style="fill:#8496b0 icc-color(sRGB-IEC61966-2, 0.1, 0.51799011, 0.58799744, 0.68998718);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1.33333" />
       <path
          id="path129"
          d="M 0,0 11.4,45.6"
@@ -914,50 +908,30 @@
        id="g130">
       <path
          id="path131"
-         d="M 0,0 28.5,22.8"
-         style="fill:none;stroke:#000000 icc-color(Gray-Gamma-2, 0.2, 0);stroke-width:0.25;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:8;stroke-dasharray:none;stroke-opacity:1"
-         transform="matrix(1.3333333,0,0,-1.3333333,102.88133,141.15867)" />
+         d="m 102.88133,80.358683 38,-30.400004"
+         style="fill:none;stroke:#000000 icc-color(Gray-Gamma-2, 0.2, 0);stroke-width:0.333333;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:8;stroke-dasharray:none;stroke-opacity:1" />
       <path
          id="path132"
-         d="M 0,0 -28.5,22.8"
-         style="fill:none;stroke:#000000 icc-color(Gray-Gamma-2, 0.2, 0);stroke-width:0.25;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:8;stroke-dasharray:none;stroke-opacity:1"
-         transform="matrix(1.3333333,0,0,-1.3333333,140.88133,141.15867)" />
+         d="m 140.88133,80.358683 -38,-30.400004"
+         style="fill:none;stroke:#000000 icc-color(Gray-Gamma-2, 0.2, 0);stroke-width:0.333333;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:8;stroke-dasharray:none;stroke-opacity:1" />
       <path
          id="path133"
          d="m 0,0 c -1.56,0 -2.825,-1.265 -2.825,-2.825 0,-1.56 1.265,-2.825 2.825,-2.825 1.56,0 2.825,1.265 2.825,2.825 C 2.825,-1.265 1.56,0 0,0"
          style="fill:#000000 icc-color(Gray-Gamma-2, 0.2, 0);fill-opacity:1;fill-rule:evenodd;stroke:#000000 icc-color(Gray-Gamma-2, 0.2, 0);stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:8;stroke-dasharray:none;stroke-opacity:1"
-         transform="matrix(1.3333333,0,0,-1.3333333,121.98133,60.758667)"
+         transform="matrix(1.3333333,0,0,-1.3333333,121.88133,122.19201)"
          clip-path="url(#clipPath134)" />
       <path
-         id="path135"
-         d="M 0,0 6.4,-0.028"
-         style="fill:none;stroke:#8496b0 icc-color(sRGB-IEC61966-2, 0.1, 0.51799011, 0.58799744, 0.68998718);stroke-width:1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:8;stroke-dasharray:none;stroke-opacity:1"
-         transform="matrix(1.3333333,0,0,-1.3333333,120.81453,160.12133)" />
-      <path
          id="path136"
-         d="M 0,0 -5.987,3.026 0.026,6 Z"
-         style="fill:#8496b0 icc-color(sRGB-IEC61966-2, 0.1, 0.51799011, 0.58799744, 0.68998718);fill-opacity:1;fill-rule:evenodd;stroke:none"
-         transform="matrix(1.3333333,0,0,-1.3333333,122.13053,164.12667)" />
-      <path
-         id="path137"
-         d="M 0,0 -3.4,-0.02"
-         style="fill:none;stroke:#8496b0 icc-color(sRGB-IEC61966-2, 0.1, 0.51799011, 0.58799744, 0.68998718);stroke-width:1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:8;stroke-dasharray:none;stroke-opacity:1"
-         transform="matrix(1.3333333,0,0,-1.3333333,107.48147,99.3984)" />
+         d="m 114.18253,164.12667 7.98267,-4.03467 -8.01734,-3.96533 z"
+         style="fill:#8496b0 icc-color(sRGB-IEC61966-2, 0.1, 0.51799011, 0.58799744, 0.68998718);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1.33333" />
       <path
          id="path138"
-         d="M 0,0 6.018,-2.965 0.035,-6 Z"
-         style="fill:#8496b0 icc-color(sRGB-IEC61966-2, 0.1, 0.51799011, 0.58799744, 0.68998718);fill-opacity:1;fill-rule:evenodd;stroke:none"
-         transform="matrix(1.3333333,0,0,-1.3333333,106.12453,95.406)" />
-      <path
-         id="path139"
-         d="M 0,0 -3.4,-0.02"
-         style="fill:none;stroke:#8496b0 icc-color(sRGB-IEC61966-2, 0.1, 0.51799011, 0.58799744, 0.68998718);stroke-width:1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:8;stroke-dasharray:none;stroke-opacity:1"
-         transform="matrix(1.3333333,0,0,-1.3333333,107.28133,91.7984)" />
+         d="m 114.06847,95.406 -8.024,3.953333 7.97733,4.046667 z"
+         style="fill:#8496b0 icc-color(sRGB-IEC61966-2, 0.1, 0.51799011, 0.58799744, 0.68998718);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1.33333" />
       <path
          id="path140"
-         d="M 0,0 6.018,-2.964 0.035,-6 Z"
-         style="fill:#8496b0 icc-color(sRGB-IEC61966-2, 0.1, 0.51799011, 0.58799744, 0.68998718);fill-opacity:1;fill-rule:evenodd;stroke:none"
-         transform="matrix(1.3333333,0,0,-1.3333333,105.92453,87.806)" />
+         d="m 114.14853,87.726042 -8.024,3.952 7.97733,4.048 z"
+         style="fill:#8496b0 icc-color(sRGB-IEC61966-2, 0.1, 0.51799011, 0.58799744, 0.68998718);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1.33333" />
       <path
          id="path141"
          d="M 0,0 26.35,-0.042"
