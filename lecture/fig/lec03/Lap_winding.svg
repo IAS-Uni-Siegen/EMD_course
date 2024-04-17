@@ -24,8 +24,8 @@
      inkscape:deskcolor="#505050"
      inkscape:document-units="mm"
      inkscape:zoom="4.1157407"
-     inkscape:cx="157.93026"
-     inkscape:cy="36.32396"
+     inkscape:cx="138.24972"
+     inkscape:cy="46.285715"
      inkscape:window-width="2560"
      inkscape:window-height="1351"
      inkscape:window-x="-9"
@@ -1529,6 +1529,25 @@
        apply_with_weight="true"
        only_selected="false"
        uniform="false" />
+    <marker
+       style="overflow:visible"
+       id="Triangle-1-7-3-7-7-8-6-8"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Triangle arrow"
+       markerWidth="1.2"
+       markerHeight="1.2"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.5)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 5.77,0 -2.88,5 V -5 Z"
+         id="path242-4-6-7-5-1-9-6-1" />
+    </marker>
   </defs>
   <g
      inkscape:label="Ebene 1"
@@ -2138,11 +2157,6 @@
        id="path244-4-5-7-6-6-8-1-7-2-9-1-6-8-6"
        sodipodi:nodetypes="cc" />
     <path
-       style="display:inline;fill:#003c75;fill-opacity:1;fill-rule:evenodd;stroke:#b9464d;stroke-width:0.192352;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Triangle-1-7-3-7-7-8)"
-       d="m 73.983612,80.31996 v 2.835614"
-       id="path244-4-5-7-6-6-3"
-       sodipodi:nodetypes="cc" />
-    <path
        style="display:inline;fill:#003c75;fill-opacity:1;fill-rule:evenodd;stroke:#b9464d;stroke-width:0.192352;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Triangle-1-7-3-7-7-8-9)"
        d="m 68.61729,80.31996 v 2.835614"
        id="path244-4-5-7-6-6-3-5"
@@ -2166,6 +2180,11 @@
        style="display:inline;fill:#003c75;fill-opacity:1;fill-rule:evenodd;stroke:#b9464d;stroke-width:0.192352;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Triangle-1-7-3-7-7-8-6)"
        d="m 71.915126,80.31996 v 2.835614"
        id="path244-4-5-7-6-6-3-7"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="display:inline;fill:#003c75;fill-opacity:1;fill-rule:evenodd;stroke:#b9464d;stroke-width:0.192352;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Triangle-1-7-3-7-7-8-6-8)"
+       d="m 73.98102,80.31996 v 2.835614"
+       id="path244-4-5-7-6-6-3-7-8"
        sodipodi:nodetypes="cc" />
     <path
        style="display:inline;fill:#003c75;fill-opacity:1;fill-rule:evenodd;stroke:#b9464d;stroke-width:0.192352;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Triangle-1-7-3-7-7-8-0)"
@@ -2311,7 +2330,7 @@
        sodipodi:nodetypes="cc" />
     <path
        style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#8f8f8f;stroke-width:0.113;stroke-linecap:square;stroke-dasharray:0.113, 0.339;stroke-dashoffset:0;stroke-opacity:1"
-       d="m 108.02321,74.396334 c -0.96849,1.974543 -1.93699,3.949083 -2.90548,5.923626"
+       d="m 108.02321,74.396334 c -0.96849,1.974541 -1.93699,3.949085 -2.90548,5.923626"
        id="path7-7"
        inkscape:path-effect="#path-effect7-1"
        inkscape:original-d="m 108.02321,74.396334 c -0.96849,1.974543 -1.93699,3.949083 -2.90548,5.923626"
