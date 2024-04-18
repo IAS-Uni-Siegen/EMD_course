@@ -136,7 +136,7 @@
             \onslide<2->{If the electric field ($\bm{D} = \varepsilon_0\varepsilon_\mathrm{r} \bm{E}$) changes, a displacement current results:
             $$I_{\mathrm{d}} = \frac{\mathrm{d}}{\mathrm{d} t} \oint_{S_2} \bm{D}\cdot \mathrm{d}\bm{S}$$}
             \begin{itemize}
-                \item<3-> Is not a real current but a term to describe the changing electric field.
+                \item<3-> Is not a classical electric current (moving charges) but a term to describe the changing electric field.
                 \item<4-> Above, $\varepsilon_0$ is the vacuum permittivity and $\varepsilon_\mathrm{r}$ is the relative permittivity of a material.
             \end{itemize}
 		\end{column}
@@ -145,7 +145,7 @@
 			\begin{figure}
 				\centering
 				\includegraphics[height=0.65\textheight]{fig/lec02/Maxwell_integral_displacement_current.pdf}
-				\caption{Illustration for calculation the displacement current (adapted from: \href{https://commons.wikimedia.org/wiki/File:Maxwell_integral_displacement_current.svg}{Wikimedia Commons}, public domain).}
+				\caption{Illustration for calculating the displacement current (adapted from: \href{https://commons.wikimedia.org/wiki/File:Maxwell_integral_displacement_current.svg}{Wikimedia Commons}, public domain).}
 			\end{figure}
 		\end{column}
 		\end{columns}
@@ -300,7 +300,7 @@
     The resulting flux linkage per coil is then:
     \begin{equation}
         \begin{alignedat}{3}
-        \psi_1 &= N_1\left(\phi_{11} + \phi_{21} + \phi_{12}\right), \quad && \psi_2 && =  N_2\left(\phi_{22} + \phi_{12} + \phi_{21}\right)\\
+        \psi_1 &= N_1\left(\phi_{11} + \phi_{21} + \phi_{12}\right), \quad && \psi_2 && =  N_2\left(\phi_{22} + \phi_{12} + \phi_{21}\right),\\ \pause
                &=\underbrace{\left(\Lambda_{11}N_1^2+\Lambda_{21}N_1^2\right)}_{L_1}i_1 + \underbrace{\Lambda_{12}N_1N_2}_{M_{12}}i_2, \quad && && =\underbrace{\left(\Lambda_{22}N_2^2+\Lambda_{12}N_1^2\right)}_{L_2}i_2 + \underbrace{\Lambda_{21}N_1N_2}_{M_{21}}i_1. 
         \end{alignedat}
         \label{eq:flux_linkage_transformer}
@@ -315,7 +315,7 @@
 	\frametitle{Self and mutual inductance (cont.)}
     Hence, we can define the flux linkages of both coils using the following inductance matrix:
     \begin{equation}
-        \bm{\psi} = \begin{bmatrix} \psi_1 \\ \psi_2 \end{bmatrix} = \begin{bmatrix} L_1 & M_{12} \\ M_{21} & L_2 \end{bmatrix} \begin{bmatrix} i_1 \\ i_2 \end{bmatrix}.
+        \bm{\psi} = \begin{bmatrix} \psi_1 \\ \psi_2 \end{bmatrix} = \begin{bmatrix} L_1 & M_{12} \\ M_{21} & L_2 \end{bmatrix} \begin{bmatrix} i_1 \\ i_2 \end{bmatrix} = \bm{L}\bm{i}.
     \end{equation}
     \pause
     Due to the symmetry of the inductive coupling, the mutual inductances are identical:
@@ -419,7 +419,7 @@
     \end{column}
     \hfill
     \begin{column}{0.52\textwidth}
-        \onslide<2->{\begin{figure}
+        \onslide{\begin{figure}
             \centering
             \movie{\includegraphics[height=0.3\textheight]{fig/lec02/Moving_magnetic_domains_preview.png}}{fig/lec02/Moving_magnetic_domains.gif}
             \caption{Animation of moving domain walls (source: \href{https://commons.wikimedia.org/wiki/File:Moving_magnetic_domains_by_Zureks.gif}{Wikimedia Commons}, Zureks, \href{https://creativecommons.org/licenses/by-sa/3.0/deed.en}{CC BY-SA 3.0})}
