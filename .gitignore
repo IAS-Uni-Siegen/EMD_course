@@ -23,7 +23,7 @@
 
 ## Generated lecture slide PDFs
 lecture/*.pdf
-exercises/*.pdf
+exercise/*.pdf
 
 ## Bibliography auxiliary files (bibtex/biblatex/biber):
 *.bbl
