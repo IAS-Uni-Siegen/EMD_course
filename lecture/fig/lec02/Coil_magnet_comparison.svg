@@ -1,0 +1,1312 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="1660"
+   height="600"
+   version="1.1"
+   id="svg170"
+   sodipodi:docname="Coil_magnet_comparison.svg"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview170"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     inkscape:zoom="1.0246988"
+     inkscape:cx="830"
+     inkscape:cy="300.08818"
+     inkscape:window-width="2560"
+     inkscape:window-height="1351"
+     inkscape:window-x="2551"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg170" />
+  <defs
+     id="defs1">
+    <path
+       id="reuse-0"
+       stroke-width=".478"
+       d="M373.843-175.877l1.57 1.285-3.426 4.185 4.185 3.425-1.284 1.57-4.186-3.426-3.425 4.185-1.57-1.284 3.426-4.185-4.185-3.426 1.284-1.57 4.186 3.426z"
+       opacity=".5" />
+  </defs>
+  <defs
+     id="defs40">
+    <radialGradient
+       id="e"
+       cx=".65"
+       cy=".7"
+       r=".75">
+      <stop
+         offset="0"
+         stop-color="#fff"
+         stop-opacity=".7"
+         id="stop1" />
+      <stop
+         offset=".1"
+         stop-color="#fff"
+         stop-opacity=".5"
+         id="stop2" />
+      <stop
+         offset=".6"
+         stop-color="#fff"
+         stop-opacity="0"
+         id="stop3" />
+      <stop
+         offset=".6"
+         stop-opacity="0"
+         id="stop4" />
+      <stop
+         offset=".75"
+         stop-opacity=".05"
+         id="stop5" />
+      <stop
+         offset=".85"
+         stop-opacity=".15"
+         id="stop6" />
+      <stop
+         offset="1"
+         stop-opacity=".5"
+         id="stop7" />
+    </radialGradient>
+    <radialGradient
+       id="f"
+       cx=".65"
+       cy=".7"
+       r=".75">
+      <stop
+         offset="0"
+         stop-color="#fff"
+         stop-opacity=".7"
+         id="stop8" />
+      <stop
+         offset=".1"
+         stop-color="#fff"
+         stop-opacity=".5"
+         id="stop9" />
+      <stop
+         offset=".6"
+         stop-color="#fff"
+         stop-opacity="0"
+         id="stop10" />
+      <stop
+         offset=".6"
+         stop-opacity="0"
+         id="stop11" />
+      <stop
+         offset=".75"
+         stop-opacity=".05"
+         id="stop12" />
+      <stop
+         offset=".85"
+         stop-opacity=".15"
+         id="stop13" />
+      <stop
+         offset="1"
+         stop-opacity=".5"
+         id="stop14" />
+    </radialGradient>
+    <radialGradient
+       id="g"
+       cx="11.94"
+       cy="15.92"
+       r="59.699"
+       fx="11.94"
+       fy="15.92"
+       gradientTransform="matrix(.26425 0 0 2.47776 370.56 -26.917)"
+       gradientUnits="userSpaceOnUse">
+      <stop
+         offset="0"
+         stop-color="#fff"
+         id="stop15" />
+      <stop
+         offset=".15"
+         stop-color="#ddd"
+         id="stop16" />
+      <stop
+         offset=".5"
+         stop-color="#aaa"
+         id="stop17" />
+      <stop
+         offset="1"
+         stop-color="#444"
+         id="stop18" />
+    </radialGradient>
+    <radialGradient
+       id="d"
+       cx="11.94"
+       cy="15.92"
+       r="59.699"
+       fx="11.94"
+       fy="15.92"
+       gradientTransform="matrix(.26425 0 0 2.47776 370.56 -26.917)"
+       gradientUnits="userSpaceOnUse">
+      <stop
+         offset="0"
+         stop-color="#fff"
+         id="stop19" />
+      <stop
+         offset=".15"
+         stop-color="#ddd"
+         id="stop20" />
+      <stop
+         offset=".5"
+         stop-color="#aaa"
+         id="stop21" />
+      <stop
+         offset="1"
+         stop-color="#444"
+         id="stop22" />
+    </radialGradient>
+    <radialGradient
+       id="h"
+       cx="11.94"
+       cy="15.92"
+       r="59.699"
+       fx="11.94"
+       fy="15.92"
+       gradientTransform="matrix(.26425 0 0 2.47776 370.56 -26.917)"
+       gradientUnits="userSpaceOnUse"
+       xlink:href="#d" />
+    <radialGradient
+       id="l"
+       cx="4.5"
+       cy="6"
+       r="22.5"
+       fx="4.5"
+       fy="6"
+       gradientUnits="userSpaceOnUse"
+       xlink:href="#e" />
+    <radialGradient
+       id="n"
+       cx="4.5"
+       cy="6"
+       r="22.5"
+       fx="4.5"
+       fy="6"
+       gradientUnits="userSpaceOnUse"
+       xlink:href="#f" />
+    <radialGradient
+       id="p"
+       cx="11.94"
+       cy="15.92"
+       r="59.699"
+       fx="11.94"
+       fy="15.92"
+       gradientTransform="matrix(.26425 0 0 2.47776 370.56 -26.917)"
+       gradientUnits="userSpaceOnUse"
+       xlink:href="#g" />
+    <linearGradient
+       id="a"
+       x1="0"
+       x2="0"
+       y1="-.55"
+       y2=".55"
+       gradientUnits="userSpaceOnUse">
+      <stop
+         offset="0"
+         stop-color="#ac7d6b"
+         id="stop23" />
+      <stop
+         offset=".15"
+         stop-color="#220e0b"
+         id="stop24" />
+      <stop
+         offset=".35"
+         stop-color="#8a634f"
+         id="stop25" />
+      <stop
+         offset=".6"
+         stop-color="#fff"
+         id="stop26" />
+      <stop
+         offset=".8"
+         stop-color="#8a634f"
+         id="stop27" />
+      <stop
+         offset=".9"
+         stop-color="#371f18"
+         id="stop28" />
+      <stop
+         offset="1"
+         stop-color="#a37e6b"
+         id="stop29" />
+    </linearGradient>
+    <linearGradient
+       id="b"
+       x1="-.05"
+       x2=".05"
+       y1="0"
+       y2="0"
+       gradientUnits="userSpaceOnUse">
+      <stop
+         offset="0"
+         stop-color="#ad7d63"
+         stop-opacity=".9"
+         id="stop30" />
+      <stop
+         offset=".48"
+         stop-color="#ad8169"
+         stop-opacity=".31"
+         id="stop31" />
+      <stop
+         offset=".65"
+         stop-color="#8f6050"
+         stop-opacity=".14"
+         id="stop32" />
+      <stop
+         offset=".83"
+         stop-color="#844038"
+         stop-opacity=".42"
+         id="stop33" />
+      <stop
+         offset="1"
+         stop-color="#2d1412"
+         id="stop34" />
+    </linearGradient>
+    <linearGradient
+       id="r"
+       x1="0"
+       x2="0"
+       y1="-100"
+       y2="100"
+       gradientTransform="translate(0 -6)"
+       gradientUnits="userSpaceOnUse">
+      <stop
+         offset="0"
+         stop-opacity=".125"
+         id="stop35" />
+      <stop
+         offset=".07"
+         stop-color="#fff"
+         stop-opacity=".125"
+         id="stop36" />
+      <stop
+         offset=".25"
+         stop-color="#fff"
+         stop-opacity=".5"
+         id="stop37" />
+      <stop
+         offset=".6"
+         stop-color="#fff"
+         stop-opacity=".2"
+         id="stop38" />
+      <stop
+         offset="1"
+         stop-opacity=".33"
+         id="stop39" />
+    </linearGradient>
+    <path
+       id="j"
+       fill="#000"
+       stroke="none"
+       d="M.3 0l-2.5 2.25L3.8 0l-6-2.25z"
+       transform="scale(.02)" />
+    <g
+       id="c">
+      <path
+         fill="url(#a)"
+         d="M-.05.5v-1a.05.05 0 11.1 0v1a.05.05 0 11-.1 0z"
+         id="path39" />
+      <path
+         fill="url(#b)"
+         stroke="#000"
+         stroke-width=".01"
+         d="M-.05.5v-1a.05.05 0 11.1 0v1a.05.05 0 11-.1 0z"
+         id="path40" />
+    </g>
+  </defs>
+  <path
+     fill="#fff"
+     d="M0 0v600h1660V0H860z"
+     id="path41" />
+  <g
+     id="g62">
+    <g
+       id="i"
+       display="inline"
+       transform="matrix(-1 0 0 1 577.758 373.731)">
+      <path
+         fill="url(#h)"
+         stroke="#000"
+         stroke-width="1.434"
+         d="M360.76 21.775v-192.04c.006-5.408 4.392-9.79 9.8-9.79s9.794 4.382 9.8 9.79v192.04c-.006 5.408-4.392 9.79-9.8 9.79s-9.794-4.382-9.8-9.79z"
+         id="path42" />
+      <circle
+         cx="370.56"
+         cy="22.663"
+         r="2.39"
+         stroke-width=".478"
+         opacity=".5"
+         id="circle42" />
+      <use
+         stroke-width=".478"
+         opacity=".5"
+         xlink:href="#reuse-0"
+         id="use42" />
+    </g>
+    <use
+       width="100%"
+       height="100%"
+       transform="translate(19.212)"
+       xlink:href="#i"
+       id="use43" />
+    <use
+       width="100%"
+       height="100%"
+       transform="translate(38.425)"
+       xlink:href="#i"
+       id="use44" />
+    <use
+       width="100%"
+       height="100%"
+       transform="translate(57.637)"
+       xlink:href="#i"
+       id="use45" />
+    <use
+       width="100%"
+       height="100%"
+       transform="translate(76.85)"
+       xlink:href="#i"
+       id="use46" />
+    <use
+       width="100%"
+       height="100%"
+       transform="translate(96.062)"
+       xlink:href="#i"
+       id="use47" />
+    <use
+       width="100%"
+       height="100%"
+       transform="translate(115.274)"
+       xlink:href="#i"
+       id="use48" />
+    <use
+       width="100%"
+       height="100%"
+       transform="translate(134.487)"
+       xlink:href="#i"
+       id="use49" />
+    <use
+       width="100%"
+       height="100%"
+       transform="translate(153.699)"
+       xlink:href="#i"
+       id="use50" />
+    <use
+       width="100%"
+       height="100%"
+       transform="translate(172.911)"
+       xlink:href="#i"
+       id="use51" />
+    <use
+       width="100%"
+       height="100%"
+       transform="translate(192.124)"
+       xlink:href="#i"
+       id="use52" />
+    <use
+       width="100%"
+       height="100%"
+       transform="translate(211.336)"
+       xlink:href="#i"
+       id="use53" />
+    <use
+       width="100%"
+       height="100%"
+       transform="translate(230.548)"
+       xlink:href="#i"
+       id="use54" />
+    <use
+       width="100%"
+       height="100%"
+       transform="translate(249.76)"
+       xlink:href="#i"
+       id="use55" />
+    <use
+       width="100%"
+       height="100%"
+       transform="translate(268.973)"
+       xlink:href="#i"
+       id="use56" />
+    <use
+       width="100%"
+       height="100%"
+       transform="translate(288.185)"
+       xlink:href="#i"
+       id="use57" />
+    <use
+       width="100%"
+       height="100%"
+       transform="translate(307.398)"
+       xlink:href="#i"
+       id="use58" />
+    <use
+       width="100%"
+       height="100%"
+       transform="translate(326.61)"
+       xlink:href="#i"
+       id="use59" />
+    <use
+       width="100%"
+       height="100%"
+       transform="translate(345.822)"
+       xlink:href="#i"
+       id="use60" />
+    <use
+       width="100%"
+       height="100%"
+       transform="translate(365.035)"
+       xlink:href="#i"
+       id="use61" />
+    <use
+       width="100%"
+       height="100%"
+       transform="translate(384.247)"
+       xlink:href="#i"
+       id="use62" />
+  </g>
+  <g
+     id="g106">
+    <g
+       id="k"
+       fill="none"
+       stroke="#000"
+       stroke-linecap="round"
+       stroke-linejoin="round">
+      <path
+         stroke-width="2"
+         d="M400 393.33l23.16.11 21.8.33 19.68.5 17.4.66 15.31.79 13.51.91 11.96 1.02 10.67 1.13 9.57 1.22-15.18 12.01-9.3 7.1-8.14 5.9-7.53 5.17-7.15 4.62-6.91 4.17-6.73 3.77-6.61 3.42-6.5 3.09-6.44 2.79-6.37 2.48-6.33 2.21-6.3 1.93-6.27 1.66-6.24 1.39-6.24 1.14-6.21.88-6.21.63-6.21.38-6.19.12-6.2-.12-6.21-.38-6.2-.63-6.22-.88-6.23-1.14-6.25-1.39-6.26-1.66-6.3-1.93-6.33-2.21-6.38-2.49-6.43-2.78-6.51-3.09-6.6-3.42-6.73-3.78-6.91-4.16-7.16-4.62-7.52-5.17-8.14-5.9-9.31-7.1L256.94 400l9.57-1.22 10.67-1.13 11.94-1.02 13.47-.9 15.31-.8 17.4-.66 19.69-.5 21.82-.32z"
+         id="path62" />
+      <use
+         width="100%"
+         height="100%"
+         stroke-width=".02"
+         transform="scale(200 -200) rotate(-.11 -1023.427 -1037.76)"
+         xlink:href="#j"
+         id="use63" />
+      <use
+         width="100%"
+         height="100%"
+         stroke-width=".02"
+         transform="scale(-200 200) rotate(-.45 294.9 255.809)"
+         xlink:href="#j"
+         id="use64" />
+      <path
+         stroke-width="2"
+         d="M400 380l24.89.12 23.11.34 20.45.54 17.76.69 15.39.82 13.39.94 11.73 1.06 10.34 1.16 9.17 1.26 8.16 1.36 7.29 1.44 6.53 1.53 5.83 1.6 5.22 1.68 4.66 1.74 4.18 1.8 3.83 1.92-1.76 3.37-2.13 4.69-3.1 7.69-9.21 24.02-4.5 11.06-4.21 9.7-4.15 8.93-4.17 8.39-4.23 7.95-4.31 7.55-4.4 7.21-4.49 6.89-4.6 6.57-4.7 6.28-4.8 6-4.9 5.71-4.99 5.44-5.09 5.18-5.19 4.9-5.27 4.64-5.36 4.37-5.43 4.11-5.51 3.86-5.59 3.59-5.64 3.33-5.71 3.08-5.77 2.81-5.82 2.56-5.86 2.3-5.91 2.05-5.94 1.79-5.98 1.53-6 1.28-6.02 1.02-6.04.77-6.05.51-6.07.25h-6.06l-6.06-.25-6.05-.51-6.04-.77-6.03-1.02-6-1.28-5.97-1.53-5.95-1.79-5.9-2.04-5.87-2.31-5.82-2.55-5.76-2.82-5.71-3.08-5.65-3.33-5.58-3.59-5.51-3.85-5.44-4.11-5.35-4.38-5.28-4.64-5.18-4.9-5.09-5.17-5-5.44-4.9-5.72-4.8-5.99-4.7-6.28-4.59-6.58-4.5-6.88-4.4-7.21-4.31-7.56-4.23-7.94-4.17-8.39-4.15-8.94-4.2-9.69-4.51-11.07-9.22-24.05-3.09-7.66-2.13-4.69-1.76-3.37 3.83-1.91 4.17-1.81 4.66-1.74 5.21-1.67 5.83-1.61 6.51-1.52 7.3-1.45 8.17-1.35 9.15-1.26 10.32-1.16 11.72-1.06 13.41-.95 15.39-.82 17.77-.69 20.46-.54 23.12-.34z"
+         id="path64" />
+      <use
+         width="100%"
+         height="100%"
+         stroke-width=".02"
+         transform="scale(200 -200) rotate(-.11 -988.685 -1037.726)"
+         xlink:href="#j"
+         id="use65" />
+      <use
+         width="100%"
+         height="100%"
+         stroke-width=".02"
+         transform="scale(-200 200) rotate(53.33 -3.905 -1.378)"
+         xlink:href="#j"
+         id="use66" />
+      <use
+         width="100%"
+         height="100%"
+         stroke-width=".02"
+         transform="scale(-200 200) rotate(-54.05 1.865 2.584)"
+         xlink:href="#j"
+         id="use67" />
+      <path
+         stroke-width="2"
+         d="M198.84 601l-2.73-8.46-2.52-8.62-2.31-8.79-2.1-8.95-1.87-9.1-1.65-9.24-1.42-9.38-1.18-9.52-.95-9.62-.71-9.74-.47-9.82-.22-9.88.03-9.9.27-9.88.52-9.78.76-9.56.97-9.22 1.15-8.67 1.3-7.91 1.37-6.96 1.39-5.84 1.35-4.77 1.32-3.81 1.28-3.04 1.3-2.49 1.39-2.13 1.57-1.96 1.83-1.88 2.17-1.86 2.57-1.86 3.01-1.84 3.46-1.82 3.97-1.79 4.5-1.74 5.07-1.68 5.67-1.61 6.35-1.53 7.13-1.44 8-1.35 8.99-1.26 10.17-1.15 11.61-1.05 13.37-.93 15.49-.82 17.95-.68 21.11-.53 24.33-.35 26.57-.12 26.54.12 24.31.35 21.12.53 18.07.68 15.46.82 13.34.94 11.6 1.04 10.18 1.16 8.99 1.25 7.98 1.35 7.12 1.44 6.36 1.53 5.68 1.61 5.06 1.68 4.49 1.74 3.97 1.79 3.47 1.82 3.01 1.84 2.57 1.86 2.17 1.86 1.83 1.88 1.57 1.95 1.39 2.14 1.3 2.49 1.28 3.03 1.31 3.81 1.36 4.77 1.39 5.84 1.37 6.96 1.29 7.91 1.16 8.67.97 9.22.76 9.57.52 9.77.27 9.88.03 9.9-.22 9.88-.47 9.82-.7 9.74-.95 9.63-1.19 9.51-1.42 9.38-1.65 9.25-1.87 9.1-2.1 8.94-2.31 8.79-2.52 8.63-2.73 8.46"
+         id="path67" />
+      <use
+         width="100%"
+         height="100%"
+         stroke-width=".02"
+         transform="scale(200 -200) rotate(86.49 1.684 -.675)"
+         xlink:href="#j"
+         id="use68" />
+      <use
+         width="100%"
+         height="100%"
+         stroke-width=".02"
+         transform="scale(200 -200) rotate(-.1 -1049.464 -1141.368)"
+         xlink:href="#j"
+         id="use69" />
+      <use
+         width="100%"
+         height="100%"
+         stroke-width=".02"
+         transform="scale(200 -200) rotate(-86.95 .326 -2.789)"
+         xlink:href="#j"
+         id="use70" />
+      <path
+         stroke-width="2"
+         d="M90.93 601l1.89-11.64 2.15-11.64 2.41-11.62 2.67-11.59 2.91-11.53 3.16-11.47 3.4-11.37 3.63-11.24 3.84-11.09 4.04-10.88 4.22-10.63 4.37-10.31 4.47-9.93 4.54-9.45 4.55-8.91 4.52-8.3 4.43-7.62 4.31-6.92 4.17-6.23 4-5.54 3.86-4.93 3.72-4.36 3.64-3.87 3.58-3.46 3.59-3.11 3.65-2.83 3.77-2.6 3.94-2.41 4.18-2.25 4.47-2.11 4.83-1.99 5.23-1.87 5.72-1.76 6.26-1.64 6.92-1.55 7.64-1.43 8.54-1.32 9.63-1.22 10.89-1.1 12.48-.99 14.52-.87 17.13-.75 20.23-.61 24.21-.45 27.94-.24h29.64l27.94.24 24.21.45 20.23.61 17.13.75 14.52.87 12.48.99 10.89 1.1 9.63 1.22 8.54 1.32 7.64 1.43 6.92 1.55 6.26 1.64 5.72 1.76 5.23 1.87 4.83 1.99 4.47 2.11 4.18 2.25 3.94 2.41 3.77 2.6 3.65 2.83 3.59 3.11 3.58 3.46 3.64 3.87 3.72 4.36 3.86 4.93 4 5.54 4.17 6.23 4.31 6.92 4.43 7.62 4.52 8.3 4.55 8.91 4.54 9.45 4.47 9.93 4.37 10.31 4.22 10.63 4.04 10.88 3.84 11.09 3.63 11.24 3.4 11.37 3.16 11.47 2.91 11.53 2.67 11.59 2.41 11.62 2.15 11.64 1.89 11.64"
+         id="path70" />
+      <use
+         width="100%"
+         height="100%"
+         stroke-width=".02"
+         transform="scale(200 -200) rotate(64.36 2.141 -.598)"
+         xlink:href="#j"
+         id="use71" />
+      <use
+         width="100%"
+         height="100%"
+         stroke-width=".02"
+         transform="matrix(200 0 0 -200 398.093 353.37)"
+         xlink:href="#j"
+         id="use72" />
+      <use
+         width="100%"
+         height="100%"
+         stroke-width=".02"
+         transform="scale(200 -200) rotate(-64.85 -.124 -3.751)"
+         xlink:href="#j"
+         id="use73" />
+      <path
+         stroke-width="2"
+         d="M-1 552.83l8.2-12.65 8.37-12.46 8.52-12.22 8.65-11.98 8.77-11.71 8.85-11.41 8.9-11.06 8.92-10.68 8.88-10.25 8.79-9.78 8.66-9.24 8.45-8.67 8.2-8.06 7.91-7.44 7.59-6.79 7.25-6.17 6.93-5.56 6.62-5.01 6.34-4.5 6.12-4.03 5.95-3.63 5.83-3.27 5.78-2.95 5.8-2.68 5.88-2.44 6.02-2.23 6.26-2.04 6.57-1.87 6.97-1.71 7.48-1.58 8.12-1.43 8.9-1.31 9.91-1.19 11.14-1.07 12.73-.95 14.87-.83 17.53-.71 21.15-.57 25.76-.43 30.82-.24h33.22l30.82.24 25.76.43 21.15.57 17.53.71 14.87.83 12.73.95 11.14 1.07 9.91 1.19 8.9 1.31 8.12 1.43 7.48 1.58 6.97 1.71 6.57 1.87 6.26 2.04 6.02 2.23 5.88 2.44 5.8 2.68 5.78 2.95 5.83 3.27 5.95 3.63 6.12 4.03 6.34 4.5 6.62 5.01 6.93 5.56 7.25 6.17 7.59 6.79 7.91 7.44 8.2 8.06 8.45 8.67 8.66 9.24 8.79 9.78 8.88 10.25 8.92 10.68 8.9 11.06 8.85 11.41 8.77 11.71 8.65 11.98 8.52 12.22 8.37 12.46 8.2 12.65"
+         id="path73" />
+      <use
+         width="100%"
+         height="100%"
+         stroke-width=".02"
+         transform="scale(200 -200) rotate(45.73 2.766 -.475)"
+         xlink:href="#j"
+         id="use74" />
+      <use
+         width="100%"
+         height="100%"
+         stroke-width=".02"
+         transform="matrix(200 0 0 -200 398.093 340.03)"
+         xlink:href="#j"
+         id="use75" />
+      <use
+         width="100%"
+         height="100%"
+         stroke-width=".02"
+         transform="scale(200 -200) rotate(-45.73 -.766 -5.218)"
+         xlink:href="#j"
+         id="use76" />
+      <path
+         stroke-width="2"
+         d="M-1 432.86l15.27-10.02 14.95-9.52 14.57-8.96 14.08-8.39 13.54-7.76 12.91-7.12 12.25-6.47 11.57-5.84 10.91-5.23 10.3-4.66 9.75-4.14 9.27-3.67 8.9-3.25 8.62-2.89 8.45-2.56 8.39-2.28 8.44-2.03 8.63-1.8 8.97-1.62 9.46-1.44 10.17-1.27 11.16-1.13 12.48-1 14.32-.86 16.73-.74 20.33-.61 25.42-.48 32.24-.33 38.92-.12 38.92.12 32.24.33 25.42.48 20.33.61 16.73.74 14.32.86 12.48 1 11.16 1.13 10.17 1.27 9.46 1.44 8.97 1.62 8.63 1.8 8.44 2.03 8.39 2.28 8.45 2.56 8.62 2.89 8.9 3.25 9.27 3.67 9.75 4.14 10.3 4.66 10.91 5.23 11.57 5.84 12.25 6.47 12.91 7.12 13.54 7.76 14.08 8.39 14.57 8.96 14.95 9.52L801 432.86"
+         id="path76" />
+      <use
+         width="100%"
+         height="100%"
+         stroke-width=".02"
+         transform="scale(200 -200) rotate(24.35 4.503 .504)"
+         xlink:href="#j"
+         id="use77" />
+      <use
+         width="100%"
+         height="100%"
+         stroke-width=".02"
+         transform="scale(200 -200) rotate(-.07 -1335.96 -1630.035)"
+         xlink:href="#j"
+         id="use78" />
+      <use
+         width="100%"
+         height="100%"
+         stroke-width=".02"
+         transform="scale(200 -200) rotate(-24.71 -2.44 -8.648)"
+         xlink:href="#j"
+         id="use79" />
+      <path
+         stroke-width="2"
+         d="M-1 360.62l23.36-6.52 22.07-5.91 20.63-5.28 19.13-4.66 17.62-4.05 16.22-3.49 15.01-2.98 14-2.55 13.25-2.16 12.77-1.85 12.55-1.57 12.66-1.33 13.14-1.13 14.09-.96 15.65-.81 18.02-.67 21.96-.54 28.37-.42 38.75-.29 51.75-.12 51.75.12 38.75.29 28.37.42 21.96.54 18.02.67 15.65.81 14.09.96 13.14 1.13 12.66 1.33 12.55 1.57 12.77 1.85 13.25 2.16 14 2.55 15.01 2.98 16.22 3.49 17.62 4.05 19.13 4.66 20.63 5.28 22.07 5.91 23.36 6.52"
+         id="path79" />
+      <use
+         width="100%"
+         height="100%"
+         stroke-width=".02"
+         transform="scale(200 -200) rotate(10.96 8.88 2.575)"
+         xlink:href="#j"
+         id="use80" />
+      <use
+         width="100%"
+         height="100%"
+         stroke-width=".02"
+         transform="scale(200 -200) rotate(-.05 -1794.31 -2281.688)"
+         xlink:href="#j"
+         id="use81" />
+      <use
+         width="100%"
+         height="100%"
+         stroke-width=".02"
+         transform="scale(200 -200) rotate(-11.25 -6.658 -17.82)"
+         xlink:href="#j"
+         id="use82" />
+      <path
+         stroke-width="2"
+         d="M-1 300h802"
+         id="path82" />
+      <use
+         width="100%"
+         height="100%"
+         stroke-width=".02"
+         transform="matrix(200 0 0 -200 132.67 300)"
+         xlink:href="#j"
+         id="use83" />
+      <use
+         width="100%"
+         height="100%"
+         stroke-width=".02"
+         transform="matrix(200 0 0 -200 398.093 300)"
+         xlink:href="#j"
+         id="use84" />
+      <use
+         width="100%"
+         height="100%"
+         stroke-width=".02"
+         transform="matrix(200 0 0 -200 667.33 300)"
+         xlink:href="#j"
+         id="use85" />
+      <path
+         stroke-width="2"
+         d="M-1 239.38l23.36 6.52 22.07 5.91 20.63 5.28 19.13 4.66 17.62 4.05 16.22 3.49 15.01 2.98 14 2.55 13.25 2.16 12.77 1.85 12.55 1.57 12.66 1.33 13.14 1.13 14.09.96 15.65.81 18.02.67 21.96.54 28.37.42 38.75.29 51.75.12 51.75-.12 38.75-.29 28.37-.42 21.96-.54 18.02-.67 15.65-.81 14.09-.96 13.14-1.13 12.66-1.33 12.55-1.57 12.77-1.85 13.25-2.16 14-2.55 15.01-2.98 16.22-3.49 17.62-4.05 19.13-4.66 20.63-5.28 22.07-5.91 23.36-6.52"
+         id="path85" />
+      <use
+         width="100%"
+         height="100%"
+         stroke-width=".02"
+         transform="scale(200 -200) rotate(-10.96 -6.755 -4.075)"
+         xlink:href="#j"
+         id="use86" />
+      <use
+         width="100%"
+         height="100%"
+         stroke-width=".02"
+         transform="scale(200 -200) rotate(.05 1643.435 2280.188)"
+         xlink:href="#j"
+         id="use87" />
+      <use
+         width="100%"
+         height="100%"
+         stroke-width=".02"
+         transform="scale(200 -200) rotate(11.25 8.572 16.32)"
+         xlink:href="#j"
+         id="use88" />
+      <path
+         stroke-width="2"
+         d="M-1 167.14l15.27 10.02 14.95 9.52 14.57 8.96 14.08 8.39 13.54 7.76 12.91 7.12 12.25 6.47 11.57 5.84 10.91 5.23 10.3 4.66 9.75 4.14 9.27 3.67 8.9 3.25 8.62 2.89 8.45 2.56 8.39 2.28 8.44 2.03 8.63 1.8 8.97 1.62 9.46 1.44 10.17 1.27 11.16 1.13 12.48 1 14.32.86 16.73.74 20.33.61 25.42.48 32.24.33 38.92.12 38.92-.12 32.24-.33 25.42-.48 20.33-.61 16.73-.74 14.32-.86 12.48-1 11.16-1.13 10.17-1.27 9.46-1.44 8.97-1.62 8.63-1.8 8.44-2.03 8.39-2.28 8.45-2.56 8.62-2.89 8.9-3.25 9.27-3.67 9.75-4.14 10.3-4.66 10.91-5.23 11.57-5.84 12.25-6.47 12.91-7.12 13.54-7.76 14.08-8.39 14.57-8.96 14.95-9.52L801 167.14"
+         id="path88" />
+      <use
+         width="100%"
+         height="100%"
+         stroke-width=".02"
+         transform="scale(200 -200) rotate(-24.35 -2.45 -2.004)"
+         xlink:href="#j"
+         id="use89" />
+      <use
+         width="100%"
+         height="100%"
+         stroke-width=".02"
+         transform="scale(200 -200) rotate(.07 1119.573 1628.535)"
+         xlink:href="#j"
+         id="use90" />
+      <use
+         width="100%"
+         height="100%"
+         stroke-width=".02"
+         transform="scale(200 -200) rotate(24.71 4.408 7.148)"
+         xlink:href="#j"
+         id="use91" />
+      <path
+         stroke-width="2"
+         d="M-1 47.17l8.2 12.65 8.37 12.46 8.52 12.22 8.65 11.98 8.77 11.71 8.85 11.41 8.9 11.06 8.92 10.68 8.88 10.25 8.79 9.78 8.66 9.24 8.45 8.67 8.2 8.06 7.91 7.44 7.59 6.79 7.25 6.17 6.93 5.56 6.62 5.01 6.34 4.5 6.12 4.03 5.95 3.63 5.83 3.27 5.78 2.95 5.8 2.68 5.88 2.44 6.02 2.23 6.26 2.04 6.57 1.87 6.97 1.71 7.48 1.58 8.12 1.43 8.9 1.31 9.91 1.19 11.14 1.07 12.73.95 14.87.83 17.53.71 21.15.57 25.76.43 30.82.24h33.22l30.82-.24 25.76-.43 21.15-.57 17.53-.71 14.87-.83 12.73-.95 11.14-1.07 9.91-1.19 8.9-1.31 8.12-1.43 7.48-1.58 6.97-1.71 6.57-1.87 6.26-2.04 6.02-2.23 5.88-2.44 5.8-2.68 5.78-2.95 5.83-3.27 5.95-3.63 6.12-4.03 6.34-4.5 6.62-5.01 6.93-5.56 7.25-6.17 7.59-6.79 7.91-7.44 8.2-8.06 8.45-8.67 8.66-9.24 8.79-9.78 8.88-10.25 8.92-10.68 8.9-11.06 8.85-11.41 8.77-11.71 8.65-11.98 8.52-12.22 8.37-12.46 8.2-12.65"
+         id="path91" />
+      <use
+         width="100%"
+         height="100%"
+         stroke-width=".02"
+         transform="scale(200 -200) rotate(-45.73 -.791 -1.025)"
+         xlink:href="#j"
+         id="use92" />
+      <use
+         width="100%"
+         height="100%"
+         stroke-width=".02"
+         transform="matrix(200 0 0 -200 398.093 259.97)"
+         xlink:href="#j"
+         id="use93" />
+      <use
+         width="100%"
+         height="100%"
+         stroke-width=".02"
+         transform="scale(200 -200) rotate(45.73 2.791 3.718)"
+         xlink:href="#j"
+         id="use94" />
+      <path
+         stroke-width="2"
+         d="M90.93-1l1.89 11.64 2.15 11.64 2.41 11.62 2.67 11.59 2.91 11.53 3.16 11.47 3.4 11.37 3.63 11.24 3.84 11.09 4.04 10.88 4.22 10.63 4.37 10.31 4.47 9.93 4.54 9.45 4.55 8.91 4.52 8.3 4.43 7.62 4.31 6.92 4.17 6.23 4 5.54 3.86 4.93 3.72 4.36 3.64 3.87 3.58 3.46 3.59 3.11 3.65 2.83 3.77 2.6 3.94 2.41 4.18 2.25 4.47 2.11 4.83 1.99 5.23 1.87 5.72 1.76 6.26 1.64 6.92 1.55 7.64 1.43 8.54 1.32 9.63 1.22 10.89 1.1 12.48.99 14.52.87 17.13.75 20.23.61 24.21.45 27.94.24h29.64l27.94-.24 24.21-.45 20.23-.61 17.13-.75 14.52-.87 12.48-.99 10.89-1.1 9.63-1.22 8.54-1.32 7.64-1.43 6.92-1.55 6.26-1.64 5.72-1.76 5.23-1.87 4.83-1.99 4.47-2.11 4.18-2.25 3.94-2.41 3.77-2.6 3.65-2.83 3.59-3.11 3.58-3.46 3.64-3.87 3.72-4.36 3.86-4.93 4-5.54 4.17-6.23 4.31-6.92 4.43-7.62 4.52-8.3 4.55-8.91 4.54-9.45 4.47-9.93 4.37-10.31 4.22-10.63 4.04-10.88 3.84-11.09 3.63-11.24 3.4-11.37 3.16-11.47 2.91-11.53 2.67-11.59 2.41-11.62 2.15-11.64L709.07-1"
+         id="path94" />
+      <use
+         width="100%"
+         height="100%"
+         stroke-width=".02"
+         transform="scale(200 -200) rotate(-64.36 -.243 -.902)"
+         xlink:href="#j"
+         id="use95" />
+      <use
+         width="100%"
+         height="100%"
+         stroke-width=".02"
+         transform="matrix(200 0 0 -200 398.093 246.63)"
+         xlink:href="#j"
+         id="use96" />
+      <use
+         width="100%"
+         height="100%"
+         stroke-width=".02"
+         transform="scale(200 -200) rotate(64.85 2.237 2.251)"
+         xlink:href="#j"
+         id="use97" />
+      <path
+         stroke-width="2"
+         d="M198.84-1l-2.73 8.46-2.52 8.62-2.31 8.79-2.1 8.95-1.87 9.1-1.65 9.24-1.42 9.38-1.18 9.52-.95 9.62-.71 9.74-.47 9.82-.22 9.88.03 9.9.27 9.88.52 9.78.76 9.56.97 9.22 1.15 8.67 1.3 7.91 1.37 6.96 1.39 5.84 1.35 4.77 1.32 3.81 1.28 3.04 1.3 2.49 1.39 2.13 1.57 1.96 1.83 1.88 2.17 1.86 2.57 1.86 3.01 1.84 3.46 1.82 3.97 1.79 4.5 1.74 5.07 1.68 5.67 1.61 6.35 1.53 7.13 1.44 8 1.35 8.99 1.26 10.17 1.15 11.61 1.05 13.37.93 15.49.82 17.95.68 21.11.53 24.33.35 26.57.12 26.54-.12 24.31-.35 21.12-.53 18.07-.68 15.46-.82 13.34-.94 11.6-1.04 10.18-1.16 8.99-1.25 7.98-1.35 7.12-1.44 6.36-1.53 5.68-1.61 5.06-1.68 4.49-1.74 3.97-1.79 3.47-1.82 3.01-1.84 2.57-1.86 2.17-1.86 1.83-1.88 1.57-1.95 1.39-2.14 1.3-2.49 1.28-3.03 1.31-3.81 1.36-4.77 1.39-5.84 1.37-6.96 1.29-7.91 1.16-8.67.97-9.22.76-9.57.52-9.77.27-9.88.03-9.9-.22-9.88-.47-9.82-.7-9.74-.95-9.63-1.19-9.51-1.42-9.38-1.65-9.25-1.87-9.1-2.1-8.94-2.31-8.79-2.52-8.63L601.16-1"
+         id="path97" />
+      <use
+         width="100%"
+         height="100%"
+         stroke-width=".02"
+         transform="scale(200 -200) rotate(-86.49 .09 -.825)"
+         xlink:href="#j"
+         id="use98" />
+      <use
+         width="100%"
+         height="100%"
+         stroke-width=".02"
+         transform="scale(200 -200) rotate(.1 669.407 1139.868)"
+         xlink:href="#j"
+         id="use99" />
+      <use
+         width="100%"
+         height="100%"
+         stroke-width=".02"
+         transform="scale(200 -200) rotate(86.95 1.908 1.289)"
+         xlink:href="#j"
+         id="use100" />
+      <path
+         stroke-width="2"
+         d="M400 220l24.89-.12 23.11-.34 20.45-.54 17.76-.69 15.39-.82 13.39-.94 11.73-1.06 10.34-1.16 9.17-1.26 8.16-1.36 7.29-1.44 6.53-1.53 5.83-1.6 5.22-1.68 4.66-1.74 4.18-1.8 3.83-1.92-1.76-3.37-2.13-4.69-3.1-7.69-9.21-24.02-4.5-11.06-4.21-9.7-4.15-8.93-4.17-8.39-4.23-7.95-4.31-7.55-4.4-7.21-4.49-6.89-4.6-6.57-4.7-6.28-4.8-6-4.9-5.71-4.99-5.44-5.1-5.18-5.18-4.9-5.27-4.64-5.36-4.37-5.43-4.11-5.51-3.86-5.59-3.59-5.64-3.33-5.71-3.08-5.77-2.81-5.82-2.56-5.86-2.3-5.91-2.05-5.94-1.79-5.98-1.53-6-1.28-6.02-1.02-6.04-.77-6.05-.51-6.07-.25h-6.06l-6.06.25-6.05.51-6.04.77-6.03 1.02-6 1.28-5.97 1.53-5.95 1.79-5.9 2.04-5.87 2.31-5.82 2.56-5.76 2.81-5.71 3.08-5.65 3.33-5.58 3.59-5.51 3.85-5.44 4.12-5.35 4.37-5.28 4.64-5.18 4.9-5.09 5.17-5 5.44-4.9 5.72-4.8 5.99-4.7 6.28-4.59 6.58-4.5 6.88-4.4 7.21-4.31 7.56-4.23 7.94-4.17 8.39-4.15 8.94-4.2 9.69-4.51 11.07-9.22 24.05-3.09 7.66-2.13 4.69-1.76 3.37 3.83 1.91 4.17 1.81 4.66 1.74 5.21 1.67 5.83 1.61 6.51 1.52 7.3 1.45 8.17 1.35 9.15 1.26 10.32 1.16 11.72 1.06 13.41.95 15.39.82 17.77.69 20.46.54 23.12.34z"
+         id="path100" />
+      <use
+         width="100%"
+         height="100%"
+         stroke-width=".02"
+         transform="scale(200 -200) rotate(.11 573.927 1036.226)"
+         xlink:href="#j"
+         id="use101" />
+      <use
+         width="100%"
+         height="100%"
+         stroke-width=".02"
+         transform="scale(-200 200) rotate(-53.33 -.918 2.878)"
+         xlink:href="#j"
+         id="use102" />
+      <use
+         width="100%"
+         height="100%"
+         stroke-width=".02"
+         transform="scale(-200 200) rotate(54.05 -1.076 -1.084)"
+         xlink:href="#j"
+         id="use103" />
+      <path
+         stroke-width="2"
+         d="M400 206.67l23.16-.11 21.8-.33 19.67-.5 17.4-.66 15.31-.79 13.51-.91 11.96-1.02 10.68-1.13 9.57-1.22-15.18-12.01-9.3-7.1-8.14-5.9-7.53-5.17-7.15-4.62-6.91-4.17-6.73-3.77-6.61-3.42-6.5-3.09-6.44-2.79-6.37-2.48-6.33-2.21-6.3-1.93-6.26-1.66-6.25-1.39-6.24-1.14-6.21-.88-6.21-.63-6.21-.38-6.19-.12-6.2.12-6.21.38-6.2.63-6.22.88-6.23 1.14-6.25 1.39-6.26 1.66-6.3 1.93-6.33 2.21-6.38 2.49-6.43 2.78-6.51 3.09-6.6 3.42-6.73 3.78-6.91 4.16-7.16 4.62-7.52 5.17-8.14 5.9-9.31 7.1L256.94 200l9.57 1.22 10.67 1.13 11.94 1.02 13.47.9 15.31.8 17.4.66 19.69.5 21.82.32z"
+         id="path103" />
+      <use
+         width="100%"
+         height="100%"
+         stroke-width=".02"
+         transform="scale(200 -200) rotate(.11 539.185 1036.26)"
+         xlink:href="#j"
+         id="use104" />
+      <use
+         width="100%"
+         height="100%"
+         stroke-width=".02"
+         transform="scale(-200 200) rotate(.45 -87.07 -254.309)"
+         xlink:href="#j"
+         id="use105" />
+    </g>
+    <use
+       width="100%"
+       height="100%"
+       transform="translate(860)"
+       xlink:href="#k"
+       id="use106" />
+  </g>
+  <g
+     id="g147">
+    <g
+       id="m"
+       display="inline"
+       transform="matrix(.69289 0 0 -.69289 207.162 203.353)">
+      <circle
+         r="14"
+         fill="#b0b0b0"
+         id="circle106" />
+      <circle
+         r="14"
+         fill="url(#l)"
+         stroke="#000"
+         stroke-width="2"
+         id="circle107" />
+      <circle
+         r="4"
+         id="circle108" />
+    </g>
+    <use
+       width="100%"
+       height="100%"
+       transform="translate(19.22)"
+       xlink:href="#m"
+       id="use108" />
+    <use
+       width="100%"
+       height="100%"
+       transform="translate(38.44)"
+       xlink:href="#m"
+       id="use109" />
+    <use
+       width="100%"
+       height="100%"
+       transform="translate(57.661)"
+       xlink:href="#m"
+       id="use110" />
+    <use
+       width="100%"
+       height="100%"
+       transform="translate(76.881)"
+       xlink:href="#m"
+       id="use111" />
+    <use
+       width="100%"
+       height="100%"
+       transform="translate(96.102)"
+       xlink:href="#m"
+       id="use112" />
+    <use
+       width="100%"
+       height="100%"
+       transform="translate(115.322)"
+       xlink:href="#m"
+       id="use113" />
+    <use
+       width="100%"
+       height="100%"
+       transform="translate(134.542)"
+       xlink:href="#m"
+       id="use114" />
+    <use
+       width="100%"
+       height="100%"
+       transform="translate(153.763)"
+       xlink:href="#m"
+       id="use115" />
+    <use
+       width="100%"
+       height="100%"
+       transform="translate(172.983)"
+       xlink:href="#m"
+       id="use116" />
+    <use
+       width="100%"
+       height="100%"
+       transform="translate(192.203)"
+       xlink:href="#m"
+       id="use117" />
+    <use
+       width="100%"
+       height="100%"
+       transform="translate(211.424)"
+       xlink:href="#m"
+       id="use118" />
+    <use
+       width="100%"
+       height="100%"
+       transform="translate(230.644)"
+       xlink:href="#m"
+       id="use119" />
+    <use
+       width="100%"
+       height="100%"
+       transform="translate(249.864)"
+       xlink:href="#m"
+       id="use120" />
+    <use
+       width="100%"
+       height="100%"
+       transform="translate(269.085)"
+       xlink:href="#m"
+       id="use121" />
+    <use
+       width="100%"
+       height="100%"
+       transform="translate(288.305)"
+       xlink:href="#m"
+       id="use122" />
+    <use
+       width="100%"
+       height="100%"
+       transform="translate(307.525)"
+       xlink:href="#m"
+       id="use123" />
+    <use
+       width="100%"
+       height="100%"
+       transform="translate(326.746)"
+       xlink:href="#m"
+       id="use124" />
+    <use
+       width="100%"
+       height="100%"
+       transform="translate(345.966)"
+       xlink:href="#m"
+       id="use125" />
+    <use
+       width="100%"
+       height="100%"
+       transform="translate(365.186)"
+       xlink:href="#m"
+       id="use126" />
+    <use
+       width="100%"
+       height="100%"
+       transform="translate(384.407)"
+       xlink:href="#m"
+       id="use127" />
+    <g
+       id="o"
+       display="inline"
+       transform="matrix(.6929 0 0 -.6929 207.162 395.636)">
+      <circle
+         r="14"
+         fill="#b0b0b0"
+         id="circle127" />
+      <circle
+         r="14"
+         fill="url(#n)"
+         stroke="#000"
+         stroke-width="2"
+         id="circle128" />
+      <path
+         d="M8.6-11L11-8.6 2.6 0 11 8.6 8.6 11 0 2.6-8.6 11-11 8.6-2.6 0-11-8.6l2.4-2.4L0-2.6z"
+         id="path128" />
+    </g>
+    <use
+       width="100%"
+       height="100%"
+       transform="translate(19.22)"
+       xlink:href="#o"
+       id="use128" />
+    <use
+       width="100%"
+       height="100%"
+       transform="translate(38.441)"
+       xlink:href="#o"
+       id="use129" />
+    <use
+       width="100%"
+       height="100%"
+       transform="translate(57.662)"
+       xlink:href="#o"
+       id="use130" />
+    <use
+       width="100%"
+       height="100%"
+       transform="translate(76.883)"
+       xlink:href="#o"
+       id="use131" />
+    <use
+       width="100%"
+       height="100%"
+       transform="translate(96.103)"
+       xlink:href="#o"
+       id="use132" />
+    <use
+       width="100%"
+       height="100%"
+       transform="translate(115.324)"
+       xlink:href="#o"
+       id="use133" />
+    <use
+       width="100%"
+       height="100%"
+       transform="translate(134.545)"
+       xlink:href="#o"
+       id="use134" />
+    <use
+       width="100%"
+       height="100%"
+       transform="translate(153.765)"
+       xlink:href="#o"
+       id="use135" />
+    <use
+       width="100%"
+       height="100%"
+       transform="translate(172.986)"
+       xlink:href="#o"
+       id="use136" />
+    <use
+       width="100%"
+       height="100%"
+       transform="translate(192.207)"
+       xlink:href="#o"
+       id="use137" />
+    <use
+       width="100%"
+       height="100%"
+       transform="translate(211.427)"
+       xlink:href="#o"
+       id="use138" />
+    <use
+       width="100%"
+       height="100%"
+       transform="translate(230.648)"
+       xlink:href="#o"
+       id="use139" />
+    <use
+       width="100%"
+       height="100%"
+       transform="translate(249.869)"
+       xlink:href="#o"
+       id="use140" />
+    <use
+       width="100%"
+       height="100%"
+       transform="translate(269.09)"
+       xlink:href="#o"
+       id="use141" />
+    <use
+       width="100%"
+       height="100%"
+       transform="translate(288.31)"
+       xlink:href="#o"
+       id="use142" />
+    <use
+       width="100%"
+       height="100%"
+       transform="translate(307.53)"
+       xlink:href="#o"
+       id="use143" />
+    <use
+       width="100%"
+       height="100%"
+       transform="translate(326.751)"
+       xlink:href="#o"
+       id="use144" />
+    <use
+       width="100%"
+       height="100%"
+       transform="translate(345.972)"
+       xlink:href="#o"
+       id="use145" />
+    <use
+       width="100%"
+       height="100%"
+       transform="translate(365.193)"
+       xlink:href="#o"
+       id="use146" />
+    <use
+       width="100%"
+       height="100%"
+       transform="translate(384.413)"
+       xlink:href="#o"
+       id="use147" />
+  </g>
+  <g
+     id="g167">
+    <g
+       id="q"
+       display="inline"
+       transform="scale(1 -1) rotate(5.7 2560.027 -1730.676)">
+      <path
+         fill="url(#p)"
+         stroke="#000"
+         stroke-width="1.434"
+         d="M360.76 22.663v-192.928c.006-5.408 4.392-9.79 9.8-9.79s9.794 4.382 9.8 9.79V22.663c-.006 5.408-4.392 9.789-9.8 9.789s-9.794-4.381-9.8-9.79z"
+         id="path147" />
+      <circle
+         cx="370.56"
+         cy="22.663"
+         r="2.39"
+         stroke-width=".478"
+         opacity=".5"
+         id="circle147" />
+      <use
+         stroke-width=".478"
+         opacity=".5"
+         xlink:href="#reuse-0"
+         id="use148" />
+    </g>
+    <use
+       width="100%"
+       height="100%"
+       transform="translate(19.209)"
+       xlink:href="#q"
+       id="use149" />
+    <use
+       width="100%"
+       height="100%"
+       transform="translate(38.418)"
+       xlink:href="#q"
+       id="use150" />
+    <use
+       width="100%"
+       height="100%"
+       transform="translate(57.627)"
+       xlink:href="#q"
+       id="use151" />
+    <use
+       width="100%"
+       height="100%"
+       transform="translate(76.835)"
+       xlink:href="#q"
+       id="use152" />
+    <use
+       width="100%"
+       height="100%"
+       transform="translate(96.044)"
+       xlink:href="#q"
+       id="use153" />
+    <use
+       width="100%"
+       height="100%"
+       transform="translate(115.253)"
+       xlink:href="#q"
+       id="use154" />
+    <use
+       width="100%"
+       height="100%"
+       transform="translate(134.462)"
+       xlink:href="#q"
+       id="use155" />
+    <use
+       width="100%"
+       height="100%"
+       transform="translate(153.67)"
+       xlink:href="#q"
+       id="use156" />
+    <use
+       width="100%"
+       height="100%"
+       transform="translate(172.88)"
+       xlink:href="#q"
+       id="use157" />
+    <use
+       width="100%"
+       height="100%"
+       transform="translate(192.089)"
+       xlink:href="#q"
+       id="use158" />
+    <use
+       width="100%"
+       height="100%"
+       transform="translate(211.297)"
+       xlink:href="#q"
+       id="use159" />
+    <use
+       width="100%"
+       height="100%"
+       transform="translate(230.506)"
+       xlink:href="#q"
+       id="use160" />
+    <use
+       width="100%"
+       height="100%"
+       transform="translate(249.715)"
+       xlink:href="#q"
+       id="use161" />
+    <use
+       width="100%"
+       height="100%"
+       transform="translate(268.924)"
+       xlink:href="#q"
+       id="use162" />
+    <use
+       width="100%"
+       height="100%"
+       transform="translate(288.133)"
+       xlink:href="#q"
+       id="use163" />
+    <use
+       width="100%"
+       height="100%"
+       transform="translate(307.342)"
+       xlink:href="#q"
+       id="use164" />
+    <use
+       width="100%"
+       height="100%"
+       transform="translate(326.55)"
+       xlink:href="#q"
+       id="use165" />
+    <use
+       width="100%"
+       height="100%"
+       transform="translate(345.76)"
+       xlink:href="#q"
+       id="use166" />
+    <use
+       width="100%"
+       height="100%"
+       transform="translate(364.968)"
+       xlink:href="#q"
+       id="use167" />
+  </g>
+  <g
+     stroke="#000"
+     id="g169">
+    <path
+       fill="#0c0"
+       stroke="none"
+       d="M1068.07 200h383.86v200h-383.86z"
+       id="path167" />
+    <path
+       fill="red"
+       stroke="none"
+       d="M1260 200h191.93v200H1260z"
+       id="path168" />
+    <path
+       fill="url(#r)"
+       stroke-width="3"
+       d="M-295.32-106.169H88.54v200h-383.86z"
+       transform="translate(1363.39 306.17)"
+       id="path169" />
+  </g>
+  <text
+     x="1120.658"
+     y="321.841"
+     stroke-width=".5"
+     font-family="Bitstream Vera Sans"
+     font-size="60"
+     text-anchor="middle"
+     id="text169">
+    S
+  </text>
+  <text
+     x="1397.877"
+     y="321.87"
+     stroke-width=".5"
+     font-family="Bitstream Vera Sans"
+     font-size="60"
+     text-anchor="middle"
+     id="text170">
+    N
+  </text>
+</svg>
