@@ -169,14 +169,94 @@
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Basic structure of the armature %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Basic structure of the armature}
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.925\textwidth]{fig/lec03/Armature_slots.pdf}
+        \caption{Cross-section of a drum-type armature including principle winding schemes (adapted from W.~Novender, \textit{Elektrische Maschinen}, Technische Hochschule Mittelhessen, 2023)}
+    \end{figure}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Commutation process with an armature lap winding %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
 	\frametitle{Commutation process with an armature lap winding}
+	\vspace{-0.1cm}
     \begin{figure}
         \centering
         \includegraphics[height=0.6\textheight]{fig/lec03/Commutation_process_lap_winding.pdf}
-        \caption{Three still images of the commutation process with a simplified winding representation (from left to right): when the brush touches two commutator segments, the according conductor loop is short-circuited and the current is reduced to zero. The brush then moves to the next commutator segment and the current starts flowing again but in a different direction.}
+        \caption{Three still images of the commutation process with a simplified winding representation (from left to right): when the brush touches two commutator segments, the according conductor loop is short-circuited and the current is reduced to zero. The brush then moves to the next commutator segment and the current starts flowing again but in the opposite direction (adapted from W.~Novender, \textit{Elektrische Maschinen}, Technische Hochschule Mittelhessen, 2023).}
+    \end{figure}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% DC machines with multiple pole pairs %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{DC machines with multiple pole pairs}
+    \begin{columns}
+		\begin{column}{0.42\textwidth}
+            \begin{itemize}
+				\item To reduce the effective length per armature conductor loop, the winding can form multiple pole pairs $p$.
+				\item This will reduce the inductance per loop which is beneficial for the commutation process.
+				\item The stator excitation must meet the same number of pole pairs.
+				\item Given some inner stator diameter $D_\mathrm{s}$, the resulting pole pitch is:
+			\end{itemize}
+			\begin{equation}
+				\tau_\mathrm{p} = \frac{\pi D_\mathrm{s}}{2p}, \quad \rho_\mathrm{p} = \frac{\pi}{p} .
+			\end{equation}
+		\end{column}
+        \hfill
+		\begin{column}{0.55\textwidth}
+			\begin{figure}
+				\centering
+				\includegraphics[width=0.64\textwidth]{fig/lec03/DC_machine_cross_section_two_pole_pairs.pdf}
+				\caption{Simplified DC machine cross section with $p=2$ pole pairs (adapted from J.~B\"ocker, \textit{Elektrische Antriebstechnik}, Paderborn University, 2020)}
+				\label{fig:Simple_yoke_coil}
+			\end{figure}
+		\end{column}
+		\end{columns}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Lap winding characteristics %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Lap winding characteristics}
+    \begin{columns}
+		\begin{column}{0.42\textwidth}
+            \begin{itemize}
+				\item tbc
+			\end{itemize}
+		\end{column}
+        \hfill
+		\begin{column}{0.55\textwidth}
+			\begin{figure}
+				\centering
+				\includegraphics[width=0.85\textwidth]{fig/lec03/Lap_winding_distances.pdf}
+				\caption{Distance definitions of the armature lap winding (adapted from W.~Novender, \textit{Elektrische Maschinen}, Technische Hochschule Mittelhessen, 2023)}
+			\end{figure}
+		\end{column}
+		\end{columns}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Lap winding characteristics (cont.) %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Lap winding characteristics (cont.)}
+	For describing the winding layout, the following parameters are introduced:
+	\begin{gather*}
+		Q: \mbox{number of slots}, \quad N_\mathrm{c}: \mbox{number of conductor turns per coil}, \\ K: \mbox{number of commutator elements}, \quad u = K/Q: \mbox{slot/commutator ratio}.
+	\end{gather*}
+    \begin{figure}
+        \centering
+        \includegraphics[height=0.35\textheight]{fig/lec03/Lap_winding_characteristics.pdf}
+        \caption{Coil width and slot design characteristics for a lap winding (adapted from W.~Novender, \textit{Elektrische Maschinen}, Technische Hochschule Mittelhessen, 2023)}
     \end{figure}
 \end{frame}
 
