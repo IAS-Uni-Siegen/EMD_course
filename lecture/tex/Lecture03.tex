@@ -223,6 +223,39 @@
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Winding characteristics (cont.) %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Winding characteristics}
+	For describing the winding layout, the following parameters are introduced:
+	\begin{gather*}
+		Q: \mbox{number of slots}, \quad N_\mathrm{c}: \mbox{number of conductor turns per coil}, \\ K: \mbox{number of commutator elements}, \quad u = K/Q: \mbox{slot to commutator ratio}.
+	\end{gather*}
+    \begin{figure}
+        \centering
+        \includegraphics[height=0.35\textheight]{fig/lec03/Lap_winding_characteristics.pdf}
+        \caption{Coil width and slot design characteristics (adapted from W.~Novender, \textit{Elektrische Maschinen}, Technische Hochschule Mittelhessen, 2023)}
+		\label{fig:Lap_winding_characteristics}
+    \end{figure}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Double layer winding %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Double layer winding}
+	\begin{itemize}
+		\item The forward conductor of one coil and the return conductor of another coil are placed in the same slot.
+		\item Enables chording of the winding ($\rho_\mathrm{p}\neq y_\mathrm{b}$), another degree of freedom for the machine design (cf. \figref{fig:Lap_winding_characteristics}).
+	\end{itemize}
+    \begin{figure}
+        \centering
+        \includegraphics[height=0.45\textheight]{fig/lec03/Double_layer_winding.pdf}
+        \caption{Double layer winding with $u=3$ with a solid conductor element (which can be pre-manufactured for cost reasons)}
+    \end{figure}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Lap winding characteristics %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
@@ -230,8 +263,15 @@
     \begin{columns}
 		\begin{column}{0.42\textwidth}
             \begin{itemize}
-				\item tbc
+				\item Back pitch $y_\mathrm{b}$: coil span from the back end
+				\item Front pitch $y_\mathrm{f}$: coil span from the front end
+				\item Resultant pitch $y_\mathrm{r}$: distance between two consecutive coils
+				\item Commutator pitch $y_\mathrm{c}$: distance between two consecutive commutator segments
 			\end{itemize}
+			\vspace{-0.4cm}
+			\begin{varblock}{Progressive winding}
+				\figref{fig:Lap_winding_distances} shows a progressive winding layout with $y_\mathrm{b} > y_\mathrm{f}$, i.e., the coils do not cross themselves.
+			\end{varblock}
 		\end{column}
         \hfill
 		\begin{column}{0.55\textwidth}
@@ -239,6 +279,7 @@
 				\centering
 				\includegraphics[width=0.85\textwidth]{fig/lec03/Lap_winding_distances.pdf}
 				\caption{Distance definitions of the armature lap winding (adapted from W.~Novender, \textit{Elektrische Maschinen}, Technische Hochschule Mittelhessen, 2023)}
+				\label{fig:Lap_winding_distances}
 			\end{figure}
 		\end{column}
 		\end{columns}
@@ -249,37 +290,159 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
 	\frametitle{Lap winding characteristics (cont.)}
-	For describing the winding layout, the following parameters are introduced:
-	\begin{gather*}
-		Q: \mbox{number of slots}, \quad N_\mathrm{c}: \mbox{number of conductor turns per coil}, \\ K: \mbox{number of commutator elements}, \quad u = K/Q: \mbox{slot/commutator ratio}.
-	\end{gather*}
-    \begin{figure}
-        \centering
-        \includegraphics[height=0.35\textheight]{fig/lec03/Lap_winding_characteristics.pdf}
-        \caption{Coil width and slot design characteristics for a lap winding (adapted from W.~Novender, \textit{Elektrische Maschinen}, Technische Hochschule Mittelhessen, 2023)}
-    \end{figure}
+    \begin{columns}
+		\begin{column}{0.42\textwidth}
+			\begin{varblock}{Retrogressive winding}
+				\figref{fig:Lap_winding_distances_retrogressive} shows a Retrogressive winding layout with $y_\mathrm{b} < y_\mathrm{f}$, i.e., each coil crosses itself.
+			\end{varblock}
+			\begin{itemize}
+				\item Retrogressive windings require more conductor material due to the crossing of the coils and, therefore, are less common.
+				\item Technical feasibility requires $y_\mathrm{b} - y_\mathrm{f} = \pm y_\mathrm{c}$, i.e., the lap winding progresses or retrogresses by one commutator element.
+			\end{itemize}
+		\end{column}
+        \hfill
+		\begin{column}{0.55\textwidth}
+			\begin{figure}
+				\centering
+				\includegraphics[width=0.85\textwidth]{fig/lec03/Lap_winding_distances_retrogressive.pdf}
+				\caption{Lap winding with a retrogressive scheme (adapted from W.~Novender, \textit{Elektrische Maschinen}, Technische Hochschule Mittelhessen, 2023)}
+				\label{fig:Lap_winding_distances_retrogressive}
+			\end{figure}
+		\end{column}
+		\end{columns}
 \end{frame}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Lap winding %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
-	\frametitle{Lap winding}
-    \begin{figure}
-        \centering
-        \includegraphics[height=0.65\textheight]{fig/lec03/Lap_winding.pdf}
-        \caption{Lap winding with commutator unrolled along the circumferential coordinate}
-    \end{figure}
+	\frametitle{Lap winding: final remarks and single pole pair example}
+	\begin{columns}
+		\begin{column}{0.35\textwidth}
+			\begin{itemize}
+				\item Total number of armature turns: $N = \frac{KN_\mathrm{c}}{2p}$
+				\item Current per armature conductor: $i_\mathrm{c} = \frac{I_\mathrm{A}}{2 p}$
+			\end{itemize}
+			\begin{varblock}{Parallel connection of poles}
+				For $p>1$ the lap winding parallels the armature coils for each pole enabling a higher current (but limited voltage) rating.
+			\end{varblock}
+		\end{column}
+		\hfill
+		\begin{column}{0.65\textwidth}
+			\begin{figure}
+				\centering
+				\includegraphics[width=0.95\textwidth]{fig/lec03/Lap_winding.pdf}
+				\caption{Lap winding with commutator unrolled along the circumferential coordinate}
+			\end{figure}
+		\end{column}
+	\end{columns}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Wave winding characteristics %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Wave winding characteristics}
+    \begin{columns}
+		\begin{column}{0.42\textwidth}
+            \begin{itemize}
+				\item Commutator pitch (wave winding): $y_\mathrm{c} = y_\mathrm{f} + y_\mathrm{b}$, i.e., each coil spans (nearly) the entire pole pitch.  
+			\end{itemize}
+			\vspace{-0.4cm}
+			\begin{varblock}{Progressive winding}
+				\figref{fig:Wave_winding_distances} shows a progressive winding layout since each new wave winding coil starts one commutator element to the right. 
+			\end{varblock}
+		\end{column}
+        \hfill
+		\begin{column}{0.55\textwidth}
+			\begin{figure}
+				\centering
+				\includegraphics[width=0.85\textwidth]{fig/lec03/Wave_winding_distances.pdf}
+				\caption{Distance definitions of the armature wave winding (adapted from W.~Novender, \textit{Elektrische Maschinen}, Technische Hochschule Mittelhessen, 2023)}
+				\label{fig:Wave_winding_distances}
+			\end{figure}
+		\end{column}
+		\end{columns}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Wave winding %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
-	\frametitle{Wave winding}
-    \begin{figure}
-        \centering
-        \includegraphics[height=0.625\textheight]{fig/lec03/Wave_winding.pdf}
-        \caption{Wave winding with commutator unrolled along the circumferential coordinate}
-    \end{figure}
+	\frametitle{Wave winding: final remarks and single pole pair example}
+	\begin{columns}
+		\begin{column}{0.35\textwidth}
+			\begin{itemize}
+				\item Total number of armature turns: $N = \frac{K N_\mathrm{c}}{2}$
+				\item Current per armature conductor: $i_\mathrm{c} = \frac{I_\mathrm{A}}{2}$
+			\end{itemize}
+			\begin{varblock}{Series connection of poles}
+				For $p>1$ the wave winding connects the armature coils for all poles in series enabling a higher voltage (but limited current) rating.
+			\end{varblock}
+		\end{column}
+		\hfill
+		\begin{column}{0.65\textwidth}
+			\begin{figure}
+				\centering
+				\includegraphics[width=0.95\textwidth]{fig/lec03/Wave_winding.pdf}
+				\caption{Wave winding with commutator unrolled along the circumferential coordinate}
+			\end{figure}
+		\end{column}
+	\end{columns}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Air gap field %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Air gap field}
+	\begin{columns}
+		\begin{column}{0.65\textwidth}
+			\textbf{Assumption}: The air gap field distribution is homogenous and without any leakage (cf. \figref{fig:Ideal_air_gap_field}).\\ Consequently, we model the magnetic machine behavior with the simplified network shown in \figref{fig:Simplified_magnetic_network_DC_machine}. 
+			\begin{figure}
+				\centering
+				\includegraphics[width=0.4\textwidth]{fig/lec03/Ideal_air_gap_field.pdf}
+				\caption{Idealized field lines (adapted from W.~Novender, \textit{Elektrische Maschinen}, Technische Hochschule Mittelhessen, 2023)}
+				\label{fig:Ideal_air_gap_field}
+			\end{figure}
+		\end{column}
+		\hfill
+		\begin{column}{0.33\textwidth}
+			\begin{figure}
+				\centering
+				\includegraphics[height=0.65\textheight]{fig/lec03/Simplified_magnetic_network_DC_machine.pdf}
+				\caption{Simplified magnetic network of a DC machine}
+				\label{fig:Simplified_magnetic_network_DC_machine}
+			\end{figure}
+		\end{column}
+	\end{columns}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Air gap field (cont.) %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Air gap field (cont.)}
+	\begin{columns}
+		\begin{column}{0.65\textwidth}
+			We introduce the following magnetic reluctances
+			\begin{equation}
+				\begin{split}
+					R_\mathrm{S} &= \frac{l_\mathrm{S}}{\mu_{\mathrm{r, Fe}} \mu_0  A_\mathrm{S}} \quad  (\mbox{stator reluctance}), \\ \quad R_\mathrm{A} &= \frac{l_\mathrm{A}}{\mu_{\mathrm{r, Fe}}\mu_0  A_\mathrm{A}} \quad  (\mbox{armature reluctance}), \\
+					R_\delta &= \frac{l_\delta}{\mu_0 A_\delta} \quad  (\mbox{air gap reluctance}).
+				\end{split}
+			\end{equation}
+			The above $l_i$ and $A_i$ are the respective lengths and cross-sectional areas of the field path. Furthermore, we have 
+			$$ \mu_{\mathrm{r},\delta} = 1, \qquad \mu_{\mathrm{r, Fe}} >> 1 .$$
+
+		\end{column}
+		\hfill
+		\begin{column}{0.35\textwidth}
+			\begin{figure}
+				\centering
+				\includegraphics[height=0.65\textheight]{fig/lec03/Simplified_magnetic_network_DC_machine.pdf}
+			\end{figure}
+		\end{column}
+	\end{columns}
 \end{frame}
