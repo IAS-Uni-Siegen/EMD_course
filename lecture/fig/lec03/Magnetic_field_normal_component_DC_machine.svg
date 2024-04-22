@@ -24,15 +24,15 @@
      inkscape:deskcolor="#505050"
      inkscape:document-units="mm"
      showgrid="true"
-     inkscape:zoom="1.8779181"
-     inkscape:cx="333.08162"
-     inkscape:cy="141.91247"
+     inkscape:zoom="10.623109"
+     inkscape:cx="530.11789"
+     inkscape:cy="140.87213"
      inkscape:window-width="2560"
      inkscape:window-height="1351"
      inkscape:window-x="2551"
      inkscape:window-y="-9"
      inkscape:window-maximized="1"
-     inkscape:current-layer="layer1"><inkscape:grid
+     inkscape:current-layer="g80-8"><inkscape:grid
        id="grid1"
        units="mm"
        originx="-27.9"
@@ -267,7 +267,7 @@
      inkscape:label="Ebene 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-27.899999,-49.899985)"><rect
+     transform="translate(-27.9, -49.9)"><rect
        style="fill:#dfdfdf;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.2;stroke-linecap:round;stroke-miterlimit:3.9;stroke-dasharray:0.799999, 0.799999;stroke-dashoffset:0;stroke-opacity:1"
        id="rect16"
        width="153.98741"
@@ -654,7 +654,7 @@
            id="tspan73"
            style="font-size:4.93889px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.2"
            x="145"
-           y="109">Aramature</tspan></text><text
+           y="109">Armature</tspan></text><text
          xml:space="preserve"
          style="font-size:4.93889px;line-height:0.95;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;text-anchor:middle;fill:#dfdfdf;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.2;stroke-linecap:square;stroke-miterlimit:3.9;stroke-dasharray:0.600001, 0.600001;stroke-dashoffset:0;stroke-opacity:1"
          x="144.8735"
@@ -704,30 +704,21 @@
          sodipodi:nodetypes="cc" /><g
          inkscape:label=""
          transform="translate(173.84251,82.16341)"
-         id="g81"><g
-   fill="#000000"
-   fill-opacity="1"
-   id="g3"
-   transform="matrix(0.352778,0,0,0.352778,-0.984206,-0.703748)">
-    <g
-   id="use2"
-   transform="translate(1.993,13.948)">
-      <path
-   d="m 4.375,-11.515625 c 0.015625,-0.07813 0.046875,-0.171875 0.046875,-0.265625 0,-0.171875 -0.171875,-0.171875 -0.203125,-0.171875 -0.015625,0 -0.640625,0.0625 -0.953125,0.09375 -0.28125,0.01563 -0.546875,0.04687 -0.859375,0.0625 C 2,-11.765625 1.875,-11.75 1.875,-11.4375 c 0,0.171875 0.171875,0.171875 0.34375,0.171875 0.875,0 0.875,0.15625 0.875,0.328125 0,0.07813 0,0.109375 -0.078125,0.421875 L 0.875,-1.984375 c -0.046875,0.1875 -0.078125,0.328125 -0.078125,0.609375 0,0.859375 0.625,1.546875 1.515625,1.546875 0.5625,0 0.9375,-0.375 1.21875,-0.90625 C 3.828125,-1.3125 4.0625,-2.390625 4.0625,-2.46875 4.0625,-2.546875 4,-2.625 3.890625,-2.625 c -0.15625,0 -0.171875,0.09375 -0.234375,0.359375 -0.3125,1.1875 -0.625,2.09375 -1.3125,2.09375 -0.515625,0 -0.515625,-0.546875 -0.515625,-0.796875 0,-0.0625 0,-0.421875 0.125,-0.90625 z m 0,0"
-   id="path78" />
-    </g>
-  </g>
+         id="g81">
   <g
    fill="#000000"
    fill-opacity="1"
-   id="g80"
-   transform="matrix(0.352778,0,0,0.352778,-0.984206,-0.703748)">
+   id="g80-8"
+   transform="matrix(0.55483363,0,0,0.55483363,-3.0989814,-4.8318007)"
+   style="stroke-width:0.635827">
     <g
-   id="g79"
-   transform="translate(7.0139999,16.530001)">
+   id="g79-3"
+   transform="matrix(1.0829744,0,0,1.0829744,5.07698,16.697736)"
+   style="stroke-width:0.587112">
       <path
    d="m 2.875,-4.765625 c -1.359375,0.328125 -2.421875,1.75 -2.421875,3.0625 0,1.046875 0.703125,1.828125 1.734375,1.828125 1.265625,0 2.171875,-1.703125 2.171875,-3.21875 0,-0.984375 -0.4375,-1.53125 -0.796875,-2.015625 -0.40625,-0.5 -1.046875,-1.3125 -1.046875,-1.796875 0,-0.234375 0.21875,-0.5 0.609375,-0.5 0.328125,0 0.546875,0.140625 0.765625,0.296875 0.21875,0.125 0.4375,0.265625 0.609375,0.265625 0.265625,0 0.421875,-0.25 0.421875,-0.4375 0,-0.234375 -0.171875,-0.265625 -0.5625,-0.359375 C 3.796875,-7.75 3.640625,-7.75 3.46875,-7.75 c -0.84375,0 -1.25,0.46875 -1.25,1.125 0,0.578125 0.328125,1.1875 0.65625,1.859375 z m 0.140625,0.234375 c 0.265625,0.5 0.59375,1.09375 0.59375,1.875 0,0.71875 -0.40625,2.546875 -1.421875,2.546875 -0.609375,0 -1.046875,-0.453125 -1.046875,-1.28125 0,-0.6875 0.390625,-2.75 1.875,-3.140625 z m 0,0"
-   id="path79" />
+   id="path79-0"
+   style="stroke-width:0.587112" />
     </g>
   </g>
 </g><path
