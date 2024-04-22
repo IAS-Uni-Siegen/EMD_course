@@ -204,10 +204,10 @@
 				\item To reduce the effective length per armature conductor loop, the winding can form multiple pole pairs $p$.
 				\item This will reduce the inductance per loop which is beneficial for the commutation process.
 				\item The stator excitation must meet the same number of pole pairs.
-				\item Given some inner stator diameter $D_\mathrm{s}$, the resulting pole pitch is:
+				\item Given some inner stator diameter $d_\mathrm{s}$, the resulting pole pitch is:
 			\end{itemize}
 			\begin{equation}
-				\tau_\mathrm{p} = \frac{\pi D_\mathrm{s}}{2p}, \quad \rho_\mathrm{p} = \frac{\pi}{p} .
+				\tau_\mathrm{p} = \frac{\pi d_\mathrm{s}}{2p}, \quad \rho_\mathrm{p} = \frac{\pi}{p} .
 			\end{equation}
 		\end{column}
         \hfill
@@ -393,6 +393,28 @@
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Lap and wave winding comparison %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Lap and wave winding comparison}
+	Introducing the parameter 
+	\begin{equation}
+		a = \mbox{Number of parallel armature conductors}
+	\end{equation}
+	we can wrap up the following summary:
+	\begin{equation}
+		\mbox{Current per conductor: } I_\mathrm{c} = \frac{I_\mathrm{a}}{2 a}, \quad \mbox{Total number of armature turns: } N_\mathrm{a} = \frac{K N_\mathrm{c}}{2 a}.
+	\end{equation}
+	\begin{varblock}{Comparison}
+		\begin{itemize}
+			\item Lap winding: $a = p$ (parallel connection of poles)
+			\item Wave winding: $a = 1$ (series connection of poles)
+		\end{itemize}
+	\end{varblock}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Air gap field %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
@@ -428,12 +450,12 @@
 		\begin{column}{0.65\textwidth}
 			We introduce the following magnetic reluctances
 			\begin{equation}
-				\begin{split}
-					R_\mathrm{S} &= \frac{l_\mathrm{S}}{\mu_{\mathrm{r, Fe}} \mu_0  A_\mathrm{S}} \quad  (\mbox{stator reluctance}), \\ \quad R_\mathrm{A} &= \frac{l_\mathrm{A}}{\mu_{\mathrm{r, Fe}}\mu_0  A_\mathrm{A}} \quad  (\mbox{armature reluctance}), \\
-					R_\delta &= \frac{l_\delta}{\mu_0 A_\delta} \quad  (\mbox{air gap reluctance}).
-				\end{split}
+				\begin{alignedat}{2}
+					R_\mathrm{S} &= \frac{l_\mathrm{S}}{\mu_{\mathrm{r, Fe}} \mu_0  A_\mathrm{S}} \quad  &&(\mbox{stator reluctance}), \\ \quad R_\mathrm{A} &= \frac{l_\mathrm{A}}{\mu_{\mathrm{r, Fe}}\mu_0  A_\mathrm{A}} \quad  &&(\mbox{armature reluctance}), \\
+					R_\delta &= \frac{l_\delta}{\mu_0 A_\delta} \quad  &&(\mbox{air gap reluctance}).
+				\end{alignedat}
 			\end{equation}
-			The above $l_i$ and $A_i$ are the respective lengths and cross-sectional areas of the field path. Furthermore, we have 
+			The above $l_i$ and $A_i$ are the respective lengths and cross-sectional areas of the field paths. Furthermore, we have 
 			$$ \mu_{\mathrm{r},\delta} = 1, \qquad \mu_{\mathrm{r, Fe}} >> 1 .$$
 
 		\end{column}
@@ -445,4 +467,98 @@
 			\end{figure}
 		\end{column}
 	\end{columns}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Air gap field (cont.) %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Air gap field (cont.)}
+	\begin{columns}
+		\begin{column}{0.65\textwidth}
+			With $N_\mathrm{f}$ field winding turns and the field current $I_\mathrm{F}$, the air gap flux is given by:
+			\begin{equation}
+				\begin{split}
+				\phi_\delta &= \frac{N_\mathrm{F} I_\mathrm{F}}{2 R_\delta + R_\mathrm{A} + \frac{1}{2}R_\mathrm{S}}\\
+							& = \frac{N_\mathrm{F} I_\mathrm{F}}{\mu_0}\left(2\frac{l_\delta}{A_\delta} + \frac{l_\mathrm{A}}{\mu_{\mathrm{r, Fe}} A_\mathrm{A}} + \frac{1}{2}\frac{l_\mathrm{S}}{\mu_{\mathrm{r, Fe}} A_\mathrm{S}}\right)^{-1}. 
+			\end{split}
+			\label{eq:Air_gap_flux_DC_machine_simple}
+			\end{equation}
+			While the relative permeability of the iron paths is depending on the magnetic flux ($\mu_{\mathrm{r, Fe}} = \mu_{\mathrm{r, Fe}}(\phi)$) due to saturation (cf. \figref{fig:Permeability_of_ferromagnet}) rendering \eqref{eq:Air_gap_flux_DC_machine_simple} a nonlinear equation, we will assume that the air gap reluctance is dominating 
+			\begin{equation}
+				 R_\delta >> \left\{R_\mathrm{A}, R_\mathrm{S} \right\}
+				 \label{eq:DC_flux_reluctance_simpl}
+			\end{equation}
+		\end{column}
+		\hfill
+		\begin{column}{0.35\textwidth}
+			\begin{figure}
+				\centering
+				\includegraphics[height=0.65\textheight]{fig/lec03/Simplified_magnetic_network_DC_machine.pdf}
+			\end{figure}
+		\end{column}
+	\end{columns}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Air gap field (cont.) %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Air gap field (cont.)}
+	Based on \eqref{eq:Air_gap_flux_DC_machine_simple} together with \eqref{eq:DC_flux_reluctance_simpl} we can simplify the effective air gap flux to
+	\begin{equation}
+		\phi_\delta = \frac{N_\mathrm{F} I_\mathrm{F}}{2 R_\delta} = \frac{N_\mathrm{F} I_\mathrm{F}}{2 \frac{l_\delta}{\mu_0 A_\delta}} = \frac{\mu_0 N_\mathrm{F} I_\mathrm{F} A_\delta}{2 l_\delta}.
+		\label{eq:Air_gap_flux_DC_machine}
+	\end{equation}
+	Here, $l_\delta$ is the air gap width and $A_\delta$ the effective cross-sectional area of the air gap which is
+	\begin{equation}
+		A_\delta = \alpha p \tau_\mathrm{p} l_z .
+		\label{eq:Air_gap_area_DC_machine}
+	\end{equation}
+	Above, the following assumptions and definitions are made:
+	\begin{itemize}
+		\item $l_z$ is the axial length of the machine.
+		\item The air gap width is very small such that the pole pitch $\tau_\mathrm{p}$ can be used as a good approximation for the air gap width in circumferential direction.
+		\item $\alpha$ is the pole coverage, that is, the ratio of the active pole surfaces to the pole pitch (cf. \figref{fig:Magnetic_field_normal_component_DC_machine} on next slide) representing the average field density in the air gap.
+	\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Air gap field (cont.) %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Air gap field (cont.)}
+    \begin{figure}
+        \centering
+        \includegraphics[height=0.67\textheight]{fig/lec03/Magnetic_field_normal_component_DC_machine.pdf}
+        \caption{Principle magnetic field paths through stator and rotor as well as the (idealized) normal component of the magnetic field density $B_\delta$ in the air gap  (inspired from A. Binder, \textit{Elektrische Maschinen und Antriebe}, Vol. 2, Springer, 2017)}
+		\label{fig:Magnetic_field_normal_component_DC_machine}
+    \end{figure}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Torque %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Torque}
+    From \eqref{eq:Air_gap_flux_DC_machine} we can calculate the air gap flux density $B_\delta$ per pole pair as
+	\begin{equation}
+		B_\delta = \frac{\phi_\delta}{A_\delta} = \frac{\mu_0 N_\mathrm{f} I_\mathrm{f}}{2 l_\delta p}.
+		\label{eq:Air_gap_flux_density_DC_machine}
+	\end{equation}
+	The absolute Lorentz force per armature conductor is resulting in
+	\begin{equation}
+		F_\mathrm{c} =  B_\delta l_z I_\mathrm{c}= \frac{\mu_0 N_\mathrm{f} l_z I_\mathrm{f} I_\mathrm{a}  }{4 l_\delta p a}.
+		\label{eq:Lorentz_force_DC_machine_conductor}
+	\end{equation}
+	Assuming that the air gap field lines are perpendicular to each armature conductor (cf. \figref{fig:Ideal_air_gap_field}), the torque per conductor for an armature diameter $d_\mathrm{a}$ is
+	\begin{equation}
+		T_\mathrm{c} = F_\mathrm{c} \frac{d_\mathrm{a}}{2} = \frac{\mu_0 N_\mathrm{f} l_z d_\mathrm{a} I_\mathrm{f} I_\mathrm{a} }{8 l_\delta p a}.
+		\label{eq:Torque_DC_machine_conductor}
+	\end{equation} 
+	The resulting machine torque $T$ for $N_\mathrm{a}$ armature conductor loops from which an $\alpha$  share is covered by the poles (cf. \figref{fig:Magnetic_field_normal_component_DC_machine}) is
+	\begin{equation}
+		T = 2 \alpha N_\mathrm{a} T_\mathrm{c} = \frac{\mu_0 \alpha N_\mathrm{f} N_\mathrm{a} l_z d_\mathrm{a}}{4 l_\delta p a} I_\mathrm{f} I_\mathrm{a} .
+		\label{eq:Torque_DC_machine}
+	\end{equation}
 \end{frame}
