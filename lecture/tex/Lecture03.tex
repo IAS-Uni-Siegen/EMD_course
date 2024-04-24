@@ -39,8 +39,8 @@
             \begin{itemize}
                 \item  Homopolar machines are the simplest form of electric machines.
                 \item They are also true DC machines, as the current and flux paths are unidirectional.
-                \item The general design prevents connecting multiple rotor turns in series to increase the voltage, that is, only a relatively low voltage is induced.
-                \item Consequently, homolpolar machines require high currents (in the order of  \si{\kilo\ampere} or even \si{\mega\ampere}) to reach a useful power range which limited their application.
+                \item<2-> The general design prevents connecting multiple rotor turns in series to increase the voltage, that is, only a relatively low voltage is induced.
+                \item<3-> Consequently, homopolar machines require high currents (in the order of  \si{\kilo\ampere} or even \si{\mega\ampere}) to reach a useful power range which limited their application.
             \end{itemize}
 		\end{column}
         \hfill
@@ -61,17 +61,17 @@
 	\frametitle{Working principle of usual DC machines}
     \begin{columns}
 		\begin{column}{0.5\textwidth}
-            Let's consider \figref{fig:Simple_yoke_coil} and assume that the flux density $B$ is constant in the air gap and that the conductor loop has a length $l$. According to the Lorentz force we have
+            Let's consider \figref{fig:Simple_yoke_coil} and assume that the flux density $B$ is constant in the air gap and that the conductor loop has the axial length $l$. \onslide<2->{According to the Lorentz force we have
 			\begin{equation}
 				F = I_\mathrm{a} B l .
-			\end{equation}  
-			The torque $T$ on the conductor loop is given by
+			\end{equation}}%  
+			\onslide<3->{The torque $T$ on the conductor loop is given by
 			\begin{equation}
 				T = 2 F \frac{d}{2} \cos\left(\varepsilon\right) = I_\mathrm{a} B l d \cos\left(\varepsilon\right).
-			\end{equation}
-			If the loop spins with an angular velocity $\omega$, mechanical power $P_\mathrm{me} = T\omega$ is produced. 
-			\\[1em]
-			\textbf{Question:} What is happening if the coil is outside the magnetic field?
+			\end{equation}}%
+			\onslide<4->{If the loop spins with an angular velocity $\omega$, mechanical power $P_\mathrm{me} = T\omega$ is transferred. 
+			\\[1em]}%
+			\onslide<5->{\textbf{Question:} What is happening if the coil is outside the magnetic field?}
 		\end{column}
         \hfill
 		\begin{column}{0.49\textwidth}
@@ -94,8 +94,8 @@
 		\begin{column}{0.42\textwidth}
             \begin{itemize}
 				\item To ensure a quasi-continous torque, the current through the conductor loop(s) in the rotor must have a constant direction.
-				\item This is achieved by using a commutator (brushes).
-				\item Compared to homopolar machines, DC machines require a mechanical rectification of the current.
+				\item<2-> This is achieved by using a commutator (brushes).
+				\item<3-> Compared to homopolar machines, DC machines require a mechanical rectification of the current.
 			\end{itemize}
 		\end{column}
         \hfill
@@ -104,7 +104,7 @@
 				\centering
 				\includegraphics[width=0.925\textwidth]{fig/lec03/DC_machine_cross_section.pdf}
 				\caption{Simplified DC machine cross section (adapted from J.~B\"ocker, \textit{Elektrische Antriebstechnik}, Paderborn University, 2020)}
-				\label{fig:Simple_yoke_coil}
+				\label{fig:DC_machine_cross_section}
 			\end{figure}
 		\end{column}
 		\end{columns}
@@ -176,7 +176,7 @@
     \begin{figure}
         \centering
         \includegraphics[width=0.925\textwidth]{fig/lec03/Armature_slots.pdf}
-        \caption{Cross-section of a drum-type armature including principle winding schemes (adapted from W.~Novender, \textit{Elektrische Maschinen}, Technische Hochschule Mittelhessen, 2023)}
+        \caption{Cross section of a drum-type armature including principle winding schemes (adapted from W.~Novender, \textit{Elektrische Maschinen}, Technische Hochschule Mittelhessen, 2023)}
     \end{figure}
 \end{frame}
 
@@ -202,13 +202,13 @@
 		\begin{column}{0.42\textwidth}
             \begin{itemize}
 				\item To reduce the effective length per armature conductor loop, the winding can form multiple pole pairs $p$.
-				\item This will reduce the inductance per loop which is beneficial for the commutation process.
-				\item The stator excitation must meet the same number of pole pairs.
-				\item Given some inner stator diameter $d_\mathrm{s}$, the resulting pole pitch is:
+				\item<2-> This will reduce the inductance per loop which is beneficial for the commutation process.
+				\item<3-> The stator excitation must meet the same number of pole pairs.
+				\item<4-> Given some inner stator diameter $d_\mathrm{s}$, the resulting pole pitch is:
 			\end{itemize}
-			\begin{equation}
+			\onslide<4->{\begin{equation}
 				\tau_\mathrm{p} = \frac{\pi d_\mathrm{s}}{2p}, \quad \rho_\mathrm{p} = \frac{\pi}{p} .
-			\end{equation}
+			\end{equation}}%
 		\end{column}
         \hfill
 		\begin{column}{0.55\textwidth}
@@ -216,7 +216,6 @@
 				\centering
 				\includegraphics[width=0.64\textwidth]{fig/lec03/DC_machine_cross_section_two_pole_pairs.pdf}
 				\caption{Simplified DC machine cross section with $p=2$ pole pairs (adapted from J.~B\"ocker, \textit{Elektrische Antriebstechnik}, Paderborn University, 2020)}
-				\label{fig:Simple_yoke_coil}
 			\end{figure}
 		\end{column}
 		\end{columns}
@@ -245,13 +244,13 @@
 \begin{frame}
 	\frametitle{Double layer winding}
 	\begin{itemize}
-		\item The forward conductor of one coil and the return conductor of another coil are placed in the same slot.
+		\item The forward conductor of one coil and the return conductor of another coil are placed in the same slot. This is the common winding scheme (although not limited to it).
 		\item Enables chording of the winding ($\rho_\mathrm{p}\neq y_\mathrm{b}$), another degree of freedom for the machine design (cf. \figref{fig:Lap_winding_characteristics}).
 	\end{itemize}
     \begin{figure}
         \centering
         \includegraphics[height=0.45\textheight]{fig/lec03/Double_layer_winding.pdf}
-        \caption{Double layer winding with $u=3$ with a solid conductor element (which can be pre-manufactured for cost reasons)}
+        \caption{Double layer winding with $u=3$ with a solid conductor element (which can be pre-manufactured for cost reasons -- inspired from A. Binder, \textit{Elektrische Maschinen und Antriebe}, Vol. 2, Springer, 2017)}
     \end{figure}
 \end{frame}
 
@@ -264,14 +263,14 @@
 		\begin{column}{0.42\textwidth}
             \begin{itemize}
 				\item Back pitch $y_\mathrm{b}$: coil span from the back end
-				\item Front pitch $y_\mathrm{f}$: coil span from the front end
-				\item Resultant pitch $y_\mathrm{r}$: distance between two consecutive coils
-				\item Commutator pitch $y_\mathrm{c}$: distance between two consecutive commutator segments
+				\item<2-> Front pitch $y_\mathrm{f}$: coil span from the front end
+				\item<3-> Resultant pitch $y_\mathrm{r}$: distance between two consecutive coils
+				\item<4-> Commutator pitch $y_\mathrm{c}$: distance between two consecutive commutator segments
 			\end{itemize}
 			\vspace{-0.4cm}
-			\begin{varblock}{Progressive winding}
+			\onslide<5->{\begin{varblock}{Progressive winding}
 				\figref{fig:Lap_winding_distances} shows a progressive winding layout with $y_\mathrm{b} > y_\mathrm{f}$, i.e., the coils do not cross themselves.
-			\end{varblock}
+			\end{varblock}}%
 		\end{column}
         \hfill
 		\begin{column}{0.55\textwidth}
@@ -296,8 +295,8 @@
 				\figref{fig:Lap_winding_distances_retrogressive} shows a Retrogressive winding layout with $y_\mathrm{b} < y_\mathrm{f}$, i.e., each coil crosses itself.
 			\end{varblock}
 			\begin{itemize}
-				\item Retrogressive windings require more conductor material due to the crossing of the coils and, therefore, are less common.
-				\item Technical feasibility requires $y_\mathrm{b} - y_\mathrm{f} = \pm y_\mathrm{c}$, i.e., the lap winding progresses or retrogresses by one commutator element.
+				\item<2-> Retrogressive windings require more conductor material due to the crossing of the coils and, therefore, are less common.
+				\item<3-> Technical feasibility requires $y_\mathrm{b} - y_\mathrm{f} = \pm y_\mathrm{c}$, i.e., the lap winding progresses or retrogresses by one commutator element.
 			\end{itemize}
 		\end{column}
         \hfill
@@ -324,9 +323,9 @@
 				\item Armature turns per pole: $N_\mathrm{p} = \frac{KN_\mathrm{c}}{2p}$
 				\item Current per armature conductor: $I_\mathrm{c} = \frac{I_\mathrm{a}}{2 p}$
 			\end{itemize}
-			\begin{varblock}{Parallel connection of poles}
+			\onslide<2->{\begin{varblock}{Parallel connection of poles}
 				For $p>1$ the lap winding parallels the armature coils for each pole enabling a higher current (but limited voltage) rating.
-			\end{varblock}
+			\end{varblock}}%
 		\end{column}
 		\hfill
 		\begin{column}{0.65\textwidth}
@@ -350,9 +349,9 @@
 				\item Commutator pitch (wave winding): $y_\mathrm{c} = y_\mathrm{f} + y_\mathrm{b}$, i.e., each coil spans (nearly) the entire pole pitch.  
 			\end{itemize}
 			\vspace{-0.4cm}
-			\begin{varblock}{Progressive winding}
+			\onslide<2->{\begin{varblock}{Progressive winding}
 				\figref{fig:Wave_winding_distances} shows a progressive winding layout since each new wave winding coil starts one commutator element to the right. 
-			\end{varblock}
+			\end{varblock}}"
 		\end{column}
         \hfill
 		\begin{column}{0.55\textwidth}
@@ -377,9 +376,9 @@
 				\item Armature turns per pole: $N_\mathrm{p} = \frac{K N_\mathrm{c}}{2}$
 				\item Current per armature conductor: $I_\mathrm{c} = \frac{I_\mathrm{a}}{2}$
 			\end{itemize}
-			\begin{varblock}{Series connection of poles}
+			\onslide<2->{\begin{varblock}{Series connection of poles}
 				For $p>1$ the wave winding connects the armature coils for all poles in series enabling a higher voltage (but limited current) rating.
-			\end{varblock}
+			\end{varblock}}
 		\end{column}
 		\hfill
 		\begin{column}{0.65\textwidth}
@@ -401,10 +400,10 @@
 	\begin{equation}
 		a = \mbox{Number of parallel armature conductors}
 	\end{equation}
-	we can wrap up the following summary:
+	we can wrap up the following summary:\pause
 	\begin{equation}
 		\mbox{Current per conductor: } I_\mathrm{c} = \frac{I_\mathrm{a}}{2 a}, \quad \mbox{Armature turns per pole: } N_\mathrm{p} = \frac{K N_\mathrm{c}}{2 a}.
-	\end{equation}
+	\end{equation}\pause
 	\begin{varblock}{Comparison}
 		\begin{itemize}
 			\item Lap winding: $a = p$ (parallel connection of poles)
@@ -421,7 +420,7 @@
 	\frametitle{Air gap field}
 	\begin{columns}
 		\begin{column}{0.65\textwidth}
-			\textbf{Assumption}: The air gap field distribution is homogenous and without any leakage (cf. \figref{fig:Ideal_air_gap_field}).\\ Consequently, we model the magnetic machine behavior with the simplified network shown in \figref{fig:Simplified_magnetic_network_DC_machine}. 
+			\textbf{Assumption}: The air gap field distribution is homogenous and without any leakage (cf. \figref{fig:Ideal_air_gap_field}).\\ \onslide<2->{Consequently, we model the magnetic machine behavior with the simplified network shown in \figref{fig:Simplified_magnetic_network_DC_machine}.}% 
 			\begin{figure}
 				\centering
 				\includegraphics[width=0.4\textwidth]{fig/lec03/Ideal_air_gap_field.pdf}
@@ -431,12 +430,12 @@
 		\end{column}
 		\hfill
 		\begin{column}{0.33\textwidth}
-			\begin{figure}
+			\onslide<2->{\begin{figure}
 				\centering
 				\includegraphics[height=0.65\textheight]{fig/lec03/Simplified_magnetic_network_DC_machine.pdf}
 				\caption{Simplified magnetic network of a DC machine}
 				\label{fig:Simplified_magnetic_network_DC_machine}
-			\end{figure}
+			\end{figure}}%
 		\end{column}
 	\end{columns}
 \end{frame}
@@ -455,9 +454,8 @@
 					R_\delta &= \frac{\delta}{\mu_0 A_\delta} \quad  &&(\mbox{air gap reluctance}).
 				\end{alignedat}
 			\end{equation}
-			Above $l_i$ and $A_i$ are the respective lengths and cross-sectional areas of the field paths while $\delta$ is the air gap width. Furthermore, we have 
-			$$ \mu_{\mathrm{r},\delta} = 1, \qquad \mu_{\mathrm{r, Fe}} >> 1 .$$
-
+			Above $l_i$ and $A_i$ are the respective lengths and cross-sectional areas of the field paths while $\delta$ is the air gap width. \onslide<2->{Furthermore, we have 
+			$$ \mu_{\mathrm{r},\delta} = 1, \qquad \mu_{\mathrm{r, Fe}} >> 1 .$$}%
 		\end{column}
 		\hfill
 		\begin{column}{0.35\textwidth}
@@ -484,11 +482,11 @@
 			\end{split}
 			\label{eq:Air_gap_flux_DC_machine_simple}
 			\end{equation}
-			While the relative permeability of the iron paths is depending on the magnetic flux ($\mu_{\mathrm{r, Fe}} = \mu_{\mathrm{r, Fe}}(\phi)$) due to saturation (cf. \figref{fig:Permeability_of_ferromagnet}) rendering \eqref{eq:Air_gap_flux_DC_machine_simple} a nonlinear equation, we will assume that the air gap reluctance is dominating 
+			\onslide<2->{While the relative permeability of the iron paths is depending on the magnetic flux ($\mu_{\mathrm{r, Fe}} = \mu_{\mathrm{r, Fe}}(\phi)$) due to saturation (cf. \figref{fig:Permeability_of_ferromagnet}) rendering \eqref{eq:Air_gap_flux_DC_machine_simple} a nonlinear equation, we will assume that the air gap reluctance is dominating 
 			\begin{equation}
 				 R_\delta >> \left\{R_\mathrm{a}, R_\mathrm{s} \right\}
 				 \label{eq:DC_flux_reluctance_simpl}
-			\end{equation}
+			\end{equation}}%
 		\end{column}
 		\hfill
 		\begin{column}{0.35\textwidth}
@@ -509,16 +507,16 @@
 	\begin{equation}
 		\phi_\delta = \frac{N_\mathrm{f} I_\mathrm{f}}{2 R_\delta} = \frac{N_\mathrm{F} I_\mathrm{f}}{2 \frac{\delta}{\mu_0 A_\delta}} = \frac{\mu_0 N_\mathrm{f} A_\delta}{2 \delta} I_\mathrm{f}.
 		\label{eq:Air_gap_flux_DC_machine}
-	\end{equation}
+	\end{equation}\pause
 	Here, $\delta$ is the air gap width and $A_\delta$ the effective cross-sectional area of the air gap which is
 	\begin{equation}
 		A_\delta = \alpha p \tau_\mathrm{p} l_z .
 		\label{eq:Air_gap_area_DC_machine}
-	\end{equation}
+	\end{equation}\pause
 	Above, the following assumptions and definitions are made:
 	\begin{itemize}
-		\item $l_z$ is the axial length of the machine.
-		\item The air gap width is very small such that the pole pitch $\tau_\mathrm{p}$ can be used as a good approximation for the air gap width in circumferential direction.
+		\item $l_z$ is the axial length of the machine. \pause
+		\item The air gap width is very small such that the pole pitch $\tau_\mathrm{p}$ can be used as a good approximation for the air gap width in circumferential direction. \pause
 		\item $\alpha$ is the pole coverage, that is, the ratio of the active pole surfaces to the pole pitch (cf. \figref{fig:Magnetic_field_normal_component_DC_machine} on next slide) representing the average field density in the air gap.
 	\end{itemize}
 \end{frame}
@@ -545,17 +543,17 @@
 	\begin{equation}
 		B_\delta = \frac{\phi_\delta}{A_\delta} = \frac{\mu_0 N_\mathrm{f}}{2 \delta p} I_\mathrm{f}.
 		\label{eq:Air_gap_flux_density_DC_machine}
-	\end{equation}
+	\end{equation}\pause
 	The absolute Lorentz force per armature conductor is resulting in
 	\begin{equation}
 		F_\mathrm{c} =  B_\delta l_z I_\mathrm{c}= \frac{\mu_0 N_\mathrm{f} l_z}{4 \delta p a}I_\mathrm{f} I_\mathrm{a}.
 		\label{eq:Lorentz_force_DC_machine_conductor}
-	\end{equation}
+	\end{equation}\pause
 	Assuming that the air gap field lines are perpendicular to each armature conductor (cf. \figref{fig:Ideal_air_gap_field}), the torque per conductor for an armature diameter $d_\mathrm{a}$ is
 	\begin{equation}
 		T_\mathrm{c} = F_\mathrm{c} \frac{d_\mathrm{a}}{2} = \frac{\mu_0 N_\mathrm{f} l_z d_\mathrm{a}}{8 \delta p a} I_\mathrm{f} I_\mathrm{a}.
 		\label{eq:Torque_DC_machine_conductor}
-	\end{equation} 
+	\end{equation} \pause
 	The resulting machine torque $T$ for $N_\mathrm{a}$ armature conductor loops from which an $\alpha$  share is covered by the poles (cf. \figref{fig:Magnetic_field_normal_component_DC_machine}) is
 	\begin{equation}
 		T = 2 \alpha N_\mathrm{a} T_\mathrm{c} = \frac{\mu_0 \alpha N_\mathrm{f} N_\mathrm{a} l_z d_\mathrm{a}}{4 \delta p a} I_\mathrm{f} I_\mathrm{a} .

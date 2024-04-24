@@ -819,12 +819,12 @@
 		\begin{column}{0.575\textwidth}
 			\begin{itemize}
                 \item \textbf{Motivation}: Model magnetic systems with a simplified lumped-parameter approach and apply analysis techniques analogous to electric networks.
-                \item \textbf{Assumption}: magnetic field is homogenous within a lumped element (cf. \figref{fig:Reluctance_element}).
-                \item The magnetic flux per element is:
+                \item<2-> \textbf{Assumption}: magnetic field is homogenous within a lumped element (cf. \figref{fig:Reluctance_element}).
+                \item<3-> The magnetic flux per element is:
                 \begin{equation}
                     \phi_k = A_k B_k .
                 \end{equation}
-                \item The magnetic voltage (magnetomotive force -- MMF) per element is:
+                \item<4-> The magnetic voltage (magnetomotive force -- MMF) per element is:
                 \begin{equation}
                     \theta_k = l_k H_k .
                 \end{equation}
@@ -854,11 +854,11 @@
                 \begin{equation}
                     R_k = \frac{\theta_k}{\phi_k} = \frac{l_k}{\mu_0\mu_{\mathrm{r}k}A_k}.
                 \end{equation}
-                \item The magnetic conductivity (or permeance) per element is:
+                \item<2-> The magnetic conductivity (or permeance) per element is:
                 \begin{equation}
                     \Lambda_k = \frac{1}{R_k} = \frac{\mu_0\mu_{\mathrm{r}k}A_k}{l_k}.
                 \end{equation}
-                \item As the magnetic field is free of sources ($\nabla \cdot \bm{B}=0$), it follows (node rule -- analogous to Kirchhoff's first law):
+                \item<3-> As the magnetic field is free of sources ($\nabla \cdot \bm{B}=0$), it follows (node rule -- analogous to Kirchhoff's first law):
                 \begin{equation}
                     \sum_k \phi_k = 0.
                 \end{equation}
@@ -883,6 +883,7 @@
     \begin{equation}
         \oint_{\partial S} \bm{H} \cdot \mathrm{d}\bm{s} = I_{\mathrm{f}} = N I = \sum_k  \theta_k = \sum_k l_k H_k.
     \end{equation}
+    \pause
     So far, the equation has not the structure of the second Kirchhoff’s law (loop rule). However, we can force this desired format by placing the term with the electric currents on the left-hand side of the equation:
     \begin{equation}
          \sum_k \theta_k - \theta_0 = 0 \quad \mbox{with} \quad \theta_0 = N I \,\,\mbox{(MMF term)}.
@@ -907,8 +908,8 @@
             Conductance & $G$ & \si{\siemens} & Permeance & $\Lambda$ &  \si{\henry}\\
             Conductivity & $\sigma$ & \si{\siemens\per\metre} & Permeability & $\mu$ &\si{\henry\per\metre}\\
             Ohm's law & $u = R i$ & & Hopkinson's law & $\theta = R \phi$ &\\
-            Kirchoff'S first law & $\sum i_k = 0$ & & Kirchoff's first law & $\sum \phi_k = 0$ &\\
-            Kirchoff's second law & $\sum u_k = 0$ & & Kirchoff's second law & $\sum \theta_k - \theta_0 = 0$ &\\
+            Kirchoff's first law & $\sum i_k = 0$ & & Equivalent first law & $\sum \phi_k = 0$ &\\
+            Kirchoff's second law & $\sum u_k = 0$ & & Equivalent second law & $\sum \theta_k - \theta_0 = 0$ &\\
             \bottomrule
         \end{tabular}
         \caption{Electric and magnetic network quantities and their analogies}
@@ -951,8 +952,8 @@
             \begin{itemize}
                 \item  A changing magnetic field induces a voltage.
                 \item In bulky conductive materials (e.g., electromagnetic steel) this voltage drives currents called eddy currents.
-                \item Eddy currents lead to energy losses and heat dissipation.
-                \item<2-> To reduce eddy currents, laminated cores are used as they decrease the effective current path width and, therefore, increase the effective resistance per sheet.
+                \item<2-> Eddy currents lead to energy losses and heat dissipation.
+                \item<3-> To reduce eddy currents, laminated cores are used as they decrease the effective current path width and, therefore, increase the effective resistance per sheet.
             \end{itemize}
 		\end{column}
         \hfill
