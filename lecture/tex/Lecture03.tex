@@ -61,13 +61,13 @@
 	\frametitle{Working principle of usual DC machines}
     \begin{columns}
 		\begin{column}{0.5\textwidth}
-            Let's consider \figref{fig:Simple_yoke_coil} and assume that the flux density $B$ is constant in the air gap and that the conductor loop has the axial length $l$. \onslide<2->{According to the Lorentz force we have
+            Let's consider \figref{fig:Simple_yoke_coil} and assume that the flux density $B$ is constant in the air gap and that the conductor loop has the axial length $l_\mathrm{z}$. \onslide<2->{According to the Lorentz force we have
 			\begin{equation}
-				F = I_\mathrm{a} B l .
+				F = I_\mathrm{a} B l_\mathrm{z} .
 			\end{equation}}%  
 			\onslide<3->{The torque $T$ on the conductor loop is given by
 			\begin{equation}
-				T = 2 F \frac{d}{2} \cos\left(\varepsilon\right) = I_\mathrm{a} B l d \cos\left(\varepsilon\right).
+				T = 2 F \frac{d}{2} \cos\left(\varepsilon\right) = I_\mathrm{a} B l_\mathrm{z} d \cos\left(\varepsilon\right).
 			\end{equation}}%
 			\onslide<4->{If the loop spins with an angular velocity $\omega$, mechanical power $P_\mathrm{me} = T\omega$ is transferred. 
 			\\[1em]}%
@@ -216,6 +216,7 @@
 				\centering
 				\includegraphics[width=0.64\textwidth]{fig/lec03/DC_machine_cross_section_two_pole_pairs.pdf}
 				\caption{Simplified DC machine cross section with $p=2$ pole pairs (adapted from J.~B\"ocker, \textit{Elektrische Antriebstechnik}, Paderborn University, 2020)}
+				\label{fig:DC_machine_cross_section_two_pole_pairs}
 			\end{figure}
 		\end{column}
 		\end{columns}
@@ -484,7 +485,7 @@
 			\end{equation}
 			\onslide<2->{While the relative permeability of the iron paths is depending on the magnetic flux ($\mu_{\mathrm{r, Fe}} = \mu_{\mathrm{r, Fe}}(\phi)$) due to saturation (cf. \figref{fig:Permeability_of_ferromagnet}) rendering \eqref{eq:Air_gap_flux_DC_machine_simple} a nonlinear equation, we will assume that the air gap reluctance is dominating 
 			\begin{equation}
-				 R_\delta >> \left\{R_\mathrm{a}, R_\mathrm{s} \right\}
+				 R_\delta >> \left\{R_\mathrm{a}, R_\mathrm{s} \right\} .
 				 \label{eq:DC_flux_reluctance_simpl}
 			\end{equation}}%
 		\end{column}
@@ -516,7 +517,7 @@
 	Above, the following assumptions and definitions are made:
 	\begin{itemize}
 		\item $l_z$ is the axial length of the machine. \pause
-		\item The air gap width is very small such that the pole pitch $\tau_\mathrm{p}$ can be used as a good approximation for the air gap width in circumferential direction. \pause
+		\item The air gap width is very small such that the pole pitch $\tau_\mathrm{p}$ can be used as a good approximation for the air gap  circumference. \pause
 		\item $\alpha$ is the pole coverage, that is, the ratio of the active pole surfaces to the pole pitch (cf. \figref{fig:Magnetic_field_normal_component_DC_machine} on next slide) representing the average field density in the air gap.
 	\end{itemize}
 \end{frame}
@@ -559,4 +560,56 @@
 		T = 2 \alpha N_\mathrm{a} T_\mathrm{c} = \frac{\mu_0 \alpha N_\mathrm{f} N_\mathrm{a} l_z d_\mathrm{a}}{4 \delta p a} I_\mathrm{f} I_\mathrm{a} .
 		\label{eq:Torque_DC_machine}
 	\end{equation}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Effective field inductance and flux linkage %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Effective field inductance and flux linkage}
+    To write \eqref{eq:Torque_DC_machine} more compact, we introduce the effective field inductance 
+	\begin{equation}
+		L_\mathrm{f}' = \frac{\mu_0 \alpha N_\mathrm{f} N_\mathrm{a} l_z d_\mathrm{a}}{4 \delta p a} = \frac{\mu_0 \alpha N_\mathrm{f} N_\mathrm{a} l_z \tau_\mathrm{p}}{2 \pi  \delta a}.
+		\label{eq:Effective_field_inductance}
+	\end{equation}
+	with $\tau_\mathrm{p} = \pi d_\mathrm{s}/(2 p) = \pi d_\mathrm{a}/(2 p)$ assuming a very small air gap width $\delta$, cf. \figref{fig:DC_machine_cross_section_two_pole_pairs}. Compared to the self-inductance of the field winding 
+	\begin{equation}
+		L_\mathrm{f} = \frac{N_\mathrm{f}^2}{2 R_\delta} = \frac{\mu  \alpha p \tau_\mathrm{p} l_z N_\mathrm{f}^2}{4 \delta},
+	 \end{equation}
+	 we find
+	 \begin{equation}
+		 L_\mathrm{f}' = L_\mathrm{f} \underbrace{\frac{2}{a \pi}\frac{N_\mathrm{a}}{N_\mathrm{f}}}_{c} = L_\mathrm{f} c.
+	\end{equation}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Effective field inductance and flux linkage (cont.) %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Effective field inductance and flux linkage (cont.)}
+    Based on the previous definitions, we can also introduce the effective field flux linkage
+	\begin{equation}
+		\psi_\mathrm{f}' = L_\mathrm{f}' I_\mathrm{f}
+		\label{eq:Effective_field_flux_linkage}
+	\end{equation}
+	leading to a compact representation of the torque
+	\begin{equation}
+		T = c L_\mathrm{f} I_\mathrm{f} I_\mathrm{a} = L_\mathrm{f}' I_\mathrm{f} I_\mathrm{a}  = \psi_\mathrm{f}' I_\mathrm{a}.
+		\label{eq:Torque_DC_machine_compact}
+	\end{equation}
+	Some remarks on machine design impacts on the torque:
+	\begin{itemize}
+		\item To produce torque, both field current $I_\mathrm{f}$ and armature current $I_\mathrm{a}$ are required.
+		\item The larger the machine dimensions (axial length $l_\mathrm{z}$ and armature diameter $d_\mathrm{a} \approx d_\mathrm{s}$), the larger the torque.
+		\item The more winding turns $N_\mathrm{a}$ and $N_\mathrm{f}$, the larger the torque.
+		\item The smaller the air gap width $\delta$, the larger the torque.
+	\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Induced voltage %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Induced voltage}
+
 \end{frame}
