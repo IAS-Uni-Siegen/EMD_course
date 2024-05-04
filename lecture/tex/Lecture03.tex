@@ -419,7 +419,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
 	\frametitle{Commutation process}
-	During the commutation time $T_\mathrm{c}$ the brush bridges two commutator segments and the short-circuited conductor coil current $i_\mathrm{c}$ is changing signs. Here, two major scenarios can be distinguished:
+	During the commutation time $\Delta t_\mathrm{c}$ the brush bridges two commutator segments and the short-circuited conductor coil current $i_\mathrm{c}$ is changing signs. Here, two major scenarios can be distinguished:
 	\begin{itemize}
 		\item The commutation is such fast that high local current densities are prevented.
 		\item The commutation is slow and high local current densities lead to sparking effects.
@@ -447,21 +447,21 @@
 			\end{figure}
 		\end{column}
 		\begin{column}{0.6\textwidth}
-			Assuming that the brush width $w_\mathrm{b}$ is much bigger than one commutator segment (which is usual practice), the commutation time $T_\mathrm{c}$ is given by
+			Assuming that the brush width $w_\mathrm{b}$ is much bigger than one commutator segment (which is usual practice), the commutation time $\Delta t_\mathrm{c}$ is given by
 			\begin{equation}
-				T_\mathrm{c} \approx \frac{w_\mathrm{b}}{v_\mathrm{c}}.
+				\Delta t_\mathrm{c} \approx \frac{w_\mathrm{b}}{v_\mathrm{c}}.
 			\end{equation}
 			Here, $v_\mathrm{c}$ is the brush velocity
 			\begin{equation}
 				v_\mathrm{c} = \omega \frac{d_\mathrm{a}}{2}
 			\end{equation}
-			with the armature angular velocity $\omega$ and the armature diameter $d_\mathrm{a}$. Due to the changing current in the short-circuited coil, the so-called reactane voltage $u_\mathrm{r}$ is induced:
+			with the armature angular velocity $\omega$ and the armature diameter $d_\mathrm{a}$. Due to the changing current in the coil, the so-called reactane voltage $u_\mathrm{r}$ is induced:
 			\begin{equation}
-				u_\mathrm{r} = L_\mathrm{c} \frac{\mathrm{d}i_\mathrm{c}}{\mathrm{d}t} \approx L_\mathrm{c} \frac{i_\mathrm{a}}{a T_\mathrm{c}}.
+				u_\mathrm{r} = L_\mathrm{c} \frac{\mathrm{d}i_\mathrm{c}}{\mathrm{d}t} \approx L_\mathrm{c} \frac{i_\mathrm{a}}{a \Delta t_\mathrm{c}} = L_\mathrm{c} i_\mathrm{a} \frac{\omega d_\mathrm{a}}{a w_\mathrm{b}2}.
+				\label{eq:reactance_voltage_commutation}
 			\end{equation}
 		\end{column}
 	\end{columns}
-    
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -778,4 +778,170 @@
 	\begin{varblock}{Model accuracy}
 		We represent the DC machine by a time-invariant, lumped-parameter model which is based on several substantial simplifications. While this model is likely sufficient for many applications, systematic deviations between the observed behavior of real machines and the model predictions are to be expected.
 	\end{varblock}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Armature reaction %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Armature reaction}
+	\begin{itemize}
+		\item So far, we have neglected the impact of the armature current on the magnetic field.
+		\item If $i_\mathrm{a}\neq 0$, the magnetic field lines in the air gap are distorted leading to a so-called armature reaction (cf. \figref{fig:Armature_reaction}).
+	\end{itemize}
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.75\textwidth]{fig/lec03/Armature_reaction.pdf}
+        \caption{Superpostion of the field and armature magnetic excitation and the resulting air gap field normal components (adapted from W.~Novender, \textit{Elektrische Maschinen}, Technische Hochschule Mittelhessen, 2023)} 
+		\label{fig:Armature_reaction}
+    \end{figure}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Armature reaction (cont.) %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Armature reaction (cont.)}
+	\begin{columns}
+		\begin{column}{0.55\textwidth}
+	Issues related to the armature reaction:
+	\begin{itemize}
+		\item The neutral zone (field-free commutation area) is shifted by $\beta$ degrees in the circumferential direction, that is, exacerbate the commutation process (risk of sparking).
+		\item High local field densities can lead to magnetic saturation which will increase the iron path reluctance and consequently decrease the machine's torque capability. Also, the iron losses will increase. 
+		\item The imbalanced magnetic field leads to an imbalanced Lorentz force distribution on the armature conductors which can cause mechanical distortions. 
+	\end{itemize}
+\end{column}
+\hfill
+\begin{column}{0.45\textwidth}
+	\begin{figure}
+		\centering
+		\includegraphics[trim={7.2cm 0 0 0}, clip, width=0.95\textwidth]{fig/lec03/Armature_reaction.pdf}
+	\end{figure}
+\end{column}
+\end{columns}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Counter measures: compensation winding and interpoles %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Counter measures: compensation winding and interpoles}
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.9\textwidth]{fig/lec03/Compensation_winding_interpoles.pdf}
+        \caption{Armature reaction counter measures utilizing compensation winding and interpoles: both are excited by the armature current with an opposite orientation to account for the load-dependent impact of the armature reaction (adapted from W.~Novender, \textit{Elektrische Maschinen}, Technische Hochschule Mittelhessen, 2023 and J.~B\"ocker, \textit{Elektrische Antriebstechnik}, Paderborn University, 2020)} 
+		\label{fig:Compensation_winding_interpoles}
+    \end{figure}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Counter measures: compensation winding and interpoles %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Counter measures: compensation winding and interpoles (cont.)}
+   \textbf{Compensation winding design:}
+   In order to compensate for the armature reaction within the air gap, the compensation winding MMF $\theta_\mathrm{cw}$ must meet the armature MMF $\theta_\mathrm{a}$:
+   \begin{equation}
+	   |\theta_\mathrm{cw}| = \frac{z_\mathrm{cw}}{2 a_\mathrm{cw} p }  I_\mathrm{a} \stackrel{!}{=} \alpha \frac{z_\mathrm{a}}{2 a_\mathrm{a} p } I_\mathrm{a} =|\theta_\mathrm{a}|.
+	   \label{eq:MMF_compensation_winding}
+	\end{equation}
+	Above, the following parameters are used:
+	\begin{itemize}
+		\item $a_\mathrm{cw} / a_\mathrm{a}$: number of parallel conductors of the compensation and armature windings,
+		\item $z_\mathrm{cw} / z_\mathrm{a}$: number of conductors of the compensation  and armature windings.
+	\end{itemize}
+	In \eqref{eq:MMF_compensation_winding} $\alpha$ is only related to $\theta_\mathrm{a}$ as we assume the armature area to be bigger (or at least the same size) as the field pole (cf. \figref{fig:Compensation_winding_interpoles}). From \eqref{eq:MMF_compensation_winding} we can calculate the required compensation winding conductors
+	\begin{equation}
+		z_\mathrm{cw} = \alpha z_\mathrm{a} \frac{a_\mathrm{cw}}{a_\mathrm{a}} =  2p Q_\mathrm{cw} N_\mathrm{cw}
+	\end{equation}
+	which can be met by choosing $Q_\mathrm{cw}$ slots and $N_\mathrm{cw}$ turns per pole.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Counter measures: compensation winding and interpoles %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Counter measures: compensation winding and interpoles (cont.)}
+   \textbf{Interpole winding design:}
+   As discussed in \eqref{eq:reactance_voltage_commutation}, the reactane voltage $u_\mathrm{r} \approx  L_\mathrm{c} i_\mathrm{a} \omega d_\mathrm{a} / (a w_\mathrm{b}2)$ is self-induced within the short-circuited coil during commutation. To counteract this, the interpole winding is designed such that the neutral zone is overcompensated leading to an induced voltage $u_\mathrm{ip}$ which is opposite to $u_\mathrm{r}$:
+   \begin{equation}
+	   u_\mathrm{ip} \stackrel{!}{=} u_\mathrm{r}.
+	   \label{eq:Interpole_voltage_condition}
+	\end{equation}
+	Assuming a rotational angular velocity $\omega$ and some (homogenous) $B_\mathrm{ip}\neq 0$ flux density in the interpole area, the induced voltage $u_\mathrm{ip}$ is
+	\begin{equation}
+		u_\mathrm{ip} =  N_\mathrm{c} \omega d_\mathrm{a} l_\mathrm{z} B_\mathrm{ip}.
+		\label{eq:Induced_voltage_interpole}
+	 \end{equation} 
+	 Here, $N_\mathrm{c}$ is the number of armature conductor turns per coil assuming that exatly one coil is placed in the interpole area. 
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Counter measures: compensation winding and interpoles %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Counter measures: compensation winding and interpoles (cont.)}
+	\begin{columns}
+		\begin{column}{0.55\textwidth}
+			From \eqref{eq:Interpole_voltage_condition} and \eqref{eq:Induced_voltage_interpole} we can calculate the required interpole flux density $B_\mathrm{ip}$:
+			\begin{equation}
+				B_\mathrm{ip} = \frac{u_\mathrm{r}}{N_\mathrm{c} \omega d_\mathrm{a} l_\mathrm{z}} = \frac{L_\mathrm{c}i_\mathrm{a}}{2 N_\mathrm{c} l_\mathrm{z} a w_\mathrm{b}}.
+				\label{eq:Interpole_flux_density}
+			\end{equation}
+			Applying the compensation winding design approach \eqref{eq:MMF_compensation_winding} results in:
+			\begin{equation}
+					\oint_{\partial S} \bm{H} \cdot \mathrm{d}\bm{s} = \theta_\mathrm{ip} +\theta_\mathrm{cw}-\theta_\mathrm{a} = \theta_\mathrm{ip}-\theta_\mathrm{a}(1-\alpha). 
+			\end{equation} 
+			The MMFs per pole are:
+			\begin{equation}
+				\theta_\mathrm{ip} = N_\mathrm{ip} i_\mathrm{a} , \qquad \theta_\mathrm{a}= N_\mathrm{a} i_\mathrm{a}.
+			\end{equation}
+\end{column}
+\hfill
+\begin{column}{0.45\textwidth}
+	\vspace{-0.2cm}
+	\begin{figure}
+		\centering
+		\includegraphics[width=0.8\textwidth]{fig/lec03/Interpole_integration_contour.pdf}
+		\caption{Integration contour $\partial S$ and related MMF components for the interpole winding design (J.~B\"ocker, \textit{Elektrische Antriebstechnik}, Paderborn University, 2020)}
+		\label{fig:Interpole_integration_contour}
+	\end{figure}
+\end{column}
+\end{columns}
+	
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Counter measures: compensation winding and interpoles %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Counter measures: compensation winding and interpoles (cont.)}
+	\begin{columns}
+		\begin{column}{0.55\textwidth}
+		Assuming that the air gap reluctance is dominating the magnetic circuit, we  receive
+			\begin{equation}
+				\oint_{\partial S} \bm{H} \cdot \mathrm{d}\bm{s} = 2 \delta H_\mathrm{ip} = N_\mathrm{ip} i_\mathrm{a} - N_\mathrm{a} i_\mathrm{a}(1-\alpha).
+			\end{equation}
+		The flux density in the interpole area is then
+		\begin{equation}
+			B_\mathrm{ip} = \mu_0 \frac{N_\mathrm{ip}  - N_\mathrm{a} (1-\alpha)}{2 \delta} i_\mathrm{a}.
+		\end{equation}
+		The comparison with \eqref{eq:Interpole_flux_density} reveals:
+		\begin{equation}
+			\begin{split}
+				&\mu_0 \frac{N_\mathrm{ip}  - N_\mathrm{a} (1-\alpha)}{2 \delta} i_\mathrm{a} \stackrel{!}{=} \frac{L_\mathrm{c}}{2 N_\mathrm{c} l_\mathrm{z} a w_\mathrm{b}} i_\mathrm{a}\\
+				\Leftrightarrow \quad &N_\mathrm{ip}  = N_\mathrm{a} (1-\alpha) + \frac{ L_\mathrm{c}\delta}{\mu_0 N_\mathrm{c} l_\mathrm{z} a w_\mathrm{b}}.
+			\end{split}
+		\end{equation}
+\end{column}
+\hfill
+\begin{column}{0.45\textwidth}
+	\vspace{-0.2cm}
+	\begin{figure}
+		\centering
+		\includegraphics[width=0.8\textwidth]{fig/lec03/Interpole_integration_contour.pdf}
+	\end{figure}
+\end{column}
+\end{columns}
+	
 \end{frame}
