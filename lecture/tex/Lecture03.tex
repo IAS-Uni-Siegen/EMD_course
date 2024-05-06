@@ -1102,3 +1102,68 @@
 				\label{fig:DC_machine_dropping_resistor}
 		\end{figure}
 \end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Operation constraints: separately excited DC machine %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Operation constraints: separately excited DC machine}
+			Now we consider $U_\mathrm{a}$ being controllable (e.g., via buck converter), that is, we can also change $I_\mathrm{a}$. Nevertheless, the machine is still limited by the voltage and current constraint:
+			\begin{equation}
+				U_\mathrm{max} \leq U_\mathrm{a} = \frac{R_\mathrm{a}}{\psi_\mathrm{f}'} T + \omega \psi_\mathrm{f}', \qquad I_\mathrm{max} \leq I_\mathrm{a}.
+				\label{eq:Operation_constraints_sep_DC_machine}
+			\end{equation}
+			For sake of simplicity we only consider the first quadrant (cf. \figref{fig:machine_quadrants}), that is, positive torque and speed mode. From \eqref{eq:Operation_constraints_sep_DC_machine} $T\leq \psi_\mathrm{f}' I_\mathrm{max}$ follows. Also, the maximum speed is limited:
+			\begin{equation}
+				\omega \leq \frac{U_\mathrm{max}}{\psi_\mathrm{f}'} - \frac{R_\mathrm{a}}{\psi_\mathrm{f}'^2} T.
+			\end{equation}
+			Hence, for a constant excitation $\psi_\mathrm{f}'$, the torque must be reduced starting at $\omega_1$ while $\omega_0$ represents the no-load speed where no torque can be generated anymore:
+			\begin{equation}
+				\omega_1 = \frac{U_\mathrm{max}}{\psi_\mathrm{f}'} - \frac{R_\mathrm{a}}{\psi_\mathrm{f}'} I_\mathrm{max}, \qquad \omega_0 = \frac{U_\mathrm{max}}{\psi_\mathrm{f}'}.
+			\end{equation}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Operation constraints: separately excited DC machine (cont.) %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Operation constraints: separately excited DC machine (cont.)}
+	\begin{figure}
+		\centering
+		\includegraphics[scale=1.1]{fig/lec03/Sep_DC_machine_voltage_current_const.pdf}
+		\caption{Maximum achievable torque and mechanical power for the separately excited DC machine with a fixed excitation $\psi_\mathrm{f}'$ but controllable armature voltage $U_\mathrm{a}$ and current $I_\mathrm{a}$}
+		\label{fig:Sep_DC_machine_voltage_current_const}
+\end{figure}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Field weakening of the separately excited DC machine %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Field weakening of the separately excited DC machine}
+			In the previous scenario the no-load speed $\omega_0$ is limited by the maximum armature voltage $U_\mathrm{max}$. However, if the field winding current $I_\mathrm{f}$ is also controllable, the no-load speed can be increased by decreasing the excitation $\psi_\mathrm{f}'$ (so-called field weakening). Consider an armature operation both at the voltage and current constraint:
+			\begin{equation}
+				U_\mathrm{max}  = R_\mathrm{a} I_\mathrm{max} + \omega \psi_\mathrm{f}'= R_\mathrm{a} I_\mathrm{max} + \omega L_\mathrm{f}' i_\mathrm{f}.
+			\end{equation}
+			For $\omega > \omega_1$ the field weakening is applied by reducing $i_\mathrm{f}$ to stay exactly at the armature voltage constraint:
+			\begin{equation}
+				i_\mathrm{f} = \frac{1}{\omega}\frac{U_\mathrm{max} - R_\mathrm{a} I_\mathrm{max}}{L_\mathrm{f}'}.
+			\end{equation}
+			Hence, we need to reduce the excitation with $1/\omega$ resulting in the torque and mechanical power
+			\begin{equation}
+				T = \frac{1}{\omega} \left(U_\mathrm{max}I_\mathrm{max} - R_\mathrm{a} I_\mathrm{max}^2\right), \qquad P_\mathrm{me} = U_\mathrm{max}I_\mathrm{max} - R_\mathrm{a} I_\mathrm{max}^2.
+			\end{equation}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Field weakening of the separately excited DC machine %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Field weakening of the separately excited DC machine (cont.)}
+	\begin{figure}
+		\centering
+		\includegraphics[scale=1.1]{fig/lec03/Sep_DC_machine_field_weakening.pdf}
+		\caption{Maximum achievable torque and mechanical power for the separately excited DC machine with a variable excitation $\psi_\mathrm{f}'$ as well as controllable armature voltage $U_\mathrm{a}$ and current $I_\mathrm{a}$}
+		\label{fig:Sep_DC_machine_field_weakening}
+\end{figure}
+\end{frame}
