@@ -720,7 +720,7 @@
 		 \begin{split}
 			 u_\mathrm{i} &= \frac{N_\mathrm{a}\alpha}{2 a} \frac{1}{\pi} \int_0^\pi u_\mathrm{c} \mathrm{d}\varepsilon
 			 = \omega I_\mathrm{f}\frac{\mu_0 N_\mathrm{f} N_\mathrm{a} l_\mathrm{z} d_\mathrm{a} }{4 \delta p a \pi} \int_0^\pi \sin(\varepsilon) \mathrm{d}\varepsilon
-			 = \omega I_\mathrm{f}\frac{\mu_0 N_\mathrm{f} N_\mathrm{a} l_\mathrm{z} d_\mathrm{a} }{4 \delta p a \pi} \left[-\cos(\varepsilon)\right]_0^\pi\\
+			 = \omega I_\mathrm{f}\frac{\mu_0 N_\mathrm{f} N_\mathrm{a} l_\mathrm{z} d_\mathrm{a} }{4 \delta p a \pi} \left[-\cos(\varepsilon)\right]_0^\pi\\[1em]
 			 &= \omega I_\mathrm{f}\frac{\mu_0 N_\mathrm{f} N_\mathrm{a} l_\mathrm{z} d_\mathrm{a}}{2 \delta p a \pi} = \omega I_\mathrm{f}\frac{\mu_0 N_\mathrm{f} N_\mathrm{a} l_\mathrm{z} \tau_p}{ \pi^2 \delta a } = \omega I_\mathrm{f} L_\mathrm{f}' = \omega  \psi_\mathrm{f}'.
 		 \end{split}
 	 \end{equation}
@@ -760,6 +760,53 @@
 	\end{figure}
 \end{column}
 \end{columns}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Power balance and efficiency %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Power balance and efficiency}
+		Based on \eqref{fig:ECD_DC_machine} (note the load convention), the electrical power of the DC machine is:
+		\begin{equation}
+			P_\mathrm{el} = u_\mathrm{a} i_\mathrm{a} + u_\mathrm{f} i_\mathrm{f}.
+		\end{equation}
+		This power is separated into the mechanical power $P_\mathrm{me}$, the dissipated power losses $P_\mathrm{l}$, and the change of the stored magnetic energy $\frac{\mathrm{d}}{\mathrm{d}t}E_\mathrm{mag}$:
+		\begin{equation}
+			P_\mathrm{el} = P_\mathrm{me} + P_\mathrm{l} + \frac{\mathrm{d}}{\mathrm{d}t}E_\mathrm{mag}.
+		\end{equation}
+		The power losses are (assuming dominant ohmic losses):
+		\begin{equation}
+			P_\mathrm{l} = R_\mathrm{f} i_\mathrm{f}^2 + R_\mathrm{a} i_\mathrm{a}^2.
+		\end{equation}
+		The mechanical power is:
+		\begin{equation}
+			P_\mathrm{me} = T \omega = \psi_\mathrm{f}' i_\mathrm{a} \omega.
+		\end{equation}
+		The magnetically stored energy is
+		\begin{equation}
+			E_\mathrm{mag} = \frac{1}{2} L_\mathrm{f} i_\mathrm{f}^2 + \frac{1}{2} L_\mathrm{a} i_\mathrm{a}^2.
+		\end{equation}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Power balance and efficiency %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Power balance and efficiency (cont.)}
+		In steady state, the DC machine efficiency $\eta$ is defined as
+		\begin{equation}
+			\begin{split}
+				\eta_{\mathrm{mot}} &= \frac{P_\mathrm{me}}{P_\mathrm{el}} = \frac{T \omega}{u_\mathrm{a} i_\mathrm{a} + u_\mathrm{f} i_\mathrm{f}} = \frac{L_\mathrm{f}' i_\mathrm{f}i_\mathrm{a}\omega}{R_\mathrm{a}i_\mathrm{a}^2 + \omega L_\mathrm{f}' i_\mathrm{f} i_\mathrm{a} +R_\mathrm{f}i_\mathrm{f}^2},\\[1em]
+				\eta_{\mathrm{gen}} &= \frac{P_\mathrm{el}}{P_\mathrm{me}} = \frac{u_\mathrm{a} i_\mathrm{a} + u_\mathrm{f} i_\mathrm{f}}{T \omega} = \frac{R_\mathrm{a}i_\mathrm{a}^2 + \omega L_\mathrm{f}' i_\mathrm{f} i_\mathrm{a} +R_\mathrm{f}i_\mathrm{f}^2}{L_\mathrm{f}' i_\mathrm{f}i_\mathrm{a}\omega}.
+			\end{split}
+		\end{equation}
+		It can be noted that
+		\begin{itemize}
+			\item The machine parameters $R_\mathrm{a}$, $R_\mathrm{f}$, and $L_\mathrm{f}'$ are influencing the efficiency.
+			\item The efficiency is a function of the load torque $T$ and the speed $\omega$, that is, depending on the operating point.
+			\item If $i_\mathrm{f}$ and $i_\mathrm{a}$ are independently controllable, the efficiency can be optimized as a certain torque can be produced with infinitely many combinations of $i_\mathrm{f}$ and $i_\mathrm{a}$.
+		\end{itemize}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -908,7 +955,6 @@
 	\end{figure}
 \end{column}
 \end{columns}
-	
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -943,5 +989,116 @@
 	\end{figure}
 \end{column}
 \end{columns}
-	
+\end{frame}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Connection types of DC machines %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Connection types of DC machines}
+	\vspace{-0.1cm}
+	\begin{figure}
+		\ContinuedFloat
+		\centering
+		\begin{subfigure}[b]{0.49\textwidth}
+			\centering
+			\includegraphics[scale=1.2]{fig/lec03/Separately_excited_DC_machine.pdf}
+			\caption{Separately excited (or perm. magnet) DC machine} 
+		\end{subfigure}
+		\hfill
+		\begin{subfigure}[b]{0.49\textwidth}
+			\centering
+			\includegraphics[scale=1.2]{fig/lec03/Series_DC_machine.pdf}
+			\caption{Series DC machine} 
+		\end{subfigure}
+		\\
+		\begin{subfigure}[b]{0.49\textwidth}
+			\centering
+			\includegraphics[scale=1.2]{fig/lec03/Shunt_DC_machine.pdf}
+			\caption{Shunt DC machine} 
+		\end{subfigure}
+		\hfill
+		\begin{subfigure}[b]{0.49\textwidth}
+			\centering
+			\includegraphics[scale=1.2]{fig/lec03/Compound_DC_machine.pdf}
+			\caption{Compound DC machine} 
+		\end{subfigure}
+		\vspace{-0.1cm}
+		\caption{Connection types of DC machines incl. terminal block designations (note: the not shown interpole winding has the terminal block designation $\mbox{B}1$-$\mbox{B}2$ and the compensation winding $\mbox{C}1$-$\mbox{C}2$)} 
+        \label{fig:connection_types_DC_machines}
+	\end{figure}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Steady-state behavior: separately excited DC machine %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Steady-state behavior: separately excited DC machine}
+			Assuming a fixed excitation $\psi_\mathrm{f}'$ (e.g., by a permanent magnet or constant field current), the separately excited DC machine's voltage demand for a certain speed is:
+			\begin{equation}
+				U_\mathrm{a} = R_\mathrm{a} I_\mathrm{a} + \omega \psi_\mathrm{f}'.
+			\end{equation}
+			On the other hand, the speed-torque characteristic for a fixed armature voltage supply $U_\mathrm{a}$ is
+			\begin{equation}
+				T = \left(U_\mathrm{a} -\omega \psi_\mathrm{f}'\right)\frac{\psi_\mathrm{f}'}{R_\mathrm{a}} = U_\mathrm{a}\frac{\psi_\mathrm{f}'}{R_\mathrm{a}} - \omega \frac{\psi_\mathrm{f}'^2}{R_\mathrm{a}}.
+			\end{equation}
+		\begin{figure}
+		\begin{columns}
+			\begin{column}{0.7\textwidth}
+				\centering
+				\includegraphics[height=0.4\textheight]{fig/lec03/Sep_DC_machine_voltage_current.pdf}\hspace{0.5cm}
+				\includegraphics[height=0.4\textheight]{fig/lec03/Sep_DC_machine_torque_speed.pdf}
+			\end{column}
+			\begin{column}{0.3\textwidth}
+				\caption{\raggedright Steady-state characteristics curves (adapted from J.~B\"ocker, \textit{Elektrische Antriebstechnik}, Paderborn University, 2020)}
+				\label{fig:char_curves_steady_state_sep_DC_machine}
+			\end{column}
+		\end{columns}
+		\end{figure}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Steady-state behavior: separately excited DC machine (cont.) %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Steady-state behavior: separately excited DC machine (cont.)}
+	\begin{columns}
+		\begin{column}{0.55\textwidth}
+		For $U_\mathrm{a}=\mbox{const.}>0$, the starting torque (i.e., the torque at zero speed) and the corresponding armature current are:
+		\begin{equation}
+			\begin{split}
+				T(\omega=0) &= T_0 = U_\mathrm{a}\frac{\psi_\mathrm{f}'}{R_\mathrm{a}}, \\ I_\mathrm{a}(\omega=0) &= I_{\mathrm{a}0}=  \frac{U_\mathrm{a}}{R_\mathrm{a}}.
+			\end{split}
+		\end{equation}
+		On the other hand for $T=0$, the no-load speed $\omega_0$ is:
+		\begin{equation}
+			\omega_0 = \frac{U_\mathrm{a}}{\psi_\mathrm{f}'}.
+		\end{equation}
+\end{column}
+\hfill
+\begin{column}{0.45\textwidth}
+	\vspace{-0.2cm}
+	\begin{figure}
+		\centering
+		\includegraphics{fig/lec03/Sep_DC_machine_starting_torque.pdf}
+		\caption{Starting torque and no-load speed of a separately excited DC machine (adapted from J.~B\"ocker, \textit{Elektrische Antriebstechnik}, Paderborn University, 2020)}
+	\end{figure}
+\end{column}
+\end{columns}		
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Steady-state behavior: separately excited DC machine (cont.) %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Steady-state behavior: separately excited DC machine (cont.)}
+			As the start up of a DC machine with a fixed armature voltage $U_\mathrm{a}$ can lead to very high armature currents, which potentially cause damage, dropping resistors can be used to limit the armature current. While this approach was historically very common (e.g., in rail vehicles), its additional power losses and the necessity to carry bulky resistors are obvious drawbacks. 
+		\begin{figure}
+				\centering
+				\includegraphics[scale=1.1]{fig/lec03/DC_machine_dropping_resistor.pdf}
+				\caption{Operation with dropping resistor during start up to limit the armature voltage (adapted from J.~B\"ocker, \textit{Elektrische Antriebstechnik}, Paderborn University, 2020)}
+				\label{fig:DC_machine_dropping_resistor}
+		\end{figure}
 \end{frame}
