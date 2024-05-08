@@ -1141,7 +1141,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
 	\frametitle{Field weakening of the separately excited DC machine}
-			In the previous scenario the no-load speed $\omega_0$ is limited by the maximum armature voltage $U_\mathrm{max}$. However, if the field winding current $I_\mathrm{f}$ is also controllable, the no-load speed can be increased by decreasing the excitation $\psi_\mathrm{f}'$ (so-called field weakening). Consider an armature operation both at the voltage and current constraint:
+			In the previous scenario, the no-load speed $\omega_0$ is limited by the maximum armature voltage $U_\mathrm{max}$. However, if the field winding current $I_\mathrm{f}$ is also controllable, the no-load speed can be increased by decreasing the excitation $\psi_\mathrm{f}'$ (so-called field weakening). Consider an armature operation both at the voltage and current constraint:
 			\begin{equation}
 				U_\mathrm{max}  = R_\mathrm{a} I_\mathrm{max} + \omega \psi_\mathrm{f}'= R_\mathrm{a} I_\mathrm{max} + \omega L_\mathrm{f}' i_\mathrm{f}.
 			\end{equation}
@@ -1166,4 +1166,60 @@
 		\caption{Maximum achievable torque and mechanical power for the separately excited DC machine with a variable excitation $\psi_\mathrm{f}'$ as well as controllable armature voltage $U_\mathrm{a}$ and current $I_\mathrm{a}$}
 		\label{fig:Sep_DC_machine_field_weakening}
 \end{figure}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Steady-state behavior: shunt DC machine %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Steady-state behavior: shunt DC machine}
+	\begin{columns}
+		\begin{column}{0.55\textwidth}
+		The shunt DC machine is characterized by:
+	   \begin{equation}
+		U = U_\mathrm{a}= U_\mathrm{f}, \qquad I = I_\mathrm{a} + I_\mathrm{f}.
+	   \end{equation}
+	   The steady-state currents are:
+	   \begin{equation}
+		\begin{split}
+			I_\mathrm{f} &= \frac{U_\mathrm{f}}{I_\mathrm{f}},\\
+			I_\mathrm{a} &= \frac{U_\mathrm{a} - \omega L_\mathrm{f}'I_\mathrm{f}}{R_\mathrm{a}} = \frac{1- L_\mathrm{f}'/R_\mathrm{f}\omega }{R_\mathrm{a}} U,\\
+			I &= I_\mathrm{a} + I_\mathrm{f} = \left(\frac{1}{R_\mathrm{a}} + \frac{1}{R_\mathrm{f}} - \frac{L_\mathrm{f}'\omega}{R_\mathrm{a}R_\mathrm{f}}\right)U.
+		\end{split}
+		\end{equation}
+		The resulting steady-state torque is:
+		\begin{equation}
+			T = L_\mathrm{f}' I_\mathrm{f} I_\mathrm{a} = L_\mathrm{f}'\frac{1- L_\mathrm{f}'/R_\mathrm{f}\omega }{R_\mathrm{a}R_\mathrm{f}}U^2.
+		\end{equation}
+\end{column}
+\hfill
+\begin{column}{0.45\textwidth}
+	\begin{figure}
+		\centering
+		\includegraphics[scale=1.25]{fig/lec03/Shunt_DC_machine.pdf}
+	\end{figure}
+\end{column}
+\end{columns}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Steady-state behavior: shunt DC machine %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Steady-state behavior: series DC machine}
+	\begin{columns}
+		\begin{column}{0.55\textwidth}
+		The series DC machine is characterized by:
+	   \begin{equation}
+		U = U_\mathrm{a} + U_\mathrm{f}, \qquad I = I_\mathrm{a} = I_\mathrm{f}.
+	   \end{equation}
+\end{column}
+\hfill
+\begin{column}{0.45\textwidth}
+	\begin{figure}
+		\centering
+		\includegraphics[scale=1.25]{fig/lec03/Series_DC_machine.pdf}
+	\end{figure}
+\end{column}
+\end{columns}
 \end{frame}
