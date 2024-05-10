@@ -739,6 +739,7 @@
 			u_\mathrm{f} &= R_\mathrm{f} i_\mathrm{f} + L_\mathrm{f} \frac{\mathrm{d}i_\mathrm{f}}{\mathrm{d}t} \\
 			u_\mathrm{a} &= R_\mathrm{a} i_\mathrm{a} + L_\mathrm{a} \frac{\mathrm{d}i_\mathrm{a}}{\mathrm{d}t} + u_\mathrm{i} + u_\mathrm{b}
 		\end{aligned}
+		 \label{eq:DC_machine_ODE_currents}
 	\end{equation}
 	Induced voltage:
 	\begin{equation*}
@@ -1203,7 +1204,7 @@
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Steady-state behavior: shunt DC machine %%
+%% Steady-state behavior: series DC machine %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
 	\frametitle{Steady-state behavior: series DC machine}
@@ -1212,6 +1213,20 @@
 		The series DC machine is characterized by:
 	   \begin{equation}
 		U = U_\mathrm{a} + U_\mathrm{f}, \qquad I = I_\mathrm{a} = I_\mathrm{f}.
+		\label{eq:DC_series_machine_char}
+	   \end{equation}
+	   We can rewrite the terminal voltage as
+	   \begin{equation}
+		U = \left(R_\mathrm{a} + R_\mathrm{f}\right) I + \omega L_\mathrm{f}' I = R'(\omega) I 
+	   \end{equation}
+	   with the effective speed-dependent resistance
+	   \begin{equation}
+		R'(\omega) = R_\mathrm{a} + R_\mathrm{f} + \omega L_\mathrm{f}'.
+	   \end{equation}
+	   The steady-state torque is then
+	   \begin{equation}
+		T = L_\mathrm{f}' I^2 = L_\mathrm{f}'\left(\frac{U}{R'(\omega)}\right)^2.
+		\label{eq:Torque_series_DC_machine}
 	   \end{equation}
 \end{column}
 \hfill
@@ -1220,6 +1235,199 @@
 		\centering
 		\includegraphics[scale=1.25]{fig/lec03/Series_DC_machine.pdf}
 	\end{figure}
+\end{column}
+\end{columns}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Steady-state behavior: series DC machine (cont.) %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Steady-state behavior: series DC machine (cont.)}
+	\begin{columns}
+		\begin{column}{0.55\textwidth}
+		If the series DC machine is operated at the negative mechanical speed
+		\begin{equation}
+			\omega_\mathrm{r} = -\frac{R_\mathrm{a} + R_\mathrm{f}}{L_\mathrm{f}'},
+	   \end{equation}
+	   the current and the torque get (theoretically) infinite. This is due to the fact that the back EMF is exactly compensating the resistive voltage drop.
+
+	   Moreover, for from \eqref{eq:Torque_series_DC_machine} we can observe that
+	   \begin{equation}
+		 T \rightarrow 0 \quad \Rightarrow \quad \omega \rightarrow \infty
+	   \end{equation}
+	   holds for any DC voltage $U \neq 0$. This is due to inherent, load-dependent flux weakening effect of the series DC machine.
+\end{column}
+\hfill
+\begin{column}{0.45\textwidth}
+	\begin{figure}
+		\centering
+		\includegraphics[scale=1.1]{fig/lec03/Series_DC_machine_torque_speed.pdf}
+		\caption{Steady-state torque-speed characteristics for different DC voltage levels}
+		\label{fig:Series_DC_machine_torque_speed}
+\end{figure}
+\end{column}
+\end{columns}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Universal motor: series DC machine with sinusoidal excitation %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Universal machine: series DC machine with sinusoidal excitation}
+	\begin{columns}
+		\begin{column}{0.55\textwidth}
+		From \eqref{eq:Torque_series_DC_machine} it becomes clear that $T\sim I^2$ holds and, hence, the torque is independent of the sign of the current. Hence, the series DC machine can be also operated with an AC voltage supply (so-called universal machine).
+		\\[1em]
+		Consider the sinusoidal excitation $$u(t) = \hat{u} \cos(\omega_\mathrm{el} t+ \varphi_{\mathrm{u}}) = \mathrm{Re}\left\{\hat{u} e^{\iu \omega_\mathrm{el} t + \varphi_{\mathrm{u}}}\right\},$$ which is represented by the complex phasor 
+		\begin{equation}
+			\underline{U} = U e ^{\iu \phi_{\mathrm{u}}} = \frac{1}{\sqrt{2}}\hat{u} e ^{\iu \varphi_{\mathrm{u}}}. 
+		\end{equation}
+\end{column}
+\hfill
+\begin{column}{0.45\textwidth}
+	\begin{figure}
+		\centering
+		\includegraphics[scale=1.05]{fig/lec03/Universal_machine_time_signals.pdf}
+		\caption{Qualitative voltage, current and torque signals for an universal motor}
+	\end{figure}
+\end{column}
+\end{columns}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Universal motor: series DC machine with sinusoidal excitation (cont.) %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Universal machine: series DC machine with sinusoidal excitation (cont.)}
+		From \eqref{eq:DC_machine_ODE_currents} and \eqref{eq:DC_series_machine_char} we can derive the complex voltage and current relations:
+		\begin{equation}
+			\underline{U} = R'(\omega)\underline{I} + \iu \omega_\mathrm{el} L \underline{I}
+		\end{equation}
+		with $L = L_\mathrm{f}+L_\mathrm{a}$. The current phasor is
+		\begin{equation}
+			\underline{I} = \frac{\underline{U}}{R'(\omega) + \iu \omega_\mathrm{el} L}
+		\end{equation}
+		resulting in the instantaneous current (setting $\varphi_{\mathrm{u}}=0$)
+		\begin{align}
+			i(t) &= \mathrm{Re}\left\{ \sqrt{2}\underline{I} e^{\iu\omega_\mathrm{el}t}\right\}=\sqrt{2}\mathrm{Re}\left\{ \frac{U\left(R'(\omega)-\iu\omega_\mathrm{el}L\right)}{R'(\omega)^2+\omega_\mathrm{el}^2L^2} e^{\iu\omega_\mathrm{el}t}\right\}\\
+			& =\sqrt{2}\frac{U}{\sqrt{R'(\omega)^2+\omega_\mathrm{el}^2L^2}}\cos\left(\omega_\mathrm{el}(t-\frac{L}{R'(\omega)})\right).
+		\end{align} 
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Universal motor: series DC machine with sinusoidal excitation (cont.) %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Universal machine: series DC machine with sinusoidal excitation (cont.)}
+	\begin{columns}
+		\begin{column}{0.55\textwidth}
+		The resulting instantaneous torque is
+		\begin{equation*}
+		\begin{split}
+			T(t) &= L_\mathrm{f}' i^2(t)\\
+				 &= 2L_\mathrm{f}'\frac{U^2}{R'(\omega)^2+\omega_\mathrm{el}^2L^2}\cos\left(\omega_\mathrm{el}(t-\frac{L}{R'(\omega)})\right)^2\\
+				 &= L_\mathrm{f}'\frac{U^2}{R'(\omega)^2+\omega_\mathrm{el}^2L^2}\left[1+\cos\left(2\omega_\mathrm{el}(t-\frac{L}{R'(\omega)})\right)\right].	
+		\end{split}
+	\end{equation*}
+	The peak and average torque are
+	\begin{equation}
+		\begin{split}
+		\hat{T} &= 2 L_\mathrm{f}'\frac{U^2}{R'(\omega)^2+\omega_\mathrm{el}^2L^2}= L_\mathrm{f}'\frac{\hat{u}^2}{R'(\omega)^2+\omega_\mathrm{el}^2L^2}, \\
+		\overline{T} &= \frac{1}{2}\hat{T}.
+	\end{split}
+	\label{eq:Universal_motor_peak_avg_torque}
+\end{equation}
+	\end{column}
+\hfill
+\begin{column}{0.45\textwidth}
+	\begin{figure}
+		\centering
+		\includegraphics[scale=1.05]{fig/lec03/Universal_machine_time_signals.pdf}
+	\end{figure}
+\end{column}
+\end{columns}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Universal machine: series DC machine with sinusoidal excitation (cont.) %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Universal machine: series DC machine with sinusoidal excitation (cont.)}
+	\begin{columns}
+		\begin{column}{0.55\textwidth}
+		Some remarks on the universal machine:
+		\begin{itemize}
+			\item Only if the reactance $\omega_\mathrm{el}L$ impact on the voltage demand is negligible, the universal machine average torque at AC mode is identical to the series DC machine torque in DC mode applying the same effective voltage. 
+			\item Due to the AC field current, both the armature and stator should be based on a laminated iron core design to reduce eddy current losses.
+			\item The peak armature and field currents are $\sqrt{2}$ times higher in the AC case than in DC operation. To prevent magnetic saturation, the iron paths must be designed larger than for an equivalent DC machine (i.e., leading to more volume and weight).
+		\end{itemize}
+\end{column}
+\hfill
+\begin{column}{0.45\textwidth}
+	\begin{figure}
+		\centering
+		\includegraphics[scale=1.1]{fig/lec03/Universal_machine_torque_speed.pdf}
+		\caption{Steady-state torque-speed characteristics for different AC voltage frequencies at a fixed voltage amplitude}
+		\label{fig:Universal_machine_torque_speed}
+\end{figure}
+\end{column}
+\end{columns}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Commutation of the universal machine %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Commutation of the universal machine}
+	\begin{columns}
+		\begin{column}{0.65\textwidth}
+		Assuming that the entire air gap field $\phi_\delta$ is linked by the commutation coil, the time-varying excitation field induces an additional spark voltage $u_\mathrm{sp}$ within the commutation coil:
+		\begin{equation}
+			u_\mathrm{sp} = -N_\mathrm{c} \frac{p}{a} \frac{\mathrm{d}\phi_\delta}{\mathrm{d}t}.
+		\end{equation}
+		Due to the time-varying excitation current, we have $\phi_\delta(t) = \hat{\phi}_\delta\cos(\omega_\mathrm{el} t)$ and, hence,
+		\begin{equation}
+			u_\mathrm{sp} = N_\mathrm{c} \frac{p}{a} \omega_\mathrm{el} \hat{\phi}_\delta \sin(\omega_\mathrm{el} t).
+			\label{eq:Induced_spark_voltage}
+		\end{equation}
+		This additional induced spark voltage is shifted by (approx.) 90 degrees to the excitation field. Consequently, the interpole winding current is not in phase and does not compensate $u_\mathrm{sp}$.
+\end{column}
+\hfill
+\begin{column}{0.35\textwidth}
+	\begin{figure}
+		\centering
+		\includegraphics[scale=1]{fig/lec03/Commutation_universal_machine.pdf}
+		\caption{Simplified illustration of the induced voltage within the short-circuited commutation coil by the varying excitation field}
+		\label{fig:Commutation_universal_machine}
+\end{figure}
+\end{column}
+\end{columns}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Commutation of the universal machine (cont.) %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Commutation of the universal machine (cont.)}
+	\begin{columns}
+		\begin{column}{0.65\textwidth}
+		Assuming an ideal inductive behavior of the short-circuited coil, the induced spark voltage \eqref{eq:Induced_spark_voltage} leads to the current
+		\begin{equation}
+			i_\mathrm{sp} = -\frac{N_\mathrm{c} }{L_\mathrm{c} } \frac{p}{a} \hat{\phi}_\delta \cos(\omega_\mathrm{el} t).
+		\end{equation}
+		This additional current will cause commutator sparking and, hence, the universal machine commutation process is more challenging than for a pure DC machine. 
+		\vspace{-0.25cm}
+		\begin{varblock}{Conlusion on the universal machine}
+			The drawbacks of the universal machine in terms of sizing and commutation sparking (leading to higher wear) are the reasons why this machine type is typical limited to low-cost applications (e.g., household appliances) nowadays. 
+		\end{varblock}
+\end{column}
+\hfill
+\begin{column}{0.35\textwidth}
+	\begin{figure}
+		\centering
+		\includegraphics[scale=1]{fig/lec03/Commutation_universal_machine.pdf}
+\end{figure}
 \end{column}
 \end{columns}
 \end{frame}
