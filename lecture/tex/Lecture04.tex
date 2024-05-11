@@ -63,3 +63,84 @@
         \label{fig:examples_transformers}
 	\end{figure}
 \end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Electromagnetic modeling of the single-phase transformer %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Electromagnetic modeling of the single-phase transformer}
+    \begin{columns}
+		\begin{column}{0.45\textwidth}
+            Recap from \eqref{eq:flux_linkage_matrix_transformer}: for some given current $\bm{i}$, the flux linkages $\bm{\psi}$ in the transformer windings are
+			\begin{equation*}
+				\bm{\psi} = \begin{bmatrix} \psi_1 \\ \psi_2 \end{bmatrix} = \begin{bmatrix} L_1 & M \\ M & L_2 \end{bmatrix} \begin{bmatrix} i_1 \\ i_2 \end{bmatrix} = \bm{L}\bm{i}
+			\end{equation*}
+			where $L_1$ and $L_2$ are the self-inductances of the primary and secondary winding, respectively, and $M$ is the mutual inductance.
+			\\[1em]
+			Note: The above equation is an algebraic relation, that is, it is valid for any time instant $t$ and applies to both AC and DC excitation of the transformer. 
+		\end{column}
+        \hfill
+		\begin{column}{0.525\textwidth}
+			\begin{figure}
+				\centering
+				\includegraphics[height=0.575\textheight]{fig/lec02/Transformer3d_col3.pdf}
+			\end{figure}
+		\end{column}
+		\end{columns}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Electromagnetic modeling of the single-phase transformer (cont.) %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Electromagnetic modeling of the single-phase transformer (cont.)}
+		The dynamic transformer behavior can be represented by the ECD in \figref{fig:General_transformer_ECD}, which also considers the internal resistances of the windings. Applying Faraday's law, the resulting differential equations are:
+		\begin{align}
+			u_1(t) = R_1 i_1(t) + \frac{\mathrm{d}\psi_1(t)}{\mathrm{d}t}, \qquad u_2(t) = R_2 i_2(t) + \frac{\mathrm{d}\psi_2(t)}{\mathrm{d}t}. \label{eq:transformer_differential_equations}
+		\end{align}
+		Inserting \eqref{eq:flux_linkage_matrix_transformer} delivers:
+		\begin{align}
+			u_1(t) = R_1 i_1(t) + L_1 \frac{\mathrm{d}i_1(t)}{\mathrm{d}t} + M \frac{\mathrm{d}i_2(t)}{\mathrm{d}t}, \qquad
+			u_2(t) = R_2 i_2(t) + L_2 \frac{\mathrm{d}i_2(t)}{\mathrm{d}t} + M \frac{\mathrm{d}i_1(t)}{\mathrm{d}t}. \label{eq:transformer_differential_equations_2}
+		\end{align}
+		
+\begin{figure}
+\begin{columns}
+	\begin{column}{0.55\textwidth}
+            \centering
+            \includegraphics[width=0.8\textwidth]{fig/lec04/General_transformer_ECD.pdf}
+    \end{column}
+    \begin{column}{0.45\textwidth}
+        \caption{\raggedright General equivalent circuit diagram (ECD) of a transformer (note: that both ports of the transformer are denoted in the load convention reference frame which is an arbitrary representation decision).}
+		\label{fig:General_transformer_ECD}
+    \end{column}
+\end{columns}
+\end{figure}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Electromagnetic modeling of the single-phase transformer (cont.) %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Electromagnetic modeling of the single-phase transformer (cont.)}
+		The \eqref{eq:transformer_differential_equations_2} can be represented by the T-type ECD in \figref{fig:Transformer_T_ECD}. It may be noted that $L_1-M$ and $L_2-M$ can have negative values due to the model representation. 
+		\\[1em]
+		By rearranging and substituting, we can also obtain the state-space representation of the transformer from \eqref{eq:transformer_differential_equations_2} by utilizing the leakage coefficient $\sigma = 1- k^2 = 1 - M^2/(L_1 L_2)$:
+		\begin{equation}
+			\renewcommand*{\arraystretch}{1.4}
+			\frac{\mathrm{d}}{\mathrm{d}t}\begin{bmatrix}i_1(t)\\i_2(t)\end{bmatrix}=\frac{\mathrm{d}}{\mathrm{d}t}\bm{i}(t) = \begin{bmatrix} - \frac{R_1}{\sigma L_1} & \frac{R_2 M}{\sigma L_1 L_2}\\  \frac{R_1 M}{\sigma L_1 L_2} & -\frac{R_2}{\sigma L_2} \end{bmatrix} \bm{i}(t) + \begin{bmatrix} \frac{1}{\sigma L_1} & -\frac{M}{\sigma L_1 L_2} \\ -\frac{M}{\sigma L_1 L_2} & \frac{1}{\sigma L_2} \end{bmatrix} \bm{u}(t).
+		\end{equation}
+
+\begin{figure}
+\begin{columns}
+	\begin{column}{0.55\textwidth}
+            \centering
+            \includegraphics[width=0.9\textwidth]{fig/lec04/Transformer_T_ECD.pdf}
+    \end{column}
+    \begin{column}{0.45\textwidth}
+        \caption{\raggedright T-type ECD of a transformer}
+		\label{fig:Transformer_T_ECD}
+    \end{column}
+\end{columns}
+\end{figure}
+\end{frame}
