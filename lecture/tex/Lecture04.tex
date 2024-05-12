@@ -137,7 +137,7 @@
             \includegraphics[width=0.9\textwidth]{fig/lec04/Transformer_T_ECD.pdf}
     \end{column}
     \begin{column}{0.45\textwidth}
-        \caption{\raggedright T-type ECD of a transformer}
+        \caption{\raggedright T-type ECD of a transformer (note that the model \eqref{eq:transformer_differential_equations_matrix_form} assumes linear time-invariant (LTI) behavior, which among other effects neglects magnetic saturation).}
 		\label{fig:Transformer_T_ECD}
     \end{column}
 \end{columns}
@@ -178,6 +178,7 @@
 		From \eqref{eq:transformer_differential_equations_matrix_form} we recieve
 		\begin{align}
 			\bm{\underline{U}} = \begin{bmatrix} \underline{U}_1 \\ \underline{U}_2 \end{bmatrix} = \bm{R}\bm{\underline{I}} + \iu \omega_\mathrm{el} \bm{L}\bm{\underline{I}} = \bm{\underline{Z}}\, \bm{\underline{I} } = \begin{bmatrix} R_1 + \iu \omega_\mathrm{el} L_1 & \iu \omega_\mathrm{el} M \\ \iu \omega_\mathrm{el} M & R_2 + \iu \omega_\mathrm{el} L_2 \end{bmatrix} \begin{bmatrix} \underline{I}_1 \\ \underline{I}_2 \end{bmatrix}.
+			\label{eq:transformer_steady_state_voltage_response}
 		\end{align}
 		For some given $\bm{\underline{U}}$ we can calculate the current phasors $\bm{\underline{I}}$ (i.e., the steady-state current response) by solving:
 		\begin{align}
@@ -185,6 +186,27 @@
 			\bm{\underline{I}} = \bm{\underline{Z}}^{-1} \bm{\underline{U}} .
 			\label{eq:transformer_steady_state_current_response}
 		\end{align}
+		Alternative scenarios can be also considered, e.g., defining $\underline{U}_1$ (input voltage) and $\underline{I}_2$ (load current) as given and solving for $\underline{I}_1$ and $\underline{U}_2$ by rearranging \eqref{eq:transformer_steady_state_voltage_response}. 
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Steady-state of the single-phase transformer (cont.) %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Steady-state modeling of the single-phase transformer (cont.)}
+		Assuming that the transformer is not loaded ($I_2 = 0$) and that it is lossless ($R_1 = 0$), \eqref{eq:transformer_steady_state_voltage_response} simplifies to
+		\begin{equation}
+			\begin{bmatrix} \underline{U}_1 \\ \underline{U}_2 \end{bmatrix} = \begin{bmatrix} \iu \omega_\mathrm{el} L_1  \\ \iu \omega_\mathrm{el} M  \end{bmatrix} \underline{I}_1.
+		\end{equation}
+		The voltage transformation ratio in this case results in
+		\begin{equation}
+			\frac{U_1}{U_2} = \frac{\iu \omega_{\mathrm{el}} L_1 I_1}{\iu \omega_{\mathrm{el}} M I_1}  = \frac{L_1}{M}.
+		\end{equation}
+		Assuming further that the transformer is leakage-free ($L_{1,\sigma}=0$), the voltage transformation ratio simplifies to (compare also \eqref{eq:inductance_split})
+		\begin{equation}
+			\frac{U_1}{U_2} = \frac{L_1}{M} = \frac{\Lambda_{21}N_1^2}{\Lambda_{21}N_1 N_2} I_1 = \frac{N_1}{N_2}.
+		\end{equation}
+		Hence, this famous result is only valid for the abstract case of a lossless, leakage-free, and, unloaded transformer -- i.e., not applicable to real-world transformers.
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -221,12 +243,12 @@
 		with the transformed resistance $R'_2 = \alpha^2 R_2$ and inductance $L'_2 = \alpha^2 L_2$.
 		\begin{figure}
 			\begin{columns}
-				\begin{column}{0.55\textwidth}
+				\begin{column}{0.64\textwidth}
 						\centering
 						\includegraphics[width=0.99\textwidth]{fig/lec04/Transformer_T_ECD_gen_transf.pdf}
 				\end{column}
-				\begin{column}{0.45\textwidth}
-					\caption{\raggedright T-type ECD of a transformer with transformed secondary side variables for some arbitrary transformation factor $\alpha$ (note that $k$ and $\sigma$ are transformation invariant, i.e., they also apply to the transformed model).}
+				\begin{column}{0.35\textwidth}
+					\caption{\raggedright T-type ECD of a transformer with transformed secondary side variables for some arbitrary transformation factor $\alpha$ (note that $k$ and $\sigma$ are transformation invariant.)}
 					\label{fig:Transformer_T_ECD_gen_transf}
 				\end{column}
 			\end{columns}
@@ -238,5 +260,99 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
 	\frametitle{Transformation of the secondary side variables by the turn ratio}
-		
+	With choosing $$\alpha = N_1/N_2$$ as the transformation factor, we receive:
+	\begin{equation}
+		M' = (N_1/N_2)M = L_{1,\mathrm{m}}, \qquad L'_2 = (N_1^2/N_2^2) L_2
+	\end{equation}
+		with $L_{1,\mathrm{m}}$ being the primary magnetizing inductance, cf. \eqref{eq:inductance_split}. Moreover, we have
+	\begin{equation}
+		L_1 - M' = L_{1,\sigma}, \qquad L_2' - M'2 =  (N_1^2/N_2^2) L_{2,\sigma} = L'_{2,
+		\sigma}
+	\end{equation}
+	with $L_{1,\sigma}$ and $L_{2,\sigma}$ being the leakage inductances of the primary and secondary winding. 
+	\begin{figure}
+		\begin{columns}
+			\begin{column}{0.64\textwidth}
+					\centering
+					\includegraphics[width=0.99\textwidth]{fig/lec04/Transformer_T_ECD_turn_transf.pdf}
+			\end{column}
+			\begin{column}{0.35\textwidth}
+				\caption{\raggedright T-type ECD of a transformer with $\alpha =N_1/N_2$ (note that all inductances within this model representation have a direct physical interpretation.)}
+				\label{fig:Transformer_T_ECD_turn_transf}
+			\end{column}
+		\end{columns}
+	\end{figure}	
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Transformation towards a single stray inductance %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Transformation towards a single stray inductance}
+	With choosing $$\alpha = M/L_2$$ as the transformation factor, we receive:
+	\begin{equation}
+		L'_2 - M' = \alpha^2 L_2 - \alpha M = L_{2,\sigma} = 0,
+	\end{equation}
+		that is, the secondary transformed leakage inductance is vanishing. Moreover, we have
+	\begin{equation}
+		L_1 - M' = L'_{1,\sigma}=\sigma L_1 , \qquad M'  = M^2 / L_2.
+	\end{equation}
+	With the alternative choice $\alpha = L_1/M$, the leakage inductance gets concentrated on the secondary side (not explicitly shown).
+	\begin{figure}
+		\begin{columns}
+			\begin{column}{0.64\textwidth}
+					\centering
+					\includegraphics[width=0.99\textwidth]{fig/lec04/Transformer_T_ECD_stray_transf.pdf}
+			\end{column}
+			\begin{column}{0.35\textwidth}
+				\caption{\raggedright T-type ECD of a transformer with $\alpha =M/L_2$}
+				\label{fig:Transformer_T_ECD_stray_transf}
+			\end{column}
+		\end{columns}
+	\end{figure}	
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Typical transformer core types %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Typical transformer core types}
+	\begin{itemize}
+		\item The core of a transformer typical build from laminated steel sheets (cf. \figref{fig:Eddy_currents_lamination}). Alternatively, sintered ferrite material is also used for high-frequency applications.
+		\item To improve the coupling between primary and secondary winding, it is beneficial to place the windings around the same leg. Hence, the middle example in \figref{fig:Transformer_cores} will exhibit a larger leakage.
+	\end{itemize}
+	\begin{figure}
+		\includegraphics[width=0.9\textwidth]{fig/lec04/Transformer_cores.pdf}
+		\caption{Examples of typical transformer core types}
+		\label{fig:Transformer_cores}
+	\end{figure}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Typical transformer winding schemes %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Typical transformer winding schemes}
+	\begin{itemize}
+		\item The below examples show improving magnetic coupling (lower leakage) from left to right due to the reducing effective distance between the turns of the primary and secondary winding.
+		\item Beyond these examples, various winding variations (e.g., a combination of the below schemes) are used to optimize the transformer design for specific applications. 
+	\end{itemize}
+	\vspace{0.5em}
+	\begin{figure}
+		\includegraphics[width=0.7\textwidth]{fig/lec04/Transformer_winding_types.pdf}
+		\caption{Examples of typical transformer winding schemes}
+		\label{fig:Transformer_winding_types}
+	\end{figure}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Three-phase transformer %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Three-phase transformer}
+	\begin{figure}
+		\includegraphics[width=0.6\textwidth]{fig/lec04/Three_phase_transformer_simple.pdf}
+		\caption{Simple three-phase transformer with three independent single-phase transformers connected in star both on the primary and secondary side}
+		\label{fig:Three_phase_transformer_simple}
+	\end{figure}
 \end{frame}
