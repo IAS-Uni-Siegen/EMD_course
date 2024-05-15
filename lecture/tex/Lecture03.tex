@@ -399,7 +399,7 @@
 	\frametitle{Lap and wave winding comparison}
 	Introducing the parameter 
 	\begin{equation}
-		a = \mbox{Number of parallel armature conductors}
+		a = \mbox{number of parallel armature conductors}
 		\label{eq:Parallel_conductors}
 	\end{equation}
 	we can wrap up the following summary:\pause
@@ -419,10 +419,10 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
 	\frametitle{Commutation process}
-	During the commutation time $\Delta t_\mathrm{c}$ the brush bridges two commutator segments and the short-circuited conductor coil current $i_\mathrm{c}$ is changing signs. Here, two major scenarios can be distinguished:
+	During the commutation time $\Delta t_\mathrm{c}$ the brush bridges two commutator segments and the short-circuited conductor coil current $i_\mathrm{c}$ is changing signs.\onslide<2->{ Here, two major scenarios can be distinguished:}
 	\begin{itemize}
-		\item The commutation is such fast that high local current densities are prevented.
-		\item The commutation is slow and high local current densities lead to sparking effects.
+		\item<2-> The commutation is such fast that high local current densities are prevented.
+		\item<3-> The commutation is slow and high local current densities lead to sparking effects.
 	\end{itemize}
     \begin{figure}
         \centering
@@ -450,12 +450,12 @@
 			Assuming that the brush width $w_\mathrm{b}$ is much bigger than one commutator segment (which is usual practice), the commutation time $\Delta t_\mathrm{c}$ is given by
 			\begin{equation}
 				\Delta t_\mathrm{c} \approx \frac{w_\mathrm{b}}{v_\mathrm{c}}.
-			\end{equation}
+			\end{equation}\pause
 			Here, $v_\mathrm{c}$ is the brush velocity
 			\begin{equation}
 				v_\mathrm{c} = \omega \frac{d_\mathrm{a}}{2}
 			\end{equation}
-			with the armature angular velocity $\omega$ and the armature diameter $d_\mathrm{a}$. Due to the changing current in the coil, the so-called reactane voltage $u_\mathrm{r}$ is induced:
+			with the armature angular velocity $\omega$ and the armature diameter $d_\mathrm{a}$. \pause Due to the changing current in the coil, the so-called reactane voltage $u_\mathrm{r}$ is induced:
 			\begin{equation}
 				u_\mathrm{r} = L_\mathrm{c} \frac{\mathrm{d}i_\mathrm{c}}{\mathrm{d}t} \approx L_\mathrm{c} \frac{i_\mathrm{a}}{a \Delta t_\mathrm{c}} = L_\mathrm{c} i_\mathrm{a} \frac{\omega d_\mathrm{a}}{a w_\mathrm{b}2}.
 				\label{eq:reactance_voltage_commutation}
@@ -529,7 +529,7 @@
 			\begin{equation}
 				\begin{split}
 				\phi_\delta &= \frac{N_\mathrm{f} I_\mathrm{f}}{2 R_\delta + R_\mathrm{a} + \frac{1}{2}R_\mathrm{s}}\\
-							& = \frac{N_\mathrm{f} I_\mathrm{f}}{\mu_0}\left(2\frac{\delta}{A_\delta} + \frac{l_\mathrm{a}}{\mu_{\mathrm{r, Fe}} A_\mathrm{a}} + \frac{1}{2}\frac{l_\mathrm{s}}{\mu_{\mathrm{r, Fe}} A_\mathrm{s}}\right)^{-1}. 
+							& = \mu_0 N_\mathrm{f} I_\mathrm{f}\left(2\frac{\delta}{A_\delta} + \frac{l_\mathrm{a}}{\mu_{\mathrm{r, Fe}} A_\mathrm{a}} + \frac{1}{2}\frac{l_\mathrm{s}}{\mu_{\mathrm{r, Fe}} A_\mathrm{s}}\right)^{-1}. 
 			\end{split}
 			\label{eq:Air_gap_flux_DC_machine_simple}
 			\end{equation}
@@ -628,10 +628,10 @@
 	The resulting (average) machine torque $T$ for $N_\mathrm{a}$ armature conductor loops from which an $\alpha$  share is covered by the poles (cf. \figref{fig:Magnetic_field_normal_component_DC_machine}) is
 	\begin{equation}
 		\begin{split}
-			T 	&= 2 \alpha N_\mathrm{a} \frac{1}{\pi} \int_0^\pi T_\mathrm{c} \mathrm{d}\varepsilon \\ 
-				&= \frac{\mu_0 \alpha N_\mathrm{f} N_\mathrm{a} l_z d_\mathrm{a}}{4 \delta p a} I_\mathrm{f} I_\mathrm{a} \int_0^\pi \sin(\varepsilon) \mathrm{d}\varepsilon \\ 
-				&=\frac{\mu_0 \alpha N_\mathrm{f} N_\mathrm{a} l_z d_\mathrm{a}}{4 \delta p a \pi} I_\mathrm{f} I_\mathrm{a} \left[-\cos(\varepsilon)\right]_0^\pi\\
-				& = \frac{\mu_0 \alpha N_\mathrm{f} N_\mathrm{a} l_z d_\mathrm{a}}{2 \delta p a \pi} I_\mathrm{f} I_\mathrm{a}.
+			\onslide<2->{T 	&= 2 \alpha N_\mathrm{a} \frac{1}{\pi} \int_0^\pi T_\mathrm{c} \mathrm{d}\varepsilon} \\ 
+				\onslide<3->{&= \frac{\mu_0 \alpha N_\mathrm{f} N_\mathrm{a} l_z d_\mathrm{a}}{4 \delta p a} I_\mathrm{f} I_\mathrm{a} \int_0^\pi \sin(\varepsilon) \mathrm{d}\varepsilon} \\ 
+				\onslide<4->{&=\frac{\mu_0 \alpha N_\mathrm{f} N_\mathrm{a} l_z d_\mathrm{a}}{4 \delta p a \pi} I_\mathrm{f} I_\mathrm{a} \left[-\cos(\varepsilon)\right]_0^\pi}\\
+				\onslide<5->{& = \frac{\mu_0 \alpha N_\mathrm{f} N_\mathrm{a} l_z d_\mathrm{a}}{2 \delta p a \pi} I_\mathrm{f} I_\mathrm{a}.}
 		\end{split}
 	\end{equation}
 \end{frame}
@@ -648,12 +648,12 @@
 		&= \frac{\mu_0 \alpha N_\mathrm{f} N_\mathrm{a} l_z \tau_\mathrm{p}}{\pi^2  \delta a} I_\mathrm{f} I_\mathrm{a}.
 		\end{split}
 		\label{eq:Torque_DC_machine}
-	\end{equation}
+	\end{equation}\pause
 	Some remarks on machine design impacts on the torque:
 	\begin{itemize}
-		\item To produce torque, both field current $I_\mathrm{f}$ and armature current $I_\mathrm{a}$ are required.
-		\item The larger the machine dimensions (axial length $l_\mathrm{z}$ and armature diameter $d_\mathrm{a} \approx d_\mathrm{s}$), the larger the torque.
-		\item The more winding turns $N_\mathrm{a}$ and $N_\mathrm{f}$, the larger the torque.
+		\item To produce torque, both field current $I_\mathrm{f}$ and armature current $I_\mathrm{a}$ are required. \pause
+		\item The larger the machine dimensions (axial length $l_\mathrm{z}$ and armature diameter $d_\mathrm{a} \approx d_\mathrm{s}$), the larger the torque. \pause
+		\item The more winding turns $N_\mathrm{a}$ and $N_\mathrm{f}$, the larger the torque. \pause
 		\item The smaller the air gap width $\delta$, the larger the torque.
 	\end{itemize}
 \end{frame}
@@ -667,15 +667,15 @@
 	\begin{equation}
 		L_\mathrm{f}' =  \frac{\mu_0 \alpha N_\mathrm{f} N_\mathrm{a} l_z d_\mathrm{a}}{2 \delta p a \pi} = \frac{\mu_0 \alpha N_\mathrm{f} N_\mathrm{a} l_z \tau_\mathrm{p}}{\pi^2  \delta a}.
 		\label{eq:Effective_field_inductance}
-	\end{equation}
+	\end{equation} \pause
 	Compared to the self-inductance of the field winding 
 	\begin{equation}
 		L_\mathrm{f} = \frac{N_\mathrm{f}^2}{2 R_\delta} = \frac{\mu  \alpha p \tau_\mathrm{p} l_z N_\mathrm{f}^2}{4 \delta},
-	 \end{equation}
+	 \end{equation} \pause
 	 we find
 	 \begin{equation}
 		 L_\mathrm{f}' = \underbrace{\frac{4}{a \pi^2}\frac{N_\mathrm{a}}{N_\mathrm{f}}}_{c} L_\mathrm{f}  = c L_\mathrm{f} .
-	\end{equation}
+	\end{equation} \pause
 	Finally, we define the effective field flux linkage $\psi_\mathrm{f}'$ to rewrite the torque expression
 	\begin{equation}
 		\psi_\mathrm{f}' = L_\mathrm{f}' I_\mathrm{f}, \hspace{1cm} T = c L_\mathrm{f} I_\mathrm{f} I_\mathrm{a} = L_\mathrm{f}' I_\mathrm{f} I_\mathrm{a}  = \psi_\mathrm{f}' I_\mathrm{a}.
@@ -689,12 +689,12 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
 	\frametitle{Induced voltage}
-	 Still assuming the homogenous flux density from \eqref{eq:Air_gap_flux_density_DC_machine} $$B_\delta = \frac{\mu_0 N_\mathrm{f}}{2 \delta p} I_\mathrm{f},$$ we find that the magnetic flux linkage per armature conductor loop is
+	 Still assuming the homogenous flux density from \eqref{eq:Air_gap_flux_density_DC_machine} $$B_\delta = \frac{\mu_0 N_\mathrm{f}}{2 \delta p} I_\mathrm{f},$$ \pause we find that the magnetic flux linkage per armature conductor loop is
 	\begin{equation}
 		\psi_\mathrm{c} = A_\mathrm{c}B_\delta= l_\mathrm{z} d_\mathrm{a}\cos(\varepsilon) \frac{\mu_0 N_\mathrm{f}}{2 \delta p} I_\mathrm{f}.
 		\label{eq:Magnetic_flux_linkage_per_conductor}
-	\end{equation}
-	Above, $A_\mathrm{c}$ is the cross-sectional area of an armature conductor loop (cf. \figref{eq:Torque_DC_machine}). Assuming that the armature is rotating with the speed $n$ (or angular velocity $\omega = 2 \pi n=\dot{\varepsilon}$), the induced voltage per armature conductor loop is
+	\end{equation} 
+	Above, $A_\mathrm{c}$ is the cross-sectional area of an armature conductor loop (cf. \figref{eq:Torque_DC_machine}). \pause Assuming that the armature is rotating with the speed $n$ (or angular velocity $\omega = 2 \pi n=\dot{\varepsilon}$), the induced voltage per armature conductor loop is
 	\begin{equation}
 		\begin{split}
 			u_\mathrm{c} &= -\frac{\mathrm{d}\psi_\mathrm{c}}{\mathrm{d}t} = -\frac{\mu_0 N_\mathrm{f} l_\mathrm{z} d_\mathrm{a}}{2 \delta p} I_\mathrm{f} \frac{\mathrm{d}}{\mathrm{d}t} \cos(\varepsilon)\\
@@ -711,17 +711,17 @@
 	\frametitle{Induced voltage (cont.)}
 	 To calculate the total induced voltage $u_\mathrm{i}$, we integrate \eqref{eq:Induced_voltage_per_conductor} over all armature conductor loops considering 
 	 \begin{itemize}
-		\item $N_\mathrm{a}$ total armature conductor loops,
-		\item $2 a$ parallel armature conductors per pole pair (depends on winding scheme, cf. \eqref{eq:Parallel_conductors}),
+		\item $N_\mathrm{a}$ total armature conductor loops, \pause
+		\item $2 a$ parallel armature conductors per pole pair (depends on winding scheme, cf. \eqref{eq:Parallel_conductors}), \pause
 		\item $\alpha$ ratio of effective pole coverage,
 	 \end{itemize}
-	 resulting in:
+	 resulting in: \pause
 	 \begin{equation}
 		 \begin{split}
-			 u_\mathrm{i} &= \frac{N_\mathrm{a}\alpha}{2 a} \frac{1}{\pi} \int_0^\pi u_\mathrm{c} \mathrm{d}\varepsilon
-			 = \omega I_\mathrm{f}\frac{\mu_0 N_\mathrm{f} N_\mathrm{a} l_\mathrm{z} d_\mathrm{a} }{4 \delta p a \pi} \int_0^\pi \sin(\varepsilon) \mathrm{d}\varepsilon
-			 = \omega I_\mathrm{f}\frac{\mu_0 N_\mathrm{f} N_\mathrm{a} l_\mathrm{z} d_\mathrm{a} }{4 \delta p a \pi} \left[-\cos(\varepsilon)\right]_0^\pi\\[1em]
-			 &= \omega I_\mathrm{f}\frac{\mu_0 N_\mathrm{f} N_\mathrm{a} l_\mathrm{z} d_\mathrm{a}}{2 \delta p a \pi} = \omega I_\mathrm{f}\frac{\mu_0 N_\mathrm{f} N_\mathrm{a} l_\mathrm{z} \tau_p}{ \pi^2 \delta a } = \omega I_\mathrm{f} L_\mathrm{f}' = \omega  \psi_\mathrm{f}'.
+			 \onslide<4->{u_\mathrm{i} &= \frac{N_\mathrm{a}\alpha}{2 a} \frac{1}{\pi} \int_0^\pi u_\mathrm{c} \mathrm{d}\varepsilon }
+			 \onslide<5->{= \omega I_\mathrm{f}\frac{\mu_0 N_\mathrm{f} N_\mathrm{a} l_\mathrm{z} d_\mathrm{a} }{4 \delta p a \pi} \int_0^\pi \sin(\varepsilon) \mathrm{d}\varepsilon}
+			 \onslide<6->{= \omega I_\mathrm{f}\frac{\mu_0 N_\mathrm{f} N_\mathrm{a} l_\mathrm{z} d_\mathrm{a} }{4 \delta p a \pi} \left[-\cos(\varepsilon)\right]_0^\pi\\[1em]}
+			 \onslide<7->{&= \omega I_\mathrm{f}\frac{\mu_0 N_\mathrm{f} N_\mathrm{a} l_\mathrm{z} d_\mathrm{a}}{2 \delta p a \pi} } \onslide<8->{= \omega I_\mathrm{f}\frac{\mu_0 N_\mathrm{f} N_\mathrm{a} l_\mathrm{z} \tau_p}{ \pi^2 \delta a } = \omega I_\mathrm{f} L_\mathrm{f}' = \omega  \psi_\mathrm{f}'.}
 		 \end{split}
 	 \end{equation}
 \end{frame}
@@ -740,17 +740,17 @@
 			u_\mathrm{a} &= R_\mathrm{a} i_\mathrm{a} + L_\mathrm{a} \frac{\mathrm{d}i_\mathrm{a}}{\mathrm{d}t} + u_\mathrm{i} + u_\mathrm{b}
 		\end{aligned}
 		 \label{eq:DC_machine_ODE_currents}
-	\end{equation}
+	\end{equation} \pause
 	Induced voltage:
 	\begin{equation*}
 			u_\mathrm{i} = \omega \psi_\mathrm{f}' = \omega I_\mathrm{f} L_\mathrm{f}' 
-	\end{equation*}
+	\end{equation*} \pause
 	Torque:
 	\begin{equation*}
 		T =  L_\mathrm{f}' i_\mathrm{f} i_\mathrm{a}  = \psi_\mathrm{f}' i_\mathrm{a}
-	\end{equation*}
+	\end{equation*} \pause
 	\textbf{Note}: we represent the machine currents with small letters to indicate that they are time-dependent (e.g., if the external voltage supplied is varying).
-\end{column}
+\end{column} \pause
 \hfill
 \begin{column}{0.45\textwidth}
 	\begin{figure}
@@ -771,19 +771,19 @@
 		Based on \eqref{fig:ECD_DC_machine} (note the load convention), the electrical power of the DC machine is:
 		\begin{equation}
 			P_\mathrm{el} = u_\mathrm{a} i_\mathrm{a} + u_\mathrm{f} i_\mathrm{f}.
-		\end{equation}
+		\end{equation} \pause
 		This power is separated into the mechanical power $P_\mathrm{me}$, the dissipated power losses $P_\mathrm{l}$, and the change of the stored magnetic energy $\frac{\mathrm{d}}{\mathrm{d}t}E_\mathrm{mag}$:
 		\begin{equation}
 			P_\mathrm{el} = P_\mathrm{me} + P_\mathrm{l} + \frac{\mathrm{d}}{\mathrm{d}t}E_\mathrm{mag}.
-		\end{equation}
+		\end{equation} \pause
 		The power losses are (assuming dominant ohmic losses):
 		\begin{equation}
 			P_\mathrm{l} = R_\mathrm{f} i_\mathrm{f}^2 + R_\mathrm{a} i_\mathrm{a}^2.
-		\end{equation}
+		\end{equation} \pause
 		The mechanical power is:
 		\begin{equation}
 			P_\mathrm{me} = T \omega = \psi_\mathrm{f}' i_\mathrm{a} \omega.
-		\end{equation}
+		\end{equation} \pause
 		The magnetically stored energy is
 		\begin{equation}
 			E_\mathrm{mag} = \frac{1}{2} L_\mathrm{f} i_\mathrm{f}^2 + \frac{1}{2} L_\mathrm{a} i_\mathrm{a}^2.
@@ -799,14 +799,15 @@
 		\begin{equation}
 			\begin{split}
 				\eta_{\mathrm{mot}} &= \frac{P_\mathrm{me}}{P_\mathrm{el}} = \frac{T \omega}{u_\mathrm{a} i_\mathrm{a} + u_\mathrm{f} i_\mathrm{f}} = \frac{L_\mathrm{f}' i_\mathrm{f}i_\mathrm{a}\omega}{R_\mathrm{a}i_\mathrm{a}^2 + \omega L_\mathrm{f}' i_\mathrm{f} i_\mathrm{a} +R_\mathrm{f}i_\mathrm{f}^2},\\[1em]
-				\eta_{\mathrm{gen}} &= \frac{P_\mathrm{el}}{P_\mathrm{me}} = \frac{u_\mathrm{a} i_\mathrm{a} + u_\mathrm{f} i_\mathrm{f}}{T \omega} = \frac{R_\mathrm{a}i_\mathrm{a}^2 + \omega L_\mathrm{f}' i_\mathrm{f} i_\mathrm{a} +R_\mathrm{f}i_\mathrm{f}^2}{L_\mathrm{f}' i_\mathrm{f}i_\mathrm{a}\omega}.
+				\onslide<2->{\eta_{\mathrm{gen}} &= \frac{P_\mathrm{el}}{P_\mathrm{me}} = \frac{u_\mathrm{a} i_\mathrm{a} + u_\mathrm{f} i_\mathrm{f}}{T \omega} = \frac{R_\mathrm{a}i_\mathrm{a}^2 + \omega L_\mathrm{f}' i_\mathrm{f} i_\mathrm{a} +R_\mathrm{f}i_\mathrm{f}^2}{L_\mathrm{f}' i_\mathrm{f}i_\mathrm{a}\omega}.}
 			\end{split}
 		\end{equation}
+		\onslide<3->{
 		It can be noted that
 		\begin{itemize}
-			\item The machine parameters $R_\mathrm{a}$, $R_\mathrm{f}$, and $L_\mathrm{f}'$ are influencing the efficiency.
-			\item The efficiency is a function of the load torque $T$ and the speed $\omega$, that is, depending on the operating point.
-			\item If $i_\mathrm{f}$ and $i_\mathrm{a}$ are independently controllable, the efficiency can be optimized as a certain torque can be produced with infinitely many combinations of $i_\mathrm{f}$ and $i_\mathrm{a}$.
+			\item The machine parameters $R_\mathrm{a}$, $R_\mathrm{f}$, and $L_\mathrm{f}'$ are influencing the efficiency.}\onslide<4->{
+			\item The efficiency is a function of the load torque $T$ and the speed $\omega$, that is, depending on the operating point.}\onslide<5->{
+			\item If $i_\mathrm{f}$ and $i_\mathrm{a}$ are independently controllable, the efficiency can be optimized as a certain torque can be produced with infinitely many combinations of $i_\mathrm{f}$ and $i_\mathrm{a}$.}
 		\end{itemize}
 \end{frame}
 
@@ -817,11 +818,11 @@
 	\frametitle{Intermediate remarks on the DC machine model} 
 	During the derivation of the DC machine model, we made several assumptions:
 	\begin{itemize}
-		\item The air gap magnetic field is homogenous and without any leakage.
-		\item The air gap reluctance is dominating the magnetic circuit (neglecting the iron path reluctances including potential magnetic saturation).
-		\item The magnetic field lines follow distinct paths through the armature winding.
-		\item There is no mutual inductance between the stator and rotor (ideal orthogonal windings).
-		\item The magnetic field in the air gap and in the armature is governed by the field winding current only (that is, we have neglected the armature current impact on the field).
+		\item The air gap magnetic field is homogenous and without any leakage. \pause
+		\item The air gap reluctance is dominating the magnetic circuit (neglecting the iron path reluctances including potential magnetic saturation).\pause
+		\item The magnetic field lines follow distinct paths through the armature winding. \pause
+		\item There is no mutual inductance between the stator and rotor (ideal orthogonal windings). \pause
+		\item The magnetic field in the air gap and in the armature is governed by the field winding current only (that is, we have neglected the armature current impact on the field). \pause
 	\end{itemize}
 	\begin{varblock}{Model accuracy}
 		We represent the DC machine by a time-invariant, lumped-parameter model which is based on several substantial simplifications. While this model is likely sufficient for many applications, systematic deviations between the observed behavior of real machines and the model predictions are to be expected.
@@ -854,9 +855,9 @@
 		\begin{column}{0.55\textwidth}
 	Issues related to the armature reaction:
 	\begin{itemize}
-		\item The neutral zone (field-free commutation area) is shifted by $\beta$ degrees in the circumferential direction, that is, exacerbate the commutation process (risk of sparking).
-		\item High local field densities can lead to magnetic saturation which will increase the iron path reluctance and consequently decrease the machine's torque capability. Also, the iron losses will increase. 
-		\item The imbalanced magnetic field leads to an imbalanced Lorentz force distribution on the armature conductors which can cause mechanical distortions. 
+		\item The neutral zone (field-free commutation area) is shifted by $\beta$ degrees in the circumferential direction, that is, exacerbate the commutation process (increased risk of sparking).
+		\item<2-> High local field densities can lead to magnetic saturation which will increase the iron path reluctance and consequently decrease the machine's torque capability. Also, the iron losses will increase. 
+		\item<3-> The imbalanced magnetic field leads to an imbalanced Lorentz force distribution on the armature conductors which can cause mechanical distortions. 
 	\end{itemize}
 \end{column}
 \hfill
@@ -887,6 +888,19 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
 	\frametitle{Counter measures: compensation winding and interpoles (cont.)}
+    \begin{figure}
+        \centering
+        \includegraphics[height=0.70\textheight]{fig/lec03/Interpole_winding_example.png}
+        \caption{Example of a DC machine with interpole winding (one may identify that the interpole winding is connected to the brushes and, therefore, to the armature current)}
+		\label{fig:Interpole_winding_example}
+    \end{figure}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Counter measures: compensation winding and interpoles %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Counter measures: compensation winding and interpoles (cont.)}
    \textbf{Compensation winding design:}
    In order to compensate for the armature reaction within the air gap, the compensation winding MMF $\theta_\mathrm{cw}$ must meet the armature MMF $\theta_\mathrm{a}$:
    \begin{equation}
@@ -897,8 +911,8 @@
 	\begin{itemize}
 		\item $a_\mathrm{cw} / a_\mathrm{a}$: number of parallel conductors of the compensation and armature windings,
 		\item $z_\mathrm{cw} / z_\mathrm{a}$: number of conductors of the compensation  and armature windings.
-	\end{itemize}
-	In \eqref{eq:MMF_compensation_winding} $\alpha$ is only related to $\theta_\mathrm{a}$ as we assume the armature area to be bigger (or at least the same size) as the field pole (cf. \figref{fig:Compensation_winding_interpoles}). From \eqref{eq:MMF_compensation_winding} we can calculate the required compensation winding conductors
+	\end{itemize} \pause
+	In \eqref{eq:MMF_compensation_winding} $\alpha$ is only related to $\theta_\mathrm{a}$ as we assume the armature area to be bigger (or at least the same size) as the field pole (cf. \figref{fig:Compensation_winding_interpoles}). \pause From \eqref{eq:MMF_compensation_winding} we can calculate the required compensation winding conductors
 	\begin{equation}
 		z_\mathrm{cw} = \alpha z_\mathrm{a} \frac{a_\mathrm{cw}}{a_\mathrm{a}} =  2p Q_\mathrm{cw} N_\mathrm{cw}
 	\end{equation}
@@ -911,11 +925,11 @@
 \begin{frame}
 	\frametitle{Counter measures: compensation winding and interpoles (cont.)}
    \textbf{Interpole winding design:}
-   As discussed in \eqref{eq:reactance_voltage_commutation}, the reactane voltage $u_\mathrm{r} \approx  L_\mathrm{c} i_\mathrm{a} \omega d_\mathrm{a} / (a w_\mathrm{b}2)$ is self-induced within the short-circuited coil during commutation. To counteract this, the interpole winding is designed such that the neutral zone is overcompensated leading to an induced voltage $u_\mathrm{ip}$ which is opposite to $u_\mathrm{r}$:
+   As discussed in \eqref{eq:reactance_voltage_commutation}, the reactane voltage $u_\mathrm{r} \approx  L_\mathrm{c} i_\mathrm{a} \omega d_\mathrm{a} / (a w_\mathrm{b}2)$ is self-induced within the short-circuited coil during commutation. To counteract this, the interpole winding is designed such that the neutral zone is (over-)compensated leading to an induced voltage $u_\mathrm{ip}$ which is opposite to $u_\mathrm{r}$:
    \begin{equation}
 	   u_\mathrm{ip} \stackrel{!}{=} u_\mathrm{r}.
 	   \label{eq:Interpole_voltage_condition}
-	\end{equation}
+	\end{equation} \pause
 	Assuming a rotational angular velocity $\omega$ and some (homogenous) $B_\mathrm{ip}\neq 0$ flux density in the interpole area, the induced voltage $u_\mathrm{ip}$ is
 	\begin{equation}
 		u_\mathrm{ip} =  N_\mathrm{c} \omega d_\mathrm{a} l_\mathrm{z} B_\mathrm{ip}.
@@ -936,14 +950,14 @@
 				B_\mathrm{ip} = \frac{u_\mathrm{r}}{N_\mathrm{c} \omega d_\mathrm{a} l_\mathrm{z}} = \frac{L_\mathrm{c}i_\mathrm{a}}{2 N_\mathrm{c} l_\mathrm{z} a w_\mathrm{b}}.
 				\label{eq:Interpole_flux_density}
 			\end{equation}
-			Applying the compensation winding design approach \eqref{eq:MMF_compensation_winding} results in:
+			\onslide<2->{Applying the compensation winding design approach \eqref{eq:MMF_compensation_winding} results in:
 			\begin{equation}
 					\oint_{\partial S} \bm{H} \cdot \mathrm{d}\bm{s} = \theta_\mathrm{ip} +\theta_\mathrm{cw}-\theta_\mathrm{a} = \theta_\mathrm{ip}-\theta_\mathrm{a}(1-\alpha). 
-			\end{equation} 
+			\end{equation} }\onslide<3->{The MMFs per pole are:
 			The MMFs per pole are:
 			\begin{equation}
 				\theta_\mathrm{ip} = N_\mathrm{ip} i_\mathrm{a} , \qquad \theta_\mathrm{a}= N_\mathrm{a} i_\mathrm{a}.
-			\end{equation}
+			\end{equation}}
 \end{column}
 \hfill
 \begin{column}{0.45\textwidth}
@@ -951,7 +965,7 @@
 	\begin{figure}
 		\centering
 		\includegraphics[width=0.8\textwidth]{fig/lec03/Interpole_integration_contour.pdf}
-		\caption{Integration contour $\partial S$ and related MMF components for the interpole winding design (J.~B\"ocker, \textit{Elektrische Antriebstechnik}, Paderborn University, 2020)}
+		\caption{Integration contour $\partial S$ and related MMF components for the interpole winding design (adapted from J.~B\"ocker, \textit{Elektrische Antriebstechnik}, Paderborn University, 2020)}
 		\label{fig:Interpole_integration_contour}
 	\end{figure}
 \end{column}
@@ -969,25 +983,26 @@
 			\begin{equation}
 				\oint_{\partial S} \bm{H} \cdot \mathrm{d}\bm{s} = 2 \delta H_\mathrm{ip} = N_\mathrm{ip} i_\mathrm{a} - N_\mathrm{a} i_\mathrm{a}(1-\alpha).
 			\end{equation}
-		The flux density in the interpole area is then
+		\onslide<2->{The flux density in the interpole area is then
 		\begin{equation}
 			B_\mathrm{ip} = \mu_0 \frac{N_\mathrm{ip}  - N_\mathrm{a} (1-\alpha)}{2 \delta} i_\mathrm{a}.
-		\end{equation}
-		The comparison with \eqref{eq:Interpole_flux_density} reveals:
+		\end{equation}}
+		\onslide<3->{The comparison with \eqref{eq:Interpole_flux_density} reveals:
 		\begin{equation}
 			\begin{split}
-				&\mu_0 \frac{N_\mathrm{ip}  - N_\mathrm{a} (1-\alpha)}{2 \delta} i_\mathrm{a} \stackrel{!}{=} \frac{L_\mathrm{c}}{2 N_\mathrm{c} l_\mathrm{z} a w_\mathrm{b}} i_\mathrm{a}\\
-				\Leftrightarrow \quad &N_\mathrm{ip}  = N_\mathrm{a} (1-\alpha) + \frac{ L_\mathrm{c}\delta}{\mu_0 N_\mathrm{c} l_\mathrm{z} a w_\mathrm{b}}.
+				&\mu_0 \frac{N_\mathrm{ip}  - N_\mathrm{a} (1-\alpha)}{2 \delta} i_\mathrm{a} \stackrel{!}{=} \frac{L_\mathrm{c}}{2 N_\mathrm{c} l_\mathrm{z} a w_\mathrm{b}} i_\mathrm{a}\\}
+				\onslide<4->{\Leftrightarrow \quad &N_\mathrm{ip}  = N_\mathrm{a} (1-\alpha) + \frac{ L_\mathrm{c}\delta}{\mu_0 N_\mathrm{c} l_\mathrm{z} a w_\mathrm{b}}.}
 			\end{split}
 		\end{equation}
 \end{column}
 \hfill
 \begin{column}{0.45\textwidth}
 	\vspace{-0.2cm}
+	\onslide<1->{
 	\begin{figure}
 		\centering
 		\includegraphics[width=0.8\textwidth]{fig/lec03/Interpole_integration_contour.pdf}
-	\end{figure}
+	\end{figure}}
 \end{column}
 \end{columns}
 \end{frame}
@@ -1113,11 +1128,11 @@
 			\begin{equation}
 				U_\mathrm{max} \leq U_\mathrm{a} = \frac{R_\mathrm{a}}{\psi_\mathrm{f}'} T + \omega \psi_\mathrm{f}', \qquad I_\mathrm{max} \leq I_\mathrm{a}.
 				\label{eq:Operation_constraints_sep_DC_machine}
-			\end{equation}
-			For sake of simplicity we only consider the first quadrant (cf. \figref{fig:machine_quadrants}), that is, positive torque and speed mode. From \eqref{eq:Operation_constraints_sep_DC_machine} $T\leq \psi_\mathrm{f}' I_\mathrm{max}$ follows. Also, the maximum speed is limited:
+			\end{equation} \pause
+			For sake of simplicity we only consider the first quadrant (cf. \figref{fig:machine_quadrants}), that is, positive torque and speed mode. \pause From \eqref{eq:Operation_constraints_sep_DC_machine} $T\leq \psi_\mathrm{f}' I_\mathrm{max}$ follows. \pause Also, the maximum speed is limited:
 			\begin{equation}
 				\omega \leq \frac{U_\mathrm{max}}{\psi_\mathrm{f}'} - \frac{R_\mathrm{a}}{\psi_\mathrm{f}'^2} T.
-			\end{equation}
+			\end{equation} \pause
 			Hence, for a constant excitation $\psi_\mathrm{f}'$, the torque must be reduced starting at $\omega_1$ while $\omega_0$ represents the no-load speed where no torque can be generated anymore:
 			\begin{equation}
 				\omega_1 = \frac{U_\mathrm{max}}{\psi_\mathrm{f}'} - \frac{R_\mathrm{a}}{\psi_\mathrm{f}'} I_\mathrm{max}, \qquad \omega_0 = \frac{U_\mathrm{max}}{\psi_\mathrm{f}'}.
