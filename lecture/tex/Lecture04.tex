@@ -260,7 +260,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
 	\frametitle{Transformation of the secondary side variables by the turn ratio}
-	With choosing $$\alpha = N_1/N_2$$ as the transformation factor, we receive:
+	With $$\alpha = N_1/N_2$$ as the transformation factor, we receive:
 	\begin{equation}
 		M' = (N_1/N_2)M = L_{1,\mathrm{m}}, \qquad L'_2 = (N_1^2/N_2^2) L_2
 	\end{equation}
@@ -289,7 +289,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
 	\frametitle{Transformation towards a single stray inductance}
-	With choosing $$\alpha = M/L_2$$ as the transformation factor, we receive:
+	With $$\alpha = M/L_2$$ as the transformation factor, we receive:
 	\begin{equation}
 		L'_2 - M' = \alpha^2 L_2 - \alpha M = L_{2,\sigma} = 0,
 	\end{equation}
@@ -364,7 +364,146 @@
 	\frametitle{Three-phase transformer with five legs}
 	\begin{figure}
 		\includegraphics[height=0.75\textheight]{fig/lec04/Three_phase_transformer_5_legs.pdf}
-		\caption{Three-phase five-leg transformer}
+		\caption{Three-phase five-leg transformer connected in star both on the primary and secondary side}
 		\label{fig:Three_phase_transformer_5_legs}
+	\end{figure}
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Three-phase transformer with five legs (cont.) %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Three-phase transformer with five legs (cont.)}
+	Obviously, the three-phase five-leg design from \figref{fig:Three_phase_transformer_5_legs} can save space and material compared to the three independent single-phase transformers from \figref{fig:Three_phase_transformer_simple}. However, there might be a zero flux component
+	\begin{equation}
+		\phi_0(t) = \phi_\mathrm{a}(t) + \phi_\mathrm{b}(t) + \phi_\mathrm{c}(t)  
+	\end{equation} 
+	flowing via the winding-free legs. This zero flux component can be avoided if the primary and secondary side are connected both in star configuration
+	$$ i_{1\mathrm{a}}(t)+i_{1\mathrm{b}}(t)+i_{1\mathrm{c}}(t)=0, \qquad i_{2\mathrm{a}}(t)+i_{2\mathrm{b}}(t)+i_{2\mathrm{c}}(t)=0$$
+	and if the magnetic reluctances $\Lambda_\mathrm{m}$ of the three main legs are equal (i.e., symmetric design, no saturation):
+	\begin{equation*}
+		\phi_0 = \phi_\mathrm{a} + \phi_\mathrm{b} + \phi_\mathrm{c} = \Lambda_\mathrm{m} N_1 \left(i_{1\mathrm{a}}(t)+i_{1\mathrm{b}}(t)+i_{1\mathrm{c}}(t)\right)+\Lambda_\mathrm{m} N_2 \left(i_{2\mathrm{a}}(t)+i_{2\mathrm{b}}(t)+i_{2\mathrm{c}}(t)\right) = 0.
+	\end{equation*}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Three-phase transformer with three legs (double star connection) %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Three-phase transformer with three legs (double star connection)}
+	\begin{columns}
+		\begin{column}{0.4\textwidth}
+           \begin{itemize}
+				\item If the flux zero component $\phi_0$ can be avoided, a three-leg design as shown in \figref{fig:Three_phase_transformer_3_legs_star} can be used.
+				\item However, if $\phi_0 \neq 0$ due to an asymmetric design, magnetic saturation or non-ideal symmetrical operation, the zero component will act as a stray field leaving the transformer core.
+				\item This can lead to increased losses and electromagnetic interference.
+			\end{itemize}
+		\end{column}
+        \hfill
+		\begin{column}{0.6\textwidth}
+			\begin{figure}
+				\includegraphics[height=0.7\textheight]{fig/lec04/Three_phase_transformer_3_legs_star.pdf}
+				\caption{Three-phase three-leg transformer connected in star both on the primary and secondary side}
+				\label{fig:Three_phase_transformer_3_legs_star}
+			\end{figure}
+		\end{column}
+	\end{columns}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Three-phase transformer with three legs (star-delta connection) %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Three-phase transformer with three legs (star-delta connection)}
+	\begin{columns}
+		\begin{column}{0.4\textwidth}
+ 			If the primary or secondary side is connected in delta configuration, this side can carry a zero sequence current:
+			\begin{equation*}
+				i_0 = \frac{1}{3}\left(i_\mathrm{a}(t) + i_\mathrm{b}(t) + i_\mathrm{c}(t)\right) \neq 0 .
+			\end{equation*}
+			This zero sequence current would not be visible in the phase conductors:
+			\begin{equation}
+				\begin{split}
+					i_\mathrm{ab} &= i_\mathrm{a} - i_\mathrm{b}, \\ i_\mathrm{bc} &= i_\mathrm{b} - i_\mathrm{c},\\ i_\mathrm{ca} &= i_\mathrm{c} - i_\mathrm{a}.
+				\end{split}
+				\label{eq:zero_sequence_currents_phase_transformer}
+			\end{equation}
+		\end{column}
+        \hfill
+		\begin{column}{0.6\textwidth}
+			\begin{figure}
+				\includegraphics[height=0.7\textheight]{fig/lec04/Three_phase_transformer_3_legs_star_delta.pdf}
+				\caption{Three-phase three-leg transformer connected in a star-delta configuration (delta on secondary is exemplary)}
+				\label{fig:Three_phase_transformer_3_legs_star_delta}
+			\end{figure}
+		\end{column}
+	\end{columns}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Zero flux and zero current components in three-phase transformers %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Zero flux and zero current components in three-phase transformers}
+	Based on \eqref{eq:zero_sequence_currents_phase_transformer} the winding currents on the delta side becomes
+	\begin{equation}		
+			i_\mathrm{a} = i_0 + \frac{1}{3}\left(i_\mathrm{ab}-i_\mathrm{ca}\right), \quad i_\mathrm{b} = i_0 + \frac{1}{3}\left(i_\mathrm{bc}-i_\mathrm{ab}\right), \quad i_\mathrm{c} = i_0 + \frac{1}{3}\left(i_\mathrm{ca}-i_\mathrm{bc}\right).
+	\end{equation}
+	If the secondary side is connected in delta, the zero sequence current will result from
+	\begin{equation}
+		\phi_0 = \phi_\mathrm{a} + \phi_\mathrm{b} + \phi_\mathrm{c}  = 
+		\phi(i_{1\mathrm{a}}, i_{2\mathrm{a}}, i_{20}) + \phi(i_{1\mathrm{b}}, i_{2\mathrm{b}}, i_{20}) +\phi(i_{1\mathrm{c}}, i_{2\mathrm{c}}, i_{20}) =0
+	\end{equation}
+	where $\phi(\cdot)$ is the (potentially nonlinear) magnetic flux function (e.g., including saturation).
+	\begin{figure}
+		\includegraphics[width=0.7\textwidth]{fig/lec04/Zero_flux_model.pdf}
+		\caption{Substitute model to represent the zero flux component}
+		\label{fig:Zero_flux_model}
+	\end{figure}
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Three-phase transformer connection and winding types %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Three-phase transformer connection and winding types}
+		Each side of a three-phase transformer can be connected in:
+		\begin{equation*}
+			\mbox{Y/y: star connection,}\quad \mbox{D/d: delta connection,}\quad \mbox{Z/z: zigzag connection.}
+		\end{equation*}
+		The winding nomenclature is as follows:
+		\begin{itemize}
+			\item First upper case letter: primary side (high voltage)
+			\item Second lower case letter: secondary side (low voltage)
+			\item Number ($0\ldots 11$): phase deviation between the primary and secondary side in $^\circ 30$ steps
+			\item Optional: N/n for neutral connection of  high/low side.
+		\end{itemize}
+
+		\begin{figure}
+			\includegraphics[width=0.45\textwidth]{fig/lec04/Connection_nomenclature_three_phase_transformer.pdf}
+			\caption{Connection nomenclature of three-phase transformers}
+			\label{fig:Connection_nomenclature_three_phase_transformer}
+		\end{figure}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Three-phase transformer connection and winding types (example: Dy11)%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Three-phase transformer connection and winding types (example: Dy11)}
+	The transformer connection Dy11 indicates a delta connection on the primary side, a star connection on the secondary side, and a phase deviation of $330^\circ$ between the primary and secondary side.	
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Three-phase transformer connection symbols (vector groups) %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Three-phase transformer connection symbols (vector groups)}
+	\begin{figure}
+		\includegraphics[height=0.75\textheight]{fig/lec04/Three_phase_transformer_connection_symbols_01.pdf}
+		\caption{Exemplary connection symbols for three-phase transformers}
+		\label{fig:Three_phase_transformer_connection_symbols_01}
 	\end{figure}
 \end{frame}
