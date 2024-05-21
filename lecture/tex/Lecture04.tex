@@ -329,6 +329,18 @@
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Toroidal core %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Toroidal core}
+	\begin{figure}
+		\includegraphics[height=0.7\textheight]{fig/lec04/Laminated_core_and_toroidal_transformer.jpg}
+		\caption{Examples of a toroidal core and a  transformer made from it -- note the laminated, wound up steel sheets to form the toroid (source: \href{https://commons.wikimedia.org/wiki/File:Kern_und_Ringkerntrafo_100VA.JPG}{Wikimedia Commons}, public domain)}
+		\label{fig:Laminated_core_and_toroidal_transformer}
+	\end{figure}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Typical transformer winding schemes %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
@@ -343,6 +355,38 @@
 		\caption{Examples of typical transformer winding schemes}
 		\label{fig:Transformer_winding_types}
 	\end{figure}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Connection nomenclature and tapped transformer %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Connection nomenclature and tapped transformer}
+	\begin{columns}[b]
+		\begin{column}{0.45\textwidth}
+			\begin{figure}
+				\includegraphics[width=0.45\textwidth]{fig/lec04/Connection_nomenclature_single_phase_transformer.pdf}
+				\vspace{1cm}
+				\caption{Connection nomenclature of single-phase transformers (the lower secondary side connection represents a tapped winding)}
+				\label{fig:Connection_nomenclature_single_phase_transformer}
+			\end{figure}
+		\end{column}
+        \hfill
+		\begin{column}{0.55\textwidth}
+			\begin{figure}
+				\includegraphics[height=0.6\textheight]{fig/lec04/Taped_transformer_train_example.jpg}
+				\caption{Tapped transformer with multiple taps on the secondary side for a train drive application (source: \href{https://de.wikipedia.org/wiki/Datei:TrafoAW-2.jpg}{Wikimedia Commons}, Saibo, \href{https://creativecommons.org/licenses/by-sa/3.0/deed.en}{CC BY-SA 3.0})}
+				\label{fig:Taped_transformer_train_example}
+			\end{figure}
+		\end{column}
+	\end{columns}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Autotransformerr %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Autotransformer}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -489,11 +533,45 @@
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Three-phase transformer connection and winding types (example: Yd1)%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Three-phase transformer connection and winding types (example: Yd1)}
+	The transformer connection Yd1 indicates a star connection on the primary side, a delta connection on the secondary side, and a phase deviation of $1\cdot30^\circ=30^\circ$ between the primary and secondary side.	
+	\vspace{2em}
+	\begin{figure}
+		\includegraphics[width=0.99\textwidth]{fig/lec04/Yd1_example.pdf}
+		\caption{Winding configuration and resulting phasor diagrams for Yd1 connection}
+		\label{fig:Yd1_example}
+	\end{figure}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Three-phase transformer connection and winding types (example: Dy11)%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
 	\frametitle{Three-phase transformer connection and winding types (example: Dy11)}
-	The transformer connection Dy11 indicates a delta connection on the primary side, a star connection on the secondary side, and a phase deviation of $330^\circ$ between the primary and secondary side.	
+	The transformer connection Dy11 indicates a delta connection on the primary side, a star connection on the secondary side, and a phase deviation of $11\cdot30^\circ=330^\circ$ between the primary and secondary side.	
+	\vspace{2em}
+	\begin{figure}
+		\includegraphics[width=0.99\textwidth]{fig/lec04/Dy11_example.pdf}
+		\caption{Winding configuration and resulting phasor diagrams for Dy11 connection}
+		\label{fig:Dy11_example}
+	\end{figure}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Three-phase transformer connection and winding types (example: Dy5)%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Three-phase transformer connection and winding types (example: Dy5)}
+	In this example, the primary and secondary side are still connected in a delta-star configuration, but, the polarity of the secondary side is reversed compared to the previous Dy11 connection. Consequently, the phase deviation is $5\cdot30^\circ=150^\circ$.
+	\vspace{2em}
+	\begin{figure}
+		\includegraphics[width=0.99\textwidth]{fig/lec04/Dy5_example.pdf}
+		\caption{Winding configuration and resulting phasor diagrams for Dy5 connection}
+		\label{fig:Dy5_example}
+	\end{figure}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -501,9 +579,18 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
 	\frametitle{Three-phase transformer connection symbols (vector groups)}
+	\vspace{-0.1cm}
 	\begin{figure}
 		\includegraphics[height=0.75\textheight]{fig/lec04/Three_phase_transformer_connection_symbols_01.pdf}
-		\caption{Exemplary connection symbols for three-phase transformers}
+		\caption{Exemplary (simplified) connection symbols for three-phase transformers and the resulting phasor displacement representations}
 		\label{fig:Three_phase_transformer_connection_symbols_01}
 	\end{figure}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Dynamic modeling of the three-phase transformer %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Dynamic modeling of the three-phase transformer}
+		
 \end{frame}
