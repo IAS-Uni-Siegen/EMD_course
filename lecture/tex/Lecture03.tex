@@ -592,14 +592,14 @@
 	\frametitle{Torque}
 	\begin{columns}
 	\begin{column}{0.45\textwidth}
-    From \eqref{eq:Air_gap_flux_DC_machine} we can calculate the air gap flux density $B_\delta$ per pole pair as
+    From \eqref{eq:Air_gap_flux_DC_machine} we can calculate the air gap flux density $\overline{B}_\delta$ per pole pair as
 	\begin{equation}
-		B_\delta = \frac{\phi_\delta}{A_\delta} = \frac{\mu_0 N_\mathrm{f}}{2 \delta p} I_\mathrm{f}.
+		\overline{B}_\delta = \frac{\phi_\delta}{A_\delta} = \frac{\mu_0 N_\mathrm{f}}{2 \delta p} I_\mathrm{f}.
 		\label{eq:Air_gap_flux_density_DC_machine}
 	\end{equation}\pause
-	Assuming that the magnetic field only flows through each armature conductor in a north-south direction per pole (cf. \figref{fig:DC_machine_cross_section_force_torque}), the absolute Lorentz force per armature conductor is resulting in
+	Assuming that the magnetic field only flows through each armature conductor in a perpendicular direction (cf. \figref{fig:DC_machine_cross_section_force_torque}), the absolute Lorentz force per armature conductor is resulting in
 	\begin{equation}
-		F_\mathrm{c} =  B_\delta l_z I_\mathrm{c}= \frac{\mu_0 N_\mathrm{f} l_z}{4 \delta p a}I_\mathrm{f} I_\mathrm{a}.
+		F_\mathrm{c} =  \overline{B}_\delta l_z I_\mathrm{c}= \frac{\mu_0 N_\mathrm{f} l_z}{4 \delta p a}I_\mathrm{f} I_\mathrm{a}.
 		\label{eq:Lorentz_force_DC_machine_conductor}
 	\end{equation}
 \end{column}
@@ -620,7 +620,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
 	\frametitle{Torque (cont.)}
-	The torque per conductor for an armature diameter $d_\mathrm{a}$ is
+	Assuming that the force direction acting on each armature conductor is perpendicular to the armature shaft, the torque per conductor for an armature diameter $d_\mathrm{a}$ is
 	\begin{equation}
 		T_\mathrm{c} = F_\mathrm{c} \frac{d_\mathrm{a}}{2} = \frac{\mu_0 N_\mathrm{f} l_z d_\mathrm{a}}{8 \delta p a} I_\mathrm{f} I_\mathrm{a}.
 		\label{eq:Torque_DC_machine_conductor}
@@ -628,33 +628,16 @@
 	The resulting (average) machine torque $T$ for $N_\mathrm{a}$ armature conductor loops from which an $\alpha$  share is covered by the poles (cf. \figref{fig:Magnetic_field_normal_component_DC_machine}) is
 	\begin{equation}
 		\begin{split}
-			\onslide<2->{T 	&= 2 \alpha N_\mathrm{a}  T_\mathrm{c} }\\ 
-				\onslide<3->{&= \frac{\mu_0 \alpha N_\mathrm{f} N_\mathrm{a} l_z d_\mathrm{a}}{4 \delta p a} I_\mathrm{f} I_\mathrm{a}} 
+			\onslide<2->{T 	&= 2 \alpha N_\mathrm{a}  T_\mathrm{c} = \frac{\mu_0 \alpha N_\mathrm{f} N_\mathrm{a} l_z d_\mathrm{a}}{4 \delta p a} I_\mathrm{f} I_\mathrm{a} .} 
 		\end{split}
 	\end{equation}
-\end{frame}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Torque (cont.)%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}
-	\frametitle{Torque (cont.)}
 	With $\tau_\mathrm{p} = \pi d_\mathrm{s}/(2 p) = \pi d_\mathrm{a}/(2 p)$ assuming a very small air gap width $\delta$ (cf. \figref{fig:DC_machine_cross_section_two_pole_pairs}) we can also rewrite the torque as
 	\begin{equation}
-		\begin{split}
-		T &= \frac{\mu_0 \alpha N_\mathrm{f} N_\mathrm{a} l_z d_\mathrm{a}}{4 \delta p a} I_\mathrm{f} I_\mathrm{a}\\
-		&= \frac{\mu_0 \alpha N_\mathrm{f} N_\mathrm{a} l_z \tau_\mathrm{p}}{2 \pi  \delta a} I_\mathrm{f} I_\mathrm{a}.
-		\end{split}
+		T = \frac{\mu_0 \alpha N_\mathrm{f} N_\mathrm{a} l_z \tau_\mathrm{p}}{2 \pi  \delta a} I_\mathrm{f} I_\mathrm{a}.
 		\label{eq:Torque_DC_machine}
 	\end{equation}\pause
-	Some remarks on machine design impacts on the torque:
-	\begin{itemize}
-		\item To produce torque, both field current $I_\mathrm{f}$ and armature current $I_\mathrm{a}$ are required. \pause
-		\item The larger the machine dimensions (axial length $l_\mathrm{z}$ and armature diameter $d_\mathrm{a} \approx d_\mathrm{s}$), the larger the torque. \pause
-		\item The more winding turns $N_\mathrm{a}$ and $N_\mathrm{f}$, the larger the torque. \pause
-		\item The smaller the air gap width $\delta$, the larger the torque.
-	\end{itemize}
 \end{frame}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Effective field inductance and effective flux linkage %%
@@ -681,25 +664,22 @@
 	\end{equation}
 \end{frame}
 
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Induced voltage %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
 	\frametitle{Induced voltage}
-	 Still assuming the homogenous flux density from \eqref{eq:Air_gap_flux_density_DC_machine} $$B_\delta = \frac{\mu_0 N_\mathrm{f}}{2 \delta p} I_\mathrm{f},$$ \pause we find that the magnetic flux linkage per armature conductor loop is
-	\begin{equation}
-		\psi_\mathrm{c} = A_\mathrm{c}B_\delta= l_\mathrm{z} d_\mathrm{a}\cos(\varepsilon) \frac{\mu_0 N_\mathrm{f}}{2 \delta p} I_\mathrm{f}.
-		\label{eq:Magnetic_flux_linkage_per_conductor}
-	\end{equation} 
-	Above, $A_\mathrm{c}$ is the cross-sectional area of an armature conductor loop (cf. \figref{eq:Torque_DC_machine}). \pause Assuming that the armature is rotating with the speed $n$ (or angular velocity $\omega = 2 \pi n=\dot{\varepsilon}$), the induced voltage per armature conductor loop is
-	\begin{equation}
-		\begin{split}
-			u_\mathrm{c} &= -\frac{\mathrm{d}\psi_\mathrm{c}}{\mathrm{d}t} = -\frac{\mu_0 N_\mathrm{f} l_\mathrm{z} d_\mathrm{a}}{2 \delta p} I_\mathrm{f} \frac{\mathrm{d}}{\mathrm{d}t} \cos(\varepsilon)\\
-			&= \frac{\mu_0 N_\mathrm{f} l_\mathrm{z} d_\mathrm{a}}{2 \delta p} I_\mathrm{f} \omega \sin(\varepsilon).
-		\end{split}
-		\label{eq:Induced_voltage_per_conductor}
-	\end{equation}
+		Still assuming the homogenous flux density from \eqref{eq:Air_gap_flux_density_DC_machine} $$\overline{B}_\delta = \frac{\mu_0 N_\mathrm{f}}{2 \delta p} I_\mathrm{f},$$ \pause we find that the magnetic flux linkage per armature conductor loop is
+		\begin{equation}
+			\psi_\mathrm{c} = A_\mathrm{c}\overline{B}_\delta= l_\mathrm{z} d_\mathrm{a}\cos(\varepsilon) \frac{\mu_0 N_\mathrm{f}}{2 \delta p} I_\mathrm{f}.
+			\label{eq:Magnetic_flux_linkage_per_conductor}
+		\end{equation} 
+		Above, $A_\mathrm{c}$ is the cross-sectional area of an armature conductor loop linked  to the air gap flux, which depends on its rotational position $\varepsilon$ (cf. \figref{fig:DC_machine_cross_section_force_torque}), e.g.:
+		\begin{itemize}
+			\item $\varepsilon = 0$: The armature conductor loop is perpendicular to the magnetic field lines and the flux linkage is maximal.
+			\item $\varepsilon = \pi/2$: The armature conductor loop is parallel to the magnetic field lines and the flux linkage is zero.
+			\item $\varepsilon = \pi$: The armature conductor loop is perpendicular to the magnetic field lines but the polarity is reversed.
+		\end{itemize}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -707,21 +687,53 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
 	\frametitle{Induced voltage (cont.)}
-	 To calculate the total induced voltage $u_\mathrm{i}$, we integrate \eqref{eq:Induced_voltage_per_conductor} over all armature conductor loops considering 
-	 \begin{itemize}
-		\item $N_\mathrm{a}$ total armature conductor loops, \pause
-		\item $2 a$ parallel armature conductors per pole pair (depends on winding scheme, cf. \eqref{eq:Parallel_conductors}), \pause
-		\item $\alpha$ ratio of effective pole coverage,
-	 \end{itemize}
-	 resulting in: \pause
-	 \begin{equation}
-		 \begin{split}
-			 \onslide<4->{u_\mathrm{i} &= \frac{N_\mathrm{a}\alpha}{2 a} \frac{1}{\pi} \int_0^\pi u_\mathrm{c} \mathrm{d}\varepsilon }
-			 \onslide<5->{= \omega I_\mathrm{f}\frac{\mu_0 N_\mathrm{f} N_\mathrm{a} l_\mathrm{z} d_\mathrm{a} }{4 \delta p a \pi} \int_0^\pi \sin(\varepsilon) \mathrm{d}\varepsilon}
-			 \onslide<6->{= \omega I_\mathrm{f}\frac{\mu_0 N_\mathrm{f} N_\mathrm{a} l_\mathrm{z} d_\mathrm{a} }{4 \delta p a \pi} \left[-\cos(\varepsilon)\right]_0^\pi\\[1em]}
-			 \onslide<7->{&= \omega I_\mathrm{f}\frac{\mu_0 N_\mathrm{f} N_\mathrm{a} l_\mathrm{z} d_\mathrm{a}}{2 \delta p a \pi} } \onslide<8->{= \omega I_\mathrm{f}\frac{\mu_0 N_\mathrm{f} N_\mathrm{a} l_\mathrm{z} \tau_p}{ \pi^2 \delta a } = \omega I_\mathrm{f} L_\mathrm{f}' = \omega  \psi_\mathrm{f}'.}
-		 \end{split}
-	 \end{equation}
+	\begin{columns}
+		\begin{column}{0.55\textwidth}
+			To simplify the calculation of the induced voltage, we can approximate the flux linkage per armature conductor loop by a linear function of the rotational position $\varepsilon$ (cf. \figref{fig:Single_coil_flux_linkage_approx}):
+			\begin{equation}
+				\begin{split}
+					\psi_\mathrm{c}(\varepsilon) &= l_\mathrm{z} d_\mathrm{a} \frac{\mu_0 N_\mathrm{f}}{2 \delta p} I_\mathrm{f} \cos(\varepsilon) = \hat{\psi}_\mathrm{c} \cos(\varepsilon)\\
+									&\approx -\hat{\psi}_\mathrm{c} \varepsilon + \psi_{\mathrm{0}}.
+				\end{split}
+			\label{eq:Magnetic_flux_linkage_per_conductor_approx}
+			\end{equation} 
+			This is based on the small-angle approximation of the cosine around $\varepsilon = \pi/2$. Above, $\hat{\psi}_\mathrm{c}$ is the amplitude of the flux linkage and $\psi_{\mathrm{0}}$ is the (approximation) offset. 
+	\end{column}
+	\hfill
+	\begin{column}{0.45\textwidth}
+		\begin{figure}
+			\centering
+			\includegraphics[width=0.65\textwidth]{fig/lec03/Single_coil_flux_linkage_approx.pdf}
+			\caption{Linear approximation of the flux linkage per armature conductor loop} 
+			\label{fig:Single_coil_flux_linkage_approx}
+		\end{figure}
+	\end{column}
+	\end{columns}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Induced voltage %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Induced voltage (cont.)}
+	 Assuming that the armature is rotating with the (constant) speed $n$ (or angular velocity $\omega = 2 \pi n=\dot{\varepsilon}$), the induced voltage per armature conductor loop is
+	\begin{equation}
+			u_\mathrm{c} = -\frac{\mathrm{d}\psi_\mathrm{c}}{\mathrm{d}t} = -\frac{\mu_0 N_\mathrm{f} l_\mathrm{z} d_\mathrm{a}}{2 \delta p} I_\mathrm{f} \frac{\mathrm{d}}{\mathrm{d}t}\left(-\varepsilon + \psi_{\mathrm{0}}\right)
+			= \frac{\mu_0 N_\mathrm{f} l_\mathrm{z} d_\mathrm{a}}{2 \delta p} I_\mathrm{f} \omega.
+		\label{eq:Induced_voltage_per_conductor}
+	\end{equation}
+	To calculate the total induced voltage $u_\mathrm{i}$, we consider
+	\begin{itemize}
+	   \item $N_\mathrm{a}$ total armature conductor loops, \pause
+	   \item $2 a$ parallel armature conductors per pole pair (depends on winding scheme, cf. \eqref{eq:Parallel_conductors}), \pause
+	   \item $\alpha$ ratio of effective pole coverage,
+	\end{itemize}
+	resulting in: \pause
+	\begin{equation}
+		\begin{split}
+			u_\mathrm{i} = \frac{N_\mathrm{a}\alpha}{2 a} u_\mathrm{c} = \omega I_\mathrm{f}\frac{\mu_0 \alpha N_\mathrm{f} N_\mathrm{a} l_\mathrm{z} d_\mathrm{a}}{4 \delta p a} =  \omega I_\mathrm{f} \frac{\mu_0 \alpha N_\mathrm{f} N_\mathrm{a} l_z \tau_\mathrm{p}}{2 \pi  \delta a} =\omega I_\mathrm{f} L_\mathrm{f}' = \omega  \psi_\mathrm{f}'.
+		\end{split}
+	\end{equation}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
