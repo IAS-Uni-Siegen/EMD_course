@@ -620,18 +620,16 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
 	\frametitle{Torque (cont.)}
-	The torque per conductor for an armature diameter $d_\mathrm{a}$ with the conductor's radial position $\varepsilon$ is
+	The torque per conductor for an armature diameter $d_\mathrm{a}$ is
 	\begin{equation}
-		T_\mathrm{c} = F_\mathrm{c} \frac{d_\mathrm{a}}{2}\sin(\varepsilon) = \frac{\mu_0 N_\mathrm{f} l_z d_\mathrm{a}}{8 \delta p a} \sin(\varepsilon) I_\mathrm{f} I_\mathrm{a}.
+		T_\mathrm{c} = F_\mathrm{c} \frac{d_\mathrm{a}}{2} = \frac{\mu_0 N_\mathrm{f} l_z d_\mathrm{a}}{8 \delta p a} I_\mathrm{f} I_\mathrm{a}.
 		\label{eq:Torque_DC_machine_conductor}
 	\end{equation} \pause
 	The resulting (average) machine torque $T$ for $N_\mathrm{a}$ armature conductor loops from which an $\alpha$  share is covered by the poles (cf. \figref{fig:Magnetic_field_normal_component_DC_machine}) is
 	\begin{equation}
 		\begin{split}
-			\onslide<2->{T 	&= 2 \alpha N_\mathrm{a} \frac{1}{\pi} \int_0^\pi T_\mathrm{c} \mathrm{d}\varepsilon} \\ 
-				\onslide<3->{&= \frac{\mu_0 \alpha N_\mathrm{f} N_\mathrm{a} l_z d_\mathrm{a}}{4 \delta p a} I_\mathrm{f} I_\mathrm{a} \int_0^\pi \sin(\varepsilon) \mathrm{d}\varepsilon} \\ 
-				\onslide<4->{&=\frac{\mu_0 \alpha N_\mathrm{f} N_\mathrm{a} l_z d_\mathrm{a}}{4 \delta p a \pi} I_\mathrm{f} I_\mathrm{a} \left[-\cos(\varepsilon)\right]_0^\pi}\\
-				\onslide<5->{& = \frac{\mu_0 \alpha N_\mathrm{f} N_\mathrm{a} l_z d_\mathrm{a}}{2 \delta p a \pi} I_\mathrm{f} I_\mathrm{a}.}
+			\onslide<2->{T 	&= 2 \alpha N_\mathrm{a}  T_\mathrm{c} }\\ 
+				\onslide<3->{&= \frac{\mu_0 \alpha N_\mathrm{f} N_\mathrm{a} l_z d_\mathrm{a}}{4 \delta p a} I_\mathrm{f} I_\mathrm{a}} 
 		\end{split}
 	\end{equation}
 \end{frame}
@@ -644,8 +642,8 @@
 	With $\tau_\mathrm{p} = \pi d_\mathrm{s}/(2 p) = \pi d_\mathrm{a}/(2 p)$ assuming a very small air gap width $\delta$ (cf. \figref{fig:DC_machine_cross_section_two_pole_pairs}) we can also rewrite the torque as
 	\begin{equation}
 		\begin{split}
-		T &= \frac{\mu_0 \alpha N_\mathrm{f} N_\mathrm{a} l_z d_\mathrm{a}}{2 \delta p a \pi} I_\mathrm{f} I_\mathrm{a}\\
-		&= \frac{\mu_0 \alpha N_\mathrm{f} N_\mathrm{a} l_z \tau_\mathrm{p}}{\pi^2  \delta a} I_\mathrm{f} I_\mathrm{a}.
+		T &= \frac{\mu_0 \alpha N_\mathrm{f} N_\mathrm{a} l_z d_\mathrm{a}}{4 \delta p a} I_\mathrm{f} I_\mathrm{a}\\
+		&= \frac{\mu_0 \alpha N_\mathrm{f} N_\mathrm{a} l_z \tau_\mathrm{p}}{2 \pi  \delta a} I_\mathrm{f} I_\mathrm{a}.
 		\end{split}
 		\label{eq:Torque_DC_machine}
 	\end{equation}\pause
@@ -665,7 +663,7 @@
 	\frametitle{Effective field inductance and effective flux linkage}
     To write \eqref{eq:Torque_DC_machine} more compact, we introduce the effective field inductance 
 	\begin{equation}
-		L_\mathrm{f}' =  \frac{\mu_0 \alpha N_\mathrm{f} N_\mathrm{a} l_z d_\mathrm{a}}{2 \delta p a \pi} = \frac{\mu_0 \alpha N_\mathrm{f} N_\mathrm{a} l_z \tau_\mathrm{p}}{\pi^2  \delta a}.
+		L_\mathrm{f}' =  \frac{\mu_0 \alpha N_\mathrm{f} N_\mathrm{a} l_z d_\mathrm{a}}{4 \delta p a } = \frac{\mu_0 \alpha N_\mathrm{f} N_\mathrm{a} l_z \tau_\mathrm{p}}{2 \pi  \delta a}.
 		\label{eq:Effective_field_inductance}
 	\end{equation} \pause
 	Compared to the self-inductance of the field winding 
@@ -674,7 +672,7 @@
 	 \end{equation} \pause
 	 we find
 	 \begin{equation}
-		 L_\mathrm{f}' = \underbrace{\frac{4}{a \pi^2}\frac{N_\mathrm{a}}{N_\mathrm{f}}}_{c} L_\mathrm{f}  = c L_\mathrm{f} .
+		 L_\mathrm{f}' = \underbrace{\frac{2p}{a \pi}\frac{N_\mathrm{a}}{N_\mathrm{f}}}_{c} L_\mathrm{f}  = c L_\mathrm{f} .
 	\end{equation} \pause
 	Finally, we define the effective field flux linkage $\psi_\mathrm{f}'$ to rewrite the torque expression
 	\begin{equation}
