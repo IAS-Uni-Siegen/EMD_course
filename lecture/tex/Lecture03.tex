@@ -592,14 +592,14 @@
 	\frametitle{Torque}
 	\begin{columns}
 	\begin{column}{0.45\textwidth}
-    From \eqref{eq:Air_gap_flux_DC_machine} we can calculate the air gap flux density $\overline{B}_\delta$ per pole pair as
+    From \eqref{eq:Air_gap_flux_DC_machine} we can calculate the air gap flux density $\hat{B}_\delta$ per pole pair as
 	\begin{equation}
-		\overline{B}_\delta = \frac{\phi_\delta}{A_\delta} = \frac{\mu_0 N_\mathrm{f}}{2 \delta p} I_\mathrm{f}.
+		\hat{B}_\delta = \frac{\phi_\delta}{A_\delta} = \frac{\mu_0 N_\mathrm{f}}{2 \delta p} I_\mathrm{f}.
 		\label{eq:Air_gap_flux_density_DC_machine}
 	\end{equation}\pause
 	Assuming that the magnetic field only flows through each armature conductor in a perpendicular direction (cf. \figref{fig:DC_machine_cross_section_force_torque}), the absolute Lorentz force per armature conductor is resulting in
 	\begin{equation}
-		F_\mathrm{c} =  \overline{B}_\delta l_z I_\mathrm{c}= \frac{\mu_0 N_\mathrm{f} l_z}{4 \delta p a}I_\mathrm{f} I_\mathrm{a}.
+		F_\mathrm{c} =  \hat{B}_\delta l_z I_\mathrm{c}= \frac{\mu_0 N_\mathrm{f} l_z}{4 \delta p a}I_\mathrm{f} I_\mathrm{a}.
 		\label{eq:Lorentz_force_DC_machine_conductor}
 	\end{equation}
 \end{column}
@@ -665,47 +665,40 @@
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Induced voltage %%
+%% Flux linkage of a single armature coil %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
-	\frametitle{Induced voltage}
-		Still assuming the homogenous flux density from \eqref{eq:Air_gap_flux_density_DC_machine} $$\overline{B}_\delta = \frac{\mu_0 N_\mathrm{f}}{2 \delta p} I_\mathrm{f},$$ \pause we find that the magnetic flux linkage per armature conductor loop is
-		\begin{equation}
-			\psi_\mathrm{c} = A_\mathrm{c}\overline{B}_\delta= l_\mathrm{z} d_\mathrm{a}\cos(\varepsilon) \frac{\mu_0 N_\mathrm{f}}{2 \delta p} I_\mathrm{f}.
-			\label{eq:Magnetic_flux_linkage_per_conductor}
-		\end{equation} 
-		Above, $A_\mathrm{c}$ is the cross-sectional area of an armature conductor loop linked  to the air gap flux, which depends on its rotational position $\varepsilon$ (cf. \figref{fig:DC_machine_cross_section_force_torque}), e.g.:
-		\begin{itemize}
-			\item $\varepsilon = 0$: The armature conductor loop is perpendicular to the magnetic field lines and the flux linkage is maximal.
-			\item $\varepsilon = \pi/2$: The armature conductor loop is parallel to the magnetic field lines and the flux linkage is zero.
-			\item $\varepsilon = \pi$: The armature conductor loop is perpendicular to the magnetic field lines but the polarity is reversed.
-		\end{itemize}
-\end{frame}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Induced voltage %%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}
-	\frametitle{Induced voltage (cont.)}
+	\frametitle{Flux linkage of a single armature coil}
 	\begin{columns}
-		\begin{column}{0.55\textwidth}
-			To simplify the calculation of the induced voltage, we can approximate the flux linkage per armature conductor loop by a linear function of the rotational position $\varepsilon$ (cf. \figref{fig:Single_coil_flux_linkage_approx}):
+		\begin{column}{0.45\textwidth}
+			From  \figref{fig:Magnetic_field_normal_component_DC_machine} we assume the air gap flux density normal component along $\varepsilon$ to be:
+			\begin{equation}
+				B(\varepsilon) = \begin{cases}
+					\overline{B}_\delta, &  0 \leq \varepsilon < \pi,\\
+					-\overline{B}_\delta, &  \pi \leq \varepsilon < 2\pi.
+				\end{cases}
+				\label{eq:Air_gap_flux_density_DC_machine_circumference}
+			\end{equation}
+			The flux linkage of a single armature coil starting at position $\varepsilon$ is then
 			\begin{equation}
 				\begin{split}
-					\psi_\mathrm{c}(\varepsilon) &= l_\mathrm{z} d_\mathrm{a} \frac{\mu_0 N_\mathrm{f}}{2 \delta p} I_\mathrm{f} \cos(\varepsilon) = \hat{\psi}_\mathrm{c} \cos(\varepsilon)\\
-									&\approx -\hat{\psi}_\mathrm{c} \varepsilon + \psi_{\mathrm{0}}.
+				\phi_\mathrm{c}(\varepsilon) &= \iint_{S} \bm{B} \cdot \mathrm{d}\bm{S}
+											 = l_\mathrm{z}d_\mathrm{a}\int_{\varepsilon}^{\varepsilon+\pi}B(\varepsilon) \mathrm{d}\varepsilon \\
+											 & = l_\mathrm{z}d_\mathrm{a}\overline{B}_\delta\begin{cases}
+												(\pi/2 - \varepsilon), &  0 \leq \varepsilon < \pi,\\
+												(\varepsilon - 3\pi/2), &  \pi \leq \varepsilon < 2\pi.
+											\end{cases}.
 				\end{split}
-			\label{eq:Magnetic_flux_linkage_per_conductor_approx}
-			\end{equation} 
-			This is based on the small-angle approximation of the cosine around $\varepsilon = \pi/2$. Above, $\hat{\psi}_\mathrm{c}$ is the amplitude of the flux linkage and $\psi_{\mathrm{0}}$ is the (approximation) offset. 
-	\end{column}
+				\label{eq:Flux_linkage_single_coil}
+			\end{equation}
+		\end{column}
 	\hfill
-	\begin{column}{0.45\textwidth}
+	\begin{column}{0.55\textwidth}
 		\begin{figure}
 			\centering
-			\includegraphics[width=0.65\textwidth]{fig/lec03/Single_coil_flux_linkage_approx.pdf}
-			\caption{Linear approximation of the flux linkage per armature conductor loop} 
-			\label{fig:Single_coil_flux_linkage_approx}
+			\includegraphics[height=0.6\textheight]{fig/lec03/Flux_density_and_linkage.pdf}
+			\caption{Flux linkage $\psi_\mathrm{c}$ of a single armature coil based on the simplified, rectangular air gap flux density $B_\delta(\varepsilon)$  from \figref{fig:Magnetic_field_normal_component_DC_machine} -- light blue and yellow areas represent two exemplary armature coil positions.}
+			\label{fig:Flux_density_and_linkage}
 		\end{figure}
 	\end{column}
 	\end{columns}
@@ -715,26 +708,27 @@
 %% Induced voltage %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
-	\frametitle{Induced voltage (cont.)}
-	 Assuming that the armature is rotating with the (constant) speed $n$ (or angular velocity $\omega = 2 \pi n=\dot{\varepsilon}$), the induced voltage per armature conductor loop is
+	\frametitle{Induced voltage}
+	Assuming that the armature is rotating with the (constant) speed $n$ (or angular velocity $\omega = 2 \pi n=\dot{\varepsilon}$), the induced voltage per armature conductor loop is
 	\begin{equation}
-			u_\mathrm{c} = -\frac{\mathrm{d}\psi_\mathrm{c}}{\mathrm{d}t} = -\frac{\mu_0 N_\mathrm{f} l_\mathrm{z} d_\mathrm{a}}{2 \delta p} I_\mathrm{f} \frac{\mathrm{d}}{\mathrm{d}t}\left(-\varepsilon + \psi_{\mathrm{0}}\right)
-			= \frac{\mu_0 N_\mathrm{f} l_\mathrm{z} d_\mathrm{a}}{2 \delta p} I_\mathrm{f} \omega.
+			u_\mathrm{i,c} = - \frac{\mathrm{d}}{\mathrm{d}t} \phi_\mathrm{c} = - \frac{\mathrm{d}}{\mathrm{d}\varepsilon} \phi_\mathrm{c} \frac{\mathrm{d}}{\mathrm{d}t}\varepsilon = - \omega l_\mathrm{z}d_\mathrm{a}\overline{B}_\delta \begin{cases}
+				-\omega, &  0 \leq \varepsilon < \pi,\\
+				\omega, &  \pi \leq \varepsilon < 2\pi.
+			\end{cases}
 		\label{eq:Induced_voltage_per_conductor}
 	\end{equation}
 	To calculate the total induced voltage $u_\mathrm{i}$, we consider
 	\begin{itemize}
+	   \item the rectification of the induced voltage by the commutator, \pause 		
 	   \item $N_\mathrm{a}$ total armature conductor loops, \pause
 	   \item $2 a$ parallel armature conductors per pole pair (depends on winding scheme, cf. \eqref{eq:Parallel_conductors}), \pause
-	   \item $\alpha$ ratio of effective pole coverage,
 	\end{itemize}
 	resulting in: \pause
 	\begin{equation}
-		\begin{split}
-			u_\mathrm{i} = \frac{N_\mathrm{a}\alpha}{2 a} u_\mathrm{c} = \omega I_\mathrm{f}\frac{\mu_0 \alpha N_\mathrm{f} N_\mathrm{a} l_\mathrm{z} d_\mathrm{a}}{4 \delta p a} =  \omega I_\mathrm{f} \frac{\mu_0 \alpha N_\mathrm{f} N_\mathrm{a} l_z \tau_\mathrm{p}}{2 \pi  \delta a} =\omega I_\mathrm{f} L_\mathrm{f}' = \omega  \psi_\mathrm{f}'.
-		\end{split}
+			u_\mathrm{i} = \frac{N_\mathrm{a}}{2 a} |u_\mathrm{i,c}| = \frac{N_\mathrm{a}}{2 a}\omega l_\mathrm{z}d_\mathrm{a}\overline{B}_\delta = \omega I_\mathrm{f}\frac{\mu_0 \alpha N_\mathrm{f} N_\mathrm{a} l_\mathrm{z} d_\mathrm{a}}{4 \delta p a} =  \omega I_\mathrm{f} \frac{\mu_0 \alpha N_\mathrm{f} N_\mathrm{a} l_z \tau_\mathrm{p}}{2 \pi  \delta a} =\omega I_\mathrm{f} L_\mathrm{f}' = \omega  \psi_\mathrm{f}'.
 	\end{equation}
 \end{frame}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Equivalent circuit diagram and summary of important equations %%
@@ -901,7 +895,7 @@
     \begin{figure}
         \centering
         \includegraphics[height=0.70\textheight]{fig/lec03/Interpole_winding_example.png}
-        \caption{Example of a DC machine with interpole winding (one may identify that the interpole winding is connected to the brushes and, therefore, to the armature current)}
+        \caption{Example of a DC machine with interpole winding (one may identify that the interpole winding is connected to the brushes and, therefore, excited by the armature current)}
 		\label{fig:Interpole_winding_example}
     \end{figure}
 \end{frame}
@@ -937,7 +931,7 @@
    \textbf{Interpole winding design:}
    As discussed in \eqref{eq:reactance_voltage_commutation}, the reactane voltage $u_\mathrm{r} \approx  L_\mathrm{c} i_\mathrm{a} \omega d_\mathrm{a} / (a w_\mathrm{b}2)$ is self-induced within the short-circuited coil during commutation. To counteract this, the interpole winding is designed such that the neutral zone is (over-)compensated leading to an induced voltage $u_\mathrm{ip}$ which is opposite to $u_\mathrm{r}$:
    \begin{equation}
-	   u_\mathrm{ip} \stackrel{!}{=} u_\mathrm{r}.
+	   |u_\mathrm{ip}| \stackrel{!}{=} |u_\mathrm{r}|.
 	   \label{eq:Interpole_voltage_condition}
 	\end{equation} \pause
 	Assuming a rotational angular velocity $\omega$ and some (homogenous) $B_\mathrm{ip}\neq 0$ flux density in the interpole area, the induced voltage $u_\mathrm{ip}$ is
@@ -964,7 +958,6 @@
 			\begin{equation}
 					\oint_{\partial S} \bm{H} \cdot \mathrm{d}\bm{s} = \theta_\mathrm{ip} +\theta_\mathrm{cw}-\theta_\mathrm{a} = \theta_\mathrm{ip}-\theta_\mathrm{a}(1-\alpha). 
 			\end{equation} }\onslide<3->{The MMFs per pole are:
-			The MMFs per pole are:
 			\begin{equation}
 				\theta_\mathrm{ip} = N_\mathrm{ip} i_\mathrm{a} , \qquad \theta_\mathrm{a}= N_\mathrm{a} i_\mathrm{a}.
 			\end{equation}}
@@ -1065,11 +1058,11 @@
 			Assuming a fixed excitation $\psi_\mathrm{f}'$ (e.g., by a permanent magnet or constant field current), the separately excited DC machine's voltage demand for a certain speed is:
 			\begin{equation}
 				U_\mathrm{a} = R_\mathrm{a} I_\mathrm{a} + \omega \psi_\mathrm{f}'.
-			\end{equation}
+			\end{equation} \pause
 			On the other hand, the speed-torque characteristic for a fixed armature voltage supply $U_\mathrm{a}$ is
 			\begin{equation}
 				T = \left(U_\mathrm{a} -\omega \psi_\mathrm{f}'\right)\frac{\psi_\mathrm{f}'}{R_\mathrm{a}} = U_\mathrm{a}\frac{\psi_\mathrm{f}'}{R_\mathrm{a}} - \omega \frac{\psi_\mathrm{f}'^2}{R_\mathrm{a}}.
-			\end{equation}
+			\end{equation}\pause
 		\begin{figure}
 		\begin{columns}
 			\begin{column}{0.7\textwidth}
@@ -1097,11 +1090,11 @@
 			\begin{split}
 				T(\omega=0) &= T_0 = U_\mathrm{a}\frac{\psi_\mathrm{f}'}{R_\mathrm{a}}, \\ I_\mathrm{a}(\omega=0) &= I_{\mathrm{a}0}=  \frac{U_\mathrm{a}}{R_\mathrm{a}}.
 			\end{split}
-		\end{equation}
+		\end{equation} \pause
 		On the other hand for $T=0$, the no-load speed $\omega_0$ is:
 		\begin{equation}
 			\omega_0 = \frac{U_\mathrm{a}}{\psi_\mathrm{f}'}.
-		\end{equation}
+		\end{equation} \pause
 \end{column}
 \hfill
 \begin{column}{0.45\textwidth}
@@ -1167,14 +1160,14 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
 	\frametitle{Field weakening of the separately excited DC machine}
-			In the previous scenario, the no-load speed $\omega_0$ is limited by the maximum armature voltage $U_\mathrm{max}$. However, if the field winding current $I_\mathrm{f}$ is also controllable, the no-load speed can be increased by decreasing the excitation $\psi_\mathrm{f}'$ (so-called field weakening). Consider an armature operation both at the voltage and current constraint:
+			In the previous scenario, the no-load speed $\omega_0$ is limited by the maximum armature voltage $U_\mathrm{max}$. However, if the field winding current $I_\mathrm{f}$ is also controllable, the no-load speed can be increased by decreasing the excitation $\psi_\mathrm{f}'$ (so-called field weakening). \pause Consider an armature operation both at the voltage and current constraint:
 			\begin{equation}
 				U_\mathrm{max}  = R_\mathrm{a} I_\mathrm{max} + \omega \psi_\mathrm{f}'= R_\mathrm{a} I_\mathrm{max} + \omega L_\mathrm{f}' i_\mathrm{f}.
-			\end{equation}
+			\end{equation} \pause
 			For $\omega > \omega_1$ the field weakening is applied by reducing $i_\mathrm{f}$ to stay exactly at the armature voltage constraint:
 			\begin{equation}
 				i_\mathrm{f} = \frac{1}{\omega}\frac{U_\mathrm{max} - R_\mathrm{a} I_\mathrm{max}}{L_\mathrm{f}'}.
-			\end{equation}
+			\end{equation} \pause
 			Hence, we need to reduce the excitation with $1/\omega$ resulting in the torque and mechanical power
 			\begin{equation}
 				T = \frac{1}{\omega} \left(U_\mathrm{max}I_\mathrm{max} - R_\mathrm{a} I_\mathrm{max}^2\right), \qquad P_\mathrm{me} = U_\mathrm{max}I_\mathrm{max} - R_\mathrm{a} I_\mathrm{max}^2.
@@ -1208,7 +1201,7 @@
 	   The steady-state currents are:
 	   \begin{equation}
 		\begin{split}
-			I_\mathrm{f} &= \frac{U_\mathrm{f}}{I_\mathrm{f}},\\
+			I_\mathrm{f} &= \frac{U_\mathrm{f}}{R_\mathrm{f}},\\
 			I_\mathrm{a} &= \frac{U_\mathrm{a} - \omega L_\mathrm{f}'I_\mathrm{f}}{R_\mathrm{a}} = \frac{1- L_\mathrm{f}'/R_\mathrm{f}\omega }{R_\mathrm{a}} U,\\
 			I &= I_\mathrm{a} + I_\mathrm{f} = \left(\frac{1}{R_\mathrm{a}} + \frac{1}{R_\mathrm{f}} - \frac{L_\mathrm{f}'\omega}{R_\mathrm{a}R_\mathrm{f}}\right)U.
 		\end{split}
