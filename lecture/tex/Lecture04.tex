@@ -261,7 +261,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
 	\frametitle{Transformation of the secondary side variables by the turn ratio}
-	With $$\alpha = N_1/N_2$$ as the transformation factor, we receive:
+	With $$\alpha = \ddot{u} = N_1/N_2$$ being the turn ratio as the transformation factor, we receive:
 	\begin{equation}
 		M' = (N_1/N_2)M = L_{1,\mathrm{m}}, \qquad L'_2 = (N_1^2/N_2^2) L_2
 	\end{equation}
@@ -358,6 +358,109 @@
 	\end{figure}
 \end{frame}
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Core loss model (hyteresis and eddy current losses) %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Core loss model (hyteresis and eddy current losses)}
+	To also consider the iron losses inside the transformer core, a first-order model with the additional core loss resistance $R_{\mathrm{c}}$ can be introduced:
+	\begin{equation}
+		P_{\mathrm{l,c}} \approx R_{\mathrm{c}} I_{\mathrm{c}}^2 \approx \frac{U_1^2}{R_{\mathrm{c}}}. 
+	\end{equation}
+	Here, we consider a pure sinusoidal operation with $I_\mathrm{c}$ and $U_1$ being root-mean-square (RMS) values. Obviously, this is only a very rough model approximation (compare \figref{fig:Hyteresis_curve_full} and \figref{fig:Eddy_currents_lamination}), but for many transformer designs the core losses can be significant and neglecting them completely would not be justified.
+	\begin{figure}
+		\begin{columns}
+			\begin{column}{0.64\textwidth}
+					\centering
+					\includegraphics[width=0.99\textwidth]{fig/lec04/Transformer_T_ECD_core_losses.pdf}
+			\end{column}
+			\begin{column}{0.35\textwidth}
+				\caption{\raggedright T-type ECD of a transformer with an additional core loss resistance $R_{\mathrm{c}}$}
+				\label{fig:Transformer_T_ECD_core_losses}
+			\end{column}
+		\end{columns}
+	\end{figure}	
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Transformer model parameterization via measurements -- open circuit test %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Transformer model parameterization via measurements -- open-circuit test}
+	Applying a sinusoidal test voltage $U_{1,\mathrm{o}}$ and several measurement devices during an open-circuit arrangement, we can determine
+	\begin{equation}
+		\ddot{u} \approx \frac{U_{1,\mathrm{o}}}{U_{2,\mathrm{o}}} = \frac{N_1}{N_2}, \quad P_{1,\mathrm{o}} = U_{1,\mathrm{o}} I_{1,\mathrm{o}}, \quad \cos(\varphi_{\mathrm{o}}) = \frac{P_{1,\mathrm{o}}}{U_{1,\mathrm{o}} I_{1,\mathrm{o}}}
+	\end{equation} 
+	with $P_{1,\mathrm{o}}$ being the active input power consumed by the transformer and $\cos(\varphi_{\mathrm{o}})$ is the power factor. With the assumptions $R_1 << R_\mathrm{c}$ and $L_{1,\sigma} << M'$, we can approximate 
+	\begin{equation}
+		R_{\mathrm{c}} \approx \frac{U_{1,\mathrm{o}}^2}{P_{1,\mathrm{o}}}, \quad X_{M'} = \omega_{\mathrm{el}} M'  \approx \frac{U_{1,\mathrm{o}}}{I_{1,\mathrm{o}} \sin(\varphi_{\mathrm{o}})}
+	\end{equation}
+	given the angular frequency $\omega_{\mathrm{el}} = 2\pi f$ and the reactance $X_{M'}$ of the mutual inductance.
+	\begin{figure}
+		\begin{columns}
+			\begin{column}{0.64\textwidth}
+					\centering
+					\includegraphics[width=0.99\textwidth]{fig/lec04/Transformer_open_circuit_test.pdf}
+			\end{column}
+			\begin{column}{0.35\textwidth}
+				\caption{\raggedright Open-circuit (no-load) test: measuring circuit and equivalent circuit diagram}
+				\label{fig:Transformer_open_circuit_test}
+			\end{column}
+		\end{columns}
+	\end{figure}	
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Transformer model parameterization via measurements -- short circuit test %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Transformer model parameterization via measurements -- short-circuit test}
+	Short-circuiting the secondary and applying a sinusoidal test voltage $U_{1,\mathrm{s}}$,  we can determine
+	\begin{equation}
+		Z_\mathrm{s} = \sqrt{(R_1+R'_2)^2 + (X_{L_{1,\sigma}} + X_{L'_{2,\sigma}})^2}, \quad  \cos(\varphi_{\mathrm{s}}) = \frac{P_{1,\mathrm{s}}}{U_{1,\mathrm{s}} I_{1,\mathrm{s}}}
+	\end{equation} 
+	with $Z_\mathrm{s}$ being the short-circuit impedance while assuming that the impedance across $M'$ and $R_{\mathrm{c}}$ is much larger, i.e., the short-circuit current will not flow via this branch. Hence, we have
+	\begin{equation}
+		R_1+R'_2 = Z_\mathrm{s}\cos(\varphi_{\mathrm{s}}), \quad X_{L_{1,\sigma}} + X_{L'_{2,\sigma}} = Z_\mathrm{s} \sin(\varphi_{\mathrm{s}}).
+	\end{equation}  
+	Since we have four remaining unknown component values but only two independent equations, we additionally assume a symmetrical transformer design, leading to
+	\begin{equation}
+		R_1 = R'_2 = \frac{1}{2}Z_\mathrm{s}\cos(\varphi_{\mathrm{s}}), \quad \omega_{\mathrm{el}}L_{1,\sigma} =  X_{L_{1,\sigma}} = \omega_{\mathrm{el}}L'_{2,\sigma} = X_{L'_{2,\sigma}} = \frac{1}{2} Z_\mathrm{s} \sin(\varphi_{\mathrm{s}}).
+	\end{equation}
+	\vspace{-0.3cm}
+	\begin{figure}
+		\begin{columns}
+			\begin{column}{0.64\textwidth}
+					\centering
+					\includegraphics[width=0.99\textwidth]{fig/lec04/Transformer_short_circuit_test.pdf}
+			\end{column}
+			\begin{column}{0.35\textwidth}
+				\caption{\raggedright Short-circuit test: measuring circuit and equivalent circuit diagram}
+				\label{fig:Transformer_short_circuit_test}
+			\end{column}
+		\end{columns}
+	\end{figure}	
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Further short-circuit considerations %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Further short-circuit considerations}
+	Typically the short-circuit test voltage $U_{1,\mathrm{s}}$ is limited such that the short-circuit current $I_{1,\mathrm{s}}$ is reaching its nominal value $I_{1,\mathrm{n}}$:
+	\begin{equation}
+		U_{1,\mathrm{s}} = u_{1,\mathrm{s}} U_{1,\mathrm{n}}, \quad I_{1,\mathrm{s}} = \frac{U_{1,\mathrm{s}}}{Z_\mathrm{s}} = I_{1,\mathrm{n}}.
+	\end{equation}
+	Here, $u_{1,\mathrm{s}}$ is the relative short-circuit voltage w.r.t. the nominal voltage $U_{1,\mathrm{n}}$. Typical values are $u_{1,\mathrm{s}} = 3 \ldots 13 \, \%.$
+	\\[1em]
+	While the short-circuit test is conducted with a reduced primary voltage, the prospective short-circuit (PSC) current during normal operation (typical as a fault result) can be significantly higher:
+	\begin{equation}
+		I_{1,\mathrm{psc}} = \frac{U_{1,\mathrm{n}}}{Z_\mathrm{s}} = \frac{U_{1,\mathrm{s}}}{Z_\mathrm{s}} = \frac{I_{1,\mathrm{n}}}{u_{1,\mathrm{s}}}.
+	\end{equation} 
+	Hence, the transformer parameters $Z_\mathrm{s}$ and $u_{1,\mathrm{s}}$ are crucial for the short-circuit behavior and the protection coordination of the transformer. Lower bounds are typically enforced by standards to prevent catastrophic damages, in particular in the electrical energy sector.
+\end{frame}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Connection nomenclature and tapped transformer %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -418,9 +521,9 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
 	\frametitle{Autotransformer -- step-down configuration}
-	Assuming idealized conditions (no leakage, no losses), the apparent power of the standard transformer $S$ and of the autotransformer $S_\mathrm{AT}$ are:
+	Assuming idealized conditions (no leakage, no losses), the apparent power of the standard transformer $S$ and of the autotransformer $S_\mathrm{at}$ are:
 	\begin{equation}
-		S= U_1 I_1 = U_2 I_2, \qquad S_\mathrm{AT} = (U_1+U_2) I_1 = U_2 (I_2-I_1).
+		S= U_1 I_1 = U_2 I_2, \qquad S_\mathrm{at} = (U_1+U_2) I_1 = U_2 (I_2-I_1).
 		\label{eq:apparent_power_autotransformer}
 	\end{equation}
 	\begin{figure}
@@ -435,13 +538,13 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
 	\frametitle{Autotransformer -- step-down configuration  (cont.)}
-	From \eqref{eq:apparent_power_autotransformer} we can express the autotransformer apparent power $S_\mathrm{AT}$ in terms of the standard transformer apparent power $S$:
+	From \eqref{eq:apparent_power_autotransformer} we can express the autotransformer apparent power $S_\mathrm{at}$ in terms of the standard transformer apparent power $S$:
 	\begin{equation}
-		S_\mathrm{AT} = (U_1+U_2) I_1 = S + U_2 I_1 = S + U_1 I_1 \frac{U_2}{U_1} = S(1+\frac{1}{\ddot{u}}).
+		S_\mathrm{at} = (U_1+U_2) I_1 = S + U_2 I_1 = S + U_1 I_1 \frac{U_2}{U_1} = S(1+\frac{1}{\ddot{u}}).
 	\end{equation}
 	Here, $\ddot{u}$ is the (idealized) voltage transformation ratio of the standard transformer -- compare \eqref{eq:voltage_transformation_ratio}.  Hence, we can express the apparent power of the autotransformer in terms of the standard transformer apparent power:
 	\begin{equation}
-		\frac{S_\mathrm{AT}}{S} = 1+\frac{1}{\ddot{u}} = 1 + \frac{N_2}{N_1}.
+		\frac{S_\mathrm{at}}{S} = 1+\frac{1}{\ddot{u}} = 1 + \frac{N_2}{N_1}.
 	\end{equation}
 	Since $N_2 / N_1 > 0$ the autotransformer can transfer more apparent power than the standard transformer since the autotransformer combines two power transfer mechanisms:
 	\begin{itemize}
@@ -457,7 +560,7 @@
 	\frametitle{Autotransformer -- step-up configuration}
 	The apparent power of the step-up autotransformer is 
 	\begin{equation}
-		S_\mathrm{AT} = U_1 (I_1-I_2) = (U_1+U_2)I_2 = S(1+\frac{U_1}{U_2})= S(1+\ddot{u})= S(1+\frac{N_1}{N_2}).
+		S_\mathrm{at} = U_1 (I_1-I_2) = (U_1+U_2)I_2 = S(1+\frac{U_1}{U_2})= S(1+\ddot{u})= S(1+\frac{N_1}{N_2}).
 	\end{equation}
 	Likewise to the step-down autotransformer, the step-up autotransformer can transfer more apparent power than the standard transformer.
 	\begin{figure}
