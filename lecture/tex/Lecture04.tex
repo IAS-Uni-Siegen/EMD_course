@@ -404,7 +404,7 @@
 					\includegraphics[width=0.99\textwidth]{fig/lec04/Transformer_open_circuit_test.pdf}
 			\end{column}
 			\begin{column}{0.35\textwidth}
-				\caption{\raggedright Open-circuit (no-load) test: measuring circuit and equivalent circuit diagram}
+				\caption{\raggedright Open-circuit (no-load) test: measuring circuit and its ECD}
 				\label{fig:Transformer_open_circuit_test}
 			\end{column}
 		\end{columns}
@@ -436,7 +436,7 @@
 					\includegraphics[width=0.99\textwidth]{fig/lec04/Transformer_short_circuit_test.pdf}
 			\end{column}
 			\begin{column}{0.35\textwidth}
-				\caption{\raggedright Short-circuit test: measuring circuit and equivalent circuit diagram}
+				\caption{\raggedright Short-circuit test: measuring circuit and its ECD}
 				\label{fig:Transformer_short_circuit_test}
 			\end{column}
 		\end{columns}
@@ -459,6 +459,55 @@
 		I_{1,\mathrm{psc}} = \frac{U_{1,\mathrm{n}}}{Z_\mathrm{s}} = \frac{U_{1,\mathrm{s}}}{Z_\mathrm{s}} = \frac{I_{1,\mathrm{n}}}{u_{1,\mathrm{s}}}.
 	\end{equation} 
 	Hence, the transformer parameters $Z_\mathrm{s}$ and $u_{1,\mathrm{s}}$ are crucial for the short-circuit behavior and the protection coordination of the transformer. Lower bounds are typically enforced by standards to prevent catastrophic damages, in particular in the electrical energy sector.
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Voltage transformer: measuring high AC voltages %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Voltage transformer: measuring high AC voltages}
+	If the voltage to be measured is too high for direct measurement, a voltage transformer can be used to step-down the voltage to a suitable level:
+	$$u_2(t) = \frac{1}{\ddot{u}} u_1(t).$$
+	Hence, we choose $\ddot{u} > 1$. Moreover, the voltage sensor on the secondary side comes with a high internal resistance $R_\mathrm{i}$ to avoid a significant current and, therefore, power flow. Neglecting the leakage inductance, we can model the voltage transformer as shown in \figref{fig:Voltage_transformer_meas_ECD} with
+	$$	R'_\mathrm{i} = \ddot{u}^2R_\mathrm{i}, \qquad R'_2 = \ddot{u}^2R_2, \qquad M' = L_{1,\mathrm{m}}.$$
+	The primary RL circuit represents a high-pass filter for the voltage signal, i.e., the transformer is only suitable for AC signals with $\omega_{\mathrm{el}} > R_1/M'$ (cutoff frequency).
+	\begin{figure}
+		\begin{columns}
+			\begin{column}{0.64\textwidth}
+					\centering
+					\includegraphics[width=0.95\textwidth]{fig/lec04/Voltage_transformer_meas_ECD.pdf}
+			\end{column}
+			\begin{column}{0.35\textwidth}
+				\caption{\raggedright Voltage transformer measuring circuit and its ECD (represented as transformed quantities with $\alpha = N_1/N_2$)}
+				\label{fig:Voltage_transformer_meas_ECD}
+			\end{column}
+		\end{columns}
+	\end{figure}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Current transformer: measuring high AC currents %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Current transformer: measuring high AC currents}
+	If the current to be measured is too high for direct measurement, a current transformer can be used to step-down the current to a suitable level:
+	$$i_2(t) = \ddot{u} i_1(t).$$
+	Hence, we choose $\ddot{u} < 1$. Moreover, the current sensor on the secondary side comes with a minimal internal resistance $R_\mathrm{i}$ to avoid a significant ohmic power losses. Likewise, the transformer should be designed for low $R_1$ and $R_2$ (e.g., $N_1=1$ on the primary and sufficiently large cable cross-sections).\\ 
+	\vspace{1em}
+	The secondary RL circuit represents a high-pass filter for the current signal, i.e., the transformer is only suitable for AC signals with $\omega_{\mathrm{el}} > (R'_2 + R'_\mathrm{i})/M'$ (cutoff frequency).
+	\begin{figure}
+		\begin{columns}
+			\begin{column}{0.64\textwidth}
+					\centering
+					\includegraphics[width=0.99\textwidth]{fig/lec04/Current_transformer_meas_ECD.pdf}
+			\end{column}
+			\begin{column}{0.35\textwidth}
+				\caption{\raggedright Current transformer measuring circuit and its ECD (represented as transformed quantities with $\alpha = N_1/N_2$)}
+				\label{fig:Current_transformer_meas_ECD}
+			\end{column}
+		\end{columns}
+	\end{figure}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -590,10 +639,27 @@
 				\centering
 				\includegraphics[width=0.85\textwidth]{fig/lec04/Autotransformer_three_phase.jpg}
 				\caption{\SI{750}{\mega\volt\ampere}, \SI{380}{\kilo\volt} / \SI{230}{\kilo\volt} three-phase autotransformer (source: \href{https://commons.wikimedia.org/wiki/File:CG_Autotrafo_4002904.jpg}{Wikimedia Commons}, P.~Mertens, \href{https://creativecommons.org/licenses/by-sa/3.0/deed.en}{CC BY-SA 3.0})}
-				%\caption{\SI{750}{\mega\volt\ampere}, \SI{380/230}{\kilo\volt} (source: \href{https://commons.wikimedia.org/wiki/File:CG_Autotrafo_4002904.jpg}{Wikimedia Commons}, P.~Mertens, \href{https://creativecommons.org/licenses/by-sa/3.0/deed.en}{CC BY-SA 3.0})}
 			\end{figure}
 		\end{column}
 	\end{columns}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Autotransformer remarks (cont.)%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Autotransformer remarks (cont.)}
+	Another challenge of the autotransformer is its short-circuit behavior. From the step-up case we know:
+	$$ S_\mathrm{at} = S(1+\frac{N_1}{N_2}).$$ 
+	Dividing both sides by $U_1$ delivers
+	\begin{equation}
+		I_{1,\mathrm{at}} = I_{1}(1+\frac{N_1}{N_2})
+	\end{equation}
+	Hence, in case of a short circuit the steady-state current of the autotransformer is $1+N_1/N_2$ times higher than the standard transformer:
+	\begin{equation}
+		I_{1,\mathrm{at,psc}} = I_{1,\mathrm{psc}}(1+\frac{N_1}{N_2}).
+	\end{equation}
+	The same applies to the step-down case. Therefore, the autotransformer may require additional short-circuit protection measures to prevent damages (e.g., additional choke).
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -781,6 +847,7 @@
 	\end{figure}
 \end{frame}
 
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Three-phase transformer connection symbols (vector groups) %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -795,9 +862,69 @@
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Three-phase transformer voltage ratio %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Three-phase transformer voltage ratio}
+	If the three-phase connection type changes between the primary and secondary side, the voltage ratio between the primary and secondary side is affected -- cf. \tabref{tab:Three_phase_transformer_voltage_ratio}.
+	\begin{table}
+		\centering
+		\begin{tabular}{l c c c c c c}
+			\toprule
+			primary & Y & D & Y & D & Y & D \\
+			secondary & y & y & d & d & z & z \\
+			\midrule
+			$U_{1,\mathrm{ll}}/U_{2,\mathrm{ll}}$ & $1$ & $\sqrt{3}$ & $1/\sqrt{3}$ & $1$ & $\sqrt{3}/2$ & $3/2$ \\ 
+			\bottomrule
+		\end{tabular}
+		\caption{Idealized voltage ratios between primary and secondary due to different connection types (assuming $N_1 = N_2$) with $U_{1,\mathrm{ll}}$ and $U_{2,\mathrm{ll}}$ being the line-to-line voltages on the primary and secondary side, respectively}
+		\label{tab:Three_phase_transformer_voltage_ratio}
+	\end{table}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Dynamic modeling of the three-phase transformer %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\begin{frame}
-%	\frametitle{Dynamic modeling of the three-phase transformer}
-		
-%\end{frame}
+\begin{frame}
+	\frametitle{Dynamic modeling of the three-phase transformer}
+	Assuming a three-phase transformer without mutual coupling between the phases abc (as in the three independent single-phase transformers from \figref{fig:Three_phase_transformer_simple}) and without saturation, the magnetic flux linkage of the primary and secondary side can be expressed as
+		\begin{equation}
+			\bm{\psi}(t) = \begin{bmatrix} \psi_{1\mathrm{a}}(t) \\ \psi_{1\mathrm{b}}(t) \\ \psi_{1\mathrm{c}}(t) \\ \psi_{2\mathrm{a}}(t) \\ \psi_{2\mathrm{b}}(t) \\ \psi_{2\mathrm{c}}(t)\end{bmatrix} = \begin{bmatrix} L_{1\mathrm{a}} & 0 & 0 & M_{\mathrm{a}} & 0 & 0 \\ 0 & L_{1\mathrm{b}} & 0 & 0 & M_{\mathrm{b}} & 0 \\ 0 & 0 & L_{1\mathrm{c}} & 0 & 0 &M_{\mathrm{c}} \\ M_{\mathrm{a}} & 0 & 0 & L_{2\mathrm{a}} & 0 &0 \\ 0 & M_{\mathrm{b}} & 0 & 0 & L_{2\mathrm{b}} & 0 \\ 0 & 0 & M_{\mathrm{c}} & 0 & 0 &L_{2\mathrm{c}}\end{bmatrix} \begin{bmatrix} i_{1\mathrm{a}}(t) \\ i_{1\mathrm{b}}(t) \\ i_{1\mathrm{c}}(t) \\ i_{2\mathrm{a}}(t) \\ i_{2\mathrm{b}}(t) \\ i_{2\mathrm{c}}(t)\end{bmatrix} = \bm{L}\bm{i}(t).
+		\end{equation}
+		If the transformer's magnetic three-phase circuit is ideally symmetric, also
+		$$ M = M_{\mathrm{a}} = M_{\mathrm{b}} = M_{\mathrm{c}}, \quad L_1 = L_{1\mathrm{a}} = L_{1\mathrm{b}} = L_{1\mathrm{c}}, \quad L_2 = L_{2\mathrm{a}} = L_{2\mathrm{b}} = L_{2\mathrm{c}}$$
+		holds. 
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Dynamic modeling of the three-phase transformer %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Dynamic modeling of the three-phase transformer (cont.)}
+	Hence, we have
+		\begin{equation}
+			\bm{\psi}(t) = \begin{bmatrix} \psi_{1\mathrm{a}}(t) \\ \psi_{1\mathrm{b}}(t) \\ \psi_{1\mathrm{c}}(t) \\ \psi_{2\mathrm{a}}(t) \\ \psi_{2\mathrm{b}}(t) \\ \psi_{2\mathrm{c}}(t)\end{bmatrix} = \begin{bmatrix} L_{1} & 0 & 0 & M & 0 & 0 \\ 0 & L_{1} & 0 & 0 & M & 0 \\ 0 & 0 & L_{1} & 0 & 0 & M \\ M & 0 & 0 & L_{2} & 0 &0 \\ 0 & M & 0 & 0 & L_{2} & 0 \\ 0 & 0 & M & 0 & 0 &L_{2}\end{bmatrix} \begin{bmatrix} i_{1\mathrm{a}}(t) \\ i_{1\mathrm{b}}(t) \\ i_{1\mathrm{c}}(t) \\ i_{2\mathrm{a}}(t) \\ i_{2\mathrm{b}}(t) \\ i_{2\mathrm{c}}(t)\end{bmatrix} = \bm{L}\bm{i}(t).
+		\end{equation}
+		The voltage equation results from Faraday's law and Ohm's law:
+		\begin{equation}
+			\bm{u}(t) = \bm{R}\bm{i}(t)+ \bm{L}\frac{\mathrm{d}}{\mathrm{d}t}\bm{i}(t) = \begin{bmatrix} R_{1} & 0 & 0 & 0 & 0 & 0 \\ 0 & R_{1} & 0 & 0 & 0 & 0 \\ 0 & 0 & R_{1} & 0 & 0 & 0 \\ 0 & 0 & 0 & R_{2} & 0 &0 \\ 0 & 0 & 0 & 0 & R_{2} & 0 \\ 0 & 0 & 0 & 0 & 0 &R_{2}\end{bmatrix}\bm{i}(t)+ \bm{L}\frac{\mathrm{d}}{\mathrm{d}t}\bm{i}(t).
+		\end{equation}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Dynamic modeling of the three-phase transformer %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Dynamic modeling of the three-phase transformer (cont.)}
+	Due to the ideal three-phase symmetry, the model relation per phase pair on the primary and secondary side are identical for all three phases, i.e., we can split up the model into:  
+	\begin{align}
+		\begin{bmatrix}	u_\mathrm{1a}(t)\\u_\mathrm{2a}(t) \end{bmatrix} &= \begin{bmatrix} R_1 & 0 \\ 0 & R_2 \end{bmatrix} \begin{bmatrix} i_\mathrm{1a}(t)\\i_\mathrm{2a}(t) \end{bmatrix} + \begin{bmatrix} L_1 & M \\ M & L_2 \end{bmatrix} \frac{\mathrm{d}}{\mathrm{d}t} \begin{bmatrix} i_\mathrm{1a}(t)\\i_\mathrm{2a}(t) \end{bmatrix}, \\   
+		\begin{bmatrix}	u_\mathrm{1b}(t)\\u_\mathrm{2b}(t) \end{bmatrix} &= \begin{bmatrix} R_1 & 0 \\ 0 & R_2 \end{bmatrix} \begin{bmatrix} i_\mathrm{1b}(t)\\i_\mathrm{2b}(t) \end{bmatrix} + \begin{bmatrix} L_1 & M \\ M & L_2 \end{bmatrix} \frac{\mathrm{d}}{\mathrm{d}t} \begin{bmatrix} i_\mathrm{1b}(t)\\i_\mathrm{2b}(t) \end{bmatrix},\\
+		\begin{bmatrix}	u_\mathrm{1c}(t)\\u_\mathrm{2c}(t) \end{bmatrix} &= \begin{bmatrix} R_1 & 0 \\ 0 & R_2 \end{bmatrix} \begin{bmatrix} i_\mathrm{1c}(t)\\i_\mathrm{2c}(t) \end{bmatrix} + \begin{bmatrix} L_1 & M \\ M & L_2 \end{bmatrix} \frac{\mathrm{d}}{\mathrm{d}t} \begin{bmatrix} i_\mathrm{1c}(t)\\i_\mathrm{2c}(t) \end{bmatrix}.
+	\end{align}
+	Hence, under the made assumptions the single-phase transformer ECD from \figref{fig:Transformer_T_ECD} can be used to also model the three-phase transformer.
+	\begin{figure}
+		\centering
+		\includegraphics[width=0.38\textwidth]{fig/lec04/Transformer_T_ECD.pdf}
+	\end{figure}
+\end{frame}
