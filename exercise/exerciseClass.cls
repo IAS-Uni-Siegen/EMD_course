@@ -36,6 +36,7 @@
 \RequirePackage{upgreek}
 \RequirePackage{subcaption}
 \RequirePackage{titlesec}
+\RequirePackage{siunitx}
 
 \RequirePackage{fancyhdr}
 \pagestyle{fancy}
@@ -144,3 +145,13 @@
 %% Numbering of equations %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \numberwithin{equation}{exerciseCount}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% SI units %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% one space between value and unit
+\sisetup{number-unit-product=\ }
+
+% no space between the units
+\sisetup{inter-unit-product = }
