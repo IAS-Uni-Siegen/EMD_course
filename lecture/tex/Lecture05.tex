@@ -20,8 +20,21 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
 	\frametitle{MMF distribution of a single-phase coil}
+    \begin{figure}
+            \centering
+            \includegraphics[width=0.8\textwidth]{fig/lec05/MMF_single_phase.pdf}
+            \caption{MMF of a single-phase coil with $N$ turns for some current $i_\mathrm{a} \neq 0$ with the rotating integration path $\partial S$  along the circumference coordinate $\vartheta$. The rotor is considered an unspecific solid dummy with very high magnetic permeability.}
+            \label{fig: MMF_single_phase}
+    \end{figure}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% MMF distribution of a single-phase coil %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{MMF distribution of a single-phase coil (cont.)}
 			Utilizing Amp\`ere's law in the magnetic network context from \eqref{eq:ampere_law_magnetic_network}
-            $$ \oint_{\partial S} \bm{H} \cdot \mathrm{d}\bm{s} = I_{\mathrm{f}} = N I = \sum_k  \theta_k = \sum_k l_k H_k $$
+            $$ \oint_{\partial S} \bm{H} \cdot \mathrm{d}\bm{s} = i_{\mathrm{f}} = N i = \sum_k  \theta_k = \sum_k l_k H_k $$
             and assuming that the air gap path along $\delta$ is dominating the magnetic circuit, we have
             \begin{equation}
                 H(\vartheta) = \frac{1}{2\delta} \theta(\vartheta) = \frac{1}{2\delta} \begin{cases}
@@ -30,16 +43,8 @@
                 \end{cases}
             \end{equation}
             \begin{figure}
-                \begin{columns}
-                    \begin{column}{0.5\textwidth}
-                        \centering
-                        \includegraphics[width=\textwidth]{fig/lec05/MMF_single_phase.pdf}
-                    \end{column}
-                    \begin{column}{0.3\textwidth}
-                        \caption{\raggedright MMF of a single-phase coil with $N$ turns for some current $i_\mathrm{a} \neq 0$ with the rotating integration path $\partial S$  along the circumference coordinate $\vartheta$}
-				\label{fig: MMF_single_phase}
-                    \end{column}
-                \end{columns}
+                \centering
+                \includegraphics[width=0.5\textwidth]{fig/lec05/MMF_single_phase.pdf}
             \end{figure}
 \end{frame}
 
@@ -72,7 +77,7 @@
 		\end{subfigure}
             \end{column}
             \begin{column}{0.3\textwidth}
-                \caption{Air gap flux density distribution of a single-phase coil representing a spatiotemperal function} 
+                \caption{\raggedright Air gap flux density distribution of a single-phase coil representing a spatiotemperal function together with its fundamental component $B^{(1)}$} 
         \label{fig:Air_gap_flux_density_single_phase_coil}
             \end{column}
         \end{columns}
@@ -123,13 +128,13 @@
 \begin{frame}
 	\frametitle{Fourier analysis of the air gap flux density distribution (cont.)}
         Finally, \eqref{eq:B_single_phase_coil} is symmetrical w.r.t. the abscissa, i.e., $B(\vartheta)=-B(\vartheta+\pi)$ (mirrored positive and negative half-wave), leading to
-        $$\hat{B}_{\mathrm{c}}^{(k)} = 0 \quad \mbox{for } \quad k=2,4,5,\ldots .$$
+        $$\hat{B}_{\mathrm{c}}^{(k)} = 0 \quad \mbox{for } \quad k=2,4,6,\ldots .$$
         Summarizing the above, the Fourier series for the air gap flux density boils down to
         \begin{equation}
             B(\vartheta) = \sum_{k=1,3,5,\ldots}^{\infty} \hat{B}_{\mathrm{c}}^{(k)} \cos(k \vartheta) \quad \mbox{with} \quad \hat{B}_{\mathrm{c}}^{(k)} = \frac{1}{\pi} \int_{0}^{2 \pi} B(\vartheta) \cos(k \vartheta) \mathrm{d}\vartheta.
             \label{eq:fourier_series_B_single_phase_coil_reduced}
         \end{equation}
-        Utilizing symmetry of we can calculate $\hat{B}_{\mathrm{c}}^{(k)}$ for $k=1,3,5,\ldots$ as follows:
+        Utilizing symmetry of the flux distribution as shown in \figref{fig:Air_gap_flux_density_single_phase_coil}, we can calculate $\hat{B}_{\mathrm{c}}^{(k)}$ for the remaining odd $k=1,3,5,\ldots$ harmonic orders as follows:
         \begin{equation}
             \begin{split}
                 \hat{B}_{\mathrm{c}}^{(k)} &= \frac{2}{\pi} \int_{-\pi/2}^{\pi/2} B(\vartheta) \cos(k \vartheta) \mathrm{d}\vartheta = \frac{\mu_0 N \hat{i}}{\delta \pi } \cos(\omega t) \int_{-\pi/2}^{\pi/2} \cos(k \vartheta) \mathrm{d}\vartheta \\ &= \frac{\mu_0 N \hat{i}}{k \delta \pi } \cos(\omega t) \left[ \sin(\frac{k \pi}{2}) - \sin(-\frac{k \pi}{2}) \right] = \frac{2 \mu_0 N \hat{i}}{\delta \pi k} \cos(\omega t) \sin(\frac{k \pi}{2}).
@@ -142,36 +147,67 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
 	\frametitle{Fourier analysis of the air gap flux density distribution (cont.)}
+        The Fourier series describing the spatiotemperal air gap flux density distribution of a single-phase coil is therefore
+    \begin{equation}
+        \begin{split}
+            B(\vartheta, t) &= \frac{2 \mu_0 N \hat{i}}{\delta \pi}\cos(\omega t)\sum_{k=1,3,5,\ldots}^{\infty}   \frac{1}{k}\sin(\frac{k \pi}{2}) \cos(k \vartheta)\\ &= \frac{4}{\pi} \hat{B} \cos(\omega t)\sum_{k=1,3,5,\ldots}^{\infty}   \frac{1}{k}\sin(\frac{k \pi}{2}) \cos(k \vartheta).
+        \end{split}
+    \end{equation}
+    One might note that $$\sin(\frac{k \pi}{2}) = 1 \quad \mbox{for } k=1,5,9,\ldots, \qquad \sin(\frac{k \pi}{2}) = -1 \quad \mbox{for } k=3,7,11,\ldots$$ applies above.  Also, the fundamental component $\hat{B}^{(1)}$ of the air gap flux density distribution is $4/\pi$ times higher than the amplitude $\hat{B}$ of the original square wave function from \eqref{eq:B_single_phase_coil} while the harmonic amplitudes decrease with $1/k$. 
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Fourier analysis of the air gap flux density distribution (cont.) %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Fourier analysis of the air gap flux density distribution (cont.)}
     \begin{columns}
-		\begin{column}{0.57\textwidth}
-	        The Fourier series describing the spatiotemperal air gap flux density distribution of a single-phase coil from \eqref{eq:B_single_phase_coil} is therefore
-        \begin{equation}
-            \begin{split}
-                B(\vartheta, t) &= \frac{2 \mu_0 N \hat{i}}{\delta \pi}\cos(\omega t)\sum_{k=1,3,5,\ldots}^{\infty}   \frac{1}{k}\sin(\frac{k \pi}{2})\\ &= \frac{4}{\pi} \hat{B} \cos(\omega t)\sum_{k=1,3,5,\ldots}^{\infty}   \frac{1}{k}\sin(\frac{k \pi}{2}).
-            \end{split}
-            \label{eq:fourier_series_B_single_phase_coil_final}
-        \end{equation}
-        Hence, the fundamental component $\hat{B}^{(1)}$ of the air gap flux density distribution is $4/\pi$ times higher than the amplitude $\hat{B}$ of the original square wave function from \eqref{eq:B_single_phase_coil} while the harmonic amplitude decrease with $1/k$. 
-        \end{column}
-        \begin{column}{0.43\textwidth}
+        \begin{column}{0.6\textwidth}
             \begin{figure}
-                \centering
-                \includegraphics[width=\textwidth]{fig/lec05/B_single_phase_harmonics.pdf}
-                \caption{Decomposition of $B(\vartheta, t)$ for some arbitrary $t$ into its fundamental and its first two harmonic components}
-                \label{fig:B_single_phase_harmonics}
-            \end{figure}
+            \centering
+            \includegraphics[width=0.825\textwidth]{fig/lec05/B_single_phase_harmonics.pdf}
+            \caption{Decomposition of $B(\vartheta, t)$ for $t=0$ into its fundamental and its first harmonic components}
+            \label{fig:B_single_phase_harmonics}
+        \end{figure}
+        \end{column}
+        \begin{column}{0.4\textwidth}
+            \begin{varblock}{Flux density harmonics}
+                The existence of harmonics is to be attributed to the spatial distribution of the winding. The phase current was assumed to be of pure sinusoidal form, i.e., is not causing the flux density harmonics.
+            \end{varblock}
         \end{column}
     \end{columns}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Remark on harmonics and multipole stators %%
+%% Multipole stators %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
-	\frametitle{Remark on harmonics and multipole stators}
-    \begin{varblock}{Flux density harmonics}
-        The existence of harmonics is to be attributed to the spatial distribution of the winding. The phase current was assumed to be of pure sinusoidal form, i.e., is not causing the flux density harmonics.
-    \end{varblock}
+	\frametitle{Multipole stators}
+        \begin{figure}
+                \centering
+                \includegraphics[width=0.8\textwidth]{fig/lec05/MMF_single_phase_two_pole_pairs.pdf}
+                \caption{MMF of a single-phase coil with two pole pairs $p$ and $N/p$ turns per pole pair for some current $i_\mathrm{a} \neq 0$ with the rotating integration path $\partial S$  along the circumference coordinate $\vartheta$}
+                \label{fig: MMF_single_phase_two_pole_pairs}
+        \end{figure}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Multipole stators (cont.) %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Multipole stators (cont.)}
+        Following the same derivation as previously for machine with $p\geq 1$ pole pairs, we have    \begin{equation}
+            \begin{split}
+                B(\vartheta, t) &= \frac{2 \mu_0 N \hat{i}}{\delta \pi p}\cos(\omega t)\sum_{k=1,3,5,\ldots}^{\infty}   \frac{1}{k}\sin(\frac{k \pi}{2}) \cos(k p \vartheta)\\ &= \frac{4}{\pi p} \hat{B} \cos(\omega t)\sum_{k=1,3,5,\ldots}^{\infty}   \frac{1}{k}\sin(\frac{k \pi}{2}) \cos(k p \vartheta).
+            \end{split}
+            \label{eq:B_single_phase_coil_fourier_series_multi_pole}
+        \end{equation}
+        Compared to the single-pole pair case, the flux density 
+        \begin{itemize}
+            \item amplitude is reduced by $1/p$,
+            \item spatial frequency is increased by $p$: $\vartheta \rightarrow p \vartheta$. 
+        \end{itemize}
+        The latter implies that the fundamental and harmonics of $B(\vartheta)$ repeat $p$ times more often over the stator circumference (compare \figref{fig:B_single_phase_harmonics}).
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -197,9 +233,25 @@
             \begin{figure}
                 \centering
                 \includegraphics[width=0.8\textwidth]{fig/lec05/Simple_three_phase_stator_lumped_coils.pdf}
-                \caption{Elementary three-phase stator winding with lumped coils  displaced by $120^\circ$. The rotor is considered an unspecific solid dummy with very high magnetic permeability.}
+                \caption{Elementary three-phase stator winding with lumped coils  displaced by $120^\circ$ ($p=1$ pole pair)}
                 \label{fig:Simple_three_phase_stator_lumped_coils}
             \end{figure}
         \end{column}
     \end{columns}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Basic rotating field model (cont.) %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Basic rotating field model (cont.)}
+    Transferring the finding \eqref{eq:B_single_phase_coil_fourier_series_multi_pole} to the three-phase stator winding from \figref{fig:Simple_three_phase_stator_lumped_coils} (considering an arbitrary number of $p \geq 1$ pole pairs), we have
+    \begin{equation}
+        \begin{split}
+            B_\mathrm{a}(\vartheta, t) &= \frac{4}{\pi p} \hat{B} \cos(\omega t)\sum_{k=1,3,5,\ldots}^{\infty}   \frac{1}{k}\sin\left(\frac{k \pi}{2}\right) \cos(k p \vartheta),\\
+            B_\mathrm{b}(\vartheta, t) &= \frac{4}{\pi p} \hat{B} \cos\left(\omega t - \frac{2\pi}{3}\right)\sum_{k=1,3,5,\ldots}^{\infty}   \frac{1}{k}\left(\frac{k \pi}{2}\right) \cos\left(k p \vartheta - \frac{2\pi}{3}\right),\\ 
+            B_\mathrm{c}(\vartheta, t) &= \frac{4}{\pi p} \hat{B} \cos\left(\omega t + \frac{2\pi}{3}\right)\sum_{k=1,3,5,\ldots}^{\infty}   \frac{1}{k}\left(\frac{k \pi}{2}\right) \cos\left(k p \vartheta + \frac{2\pi}{3}\right).
+        \end{split}
+        \label{eq:B_three_phase_stator_coil_fourier_series}
+    \end{equation}
 \end{frame}
