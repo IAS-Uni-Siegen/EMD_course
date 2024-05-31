@@ -12,6 +12,7 @@
         \centering
         \movie{\includegraphics[height=0.7\textheight]{fig/lec05/Three_phase_coils_rotating_field_preview.png}}{fig/lec05/Three_phase_coils_rotating_field.gif}
         \caption{Animation of a rotating magnetic field produced by three-phase currents in three coils both physically and electrically displaced by $120^\circ$ (inspired by \href{https://perso.univ-lyon1.fr/charles.joubert/web_anim/simen_rotfield_create.html}{C.~Joubert})}
+        \label{fig:Three_phase_coils_rotating_field_animation}
     \end{figure}
 \end{frame}
 
@@ -37,9 +38,9 @@
             $$ \oint_{\partial S} \bm{H} \cdot \mathrm{d}\bm{s} = i_{\mathrm{f}} = N i = \sum_k  \theta_k = \sum_k l_k H_k $$
             and assuming that the air gap path along $\delta$ is dominating the magnetic circuit, we have
             \begin{equation}
-                H(\vartheta) = \frac{1}{2\delta} \theta(\vartheta) = \frac{1}{2\delta} \begin{cases}
-                    N i & \text{for } -\pi/2 \leq \vartheta < \pi/2, \\
-                    -N i & \text{for } \pi/2 \leq \vartheta < 3\pi/2.
+                H_\mathrm{a}(\vartheta) = \frac{1}{2\delta} \theta_\mathrm{a}(\vartheta) = \frac{1}{2\delta} \begin{cases}
+                    N i_\mathrm{a} & \text{for } -\pi/2 \leq \vartheta < \pi/2, \\
+                    -N i_\mathrm{a} & \text{for } \pi/2 \leq \vartheta < 3\pi/2.
                 \end{cases}
             \end{equation}
             \begin{figure}
@@ -53,9 +54,9 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
 	\frametitle{Air gap flux density distribution of a single-phase coil}
-    With $B=\mu_0 H$ in the air gap and an alternating current $i = i_\mathrm{a}(t)$, we have
+    With $B=\mu_0 H$ in the air gap and an alternating current $i_\mathrm{a} = i_\mathrm{a}(t)$, we have
     \begin{equation}
-        B(\vartheta, t) = \frac{\mu_0}{2\delta} \begin{cases}
+        B_\mathrm{a}(\vartheta, t) = \frac{\mu_0}{2\delta} \begin{cases}
             N i_\mathrm{a}(t) & \text{for } -\pi/2 \leq \vartheta < \pi/2, \\
             -N i_\mathrm{a}(t) & \text{for } \pi/2 \leq \vartheta < 3\pi/2.
         \end{cases}
@@ -91,7 +92,7 @@
 	\frametitle{Fourier analysis of the air gap flux density distribution}
         Assuming a sinusoidal current $i_\mathrm{a}(t) = \hat{i} \cos(\omega t)$, we have
         \begin{equation}
-            B(\vartheta, t) = \underbrace{\frac{\mu_0 N \hat{i}}{2\delta}}_{\hat{B}} \begin{cases}
+            B_\mathrm{a}(\vartheta, t) = \underbrace{\frac{\mu_0 N \hat{i}}{2\delta}}_{\hat{B}} \begin{cases}
                 \cos(\omega t) & \text{for } -\pi/2 \leq \vartheta < \pi/2, \\
                 -\cos(\omega t) & \text{for } \pi/2 \leq \vartheta < 3\pi/2.
             \end{cases}
@@ -99,7 +100,7 @@
         \end{equation}
         The flux density distribution therefore is periodic and has a sinusoidal shape over $t$ as well as a rectangular shape over $\vartheta$. To anaylze the latter in terms of its fundamental and harmonic components, we utilize the Fourier series expansion for some arbitrary $t$:
         \begin{equation}
-            B(\vartheta, t) =B(\vartheta) = \hat{B}^{(0)} + \sum_{k=1}^{\infty} \hat{B}_{\mathrm{c}}^{(k)} \cos(k \vartheta) + \hat{B}_{\mathrm{s}}^{(k)} \sin(k \vartheta),
+            B_\mathrm{a}(\vartheta, t) =B_\mathrm{a}(\vartheta) = \hat{B}^{(0)} + \sum_{k=1}^{\infty} \hat{B}_{\mathrm{c}}^{(k)} \cos(k \vartheta) + \hat{B}_{\mathrm{s}}^{(k)} \sin(k \vartheta),
             \label{eq:fourier_series_B_single_phase_coil}
         \end{equation} 
         for harmonic order $k=1,2,3,\ldots$ with amplitudes $\hat{B}_{\mathrm{c}}^{(k)}$ and $\hat{B}_{\mathrm{s}}^{(k)}$. 
@@ -131,7 +132,7 @@
         $$\hat{B}_{\mathrm{c}}^{(k)} = 0 \quad \mbox{for } \quad k=2,4,6,\ldots .$$
         Summarizing the above, the Fourier series for the air gap flux density boils down to
         \begin{equation}
-            B(\vartheta) = \sum_{k=1,3,5,\ldots}^{\infty} \hat{B}_{\mathrm{c}}^{(k)} \cos(k \vartheta) \quad \mbox{with} \quad \hat{B}_{\mathrm{c}}^{(k)} = \frac{1}{\pi} \int_{0}^{2 \pi} B(\vartheta) \cos(k \vartheta) \mathrm{d}\vartheta.
+            B_\mathrm{a}(\vartheta) = \sum_{k=1,3,5,\ldots}^{\infty} \hat{B}_{\mathrm{c}}^{(k)} \cos(k \vartheta) \quad \mbox{with} \quad \hat{B}_{\mathrm{c}}^{(k)} = \frac{1}{\pi} \int_{0}^{2 \pi} B(\vartheta) \cos(k \vartheta) \mathrm{d}\vartheta.
             \label{eq:fourier_series_B_single_phase_coil_reduced}
         \end{equation}
         Utilizing symmetry of the flux distribution as shown in \figref{fig:Air_gap_flux_density_single_phase_coil}, we can calculate $\hat{B}_{\mathrm{c}}^{(k)}$ for the remaining odd $k=1,3,5,\ldots$ harmonic orders as follows:
@@ -150,7 +151,7 @@
         The Fourier series describing the spatiotemperal air gap flux density distribution of a single-phase coil is therefore
     \begin{equation}
         \begin{split}
-            B(\vartheta, t) &= \frac{2 \mu_0 N \hat{i}}{\delta \pi}\cos(\omega t)\sum_{k=1,3,5,\ldots}^{\infty}   \frac{1}{k}\sin(\frac{k \pi}{2}) \cos(k \vartheta)\\ &= \frac{4}{\pi} \hat{B} \cos(\omega t)\sum_{k=1,3,5,\ldots}^{\infty}   \frac{1}{k}\sin(\frac{k \pi}{2}) \cos(k \vartheta).
+            B_\mathrm{a}(\vartheta, t) &= \frac{2 \mu_0 N \hat{i}}{\delta \pi}\cos(\omega t)\sum_{k=1,3,5,\ldots}^{\infty}   \frac{1}{k}\sin(\frac{k \pi}{2}) \cos(k \vartheta)\\ &= \frac{4}{\pi} \hat{B} \cos(\omega t)\sum_{k=1,3,5,\ldots}^{\infty}   \frac{1}{k}\sin(\frac{k \pi}{2}) \cos(k \vartheta).
         \end{split}
     \end{equation}
     One might note that $$\sin(\frac{k \pi}{2}) = 1 \quad \mbox{for } k=1,5,9,\ldots, \qquad \sin(\frac{k \pi}{2}) = -1 \quad \mbox{for } k=3,7,11,\ldots$$ applies above.  Also, the fundamental component $\hat{B}^{(1)}$ of the air gap flux density distribution is $4/\pi$ times higher than the amplitude $\hat{B}$ of the original square wave function from \eqref{eq:B_single_phase_coil} while the harmonic amplitudes decrease with $1/k$. 
@@ -198,7 +199,7 @@
 	\frametitle{Multipole stators (cont.)}
         Following the same derivation as previously for machine with $p\geq 1$ pole pairs, we have    \begin{equation}
             \begin{split}
-                B(\vartheta, t) &= \frac{2 \mu_0 N \hat{i}}{\delta \pi p}\cos(\omega t)\sum_{k=1,3,5,\ldots}^{\infty}   \frac{1}{k}\sin(\frac{k \pi}{2}) \cos(k p \vartheta)\\ &= \frac{4}{\pi p} \hat{B} \cos(\omega t)\sum_{k=1,3,5,\ldots}^{\infty}   \frac{1}{k}\sin(\frac{k \pi}{2}) \cos(k p \vartheta).
+                B_\mathrm{a}(\vartheta, t) &= \frac{2 \mu_0 N \hat{i}}{\delta \pi p}\cos(\omega t)\sum_{k=1,3,5,\ldots}^{\infty}   \frac{1}{k}\sin(\frac{k \pi}{2}) \cos(k p \vartheta)\\ &= \frac{4}{\pi p} \hat{B} \cos(\omega t)\sum_{k=1,3,5,\ldots}^{\infty}   \frac{1}{k}\sin(\frac{k \pi}{2}) \cos(k p \vartheta).
             \end{split}
             \label{eq:B_single_phase_coil_fourier_series_multi_pole}
         \end{equation}
@@ -249,9 +250,128 @@
     \begin{equation}
         \begin{split}
             B_\mathrm{a}(\vartheta, t) &= \frac{4}{\pi p} \hat{B} \cos(\omega t)\sum_{k=1,3,5,\ldots}^{\infty}   \frac{1}{k}\sin\left(\frac{k \pi}{2}\right) \cos(k p \vartheta),\\
-            B_\mathrm{b}(\vartheta, t) &= \frac{4}{\pi p} \hat{B} \cos\left(\omega t - \frac{2\pi}{3}\right)\sum_{k=1,3,5,\ldots}^{\infty}   \frac{1}{k}\left(\frac{k \pi}{2}\right) \cos\left(k p \vartheta - \frac{2\pi}{3}\right),\\ 
-            B_\mathrm{c}(\vartheta, t) &= \frac{4}{\pi p} \hat{B} \cos\left(\omega t + \frac{2\pi}{3}\right)\sum_{k=1,3,5,\ldots}^{\infty}   \frac{1}{k}\left(\frac{k \pi}{2}\right) \cos\left(k p \vartheta + \frac{2\pi}{3}\right).
+            B_\mathrm{b}(\vartheta, t) &= \frac{4}{\pi p} \hat{B} \cos\left(\omega t - \frac{2\pi}{3}\right)\sum_{k=1,3,5,\ldots}^{\infty}   \frac{1}{k}\left(\frac{k \pi}{2}\right) \cos\left(k p \vartheta - k\frac{2\pi}{3} \right),\\ 
+            B_\mathrm{c}(\vartheta, t) &= \frac{4}{\pi p} \hat{B} \cos\left(\omega t + \frac{2\pi}{3}\right)\sum_{k=1,3,5,\ldots}^{\infty}   \frac{1}{k}\left(\frac{k \pi}{2}\right) \cos\left(k p \vartheta +  k \frac{2\pi}{3}\right).
         \end{split}
         \label{eq:B_three_phase_stator_coil_fourier_series}
     \end{equation}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Basic rotating field model (cont.) %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Basic rotating field model (cont.)}
+    Applying the decomposition $$\cos(x)\cos(y) = \frac{1}{2} \left[ \cos(x-y) + \cos(x+y) \right]$$ to \eqref{eq:B_three_phase_stator_coil_fourier_series}, we obtain
+    \begin{equation*}
+        \small
+        \begin{split}
+            B_\mathrm{a}(\vartheta, t) &= \frac{2}{\pi p} \hat{B} \sum_{k=1,3,5,\ldots}^{\infty}   \frac{1}{k}\sin\left(\frac{k \pi}{2}\right)\left[\cos(\omega t - k p \vartheta) + \cos(\omega t + k p \vartheta)\right]\\
+            B_\mathrm{b}(\vartheta, t) &= \frac{2}{\pi p} \hat{B} \sum_{k=1,3,5,\ldots}^{\infty}   \frac{1}{k}\sin\left(\frac{k \pi}{2}\right)\left[\cos(\omega t - k p \vartheta - \frac{2\pi}{3}(1-k)) + \cos(\omega t + k p \vartheta - \frac{2\pi}{3}(1+k))\right]\\
+            B_\mathrm{c}(\vartheta, t) &= \frac{2}{\pi p} \hat{B} \sum_{k=1,3,5,\ldots}^{\infty}   \frac{1}{k}\sin\left(\frac{k \pi}{2}\right)\left[\cos(\omega t - k p \vartheta + \frac{2\pi}{3}(1-k)) + \cos(\omega t + k p \vartheta + \frac{2\pi}{3}(1+k))\right].
+        \end{split}
+    \end{equation*}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Positive and negative sequence decomposition %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Positive and negative sequence decomposition}
+    Hence, the decomposition lead to two sinusoidal fields rotating in opposite directions:
+    $$\underbrace{\cos(\omega t - k p \vartheta)=\cos(k p \vartheta - \omega t)}_{\mbox{positive sequence}} \qquad  \mbox{and} \qquad \underbrace{\cos(\omega t + k p \vartheta)}_{\mbox{negative sequence}}.$$
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.9\textwidth]{fig/lec05/Positive_negative_sequence_components.pdf}
+        \caption{Decomposition of the alternating field into positive and negative sequence components for $p=1$ and $k=1$}
+        \label{fig:Positive_negative_sequence_components}
+    \end{figure}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Resulting field: positive sequence part %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Resulting field: positive sequence part}
+    To describe the resulting field distribution (as visualized in \figref{fig:Three_phase_coils_rotating_field_animation}) 
+    \begin{equation}
+        B(\vartheta, t) = B_\mathrm{a}(\vartheta, t) + B_\mathrm{b}(\vartheta, t) + B_\mathrm{c}(\vartheta, t)
+    \end{equation}
+    we analyze the positive and negative sequences separately. Utilizing $$\cos(x \pm y) = \cos(x)\cos(y) \mp \sin(x)\sin(y)$$ we obtain for the positive sequence:
+    \begin{equation*}
+        \begin{alignedat}{2}
+        &\cos(\omega t - k p \vartheta) &&+ \cos(\omega t - k p \vartheta - \frac{2\pi}{3}(1-k)) + \cos(\omega t - k p \vartheta + \frac{2\pi}{3}(1-k))\\
+         = \quad &\cos(\omega t - k p \vartheta) &&+ \cos(\omega t - k p \vartheta) \cos(\frac{2\pi}{3}(1-k)) + \sin(\omega t - k p \vartheta) \sin(\frac{2\pi}{3}(1-k))\\
+         & &&+ \cos(\omega t - k p \vartheta) \cos(\frac{2\pi}{3}(1-k)) - \sin(\omega t - k p \vartheta)\sin(\frac{2\pi}{3}(1-k)).   
+        \end{alignedat}
+    \end{equation*}
+    Hence, the sine terms cancel out each other.
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Resulting field: positive sequence part (cont.) %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Resulting field: positive sequence part (cont.)}
+    Summarizing the above, we have
+        \begin{align*}
+        &\cos(\omega t - k p \vartheta)  \cos(\omega t - k p \vartheta - \frac{2\pi}{3}(1-k)) + \cos(\omega t - k p \vartheta + \frac{2\pi}{3}(1-k))\\
+         = \quad &\cos(\omega t - k p \vartheta)(1+2\cos(\frac{2\pi}{3}(1-k))).
+    \end{align*}
+    Considering $\cos(n 2 \pi)=1$ and $\cos(4\pi/3 + n 2 \pi) = \cos(2\pi/3 + n 2 \pi)=-1/2$ for $n \in \mathbb{Z}$ we observe the following for the positive sequence
+    \begin{equation}
+        \cos(\omega t - k p \vartheta)(1+2\cos(\frac{2\pi}{3}(1-k))) = \begin{cases}
+            3 \cos(\omega t - k p \vartheta) & \text{for } k=1,7,13,19,\ldots, \\
+            0 & \text{for } k=3,5,9,11,15, 17,\ldots.
+        \end{cases}
+    \end{equation}
+    Hence, there are multiple harmonic orders which cancel out each other, among others, any multiple of $k=3$. Moreover, the positive sequences of all three phases carries the fundamental component for $k=1$.    
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Resulting field: negative sequence part %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Resulting field: negative sequence part}
+    For the negative sequence part of
+    \begin{equation*}
+        B(\vartheta, t) = B_\mathrm{a}(\vartheta, t) + B_\mathrm{b}(\vartheta, t) + B_\mathrm{c}(\vartheta, t)
+    \end{equation*}
+    we rewrite the following terms
+    \begin{equation*}
+        \begin{alignedat}{2}
+        &\cos(\omega t + k p \vartheta) &&+ \cos(\omega t + k p \vartheta - \frac{2\pi}{3}(1+k)) + \cos(\omega t + k p \vartheta + \frac{2\pi}{3}(1+k))\\
+         = \quad &\cos(\omega t + k p \vartheta) &&+ \cos(\omega t + k p \vartheta) \cos(\frac{2\pi}{3}(1+k)) + \sin(\omega t + k p \vartheta) \sin(\frac{2\pi}{3}(1+k))\\
+         & &&+ \cos(\omega t + k p \vartheta) \cos(\frac{2\pi}{3}(1+k)) - \sin(\omega t + k p \vartheta)\sin(\frac{2\pi}{3}(1+k))
+        \end{alignedat}
+    \end{equation*}
+    and find for the negative sequence
+    \begin{equation}
+        \cos(\omega t + k p \vartheta)(1+2\cos(\frac{2\pi}{3}(1+k))) = \begin{cases}
+            3 \cos(\omega t + k p \vartheta) & \text{for } k=5,11,17,\ldots, \\
+            0 & \text{for } k=1, 3, 7,9,15, \ldots.
+        \end{cases}
+    \end{equation}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Resulting field: summary %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Resulting field: summary}
+    Combining the positive and negative sequences, we receive
+    \begin{equation}
+        B(\vartheta, t) = \frac{6}{\pi p} \hat{B} \sum_{k}^{\infty} \frac{1}{k} \sin\left(\frac{k \pi}{2}\right) \begin{cases}
+            \cos(\omega t - k p \vartheta) & \text{for } k=1,7,13,19,\ldots, \\
+            \cos(\omega t + k p \vartheta) & \text{for } k=5,11,17,\ldots, \\
+            0 & \text{otherwise}.
+        \end{cases}
+    \end{equation}
+    Utilizing $\cos(-x)=\cos(x)$ and $\sin(-x)=-\sin(x)$, we can rewrite the above as
+    \begin{equation}
+        B(\vartheta, t) = \frac{6}{\pi p} \hat{B} \sum_{k}^{\infty} \frac{1}{k} \sin\left(\frac{k \pi}{2}\right) \cos(\omega t - k p \vartheta) \quad \mbox{for } k=1,-5,7,-11,13,-17,\ldots.
+    \end{equation}
+    Here, the negative sequences are represented by the negative harmonic orders. Finally, one can note that the amplitudes of the resulting field from the three-phase excitation are $3/2$ times higher than in the single phase case from \eqref{eq:B_single_phase_coil_fourier_series_multi_pole}.
 \end{frame}
