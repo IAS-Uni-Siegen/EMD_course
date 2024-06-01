@@ -401,10 +401,10 @@
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Winding as distributed coil system %%
+%% Winding as a distributed coil system %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
-	\frametitle{Winding as distributed coil system}
+	\frametitle{Winding as a distributed coil system}
     In contrast to the lumped coil representation from \figref{fig:Simple_three_phase_stator_lumped_coils} the stator coils per phase are distributed over the stator circumference. To describe the winding layout, we (re-)introduce:
     \begin{gather*}
 		Q: \mbox{number of slots}, \quad m: \mbox{number of phases (usually $m=3$)}, \\ q=\frac{Q}{2 p m}: \mbox{number of notches  (number of slots per phase and pole)}, \quad \rho_\mathrm{p} = \frac{\pi}{p}: \mbox{pole pitch.}
@@ -415,4 +415,59 @@
         \caption{Example scheme of a distributed winding with $Q=18, p = 1, q=3$ (adapted from J.~B\"ocker, \textit{Controlled Three-Phase Drives}, Paderborn University, 2021)}
         \label{fig:Scheme_distributed_winding}
     \end{figure}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Distributed winding: same width coils %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Distributed winding: same width coils}
+    \begin{figure}
+		\centering
+		\begin{subfigure}[b]{0.49\textwidth}
+			\centering
+			\includegraphics[height=0.35\textheight]{fig/lec05/Distributed_winding_same_width_01.pdf}
+			\caption{Simplified unwound cross-section view (adapted from J.~B\"ocker, \textit{Controlled Three-Phase Drives}, Paderborn University, 2021)}
+		\end{subfigure}
+		\hfill
+		\begin{subfigure}[b]{0.49\textwidth}
+			\centering
+			\includegraphics[height=0.35\textheight]{fig/lec05/Distributed_winding_same_width_02.pdf}
+			\caption{Front view on end winding  (adapted from W.~Novender, \textit{Elektrische Maschinen}, Technische Hochschule Mittelhessen, 2023)}
+		\end{subfigure}
+		\caption{Realization of a distributed winding through windings of same width $y$} 
+        \label{fig:Distributed_winding_same_width}
+	\end{figure}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Distributed winding: varying width coils %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Distributed winding: varying width coils}
+    \begin{figure}
+		\centering
+		\begin{subfigure}[b]{0.49\textwidth}
+			\centering
+			\includegraphics[height=0.35\textheight]{fig/lec05/Distributed_winding_different_width_01.pdf}
+			\caption{Simplified unwound cross-section view (adapted from J.~B\"ocker, \textit{Controlled Three-Phase Drives}, Paderborn University, 2021)}
+		\end{subfigure}
+		\hfill
+		\begin{subfigure}[b]{0.49\textwidth}
+			\centering
+			\includegraphics[height=0.35\textheight]{fig/lec05/Distributed_winding_different_width_02.pdf}
+			\caption{Front view on end winding  (adapted from W.~Novender, \textit{Elektrische Maschinen}, Technische Hochschule Mittelhessen, 2023)}
+		\end{subfigure}
+		\caption{Realization of a distributed winding through windings of varying widths $y_i$} 
+        \label{fig:Distributed_winding_different_width}
+	\end{figure}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Distribution factor %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Distribution factor}
+    % fig analog to Fig. 5.2 with distributed winding
+    
 \end{frame}
