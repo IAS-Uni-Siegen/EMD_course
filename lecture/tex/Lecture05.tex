@@ -279,7 +279,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
 	\frametitle{Positive and negative sequence decomposition}
-    Hence, the decomposition lead to two sinusoidal fields rotating in opposite directions:
+    Hence, the decomposition led to two sinusoidal fields rotating in opposite directions:
     $$\underbrace{\cos(\omega t - k p \vartheta)=\cos(k p \vartheta - \omega t)}_{\mbox{positive sequence}} \qquad  \mbox{and} \qquad \underbrace{\cos(\omega t + k p \vartheta)}_{\mbox{negative sequence}}.$$
     \begin{figure}
         \centering
@@ -372,6 +372,47 @@
     Utilizing $\cos(-x)=\cos(x)$ and $\sin(-x)=-\sin(x)$, we can rewrite the above as
     \begin{equation}
         B(\vartheta, t) = \frac{6}{\pi p} \hat{B} \sum_{k}^{\infty} \frac{1}{k} \sin\left(\frac{k \pi}{2}\right) \cos(\omega t - k p \vartheta) \quad \mbox{for } k=1,-5,7,-11,13,-17,\ldots.
+        \label{eq:B_three_phase_stator_coil_fourier_series_resulting_field}
     \end{equation}
-    Here, the negative sequences are represented by the negative harmonic orders. Finally, one can note that the amplitudes of the resulting field from the three-phase excitation are $3/2$ times higher than in the single phase case from \eqref{eq:B_single_phase_coil_fourier_series_multi_pole}.
+    Here, the negative sequences are represented by the negative harmonic orders. Finally, one can note that the amplitudes of the resulting field from the three-phase excitation \eqref{eq:B_three_phase_stator_coil_fourier_series_resulting_field} are $3/2$ times higher than in the single phase case from \eqref{eq:B_single_phase_coil_fourier_series_multi_pole}.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Stator winding examples %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Stator winding examples}
+    \begin{figure}
+		\centering
+		\begin{subfigure}[b]{0.49\textwidth}
+			\centering
+			\includegraphics[width=0.9\textwidth]{fig/lec05/Squirrel_motor_winding.jpg}
+			\caption{Induction machine with fed-in stator winding  (source: \href{https://commons.wikimedia.org/wiki/File:Kommutator_eines_Universalmotor.JPGg}{Wikimedia Commons}, J. Pharos, \href{https://creativecommons.org/licenses/by-sa/3.0/deed.en}{CC~BY-SA~3.0})}
+		\end{subfigure}
+		\hfill
+		\begin{subfigure}[b]{0.49\textwidth}
+			\centering
+			\includegraphics[width=0.9\textwidth]{fig/lec05/Stator_winding_at_WPS.jpg}
+			\caption{Hydrogenerator with form-found stator winding (source: \href{https://commons.wikimedia.org/wiki/File:Stator_winding_at_WPS.JPG}{Wikimedia Commons},  	Astronomyinertia, \href{https://creativecommons.org/licenses/by-sa/3.0/deed.en}{CC~BY-SA~3.0})}
+		\end{subfigure}
+		\caption{Examples of three-phase stator windings with different configurations} 
+        \label{fig:Stator_windings_examples}
+	\end{figure}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Winding as distributed coil system %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Winding as distributed coil system}
+    In contrast to the lumped coil representation from \figref{fig:Simple_three_phase_stator_lumped_coils} the stator coils per phase are distributed over the stator circumference. To describe the winding layout, we (re-)introduce:
+    \begin{gather*}
+		Q: \mbox{number of slots}, \quad m: \mbox{number of phases (usually $m=3$)}, \\ q=\frac{Q}{2 p m}: \mbox{number of notches  (number of slots per phase and pole)}, \quad \rho_\mathrm{p} = \frac{\pi}{p}: \mbox{pole pitch.}
+	\end{gather*}
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.8\textwidth]{fig/lec05/Scheme_distributed_winding.pdf}
+        \caption{Example scheme of a distributed winding with $Q=18, p = 1, q=3$ (adapted from J.~B\"ocker, \textit{Controlled Three-Phase Drives}, Paderborn University, 2021)}
+        \label{fig:Scheme_distributed_winding}
+    \end{figure}
 \end{frame}
