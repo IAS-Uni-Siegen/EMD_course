@@ -140,6 +140,7 @@
             \begin{split}
                 \hat{B}_{\mathrm{c}}^{(k)} &= \frac{2}{\pi} \int_{-\pi/2}^{\pi/2} B(\vartheta) \cos(k \vartheta) \mathrm{d}\vartheta = \frac{\mu_0 N \hat{i}}{\delta \pi } \cos(\omega t) \int_{-\pi/2}^{\pi/2} \cos(k \vartheta) \mathrm{d}\vartheta \\ &= \frac{\mu_0 N \hat{i}}{k \delta \pi } \cos(\omega t) \left[ \sin(\frac{k \pi}{2}) - \sin(-\frac{k \pi}{2}) \right] = \frac{2 \mu_0 N \hat{i}}{\delta \pi k} \cos(\omega t) \sin(\frac{k \pi}{2}).
             \end{split}
+            \label{eq:B_single_phase_coil_fourier_series_coefficients}
         \end{equation}
 \end{frame}
 
@@ -152,6 +153,7 @@
     \begin{equation}
         \begin{split}
             B_\mathrm{a}(\vartheta, t) &= \frac{2 \mu_0 N \hat{i}}{\delta \pi}\cos(\omega t)\sum_{k=1,3,5,\ldots}^{\infty}   \frac{1}{k}\sin(\frac{k \pi}{2}) \cos(k \vartheta)\\ &= \frac{4}{\pi} \hat{B} \cos(\omega t)\sum_{k=1,3,5,\ldots}^{\infty}   \frac{1}{k}\sin(\frac{k \pi}{2}) \cos(k \vartheta).
+            \label{eq:B_single_phase_coil_fourier_series}
         \end{split}
     \end{equation}
     One might note that $$\sin(\frac{k \pi}{2}) = 1 \quad \mbox{for } k=1,5,9,\ldots, \qquad \sin(\frac{k \pi}{2}) = -1 \quad \mbox{for } k=3,7,11,\ldots$$ applies above.  Also, the fundamental component $\hat{B}^{(1)}$ of the air gap flux density distribution is $4/\pi$ times higher than the amplitude $\hat{B}$ of the original square wave function from \eqref{eq:B_single_phase_coil} while the harmonic amplitudes decrease with $1/k$. 
@@ -212,6 +214,25 @@
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Multipole stators (cont.) %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Multipole stators (cont.)}
+        From  the previous finding
+        \begin{equation*}
+                B_\mathrm{a}(\vartheta, t) = \frac{4}{\pi p} \hat{B} \cos(\omega t)\sum_{k=1,3,5,\ldots}^{\infty}   \frac{1}{k}\sin(\frac{k \pi}{2}) \cos(k p \vartheta)
+        \end{equation*}
+        we can conclude that the harmonics for $p > 1$ are repeated $p$ times over the mechanical stator circumference, assuming that the mechanical design of the motor is identical for each pole pair. 
+        \begin{varblock}{Electrical vs. mechanical angle}
+            To simplify the following analysis, we introduce the electrical angle 
+            \begin{equation}
+                \vartheta_\mathrm{el} = p \vartheta,
+            \end{equation}
+           i.e., to complete one mechanical revolution, the electrical angle has to complete $p$ revolutions. The field description in the electrical coordinate system is therefore sufficient, as this is merely repeated in the mechanical system.
+        \end{varblock}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Basic rotating field model %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
@@ -249,9 +270,9 @@
     Transferring the finding \eqref{eq:B_single_phase_coil_fourier_series_multi_pole} to the three-phase stator winding from \figref{fig:Simple_three_phase_stator_lumped_coils} (considering an arbitrary number of $p \geq 1$ pole pairs), we have
     \begin{equation}
         \begin{split}
-            B_\mathrm{a}(\vartheta, t) &= \frac{4}{\pi p} \hat{B} \cos(\omega t)\sum_{k=1,3,5,\ldots}^{\infty}   \frac{1}{k}\sin\left(\frac{k \pi}{2}\right) \cos(k p \vartheta),\\
-            B_\mathrm{b}(\vartheta, t) &= \frac{4}{\pi p} \hat{B} \cos\left(\omega t - \frac{2\pi}{3}\right)\sum_{k=1,3,5,\ldots}^{\infty}   \frac{1}{k}\left(\frac{k \pi}{2}\right) \cos\left(k p \vartheta - k\frac{2\pi}{3} \right),\\ 
-            B_\mathrm{c}(\vartheta, t) &= \frac{4}{\pi p} \hat{B} \cos\left(\omega t + \frac{2\pi}{3}\right)\sum_{k=1,3,5,\ldots}^{\infty}   \frac{1}{k}\left(\frac{k \pi}{2}\right) \cos\left(k p \vartheta +  k \frac{2\pi}{3}\right).
+            B_\mathrm{a}(\vartheta_\mathrm{el}, t) &= \frac{4}{\pi p} \hat{B} \cos(\omega t)\sum_{k=1,3,5,\ldots}^{\infty}   \frac{1}{k}\sin\left(\frac{k \pi}{2}\right) \cos(k \vartheta_\mathrm{el}),\\
+            B_\mathrm{b}(\vartheta_\mathrm{el}, t) &= \frac{4}{\pi p} \hat{B} \cos\left(\omega t - \frac{2\pi}{3}\right)\sum_{k=1,3,5,\ldots}^{\infty}   \frac{1}{k}\left(\frac{k \pi}{2}\right) \cos\left(k \vartheta_\mathrm{el} - k\frac{2\pi}{3} \right),\\ 
+            B_\mathrm{c}(\vartheta_\mathrm{el}, t) &= \frac{4}{\pi p} \hat{B} \cos\left(\omega t + \frac{2\pi}{3}\right)\sum_{k=1,3,5,\ldots}^{\infty}   \frac{1}{k}\left(\frac{k \pi}{2}\right) \cos\left(k \vartheta_\mathrm{el} +  k \frac{2\pi}{3}\right).
         \end{split}
         \label{eq:B_three_phase_stator_coil_fourier_series}
     \end{equation}
@@ -266,9 +287,9 @@
     \begin{equation*}
         \small
         \begin{split}
-            B_\mathrm{a}(\vartheta, t) &= \frac{2}{\pi p} \hat{B} \sum_{k=1,3,5,\ldots}^{\infty}   \frac{1}{k}\sin\left(\frac{k \pi}{2}\right)\left[\cos(\omega t - k p \vartheta) + \cos(\omega t + k p \vartheta)\right]\\
-            B_\mathrm{b}(\vartheta, t) &= \frac{2}{\pi p} \hat{B} \sum_{k=1,3,5,\ldots}^{\infty}   \frac{1}{k}\sin\left(\frac{k \pi}{2}\right)\left[\cos(\omega t - k p \vartheta - \frac{2\pi}{3}(1-k)) + \cos(\omega t + k p \vartheta - \frac{2\pi}{3}(1+k))\right]\\
-            B_\mathrm{c}(\vartheta, t) &= \frac{2}{\pi p} \hat{B} \sum_{k=1,3,5,\ldots}^{\infty}   \frac{1}{k}\sin\left(\frac{k \pi}{2}\right)\left[\cos(\omega t - k p \vartheta + \frac{2\pi}{3}(1-k)) + \cos(\omega t + k p \vartheta + \frac{2\pi}{3}(1+k))\right].
+            B_\mathrm{a}(\vartheta_\mathrm{el}, t) &= \frac{2}{\pi p} \hat{B} \sum_{k=1,3,5,\ldots}^{\infty}   \frac{1}{k}\sin\left(\frac{k \pi}{2}\right)\left[\cos(\omega t - k \vartheta_\mathrm{el}) + \cos(\omega t + k \vartheta_\mathrm{el})\right]\\
+            B_\mathrm{b}(\vartheta_\mathrm{el}, t) &= \frac{2}{\pi p} \hat{B} \sum_{k=1,3,5,\ldots}^{\infty}   \frac{1}{k}\sin\left(\frac{k \pi}{2}\right)\left[\cos(\omega t - k \vartheta_\mathrm{el} - \frac{2\pi}{3}(1-k)) + \cos(\omega t + k \vartheta_\mathrm{el} - \frac{2\pi}{3}(1+k))\right]\\
+            B_\mathrm{c}(\vartheta_\mathrm{el}, t) &= \frac{2}{\pi p} \hat{B} \sum_{k=1,3,5,\ldots}^{\infty}   \frac{1}{k}\sin\left(\frac{k \pi}{2}\right)\left[\cos(\omega t - k \vartheta_\mathrm{el} + \frac{2\pi}{3}(1-k)) + \cos(\omega t + k \vartheta_\mathrm{el} + \frac{2\pi}{3}(1+k))\right].
         \end{split}
     \end{equation*}
 
@@ -280,7 +301,7 @@
 \begin{frame}
 	\frametitle{Positive and negative sequence decomposition}
     Hence, the decomposition led to two sinusoidal fields rotating in opposite directions:
-    $$\underbrace{\cos(\omega t - k p \vartheta)=\cos(k p \vartheta - \omega t)}_{\mbox{positive sequence}} \qquad  \mbox{and} \qquad \underbrace{\cos(\omega t + k p \vartheta)}_{\mbox{negative sequence}}.$$
+    $$\underbrace{\cos(\omega t - k \vartheta_\mathrm{el})=\cos(k \vartheta_\mathrm{el} - \omega t)}_{\mbox{positive sequence}} \qquad  \mbox{and} \qquad \underbrace{\cos(\omega t + k \vartheta_\mathrm{el})}_{\mbox{negative sequence}}.$$
     \begin{figure}
         \centering
         \includegraphics[width=0.9\textwidth]{fig/lec05/Positive_negative_sequence_components.pdf}
@@ -468,6 +489,108 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
 	\frametitle{Distribution factor}
-    % fig analog to Fig. 5.2 with distributed winding
-    
+    As a result of the winding distribution, the MMF results in a staircase form as shown in \figref{fig:Distributed_winding_MMF}. Hence, the field distribution calculation from \eqref{eq:B_single_phase_coil_fourier_series} has to be adapted. 
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.75\textwidth]{fig/lec05/Distributed_winding_MMF.pdf}
+        \caption{Example of the MMF of a distributed winding scheme}
+        \label{fig:Distributed_winding_MMF}
+    \end{figure}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Distribution factor (cont.)%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Distribution factor  (cont.)}
+    \begin{columns}
+		\begin{column}{0.55\textwidth}
+	        Starting from \eqref{eq:fourier_series_B_single_phase_coil_reduced}
+            \begin{align*}
+                B_\mathrm{a}(\vartheta) &= \sum_{k=1,3,5,\ldots}^{\infty} \hat{B}_{\mathrm{c}}^{(k)} \cos(k \vartheta)\\ \hat{B}_{\mathrm{c}}^{(k)} &= \frac{2}{\pi} \int_{-\pi/2}^{\pi/2} B(\vartheta) \cos(k \vartheta) \mathrm{d}\vartheta
+            \end{align*}
+            we rewrite the integral considering shifted coils by $\Delta \vartheta$ steps (i.e., $k \Delta \vartheta$ steps for the $k$-th harmonic order) with $N/q$ turns per coil based on the distribution of a single lumped coil $B'$ from \eqref{eq:B_single_phase_coil_fourier_series_coefficients}:
+            \begin{equation*}
+                \hat{B}_{\mathrm{c}}^{(k)} = \frac{2}{\pi q} \mathrm{Re}\left\{\sum_{l=0}^{q-1}e^{\mathrm{j} \Delta\vartheta_l k}\int_{-\pi/2}^{\pi/2} B'(\vartheta) \cos(k \vartheta) \mathrm{d}\vartheta\right\}.
+            \end{equation*}
+        \end{column}
+        \begin{column}{0.45\textwidth}
+            \begin{figure}
+                \centering
+                \includegraphics[width=0.8\textwidth]{fig/lec05/MMF_single_phase_distributed.pdf}
+                \caption{Representation of the coil displacement by $\Delta \vartheta$ steps for a distributed winding}
+                \label{fig:MMF_single_phase_distributed}
+            \end{figure}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Distribution factor (cont.)%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Distribution factor  (cont.)}
+   The discrete coil displacement angles are (assuming that the $Q$ slots are evenly distributed over the stator circumference, i.e., $\Delta \vartheta = 2\pi/Q$)
+   \begin{equation}
+    \Delta\vartheta_l = -\frac{q-1}{2} \frac{\pi}{m p q} + l \frac{\pi}{m p q} = -\frac{q-1}{2} \frac{2\pi}{Q} + l \frac{2\pi}{Q} \quad \mbox{for } l=0,1,\ldots,q-1.
+   \end{equation}
+   Hence, we can rewrite the Fourier series coefficient integral as:
+   \begin{equation}
+    \hat{B}_{\mathrm{c}}^{(k)} = \underbrace{\frac{1}{q}\mathrm{Re}\left\{\sum_{l=0}^{q-1} e^{\mathrm{j} \Delta\vartheta_l k}\right\} }_{\xi_{\mathrm{d},k}} \underbrace{\frac{2}{\pi}\int_{-\pi/2}^{\pi/2} B'(\vartheta) \cos(k \vartheta) \mathrm{d}\vartheta}_{\mbox{single lumped-coil integral}}.
+\end{equation}
+Hence, the Fourier coefficient of every harmonic order $k$ is multiplied by the distribution factor $\xi_{\mathrm{d},k}$. 
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Distribution factor (cont.)%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Distribution factor  (cont.)}
+    To write this $\xi_{\mathrm{d},k}$ more compactly, we rearrange 
+    \begin{equation}
+        \sum_{l=0}^{q-1} e^{\mathrm{j} \Delta\vartheta_l k} = \sum_{l=0}^{q-1} e^{\mathrm{j} k (-\frac{q-1}{2} \frac{2\pi}{Q} + l \frac{2\pi}{Q})} = e^{- \mathrm{j} k \frac{q-1}{2} \frac{2\pi}{Q}} \sum_{l=0}^{q-1} \left(e^{\mathrm{j} k  \frac{2\pi}{Q}}\right)^l
+        \label{eq:sum_exp_distribution_factor}
+    \end{equation}
+    and utilize the finite geoemtric series expression
+    $$
+    \sum_{l=0}^{q-1} x^l = \frac{1-x^q}{1-x}
+    $$
+    to rewrite
+    $$
+    \sum_{l=0}^{q-1} \left(e^{\mathrm{j} k  \frac{2\pi}{Q}}\right)^l = \frac{1-e^{\mathrm{j} k q \frac{2\pi}{Q}}}{1-e^{\mathrm{j} k \frac{2\pi}{Q}}}.
+    $$
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Distribution factor (cont.)%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Distribution factor  (cont.)}
+    The latter can be further rewritten as
+    $$
+    \frac{1-e^{\mathrm{j} k q \frac{2\pi}{Q}}}{1-e^{\mathrm{j} k \frac{2\pi}{Q}}} = \frac{e^{\mathrm{j} k q \frac{2\pi}{Q}\frac{1}{2}}\left(e^{-\mathrm{j} k q \frac{2\pi}{Q}\frac{1}{2}}-e^{\mathrm{j} k q \frac{2\pi}{Q}\frac{1}{2}}\right)}{e^{\mathrm{j} k \frac{2\pi}{Q}\frac{1}{2}}\left(e^{-\mathrm{j} k \frac{2\pi}{Q}\frac{1}{2}}-e^{\mathrm{j} k \frac{2\pi}{Q}\frac{1}{2}}\right)}.
+    $$
+    Utilizing the identity
+    $$
+    \sin(x) = \frac{e^{\mathrm{j} x}-e^{-\mathrm{j} x}}{2\mathrm{j}}
+    $$
+    we can further rewrite
+    \begin{equation}
+        \sum_{l=0}^{q-1} \left(e^{\mathrm{j} k  \frac{2\pi}{Q}}\right)^l =\frac{1-e^{\mathrm{j} k q \frac{2\pi}{Q}}}{1-e^{\mathrm{j} k \frac{2\pi}{Q}}} = \frac{e^{\mathrm{j} k q \frac{2\pi}{Q}\frac{1}{2}}(-2\mathrm{j})\sin(k q \frac{2\pi}{Q}\frac{1}{2})}{e^{\mathrm{j} k \frac{2\pi}{Q}\frac{1}{2}}(-2\mathrm{j})\sin(k \frac{2\pi}{Q}\frac{1}{2})}=e^{\mathrm{j}k\frac{2 \pi}{Q}\frac{q-1}{2}}\frac{\sin(k q \frac{2\pi}{Q}\frac{1}{2})}{\sin(k \frac{2\pi}{Q}\frac{1}{2})}.
+        \label{eq:sum_exp_distribution_factor_simplified}
+    \end{equation}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Distribution factor (cont.)%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Distribution factor  (cont.)}
+    Inserting \eqref{eq:sum_exp_distribution_factor_simplified} into \eqref{eq:sum_exp_distribution_factor} we finally receive
+    \begin{equation}
+        \begin{split}
+        \xi_{\mathrm{d},k} &= \frac{1}{q}\mathrm{Re}\left\{\sum_{l=0}^{q-1} e^{\mathrm{j} \Delta\vartheta_l k}\right\} = e^{- \mathrm{j} k \frac{2\pi}{Q} \frac{q-1}{2} } e^{\mathrm{j}k\frac{2 \pi}{Q}\frac{q-1}{2}}\frac{\sin(k q \frac{2\pi}{Q}\frac{1}{2})}{\sin(k \frac{2\pi}{Q}\frac{1}{2})}\\
+            &= \frac{\sin(k q \frac{2\pi}{Q}\frac{1}{2})}{q\sin(k \frac{2\pi}{Q}\frac{1}{2})} = \frac{\sin(k q \frac{\pi}{Q})}{q\sin(k \frac{\pi}{Q})}.
+    \end{split}
+    \end{equation}
 \end{frame}
