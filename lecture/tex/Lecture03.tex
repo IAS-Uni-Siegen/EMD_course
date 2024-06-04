@@ -1309,13 +1309,17 @@
 	\begin{columns}
 		\begin{column}{0.55\textwidth}
 		From \eqref{eq:Torque_series_DC_machine} it becomes clear that $T\sim I^2$ holds and, hence, the torque is independent of the sign of the current. Hence, the series DC machine can be also operated with an AC voltage supply (so-called universal machine).
-		\\[1em]
-		Consider the sinusoidal excitation $$u(t) = \hat{u} \cos(\omega_\mathrm{el} t+ \varphi_{\mathrm{u}}) = \mathrm{Re}\left\{\hat{u} e^{\iu (\omega_\mathrm{el} t + \varphi_{\mathrm{u}})}\right\} = \mathrm{Re}\left\{\underline{U} e^{\iu \omega_\mathrm{el} t}\right\},$$ which is represented by the complex phasor 
+		\\[1em] \pause 
+		Consider the sinusoidal excitation 
+		\begin{align*}
+			u(t) &= \hat{u} \cos(\omega_\mathrm{el} t+ \varphi_{\mathrm{u}}) = \mathrm{Re}\left\{\hat{u} e^{\iu (\omega_\mathrm{el} t + \varphi_{\mathrm{u}})}\right\}\\ &= \mathrm{Re}\left\{\underline{U} e^{\iu \omega_\mathrm{el} t}\right\},	
+		\end{align*} \pause
+		which is represented by the complex phasor 
 		\begin{equation}
 			\underline{U} = U e ^{\iu \phi_{\mathrm{u}}} = \frac{1}{\sqrt{2}}\hat{u} e ^{\iu \varphi_{\mathrm{u}}}. 
 		\end{equation}
 \end{column}
-\hfill
+\hfill \pause
 \begin{column}{0.45\textwidth}
 	\begin{figure}
 		\centering
@@ -1335,10 +1339,10 @@
 		\begin{equation}
 			\underline{U} = R'(\omega)\underline{I} + \iu \omega_\mathrm{el} L \underline{I}
 		\end{equation}
-		with $L = L_\mathrm{f}+L_\mathrm{a}$. The current phasor is
+		with $L = L_\mathrm{f}+L_\mathrm{a}$. \pause The current phasor is
 		\begin{equation}
 			\underline{I} = \frac{\underline{U}}{R'(\omega) + \iu \omega_\mathrm{el} L}
-		\end{equation}
+		\end{equation} \pause
 		resulting in the instantaneous current (setting $\varphi_{\mathrm{u}}=0$)
 		\begin{align}
 			i(t) &= \mathrm{Re}\left\{ \sqrt{2}\underline{I} e^{\iu\omega_\mathrm{el}t}\right\}=\sqrt{2}\mathrm{Re}\left\{ \frac{U\left(R'(\omega)-\iu\omega_\mathrm{el}L\right)}{R'(\omega)^2+\omega_\mathrm{el}^2L^2} e^{\iu\omega_\mathrm{el}t}\right\}\\
@@ -1361,6 +1365,7 @@
 				 &= L_\mathrm{f}'\frac{U^2}{R'(\omega)^2+\omega_\mathrm{el}^2L^2}\left[1+\cos\left(2\omega_\mathrm{el}(t-\frac{L}{R'(\omega)})\right)\right].	
 		\end{split}
 	\end{equation*}
+	\onslide<2->{
 	The peak and average torque are
 	\begin{equation}
 		\begin{split}
@@ -1368,7 +1373,7 @@
 		\overline{T} &= \frac{1}{2}\hat{T}.
 	\end{split}
 	\label{eq:Universal_motor_peak_avg_torque}
-\end{equation}
+\end{equation}}
 	\end{column}
 \hfill
 \begin{column}{0.45\textwidth}
@@ -1387,11 +1392,12 @@
 	\frametitle{Universal machine: series DC machine with sinusoidal excitation (cont.)}
 	\begin{columns}
 		\begin{column}{0.55\textwidth}
-		Some remarks on the universal machine:
+		\onslide<2->{
+		Some remarks on the universal machine:}
 		\begin{itemize}
-			\item Only if the reactance $\omega_\mathrm{el}L$ impact on the voltage demand is negligible, the universal machine average torque at AC mode is identical to the series DC machine torque in DC mode applying the same effective voltage. 
-			\item Due to the AC field current, both the armature and stator should be based on a laminated iron core design to reduce eddy current losses.
-			\item The peak armature and field currents are $\sqrt{2}$ times higher in the AC case than in DC operation. To prevent magnetic saturation, the iron paths must be designed larger than for an equivalent DC machine (i.e., leading to more volume and weight).
+			\item<2-> Only if the reactance $\omega_\mathrm{el}L$ impact on the voltage demand is negligible, the universal machine average torque at AC mode is identical to the series DC machine torque in DC mode applying the same effective voltage.
+			\item<3-> Due to the AC field current, both the armature and stator should be based on a laminated iron core design to reduce iron losses.
+			\item<4-> The peak armature and field currents are $\sqrt{2}$ times higher in the AC case than in DC operation. To prevent magnetic saturation, the iron paths must be designed larger than for an equivalent DC machine (i.e., leading to more volume and weight).
 		\end{itemize}
 \end{column}
 \hfill
@@ -1417,15 +1423,18 @@
 		\begin{equation}
 			u_\mathrm{sp} = -N_\mathrm{c} \frac{p}{a} \frac{\mathrm{d}\phi_\delta}{\mathrm{d}t}.
 		\end{equation}
+		\pause
 		Due to the time-varying excitation current, we have $\phi_\delta(t) = \hat{\phi}_\delta\cos(\omega_\mathrm{el} t)$ and, hence,
 		\begin{equation}
 			u_\mathrm{sp} = N_\mathrm{c} \frac{p}{a} \omega_\mathrm{el} \hat{\phi}_\delta \sin(\omega_\mathrm{el} t).
 			\label{eq:Induced_spark_voltage}
 		\end{equation}
+		\pause
 		This additional induced spark voltage is shifted by (approx.) 90 degrees to the excitation field. Consequently, the interpole winding current is not in phase and does not compensate $u_\mathrm{sp}$.
 \end{column}
 \hfill
 \begin{column}{0.35\textwidth}
+	\onslide<1->
 	\begin{figure}
 		\centering
 		\includegraphics[scale=1]{fig/lec03/Commutation_universal_machine.pdf}
@@ -1447,7 +1456,9 @@
 		\begin{equation}
 			i_\mathrm{sp} = -\frac{N_\mathrm{c} }{L_\mathrm{c} } \frac{p}{a} \hat{\phi}_\delta \cos(\omega_\mathrm{el} t).
 		\end{equation}
+		\pause
 		This additional current will cause commutator sparking and, hence, the universal machine commutation process is more challenging than for a pure DC machine. 
+		\pause
 		\vspace{-0.25cm}
 		\begin{varblock}{Conlusion on the universal machine}
 			The drawbacks of the universal machine in terms of sizing and commutation sparking (leading to higher wear) are the reasons why this machine type is typical limited to low-cost applications (e.g., household appliances) nowadays. 
@@ -1455,6 +1466,7 @@
 \end{column}
 \hfill
 \begin{column}{0.35\textwidth}
+	\onslide<1->
 	\begin{figure}
 		\centering
 		\includegraphics[scale=1]{fig/lec03/Commutation_universal_machine.pdf}
