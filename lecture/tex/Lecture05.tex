@@ -317,14 +317,14 @@
 	\frametitle{Resulting field: positive sequence part}
     To describe the resulting field distribution (as visualized in \figref{fig:Three_phase_coils_rotating_field_animation}) 
     \begin{equation}
-        B(\vartheta, t) = B_\mathrm{a}(\vartheta, t) + B_\mathrm{b}(\vartheta, t) + B_\mathrm{c}(\vartheta, t)
+        B(\vartheta_\mathrm{el}, t) = B_\mathrm{a}(\vartheta_\mathrm{el}, t) + B_\mathrm{b}(\vartheta_\mathrm{el}, t) + B_\mathrm{c}(\vartheta_\mathrm{el}, t)
     \end{equation}
     we analyze the positive and negative sequences separately. Utilizing $$\cos(x \pm y) = \cos(x)\cos(y) \mp \sin(x)\sin(y)$$ we obtain for the positive sequence:
     \begin{equation*}
         \begin{alignedat}{2}
-        &\cos(\omega t - k p \vartheta) &&+ \cos(\omega t - k p \vartheta - \frac{2\pi}{3}(1-k)) + \cos(\omega t - k p \vartheta + \frac{2\pi}{3}(1-k))\\
-         = \quad &\cos(\omega t - k p \vartheta) &&+ \cos(\omega t - k p \vartheta) \cos(\frac{2\pi}{3}(1-k)) + \sin(\omega t - k p \vartheta) \sin(\frac{2\pi}{3}(1-k))\\
-         & &&+ \cos(\omega t - k p \vartheta) \cos(\frac{2\pi}{3}(1-k)) - \sin(\omega t - k p \vartheta)\sin(\frac{2\pi}{3}(1-k)).   
+        &\cos(\omega t - k \vartheta_\mathrm{el}) &&+ \cos(\omega t - k \vartheta_\mathrm{el} - \frac{2\pi}{3}(1-k)) + \cos(\omega t - k \vartheta_\mathrm{el} + \frac{2\pi}{3}(1-k))\\
+         = \quad &\cos(\omega t - k \vartheta_\mathrm{el}) &&+ \cos(\omega t - k \vartheta_\mathrm{el}) \cos(\frac{2\pi}{3}(1-k)) + \sin(\omega t - k \vartheta_\mathrm{el}) \sin(\frac{2\pi}{3}(1-k))\\
+         & &&+ \cos(\omega t - k \vartheta_\mathrm{el}) \cos(\frac{2\pi}{3}(1-k)) - \sin(\omega t - k \vartheta_\mathrm{el})\sin(\frac{2\pi}{3}(1-k)).   
         \end{alignedat}
     \end{equation*}
     Hence, the sine terms cancel out each other.
@@ -338,13 +338,13 @@
 	\frametitle{Resulting field: positive sequence part (cont.)}
     Summarizing the above, we have
         \begin{align*}
-        &\cos(\omega t - k p \vartheta)  \cos(\omega t - k p \vartheta - \frac{2\pi}{3}(1-k)) + \cos(\omega t - k p \vartheta + \frac{2\pi}{3}(1-k))\\
-         = \quad &\cos(\omega t - k p \vartheta)(1+2\cos(\frac{2\pi}{3}(1-k))).
+        &\cos(\omega t - k \vartheta_\mathrm{el})  \cos(\omega t - k \vartheta_\mathrm{el} - \frac{2\pi}{3}(1-k)) + \cos(\omega t - k \vartheta_\mathrm{el} + \frac{2\pi}{3}(1-k))\\
+         = \quad &\cos(\omega t - k \vartheta_\mathrm{el})(1+2\cos(\frac{2\pi}{3}(1-k))).
     \end{align*}
     Considering $\cos(n 2 \pi)=1$ and $\cos(4\pi/3 + n 2 \pi) = \cos(2\pi/3 + n 2 \pi)=-1/2$ for $n \in \mathbb{Z}$ we observe the following for the positive sequence
     \begin{equation}
-        \cos(\omega t - k p \vartheta)(1+2\cos(\frac{2\pi}{3}(1-k))) = \begin{cases}
-            3 \cos(\omega t - k p \vartheta) & \text{for } k=1,7,13,19,\ldots, \\
+        \cos(\omega t - k \vartheta_\mathrm{el})(1+2\cos(\frac{2\pi}{3}(1-k))) = \begin{cases}
+            3 \cos(\omega t - k \vartheta_\mathrm{el}) & \text{for } k=1,7,13,19,\ldots, \\
             0 & \text{for } k=3,5,9,11,15, 17,\ldots.
         \end{cases}
     \end{equation}
@@ -358,20 +358,20 @@
 	\frametitle{Resulting field: negative sequence part}
     For the negative sequence part of
     \begin{equation*}
-        B(\vartheta, t) = B_\mathrm{a}(\vartheta, t) + B_\mathrm{b}(\vartheta, t) + B_\mathrm{c}(\vartheta, t)
+        B(\vartheta_\mathrm{el}, t) = B_\mathrm{a}(\vartheta_\mathrm{el}, t) + B_\mathrm{b}(\vartheta_\mathrm{el}, t) + B_\mathrm{c}(\vartheta_\mathrm{el}, t)
     \end{equation*}
     we rewrite the following terms
     \begin{equation*}
         \begin{alignedat}{2}
-        &\cos(\omega t + k p \vartheta) &&+ \cos(\omega t + k p \vartheta - \frac{2\pi}{3}(1+k)) + \cos(\omega t + k p \vartheta + \frac{2\pi}{3}(1+k))\\
-         = \quad &\cos(\omega t + k p \vartheta) &&+ \cos(\omega t + k p \vartheta) \cos(\frac{2\pi}{3}(1+k)) + \sin(\omega t + k p \vartheta) \sin(\frac{2\pi}{3}(1+k))\\
-         & &&+ \cos(\omega t + k p \vartheta) \cos(\frac{2\pi}{3}(1+k)) - \sin(\omega t + k p \vartheta)\sin(\frac{2\pi}{3}(1+k))
+        &\cos(\omega t + k \vartheta_\mathrm{el}) &&+ \cos(\omega t + k \vartheta_\mathrm{el} - \frac{2\pi}{3}(1+k)) + \cos(\omega t + k \vartheta_\mathrm{el} + \frac{2\pi}{3}(1+k))\\
+         = \quad &\cos(\omega t + k \vartheta_\mathrm{el}) &&+ \cos(\omega t + k \vartheta_\mathrm{el}) \cos(\frac{2\pi}{3}(1+k)) + \sin(\omega t + k \vartheta_\mathrm{el}) \sin(\frac{2\pi}{3}(1+k))\\
+         & &&+ \cos(\omega t + k \vartheta_\mathrm{el}) \cos(\frac{2\pi}{3}(1+k)) - \sin(\omega t + k \vartheta_\mathrm{el})\sin(\frac{2\pi}{3}(1+k))
         \end{alignedat}
     \end{equation*}
     and find for the negative sequence
     \begin{equation}
-        \cos(\omega t + k p \vartheta)(1+2\cos(\frac{2\pi}{3}(1+k))) = \begin{cases}
-            3 \cos(\omega t + k p \vartheta) & \text{for } k=5,11,17,\ldots, \\
+        \cos(\omega t + k \vartheta_\mathrm{el})(1+2\cos(\frac{2\pi}{3}(1+k))) = \begin{cases}
+            3 \cos(\omega t + k \vartheta_\mathrm{el}) & \text{for } k=5,11,17,\ldots, \\
             0 & \text{for } k=1, 3, 7,9,15, \ldots.
         \end{cases}
     \end{equation}
@@ -384,15 +384,15 @@
 	\frametitle{Resulting field: summary}
     Combining the positive and negative sequences, we receive
     \begin{equation}
-        B(\vartheta, t) = \frac{6}{\pi p} \hat{B} \sum_{k}^{\infty} \frac{1}{k} \sin\left(\frac{k \pi}{2}\right) \begin{cases}
-            \cos(\omega t - k p \vartheta) & \text{for } k=1,7,13,19,\ldots, \\
-            \cos(\omega t + k p \vartheta) & \text{for } k=5,11,17,\ldots, \\
+        B(\vartheta_\mathrm{el}, t) = \frac{6}{\pi p} \hat{B} \sum_{k}^{\infty} \frac{1}{k} \sin\left(\frac{k \pi}{2}\right) \begin{cases}
+            \cos(\omega t - k \vartheta_\mathrm{el}) & \text{for } k=1,7,13,19,\ldots, \\
+            \cos(\omega t + k \vartheta_\mathrm{el}) & \text{for } k=5,11,17,\ldots, \\
             0 & \text{otherwise}.
         \end{cases}
     \end{equation}
     Utilizing $\cos(-x)=\cos(x)$ and $\sin(-x)=-\sin(x)$, we can rewrite the above as
     \begin{equation}
-        B(\vartheta, t) = \frac{6}{\pi p} \hat{B} \sum_{k}^{\infty} \frac{1}{k} \sin\left(\frac{k \pi}{2}\right) \cos(\omega t - k p \vartheta) \quad \mbox{for } k=1,-5,7,-11,13,-17,\ldots.
+        B(\vartheta_\mathrm{el}, t) = \frac{6}{\pi p} \hat{B} \sum_{k}^{\infty} \frac{1}{k} \sin\left(\frac{k \pi}{2}\right) \cos(\omega t - k \vartheta_\mathrm{el}) \quad \mbox{for } k=1,-5,7,-11,13,-17,\ldots.
         \label{eq:B_three_phase_stator_coil_fourier_series_resulting_field}
     \end{equation}
     Here, the negative sequences are represented by the negative harmonic orders. Finally, one can note that the amplitudes of the resulting field from the three-phase excitation \eqref{eq:B_three_phase_stator_coil_fourier_series_resulting_field} are $3/2$ times higher than in the single phase case from \eqref{eq:B_single_phase_coil_fourier_series_multi_pole}.
@@ -428,7 +428,7 @@
 	\frametitle{Winding as a distributed coil system}
     In contrast to the lumped coil representation from \figref{fig:Simple_three_phase_stator_lumped_coils} the stator coils per phase are distributed over the stator circumference. To describe the winding layout, we (re-)introduce:
     \begin{gather*}
-		Q: \mbox{number of slots}, \quad m: \mbox{number of phases (usually $m=3$)}, \\ q=\frac{Q}{2 p m}: \mbox{number of notches  (number of slots per phase and pole)}, \quad \rho_\mathrm{p} = \frac{\pi}{p}: \mbox{pole pitch.}
+		Q: \mbox{number of slots}, \quad m: \mbox{number of phases (usually $m=3$)}, \\ q=\frac{Q}{2 p m}: \mbox{number of notches  (number of slots per phase and pole)}, \quad \rho_\mathrm{p}: \mbox{pole pitch (elec.).}
 	\end{gather*}
     \begin{figure}
         \centering
@@ -504,21 +504,21 @@
 \begin{frame}
 	\frametitle{Distribution factor  (cont.)}
     \begin{columns}
-		\begin{column}{0.55\textwidth}
-	        Starting from \eqref{eq:fourier_series_B_single_phase_coil_reduced}
+		\begin{column}{0.6\textwidth}
+	        Starting from
             \begin{align*}
-                B_\mathrm{a}(\vartheta) &= \sum_{k=1,3,5,\ldots}^{\infty} \hat{B}_{\mathrm{c}}^{(k)} \cos(k \vartheta)\\ \hat{B}_{\mathrm{c}}^{(k)} &= \frac{2}{\pi} \int_{-\pi/2}^{\pi/2} B(\vartheta) \cos(k \vartheta) \mathrm{d}\vartheta
+                B_\mathrm{a}(\vartheta_\mathrm{el}) &= \sum_{k=1,3,5,\ldots}^{\infty} \hat{B}_{\mathrm{c}}^{(k)} \cos(k \vartheta_\mathrm{el})\\ \hat{B}_{\mathrm{c}}^{(k)} &= \frac{2}{\pi} \int_{-\pi/2}^{\pi/2} B(\vartheta_\mathrm{el}) \cos(k \vartheta_\mathrm{el}) \mathrm{d}\vartheta_\mathrm{el}
             \end{align*}
             we rewrite the integral considering shifted coils by $\Delta \vartheta$ steps (i.e., $k \Delta \vartheta$ steps for the $k$-th harmonic order) with $N/q$ turns per coil based on the distribution of a single lumped coil $B'$ from \eqref{eq:B_single_phase_coil_fourier_series_coefficients}:
             \begin{equation*}
-                \hat{B}_{\mathrm{c}}^{(k)} = \frac{2}{\pi q} \mathrm{Re}\left\{\sum_{l=0}^{q-1}e^{\mathrm{j} \Delta\vartheta_l k}\int_{-\pi/2}^{\pi/2} B'(\vartheta) \cos(k \vartheta) \mathrm{d}\vartheta\right\}.
+                \hat{B}_{\mathrm{c}}^{(k)} = \frac{2}{\pi q} \mathrm{Re}\left\{\sum_{l=0}^{q-1}e^{\mathrm{j} \Delta\vartheta_l k}\int_{-\pi/2}^{\pi/2} B'(\vartheta_\mathrm{el}) \cos(k \vartheta_\mathrm{el}) \mathrm{d}\vartheta_\mathrm{el}\right\}.
             \end{equation*}
         \end{column}
-        \begin{column}{0.45\textwidth}
+        \begin{column}{0.4\textwidth}
             \begin{figure}
                 \centering
-                \includegraphics[width=0.8\textwidth]{fig/lec05/MMF_single_phase_distributed.pdf}
-                \caption{Representation of the coil displacement by $\Delta \vartheta$ steps for a distributed winding with $q=3$}
+                \includegraphics[width=0.9\textwidth]{fig/lec05/MMF_single_phase_distributed.pdf}
+                \caption{Representation of the coil displacement by $\Delta \vartheta$ steps for a distributed winding with $q=3$ and $p=1$}
                 \label{fig:MMF_single_phase_distributed}
             \end{figure}
         \end{column}
@@ -530,13 +530,13 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
 	\frametitle{Distribution factor  (cont.)}
-   The discrete coil displacement angles are (assuming that the $Q$ slots are evenly distributed over the stator circumference, i.e., $\Delta \vartheta = 2\pi/Q$)
+   The discrete coil displacement angles are (assuming that the $Q$ slots are evenly distributed over the stator circumference, i.e., $\Delta \vartheta = p 2  \pi/Q$)
    \begin{equation}
-    \Delta\vartheta_l = -\frac{q-1}{2} \frac{\pi}{m p q} + l \frac{\pi}{m p q} = -\frac{q-1}{2} \frac{2\pi}{Q} + l \frac{2\pi}{Q} \quad \mbox{for } l=0,1,\ldots,q-1.
+    \Delta\vartheta_l = -\frac{q-1}{2} \frac{\pi}{m q} + l \frac{\pi}{m q} = -\frac{q-1}{2} p \frac{2\pi}{Q} + l p \frac{2\pi}{Q} \quad \mbox{for } l=0,1,\ldots,q-1.
    \end{equation}
    Hence, we can rewrite the Fourier series coefficient integral as:
    \begin{equation}
-    \hat{B}_{\mathrm{c}}^{(k)} = \underbrace{\frac{1}{q}\mathrm{Re}\left\{\sum_{l=0}^{q-1} e^{\mathrm{j} \Delta\vartheta_l k}\right\} }_{\xi_{\mathrm{d},k}} \underbrace{\frac{2}{\pi}\int_{-\pi/2}^{\pi/2} B'(\vartheta) \cos(k \vartheta) \mathrm{d}\vartheta}_{\mbox{single lumped-coil integral}}.
+    \hat{B}_{\mathrm{c}}^{(k)} = \underbrace{\frac{1}{q}\mathrm{Re}\left\{\sum_{l=0}^{q-1} e^{\mathrm{j} \Delta\vartheta_l k}\right\} }_{\xi_{\mathrm{d},k}} \underbrace{\frac{2}{\pi}\int_{-\pi/2}^{\pi/2} B'(\vartheta_\mathrm{el}) \cos(k \vartheta_\mathrm{el}) \mathrm{d}\vartheta_\mathrm{el} \vphantom{\sum_{l=0}^{q-1}}}_{\mbox{single lumped-coil integral}}.
 \end{equation}
 Hence, the Fourier coefficient of every harmonic order $k$ is multiplied by the distribution factor $\xi_{\mathrm{d},k}$. 
 \end{frame}
@@ -548,7 +548,7 @@ Hence, the Fourier coefficient of every harmonic order $k$ is multiplied by the 
 	\frametitle{Distribution factor  (cont.)}
     To write this $\xi_{\mathrm{d},k}$ more compactly, we rearrange 
     \begin{equation}
-        \sum_{l=0}^{q-1} e^{\mathrm{j} \Delta\vartheta_l k} = \sum_{l=0}^{q-1} e^{\mathrm{j} k (-\frac{q-1}{2} \frac{2\pi}{Q} + l \frac{2\pi}{Q})} = e^{- \mathrm{j} k \frac{q-1}{2} \frac{2\pi}{Q}} \sum_{l=0}^{q-1} \left(e^{\mathrm{j} k  \frac{2\pi}{Q}}\right)^l
+        \sum_{l=0}^{q-1} e^{\mathrm{j} \Delta\vartheta_l k} = \sum_{l=0}^{q-1} e^{\mathrm{j} k (-\frac{q-1}{2} p \frac{2\pi}{Q} + l p \frac{2\pi}{Q})} = e^{- \mathrm{j} k \frac{q-1}{2} p \frac{2\pi}{Q}} \sum_{l=0}^{q-1} \left(e^{\mathrm{j} k  p \frac{2\pi}{Q}}\right)^l
         \label{eq:sum_exp_distribution_factor}
     \end{equation}
     and utilize the finite geoemtric series expression
@@ -557,7 +557,7 @@ Hence, the Fourier coefficient of every harmonic order $k$ is multiplied by the 
     $$
     to rewrite
     $$
-    \sum_{l=0}^{q-1} \left(e^{\mathrm{j} k  \frac{2\pi}{Q}}\right)^l = \frac{1-e^{\mathrm{j} k q \frac{2\pi}{Q}}}{1-e^{\mathrm{j} k \frac{2\pi}{Q}}}.
+    \sum_{l=0}^{q-1} \left(e^{\mathrm{j} k  p \frac{2\pi}{Q}}\right)^l = \frac{1-e^{\mathrm{j} k q p \frac{2\pi}{Q}}}{1-e^{\mathrm{j} k  p \frac{2\pi}{Q}}}.
     $$
 \end{frame}
 
@@ -568,7 +568,7 @@ Hence, the Fourier coefficient of every harmonic order $k$ is multiplied by the 
 	\frametitle{Distribution factor  (cont.)}
     The latter can be further rewritten as
     $$
-    \frac{1-e^{\mathrm{j} k q \frac{2\pi}{Q}}}{1-e^{\mathrm{j} k \frac{2\pi}{Q}}} = \frac{e^{\mathrm{j} k q \frac{2\pi}{Q}\frac{1}{2}}\left(e^{-\mathrm{j} k q \frac{2\pi}{Q}\frac{1}{2}}-e^{\mathrm{j} k q \frac{2\pi}{Q}\frac{1}{2}}\right)}{e^{\mathrm{j} k \frac{2\pi}{Q}\frac{1}{2}}\left(e^{-\mathrm{j} k \frac{2\pi}{Q}\frac{1}{2}}-e^{\mathrm{j} k \frac{2\pi}{Q}\frac{1}{2}}\right)}.
+    \frac{1-e^{\mathrm{j} k q p\frac{2\pi}{Q}}}{1-e^{\mathrm{j} k p\frac{2\pi}{Q}}} = \frac{e^{\mathrm{j} k q p\frac{2\pi}{Q}\frac{1}{2}}\left(e^{-\mathrm{j} k q p\frac{2\pi}{Q}\frac{1}{2}}-e^{\mathrm{j} k q p\frac{2\pi}{Q}\frac{1}{2}}\right)}{e^{\mathrm{j} k p\frac{2\pi}{Q}\frac{1}{2}}\left(e^{-\mathrm{j} k p\frac{2\pi}{Q}\frac{1}{2}}-e^{\mathrm{j} k p\frac{2\pi}{Q}\frac{1}{2}}\right)}.
     $$
     Utilizing the identity
     $$
@@ -576,7 +576,7 @@ Hence, the Fourier coefficient of every harmonic order $k$ is multiplied by the 
     $$
     we can further rewrite
     \begin{equation}
-        \sum_{l=0}^{q-1} \left(e^{\mathrm{j} k  \frac{2\pi}{Q}}\right)^l =\frac{1-e^{\mathrm{j} k q \frac{2\pi}{Q}}}{1-e^{\mathrm{j} k \frac{2\pi}{Q}}} = \frac{e^{\mathrm{j} k q \frac{2\pi}{Q}\frac{1}{2}}(-2\mathrm{j})\sin(k q \frac{2\pi}{Q}\frac{1}{2})}{e^{\mathrm{j} k \frac{2\pi}{Q}\frac{1}{2}}(-2\mathrm{j})\sin(k \frac{2\pi}{Q}\frac{1}{2})}=e^{\mathrm{j}k\frac{2 \pi}{Q}\frac{q-1}{2}}\frac{\sin(k q \frac{2\pi}{Q}\frac{1}{2})}{\sin(k \frac{2\pi}{Q}\frac{1}{2})}.
+        \sum_{l=0}^{q-1} \left(e^{\mathrm{j} k  p\frac{2\pi}{Q}}\right)^l =\frac{1-e^{\mathrm{j} k q p\frac{2\pi}{Q}}}{1-e^{\mathrm{j} k p\frac{2\pi}{Q}}} = \frac{e^{\mathrm{j} k q p\frac{2\pi}{Q}\frac{1}{2}}(-2\mathrm{j})\sin(k q p\frac{2\pi}{Q}\frac{1}{2})}{e^{\mathrm{j} k p\frac{2\pi}{Q}\frac{1}{2}}(-2\mathrm{j})\sin(k p\frac{2\pi}{Q}\frac{1}{2})}=e^{\mathrm{j}k\frac{2 \pi}{Q}\frac{q-1}{2}}\frac{\sin(k q p\frac{2\pi}{Q}\frac{1}{2})}{\sin(k p\frac{2\pi}{Q}\frac{1}{2})}.
         \label{eq:sum_exp_distribution_factor_simplified}
     \end{equation}
 \end{frame}
@@ -589,8 +589,123 @@ Hence, the Fourier coefficient of every harmonic order $k$ is multiplied by the 
     Inserting \eqref{eq:sum_exp_distribution_factor_simplified} into \eqref{eq:sum_exp_distribution_factor} we finally receive
     \begin{equation}
         \begin{split}
-        \xi_{\mathrm{d},k} &= \frac{1}{q}\mathrm{Re}\left\{\sum_{l=0}^{q-1} e^{\mathrm{j} \Delta\vartheta_l k}\right\} = e^{- \mathrm{j} k \frac{2\pi}{Q} \frac{q-1}{2} } e^{\mathrm{j}k\frac{2 \pi}{Q}\frac{q-1}{2}}\frac{\sin(k q \frac{2\pi}{Q}\frac{1}{2})}{\sin(k \frac{2\pi}{Q}\frac{1}{2})}\\
-            &= \frac{\sin(k q \frac{2\pi}{Q}\frac{1}{2})}{q\sin(k \frac{2\pi}{Q}\frac{1}{2})} = \frac{\sin(k q \frac{\pi}{Q})}{q\sin(k \frac{\pi}{Q})}.
+        \xi_{\mathrm{d},k} &= \frac{1}{q}\mathrm{Re}\left\{\sum_{l=0}^{q-1} e^{\mathrm{j} \Delta\vartheta_l k}\right\} = \frac{1}{q} e^{- \mathrm{j} k p\frac{2\pi}{Q} \frac{q-1}{2} } e^{\mathrm{j}k\frac{2 \pi}{Q}\frac{q-1}{2}}\frac{\sin(k q p\frac{2\pi}{Q}\frac{1}{2})}{\sin(k p\frac{2\pi}{Q}\frac{1}{2})}\\
+            &= \frac{\sin(k q p\frac{2\pi}{Q}\frac{1}{2})}{q\sin(k p\frac{2\pi}{Q}\frac{1}{2})} = \frac{\sin(k q p \frac{\pi}{Q})}{q\sin(k p \frac{\pi}{Q})}\\
+            &= \frac{\sin\left(\frac{k \pi}{2 m}\right)}{q\sin\left(\frac{k \pi}{2 m q}\right)}.
     \end{split}
     \end{equation}
+    \begin{itemize}
+        \item $|\xi_{\mathrm{d},k}| \leq 1$ holds for all parameter combinations.
+        \item The factor describes the change of each harmonic component due to the distributed winding compared to the (idealized) lumped coil case.
+    \end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Pitch factor %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Pitch factor}
+    \begin{columns}
+		\begin{column}{0.6\textwidth}
+	        If windings are not implemented as diametral winding, i.e. the winding width $y$ is smaller than the pole pitch $\rho_\mathrm{p}$, 
+            $$y < \rho_\mathrm{p}=\pi,$$
+            the winding is called chorded. Hence, the starting and end position of the coil are shifted towards $\pm(y/\rho_\mathrm{p})(\pi/2)$ along the circumference. Consequently, the Fourier coefficients of the chorded winding are:
+            \begin{equation}
+                \hat{B}_{\mathrm{c}}^{(k)} = \frac{2}{\pi} \int_{-\frac{\pi}{2}\frac{y}{\rho_\mathrm{p}}}^{\frac{\pi}{2}\frac{y}{\rho_\mathrm{p}}} B(\vartheta_\mathrm{el}) \cos(k \vartheta_\mathrm{el}) \mathrm{d}\vartheta_\mathrm{el}.
+                \label{eq:Pitch_factor_fourier_coefficients}
+            \end{equation}
+        \end{column}
+        \begin{column}{0.4\textwidth}
+            \begin{figure}
+                \centering
+                \includegraphics[width=0.9\textwidth]{fig/lec05/Single_phase_chording.pdf}
+                \caption{Representation of a chorded coil for a distributed winding with $q=3$ and $p=1$}
+                \label{fig:Single_phase_chording}
+            \end{figure}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Pitch factor (cont.) %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Pitch factor (cont.)}
+    Continuing from \eqref{eq:Pitch_factor_fourier_coefficients}, we can rewrite the integral as
+    \begin{equation}
+        \begin{split}
+            \hat{B}_{\mathrm{c}}^{(k)} &= \frac{2}{\pi} \int_{-\frac{\pi}{2}\frac{y}{\rho_\mathrm{p}}}^{\frac{\pi}{2}\frac{y}{\rho_\mathrm{p}}} B(\vartheta_\mathrm{el}) \cos(k \vartheta_\mathrm{el}) \mathrm{d}\vartheta_\mathrm{el} = \frac{2}{\pi}\hat{B}\cos(\omega t) \int_{-\frac{\pi}{2}\frac{y}{\rho_\mathrm{p}}}^{\frac{\pi}{2}\frac{y}{\rho_\mathrm{p}}} \cos(k \vartheta_\mathrm{el}) \mathrm{d}\vartheta_\mathrm{el}\\
+            &= \frac{2}{\pi}\hat{B}\cos(\omega t)\frac{1}{k} \left[\sin(k\frac{\pi}{2}\frac{y}{\rho_\mathrm{p}}) - \sin(-k\frac{\pi}{2}\frac{y}{\rho_\mathrm{p}})\right] = \frac{4}{\pi}\hat{B}\cos(\omega t)\frac{1}{k} \sin(k\frac{\pi}{2}\frac{y}{\rho_\mathrm{p}}).
+        \end{split}
+        \label{eq:Pitch_factor_fourier_coefficients_rewritten} 
+    \end{equation}
+    Compared to the unchored case \eqref{eq:B_single_phase_coil_fourier_series_coefficients}, the Fourier coefficients are
+    $$\frac{\sin\left(k\frac{\pi}{2}\frac{y}{\rho_\mathrm{p}}\right)}{\sin\left(k\frac{\pi}{2}\right)}$$ smaller. As the magnitude of the denominator is always one, we define
+    \begin{equation}
+        \xi_{\mathrm{p},k} = \sin\left(k\frac{\pi}{2}\frac{y}{\rho_\mathrm{p}}\right)
+        \label{eq:Pitch_factor_definition}
+    \end{equation} 
+    as the pitch factor.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Winding factor %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Winding factor}
+    Considering both, a distributed and chorded winding, we receive
+    \begin{equation}
+        \begin{split}
+            \hat{B}_{\mathrm{c}}^{(k)} &= \frac{1}{q}\mathrm{Re}\left\{\sum_{l=0}^{q-1} e^{\mathrm{j} \Delta\vartheta_l k}\right\}  \frac{2}{\pi}\int_{-\frac{\pi}{2}\frac{y}{\rho_\mathrm{p}}}^{\frac{\pi}{2}\frac{y}{\rho_\mathrm{p}}} B(\vartheta_\mathrm{el}) \cos(k \vartheta_\mathrm{el}) \mathrm{d}\vartheta_\mathrm{el}\\
+            &=\cdots\\
+            &= \frac{4}{\pi}\hat{B}\cos(\omega t)\frac{1}{k} \sin\left(k\frac{\pi}{2}\frac{y}{\rho_\mathrm{p}}\right)  \frac{\sin\left(\frac{k \pi}{2 m}\right)}{q\sin\left(\frac{k \pi}{2 m q}\right)}\\
+            &= \frac{4}{\pi}\hat{B}\cos(\omega t)\frac{1}{k} \underbrace{\xi_{\mathrm{d},k} \xi_{\mathrm{p},k}}_{\xi_{\mathrm{w},k}}
+            \end{split}
+        \label{eq:Winding_factor_fourier_coefficients} 
+    \end{equation}
+    with $\xi_{\mathrm{w},k} = \xi_{\mathrm{d},k} \xi_{\mathrm{p},k}$ being the winding factor. It describes the change of each harmonic component due to the distributed and chorded winding compared to the (idealized) lumped coil case (which would be equivalent to $\xi_{\mathrm{w},k}=1$).
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Winding factor:examples %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Winding factor: examples}
+    \begin{table}
+        \centering
+        \begin{tabular}{r c c c c c c c c c}
+            & \multicolumn{3}{c}{Machine A} & \multicolumn{3}{c}{Machine B} & \multicolumn{3}{c}{Machine C}\\
+            \toprule
+            & \multicolumn{3}{c}{$q=1, \quad y/\rho_\mathrm{p}=2/3,$} & \multicolumn{3}{c}{$q=2, \quad y/\rho_\mathrm{p}=5/6,$} & \multicolumn{3}{c}{$q=3, \quad y/\rho_\mathrm{p}=7/9,$}\\
+            & \multicolumn{3}{c}{$Q/p = 6$} & \multicolumn{3}{c}{$Q/p = 12$} &\multicolumn{3}{c}{$Q/p = 18$}\\
+            \cmidrule{2-10}
+            $k$ & $\xi_{\mathrm{d},k}$ & $\xi_{\mathrm{p},k}$ & $\xi_{\mathrm{w},k}$ & $\xi_{\mathrm{d},k}$ & $\xi_{\mathrm{p},k}$ & $\xi_{\mathrm{w},k}$ & $\xi_{\mathrm{d},k}$ & $\xi_{\mathrm{p},k}$ & $\xi_{\mathrm{w},k}$\\
+            \midrule
+            1 & 1 & 0.866 & 0.866 & 0.966 & 0.966 & 0.933 & 0.960 & 0.940 & 0.902\\
+            3 & 1 & 0 & 0 & 0.707 & -0.707 & -0.500 & 0.667 & -0.500 & -0.333\\
+            5 & 1 & -0.866 & -0.866 & 0.259 & 0.259 & 0.067 & 0.218 & -0.174 & -0.038\\
+            7 & 1 & 0.866 & 0.866 & -0.259 & 0.259 & -0.067 & -0.177 & 0.766 & -0.136\\
+            9 & 1 & 0 & 0 & -0.707 & -0.707 & 0.500 & -0.333 & -1.000 & 0.333\\
+            11 & 1 & -0.866 & -0.866 & -0.966 & 0.966 & -0.933 & -0.177 & 0.776 & -0.136\\
+            13 & 1 & 0.866 & 0.866 & -0.966 & -0.966 & 0.933 & 0.218 & -0.174 & -0.038\\
+            15 & 1 & 0 & 0 & -0.707 & 0.707 & -0.500 & 0.667 & -0.500 & -0.333\\
+            \bottomrule
+        \end{tabular}
+        \caption{Winding factors for different winding configurations for three-phase machines ($m=3$)}
+        \label{tab:Winding_factors}
+    \end{table}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Winding factor: remarks %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Winding factor: remarks}
+    \begin{varblock}{Winding factor interpretation}
+        The winding factor $\xi_{\mathrm{w},k}$ mathematically maps a (real-world) distributed (and eventually chorded) winding with $N$ turns in slots distributed over the stator circumference to an idealized (abstract) lumped-coil representation with $N \cdot \xi_{\mathrm{w},k}$ (effective) turns. For following calculation steps (e.g., in a three-phase machine model -- compare \figref{fig:Simple_three_phase_stator_lumped_coils}), one can utilize the simplified lumped-coil representation without systematic modeling errors thanks to the winding factor concept.
+    \end{varblock}
+    \begin{itemize}
+        \item With respect to \tabref{tab:Winding_factors} one can also observe that the winding configuration choice has a direct impact on the harmonic content of the flux density distribution.
+        \item As those will also influence the production of torque and induced voltage (harmonics), the winding factor is a crucial parameter for the design of electrical machines.
+    \end{itemize}
 \end{frame}
