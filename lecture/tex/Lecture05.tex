@@ -709,3 +709,22 @@ Hence, the Fourier coefficient of every harmonic order $k$ is multiplied by the 
         \item As those will also influence the production of torque and induced voltage (harmonics), the winding factor is a crucial parameter for the design of electrical machines.
     \end{itemize}
 \end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Winding factor: limitations and generalization %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Winding factor: limitations and generalization}
+    The winding factor approach leading to \eqref{eq:Winding_factor_fourier_coefficients} was based on several (implicit) assumptions:
+    \begin{itemize}
+        \item The number of slots per phase and pole is a (positive) integer: $q \in \mathbb{N}$.
+        \item The slot distribution is even over the stator circumference.
+    \end{itemize}
+    However, these assumptions do not apply to all (typical) winding configurations, in particular fractional slot windings where $$q=\frac{Q}{2 p m} \in \mathbb{Q}$$ is represented by a common fraction, i.e., rational number. 
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.75\textwidth]{fig/lec05/Fractional_slot_concentrated_winding_example.pdf}
+        \caption{Example scheme of a fractional slot concentrated winding with $Q=9, p = 3, q=1/2$ (adapted from J.~B\"ocker, \textit{Controlled Three-Phase Drives}, Paderborn University, 2021)}
+        \label{fig:Fractional_slot_concentrated_winding_example}
+    \end{figure}
+\end{frame}
