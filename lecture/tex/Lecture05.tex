@@ -537,6 +537,7 @@
    Hence, we can rewrite the Fourier series coefficient integral as:
    \begin{equation}
     \hat{B}_{\mathrm{c}}^{(k)} = \underbrace{\frac{1}{q}\mathrm{Re}\left\{\sum_{l=0}^{q-1} e^{\mathrm{j} \Delta\vartheta_l k}\right\} }_{\xi_{\mathrm{d},k}} \underbrace{\frac{2}{\pi}\int_{-\pi/2}^{\pi/2} B'(\vartheta_\mathrm{el}) \cos(k \vartheta_\mathrm{el}) \mathrm{d}\vartheta_\mathrm{el} \vphantom{\sum_{l=0}^{q-1}}}_{\mbox{single lumped-coil integral}}.
+    \label{eq:B_single_phase_coil_fourier_series_coefficients_distributed}
 \end{equation}
 Hence, the Fourier coefficient of every harmonic order $k$ is multiplied by the distribution factor $\xi_{\mathrm{d},k}$. 
 \end{frame}
@@ -724,7 +725,50 @@ Hence, the Fourier coefficient of every harmonic order $k$ is multiplied by the 
     \begin{figure}
         \centering
         \includegraphics[width=0.75\textwidth]{fig/lec05/Fractional_slot_concentrated_winding_example.pdf}
-        \caption{Example scheme of a fractional slot concentrated winding with $Q=9, p = 3, q=1/2$ (adapted from J.~B\"ocker, \textit{Controlled Three-Phase Drives}, Paderborn University, 2021)}
+        \caption{Example scheme of a fractional slot concentrated winding with $Q=9$, $p = 3$, $q=1/2$ (adapted from J.~B\"ocker, \textit{Controlled Three-Phase Drives}, Paderborn University, 2021)}
         \label{fig:Fractional_slot_concentrated_winding_example}
+    \end{figure}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Complex winding factor %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Complex winding factor}
+    The complex winding factor (here: for phase a) is defined as
+    \begin{equation}
+        \underline{\xi}_{\mathrm{a},k} = \frac{1}{\mathrm{j}N_\mathrm{a}}\sum_{i=1}^{Q} N_{\mathrm{a},i}e^{\mathrm{j}k\vartheta_{\mathrm{el},\mathrm{a},i}}
+        \label{eq:Complex_winding_factor_definition}
+    \end{equation} 
+    with $N_{\mathrm{a},i}\in \mathbb{Z}$ being the number of conductors in slot $i$ at the position $\vartheta_{\mathrm{el},\mathrm{a},i}$ with 
+    \begin{equation}
+        N_\mathrm{a} = \sum_{i=1}^{Q} |N_{\mathrm{a},i}|
+        \label{eq:Complex_winding_factor_total_number_conductors}
+    \end{equation}
+    being the total number of conductors. Moreover, $N_{\mathrm{a},i}$ represents the orientation of each conductor by
+    \begin{itemize}
+        \item $N_{\mathrm{a},i} = 0$: no conductor is in slot $i$,
+        \item $N_{\mathrm{a},i} >0 $: conductor is oriented towards the positive $z$-axis (directed towards reader),
+        \item $N_{\mathrm{a},i} <0 $: conductor is oriented towards the negative $z$-axis (directed away from reader).
+    \end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Complex winding factor (cont.) %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Complex winding factor (cont.)}
+    The complex winding factor is a generalization of \eqref{eq:B_single_phase_coil_fourier_series_coefficients_distributed} weighting the contribution of each conductor to the $k$-th harmonic (compare \figref{fig:Representation_complex_winding_factor}). Hence,
+    \begin{itemize}
+        \item the conductor positions $\vartheta_{\mathrm{el},\mathrm{a},i}$ are arbitrary and do not need to follow a specific distribution pattern (i.e., applicable to arbitrary slot configurations),
+        \item the magnitude of the complex winding factor $|\underline{\xi}_{\mathrm{a},k}|\in[0,1]$ indicates the dampening of the harmonic component $k$ due to the winding configuration,
+        \item the phase of the complex winding factor $\angle \underline{\xi}_{\mathrm{a},k}$ indicates the phase shift of the harmonic component $k$ compared to the winding layout. 
+    \end{itemize}
+
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.7\textwidth]{fig/lec05/Representation_complex_winding_factor.pdf}
+        \caption{Qualitative illustration of the complex winding factor as a comparison of the actual current distribution compared to the ideal distribution belonging to a certainflux harmonic}
+        \label{fig:Representation_complex_winding_factor}
     \end{figure}
 \end{frame}

@@ -213,7 +213,7 @@
 		\pause
 		Assuming further that the transformer is leakage-free ($L_{1,\sigma}=0$), the voltage transformation ratio simplifies to (compare also \eqref{eq:inductance_split})
 		\begin{equation}
-			\frac{U_1}{U_2} = \frac{L_1}{M} = \frac{\Lambda_{21}N_1^2}{\Lambda_{21}N_1 N_2} I_1 = \frac{N_1}{N_2} = \ddot{u}.
+			\frac{U_1}{U_2} = \frac{L_1}{M} = \frac{\Lambda_{21}N_1^2}{\Lambda_{21}N_1 N_2}  = \frac{N_1}{N_2} = \ddot{u}.
 			\label{eq:voltage_transformation_ratio}
 		\end{equation}
 		\pause
@@ -382,8 +382,9 @@
 	\begin{equation}
 		P_{\mathrm{l,c}} \approx R_{\mathrm{c}} I_{\mathrm{c}}^2 \approx \frac{U_1^2}{R_{\mathrm{c}}}. 
 	\end{equation}
-	Here, we consider a pure sinusoidal operation with $I_\mathrm{c}$ and $U_1$ being root-mean-square (RMS) values. \pause Obviously, this is only a very rough model approximation (compare \figref{fig:Hyteresis_curve_full} and \figref{fig:Eddy_currents_lamination}), but for many transformer designs the core losses can be significant and neglecting them completely would not be justified. \pause
+	Here, we consider a pure sinusoidal operation with $I_\mathrm{c}$ and $U_1$ being root-mean-square (RMS) values. \pause Obviously, this is only a very rough model approximation (compare \figref{fig:Hyteresis_curve_full} and \figref{fig:Eddy_currents_lamination}), but for many transformer designs the core losses can be significant and neglecting them completely would not be justified. 
 	\begin{figure}
+		\onslide<1->
 		\begin{columns}
 			\begin{column}{0.64\textwidth}
 					\centering
@@ -405,13 +406,13 @@
 	\pause
 	Applying a sinusoidal test voltage $U_{1,\mathrm{o}}$ and several measurement devices during an open-circuit arrangement, we can determine
 	\begin{equation}
-		\ddot{u} \approx \frac{U_{1,\mathrm{o}}}{U_{2,\mathrm{o}}} = \frac{N_1}{N_2}, \quad P_{1,\mathrm{o}} = U_{1,\mathrm{o}} I_{1,\mathrm{o}}, \quad \cos(\varphi_{\mathrm{o}}) = \frac{P_{1,\mathrm{o}}}{U_{1,\mathrm{o}} I_{1,\mathrm{o}}}
+		\ddot{u} \approx \frac{U_{1,\mathrm{o}}}{U_{2,\mathrm{o}}} = \frac{N_1}{N_2}, \quad S_{1,\mathrm{o}} = U_{1,\mathrm{o}} I_{1,\mathrm{o}}, \quad \cos(\varphi_{\mathrm{o}}) = \frac{P_{1,\mathrm{o}}}{U_{1,\mathrm{o}} I_{1,\mathrm{o}}}
 	\end{equation} 
 	with $P_{1,\mathrm{o}}$ being the active input power consumed by the transformer and $\cos(\varphi_{\mathrm{o}})$ is the power factor. \pause With the assumptions $R_1 << R_\mathrm{c}$ and $L_{1,\sigma} << M'$, we can approximate 
 	\begin{equation}
 		R_{\mathrm{c}} \approx \frac{U_{1,\mathrm{o}}^2}{P_{1,\mathrm{o}}}, \quad X_{M'} = \omega_{\mathrm{el}} M'  \approx \frac{U_{1,\mathrm{o}}}{I_{1,\mathrm{o}} \sin(\varphi_{\mathrm{o}})}
 	\end{equation}
-	given the angular frequency $\omega_{\mathrm{el}} = 2\pi f$ and the reactance $X_{M'}$ of the mutual inductance.
+	given the angular frequency $\omega_{\mathrm{el}} = 2\pi f_{\mathrm{el}}$ and the reactance $X_{M'}$ of the mutual inductance.
 	\begin{figure}
 		\onslide<1->
 		\begin{columns}
@@ -482,10 +483,10 @@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Voltage transformer: measuring high AC voltages %%
+%% Voltage transformer application: measuring high AC voltages %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
-	\frametitle{Voltage transformer: measuring high AC voltages}
+	\frametitle{Voltage transformer application: measuring high AC voltages}
 	If the voltage to be measured is too high for direct measurement, a voltage transformer can be used to step-down the voltage to a suitable level:
 	$$u_2(t) = \frac{1}{\ddot{u}} u_1(t).$$
 	\pause
@@ -509,10 +510,10 @@
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Current transformer: measuring high AC currents %%
+%% Current transformer application: measuring high AC currents %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
-	\frametitle{Current transformer: measuring high AC currents}
+	\frametitle{Current transformer application: measuring high AC currents}
 	If the current to be measured is too high for direct measurement, a current transformer can be used to step-down the current to a suitable level:
 	$$i_2(t) = \ddot{u} i_1(t).$$ \pause
 	Hence, we choose $\ddot{u} < 1$. \pause Moreover, the current sensor on the secondary side comes with a minimal internal resistance $R_\mathrm{i}$ to avoid a significant ohmic power losses. Likewise, the transformer should be designed for low $R_1$ and $R_2$ (e.g., $N_1=1$ on the primary and sufficiently large cable cross-sections).\\ \pause
@@ -621,7 +622,7 @@
 	Since $N_2 / N_1 > 0$ the autotransformer can transfer more apparent power than the standard transformer since the autotransformer combines two power transfer mechanisms: \pause
 	\begin{itemize}
 		\item the apparent power $U_1 I_1$ is transferred via the magnetic coupling (induction) and \pause
-		\item the apparent power $U_2 I_1$ is transferred via the electrical conduction between primary and secondary (not available in the standard transformer).
+		\item the apparent power $U_2 I_1$ is transferred via the electrical conduction between primary and secondary (not available in the galvanically-isolated standard transformer).
 	\end{itemize}
 \end{frame}
 
