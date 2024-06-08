@@ -712,10 +712,10 @@ Hence, the Fourier coefficient of every harmonic order $k$ is multiplied by the 
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Winding factor: limitations and generalization %%
+%% Winding factor: limitations %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
-	\frametitle{Winding factor: limitations and generalization}
+	\frametitle{Winding factor: limitations}
     The winding factor approach leading to \eqref{eq:Winding_factor_fourier_coefficients} was based on several (implicit) assumptions:
     \begin{itemize}
         \item The number of slots per phase and pole is a (positive) integer: $q \in \mathbb{N}$.
@@ -729,6 +729,30 @@ Hence, the Fourier coefficient of every harmonic order $k$ is multiplied by the 
         \label{fig:Fractional_slot_concentrated_winding_example}
     \end{figure}
 \end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Concentrated winding %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Concentrated winding}
+    \begin{itemize}
+        \item Concentrated winding: the coils per phase are wound around single stator teeth.
+        \item Allows for smaller end windings (i.e., less copper and reduced motor length) compared to distributed windings.
+    \end{itemize}
+    \begin{figure}
+		\begin{columns}
+			\begin{column}{0.4\textwidth}
+					\centering
+					\includegraphics[width=0.9\textwidth]{fig/lec05/Concentrated_winding_example.jpg}
+			\end{column}
+			\begin{column}{0.6\textwidth}
+				\caption{\raggedright Example of a concentrated winding where conductors form coils centered around single stator teeth (source:  Chan-Ho Baek et al., \textit{Iron Loss Analysis of a Concentrated Winding Type Interior Permanent Magnet Synchronous Motor with Single and Dual Layer Magnet Shape}, MDPI Machines, 2021, \href{https://creativecommons.org/licenses/by/4.0/}{CC BY 4.0})}
+				\label{fig:Concentrated_winding_example}
+			\end{column}
+		\end{columns}
+	\end{figure}
+\end{frame}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Complex winding factor %%
@@ -771,4 +795,52 @@ Hence, the Fourier coefficient of every harmonic order $k$ is multiplied by the 
         \caption{Qualitative illustration of the complex winding factor as a comparison of the actual current distribution compared to the ideal distribution belonging to a certainflux harmonic}
         \label{fig:Representation_complex_winding_factor}
     \end{figure}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Complex winding factor (cont.) %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Complex winding factor (cont.)}
+    While \eqref{eq:Complex_winding_factor_definition} represents the complex winding factor for phase a, the complex winding factor for phase b and c can be derived by rotating the coordinate system by $\pm 2\pi/3$:
+    \begin{equation}
+        \underline{\xi}_{\mathrm{b},k} = \frac{1}{\mathrm{j}N_\mathrm{b}}\sum_{i=1}^{Q} N_{\mathrm{b},i}e^{\mathrm{j}k\left(\vartheta_{\mathrm{el},\mathrm{a},i}+\frac{2\pi}{3}\right)}. \qquad  \underline{\xi}_{\mathrm{c},k} = \frac{1}{\mathrm{j}N_\mathrm{c}}\sum_{i=1}^{Q} N_{\mathrm{c},i}e^{\mathrm{j}k\left(\vartheta_{\mathrm{el},\mathrm{a},i}-\frac{2\pi}{3}\right)}.
+        \label{eq:Complex_winding_factor_definition_phase_bc}    
+    \end{equation}
+    Hence,
+    \begin{equation}
+        \underline{\xi}_{\mathrm{a},k} = e^{-\mathrm{j}k\frac{2\pi}{3}}\underline{\xi}_{\mathrm{b},k} = e^{\mathrm{j}k\frac{2\pi}{3}}\underline{\xi}_{\mathrm{c},k}
+        \label{eq:Complex_winding_factor_relation}
+    \end{equation}
+    applies. 
+    \begin{varblock}{Harmonic orders}
+        While regular symmetrical windings with $q\in\mathbb{N}$ will only produce certain harmonic orders ($k=1,3,5,7,\ldots$ -- cf. \eqref{eq:B_three_phase_stator_coil_fourier_series}), arbitrary winding configurations can produce further harmonic orders $k\in\mathbb{Q}$ (in particular if $q$ is a common fraction).
+    \end{varblock}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Complex winding factor (cont.) %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Complex winding factor: example}
+    Based on the below table describing the winding scheme information from \figref{fig:Fractional_slot_concentrated_winding_example} we have
+    \begin{align*}
+        \underline{\xi}_{\mathrm{a},k} &= \frac{1}{6}\left(-1e^{\mathrm{j}\frac{k\pi}{3}} + 1 e^{\mathrm{j}\frac{k5\pi}{3}}-e^{\mathrm{j}\frac{k7\pi}{3}} + e^{\mathrm{j}\frac{k11\pi}{3}} - e^{\mathrm{j}\frac{k13\pi}{3}}+e^{\mathrm{j}\frac{k17\pi}{3}}\right),\\
+        \underline{\xi}_{\mathrm{a},1} &= \frac{1}{6}\left(-1e^{\mathrm{j}\frac{\pi}{3}} + 1 e^{\mathrm{j}\frac{5\pi}{3}}-e^{\mathrm{j}\frac{7\pi}{3}} + e^{\mathrm{j}\frac{11\pi}{3}} - e^{\mathrm{j}\frac{13\pi}{3}}+e^{\mathrm{j}\frac{17\pi}{3}}\right) = -0.866,\\
+        \underline{\xi}_{\mathrm{a},2} &= \frac{1}{6}\left(-1e^{\mathrm{j}\frac{2\pi}{3}} + 1 e^{\mathrm{j}\frac{10\pi}{3}}-e^{\mathrm{j}\frac{14\pi}{3}} + e^{\mathrm{j}\frac{22\pi}{3}} - e^{\mathrm{j}\frac{26\pi}{3}}+e^{\mathrm{j}\frac{34\pi}{3}}\right) = -0.866,\\
+        \underline{\xi}_{\mathrm{a},3} &= \frac{1}{6}\left(-1e^{\mathrm{j}\pi} + 1 e^{\mathrm{j}5\pi}-e^{\mathrm{j}7\pi} + e^{\mathrm{j}11\pi} - e^{\mathrm{j}13\pi}+e^{\mathrm{j}17\pi}\right) = 0.
+    \end{align*}
+    \begin{table}
+        \centering
+        \begin{tabular}{l c c c c c c c c c}
+            \toprule
+           $i$-th slot & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 \\ 
+           $\vartheta_{\mathrm{el},\mathrm{a},i}$ & $\frac{1}{3}\pi$ & $\pi$ & $\frac{5}{3}\pi$ & $\frac{7}{3}\pi$ & $3\pi$ & $\frac{11}{3}\pi$ & $\frac{13}{3}\pi$ & $5\pi$ & $\frac{17}{3}\pi$\\ 
+           \midrule
+              $N_{\mathrm{a},i}$ & -1 & 0 & 1 & -1 & 0 & 1 & -1 & 0 & 1\\
+              $N_{\mathrm{b},i}$ & 1 & -1 & 0 & 1 & -1 & 0 & 1 & -1 & 0\\
+                $N_{\mathrm{c},i}$ & 0 & 1 & -1 & 0 & 1 & -1 & 0 & 1 & -1\\
+            \bottomrule
+        \end{tabular}
+    \end{table}
 \end{frame}
