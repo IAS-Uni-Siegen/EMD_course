@@ -37,15 +37,29 @@
 \RequirePackage{subcaption}
 \RequirePackage{titlesec}
 \RequirePackage{siunitx}
+\RequirePackage{bm}
+\RequirePackage{tikz}
+\RequirePackage{pgfplots}
+\RequirePackage{standalone}
+\RequirePackage{circuitikz}
+
+%% Tikz
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{shapes, arrows, positioning, fit, calc, patterns, decorations.pathmorphing,decorations.pathreplacing,decorations.shapes,decorations.text}
+\usepgfplotslibrary{groupplots}
 
 \RequirePackage{fancyhdr}
 \pagestyle{fancy}
 \renewcommand{\headrulewidth}{0.4pt}
 \renewcommand{\footrulewidth}{0.4pt}
 
+% Caption
+\DeclareCaptionFont{blue}{\color{blue}}
+
 
 %---Grafiken---
-\graphicspath{ {fig/} }
+\graphicspath{ {./fig/} }
+\graphicspath{ {./fig/ex03/} }
 
 
 % Setup page geometry
@@ -145,6 +159,7 @@
 %% Numbering of equations %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \numberwithin{equation}{exerciseCount}
+\numberwithin{figure}{exerciseCount}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -155,3 +170,11 @@
 
 % no space between the units
 \sisetup{inter-unit-product = }
+
+% fraction for units
+\sisetup{per-mode = fraction}
+
+% allow fraction for values
+\sisetup{parse-numbers = false}
+
+
