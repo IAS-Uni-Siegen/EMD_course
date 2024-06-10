@@ -218,7 +218,7 @@ which are generally applicable as only identical resistances per phase on the st
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Clarke transformation %%
+%% Clarke transformation: amplitude and power scaling %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
 	\frametitle{Clarke transformation: amplitude and power scaling}
@@ -236,9 +236,55 @@ which are generally applicable as only identical resistances per phase on the st
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Clarke transformation %%
+%% Clarke transformation: simplification for zero-component-free vectors %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
 	\frametitle{Clarke transformation: simplification for zero-component-free vectors}
-     
+    If the abc vector $\bm{x}_\mathrm{abc}$ is zero-component-free, i.e.,  $$x_\mathrm{a} + x_\mathrm{b} +x_\mathrm{c} = 0,$$
+    e.g., the phase currents of a star connected system, the Clarke transformation simplifies to
+    \begin{equation}
+        \renewcommand{\arraystretch}{1.2}
+        \bm{x}_{\alpha \beta} = \begin{bmatrix} x_\alpha \\ x_\beta \end{bmatrix} = \begin{bmatrix}
+            \nicefrac{2}{3} & -\nicefrac{1}{3} & -\nicefrac{1}{3}\\
+            0 & \nicefrac{1}{\sqrt{3}} & -\nicefrac{1}{\sqrt{3}}
+        \end{bmatrix} \begin{bmatrix} x_\mathrm{a} \\ x_\mathrm{b} \\ x_\mathrm{c}\end{bmatrix} = \bm{T}_{23} \bm{x}_\mathrm{abc}
+        \label{eq:Clarke_transformation_zero_component_free}
+    \end{equation}
+    and
+    \begin{equation}
+        \renewcommand{\arraystretch}{1.2}
+        \bm{x}_\mathrm{abc}  = \begin{bmatrix}
+            1 & 0\\
+            -\nicefrac{1}{2} & \nicefrac{\sqrt{3}}{2}\\
+            -\nicefrac{1}{2} & -\nicefrac{\sqrt{3}}{2}
+        \end{bmatrix} \begin{bmatrix} x_\alpha \\ x_\beta \end{bmatrix} = \bm{T}_{32} \bm{x}_{\alpha \beta}.
+    \end{equation}     
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Clarke transformation: simplification for zero-component-free vectors %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Clarke transformation: simplification for zero-component-free vectors}
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.38\textwidth]{fig/lec06/abc_alphabeta_vectors.pdf}
+        \caption{Geometrical interpretation of the Clarke
+        transformation without zero components: mapping $\bm{x}_\mathrm{abc}\in\mathbb{R}^3$ to $\bm{x}_{\alpha\beta}\in\mathbb{R}^2$ without information loss (adapted from J.~B\"ocker, \textit{Controlled Three-Phase Drives}, Paderborn University, 2021)}
+        \label{fig:abc_alphabeta_vectors}
+    \end{figure}    
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Visualization of different coordinate systems %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Visualization of different coordinate systems}
+    \begin{figure}
+        \centering
+        \movie{\includegraphics[height=0.8\textheight]{fig/lec06/Clarke_Park_preview.png}}{fig/lec06/Clarke_Park.gif}
+        \vspace{-0.25cm}
+        \caption{Representation of a rotating phasor (without zero component) in different coordinate systems}
+        \label{fig:Clarke_Park_animation}
+    \end{figure}
 \end{frame}
