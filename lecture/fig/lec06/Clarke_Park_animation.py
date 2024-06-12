@@ -95,7 +95,7 @@ def update_plot(i):
     axes[0, 1].scatter(theta, i_c[i], color='g', marker='o')
     axes[0, 1].set_xticks([0, np.pi/2, np.pi, 3/2*np.pi, 2*np.pi])
     axes[0, 1].set_xticklabels([r'0', r'$\pi/2$', r'$\pi$', r'$3\pi/2$', r'$2\pi$'])
-    axes[0, 1].set_xlabel(r'$\theta$')
+    axes[0, 1].set_xlabel(r'$\varepsilon$')
     axes[0, 1].grid(True)
     add_horizontal_lines(axes[0, 0], axes[0, 1])
     axes[0, 1].get_yaxis().set_visible(False)
@@ -137,7 +137,7 @@ def update_plot(i):
     axes[1, 1].set_title(r'$\alpha\beta$ signals')
     axes[1, 1].set_xticks([0, np.pi/2, np.pi, 3/2*np.pi, 2*np.pi])
     axes[1, 1].set_xticklabels([r'0', r'$\pi/2$', r'$\pi$', r'$3\pi/2$', r'$2\pi$'])
-    axes[1, 1].set_xlabel(r'$\theta$')
+    axes[1, 1].set_xlabel(r'$\varepsilon$')
     axes[1, 1].grid(True)
     axes[1, 1].axhline(y=0, color='black', linestyle='--', lw=1)
     add_horizontal_lines(axes[1, 0], axes[1, 1])
@@ -175,7 +175,7 @@ def update_plot(i):
     axes[2, 1].set_title('dq signals')
     axes[2, 1].set_xticks([0, np.pi/2, np.pi, 3/2*np.pi, 2*np.pi])
     axes[2, 1].set_xticklabels([r'0', r'$\pi/2$', r'$\pi$', r'$3\pi/2$', r'$2\pi$'])
-    axes[2, 1].set_xlabel(r'$\theta$')
+    axes[2, 1].set_xlabel(r'$\varepsilon$')
     axes[2, 1].grid(True)
     axes[2, 1].axhline(y=0, color='black', linestyle='--', lw=1)
     axes[2, 1].axvline(x=theta, color='m', linestyle='--')
@@ -185,7 +185,7 @@ def update_plot(i):
     axes[2, 1].axhline(y=0, color='black', linestyle='--', lw=1)
     axes[2, 1].get_yaxis().set_visible(False)
 
-update_plot(0)
+update_plot(20)
 plt.show()
 
 # Create the animation
