@@ -126,7 +126,7 @@ Given is an ideal (no losses, no flux leakage) single-phase transformer with an 
 \begin{solutionblock}
   The turn ratio of the transformer is given with:
   \begin{equation}
-    \ddot{u} = \frac{U_{\mathrm{2}}}{U_{\mathrm{1}}}
+    \ddot{u} = \frac{U_{\mathrm{1}}}{U_{\mathrm{2}}}
     = \frac{\SI{230}{\volt}}{\SI{110}{\volt}}
     = 2.1.
   \end{equation}
@@ -165,17 +165,17 @@ Given is an ideal (no losses, no flux leakage) single-phase transformer with an 
   \begin{equation}
     S = \frac{P_{\mathrm{2}}}{\cos \varphi}
     = \frac{\SI{3.2}{\kilo \watt}}{0.8}
-    = \SI{4}{\kilo \watt}.
+    = \SI{4}{\kilo\volt\ampere}.
   \end{equation}
 
   Due to the loss-free transformer, the calculated apparent power is the same on the primary and secondary side. Hence, the primary and secondary currents are are determined by:
   \begin{align}
     \begin{split}
       I_{\mathrm{2}} = \frac{S}{U_{\mathrm{2}}}
-      = \frac{\SI{4}{\kilo \watt}}{\SI{110}{\volt}}
+      = \frac{\SI{4}{\kilo\volt\ampere}}{\SI{110}{\volt}}
       = \SI{36.4}{\ampere}, \\
       I_{\mathrm{1}} = \frac{S}{U_{\mathrm{1}}}
-      = \frac{\SI{4}{\kilo \watt}}{\SI{230}{\volt}}
+      = \frac{\SI{4}{\kilo\volt\ampere}}{\SI{230}{\volt}}
       = \SI{17.4}{\ampere}.
     \end{split}
   \end{align}
@@ -256,7 +256,7 @@ Draw the T-equivalent circuit diagram for the given assumptions.}
 
   The turn ratio of the transformer is defined as follows
   \begin{equation}
-    \ddot{u} = \frac{N_{\mathrm{1}}}{N_{\mathrm{2}}}
+    \ddot{u} = \frac{U_{\mathrm{1}}}{U_{\mathrm{2}}}
     = \frac{\SI{230}{\volt}}{\SI{48}{\volt}}
     = 4.79,
   \end{equation}
@@ -377,7 +377,7 @@ The effective area of the core is $S_{\mathrm{Fe}}$ = 0.187 $\mathrm{m}^2$ and a
   The number of winding turns for the primary side is calculated with:
   \begin{equation}
     N_{\mathrm{1}} = \frac{\hat{\psi}}{\phi}
-    = \frac{\frac{\sqrt{2}U_{\mathrm{1}}}{\omega}}{\hat{B} S}
+    = \frac{\frac{\sqrt{2}U_{\mathrm{1}}}{\omega}}{\hat{B} S_{\mathrm{Fe}}}
     = \frac{\frac{\sqrt{2} \cdot \SI{5}{\kilo\volt}}{2\pi \cdot \SI{50}{\hertz}}}{\SI{1.5}{\tesla} \cdot \SI{0.187}{\metre^2}}
     = 81.
     \end{equation}
