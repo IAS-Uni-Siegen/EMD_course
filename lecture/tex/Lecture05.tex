@@ -473,7 +473,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
 	\frametitle{Winding as a distributed coil system}
-    In contrast to the lumped coil representation from \figref{fig:Simple_three_phase_stator_lumped_coils} the stator coils per phase are distributed over the stator circumference. To describe the winding layout, we (re-)introduce:
+    In contrast to the lumped-coil representation from \figref{fig:Simple_three_phase_stator_lumped_coils}, the stator coils per phase are distributed over the stator circumference. To describe the winding layout, we (re-)introduce:
     \begin{gather*}
 		Q: \mbox{number of slots}, \quad m: \mbox{number of phases (usually $m=3$)}, \\ q=\frac{Q}{2 p m}: \mbox{number of notches  (number of slots per phase and pole)}, \quad \rho_\mathrm{p}: \mbox{pole pitch (elec.).}
 	\end{gather*}
@@ -556,10 +556,11 @@
             \begin{align*}
                 B_\mathrm{a}(\vartheta_\mathrm{el}) &= \sum_{k=1,3,5,\ldots}^{\infty} \hat{B}_{\mathrm{c}}^{(k)} \cos(k \vartheta_\mathrm{el})\\ \hat{B}_{\mathrm{c}}^{(k)} &= \frac{2}{\pi} \int_{-\pi/2}^{\pi/2} B(\vartheta_\mathrm{el}) \cos(k \vartheta_\mathrm{el}) \mathrm{d}\vartheta_\mathrm{el}
             \end{align*}
-            we rewrite the integral considering shifted coils by $\Delta \vartheta$ steps (i.e., $k \Delta \vartheta$ steps for the $k$-th harmonic order) with $N/q$ turns per coil based on the distribution of a single lumped coil $B'$ from \eqref{eq:B_single_phase_coil_fourier_series_coefficients}:
+            \onslide<2->{%
+                we rewrite the integral considering shifted coils by $\Delta \vartheta$ steps (i.e., $k \Delta \vartheta$ steps for the $k$-th harmonic order) with $N/q$ turns per coil based on the distribution of a single lumped coil $B'$ from \eqref{eq:B_single_phase_coil_fourier_series_coefficients}:
             \begin{equation*}
                 \hat{B}_{\mathrm{c}}^{(k)} = \frac{2}{\pi q} \mathrm{Re}\left\{\sum_{l=0}^{q-1}e^{\mathrm{j} \Delta\vartheta_l k}\int_{-\pi/2}^{\pi/2} B'(\vartheta_\mathrm{el}) \cos(k \vartheta_\mathrm{el}) \mathrm{d}\vartheta_\mathrm{el}\right\}.
-            \end{equation*}
+            \end{equation*}}
         \end{column}
         \begin{column}{0.4\textwidth}
             \begin{figure}
@@ -580,7 +581,7 @@
    The discrete coil displacement angles are (assuming that the $Q$ slots are evenly distributed over the stator circumference, i.e., $\Delta \vartheta = p 2  \pi/Q$)
    \begin{equation}
     \Delta\vartheta_l = -\frac{q-1}{2} \frac{\pi}{m q} + l \frac{\pi}{m q} = -\frac{q-1}{2} p \frac{2\pi}{Q} + l p \frac{2\pi}{Q} \quad \mbox{for } l=0,1,\ldots,q-1.
-   \end{equation}
+   \end{equation}\pause
    Hence, we can rewrite the Fourier series coefficient integral as:
    \begin{equation}
     \hat{B}_{\mathrm{c}}^{(k)} = \underbrace{\frac{1}{q}\mathrm{Re}\left\{\sum_{l=0}^{q-1} e^{\mathrm{j} \Delta\vartheta_l k}\right\} }_{\xi_{\mathrm{d},k}} \underbrace{\frac{2}{\pi}\int_{-\pi/2}^{\pi/2} B'(\vartheta_\mathrm{el}) \cos(k \vartheta_\mathrm{el}) \mathrm{d}\vartheta_\mathrm{el} \vphantom{\sum_{l=0}^{q-1}}}_{\mbox{single lumped-coil integral}}.
@@ -594,15 +595,18 @@ Hence, the Fourier coefficient of every harmonic order $k$ is multiplied by the 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
 	\frametitle{Distribution factor  (cont.)}
+    \onslide<+->
     To write this $\xi_{\mathrm{d},k}$ more compactly, we rearrange 
     \begin{equation}
-        \sum_{l=0}^{q-1} e^{\mathrm{j} \Delta\vartheta_l k} = \sum_{l=0}^{q-1} e^{\mathrm{j} k (-\frac{q-1}{2} p \frac{2\pi}{Q} + l p \frac{2\pi}{Q})} = e^{- \mathrm{j} k \frac{q-1}{2} p \frac{2\pi}{Q}} \sum_{l=0}^{q-1} \left(e^{\mathrm{j} k  p \frac{2\pi}{Q}}\right)^l
+        \sum_{l=0}^{q-1} e^{\mathrm{j} \Delta\vartheta_l k} = \sum_{l=0}^{q-1} e^{\mathrm{j} k (-\frac{q-1}{2} p \frac{2\pi}{Q} + l p \frac{2\pi}{Q})} \uncover<+->{= e^{- \mathrm{j} k \frac{q-1}{2} p \frac{2\pi}{Q}} \sum_{l=0}^{q-1} \left(e^{\mathrm{j} k  p \frac{2\pi}{Q}}\right)^l}
         \label{eq:sum_exp_distribution_factor}
     \end{equation}
-    and utilize the finite geoemtric series expression
+    \onslide<+->
+    and utilize the finite geometric series expression
     $$
     \sum_{l=0}^{q-1} x^l = \frac{1-x^q}{1-x}
     $$
+    \onslide<+->
     to rewrite
     $$
     \sum_{l=0}^{q-1} \left(e^{\mathrm{j} k  p \frac{2\pi}{Q}}\right)^l = \frac{1-e^{\mathrm{j} k q p \frac{2\pi}{Q}}}{1-e^{\mathrm{j} k  p \frac{2\pi}{Q}}}.
@@ -614,17 +618,20 @@ Hence, the Fourier coefficient of every harmonic order $k$ is multiplied by the 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
 	\frametitle{Distribution factor  (cont.)}
+    \onslide<+->
     The latter can be further rewritten as
     $$
     \frac{1-e^{\mathrm{j} k q p\frac{2\pi}{Q}}}{1-e^{\mathrm{j} k p\frac{2\pi}{Q}}} = \frac{e^{\mathrm{j} k q p\frac{2\pi}{Q}\frac{1}{2}}\left(e^{-\mathrm{j} k q p\frac{2\pi}{Q}\frac{1}{2}}-e^{\mathrm{j} k q p\frac{2\pi}{Q}\frac{1}{2}}\right)}{e^{\mathrm{j} k p\frac{2\pi}{Q}\frac{1}{2}}\left(e^{-\mathrm{j} k p\frac{2\pi}{Q}\frac{1}{2}}-e^{\mathrm{j} k p\frac{2\pi}{Q}\frac{1}{2}}\right)}.
     $$
+    \onslide<+->
     Utilizing the identity
     $$
     \sin(x) = \frac{e^{\mathrm{j} x}-e^{-\mathrm{j} x}}{2\mathrm{j}}
     $$
+    \onslide<+->
     we can further rewrite
     \begin{equation}
-        \sum_{l=0}^{q-1} \left(e^{\mathrm{j} k  p\frac{2\pi}{Q}}\right)^l =\frac{1-e^{\mathrm{j} k q p\frac{2\pi}{Q}}}{1-e^{\mathrm{j} k p\frac{2\pi}{Q}}} = \frac{e^{\mathrm{j} k q p\frac{2\pi}{Q}\frac{1}{2}}(-2\mathrm{j})\sin(k q p\frac{2\pi}{Q}\frac{1}{2})}{e^{\mathrm{j} k p\frac{2\pi}{Q}\frac{1}{2}}(-2\mathrm{j})\sin(k p\frac{2\pi}{Q}\frac{1}{2})}=e^{\mathrm{j}k\frac{2 \pi}{Q}\frac{q-1}{2}}\frac{\sin(k q p\frac{2\pi}{Q}\frac{1}{2})}{\sin(k p\frac{2\pi}{Q}\frac{1}{2})}.
+        \uncover<+->{\sum_{l=0}^{q-1} \left(e^{\mathrm{j} k  p\frac{2\pi}{Q}}\right)^l =\frac{1-e^{\mathrm{j} k q p\frac{2\pi}{Q}}}{1-e^{\mathrm{j} k p\frac{2\pi}{Q}}} = \frac{e^{\mathrm{j} k q p\frac{2\pi}{Q}\frac{1}{2}}(-2\mathrm{j})\sin(k q p\frac{2\pi}{Q}\frac{1}{2})}{e^{\mathrm{j} k p\frac{2\pi}{Q}\frac{1}{2}}(-2\mathrm{j})\sin(k p\frac{2\pi}{Q}\frac{1}{2})}}\uncover<+->{=e^{\mathrm{j}k\frac{2 \pi}{Q}\frac{q-1}{2}}\frac{\sin(k q p\frac{2\pi}{Q}\frac{1}{2})}{\sin(k p\frac{2\pi}{Q}\frac{1}{2})}.}
         \label{eq:sum_exp_distribution_factor_simplified}
     \end{equation}
 \end{frame}
@@ -634,17 +641,18 @@ Hence, the Fourier coefficient of every harmonic order $k$ is multiplied by the 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
 	\frametitle{Distribution factor  (cont.)}
+    \onslide<+->
     Inserting \eqref{eq:sum_exp_distribution_factor_simplified} into \eqref{eq:sum_exp_distribution_factor} we finally receive
     \begin{equation}
         \begin{split}
-        \xi_{\mathrm{d},k} &= \frac{1}{q}\mathrm{Re}\left\{\sum_{l=0}^{q-1} e^{\mathrm{j} \Delta\vartheta_l k}\right\} = \frac{1}{q} e^{- \mathrm{j} k p\frac{2\pi}{Q} \frac{q-1}{2} } e^{\mathrm{j}k\frac{2 \pi}{Q}\frac{q-1}{2}}\frac{\sin(k q p\frac{2\pi}{Q}\frac{1}{2})}{\sin(k p\frac{2\pi}{Q}\frac{1}{2})}\\
-            &= \frac{\sin(k q p\frac{2\pi}{Q}\frac{1}{2})}{q\sin(k p\frac{2\pi}{Q}\frac{1}{2})} = \frac{\sin(k q p \frac{\pi}{Q})}{q\sin(k p \frac{\pi}{Q})}\\
-            &= \frac{\sin\left(\frac{k \pi}{2 m}\right)}{q\sin\left(\frac{k \pi}{2 m q}\right)}.
+            \xi_{\mathrm{d},k} &= \frac{1}{q}\mathrm{Re}\left\{\sum_{l=0}^{q-1} e^{\mathrm{j} \Delta\vartheta_l k}\right\} = \frac{1}{q} e^{- \mathrm{j} k p\frac{2\pi}{Q} \frac{q-1}{2} } e^{\mathrm{j}k\frac{2 \pi}{Q}\frac{q-1}{2}}\frac{\sin(k q p\frac{2\pi}{Q}\frac{1}{2})}{\sin(k p\frac{2\pi}{Q}\frac{1}{2})}\\
+            \uncover<+->{&= \frac{\sin(k q p\frac{2\pi}{Q}\frac{1}{2})}{q\sin(k p\frac{2\pi}{Q}\frac{1}{2})} = \frac{\sin(k q p \frac{\pi}{Q})}{q\sin(k p \frac{\pi}{Q})}}\\
+            \uncover<+->{&= \frac{\sin\left(\frac{k \pi}{2 m}\right)}{q\sin\left(\frac{k \pi}{2 m q}\right)}.}
     \end{split}
     \end{equation}
     \begin{itemize}
-        \item $|\xi_{\mathrm{d},k}| \leq 1$ holds for all parameter combinations.
-        \item The factor describes the change of each harmonic component due to the distributed winding compared to the (idealized) lumped-coil case.
+        \item<+-> $|\xi_{\mathrm{d},k}| \leq 1$ holds for all parameter combinations.
+        \item<+-> The factor describes the change of each harmonic component due to the distributed winding compared to the (idealized) lumped-coil case.
     \end{itemize}
 \end{frame}
 
@@ -657,11 +665,11 @@ Hence, the Fourier coefficient of every harmonic order $k$ is multiplied by the 
 		\begin{column}{0.6\textwidth}
 	        If windings are not implemented as diametral winding, i.e., the winding width $y$ is smaller than the pole pitch $\rho_\mathrm{p}$, 
             $$y < \rho_\mathrm{p}=\pi,$$
-            the winding is called chorded. Hence, the starting and end position of the coil are shifted towards $\pm(y/\rho_\mathrm{p})(\pi/2)$ along the circumference. Consequently, the Fourier coefficients of the chorded winding are:
+            the winding is called chorded. \onslide<2->{Hence, the starting and end position of the coil are shifted towards $\pm(y/\rho_\mathrm{p})(\pi/2)$ along the circumference. Consequently, the Fourier coefficients of the chorded winding are:
             \begin{equation}
                 \hat{B}_{\mathrm{c}}^{(k)} = \frac{2}{\pi} \int_{-\frac{\pi}{2}\frac{y}{\rho_\mathrm{p}}}^{\frac{\pi}{2}\frac{y}{\rho_\mathrm{p}}} B(\vartheta_\mathrm{el}) \cos(k \vartheta_\mathrm{el}) \mathrm{d}\vartheta_\mathrm{el}.
                 \label{eq:Pitch_factor_fourier_coefficients}
-            \end{equation}
+            \end{equation}}
         \end{column}
         \begin{column}{0.4\textwidth}
             \begin{figure}
@@ -679,16 +687,18 @@ Hence, the Fourier coefficient of every harmonic order $k$ is multiplied by the 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
 	\frametitle{Pitch factor (cont.)}
+    \onslide<+->
     Continuing from \eqref{eq:Pitch_factor_fourier_coefficients}, we can rewrite the integral as
     \begin{equation}
         \begin{split}
-            \hat{B}_{\mathrm{c}}^{(k)} &= \frac{2}{\pi} \int_{-\frac{\pi}{2}\frac{y}{\rho_\mathrm{p}}}^{\frac{\pi}{2}\frac{y}{\rho_\mathrm{p}}} B(\vartheta_\mathrm{el}) \cos(k \vartheta_\mathrm{el}) \mathrm{d}\vartheta_\mathrm{el} = \frac{2}{\pi}\hat{B}\cos(\omega t) \int_{-\frac{\pi}{2}\frac{y}{\rho_\mathrm{p}}}^{\frac{\pi}{2}\frac{y}{\rho_\mathrm{p}}} \cos(k \vartheta_\mathrm{el}) \mathrm{d}\vartheta_\mathrm{el}\\
-            &= \frac{2}{\pi}\hat{B}\cos(\omega t)\frac{1}{k} \left[\sin(k\frac{\pi}{2}\frac{y}{\rho_\mathrm{p}}) - \sin(-k\frac{\pi}{2}\frac{y}{\rho_\mathrm{p}})\right] = \frac{4}{\pi}\hat{B}\cos(\omega t)\frac{1}{k} \sin(k\frac{\pi}{2}\frac{y}{\rho_\mathrm{p}}).
+            \hat{B}_{\mathrm{c}}^{(k)} &= \frac{2}{\pi} \int_{-\frac{\pi}{2}\frac{y}{\rho_\mathrm{p}}}^{\frac{\pi}{2}\frac{y}{\rho_\mathrm{p}}} B(\vartheta_\mathrm{el}) \cos(k \vartheta_\mathrm{el}) \mathrm{d}\vartheta_\mathrm{el} \uncover<+->{= \frac{2}{\pi}\hat{B}\cos(\omega t) \int_{-\frac{\pi}{2}\frac{y}{\rho_\mathrm{p}}}^{\frac{\pi}{2}\frac{y}{\rho_\mathrm{p}}} \cos(k \vartheta_\mathrm{el}) \mathrm{d}\vartheta_\mathrm{el}}\\
+            \uncover<+->{&= \frac{2}{\pi}\hat{B}\cos(\omega t)\frac{1}{k} \left[\sin(k\frac{\pi}{2}\frac{y}{\rho_\mathrm{p}}) - \sin(-k\frac{\pi}{2}\frac{y}{\rho_\mathrm{p}})\right]}\uncover<+->{ = \frac{4}{\pi}\hat{B}\cos(\omega t)\frac{1}{k} \sin(k\frac{\pi}{2}\frac{y}{\rho_\mathrm{p}}).}
         \end{split}
         \label{eq:Pitch_factor_fourier_coefficients_rewritten} 
     \end{equation}
+    \onslide<+->
     Compared to the unchored case \eqref{eq:B_single_phase_coil_fourier_series_coefficients}, the Fourier coefficients are
-    $$\frac{\sin\left(k\frac{\pi}{2}\frac{y}{\rho_\mathrm{p}}\right)}{\sin\left(k\frac{\pi}{2}\right)}$$ smaller. As the magnitude of the denominator is always one, we define
+    $$\frac{\sin\left(k\frac{\pi}{2}\frac{y}{\rho_\mathrm{p}}\right)}{\sin\left(k\frac{\pi}{2}\right)}$$ smaller. \onslide<+-> As the magnitude of the denominator is always one, we define
     \begin{equation}
         \xi_{\mathrm{p},k} = \sin\left(k\frac{\pi}{2}\frac{y}{\rho_\mathrm{p}}\right)
         \label{eq:Pitch_factor_definition}
@@ -701,17 +711,19 @@ Hence, the Fourier coefficient of every harmonic order $k$ is multiplied by the 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
 	\frametitle{Winding factor}
+    \onslide<+->
     Considering both, a distributed and chorded winding, we receive
     \begin{equation}
         \begin{split}
-            \hat{B}_{\mathrm{c}}^{(k)} &= \frac{1}{q}\mathrm{Re}\left\{\sum_{l=0}^{q-1} e^{\mathrm{j} \Delta\vartheta_l k}\right\}  \frac{2}{\pi}\int_{-\frac{\pi}{2}\frac{y}{\rho_\mathrm{p}}}^{\frac{\pi}{2}\frac{y}{\rho_\mathrm{p}}} B(\vartheta_\mathrm{el}) \cos(k \vartheta_\mathrm{el}) \mathrm{d}\vartheta_\mathrm{el}\\
+            \hat{B}_{\mathrm{c}}^{(k)} &= \frac{1}{q}\mathrm{Re}\left\{\sum_{l=0}^{q-1} e^{\mathrm{j} \Delta\vartheta_l k}\right\}  \frac{2}{\pi}\int_{-\frac{\pi}{2}\frac{y}{\rho_\mathrm{p}}}^{\frac{\pi}{2}\frac{y}{\rho_\mathrm{p}}} B(\vartheta_\mathrm{el}) \cos(k \vartheta_\mathrm{el}) \mathrm{d}\vartheta_\mathrm{el}\\\uncover<+->{
             &=\cdots\\
-            &= \frac{4}{\pi}\hat{B}\cos(\omega t)\frac{1}{k} \sin\left(k\frac{\pi}{2}\frac{y}{\rho_\mathrm{p}}\right)  \frac{\sin\left(\frac{k \pi}{2 m}\right)}{q\sin\left(\frac{k \pi}{2 m q}\right)}\\
-            &= \frac{4}{\pi}\hat{B}\cos(\omega t)\frac{1}{k} \underbrace{\xi_{\mathrm{d},k} \xi_{\mathrm{p},k}}_{\xi_{\mathrm{w},k}}
+            &= \frac{4}{\pi}\hat{B}\cos(\omega t)\frac{1}{k} \sin\left(k\frac{\pi}{2}\frac{y}{\rho_\mathrm{p}}\right)  \frac{\sin\left(\frac{k \pi}{2 m}\right)}{q\sin\left(\frac{k \pi}{2 m q}\right)}\\}
+            \uncover<+->{&= \frac{4}{\pi}\hat{B}\cos(\omega t)\frac{1}{k} \underbrace{\xi_{\mathrm{d},k} \xi_{\mathrm{p},k}}_{\xi_{\mathrm{w},k}}}
             \end{split}
         \label{eq:Winding_factor_fourier_coefficients} 
     \end{equation}
-    with $\xi_{\mathrm{w},k} = \xi_{\mathrm{d},k} \xi_{\mathrm{p},k}$ being the winding factor. It describes the change of each harmonic component due to the distributed and chorded winding compared to the (idealized) lumped coil case (which would be equivalent to $\xi_{\mathrm{w},k}=1$).
+    \onslide<3->
+    with $\xi_{\mathrm{w},k} = \xi_{\mathrm{d},k} \xi_{\mathrm{p},k}$ being the winding factor. \onslide<+-> It describes the change of each harmonic component due to the distributed and chorded winding compared to the (idealized) lumped-coil case (which would be equivalent to $\xi_{\mathrm{w},k}=1$).
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -753,8 +765,8 @@ Hence, the Fourier coefficient of every harmonic order $k$ is multiplied by the 
         The winding factor $\xi_{\mathrm{w},k}$ mathematically maps a (real-world) distributed (and eventually chorded) winding with $N$ turns in slots distributed over the stator circumference to an idealized (abstract) lumped-coil representation with $N \cdot \xi_{\mathrm{w},k}$ (effective) turns. For following calculation steps (e.g., in a three-phase machine model -- compare \figref{fig:Simple_three_phase_stator_lumped_coils}), one can utilize the simplified lumped-coil representation without systematic modeling errors thanks to the winding factor concept.
     \end{varblock}
     \begin{itemize}
-        \item With respect to \tabref{tab:Winding_factors} one can also observe that the winding configuration choice has a direct impact on the harmonic content of the flux density distribution.
-        \item As those will also influence the production of torque and induced voltage (harmonics), the winding factor is a crucial parameter for the design of electrical machines.
+        \item<2-> With respect to \tabref{tab:Winding_factors} one can also observe that the winding configuration choice has a direct impact on the harmonic content of the flux density distribution.
+        \item<3-> As those will also influence the production of torque and induced voltage (harmonics), the winding factor is a crucial parameter for the design of electrical machines.
     \end{itemize}
 \end{frame}
 
@@ -763,11 +775,13 @@ Hence, the Fourier coefficient of every harmonic order $k$ is multiplied by the 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
 	\frametitle{Winding factor: limitations}
+    \onslide<+->
     The winding factor approach leading to \eqref{eq:Winding_factor_fourier_coefficients} was based on several (implicit) assumptions:
     \begin{itemize}
-        \item The number of slots per phase and pole is a (positive) integer: $q \in \mathbb{N}$.
-        \item The slot distribution is even over the stator circumference.
+        \item<+-> The number of slots per phase and pole is a (positive) integer: $q \in \mathbb{N}$.
+        \item<+-> The slot distribution is even over the stator circumference.
     \end{itemize}
+    \onslide<+->
     However, these assumptions do not apply to all (typical) winding configurations, in particular fractional slot windings where $$q=\frac{Q}{2 p m} \in \mathbb{Q}$$ is represented by a common fraction, i.e., rational number. 
     \begin{figure}
         \centering
@@ -806,21 +820,22 @@ Hence, the Fourier coefficient of every harmonic order $k$ is multiplied by the 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
 	\frametitle{Complex winding factor}
+    \onslide<+->
     The complex winding factor (here: for phase a) is defined as
     \begin{equation}
         \underline{\xi}_{\mathrm{a},k} = \frac{1}{\mathrm{j}N_\mathrm{a}}\sum_{i=1}^{Q} N_{\mathrm{a},i}e^{\mathrm{j}k\vartheta_{\mathrm{el},\mathrm{a},i}}
         \label{eq:Complex_winding_factor_definition}
     \end{equation} 
-    with $N_{\mathrm{a},i}\in \mathbb{Z}$ being the number of conductors in slot $i$ at the position $\vartheta_{\mathrm{el},\mathrm{a},i}$ with 
+    with $N_{\mathrm{a},i}\in \mathbb{Z}$ being the number of conductors in slot $i$ at the position $\vartheta_{\mathrm{el},\mathrm{a},i}$ \onslide<+-> with 
     \begin{equation}
         N_\mathrm{a} = \sum_{i=1}^{Q} |N_{\mathrm{a},i}|
         \label{eq:Complex_winding_factor_total_number_conductors}
     \end{equation}
-    being the total number of conductors. Moreover, $N_{\mathrm{a},i}$ represents the orientation of each conductor by
+    being the total number of conductors. \onslide<+-> Moreover, $N_{\mathrm{a},i}$ represents the orientation of each conductor by
     \begin{itemize}
         \item $N_{\mathrm{a},i} = 0$: no conductor is in slot $i$,
-        \item $N_{\mathrm{a},i} >0 $: conductor is oriented towards the positive $z$-axis (directed towards reader),
-        \item $N_{\mathrm{a},i} <0 $: conductor is oriented towards the negative $z$-axis (directed away from reader).
+        \item<+-> $N_{\mathrm{a},i} >0 $: conductor is oriented towards the positive $z$-axis (directed towards reader),
+        \item<+-> $N_{\mathrm{a},i} <0 $: conductor is oriented towards the negative $z$-axis (directed away from reader).
     \end{itemize}
 \end{frame}
 
@@ -829,17 +844,18 @@ Hence, the Fourier coefficient of every harmonic order $k$ is multiplied by the 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
 	\frametitle{Complex winding factor (cont.)}
-    The complex winding factor is a generalization of \eqref{eq:B_single_phase_coil_fourier_series_coefficients_distributed} weighting the contribution of each conductor to the $k$-th harmonic (compare \figref{fig:Representation_complex_winding_factor}). Hence,
+    \onslide<1->
+    The complex winding factor is a generalization of \eqref{eq:B_single_phase_coil_fourier_series_coefficients_distributed} weighting the contribution of each conductor to the $k$-th harmonic (compare \figref{fig:Representation_complex_winding_factor}). \onslide<2->Hence,
     \begin{itemize}
-        \item the conductor positions $\vartheta_{\mathrm{el},\mathrm{a},i}$ are arbitrary and do not need to follow a specific distribution pattern (i.e., applicable to arbitrary slot configurations),
-        \item the magnitude of the complex winding factor $|\underline{\xi}_{\mathrm{a},k}|\in[0,1]$ indicates the dampening of the harmonic component $k$ due to the winding configuration,
-        \item the phase of the complex winding factor $\angle \underline{\xi}_{\mathrm{a},k}$ indicates the phase shift of the harmonic component $k$ compared to the winding layout. 
+        \item<2-> the conductor positions $\vartheta_{\mathrm{el},\mathrm{a},i}$ are arbitrary and do not need to follow a specific distribution pattern (i.e., applicable to arbitrary slot configurations),
+        \item<3-> the magnitude of the complex winding factor $|\underline{\xi}_{\mathrm{a},k}|\in[0,1]$ indicates the dampening of the harmonic component $k$ due to the winding configuration,
+        \item<4-> the phase of the complex winding factor $\angle \underline{\xi}_{\mathrm{a},k}$ indicates the phase shift of the harmonic component $k$ compared to the winding layout. 
     \end{itemize}
-
+    \onslide<1->
     \begin{figure}
         \centering
         \includegraphics[width=0.7\textwidth]{fig/lec05/Representation_complex_winding_factor.pdf}
-        \caption{Qualitative illustration of the complex winding factor as a comparison of the actual current distribution compared to the ideal distribution belonging to a certainflux harmonic}
+        \caption{Qualitative illustration of the complex winding factor as a comparison of the actual current distribution compared to the ideal distribution belonging to a certain flux harmonic}
         \label{fig:Representation_complex_winding_factor}
     \end{figure}
 \end{frame}
@@ -854,12 +870,14 @@ Hence, the Fourier coefficient of every harmonic order $k$ is multiplied by the 
         \underline{\xi}_{\mathrm{b},k} = \frac{1}{\mathrm{j}N_\mathrm{b}}\sum_{i=1}^{Q} N_{\mathrm{b},i}e^{\mathrm{j}k\left(\vartheta_{\mathrm{el},\mathrm{a},i}+\frac{2\pi}{3}\right)}. \qquad  \underline{\xi}_{\mathrm{c},k} = \frac{1}{\mathrm{j}N_\mathrm{c}}\sum_{i=1}^{Q} N_{\mathrm{c},i}e^{\mathrm{j}k\left(\vartheta_{\mathrm{el},\mathrm{a},i}-\frac{2\pi}{3}\right)}.
         \label{eq:Complex_winding_factor_definition_phase_bc}    
     \end{equation}
+    \pause
     Hence,
     \begin{equation}
         \underline{\xi}_{\mathrm{a},k} = e^{-\mathrm{j}k\frac{2\pi}{3}}\underline{\xi}_{\mathrm{b},k} = e^{\mathrm{j}k\frac{2\pi}{3}}\underline{\xi}_{\mathrm{c},k}
         \label{eq:Complex_winding_factor_relation}
     \end{equation}
     applies. 
+    \pause
     \begin{varblock}{Harmonic orders}
         While regular symmetrical windings with $q\in\mathbb{N}$ will only produce certain harmonic orders ($k=1,3,5,7,\ldots$ -- cf. \eqref{eq:B_three_phase_stator_coil_fourier_series}), arbitrary winding configurations can produce further harmonic orders $k\in\mathbb{Q}$ (in particular if $q$ is a common fraction).
     \end{varblock}
