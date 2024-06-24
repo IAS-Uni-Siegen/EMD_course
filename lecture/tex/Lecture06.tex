@@ -42,7 +42,7 @@
         \movie{\includegraphics[height=0.85\textheight]{fig/lec06/IM_slip_0_load_angle_90_preview.png}}{fig/lec06/IM_slip_0_load_angle_90_animation.gif}
         \vspace{-0.25cm}
         \caption{Exemplary IM operation at $\omega=2 \pi \SI{50}{\per\second}$ in motoric operation (positive average torque)}
-        \label{fig:Clarke_Park_animation}
+        \label{fig:IM_slip_0_load_angle_90_animation}
     \end{figure}
 \end{frame}
 
@@ -57,7 +57,7 @@
         \movie{\includegraphics[height=0.85\textheight]{fig/lec06/IM_slip_0_load_angle_0_preview.png}}{fig/lec06/IM_slip_0_load_angle_0_animation.gif}
         \vspace{-0.25cm}
         \caption{Exemplary IM operation at $\omega=2 \pi \SI{50}{\per\second}$ in no-load operation (zero average torque)}
-        \label{fig:Clarke_Park_animation}
+        \label{fig:IM_slip_0_load_angle_0_animation}
     \end{figure}
 \end{frame}
 
@@ -587,9 +587,81 @@ Considering \figref{fig:power_balance_machine} and the Clarke transf. power mapp
         \item The previous model depends on the physical parameters of the rotor:  $R_\mathrm{r}$, $L_\mathrm{r}$, and $M_\mathrm{r}$.
         \item Those parameters might not be accessible or known in practice (in particular when direct rotor measurements are not possible).
         \item Remedy: Transform the rotor quantities into the stator side based on the turn ratio $\nicefrac{N_\mathrm{s}}{N_\mathrm{r}}$.
-        \item Identical procedure to the stationary transformer approach as from \figref{fig:Transformer_T_ECD_turn_transf}. 
+        \item Identical procedure to the transformer approach as from \figref{fig:Transformer_T_ECD_turn_transf}. 
         \item Hence, stator-based measurements can be used to infer the rotor quantities (compare open-circuit test \figref{fig:Transformer_open_circuit_test} and short-circuit test \figref{fig:Transformer_short_circuit_test}).
     \end{itemize}
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.7\textwidth]{fig/lec04/Transformer_T_ECD_turn_transf.pdf}
+	\end{figure}	
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Transformation of the rotor quantities based on the turn ratio  %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Transformation of the rotor quantities based on the turn ratio (cont.)}
+    Applying \eqref{eq:secondary_voltage_equation_transformed} with $\alpha=\nicefrac{N_\mathrm{s}}{N_\mathrm{r}}$ to the IM model  interpreting the rotor as the secondary side results in
+    \begin{equation}
+        \begin{gathered}
+        \bm{u}'_{\mathrm{r}} = \frac{N_\mathrm{s}}{N_\mathrm{r}}\bm{u}_{\mathrm{r}}, \quad \bm{i}'_{\mathrm{r}} = \frac{N_\mathrm{r}}{N_\mathrm{s}}\bm{i}_{\mathrm{r}}, \quad \bm{\psi}'_{\mathrm{r},\alpha\beta} = \frac{N_\mathrm{s}}{N_\mathrm{r}}\bm{\psi}_{\mathrm{r},\alpha\beta},\\
+        R'_\mathrm{r} =  \frac{N_\mathrm{s}^2}{N_\mathrm{r}^2} R_\mathrm{r}, \quad L'_\mathrm{r} =  \frac{N_\mathrm{s}^2}{N_\mathrm{r}^2} L_\mathrm{r}, \quad M'_\mathrm{r} =  \frac{N_\mathrm{s}}{N_\mathrm{r}} M_\mathrm{r}.
+    \end{gathered}
+    \end{equation}
+    Above, the indices representing the coordinate system are omitted as the transformation is independent of the chosen coordinate system. 
+    \\[0.5em]
+    Utilizing also $L_\mathrm{s} = L_{\sigma,\mathrm{s}} + M_\mathrm{s}$ and $L_\mathrm{r} = L_{\sigma,\mathrm{r}} + M_\mathrm{r}$, the flux linkage equations in the stator-oriented $\alpha\beta$ coordinates are then
+    \begin{align*}
+        \bm{\psi}^\mathrm{s}_\mathrm{s,\alpha\beta}(t) &= (L_{\sigma,\mathrm{s}} +\frac{3}{2}M_\mathrm{s}) \bm{i}^\mathrm{s}_{\mathrm{s},\alpha\beta}(t) +  M'_{\mathrm{r}}\frac{3}{2} \bm{i}^{\mathrm{s}'}_{\mathrm{r},\alpha\beta}(t),\\
+        \bm{\psi}^{\mathrm{s}'}_\mathrm{r,\alpha\beta}(t) &= (L'_{\sigma,\mathrm{r}} + \frac{3}{2}M'_\mathrm{r}) \bm{i}^{\mathrm{s}'}_{\mathrm{r},\alpha\beta}(t) +  M_{\mathrm{s}}\frac{3}{2} \bm{i}^\mathrm{s}_{\mathrm{s},\alpha\beta}(t).
+    \end{align*}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Transformation of the rotor quantities based on the turn ratio  %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Transformation of the rotor quantities based on the turn ratio (cont.)}
+    Analyzing the (magnetic) power balance reveals
+    \begin{equation}
+        \frac{3}{2}M_\mathrm{s} = \frac{3}{2}M'_\mathrm{r} = M, 
+    \end{equation}
+    that is, the mutual inductance is identical for both the stator and (transformed) rotor side. Hence, we can rewrite the flux linkage equations as
+    \begin{align}
+        \bm{\psi}^\mathrm{s}_\mathrm{s,\alpha\beta}(t) &= (L_{\sigma,\mathrm{s}} +M) \bm{i}^\mathrm{s}_{\mathrm{s},\alpha\beta}(t) +  M\bm{i}^{\mathrm{s}'}_{\mathrm{r},\alpha\beta}(t),\\
+        \bm{\psi}^{\mathrm{s}'}_\mathrm{r,\alpha\beta}(t) &= (L'_{\sigma,\mathrm{r}} + M) \bm{i}^{\mathrm{s}'}_{\mathrm{r},\alpha\beta}(t) +  M \bm{i}^\mathrm{s}_{\mathrm{s},\alpha\beta}(t).
+    \end{align}
+    \begin{figure}
+		\onslide<1->
+		\begin{columns}
+			\begin{column}{0.64\textwidth}
+					\centering
+					\includegraphics[width=0.99\textwidth]{fig/lec06/IM_T_ECD_alpha_beta.pdf}
+			\end{column}
+			\begin{column}{0.35\textwidth}
+				\caption{\raggedright T-type ECD of an IM in stator-oriented $\alpha\beta$ coordinates}
+				\label{fig:IM_T_ECD_alpha_beta}
+			\end{column}
+		\end{columns}
+	\end{figure}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Summary: IM model in stator-oriented $\alpha\beta$ coordinates      %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Summary: Transformed IM model in stator-oriented $\alpha\beta$ coordinates}
+    The most important equations of the IM model in the stator-oriented $\alpha\beta$ coordinates with all rotor quantities transformed to the stator side are:
+    \begin{equation*}
+        \begin{alignedat}{4}
+            &&\mbox{Stator voltage:}&& \quad\bm{u}^\mathrm{s}_\mathrm{s,\alpha\beta}(&t) &&= R_\mathrm{s} \bm{i}^\mathrm{s}_\mathrm{s,\alpha\beta}(t)+ \frac{\mathrm{d}}{\mathrm{d}t}\bm{\psi}^\mathrm{s}_\mathrm{s,\alpha\beta}(t),\\
+            &&\mbox{Rotor voltage:}&& \quad\bm{u}^{\mathrm{s}'}_\mathrm{r,\alpha\beta}(&t) &&= R_\mathrm{r} \bm{i}^{\mathrm{s}'}_\mathrm{r,\alpha\beta}(t)-\omega_\mathrm{r,el}(t)\bm{J}\bm{\psi}^{\mathrm{s}'}_\mathrm{r,\alpha\beta}(t) +\frac{\mathrm{d}}{\mathrm{d}t}\bm{\psi}^{\mathrm{s}'}_\mathrm{r,\alpha\beta}(t),\\
+            &&\mbox{Stator flux linkage:}&& \quad \bm{\psi}^\mathrm{s}_\mathrm{s,\alpha\beta}(&t) &&= (L_{\sigma,\mathrm{s}} +M) \bm{i}^\mathrm{s}_{\mathrm{s},\alpha\beta}(t) +  M\bm{i}^{\mathrm{s}'}_{\mathrm{r},\alpha\beta}(t),\vphantom{\frac{\mathrm{d}}{\mathrm{d}t}}\\
+            &&\mbox{Rotor flux linkage:}&& \quad \bm{\psi}^{\mathrm{s}'}_\mathrm{r,\alpha\beta}(&t) &&= (L'_{\sigma,\mathrm{r}} + M) \bm{i}^{\mathrm{s}'}_{\mathrm{r},\alpha\beta}(t) +  M \bm{i}^\mathrm{s}_{\mathrm{s},\alpha\beta}(t)\vphantom{\frac{\mathrm{d}}{\mathrm{d}t}}\\
+            &&\mbox{Torque:}&& \quad T(&t) &&= \frac{3}{2} p (\bm{i}_\mathrm{s,\alpha\beta}^\mathrm{s})\T\bm{J}\bm{\psi}_\mathrm{s,\alpha\beta}^\mathrm{s}=-\frac{3}{2} p (\bm{i}^{\mathrm{s}'}_\mathrm{r,\alpha\beta})\T\bm{J}\bm{\psi}^{\mathrm{s}'}_\mathrm{r,\alpha\beta} \vphantom{\frac{\mathrm{d}}{\mathrm{d}t}}. 
+        \end{alignedat}
+    \end{equation*}
+    The transformed rotor quantities are $\bm{u}'_\mathrm{r} = \alpha\bm{u}_\mathrm{r}$, $\bm{i}'_\mathrm{r} = \nicefrac{1}{\alpha}\bm{i}_\mathrm{r}$, $\bm{\psi}'_\mathrm{r} = \alpha\bm{\psi}_\mathrm{r}$, $R'_\mathrm{r} =  \alpha^2 R_\mathrm{r}$, $L'_\mathrm{r} =  \alpha^2 L_\mathrm{r}$, and $M'_\mathrm{r} =  \alpha M_\mathrm{r}$ with $\alpha = \nicefrac{N_\mathrm{s}}{N_\mathrm{r}}$.
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
