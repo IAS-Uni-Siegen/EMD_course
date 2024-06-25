@@ -42,6 +42,8 @@
 \RequirePackage{pgfplots}
 \RequirePackage{standalone}
 \RequirePackage{circuitikz}
+\RequirePackage{multirow}
+\RequirePackage{newfloat}
 
 %% Tikz
 \pgfplotsset{compat=1.18}
@@ -60,6 +62,7 @@
 %---Grafiken---
 \graphicspath{ {./fig/} }
 \graphicspath{ {./fig/ex03/} }
+\graphicspath{ {./fig/ex04/} }
 
 
 % Setup page geometry
@@ -98,6 +101,33 @@
     \fi
 }
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Solution table %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\NewDocumentEnvironment{solutiontable}{+b}{
+    \table[ht]
+    \captionsetup{labelfont={color=blue},textfont={color=blue}}
+    \color{blue}
+    #1}
+    {
+        \endtabularx
+        \endtable
+    }
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Solution figure %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\NewDocumentEnvironment{solutionfigure}{+b}{
+    \figure
+    \captionsetup{labelfont={color=blue},textfont={color=blue}}
+    \color{blue}
+    #1}
+    {
+        \endfigure
+    }
+
+\renewcommand{\figurename}{Fig.}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -160,6 +190,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \numberwithin{equation}{exerciseCount}
 \numberwithin{figure}{exerciseCount}
+\numberwithin{table}{exerciseCount}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -178,3 +209,10 @@
 \sisetup{parse-numbers = false}
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Tabular %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% define specific tabular rules
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{L}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
