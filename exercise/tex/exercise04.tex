@@ -109,7 +109,7 @@ The winding of a three-phase and four-pole machine is described with the followi
         \caption{Distribution, pitch, and winding factors as well as relative harmonic flux density  amplitudes.}
         \centering
         \begin{tabular}{rcrrr}\toprule
-        $k$ & $\frac{\hat{B}^{(k)}}{\hat{B}^{(1)}}$ in \%   & $k_{\mathrm{p,}k}$  & $k_{\mathrm{d,}k}$ & $k_{\mathrm{w,}k}$\\
+        $k$ & $\frac{\hat{B}^{(k)}}{\hat{B}^{(1)}}$ in \%   & $\xi_{\mathrm{p,}k}$  & $\xi_{\mathrm{d,}k}$ & $\xi_{\mathrm{w,}k}$\\
         \midrule
         1   & 100   & 0.966 & 0.966 & 0.966 \\
         5   & 1.4   & 0.259 & 0.259 & 0.067 \\
@@ -159,7 +159,7 @@ Consider a 4-pole three-phase motor with 15 stator slots. A simplified sketch of
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subtask{Determine the pole pitch $\tau_{\mathrm{p}}$ and the number of notches. Is it an integral-slot or a fractional-slot winding?}
+\subtask{Determine the pole pitch $\rho_{\mathrm{p}}$ and the number of notches. Is it an integral-slot or a fractional-slot winding?}
 
 \begin{solutionblock}
     The number of slots are shown in the figure, which leads to $Q$ = 15. Furthermore, the number of phases is given in the task, that is $m$ = 3.
@@ -338,12 +338,12 @@ Consider a 4-pole three-phase motor with 15 stator slots. A simplified sketch of
     For the fundamental wave $k$ = 1 applies and, therefore, with \eqref{eq:complexWindingFactor}, the winding factor of the fundamental wave calculates as follows
     \begin{align}
         \begin{split}
-            \underline{\xi}_{\mathrm{a,}1} = \frac{1}{10}\cdot \left[ \right. e^{j\cdot1\cdot2\cdot\SI{0}{\degree}}
-            &-e^{j\cdot1\cdot2\cdot\SI{72}{\degree}}-e^{j\cdot1\cdot2\cdot\SI{92}{\degree}}+2e^{j\cdot1\cdot2\cdot\SI{168}{\degree}}+e^{j\cdot1\cdot2\cdot\SI{192}{\degree}}
-            -e^{j\cdot1\cdot2\cdot\SI{240}{\degree}} \\
-            & -2e^{j\cdot1\cdot2\cdot\SI{264}{\degree}}+e^{j\cdot1\cdot2\cdot\SI{336}{\degree}}
+            \underline{\xi}_{\mathrm{a,}1} = \frac{1}{10j}\cdot \left[ \right. -e^{j\cdot1\cdot2\cdot\SI{0}{\degree}}
+            &+e^{j\cdot1\cdot2\cdot\SI{72}{\degree}}+e^{j\cdot1\cdot2\cdot\SI{92}{\degree}}-2e^{j\cdot1\cdot2\cdot\SI{168}{\degree}}-e^{j\cdot1\cdot2\cdot\SI{192}{\degree}}
+            +e^{j\cdot1\cdot2\cdot\SI{240}{\degree}} \\
+            & +2e^{j\cdot1\cdot2\cdot\SI{264}{\degree}}-e^{j\cdot1\cdot2\cdot\SI{336}{\degree}}
             \left. \right]
-            = 0.8653 - 0.2812j,
+            = 0.2812 + 0.8653j,
         \end{split}
     \end{align}
     with the corresponding absolute value:
@@ -354,10 +354,10 @@ Consider a 4-pole three-phase motor with 15 stator slots. A simplified sketch of
     For the $5\textsuperscript{th}$ harmonic is $k$ = 5, which results in
     \begin{align}
         \begin{split}
-            \underline{\xi}_{\mathrm{a,}5} = \frac{1}{10}\cdot \left[ \right. e^{j\cdot5\cdot2\cdot\SI{0}{\degree}}
-            &-e^{j\cdot5\cdot2\cdot\SI{72}{\degree}}-e^{j\cdot5\cdot2\cdot\SI{92}{\degree}}+2e^{j\cdot5\cdot2\cdot\SI{168}{\degree}}+e^{j\cdot5\cdot2\cdot\SI{192}{\degree}}
-            -e^{j\cdot5\cdot2\cdot\SI{240}{\degree}} \\
-            & -2e^{j\cdot5\cdot2\cdot\SI{264}{\degree}}+e^{j\cdot5\cdot2\cdot\SI{336}{\degree}}
+            \underline{\xi}_{\mathrm{a,}5} = \frac{1}{10j}\cdot \left[ \right. -e^{j\cdot5\cdot2\cdot\SI{0}{\degree}}
+            &+e^{j\cdot5\cdot2\cdot\SI{72}{\degree}}+e^{j\cdot5\cdot2\cdot\SI{92}{\degree}}-2e^{j\cdot5\cdot2\cdot\SI{168}{\degree}}-e^{j\cdot5\cdot2\cdot\SI{192}{\degree}}
+            +e^{j\cdot5\cdot2\cdot\SI{240}{\degree}} \\
+            & +2e^{j\cdot5\cdot2\cdot\SI{264}{\degree}}-e^{j\cdot5\cdot2\cdot\SI{336}{\degree}}
             \left. \right]
             = 0,
         \end{split}
@@ -370,12 +370,12 @@ Consider a 4-pole three-phase motor with 15 stator slots. A simplified sketch of
     The complex winding factor for the $7\textsuperscript{th}$ harmonic results by
     \begin{align}
         \begin{split}
-            \underline{\xi}_{\mathrm{a,}7} = \frac{1}{10}\cdot \left[ \right. e^{j\cdot7\cdot2\cdot\SI{0}{\degree}}
-            &-e^{j\cdot7\cdot2\cdot\SI{72}{\degree}}-e^{j\cdot7\cdot2\cdot\SI{92}{\degree}}+2e^{j\cdot7\cdot2\cdot\SI{168}{\degree}}+e^{j\cdot7\cdot2\cdot\SI{192}{\degree}}
-            -e^{j\cdot7\cdot2\cdot\SI{240}{\degree}} \\
-            & -2e^{j\cdot7\cdot2\cdot\SI{264}{\degree}}+e^{j\cdot7\cdot2\cdot\SI{336}{\degree}}
+            \underline{\xi}_{\mathrm{a,}7} = \frac{1}{10j}\cdot \left[ \right. -e^{j\cdot7\cdot2\cdot\SI{0}{\degree}}
+            &+e^{j\cdot7\cdot2\cdot\SI{72}{\degree}}+e^{j\cdot7\cdot2\cdot\SI{92}{\degree}}-2e^{j\cdot7\cdot2\cdot\SI{168}{\degree}}-e^{j\cdot7\cdot2\cdot\SI{192}{\degree}}
+            +e^{j\cdot7\cdot2\cdot\SI{240}{\degree}} \\
+            & +2e^{j\cdot7\cdot2\cdot\SI{264}{\degree}}-e^{j\cdot7\cdot2\cdot\SI{336}{\degree}}
             \left. \right]
-            = -0.0516- 0.0711j,
+            = 0.0711 - 0.0516j,
         \end{split}
     \end{align}
     with the corresponding absolute value:
@@ -427,7 +427,7 @@ Consider a 4-pole three-phase motor with 15 stator slots. A simplified sketch of
         \end{split}
     \end{align}
 
-   Taking into account also the number of winding turns $N_{\mathrm{a}}$, the flux linkage of phase a is given with 
+   Taking into account also the number of winding turns $N_{\mathrm{a}}'$, the flux linkage of phase a is given with 
     \begin{equation}
         \psi_{\mathrm{a,}k}(t) = N_{\mathrm{a}}' \phi_{\mathrm{a,}k}(t),
         \label{eq:psi_a_k}
@@ -505,18 +505,18 @@ Consider a 4-pole three-phase motor with 15 stator slots. A simplified sketch of
         \caption{Complex winding factor $\underline{\xi}_{\mathrm{a,}k}$ up to the $12\textsuperscript{th}$ harmonic order.}
         \centering
         \begin{tabular}{R{5cm}R{5cm}R{5cm}}\toprule
-              $\underline{\xi}_{\mathrm{a,}1}$ = 0.8653-0.2812j
-            & $\underline{\xi}_{\mathrm{a,}2}$ = 0.0353+0.0486j
-            & $\underline{\xi}_{\mathrm{a,}3}$ = 0.2236-0.3078j \\
-              $\underline{\xi}_{\mathrm{a,}4}$ = -0.099-0.0322j
+              $\underline{\xi}_{\mathrm{a,}1}$ = 0.2812+0.8653j
+            & $\underline{\xi}_{\mathrm{a,}2}$ = -0.0486+0.0353j
+            & $\underline{\xi}_{\mathrm{a,}3}$ = 0.3078+0.2236j \\
+              $\underline{\xi}_{\mathrm{a,}4}$ = 0.0322-0.099j
             & $\underline{\xi}_{\mathrm{a,}5}$ = 0
-            & $\underline{\xi}_{\mathrm{a,}6}$ = -0.2236+0.0727j \\
-              $\underline{\xi}_{\mathrm{a,}7}$ = -0.0516-0.0711j
-            & $\underline{\xi}_{\mathrm{a,}8}$ = -0.0516+0.0711j
-            & $\underline{\xi}_{\mathrm{a,}9}$ = -0.2236-0.0727j \\
+            & $\underline{\xi}_{\mathrm{a,}6}$ = -0.0727-0.2236j \\
+              $\underline{\xi}_{\mathrm{a,}7}$ = 0.0711-0.0516j
+            & $\underline{\xi}_{\mathrm{a,}8}$ = -0.0711-0.0516j
+            & $\underline{\xi}_{\mathrm{a,}9}$ = 0.0727-0.2236j \\
               $\underline{\xi}_{\mathrm{a,}10}$ = 0
-            & $\underline{\xi}_{\mathrm{a,}11}$ = -0.099+0.0322j
-            & $\underline{\xi}_{\mathrm{a,}12}$ = 0.2236+0.3078j \\
+            & $\underline{\xi}_{\mathrm{a,}11}$ = -0.0322-0.099j
+            & $\underline{\xi}_{\mathrm{a,}12}$ = -0.3078+0.2236j \\
             \bottomrule
         \end{tabular}
         \label{tab:complexWindingFactor_python}
@@ -719,11 +719,11 @@ Consider the shown 10-pole 3-phase motor with 12 stator slots in Fig.~\ref{fig:M
     
     For the fundamental wave, is $k$ = 1 and, therefore, with \eqref{eq:complexWindingFactor_concentratedWinding}, the winding factor of the fundamental wave calculates as follows:
     \begin{equation}
-        \underline{\xi}_{\mathrm{a,}1} = \frac{1}{8}\cdot \left[ \right. -2e^{j\cdot1\cdot5\cdot\SI{0}{\degree}}
-        +e^{j\cdot1\cdot5\cdot\SI{30}{\degree}}-e^{j\cdot1\cdot5\cdot\SI{150}{\degree}}+2e^{j\cdot1\cdot5\cdot\SI{180}{\degree}}-e^{j\cdot1\cdot5\cdot\SI{210}{\degree}}
-        +e^{j\cdot1\cdot5\cdot\SI{330}{\degree}}
+        \underline{\xi}_{\mathrm{a,}1} = \frac{1}{8j}\cdot \left[ \right. 2e^{j\cdot1\cdot5\cdot\SI{0}{\degree}}
+        -e^{j\cdot1\cdot5\cdot\SI{30}{\degree}}+e^{j\cdot1\cdot5\cdot\SI{150}{\degree}}-2e^{j\cdot1\cdot5\cdot\SI{180}{\degree}}+e^{j\cdot1\cdot5\cdot\SI{210}{\degree}}
+        -e^{j\cdot1\cdot5\cdot\SI{330}{\degree}}
         \left. \right]
-        = -0.9330,
+        = -0.9330j,
     \end{equation}
     with the absolute value:
     \begin{equation}
@@ -732,11 +732,11 @@ Consider the shown 10-pole 3-phase motor with 12 stator slots in Fig.~\ref{fig:M
 
     For the $5\textsuperscript{th}$ harmonic is $k$ = 5, which results in
     \begin{equation}
-        \underline{\xi}_{\mathrm{a,}5} = \frac{1}{8}\cdot \left[ \right. -2e^{j\cdot5\cdot5\cdot\SI{0}{\degree}}
-        +e^{j\cdot5\cdot5\cdot\SI{30}{\degree}}-e^{j\cdot5\cdot5\cdot\SI{150}{\degree}}+2e^{j\cdot5\cdot5\cdot\SI{180}{\degree}}-e^{j\cdot5\cdot5\cdot\SI{210}{\degree}}
-        +e^{j\cdot5\cdot5\cdot\SI{330}{\degree}}
+        \underline{\xi}_{\mathrm{a,}5} = \frac{1}{8j}\cdot \left[ \right. 2e^{j\cdot5\cdot5\cdot\SI{0}{\degree}}
+        -e^{j\cdot5\cdot5\cdot\SI{30}{\degree}}+e^{j\cdot5\cdot5\cdot\SI{150}{\degree}}-2e^{j\cdot5\cdot5\cdot\SI{180}{\degree}}+e^{j\cdot5\cdot5\cdot\SI{210}{\degree}}
+        -e^{j\cdot5\cdot5\cdot\SI{330}{\degree}}
         \left. \right]
-        = -0.067,
+        = -0.067j,
     \end{equation}
     with the absolute value:
     \begin{equation}
@@ -745,18 +745,16 @@ Consider the shown 10-pole 3-phase motor with 12 stator slots in Fig.~\ref{fig:M
 
     Finally, the complex winding factor for the $7\textsuperscript{th}$ harmonic is defined as
     \begin{equation}
-        |\xi_{\mathrm{a,}7}| = \frac{1}{8}\cdot \left[ \right. -2e^{j\cdot7\cdot5\cdot\SI{0}{\degree}}
-        +e^{j\cdot7\cdot5\cdot\SI{30}{\degree}}-e^{j\cdot7\cdot5\cdot\SI{150}{\degree}}+2e^{j\cdot7\cdot5\cdot\SI{180}{\degree}}-e^{j\cdot7\cdot5\cdot\SI{210}{\degree}}
-        +e^{j\cdot7\cdot5\cdot\SI{330}{\degree}}
+        |\xi_{\mathrm{a,}7}| = \frac{1}{8j}\cdot \left[ \right. 2e^{j\cdot7\cdot5\cdot\SI{0}{\degree}}
+        -e^{j\cdot7\cdot5\cdot\SI{30}{\degree}}+e^{j\cdot7\cdot5\cdot\SI{150}{\degree}}-2e^{j\cdot7\cdot5\cdot\SI{180}{\degree}}+e^{j\cdot7\cdot5\cdot\SI{210}{\degree}}
+        -e^{j\cdot7\cdot5\cdot\SI{330}{\degree}}
         \left. \right]
-        = -0.067,
+        = -0.067j,
     \end{equation}
     and, therefore, the absolute value results in:
     \begin{equation}
         |\xi_{\mathrm{a,}7}| = 0.067.
     \end{equation}
-
-    As can be seen from the calculations of the complex winding factors $|\xi_{\mathrm{a,}1}|,|\xi_{\mathrm{a,}5}|$ and $|\xi_{\mathrm{a,}7}|$, these only have a real part.
 
 \end{solutionblock}
 
@@ -801,7 +799,7 @@ Consider the shown 10-pole 3-phase motor with 12 stator slots in Fig.~\ref{fig:M
         \end{split}
     \end{align}
 
-   Taking into account also the number of winding turns $N_{\mathrm{a}}$, the flux linkage of phase a is given with 
+   Taking into account also the number of winding turns $N_{\mathrm{a}}'$, the flux linkage of phase a is given with 
     \begin{equation}
         \psi_{\mathrm{a,}k}(t) = N_{\mathrm{a}}' \phi_{\mathrm{a,}k}(t),
         \label{eq:psi_a_k_concentrated}
@@ -899,12 +897,12 @@ Consider the shown 10-pole 3-phase motor with 12 stator slots in Fig.~\ref{fig:M
         \caption{Complex winding factors $\underline{\xi}_{\mathrm{a,}k}$ for the concentrated winding up to the $12\textsuperscript{th}$ harmonic order.}
         \centering
         \begin{tabular}{R{3cm}R{3cm}R{3cm}R{3cm}}\toprule
-            $\underline{\xi}_{\mathrm{a,}1}$ = -0.9099     & $\underline{\xi}_{\mathrm{a,}2}$ = 0 &
-            $\underline{\xi}_{\mathrm{a,}3}$ = -0.5        & $\underline{\xi}_{\mathrm{a,}4}$ = 0 \\
-            $\underline{\xi}_{\mathrm{a,}5}$ = -0.0670     & $\underline{\xi}_{\mathrm{a,}6}$ = 0 &
-            $\underline{\xi}_{\mathrm{a,}7}$ = -0.0670     & $\underline{\xi}_{\mathrm{a,}8}$ = 0 \\
-            $\underline{\xi}_{\mathrm{a,}9}$ = -0.5        & $\underline{\xi}_{\mathrm{a,}10}$ = 0 &
-            $\underline{\xi}_{\mathrm{a,}11}$ = -0.9330    & $\underline{\xi}_{\mathrm{a,}12}$ = 0 \\
+            $\underline{\xi}_{\mathrm{a,}1}$ = -0.9330j    & $\underline{\xi}_{\mathrm{a,}2}$ = 0 &
+            $\underline{\xi}_{\mathrm{a,}3}$ = -0.5j       & $\underline{\xi}_{\mathrm{a,}4}$ = 0 \\
+            $\underline{\xi}_{\mathrm{a,}5}$ = -0.0670j    & $\underline{\xi}_{\mathrm{a,}6}$ = 0 &
+            $\underline{\xi}_{\mathrm{a,}7}$ = -0.0670j    & $\underline{\xi}_{\mathrm{a,}8}$ = 0 \\
+            $\underline{\xi}_{\mathrm{a,}9}$ = -0.5j       & $\underline{\xi}_{\mathrm{a,}10}$ = 0 &
+            $\underline{\xi}_{\mathrm{a,}11}$ = -0.9330j   & $\underline{\xi}_{\mathrm{a,}12}$ = 0 \\
             \bottomrule
         \end{tabular}
         \label{tab:complexWindingFactor_concentratedW_python}
