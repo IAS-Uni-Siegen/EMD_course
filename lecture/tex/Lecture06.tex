@@ -370,6 +370,7 @@ which are generally applicable as only identical resistances per phase on the st
             -\sin(\varepsilon(t)) & \cos(\varepsilon(t))\\
             -\cos(\varepsilon(t)) & -\sin(\varepsilon(t))
         \end{bmatrix} \frac{\mathrm{d}}{\mathrm{d}t}\varepsilon(t)  = -\bm{T}_\mathrm{p}^{-1}(\varepsilon(t)) \bm{J}\omega(t).
+        \label{eq:Park_transformation_derivative}
     \end{align}
 \end{frame}
 
@@ -508,6 +509,7 @@ Furthermore, the flux linkages representation \eqref{eq:Flux_linkage_model_IM_ab
             \bm{\psi}^\mathrm{s}_\mathrm{s,\alpha\beta}(t) & = (L_\mathrm{s} +\nicefrac{M_\mathrm{s}}{2}) \bm{i}^\mathrm{s}_{\mathrm{s},\alpha\beta}(t) +  M_{\mathrm{r}}\frac{3}{2}\frac{N_\mathrm{s}}{N_\mathrm{r}} \bm{i}^\mathrm{s}_{\mathrm{r},\alpha\beta}(t),\\
             \bm{\psi}^\mathrm{s}_\mathrm{s,\alpha\beta}(t) & = (L_\mathrm{r} +\nicefrac{M_\mathrm{r}}{2}) \bm{i}^\mathrm{s}_{\mathrm{r},\alpha\beta}(t) +  M_{\mathrm{s}}\frac{3}{2}\frac{N_\mathrm{r}}{N_\mathrm{s}} \bm{i}^\mathrm{s}_{\mathrm{s},\alpha\beta}(t).
         \end{split}
+        \label{eq:IM_model_alpha_beta_flux_linkage_equations_stator_oriented}
     \end{equation}
 \end{frame}
 
@@ -631,33 +633,54 @@ Considering \figref{fig:power_balance_machine} and the Clarke transf. power mapp
         \bm{\psi}^\mathrm{s}_\mathrm{s,\alpha\beta}(t) &= (L_{\sigma,\mathrm{s}} +M) \bm{i}^\mathrm{s}_{\mathrm{s},\alpha\beta}(t) +  M\bm{i}^{\mathrm{s}'}_{\mathrm{r},\alpha\beta}(t),\\
         \bm{\psi}^{\mathrm{s}'}_\mathrm{r,\alpha\beta}(t) &= (L'_{\sigma,\mathrm{r}} + M) \bm{i}^{\mathrm{s}'}_{\mathrm{r},\alpha\beta}(t) +  M \bm{i}^\mathrm{s}_{\mathrm{s},\alpha\beta}(t).
     \end{align}
+    Alternatively, we can express the currents as a function of the flux linkages:
+    \begin{align}
+        \bm{i}^\mathrm{s}_{\mathrm{s},\alpha\beta}(t) &= \frac{(L_{\sigma,s}+M)\bm{\psi}^\mathrm{s}_\mathrm{s,\alpha\beta}(t)- M \bm{\psi}^\mathrm{s'}_\mathrm{r,\alpha\beta}(t)}{M(L_{\sigma,s}+L'_{\sigma,r}) + L_{\sigma,s}L'_{\sigma,r}},\\
+        \bm{i}^{\mathrm{s}'}_{\mathrm{r},\alpha\beta}(t) &= \frac{(L'_{\sigma,r}+M)\bm{\psi}^{\mathrm{s}'}_\mathrm{r,\alpha\beta}(t)- M \bm{\psi}^{\mathrm{s}}_\mathrm{s,\alpha\beta}(t)}{M(L'_{\sigma,r}+L_{\sigma,s}) + L'_{\sigma,r}L_{\sigma,s}}.
+    \end{align}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Transformation of the rotor quantities based on the turn ratio  %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Transformation of the rotor quantities based on the turn ratio (cont.)}
+    Rewriting the transformer's leakage coefficient definition \eqref{eq:leakage_coefficient} for the IM model as
+    \begin{equation}
+        \sigma = \frac{(L_{\sigma,s}+L'_{\sigma,r})M + L'_{\sigma,r}L_{\sigma,s}}{(M+L_{\sigma,s})(M + L'_{\sigma,r})} = 1 - \frac{M^2}{(M+L_{\sigma,s})(M + L'_{\sigma,r})}
+    \end{equation}
+    allows expressing the currents as
+    \begin{align}
+        \bm{i}^\mathrm{s}_{\mathrm{s},\alpha\beta}(t) &= \frac{1}{\sigma(L_{\sigma,s} + M)}\left(\bm{\psi}^\mathrm{s}_\mathrm{s,\alpha\beta}(t)- \frac{M}{M+L'_{\sigma,r}}\bm{\psi}^\mathrm{s'}_\mathrm{r,\alpha\beta}(t)\right),\\
+        \bm{i}^{\mathrm{s}'}_{\mathrm{r},\alpha\beta}(t) &= \frac{1}{\sigma(L'_{\sigma,r} + M)}\left(\bm{\psi}^{\mathrm{s}'}_\mathrm{r,\alpha\beta}(t)- \frac{M}{M+L_{\sigma,s}}\bm{\psi}^\mathrm{s}_\mathrm{s,\alpha\beta}(t)\right).
+    \end{align}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% ECD of transformed IM model in general $\alpha\beta$ coordinates      %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{ECD of transformed IM model in general $\alpha\beta$ coordinates}
     \begin{figure}
-		\onslide<1->
-		\begin{columns}
-			\begin{column}{0.64\textwidth}
-					\centering
-					\includegraphics[width=0.99\textwidth]{fig/lec06/IM_T_ECD_alpha_beta.pdf}
-			\end{column}
-			\begin{column}{0.35\textwidth}
-				\caption{\raggedright T-type ECD of an IM in stator-oriented $\alpha\beta$ coordinates}
-				\label{fig:IM_T_ECD_alpha_beta}
-			\end{column}
-		\end{columns}
-	\end{figure}
+        \centering
+		\includegraphics[width=0.75\textwidth]{fig/lec06/IM_T_ECD_alpha_beta.pdf}
+        \caption{T-type ECD of an IM in stator-oriented $\alpha\beta$ coordinates with rotor quantities transformed using $\alpha = \nicefrac{N_\mathrm{s}}{N_\mathrm{r}}$}
+		\label{fig:IM_T_ECD_alpha_beta}
+    \end{figure}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Summary: IM model in stator-oriented $\alpha\beta$ coordinates      %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
-	\frametitle{Summary: Transformed IM model in stator-oriented $\alpha\beta$ coordinates}
+	\frametitle{Summary: transformed IM model in stator-oriented $\alpha\beta$ coordinates}
     The most important equations of the IM model in the stator-oriented $\alpha\beta$ coordinates with all rotor quantities transformed to the stator side are:
     \begin{equation*}
         \begin{alignedat}{4}
             &&\mbox{Stator voltage:}&& \quad\bm{u}^\mathrm{s}_\mathrm{s,\alpha\beta}(&t) &&= R_\mathrm{s} \bm{i}^\mathrm{s}_\mathrm{s,\alpha\beta}(t)+ \frac{\mathrm{d}}{\mathrm{d}t}\bm{\psi}^\mathrm{s}_\mathrm{s,\alpha\beta}(t),\\
             &&\mbox{Rotor voltage:}&& \quad\bm{u}^{\mathrm{s}'}_\mathrm{r,\alpha\beta}(&t) &&= R_\mathrm{r} \bm{i}^{\mathrm{s}'}_\mathrm{r,\alpha\beta}(t)-\omega_\mathrm{r,el}(t)\bm{J}\bm{\psi}^{\mathrm{s}'}_\mathrm{r,\alpha\beta}(t) +\frac{\mathrm{d}}{\mathrm{d}t}\bm{\psi}^{\mathrm{s}'}_\mathrm{r,\alpha\beta}(t),\\
             &&\mbox{Stator flux linkage:}&& \quad \bm{\psi}^\mathrm{s}_\mathrm{s,\alpha\beta}(&t) &&= (L_{\sigma,\mathrm{s}} +M) \bm{i}^\mathrm{s}_{\mathrm{s},\alpha\beta}(t) +  M\bm{i}^{\mathrm{s}'}_{\mathrm{r},\alpha\beta}(t),\vphantom{\frac{\mathrm{d}}{\mathrm{d}t}}\\
-            &&\mbox{Rotor flux linkage:}&& \quad \bm{\psi}^{\mathrm{s}'}_\mathrm{r,\alpha\beta}(&t) &&= (L'_{\sigma,\mathrm{r}} + M) \bm{i}^{\mathrm{s}'}_{\mathrm{r},\alpha\beta}(t) +  M \bm{i}^\mathrm{s}_{\mathrm{s},\alpha\beta}(t)\vphantom{\frac{\mathrm{d}}{\mathrm{d}t}}\\
+            &&\mbox{Rotor flux linkage:}&& \quad \bm{\psi}^{\mathrm{s}'}_\mathrm{r,\alpha\beta}(&t) &&= (L'_{\sigma,\mathrm{r}} + M) \bm{i}^{\mathrm{s}'}_{\mathrm{r},\alpha\beta}(t) +  M \bm{i}^\mathrm{s}_{\mathrm{s},\alpha\beta}(t)\vphantom{\frac{\mathrm{d}}{\mathrm{d}t}},\\
             &&\mbox{Torque:}&& \quad T(&t) &&= \frac{3}{2} p (\bm{i}_\mathrm{s,\alpha\beta}^\mathrm{s})\T\bm{J}\bm{\psi}_\mathrm{s,\alpha\beta}^\mathrm{s}=-\frac{3}{2} p (\bm{i}^{\mathrm{s}'}_\mathrm{r,\alpha\beta})\T\bm{J}\bm{\psi}^{\mathrm{s}'}_\mathrm{r,\alpha\beta} \vphantom{\frac{\mathrm{d}}{\mathrm{d}t}}. 
         \end{alignedat}
     \end{equation*}
@@ -689,4 +712,169 @@ Considering \figref{fig:power_balance_machine} and the Clarke transf. power mapp
             \end{figure}
         \end{column}
     \end{columns}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% IM model in coordinate system k %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{IM model in coordinate system k}
+    Applying the Park transformation to the IM model in the stator-oriented $\alpha\beta$ coordinates results in (dropping the time dependency for brevity):
+    \begin{equation}
+        \begin{alignedat}{3}
+            \bm{u}^\mathrm{k}_\mathrm{s,dq} &= \bm{T}^{-1}_\mathrm{p}(\varepsilon_\mathrm{k,el})\bm{u}^\mathrm{s}_\mathrm{s,\alpha\beta}, \quad \bm{i}^\mathrm{k}_\mathrm{s,\alpha\beta} &= \bm{T}^{-1}_\mathrm{p}(\varepsilon_\mathrm{k,el})\bm{i}^\mathrm{s}_\mathrm{s,dq}, \quad \bm{\psi}^\mathrm{k}_\mathrm{s,dq} &= \bm{T}^{-1}_\mathrm{p}(\varepsilon_\mathrm{k,el})\bm{\psi}^\mathrm{s}_\mathrm{s,dq},\\
+            \bm{u}^\mathrm{k}_\mathrm{r,dq} &= \bm{T}^{-1}_\mathrm{p}(\varepsilon_\mathrm{k,el})\bm{u}^\mathrm{s}_\mathrm{r,\alpha\beta}, \quad \bm{i}^\mathrm{k}_\mathrm{r,dq} &= \bm{T}^{-1}_\mathrm{p}(\varepsilon_\mathrm{k,el})\bm{i}^\mathrm{s}_\mathrm{r,\alpha\beta}, \quad \bm{\psi}^\mathrm{k}_\mathrm{r,dq} &= \bm{T}^{-1}_\mathrm{p}(\varepsilon_\mathrm{k,el})\bm{\psi}^\mathrm{s}_\mathrm{r,\alpha\beta}.
+        \end{alignedat}
+    \end{equation}
+    The transformed flux linkage model in the k coordinate system remains structurally unaffected by the coordinate transformation
+    \begin{equation}
+        \begin{split}
+            \bm{\psi}^\mathrm{k}_\mathrm{s,dq} &= (L_\mathrm{s} +\nicefrac{M_\mathrm{s}}{2}) \bm{i}^\mathrm{k}_{\mathrm{s,dq}} +  M_{\mathrm{r}}\frac{3}{2}\frac{N_\mathrm{s}}{N_\mathrm{r}} \bm{i}^\mathrm{k}_{\mathrm{r,dq}},\\
+            \bm{\psi}^\mathrm{k}_\mathrm{r,dq} &= (L_\mathrm{r} +\nicefrac{M_\mathrm{r}}{2}) \bm{i}^\mathrm{k}_{\mathrm{r,dq}} +  M_{\mathrm{s}}\frac{3}{2}\frac{N_\mathrm{r}}{N_\mathrm{s}} \bm{i}^\mathrm{k}_{\mathrm{s,dq}}
+        \end{split}
+    \end{equation}
+    since both the current and flux linkage vectors are transformed in the same way starting from \eqref{eq:IM_model_alpha_beta_flux_linkage_equations_stator_oriented}.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% IM model in coordinate system k  (cont.)%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{IM model in coordinate system k (cont.)}
+    Likewise, the torque is invariant with respect to the chosen coordinate system:
+    \begin{equation}
+        T = \frac{3}{2} p \left(\bm{i}_\mathrm{s,dq}\right)\T\bm{J}\bm{\psi}_\mathrm{s,dq} = -\frac{3}{2} p \left(\bm{i}_\mathrm{r,dq}\right)\T\bm{J}\bm{\psi}_\mathrm{r,dq}.
+    \end{equation}
+    Applying the Park transformation derivative rule \eqref{eq:Park_transformation_derivative} to the voltage equations in the k coordinate system yields
+    \begin{equation}
+        \begin{alignedat}{2}
+            \bm{u}^\mathrm{k}_\mathrm{s,dq} &= R_\mathrm{s} \bm{i}^\mathrm{k}_\mathrm{s,dq} + \omega_\mathrm{k,el}\bm{J} \bm{\psi}^\mathrm{k}_\mathrm{s,dq} + \frac{\mathrm{d}}{\mathrm{d}t}\bm{\psi}^\mathrm{k}_\mathrm{s,dq},\\
+            \bm{u}^\mathrm{k}_\mathrm{r,dq} &= R_\mathrm{r} \bm{i}^\mathrm{k}_\mathrm{r,dq} +\left(\omega_\mathrm{k,el}-\omega_\mathrm{r,el}\right)\bm{J}\bm{\psi}^\mathrm{k}_\mathrm{r,dq} + \frac{\mathrm{d}}{\mathrm{d}t}\bm{\psi}^\mathrm{k}_\mathrm{r,dq}.
+        \end{alignedat}
+    \end{equation}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Summary: IM model in general dq coordinates      %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Summary: IM model in general dq coordinates}
+    The most important equations of the IM model in the general k coordinate system with dq coordinates are:
+    \begin{equation*}
+        \begin{alignedat}{4}
+            &&\mbox{Stator voltage:}&& \quad\bm{u}^\mathrm{k}_\mathrm{s,dq}(&t) &&= R_\mathrm{s} \bm{i}^\mathrm{k}_\mathrm{s,dq}(t)+ \omega_\mathrm{k,el}(t)\bm{J}\bm{\psi}^\mathrm{k}_\mathrm{s,dq}(t) + \frac{\mathrm{d}}{\mathrm{d}t}\bm{\psi}^\mathrm{k}_\mathrm{s,dq}(t),\\
+            &&\mbox{Rotor voltage:}&& \quad\bm{u}^\mathrm{k}_\mathrm{r,dq}(&t) &&= R_\mathrm{r} \bm{i}^\mathrm{k}_\mathrm{r,dq}(t)+\left(\omega_\mathrm{k,el}(t)-\omega_\mathrm{r,el}(t)\right)\bm{J}\bm{\psi}^\mathrm{k}_\mathrm{r,dq}(t) + \frac{\mathrm{d}}{\mathrm{d}t}\bm{\psi}^\mathrm{k}_\mathrm{r,dq}(t),\\
+            &&\mbox{Stator flux linkage:}&& \quad \bm{\psi}^\mathrm{k}_\mathrm{s,dq}(&t) &&= (L_\mathrm{s} +\nicefrac{M_\mathrm{s}}{2}) \bm{i}^\mathrm{k}_\mathrm{s,dq}(t) +  M_{\mathrm{r}}\frac{3}{2}\frac{N_\mathrm{s}}{N_\mathrm{r}} \bm{i}^\mathrm{k}_\mathrm{r,dq}(t),\\
+            &&\mbox{Rotor flux linkage:}&& \quad \bm{\psi}^\mathrm{k}_\mathrm{r,dq}(&t) &&= (L_\mathrm{r} +\nicefrac{M_\mathrm{r}}{2}) \bm{i}^\mathrm{k}_\mathrm{r,dq}(t) +  M_{\mathrm{s}}\frac{3}{2}\frac{N_\mathrm{r}}{N_\mathrm{s}} \bm{i}^\mathrm{k}_\mathrm{s,dq}(t),\\
+            &&\mbox{Torque:}&& \quad T(&t) &&= \frac{3}{2} p (\bm{i}_\mathrm{s,dq}^\mathrm{k})\T\bm{J}\bm{\psi}_\mathrm{s,dq}^\mathrm{k}=-\frac{3}{2} p (\bm{i}^\mathrm{k}_\mathrm{r,dq})\T\bm{J}\bm{\psi}^\mathrm{k}_\mathrm{r,dq}. 
+        \end{alignedat}
+    \end{equation*}
+    Likewise in the stator-oriented $\alpha\beta$ coordinates, one can further transform the rotor quantities based on the turn ratio $\alpha = \nicefrac{N_\mathrm{s}}{N_\mathrm{r}}$ to infer the rotor parameters from stator-based measurements (cf. next slide).
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Summary: IM model in general dq coordinates      %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Summary: transformed IM model in general dq coordinates}
+    The most important equations of the IM model in the general k coordinate system with dq coordinates with all rotor quantities transformed to the stator side are:
+    \begin{equation*}
+        \begin{alignedat}{4}
+            &&\mbox{Stator voltage:}&& \quad\bm{u}^\mathrm{k}_\mathrm{s,dq}(&t) &&= R_\mathrm{s} \bm{i}^\mathrm{k}_\mathrm{s,dq}(t)+ \omega_\mathrm{k,el}(t)\bm{J}\bm{\psi}^\mathrm{k}_\mathrm{s,dq}(t) + \frac{\mathrm{d}}{\mathrm{d}t}\bm{\psi}^\mathrm{k}_\mathrm{s,dq}(t),\\
+            &&\mbox{Rotor voltage:}&& \quad\bm{u}^{\mathrm{k}'}_\mathrm{r,dq}(&t) &&= R_\mathrm{r} \bm{i}^{\mathrm{k}'}_\mathrm{r,dq}(t)+\left(\omega_\mathrm{k,el}(t)-\omega_\mathrm{r,el}(t)\right)\bm{J}\bm{\psi}^{\mathrm{k}'}_\mathrm{r,dq}(t) +\frac{\mathrm{d}}{\mathrm{d}t}\bm{\psi}^{\mathrm{k}'}_\mathrm{r,dq}(t),\\
+            &&\mbox{Stator flux linkage:}&& \quad \bm{\psi}^\mathrm{k}_\mathrm{s,dq}(&t) &&= (L_{\sigma,\mathrm{s}} +M) \bm{i}^\mathrm{k}_\mathrm{s,dq}(t) +  M\bm{i}^{\mathrm{k}'}_\mathrm{r,dq}(t),\vphantom{\frac{\mathrm{d}}{\mathrm{d}t}}\\
+            &&\mbox{Rotor flux linkage:}&& \quad \bm{\psi}^{\mathrm{k}'}_\mathrm{r,dq}(&t) &&= (L'_{\sigma,\mathrm{r}} + M) \bm{i}^{\mathrm{k}'}_\mathrm{r,dq}(t) +  M \bm{i}^\mathrm{k}_\mathrm{s,dq}(t)\vphantom{\frac{\mathrm{d}}{\mathrm{d}t}},\\
+            &&\mbox{Torque:}&& \quad T(&t) &&= \frac{3}{2} p (\bm{i}_\mathrm{s,dq}^\mathrm{k})\T\bm{J}\bm{\psi}_\mathrm{s,dq}^\mathrm{k}=-\frac{3}{2} p (\bm{i}^{\mathrm{k}'}_\mathrm{r,dq})\T\bm{J}\bm{\psi}^{\mathrm{k}'}_\mathrm{r,dq} \vphantom{\frac{\mathrm{d}}{\mathrm{d}t}}.
+        \end{alignedat}
+    \end{equation*}
+    The transformed rotor quantities are $\bm{u}'_\mathrm{r} = \alpha\bm{u}_\mathrm{r}$, $\bm{i}'_\mathrm{r} = \nicefrac{1}{\alpha}\bm{i}_\mathrm{r}$, $\bm{\psi}'_\mathrm{r} = \alpha\bm{\psi}_\mathrm{r}$, $R'_\mathrm{r} =  \alpha^2 R_\mathrm{r}$, $L'_\mathrm{r} =  \alpha^2 L_\mathrm{r}$, and $M'_\mathrm{r} =  \alpha M_\mathrm{r}$ with $\alpha = \nicefrac{N_\mathrm{s}}{N_\mathrm{r}}$.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Summary: IM model in general dq coordinates      %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{ECD of transformed IM model in general dq coordinates}
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.75\textwidth]{fig/lec06/IM_T_ECD_dq.pdf}
+        \caption{T-type ECD of an IM in general dq coordinates with rotor quantities transformed using $\alpha = \nicefrac{N_\mathrm{s}}{N_\mathrm{r}}$}
+        \label{fig:IM_T_ECD_dq}
+    \end{figure}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Stator flux orientation in the k coordinate system %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Stator flux orientation in the k coordinate system}
+    \begin{columns}
+		\begin{column}{0.55\textwidth}
+	       Per definition we can assign the stator flux linkage vector to the d-axis of the k coordinate system:
+           \begin{equation}
+            \renewcommand{\arraystretch}{1.4}
+            \begin{split}
+                \bm{\psi}^\mathrm{k}_\mathrm{s,dq}(t) &= \begin{bmatrix} \psi_{\mathrm{s,d}}^\mathrm{k}(t) \\ \psi_{\mathrm{s,q}}^\mathrm{k}(t) \end{bmatrix} = \begin{bmatrix} \psi_{\mathrm{s,d}}^\mathrm{k}(t) \\ 0 \end{bmatrix}\\
+                &= \begin{bmatrix}|\bm{\psi}^\mathrm{k}_\mathrm{s,dq}(t)| \\ 0 \end{bmatrix}.
+            \end{split}
+           \end{equation}
+           In this case, the torque expression simplifies to
+              \begin{equation}
+                \begin{split}
+                T(t) & = \frac{3}{2} p (\bm{i}_\mathrm{s,dq}^\mathrm{k}(t))\T\bm{J}\bm{\psi}_\mathrm{s,dq}^\mathrm{k}(t)\\
+                & = \frac{3}{2} p i_{\mathrm{s,q}}^\mathrm{k}(t)\psi_{\mathrm{s,d}}^\mathrm{k}(t) .
+                \end{split}
+                \end{equation}
+        \end{column}
+        \begin{column}{0.45\textwidth}
+            \begin{figure}
+                \centering
+                \includegraphics[width=0.85\textwidth]{fig/lec06/K_coordinates_stator_flux_orientation.pdf}
+                \caption{Stator flux-oriented coordinate system}
+                \label{fig:K_coordinates_stator_flux_orientation}
+            \end{figure}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Rotor flux orientation in the k coordinate system %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Rotor flux orientation in the k coordinate system}
+    \begin{columns}
+		\begin{column}{0.55\textwidth}
+	       Per definition we can also assign the rotor flux linkage vector to the d-axis of the k coordinate system:
+              \begin{equation}
+                \renewcommand{\arraystretch}{1.4}
+                \begin{split}
+                 \bm{\psi}^\mathrm{k}_\mathrm{r,dq}(t) &= \begin{bmatrix} \psi_{\mathrm{r,d}}^\mathrm{k}(t) \\ \psi_{\mathrm{r,q}}^\mathrm{k}(t) \end{bmatrix} = \begin{bmatrix} \psi_{\mathrm{r,d}}^\mathrm{k}(t) \\ 0 \end{bmatrix}\\
+                 &= \begin{bmatrix}|\bm{\psi}^\mathrm{k}_\mathrm{r,dq}(t)| \\ 0 \end{bmatrix}.
+                \end{split}
+              \end{equation}
+              In this case, the torque expression simplifies to
+                \begin{equation}
+                \begin{split}
+                T(t) & = -\frac{3}{2} p (\bm{i}^\mathrm{k}_\mathrm{r,dq}(t))\T\bm{J}\bm{\psi}^\mathrm{k}_\mathrm{r,dq}(t)\\
+                & = -\frac{3}{2} p i_{\mathrm{r,q}}^\mathrm{k}(t)\psi_{\mathrm{r,d}}^\mathrm{k}(t) .
+                \end{split}
+                \end{equation}
+        \end{column}
+        \begin{column}{0.45\textwidth}
+            \begin{figure}
+                \centering
+                \includegraphics[width=0.85\textwidth]{fig/lec06/K_coordinates_rotor_flux_orientation.pdf}
+                \caption{Rotor flux-oriented coordinate system}
+                \label{fig:K_coordinates_rotor_flux_orientation}
+            \end{figure}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Steady-state behavior %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Steady-state behavior}
+    
 \end{frame}
