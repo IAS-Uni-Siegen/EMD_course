@@ -965,10 +965,11 @@ Considering \figref{fig:power_balance_machine} and the Clarke transf. power mapp
         \label{eq:IM_model_voltage_equations_steady_state_slip_ratio}
     \end{equation}
     Here, both the stator and rotor fluxes rotate with the same frequency $\omega_\mathrm{s}$. Additionally, we can insert the current-to-flux linkage relationships
-    \begin{align*}
+    \begin{align}
         \underline{\Psi}_\mathrm{s} = (L_{\sigma,\mathrm{s}} +M) \underline{I}_\mathrm{s} +  M\underline{I}'_\mathrm{r}, \qquad
         \underline{\Psi}'_\mathrm{r} = (L'_{\sigma,\mathrm{r}} + M) \underline{I}'_\mathrm{r} +  M \underline{I}_\mathrm{s}
-    \end{align*}
+        \label{eq:IM_model_current_flux_linkage_equations_steady_state}
+    \end{align}
     leading to
     \begin{equation}
         \begin{alignedat}{2}
@@ -1002,14 +1003,14 @@ Considering \figref{fig:power_balance_machine} and the Clarke transf. power mapp
 		\centering
 		\begin{subfigure}{0.49\textwidth}
 			\centering
-			\includegraphics[width=0.8\textwidth]{fig/lec06/Squirrel_cage.jpg}
+			\includegraphics[width=0.85\textwidth]{fig/lec06/Squirrel_cage.jpg}
 			\caption{Squirrel cage rotor (source: \href{https://commons.wikimedia.org/wiki/File:Wirnik_by_Zureks.jpg}{Wikimedia Commons}, Zurek, \href{https://creativecommons.org/licenses/by-sa/3.0/deed}{CC BY-SA 3.0})}
 		\end{subfigure}
 		\hfill
 		\begin{subfigure}{0.49\textwidth}
 			\centering
-			\includegraphics[width=0.8\textwidth]{fig/lec06/Squirrel_cage.jpg}
-			\caption{Wound or \\ slip ring rotor}
+			\includegraphics[width=0.5\textwidth]{fig/lec06/Slip_ring_IM.jpg}
+			\caption{Wound or \\slip ring rotor}
 		\end{subfigure}
         \caption{IM rotor variants} 
         \label{fig:examples_IM_rotor}
@@ -1024,7 +1025,7 @@ Considering \figref{fig:power_balance_machine} and the Clarke transf. power mapp
     Utilizing the stator flux orientation we define
     $$ \underline{\Psi}_\mathrm{s} = \Psi_\mathrm{s,d} + \mathrm{j}\Psi_\mathrm{s,q} = \Psi_\mathrm{s,d} = \Psi_\mathrm{s}.
     $$
-    Assuming that the stator ohmic voltage drop is negligible ($R_\mathrm{s}=0$), the stator voltage equation from \eqref{eq:IM_model_voltage_equations_steady_state_slip_ratio} reveals
+    Assuming that the stator ohmic voltage drop is negligible ($R_\mathrm{s}=0$), we get from \eqref{eq:IM_model_voltage_equations_steady_state_slip_ratio} 
     \begin{equation}
         \underline{U}_\mathrm{s} = U_\mathrm{s,d} + \mathrm{j} U_\mathrm{s,q} = \mathrm{j}\omega_\mathrm{s}\underline{\Psi}_\mathrm{s} = \mathrm{j}\omega_\mathrm{s}\Psi_\mathrm{d}
     \end{equation} 
@@ -1033,7 +1034,14 @@ Considering \figref{fig:power_balance_machine} and the Clarke transf. power mapp
         U_\mathrm{s,d} = 0, \qquad \Psi_\mathrm{s,d}  = \frac{U_\mathrm{s,q}}{\omega_\mathrm{s}}= \frac{U_\mathrm{s}}{\omega_\mathrm{s}}= \Psi_\mathrm{s}.
         \label{eq:IM_model_stator_flux_orientation_steady_state}
     \end{equation}
-    Hence, the stator voltage phasor is purely imaginary and the stator flux phasor is real due to the chosen orientation.  Based on the torque expression \eqref{eq:IM_model_k_torque_stator_flux_orientation} the next steps focus on finding the stator current phasor $\underline{I}_\mathrm{s}$. 
+    Hence, the stator voltage phasor is purely imaginary and the stator flux phasor is real due to the chosen orientation.  From \eqref{eq:IM_model_current_flux_linkage_equations_steady_state} we can rewrite the flux-to-current relationships as
+    \begin{equation}
+        \begin{split}
+            \underline{I}_\mathrm{s} &= \frac{1}{\sigma (L_{\sigma,\mathrm{s}} +M)} \underline{\Psi}_\mathrm{s} -  \frac{M}{\sigma(L_{\sigma,\mathrm{s}} +M)(L'_{\sigma,\mathrm{r}} +M)}\underline{\Psi}'_\mathrm{r},\\
+            \underline{I}'_\mathrm{r} &= \frac{1}{\sigma (L'_{\sigma,\mathrm{r}} +M)} \underline{\Psi}'_\mathrm{r} -  \frac{M}{\sigma(L_{\sigma,\mathrm{s}} +M)(L'_{\sigma,\mathrm{r}} +M)}\underline{\Psi}_\mathrm{s}.
+        \end{split}
+        \label{eq:IM_model_current_flux_linkage_equations_steady_state_squirrel_cage}
+    \end{equation}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1041,16 +1049,7 @@ Considering \figref{fig:power_balance_machine} and the Clarke transf. power mapp
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
 	\frametitle{Squirrel cage IM torque-speed characteristic (cont.)} 
-    Inserting \eqref{eq:IM_model_stator_flux_orientation_steady_state} in
-     $$
-     \underline{\Psi}_\mathrm{s} = (L_{\sigma,\mathrm{s}} +M) \underline{I}_\mathrm{s} +  M\underline{I}'_\mathrm{r}
-     $$
-     delivers
-     \begin{equation}
-        \underline{I}'_\mathrm{r} = \frac{1}{M}\left[\frac{U_\mathrm{s}}{\omega_\mathrm{s}}-(L_{\sigma,\mathrm{s}} +M)\underline{I}_\mathrm{s}\right].
-        \label{eq:IM_model_rotor_current_steady_state}
-     \end{equation}
-     Futhermore, the rotor voltage for the squirrrel cage IM is
+     Furthermore, the rotor voltage for the squirrel cage IM is
      $$
         \underline{U}'_\mathrm{r} = 0
     $$
@@ -1059,6 +1058,12 @@ Considering \figref{fig:power_balance_machine} and the Clarke transf. power mapp
         0 = \frac{1}{s}R'_\mathrm{r}\underline{I}'_\mathrm{r}+\mathrm{j}\omega_\mathrm{s}\underline{\Psi}'_\mathrm{r} \quad \Leftrightarrow \quad \underline{\Psi}'_\mathrm{r} = \frac{\mathrm{j}}{\omega_\mathrm{s}}\frac{R'_\mathrm{r}}{s}\underline{I}'_\mathrm{r}. 
         \label{eq:IM_model_rotor_flux_steady_state}
     \end{equation}
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.6\textwidth]{fig/lec06/IM_squirrel_T_ECD_steady_state.pdf}
+        \caption{T-type ECD of a squirrel cage IM in steady state represented by complex phasors}
+        \label{fig:IM_squirrel_T_ECD_steady_state}
+    \end{figure}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1066,15 +1071,123 @@ Considering \figref{fig:power_balance_machine} and the Clarke transf. power mapp
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
 	\frametitle{Squirrel cage IM torque-speed characteristic (cont.)} 
-    Inserting \eqref{eq:IM_model_rotor_flux_steady_state} into $$ \underline{\Psi}'_\mathrm{r} = (L'_{\sigma,\mathrm{r}} + M) \underline{I}'_\mathrm{r} +  M \underline{I}_\mathrm{s}$$
-    yields
-    \begin{equation}
-        \frac{\mathrm{j}}{\omega_\mathrm{s}}\frac{R'_\mathrm{r}}{s}\underline{I}'_\mathrm{r} = (L'_{\sigma,\mathrm{r}} + M) \underline{I}'_\mathrm{r} +  M \underline{I}_\mathrm{s} \quad \Leftrightarrow \quad \underline{I}'_\mathrm{r} = -\frac{M\left[(L'_{\sigma,\mathrm{r}} + M)(s \omega_\mathrm{s})^2  + \mathrm{j}R'_\mathrm{r}(s \omega_\mathrm{s})\right]}{(L'_{\sigma,\mathrm{r}} + M)^2(s \omega_\mathrm{s})^2 + (R'_\mathrm{r})^2}\underline{I}_\mathrm{s}
-    \end{equation}
-    Combining this with \eqref{eq:IM_model_rotor_current_steady_state} results in
-    \begin{equation}
-         -\frac{M\left[(L'_{\sigma,\mathrm{r}} + M)(s \omega_\mathrm{s})^2  + \mathrm{j}R'_\mathrm{r}(s \omega_\mathrm{s})\right]}{(L'_{\sigma,\mathrm{r}} + M)^2(s \omega_\mathrm{s})^2 + (R'_\mathrm{r})^2}\underline{I}_\mathrm{s} = \frac{1}{M}\left[\frac{U_\mathrm{s}}{\omega_\mathrm{s}}-(L_{\sigma,\mathrm{s}} +M)\underline{I}_\mathrm{s}\right]
-    \end{equation}
-    Solving for $\underline{I}_\mathrm{s}$ yields...
+    Combining \eqref{eq:IM_model_stator_flux_orientation_steady_state}, \eqref{eq:IM_model_current_flux_linkage_equations_steady_state_squirrel_cage}, and \eqref{eq:IM_model_rotor_flux_steady_state} we have a linear equation system resulting in 
+    \small
+    \begin{align}
+        I_\mathrm{s,d} &= \frac{U_\mathrm{s}}{\omega_\mathrm{s}}\frac{\sigma^2 \omega^2_\mathrm{slip} (L_{\sigma,\mathrm{s}} +M)(L'_{\sigma,\mathrm{r}} +M)^3 + (L'_{\sigma,\mathrm{r}} +M)(L_{\sigma,\mathrm{s}} +M)(R'_\mathrm{r})^2 - M^2(R'_\mathrm{r})^2}{\sigma (L_{\sigma,\mathrm{s}} +M)^2(L'_{\sigma,\mathrm{r}} +M) \omega_\mathrm{slip}(\sigma^2 \omega^2_\mathrm{slip}(L'_{\sigma,\mathrm{r}} +M)^2 + (R'_\mathrm{r})^2)},\\
+        I_\mathrm{s,q} &= \frac{U_\mathrm{s}}{\omega_\mathrm{s}} \frac{M^2 \omega_\mathrm{slip}R'_\mathrm{r}}{(L_{\sigma,\mathrm{s}} +M)^2(\sigma^2 (L'_{\sigma,\mathrm{r}} +M)^2\omega_\mathrm{slip}^2 + (R'_\mathrm{r})^2)},\\
+        I_\mathrm{r,d} &= -\frac{U_\mathrm{s}}{\omega_\mathrm{s}} \frac{\sigma M  \omega_\mathrm{slip}^2(L'_{\sigma,\mathrm{r}} +M)}{(L_{\sigma,\mathrm{s}} +M)(\sigma^2 (L'_{\sigma,\mathrm{r}} +M)^2\omega_\mathrm{slip}^2 + (R'_\mathrm{r})^2)},\\
+        I_\mathrm{r,q} &= -\frac{U_\mathrm{s}}{\omega_\mathrm{s}} \frac{M R'_\mathrm{r} \omega_\mathrm{slip}}{(L_{\sigma,\mathrm{s}} +M)(\sigma^2 (L'_{\sigma,\mathrm{r}} +M)^2\omega_\mathrm{slip}^2 + (R'_\mathrm{r})^2)},\\
+        \Psi_\mathrm{r,d} &= \frac{U_\mathrm{s}}{\omega_\mathrm{s}}\frac{M (R'_\mathrm{r})^2}{(L_{\sigma,\mathrm{s}} +M) (\sigma^2(L'_{\sigma,\mathrm{r}} +M)^2\omega_\mathrm{slip}^2 + (R'_\mathrm{r})^2)},\\
+        \Psi_\mathrm{r,q} &= -\frac{U_\mathrm{s}}{\omega_\mathrm{s}}\frac{\sigma M(L'_{\sigma,\mathrm{r}} +M)R'_\mathrm{r}\omega_\mathrm{slip}}{(L_{\sigma,\mathrm{s}} +M)((L'_{\sigma,\mathrm{r}} +M)^2\sigma^2\omega_\mathrm{slip}^2+(R'_\mathrm{r})^2)}.
+    \end{align}
+    \normalsize 
 \end{frame}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Squirrel cage IM torque-speed characteristic (cont.) %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Squirrel cage IM torque-speed characteristic (cont.)} 
+    With the definition of $\omega_\mathrm{max}=\nicefrac{R'_\mathrm{r}}{\sigma (L'_{\sigma,\mathrm{r}} +M)}$ we can rewrite and receive 
+    \small
+    \begin{align}
+        I_\mathrm{s,d} &= \frac{U_\mathrm{s}}{\omega_\mathrm{s}}\frac{\sigma^2 \omega^2_\mathrm{slip} (L_{\sigma,\mathrm{s}} +M)(L'_{\sigma,\mathrm{r}} +M)^3 + (L'_{\sigma,\mathrm{r}} +M)(L_{\sigma,\mathrm{s}} +M)(R'_\mathrm{r})^2 - M^2(R'_\mathrm{r})^2}{\sigma (L_{\sigma,\mathrm{s}} +M)^2(L'_{\sigma,\mathrm{r}} +M) \omega_\mathrm{slip}(\sigma^2 \omega^2_\mathrm{slip}(L'_{\sigma,\mathrm{r}} +M)^2 + (R'_\mathrm{r})^2)},\\
+        I_\mathrm{s,q} &= \frac{U_\mathrm{s}}{\omega_\mathrm{s}}\frac{M^2}{\sigma (L_{\sigma,\mathrm{s}} +M)^2(L'_{\sigma,\mathrm{r}} +M)}\frac{1}{\frac{\omega_\mathrm{slip}}{\omega_\mathrm{max}} + \frac{\omega_\mathrm{max}}{\omega_\mathrm{slip}}},\\
+        I_\mathrm{r,d} &= -U_\mathrm{s}\frac{M s}{(L_{\sigma,\mathrm{s}} +M)R'_\mathrm{r}}\frac{1}{\frac{\omega_\mathrm{slip}}{\omega_\mathrm{max}} + \frac{\omega_\mathrm{max}}{\omega_\mathrm{slip}}},\\
+        I_\mathrm{r,q} &= -\frac{U_\mathrm{s}}{\omega_\mathrm{s}} \frac{M}{\sigma (L_{\sigma,\mathrm{s}} +M)(L'_{\sigma,\mathrm{r}} +M)}\frac{1}{\frac{\omega_\mathrm{slip}}{\omega_\mathrm{max}} + \frac{\omega_\mathrm{max}}{\omega_\mathrm{slip}}},\\
+        \Psi_\mathrm{r,d} &= \frac{U_\mathrm{s}}{\omega_\mathrm{s}}\frac{M R'_\mathrm{r}}{\sigma (L_{\sigma,\mathrm{s}} +M) (L'_{\sigma,\mathrm{r}} +M)\omega_\mathrm{slip}}\frac{1}{\frac{\omega_\mathrm{slip}}{\omega_\mathrm{max}} + \frac{\omega_\mathrm{max}}{\omega_\mathrm{slip}}},\\
+        \Psi_\mathrm{r,q} &= -\frac{U_\mathrm{s}}{\omega_\mathrm{s}}\frac{M}{(L_{\sigma,\mathrm{s}} +M)}\frac{1}{\frac{\omega_\mathrm{slip}}{\omega_\mathrm{max}} + \frac{\omega_\mathrm{max}}{\omega_\mathrm{slip}}}.
+    \end{align}
+    \normalsize 
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Squirrel cage IM torque-speed characteristic (cont.) %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Squirrel cage IM torque-speed characteristic (cont.)} 
+    The torque expression is then
+    \begin{equation}
+            T = \frac{3}{2} p \sqrt{2}\Psi_\mathrm{s} \sqrt{2}I_\mathrm{s,q} = \frac{3}{2} p \frac{U_\mathrm{s}^2}{\omega_\mathrm{s}^2}\frac{M^2}{\sigma (L_{\sigma,\mathrm{s}} +M)^2(L'_{\sigma,\mathrm{r}} +M)}\frac{2}{\frac{\omega_\mathrm{slip}}{\omega_\mathrm{max}} + \frac{\omega_\mathrm{max}}{\omega_\mathrm{slip}}}.
+    \end{equation}
+    Hence, the maximum achievable torque for a constant stator excitation is
+    \begin{equation}
+        T_\mathrm{max} = \frac{3}{2} p \frac{U_\mathrm{s}^2}{\omega_\mathrm{s}^2}\frac{M^2}{\sigma (L_{\sigma,\mathrm{s}} +M)^2(L'_{\sigma,\mathrm{r}} +M)}
+    \end{equation}
+    since 
+    $$ \max_{\omega_{\mathrm{slip}}} \left\{\frac{2}{\frac{\omega_\mathrm{slip}}{\omega_\mathrm{max}} + \frac{\omega_\mathrm{max}}{\omega_\mathrm{slip}}}\right\} = 1, \qquad \argmax_{\omega_{\mathrm{slip}}} \left\{\frac{2}{\frac{\omega_\mathrm{slip}}{\omega_\mathrm{max}} + \frac{\omega_\mathrm{max}}{\omega_\mathrm{slip}}}\right\} = \omega_\mathrm{max}=\frac{R'_\mathrm{r}}{\sigma (L'_{\sigma,\mathrm{r}} +M)}$$ 
+    applies. Above, $\Psi_\mathrm{s}$ and $I_\mathrm{s,q}$ are RMS values according to the complex phasor definitions, which is why the factor $\sqrt{2}$ appears in the torque expression.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Squirrel cage IM torque-speed characteristic (cont.) %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Squirrel cage IM torque-speed characteristic (cont.)} 
+    The torque expression
+    \begin{equation}
+        T = T_\mathrm{max} \frac{2}{\frac{\omega_\mathrm{slip}}{\omega_\mathrm{max}} + \frac{\omega_\mathrm{max}}{\omega_\mathrm{slip}}}
+    \end{equation}
+    can be also alternatively expressed as a function of the slip ratio $s$ by utilizing
+    $$
+        \omega_\mathrm{slip} = s \omega_\mathrm{s}, \qquad s_\mathrm{max} = \frac{\omega_\mathrm{max}}{\omega_\mathrm{s}} = \frac{R'_\mathrm{r}}{\sigma (L'_{\sigma,\mathrm{r}} +M)\omega_\mathrm{s}}
+    $$
+    leading to
+    \begin{equation}
+        T = T_\mathrm{max} \frac{2}{\frac{s}{s_\mathrm{max}} + \frac{s_\mathrm{max}}{s}}.
+    \end{equation}
+    The torque-speed characteristic of a squirrel cage IM is also known as Kloss's formula. It should be noted that $\omega_\mathrm{max}$ and $s_\mathrm{max}$ are machine-dependent parameters (for a constant stator excitation), i.e., constants. Contrary, the slip ratio $s$ and slip frequency $\omega_\mathrm{slip}$ depend on the IM's shaft speed.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Kloss's formula: visual representation %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Kloss's formula: visual representation}
+	\begin{figure}
+		\centering
+		\begin{subfigure}{0.49\textwidth}
+			\centering
+			\includegraphics[height=0.65\textheight]{fig/lec06/Kloss_formula_speed.pdf}
+			\caption{Illustration based on the mechanical speed}
+		\end{subfigure}
+		\hfill
+		\begin{subfigure}{0.49\textwidth}
+			\centering
+			\includegraphics[height=0.65\textheight]{fig/lec06/Kloss_formula_slip.pdf}
+			\caption{Illustration based on the slip ratio}
+		\end{subfigure}
+        \caption{Torque-speed characteristic of a squirrel cage IM for a fixed stator excitation} 
+        \label{fig:Kloss_formula}
+	\end{figure}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Squirrel cage IM torque-speed characteristic: rotor resistance %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Squirrel cage IM torque-speed characteristic: rotor resistance} 
+    The starting torque, i.e., the torque at motor standstill ($\omega_\mathrm{r}=0$), is given by
+    \begin{equation}
+        T_0 = T_\mathrm{max}  \frac{2s_\mathrm{max}}{1+s^2_\mathrm{max}} = T_\mathrm{max}  \frac{2\omega_\mathrm{max}}{1+\omega^2_\mathrm{max}}
+    \end{equation}
+    since 
+    $$\omega_\mathrm{slip} = \omega_{\mathrm{s}} - p \omega_{\mathrm{r}} = \omega_{\mathrm{s}} - 0 = \omega_{\mathrm{s}} $$
+    holds. Depending on the machine design $T_0$ can be significantly lower than $T_\mathrm{max}$, which might be a disadvantage for certain applications. Since
+    $$\omega_\mathrm{max}=\frac{R'_\mathrm{r}}{\sigma (L'_{\sigma,\mathrm{r}} +M)}, \qquad s_\mathrm{max} = \frac{R'_\mathrm{r}}{\sigma (L'_{\sigma,\mathrm{r}} +M)\omega_\mathrm{s}} $$
+    depend on the rotor resistance $R'_\mathrm{r}$, the starting torque can be modified by changing the rotor resistance, e.g., via a dropping resistor or potentiometer (which would require a slip ring rotor).
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Squirrel cage IM torque-speed characteristic: rotor resistance %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Squirrel cage IM torque-speed characteristic: rotor resistance (cont.)} 
+    \begin{figure}
+        \centering
+        \includegraphics[height=0.65\textheight]{fig/lec06/Kloss_formula_starting_torque.pdf}
+        \caption{Torque-speed characteristic of a squirrel cage IM for a fixed stator excitation with varying rotor resistance $R'_\mathrm{r}$ -- note that the synchronous speed $\omega_\mathrm{r}=\omega_\mathrm{s}/p$ and the maximum torque $T_\mathrm{max}$ are independent of the rotor resistance variation}
+        \label{fig:Kloss_formula_starting_torque}
+    \end{figure}
+\end{frame}
