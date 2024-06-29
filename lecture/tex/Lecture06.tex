@@ -1158,7 +1158,7 @@ Considering \figref{fig:power_balance_machine} and the Clarke transf. power mapp
 			\includegraphics[height=0.65\textheight]{fig/lec06/Kloss_formula_slip.pdf}
 			\caption{Illustration based on the slip ratio}
 		\end{subfigure}
-        \caption{Torque-speed characteristic of a squirrel cage IM for a fixed stator excitation} 
+        \caption{Steady-state torque-speed characteristic of a squirrel cage IM for a fixed stator excitation} 
         \label{fig:Kloss_formula}
 	\end{figure}
 \end{frame}
@@ -1187,7 +1187,73 @@ Considering \figref{fig:power_balance_machine} and the Clarke transf. power mapp
     \begin{figure}
         \centering
         \includegraphics[height=0.65\textheight]{fig/lec06/Kloss_formula_starting_torque.pdf}
-        \caption{Torque-speed characteristic of a squirrel cage IM for a fixed stator excitation with varying rotor resistance $R'_\mathrm{r}$ -- note that the synchronous speed $\omega_\mathrm{r}=\omega_\mathrm{s}/p$ and the maximum torque $T_\mathrm{max}$ are independent of the rotor resistance variation}
+        \caption{Steady-state torque-speed characteristic of a squirrel cage IM for a fixed stator excitation with varying rotor resistance $R'_\mathrm{r}$ -- note that the synchronous speed $\omega_\mathrm{r}=\omega_\mathrm{s}/p$ and the maximum torque $T_\mathrm{max}$ are independent of the rotor resistance variation}
         \label{fig:Kloss_formula_starting_torque}
     \end{figure}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Slip frequency-dependent rotor skin effect%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Slip frequency-dependent rotor skin effect}
+    \begin{columns}
+		\begin{column}{0.55\textwidth}
+	      \begin{itemize}
+            \item If $\omega_\mathrm{slip} \neq 0$, the rotor bars are exposed to a time-varying magnetic field.
+            \item This induces eddy currents leading to an uneven current distribution within the bars.
+            \item As a result, the effective rotor resistance increases with the slip frequency: \begin{equation}
+                \frac{R_\mathrm{r}(\omega_\mathrm{slip})}{R_\mathrm{r,DC}} =  \delta \frac{\sinh(2 \delta) + \sin(2 \delta)}{\cosh(2\delta)-\cos(2 \delta)}
+              \end{equation}
+              with $$\delta = h_\mathrm{bar}\sqrt{\omega_\mathrm{slip} \frac{\mu_0 \kappa}{2}\frac{w_\mathrm{bar}}{w_\mathrm{slot}}}$$ being the skin depth. Here, $\mu_0$ is the vacuum permeability and $\kappa$ is the bar's conductivity.
+          \end{itemize}
+        \end{column}
+        \begin{column}{0.45\textwidth}
+            \begin{figure}
+                \centering
+                \includegraphics[width=0.85\textwidth]{fig/lec06/Eddy_currents_rotor_bar.pdf}
+                \caption{Rotor bar with eddy currents induced by the rotating magnetic field (inspired from A. Binder, \textit{Elektrische Maschinen und Antriebe}, Vol. 2, Springer, 2017)}
+                \label{fig:Eddy_currents_rotor_bar}
+            \end{figure}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Slip frequency-dependent rotor skin effect (cont.)%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Slip frequency-dependent rotor skin effect (cont.)}
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.75\textwidth]{fig/lec06/AC_rotor_resistance.pdf}
+        \caption{Rotor resistance of a squirrel cage IM as a function of the slip frequency (example based on the following values: $\kappa = \SI{3.7e7}{\siemens\per\metre}$, $h_\mathrm{bar} = \SI{50}{\milli\metre}$, $w_\mathrm{bar} = \SI{10}{\milli\metre}$, $w_\mathrm{slot} = \SI{15}{\milli\metre}$)}
+        \label{fig:AC_rotor_resistance}
+    \end{figure}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Squirrel cage IM torque-speed characteristic: varying stator frequency %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Squirrel cage IM torque-speed characteristic: varying stator frequency}
+    \begin{columns}
+		\begin{column}{0.5\textwidth}
+	      \begin{itemize}
+            \item Adaption of rotor resistance might be technically tricky. 
+            \item Alternative: vary stator frequency $\omega_\mathrm{s}$.
+            \item Shift of the torque-speed characteristic along the speed axis, i.e., the synchronous speed $\omega_\mathrm{r}=\omega_\mathrm{s}/p$.
+            \item Allows utilizing $T_\mathrm{max}$ at different speeds (including initial starting torque).
+            \item Requires a variable frequency source, e.g., a power electronic converter.
+          \end{itemize}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \begin{figure}
+                \centering
+                \includegraphics[width=0.95\textwidth]{fig/lec06/Kloss_formula_different_excitation_frequencies.pdf}
+                \caption{Steady-state torque-speed characteristic of a squirrel cage IM with varying $\omega_\mathrm{s}$ while keeping $U_\mathrm{s}/\omega_\mathrm{s}=\mathrm{const.}$}
+                \label{fig:Kloss_formula_different_excitation_frequencies}
+            \end{figure}
+        \end{column}
+    \end{columns}
 \end{frame}
