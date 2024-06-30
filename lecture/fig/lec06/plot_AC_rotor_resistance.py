@@ -36,6 +36,6 @@ plt.tight_layout(pad=0)
 
 # Save the figure as a PDF in the same folder as the script
 current_directory = os.path.dirname(os.path.abspath(__file__))
-save_path = os.path.join(current_directory, 'AC_rotor_resistance.pdf.pdf')
+save_path = os.path.join(current_directory, 'AC_rotor_resistance.pdf')
 plt.savefig(save_path, format='pdf')
 plt.show()

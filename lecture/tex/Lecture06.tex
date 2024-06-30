@@ -1257,3 +1257,27 @@ Considering \figref{fig:power_balance_machine} and the Clarke transf. power mapp
         \end{column}
     \end{columns}
 \end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Squirrel cage IM torque-speed characteristic: flux weakening %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Squirrel cage IM torque-speed characteristic: flux weakening}
+    \begin{columns}
+		\begin{column}{0.5\textwidth}
+	      \begin{itemize}
+            \item The previous consideration from \figref{fig:Kloss_formula_different_excitation_frequencies} assumed that $U_\mathrm{s}/\omega_\mathrm{s}=\mathrm{const.}$ applies, that is, the stator voltage amplitude is adjusted according to the frequency.
+            \item Obviously, this is only possible to a certain extent due to the voltage source limitations.
+            \item Hence, at some point, the torque-speed characteristic is limited by the available voltage leading to a flux weakening operation mode (cf. right figure).
+          \end{itemize}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \begin{figure}
+                \centering
+                \includegraphics[width=0.95\textwidth]{fig/lec06/Kloss_formula_different_excitation_frequencies_field_weakening.pdf}
+                \caption{Steady-state torque-speed characteristic of a squirrel cage IM with varying $\omega_\mathrm{s}$ while keeping $U_\mathrm{s}=\mathrm{const.}$, i.e., field weakening operation ($\Psi_\mathrm{s}\sim 1/\omega_\mathrm{s}$)} 
+                \label{fig:Kloss_formula_different_excitation_frequencies_field_weakening}
+            \end{figure}
+        \end{column}
+    \end{columns}
+\end{frame}
