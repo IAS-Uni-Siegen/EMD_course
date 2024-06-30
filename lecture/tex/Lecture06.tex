@@ -1281,3 +1281,32 @@ Considering \figref{fig:power_balance_machine} and the Clarke transf. power mapp
         \end{column}
     \end{columns}
 \end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Squirrel cage IM torque-speed characteristic: flux weakening %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Squirrel cage IM torque-speed characteristic: air gap harmonics}
+    \begin{columns}
+		\begin{column}{0.45\textwidth}
+	      \begin{itemize}
+            \item The rotating field analysis \eqref{eq:B_three_phase_stator_coil_fourier_series_resulting_field} revealed that the air gap magnetic field contains harmonics:
+          \end{itemize}
+          $$
+          B = \frac{6}{\pi p} \hat{B} \sum_{k}^{\infty} \frac{1}{k} \sin\left(\frac{k \pi}{2}\right) \cos(\omega t - k \vartheta_\mathrm{el}) 
+          $$
+          \begin{itemize}
+            \item This induces rotor currents with the harmonic slip frequency $\omega^{(k)}_\mathrm{slip}$.
+            \item Likewise the IM fundamental torque, these air gap field and rotor current harmonics lead to constant, i.e., non-harmonic, torque contributions distorting the torque-speed characteristic.
+          \end{itemize}
+        \end{column}
+        \begin{column}{0.555\textwidth}
+            \begin{figure}
+                \centering
+                \includegraphics[width=0.95\textwidth]{fig/lec06/Kloss_formula_harmonics.pdf}
+                \caption{Steady-state torque-speed characteristic of a squirrel cage IM considering torque harmonics due to stator magnetic field harmonics of order $k=1,-5,7,-11$} 
+                \label{fig:Kloss_formula_different_excitation_frequencies_field_weakening}
+            \end{figure}
+        \end{column}
+    \end{columns}
+\end{frame}

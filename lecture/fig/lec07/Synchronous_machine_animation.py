@@ -387,15 +387,7 @@ def update_plot(i):
 
 
 
-
-
-
-
-
-
-
-
-#update_plot(0)
+#update_plot(30)
 #plt.show()
 
 current_directory = os.path.dirname(os.path.abspath(__file__))
