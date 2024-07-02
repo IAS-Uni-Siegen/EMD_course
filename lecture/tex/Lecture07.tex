@@ -101,3 +101,202 @@
         \label{fig:SM_load_angle_0_animation}
     \end{figure}
 \end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Dynamical IM model %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Dynamical SM model}
+    Based on Faraday's and Ohm's laws, we can write the following equations for the stator 
+    \begin{equation}
+            \bm{u}^\mathrm{s}_\mathrm{s,abc}(t) = R_\mathrm{s}\bm{i}^\mathrm{s}_\mathrm{s,abc}(t)+\frac{\mathrm{d}}{\mathrm{d}t}\bm{\psi}^\mathrm{s}_\mathrm{s,abc}(t) \hspace{0.2cm} \Leftrightarrow \hspace{0.2cm} \begin{bmatrix}
+                u_{\mathrm{s,a}}^\mathrm{s}(t)\\
+                u_{\mathrm{s,b}}^\mathrm{s}(t)\\
+                u_{\mathrm{s,c}}(t)\\
+            \end{bmatrix} = R_\mathrm{s} \begin{bmatrix}
+                i_{\mathrm{s,a}}^\mathrm{s}(t)\\
+                i_{\mathrm{s,b}}^\mathrm{s}(t)\\
+                i_{\mathrm{s,c}}^\mathrm{s}(t)\\
+            \end{bmatrix} + \frac{\mathrm{d}}{\mathrm{d}t} \begin{bmatrix}
+                \psi_{\mathrm{s,a}}^\mathrm{s}(t)\\
+                \psi_{\mathrm{s,b}}^\mathrm{s}(t)\\
+                \psi_{\mathrm{s,c}}^\mathrm{s}(t)\\
+            \end{bmatrix}
+            \label{eq:SM_stator_three_phase_voltage_equation}
+    \end{equation}
+    \pause
+    and rotor field windinding
+    \begin{equation}
+            u^\mathrm{r}_\mathrm{f}(t) = R_\mathrm{f}i^\mathrm{r}_\mathrm{f}(t)+\frac{\mathrm{d}}{\mathrm{d}t}\psi^\mathrm{r}_\mathrm{f}(t) 
+            \label{eq:SM_rotor_voltage_equation}
+    \end{equation}
+which are generally applicable as only identical resistances per phase on the stator are assumed. \pause In contrast to the induction motor, only a single rotor field winding is present.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Flux linakge model %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Flux linkage model}
+    \onslide<2->
+    \begin{columns}
+		\begin{column}{0.55\textwidth}
+			The SM flux linkage model is similar to the IM model:
+	       \begin{itemize}
+            \item<2-> Assuming a cylindrical rotor, the self-induced stator flux remains identical to the IM model (derived from rotating field theory chapter).
+            \item<3-> In contrast to the IM model \figref{fig:Inductive_coupling_stator_rotor_IM}, the SM's rotor field coil is a represented by a single winding. 
+            \item<4-> The coupling of the stator and rotor remains rotor position-dependent (not explicitly shown on the right due to space limitations). 
+           \end{itemize}
+        \end{column}
+        \begin{column}{0.45\textwidth}
+            \onslide<1->
+                \begin{figure}
+                    \centering
+                    \includegraphics[width=0.75\textwidth]{fig/lec07/Inductive_coupling_stator_rotor.pdf}
+                    \caption{Simplified representation of the inductive coupling between the stator/rotor phases of the cylindrical rotor SM}
+                    \label{fig:Inductive_coupling_stator_rotor_SM}
+                \end{figure}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Flux linakge model %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Flux linkages of the three-phase model}
+    \onslide<1->
+    Based on the previous considerations, the flux linkages of the cylindrical SM are given by
+    \begin{equation}
+        \renewcommand*{\arraystretch}{1.15}
+        \begin{split}
+            \uncover<+->{
+            \bm{\psi}^\mathrm{s}_\mathrm{s,abc}(t) &=\begin{bmatrix}
+                L_\mathrm{s} & -\frac{M_\mathrm{s}}{2} & -\frac{M_\mathrm{s}}{2}\\
+                -\frac{M_\mathrm{s}}{2} & L_\mathrm{s} & -\frac{M_\mathrm{s}}{2}\\
+                -\frac{M_\mathrm{s}}{2} & -\frac{M_\mathrm{s}}{2} & L_\mathrm{s}
+            \end{bmatrix} \bm{i}^\mathrm{s}_\mathrm{s,abc}(t)}\uncover<+->{ +  M_{\mathrm{r}}\frac{N_\mathrm{s}}{N_\mathrm{r}} \begin{bmatrix}
+				\cos(\varepsilon_\mathrm{r,el}(t))\\
+				 \cos(\varepsilon_\mathrm{r,el}(t) - \frac{2\pi}{3})\\
+				 \cos(\varepsilon_\mathrm{r,el}(t) + \frac{2\pi}{3}) 
+			 \end{bmatrix}i^\mathrm{r}_\mathrm{f}(t),}\\
+            \uncover<+->{
+            \psi^\mathrm{r}_\mathrm{f}(t) &= L_\mathrm{f} i^\mathrm{r}_\mathrm{f}(t)\\ &+  M_{\mathrm{s}}\frac{N_\mathrm{r}}{N_\mathrm{s}} \begin{bmatrix}
+				\cos(\varepsilon_\mathrm{r,el}(t))  & \cos(\varepsilon_\mathrm{r,el}(t) - \frac{2\pi}{3}) & \cos(\varepsilon_\mathrm{r,el}(t) + \frac{2\pi}{3}) 
+			 \end{bmatrix}\bm{i}^\mathrm{s}_\mathrm{s,abc}(t)}
+        \end{split}
+        \label{eq:Flux_linkage_model_SM_abc}
+    \end{equation}
+    \onslide<+->
+    with $\varepsilon_\mathrm{r,el}(t)=p\varepsilon_\mathrm{r}(t)$. Consequently, \eqref{eq:Flux_linkage_model_SM_abc} is a reduced representation of the IM's flux linkage model \eqref{eq:Flux_linkage_model_IM_abc}.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Cylindrical SM model in alpha-beta coordinates: voltage equations %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Cylindrical SM model in alpha-beta coordinates: voltage equations}
+    \begin{columns}
+		\begin{column}{0.55\textwidth}
+	       Similar to the IM, we can represent the SM model is orthogonal $\alpha\beta$-coordinates. For the SM this only applies to the three-phase stator, as the rotor has only a single phase winding. The $\alpha\beta$-coordinates voltage equation is given by (compare to \eqref{eq:IM_stator_alpha_beta_voltage_equation})
+		   \begin{equation}
+			\bm{u}^\mathrm{s}_\mathrm{s,\alpha\beta}(t) = R_\mathrm{s} \bm{i}^\mathrm{s}_\mathrm{s,\alpha\beta}(t)+ \frac{\mathrm{d}}{\mathrm{d}t}\bm{\psi}^\mathrm{s}_\mathrm{s,\alpha\beta}(t)
+		   \end{equation}
+		   while the rotor field winding voltage equation remains identical to \eqref{eq:SM_rotor_voltage_equation}:
+		   $$
+			u^\mathrm{r}_\mathrm{f}(t) = R_\mathrm{f}i^\mathrm{r}_\mathrm{f}(t)+\frac{\mathrm{d}}{\mathrm{d}t}\psi^\mathrm{r}_\mathrm{f}(t).
+			$$
+        \end{column}
+        \begin{column}{0.45\textwidth}
+            \onslide<2->
+            \begin{figure}
+                \centering
+                \includegraphics[width=0.85\textwidth]{fig/lec07/SM_cylindrical_rotor_alpha_beta.pdf}
+                \caption{Conceptual cylindrical SM representation within the orthogonal $\alpha\beta$ coordinates ($p=1$ pole pair)}
+                \label{fig:SM_alpha_beta}
+            \end{figure}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Cylindrical SM model in alpha-beta coordinates: flux linkage %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Cylindrical SM model in alpha-beta coordinates: flux linkage}
+	For the flux linkage model in $\alpha\beta$-coordinates, we multiply the stator flux equations from \eqref{eq:Flux_linkage_model_SM_abc} with $\bm{T}_{23}$ from the right
+	\begin{equation}
+		\begin{split}
+			\bm{\psi}^\mathrm{s}_\mathrm{s,\alpha\beta}(t)  &= \bm{T}_{23} \bm{\psi}^\mathrm{s}_\mathrm{s,abc}(t) = \overbrace{\bm{T}_{23} \bm{L}_{\mathrm{s,abc}}\bm{T}_{32}}^{\bm{L}_{\mathrm{s},\alpha\beta}} \bm{i}^\mathrm{s}_{\mathrm{s},\alpha\beta}(t) +  M_{\mathrm{r}}\frac{N_\mathrm{s}}{N_\mathrm{r}} \bm{T}_{23}\begin{bmatrix}
+				\cos(\varepsilon_\mathrm{r,el}(t))\\
+				 \cos(\varepsilon_\mathrm{r,el}(t) - \frac{2\pi}{3})\\
+				 \cos(\varepsilon_\mathrm{r,el}(t) + \frac{2\pi}{3}) 
+			 \end{bmatrix} i^\mathrm{r}_{\mathrm{f}}(t)\\
+			 & = (L_\mathrm{s} +\nicefrac{M_\mathrm{s}}{2}) \bm{i}^\mathrm{s}_{\mathrm{s},\alpha\beta}(t) + M_\mathrm{r}\frac{N_\mathrm{s}}{N_\mathrm{r}} \begin{bmatrix}\cos(\varepsilon_\mathrm{r,el}(t))\\ \sin(\varepsilon_\mathrm{r,el}(t))\end{bmatrix} i^\mathrm{r}_{\mathrm{f}}(t)
+			\end{split}
+	\end{equation}
+	and utilize $\bm{i}^\mathrm{s}_\mathrm{s,abc}(t)=\bm{T}_{32} \bm{i}^\mathrm{s}_\mathrm{s,\alpha\beta}(t)$ to modify the rotor flux linkage equation accordingly:
+	\begin{equation}
+		\begin{split}
+			\psi^\mathrm{r}_\mathrm{f}(t) &= L_\mathrm{f} i^\mathrm{r}_\mathrm{f}(t) + M_{\mathrm{s}}\frac{N_\mathrm{r}}{N_\mathrm{s}} \begin{bmatrix}
+				\cos(\varepsilon_\mathrm{r,el}(t))  & \sin(\varepsilon_\mathrm{r,el}(t))
+			 \end{bmatrix}\bm{i}^\mathrm{s}_\mathrm{s,\alpha\beta}(t).
+		\end{split}
+	\end{equation} 
+	In contrast to the IM $\alpha\beta$-coordinates flux linkage model, the SM flux-to-current coupling is rotor position-dependent.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Cylindrical SM model in alpha-beta coordinates: torque %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Cylindrical SM model in alpha-beta coordinates: torque}
+	Inserting the flux linkages into the voltage equations delivers and dropping the time dependency for brevity yields:
+	\begin{equation*}
+		\begin{split}
+			\bm{u}^\mathrm{s}_\mathrm{s,\alpha\beta} &= R_\mathrm{s} \bm{i}^\mathrm{s}_\mathrm{s,\alpha\beta}+ \frac{\mathrm{d}}{\mathrm{d}t}\bm{\psi}^\mathrm{s}_\mathrm{s,\alpha\beta}\\
+			&= R_\mathrm{s} \bm{i}^\mathrm{s}_\mathrm{s,\alpha\beta}+ \frac{\mathrm{d}}{\mathrm{d}t}\left((L_\mathrm{s} +\nicefrac{M_\mathrm{s}}{2}) \bm{i}^\mathrm{s}_{\mathrm{s},\alpha\beta}(t) + M_\mathrm{r}\frac{N_\mathrm{s}}{N_\mathrm{r}} \begin{bmatrix}\cos(\varepsilon_\mathrm{r,el})\\ \sin(\varepsilon_\mathrm{r,el}(t))\end{bmatrix} i^\mathrm{r}_{\mathrm{f}}\right)\\
+			&= R_\mathrm{s} \bm{i}^\mathrm{s}_\mathrm{s,\alpha\beta}+ (L_\mathrm{s} +\nicefrac{M_\mathrm{s}}{2}) \frac{\mathrm{d}}{\mathrm{d}t}\bm{i}^\mathrm{s}_{\mathrm{s},\alpha\beta} + M_\mathrm{r}\frac{N_\mathrm{s}}{N_\mathrm{r}} \left(\omega_\mathrm{r,el}\begin{bmatrix}-\sin(\varepsilon_\mathrm{r,el})\\ \cos(\varepsilon_\mathrm{r,el})\end{bmatrix}i^\mathrm{r}_{\mathrm{f}}  + \begin{bmatrix}\cos(\varepsilon_\mathrm{r,el})\\ \sin(\varepsilon_\mathrm{r,el})\end{bmatrix} \frac{\mathrm{d}}{\mathrm{d}t}i^\mathrm{r}_{\mathrm{f}}\right),\\
+			u^\mathrm{r}_\mathrm{f} &= R_\mathrm{f} i^\mathrm{r}_\mathrm{f} + \frac{\mathrm{d}}{\mathrm{d}t}\psi^\mathrm{r}_\mathrm{f}\\
+			&= R_\mathrm{f} i^\mathrm{r}_\mathrm{f} + \frac{\mathrm{d}}{\mathrm{d}t}\left(L_\mathrm{f} i^\mathrm{r}_\mathrm{f} + M_{\mathrm{s}}\frac{N_\mathrm{r}}{N_\mathrm{s}} \begin{bmatrix}\cos(\varepsilon_\mathrm{r,el})  & \sin(\varepsilon_\mathrm{r,el})\end{bmatrix}\bm{i}^\mathrm{s}_\mathrm{s,\alpha\beta}\right)\\
+			&= R_\mathrm{f} i^\mathrm{r}_\mathrm{f} + L_\mathrm{f} \frac{\mathrm{d}}{\mathrm{d}t}i^\mathrm{r}_\mathrm{f} + M_{\mathrm{s}}\frac{N_\mathrm{r}}{N_\mathrm{s}} \left(\omega_\mathrm{r,el}\begin{bmatrix}-\sin(\varepsilon_\mathrm{r,el})\\ \cos(\varepsilon_\mathrm{r,el})\end{bmatrix}\T \bm{i}^\mathrm{s}_\mathrm{s,\alpha\beta}  + \begin{bmatrix}\cos(\varepsilon_\mathrm{r,el})\\ \sin(\varepsilon_\mathrm{r,el})\end{bmatrix}\T \frac{\mathrm{d}}{\mathrm{d}t}\bm{i}^\mathrm{s}_\mathrm{s,\alpha\beta}\right).
+		\end{split}
+	\end{equation*}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Cylindrical SM model in alpha-beta coordinates: torque (cont.) %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Cylindrical SM model in alpha-beta coordinates: torque}
+	Multiplying the voltage equations with the currents 
+	\begin{equation*}
+		\begin{split}
+			(\bm{i}^\mathrm{s}_\mathrm{s,\alpha\beta})\T\bm{u}^\mathrm{s}_\mathrm{s,\alpha\beta} &= R_\mathrm{s} (\bm{i}^\mathrm{s}_\mathrm{s,\alpha\beta})\T\bm{i}^\mathrm{s}_\mathrm{s,\alpha\beta}+ (L_\mathrm{s} +\nicefrac{M_\mathrm{s}}{2}) (\bm{i}^\mathrm{s}_\mathrm{s,\alpha\beta})\T\frac{\mathrm{d}}{\mathrm{d}t}\bm{i}^\mathrm{s}_\mathrm{s,\alpha\beta} \\&+ M_\mathrm{r}\frac{N_\mathrm{s}}{N_\mathrm{r}} \left(\omega_\mathrm{r,el}(\bm{i}^\mathrm{s}_\mathrm{s,\alpha\beta})\T\begin{bmatrix}-\sin(\varepsilon_\mathrm{r,el})\\ \cos(\varepsilon_\mathrm{r,el})\end{bmatrix}i^\mathrm{r}_{\mathrm{f}}  + (\bm{i}^\mathrm{s}_\mathrm{s,\alpha\beta})\T\begin{bmatrix}\cos(\varepsilon_\mathrm{r,el})\\ \sin(\varepsilon_\mathrm{r,el})\end{bmatrix} \frac{\mathrm{d}}{\mathrm{d}t}i^\mathrm{r}_{\mathrm{f}}\right),\\
+			i^\mathrm{r}_\mathrm{f}u^\mathrm{r}_\mathrm{f} &= R_\mathrm{f} (i^\mathrm{r}_\mathrm{f})^2 + L_\mathrm{f} i^\mathrm{r}_\mathrm{f} \frac{\mathrm{d}}{\mathrm{d}t}i^\mathrm{r}_\mathrm{f} \\&+ M_{\mathrm{s}}\frac{N_\mathrm{r}}{N_\mathrm{s}} \left(\omega_\mathrm{r,el}i^\mathrm{r}_\mathrm{f} \begin{bmatrix}-\sin(\varepsilon_\mathrm{r,el})\\ \cos(\varepsilon_\mathrm{r,el})\end{bmatrix}\T \bm{i}^\mathrm{s}_\mathrm{s,\alpha\beta} + i^\mathrm{r}_\mathrm{f}\begin{bmatrix}\cos(\varepsilon_\mathrm{r,el})\\ \sin(\varepsilon_\mathrm{r,el})\end{bmatrix}\T \frac{\mathrm{d}}{\mathrm{d}t} \bm{i}^\mathrm{s}_\mathrm{s,\alpha\beta}\right)
+		\end{split}
+	\end{equation*}
+	allows us to perform a power balance analysis. The input power to the stator and rotor is:
+	\begin{equation*}
+			\frac{3}{2}P_\mathrm{el} = (\bm{i}^\mathrm{s}_\mathrm{s,\alpha\beta})\T\bm{u}^\mathrm{s}_\mathrm{s,\alpha\beta} + i^\mathrm{r}_\mathrm{f}u^\mathrm{r}_\mathrm{f} .
+	\end{equation*}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Cylindrical SM model in alpha-beta coordinates: torque (cont.) %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Cylindrical SM model in alpha-beta coordinates: torque}
+	The power losses are
+	\begin{equation*}
+			\frac{3}{2}P_\mathrm{l} = R_\mathrm{s} (\bm{i}^\mathrm{s}_\mathrm{s,\alpha\beta})\T\bm{i}^\mathrm{s}_\mathrm{s,\alpha\beta} + R_\mathrm{f} (i^\mathrm{r}_\mathrm{f})^2.
+	\end{equation*}
+	The change of stored energy in the magnetic field is
+	\begin{align*}
+		\frac{3}{2}\frac{\mathrm{d}}{\mathrm{d}t}E_\mathrm{i} &=  (L_\mathrm{s} +\nicefrac{M_\mathrm{s}}{2}) (\bm{i}^\mathrm{s}_\mathrm{s,\alpha\beta})\T\frac{\mathrm{d}}{\mathrm{d}t}\bm{i}^\mathrm{s}_\mathrm{s,\alpha\beta} +  L_\mathrm{f} i^\mathrm{r}_\mathrm{f} \frac{\mathrm{d}}{\mathrm{d}t}i^\mathrm{r}_\mathrm{f} \\ &+ M_\mathrm{r}\frac{N_\mathrm{s}}{N_\mathrm{r}} \left((\bm{i}^\mathrm{s}_\mathrm{s,\alpha\beta})\T\begin{bmatrix}\cos(\varepsilon_\mathrm{r,el})\\ \sin(\varepsilon_\mathrm{r,el})\end{bmatrix} \frac{\mathrm{d}}{\mathrm{d}t}i^\mathrm{r}_{\mathrm{f}}\right) + M_{\mathrm{s}}\frac{N_\mathrm{r}}{N_\mathrm{s}} \left(i^\mathrm{r}_\mathrm{f}\begin{bmatrix}\cos(\varepsilon_\mathrm{r,el})\\ \sin(\varepsilon_\mathrm{r,el})\end{bmatrix}\T \frac{\mathrm{d}}{\mathrm{d}t} \bm{i}^\mathrm{s}_\mathrm{s,\alpha\beta}\right).
+	\end{align*}
+	And finally the mechanical power is
+	\begin{equation*}
+		\frac{3}{2}P_\mathrm{mech} = \omega_\mathrm{r,el}M_\mathrm{r}\frac{N_\mathrm{s}}{N_\mathrm{r}} \left((\bm{i}^\mathrm{s}_\mathrm{s,\alpha\beta})\T\begin{bmatrix}-\sin(\varepsilon_\mathrm{r,el})\\ \cos(\varepsilon_\mathrm{r,el})\end{bmatrix}i^\mathrm{r}_{\mathrm{f}}\right) + \omega_\mathrm{r,el}M_{\mathrm{s}}\frac{N_\mathrm{r}}{N_\mathrm{s}} \left(i^\mathrm{r}_\mathrm{f} \begin{bmatrix}-\sin(\varepsilon_\mathrm{r,el})\\ \cos(\varepsilon_\mathrm{r,el})\end{bmatrix}\T \bm{i}^\mathrm{s}_\mathrm{s,\alpha\beta}\right).
+	\end{equation*}
+\end{frame}

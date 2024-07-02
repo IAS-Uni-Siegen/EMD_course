@@ -12,7 +12,7 @@ plt.rcParams.update({'font.size': 13})
 # Frequency parameters (assuming synchronous machine with a single pole pair)
 omega_me = 50 * 2* np.pi # mechanical rotor speed
 omega_s = omega_me  # electrical frequency of the stator currents
-phi = np.pi / 2 # load angle
+phi = 0 * np.pi / 2 # load angle
 
 # Plotting parameters
 radius_coil = 0.1
@@ -166,7 +166,7 @@ def update_plot(i):
     ax['ir'].plot(t_vec, np.ones_like(t_vec), color='black')
 
     # add y-axis labels ir/irmax LaTeX labels to rotor current subplots
-    ax['ir'].set_ylabel(r'$i_{\mathrm{r}}(t)/i_{\mathrm{r,max}}$')
+    ax['ir'].set_ylabel(r'$i_{\mathrm{f}}(t)/i_{\mathrm{f,max}}$')
 
      # add vertical lines and markers to indicate the current time step for rotor currents
     ax['ir'].axvline(t, color='black', linestyle='--')
@@ -391,7 +391,7 @@ def update_plot(i):
 #plt.show()
 
 current_directory = os.path.dirname(os.path.abspath(__file__))
-save_path = os.path.join(current_directory, 'SM_load_angle_90_animation.gif')
+save_path = os.path.join(current_directory, 'SM_load_angle_0_animation.gif')
 ani = animation.FuncAnimation(fig, update_plot, frames=n_frames, repeat=True)
 ani.save(save_path, writer='imagemagick', fps=25)
 plt.show()
