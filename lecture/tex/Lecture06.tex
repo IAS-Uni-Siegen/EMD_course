@@ -597,7 +597,7 @@ Considering \figref{fig:power_balance_machine} and the Clarke transf. power mapp
     \pause
     If one would transform the model \eqref{eq:IM_model_alpha_beta_voltage_equations_stator_oriented} into the rotor-oriented $\alpha\beta$ coordinates and redo the torque derivation, one would find the alternative torque expression
     \begin{equation}
-        T = \frac{3}{2} p (\bm{i}_\mathrm{s,\alpha\beta})\T\bm{J}\bm{\psi}_\mathrm{s,\alpha\beta} = \frac{3}{2} p \left(\psi_{\mathrm{s},\beta} i_{\mathrm{s},\alpha} - \psi_{\mathrm{s},\alpha}i_{\mathrm{s},\beta}\right).
+        T = \frac{3}{2} p (\bm{i}_\mathrm{s,\alpha\beta})\T\bm{J}\bm{\psi}_\mathrm{s,\alpha\beta} = \frac{3}{2} p \left(\psi_{\mathrm{s},\alpha}i_{\mathrm{s},\beta} - \psi_{\mathrm{s},\beta} i_{\mathrm{s},\alpha} \right).
     \end{equation}
 \end{frame}
 
@@ -626,12 +626,13 @@ Considering \figref{fig:power_balance_machine} and the Clarke transf. power mapp
 \begin{frame}
 	\frametitle{Transformation of the rotor quantities based on the turn ratio}
     \begin{itemize}
-        \item The previous model depends on the physical parameters of the rotor:  $R_\mathrm{r}$, $L_\mathrm{r}$, and $M_\mathrm{r}$.
-        \item Those parameters might not be accessible or known in practice (in particular when direct rotor measurements are not possible).
-        \item Remedy: Transform the rotor quantities into the stator side based on the turn ratio $\nicefrac{N_\mathrm{s}}{N_\mathrm{r}}$.
-        \item Identical procedure to the transformer approach as from \figref{fig:Transformer_T_ECD_turn_transf}. 
-        \item Hence, stator-based measurements can be used to infer the rotor quantities (compare open-circuit test \figref{fig:Transformer_open_circuit_test} and short-circuit test \figref{fig:Transformer_short_circuit_test}).
+        \item<1-> The previous model depends on the physical parameters of the rotor:  $R_\mathrm{r}$, $L_\mathrm{r}$, and $M_\mathrm{r}$.
+        \item<2-> Those parameters might not be accessible or known in practice (in particular when direct rotor measurements are not possible). \pause
+        \item<3-> Remedy: Transform the rotor quantities into the stator side based on the turn ratio $\nicefrac{N_\mathrm{s}}{N_\mathrm{r}}$.
+        \item<3-> Identical procedure to the transformer approach as from \figref{fig:Transformer_T_ECD_turn_transf}. 
+        \item<4-> Hence, stator-based measurements can be used to infer the rotor quantities (compare open-circuit test \figref{fig:Transformer_open_circuit_test} and short-circuit test \figref{fig:Transformer_short_circuit_test}).
     \end{itemize}
+    \onslide<3->
     \begin{figure}
         \centering
         \includegraphics[width=0.7\textwidth]{fig/lec04/Transformer_T_ECD_turn_transf.pdf}
@@ -643,6 +644,7 @@ Considering \figref{fig:power_balance_machine} and the Clarke transf. power mapp
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
 	\frametitle{Transformation of the rotor quantities based on the turn ratio (cont.)}
+    \onslide<+->
     Applying \eqref{eq:secondary_voltage_equation_transformed} with $\alpha=\nicefrac{N_\mathrm{s}}{N_\mathrm{r}}$ to the IM model  interpreting the rotor as the secondary side results in
     \begin{equation}
         \begin{gathered}
@@ -650,8 +652,10 @@ Considering \figref{fig:power_balance_machine} and the Clarke transf. power mapp
         R'_\mathrm{r} =  \frac{N_\mathrm{s}^2}{N_\mathrm{r}^2} R_\mathrm{r}, \quad L'_\mathrm{r} =  \frac{N_\mathrm{s}^2}{N_\mathrm{r}^2} L_\mathrm{r}, \quad M'_\mathrm{r} =  \frac{N_\mathrm{s}}{N_\mathrm{r}} M_\mathrm{r}.
     \end{gathered}
     \end{equation}
+    \onslide<+->
     Above, the indices representing the coordinate system are omitted as the transformation is independent of the chosen coordinate system. 
     \\[0.5em]
+    \onslide<+->
     Utilizing also $L_\mathrm{s} = L_{\sigma,\mathrm{s}} + M_\mathrm{s}$ and $L_\mathrm{r} = L_{\sigma,\mathrm{r}} + M_\mathrm{r}$, the flux linkage equations in the stator-oriented $\alpha\beta$ coordinates are then
     \begin{align*}
         \bm{\psi}^\mathrm{s}_\mathrm{s,\alpha\beta}(t) &= (L_{\sigma,\mathrm{s}} +\frac{3}{2}M_\mathrm{s}) \bm{i}^\mathrm{s}_{\mathrm{s},\alpha\beta}(t) +  M'_{\mathrm{r}}\frac{3}{2} \bm{i}^{\mathrm{s}'}_{\mathrm{r},\alpha\beta}(t),\\
@@ -664,15 +668,17 @@ Considering \figref{fig:power_balance_machine} and the Clarke transf. power mapp
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
 	\frametitle{Transformation of the rotor quantities based on the turn ratio (cont.)}
+    \onslide<+->
     Analyzing the (magnetic) power balance reveals
     \begin{equation}
         \frac{3}{2}M_\mathrm{s} = \frac{3}{2}M'_\mathrm{r} = M, 
     \end{equation}
-    that is, the mutual inductance is identical for both the stator and (transformed) rotor side. Hence, we can rewrite the flux linkage equations as
+    that is, the mutual inductance is identical for both the stator and (transformed) rotor side. \onslide<+->Hence, we can rewrite the flux linkage equations as
     \begin{align}
         \bm{\psi}^\mathrm{s}_\mathrm{s,\alpha\beta}(t) &= (L_{\sigma,\mathrm{s}} +M) \bm{i}^\mathrm{s}_{\mathrm{s},\alpha\beta}(t) +  M\bm{i}^{\mathrm{s}'}_{\mathrm{r},\alpha\beta}(t),\\
         \bm{\psi}^{\mathrm{s}'}_\mathrm{r,\alpha\beta}(t) &= (L'_{\sigma,\mathrm{r}} + M) \bm{i}^{\mathrm{s}'}_{\mathrm{r},\alpha\beta}(t) +  M \bm{i}^\mathrm{s}_{\mathrm{s},\alpha\beta}(t).
     \end{align}
+    \onslide<+->
     Alternatively, we can express the currents as a function of the flux linkages:
     \begin{align}
         \bm{i}^\mathrm{s}_{\mathrm{s},\alpha\beta}(t) &= \frac{(L_{\sigma,s}+M)\bm{\psi}^\mathrm{s}_\mathrm{s,\alpha\beta}(t)- M \bm{\psi}^\mathrm{s'}_\mathrm{r,\alpha\beta}(t)}{M(L_{\sigma,s}+L'_{\sigma,r}) + L_{\sigma,s}L'_{\sigma,r}},\\
@@ -689,6 +695,7 @@ Considering \figref{fig:power_balance_machine} and the Clarke transf. power mapp
     \begin{equation}
         \sigma = \frac{(L_{\sigma,s}+L'_{\sigma,r})M + L'_{\sigma,r}L_{\sigma,s}}{(M+L_{\sigma,s})(M + L'_{\sigma,r})} = 1 - \frac{M^2}{(M+L_{\sigma,s})(M + L'_{\sigma,r})}
     \end{equation}
+    \pause
     allows expressing the currents as
     \begin{align}
         \bm{i}^\mathrm{s}_{\mathrm{s},\alpha\beta}(t) &= \frac{1}{\sigma(L_{\sigma,s} + M)}\left(\bm{\psi}^\mathrm{s}_\mathrm{s,\alpha\beta}(t)- \frac{M}{M+L'_{\sigma,r}}\bm{\psi}^\mathrm{s'}_\mathrm{r,\alpha\beta}(t)\right),\\
@@ -714,16 +721,18 @@ Considering \figref{fig:power_balance_machine} and the Clarke transf. power mapp
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
 	\frametitle{Summary: transformed IM model in stator-oriented $\alpha\beta$ coordinates}
+    \onslide<+->
     The most important equations of the IM model in the stator-oriented $\alpha\beta$ coordinates with all rotor quantities transformed to the stator side are:
     \begin{equation*}
         \begin{alignedat}{4}
-            &&\mbox{Stator voltage:}&& \quad\bm{u}^\mathrm{s}_\mathrm{s,\alpha\beta}(&t) &&= R_\mathrm{s} \bm{i}^\mathrm{s}_\mathrm{s,\alpha\beta}(t)+ \frac{\mathrm{d}}{\mathrm{d}t}\bm{\psi}^\mathrm{s}_\mathrm{s,\alpha\beta}(t),\\
-            &&\mbox{Rotor voltage:}&& \quad\bm{u}^{\mathrm{s}'}_\mathrm{r,\alpha\beta}(&t) &&= R_\mathrm{r} \bm{i}^{\mathrm{s}'}_\mathrm{r,\alpha\beta}(t)-\omega_\mathrm{r,el}(t)\bm{J}\bm{\psi}^{\mathrm{s}'}_\mathrm{r,\alpha\beta}(t) +\frac{\mathrm{d}}{\mathrm{d}t}\bm{\psi}^{\mathrm{s}'}_\mathrm{r,\alpha\beta}(t),\\
-            &&\mbox{Stator flux linkage:}&& \quad \bm{\psi}^\mathrm{s}_\mathrm{s,\alpha\beta}(&t) &&= (L_{\sigma,\mathrm{s}} +M) \bm{i}^\mathrm{s}_{\mathrm{s},\alpha\beta}(t) +  M\bm{i}^{\mathrm{s}'}_{\mathrm{r},\alpha\beta}(t),\vphantom{\frac{\mathrm{d}}{\mathrm{d}t}}\\
-            &&\mbox{Rotor flux linkage:}&& \quad \bm{\psi}^{\mathrm{s}'}_\mathrm{r,\alpha\beta}(&t) &&= (L'_{\sigma,\mathrm{r}} + M) \bm{i}^{\mathrm{s}'}_{\mathrm{r},\alpha\beta}(t) +  M \bm{i}^\mathrm{s}_{\mathrm{s},\alpha\beta}(t)\vphantom{\frac{\mathrm{d}}{\mathrm{d}t}},\\
-            &&\mbox{Torque:}&& \quad T(&t) &&= \frac{3}{2} p (\bm{i}_\mathrm{s,\alpha\beta}^\mathrm{s})\T\bm{J}\bm{\psi}_\mathrm{s,\alpha\beta}^\mathrm{s}=-\frac{3}{2} p (\bm{i}^{\mathrm{s}'}_\mathrm{r,\alpha\beta})\T\bm{J}\bm{\psi}^{\mathrm{s}'}_\mathrm{r,\alpha\beta} \vphantom{\frac{\mathrm{d}}{\mathrm{d}t}}. 
+            \uncover<+->{&&\mbox{Stator voltage:}&& \quad\bm{u}^\mathrm{s}_\mathrm{s,\alpha\beta}(&t) &&= R_\mathrm{s} \bm{i}^\mathrm{s}_\mathrm{s,\alpha\beta}(t)+ \frac{\mathrm{d}}{\mathrm{d}t}\bm{\psi}^\mathrm{s}_\mathrm{s,\alpha\beta}(t),\\}
+            \uncover<+->{&&\mbox{Rotor voltage:}&& \quad\bm{u}^{\mathrm{s}'}_\mathrm{r,\alpha\beta}(&t) &&= R_\mathrm{r} \bm{i}^{\mathrm{s}'}_\mathrm{r,\alpha\beta}(t)-\omega_\mathrm{r,el}(t)\bm{J}\bm{\psi}^{\mathrm{s}'}_\mathrm{r,\alpha\beta}(t) +\frac{\mathrm{d}}{\mathrm{d}t}\bm{\psi}^{\mathrm{s}'}_\mathrm{r,\alpha\beta}(t),}\\
+            \uncover<+->{&&\mbox{Stator flux linkage:}&& \quad \bm{\psi}^\mathrm{s}_\mathrm{s,\alpha\beta}(&t) &&= (L_{\sigma,\mathrm{s}} +M) \bm{i}^\mathrm{s}_{\mathrm{s},\alpha\beta}(t) +  M\bm{i}^{\mathrm{s}'}_{\mathrm{r},\alpha\beta}(t),\vphantom{\frac{\mathrm{d}}{\mathrm{d}t}}}\\
+            \uncover<+->{&&\mbox{Rotor flux linkage:}&& \quad \bm{\psi}^{\mathrm{s}'}_\mathrm{r,\alpha\beta}(&t) &&= (L'_{\sigma,\mathrm{r}} + M) \bm{i}^{\mathrm{s}'}_{\mathrm{r},\alpha\beta}(t) +  M \bm{i}^\mathrm{s}_{\mathrm{s},\alpha\beta}(t)\vphantom{\frac{\mathrm{d}}{\mathrm{d}t}},}\\
+            \uncover<+->{&&\mbox{Torque:}&& \quad T(&t) &&= \frac{3}{2} p (\bm{i}_\mathrm{s,\alpha\beta}^\mathrm{s}(t))\T\bm{J}\bm{\psi}_\mathrm{s,\alpha\beta}^\mathrm{s}(t)=-\frac{3}{2} p (\bm{i}^{\mathrm{s}'}_\mathrm{r,\alpha\beta}(t))\T\bm{J}\bm{\psi}^{\mathrm{s}'}_\mathrm{r,\alpha\beta}(t) \vphantom{\frac{\mathrm{d}}{\mathrm{d}t}}.} 
         \end{alignedat}
     \end{equation*}
+    \onslide<+->
     The transformed rotor quantities are $\bm{u}'_\mathrm{r} = \alpha\bm{u}_\mathrm{r}$, $\bm{i}'_\mathrm{r} = \nicefrac{1}{\alpha}\bm{i}_\mathrm{r}$, $\bm{\psi}'_\mathrm{r} = \alpha\bm{\psi}_\mathrm{r}$, $R'_\mathrm{r} =  \alpha^2 R_\mathrm{r}$, $L'_\mathrm{r} =  \alpha^2 L_\mathrm{r}$, and $M'_\mathrm{r} =  \alpha M_\mathrm{r}$ with $\alpha = \nicefrac{N_\mathrm{s}}{N_\mathrm{r}}$.
 \end{frame}
 
@@ -739,17 +748,21 @@ Considering \figref{fig:power_balance_machine} and the Clarke transf. power mapp
             \item Compare rotating field theory: sinusoidal phase currents lead to sinusoidal $\alpha\beta$ currents.
            \end{itemize}
            \vspace{-0.4cm}
+           \onslide<2->{
            \begin{varblock}{K coordinate system}
               To simplify the machine analysis, a general rotating coordinate system k is introduced. The orientation of the d-axis of that coordinate system can be chosen freely, however, if aligned to the stator or rotor flux linkage vector all quantities become constant during steady state (cf.  \figref{fig:Clarke_Park_animation}).
            \end{varblock}
+           }
         \end{column}
         \begin{column}{0.45\textwidth}
+            \onslide<2->{
             \begin{figure}
                 \centering
                 \includegraphics[width=0.85\textwidth]{fig/lec06/K_coordinates.pdf}
                 \caption{Comparison of coordinate systems}
                 \label{fig:K_coordinates}
             \end{figure}
+            }
         \end{column}
     \end{columns}
 \end{frame}
@@ -759,13 +772,16 @@ Considering \figref{fig:power_balance_machine} and the Clarke transf. power mapp
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
 	\frametitle{IM model in coordinate system k}
+    \onslide<+->
     Applying the Park transformation to the IM model in the stator-oriented $\alpha\beta$ coordinates results in (dropping the time dependency for brevity):
     \begin{equation}
         \begin{alignedat}{3}
-            \bm{u}^\mathrm{k}_\mathrm{s,dq} &= \bm{T}^{-1}_\mathrm{p}(\varepsilon_\mathrm{k,el})\bm{u}^\mathrm{s}_\mathrm{s,\alpha\beta}, \quad \bm{i}^\mathrm{k}_\mathrm{s,\alpha\beta} &= \bm{T}^{-1}_\mathrm{p}(\varepsilon_\mathrm{k,el})\bm{i}^\mathrm{s}_\mathrm{s,dq}, \quad \bm{\psi}^\mathrm{k}_\mathrm{s,dq} &= \bm{T}^{-1}_\mathrm{p}(\varepsilon_\mathrm{k,el})\bm{\psi}^\mathrm{s}_\mathrm{s,dq},\\
-            \bm{u}^\mathrm{k}_\mathrm{r,dq} &= \bm{T}^{-1}_\mathrm{p}(\varepsilon_\mathrm{k,el})\bm{u}^\mathrm{s}_\mathrm{r,\alpha\beta}, \quad \bm{i}^\mathrm{k}_\mathrm{r,dq} &= \bm{T}^{-1}_\mathrm{p}(\varepsilon_\mathrm{k,el})\bm{i}^\mathrm{s}_\mathrm{r,\alpha\beta}, \quad \bm{\psi}^\mathrm{k}_\mathrm{r,dq} &= \bm{T}^{-1}_\mathrm{p}(\varepsilon_\mathrm{k,el})\bm{\psi}^\mathrm{s}_\mathrm{r,\alpha\beta}.
+            \uncover<1->{
+            \bm{u}^\mathrm{k}_\mathrm{s,dq} &= \bm{T}^{-1}_\mathrm{p}(\varepsilon_\mathrm{k,el})\bm{u}^\mathrm{s}_\mathrm{s,\alpha\beta}, \quad}\uncover<+->{ \bm{i}^\mathrm{k}_\mathrm{s,dq} &= \bm{T}^{-1}_\mathrm{p}(\varepsilon_\mathrm{k,el})\bm{i}^\mathrm{s}_\mathrm{s,\alpha\beta}, \quad \bm{\psi}^\mathrm{k}_\mathrm{s,dq} &= \bm{T}^{-1}_\mathrm{p}(\varepsilon_\mathrm{k,el})\bm{\psi}^\mathrm{s}_\mathrm{s,\alpha\beta},\\}
+            \uncover<+->{\bm{u}^\mathrm{k}_\mathrm{r,dq} &= \bm{T}^{-1}_\mathrm{p}(\varepsilon_\mathrm{k,el})\bm{u}^\mathrm{s}_\mathrm{r,\alpha\beta}, \quad \bm{i}^\mathrm{k}_\mathrm{r,dq} &= \bm{T}^{-1}_\mathrm{p}(\varepsilon_\mathrm{k,el})\bm{i}^\mathrm{s}_\mathrm{r,\alpha\beta}, \quad \bm{\psi}^\mathrm{k}_\mathrm{r,dq} &= \bm{T}^{-1}_\mathrm{p}(\varepsilon_\mathrm{k,el})\bm{\psi}^\mathrm{s}_\mathrm{r,\alpha\beta}.}
         \end{alignedat}
     \end{equation}
+    \onslide<+->
     The transformed flux linkage model in the k coordinate system remains structurally unaffected by the coordinate transformation
     \begin{equation}
         \begin{split}
@@ -785,6 +801,7 @@ Considering \figref{fig:power_balance_machine} and the Clarke transf. power mapp
     \begin{equation}
         T = \frac{3}{2} p \left(\bm{i}_\mathrm{s,dq}\right)\T\bm{J}\bm{\psi}_\mathrm{s,dq} = -\frac{3}{2} p \left(\bm{i}_\mathrm{r,dq}\right)\T\bm{J}\bm{\psi}_\mathrm{r,dq}.
     \end{equation}
+    \pause
     Applying the Park transformation derivative rule \eqref{eq:Park_transformation_derivative} to the voltage equations in the k coordinate system yields
     \begin{equation}
         \begin{alignedat}{2}
@@ -793,12 +810,13 @@ Considering \figref{fig:power_balance_machine} and the Clarke transf. power mapp
         \end{alignedat}
         \label{eq:IM_model_k_voltage_equations}
     \end{equation}
+    \pause
     Likewise, the transformation of the rotor quantities based on the turn ratio $\alpha = \nicefrac{N_\mathrm{s}}{N_\mathrm{r}}$ can be applied to the k coordinate system:
     \begin{equation}
-        \begin{alignedat}{2}
-            \bm{u}^{\mathrm{k}'}_\mathrm{r,dq} &= \alpha\bm{u}^\mathrm{k}_\mathrm{r,dq}, \quad \bm{i}^{\mathrm{k}'}_\mathrm{r,dq} = \nicefrac{1}{\alpha}\bm{i}^\mathrm{k}_\mathrm{r,dq}, \quad \bm{\psi}^{\mathrm{k}'}_\mathrm{r,dq} = \alpha\bm{\psi}^\mathrm{k}_\mathrm{r,dq},\\
-            R'_\mathrm{r} &=  \alpha^2 R_\mathrm{r}, \quad L'_\mathrm{r} =  \alpha^2 L_\mathrm{r}, \quad M'_\mathrm{r} =  \alpha M_\mathrm{r}.
-        \end{alignedat}
+        \begin{gathered}
+            \bm{u}^{\mathrm{k}'}_\mathrm{r,dq} = \alpha\bm{u}^\mathrm{k}_\mathrm{r,dq}, \quad \bm{i}^{\mathrm{k}'}_\mathrm{r,dq} = \nicefrac{1}{\alpha}\bm{i}^\mathrm{k}_\mathrm{r,dq}, \quad \bm{\psi}^{\mathrm{k}'}_\mathrm{r,dq} = \alpha\bm{\psi}^\mathrm{k}_\mathrm{r,dq},\\
+            R'_\mathrm{r} =  \alpha^2 R_\mathrm{r}, \quad L'_\mathrm{r} =  \alpha^2 L_\mathrm{r}, \quad M'_\mathrm{r} =  \alpha M_\mathrm{r}.
+        \end{gathered}
         \label{eq:IM_model_k_rotor_quantities_transformed}
     \end{equation}
 \end{frame}
@@ -808,16 +826,18 @@ Considering \figref{fig:power_balance_machine} and the Clarke transf. power mapp
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
 	\frametitle{Summary: IM model in general dq coordinates}
+    \onslide<1->
     The most important equations of the IM model in the general k coordinate system with dq coordinates are:
     \begin{equation*}
         \begin{alignedat}{4}
-            &&\mbox{Stator voltage:}&& \quad\bm{u}^\mathrm{k}_\mathrm{s,dq}(&t) &&= R_\mathrm{s} \bm{i}^\mathrm{k}_\mathrm{s,dq}(t)+ \omega_\mathrm{k,el}(t)\bm{J}\bm{\psi}^\mathrm{k}_\mathrm{s,dq}(t) + \frac{\mathrm{d}}{\mathrm{d}t}\bm{\psi}^\mathrm{k}_\mathrm{s,dq}(t),\\
-            &&\mbox{Rotor voltage:}&& \quad\bm{u}^\mathrm{k}_\mathrm{r,dq}(&t) &&= R_\mathrm{r} \bm{i}^\mathrm{k}_\mathrm{r,dq}(t)+\left(\omega_\mathrm{k,el}(t)-\omega_\mathrm{r,el}(t)\right)\bm{J}\bm{\psi}^\mathrm{k}_\mathrm{r,dq}(t) + \frac{\mathrm{d}}{\mathrm{d}t}\bm{\psi}^\mathrm{k}_\mathrm{r,dq}(t),\\
-            &&\mbox{Stator flux linkage:}&& \quad \bm{\psi}^\mathrm{k}_\mathrm{s,dq}(&t) &&= (L_\mathrm{s} +\nicefrac{M_\mathrm{s}}{2}) \bm{i}^\mathrm{k}_\mathrm{s,dq}(t) +  M_{\mathrm{r}}\frac{3}{2}\frac{N_\mathrm{s}}{N_\mathrm{r}} \bm{i}^\mathrm{k}_\mathrm{r,dq}(t),\\
-            &&\mbox{Rotor flux linkage:}&& \quad \bm{\psi}^\mathrm{k}_\mathrm{r,dq}(&t) &&= (L_\mathrm{r} +\nicefrac{M_\mathrm{r}}{2}) \bm{i}^\mathrm{k}_\mathrm{r,dq}(t) +  M_{\mathrm{s}}\frac{3}{2}\frac{N_\mathrm{r}}{N_\mathrm{s}} \bm{i}^\mathrm{k}_\mathrm{s,dq}(t),\\
-            &&\mbox{Torque:}&& \quad T(&t) &&= \frac{3}{2} p (\bm{i}_\mathrm{s,dq}^\mathrm{k})\T\bm{J}\bm{\psi}_\mathrm{s,dq}^\mathrm{k}=-\frac{3}{2} p (\bm{i}^\mathrm{k}_\mathrm{r,dq})\T\bm{J}\bm{\psi}^\mathrm{k}_\mathrm{r,dq}. 
+            \uncover<+->{&&\mbox{Stator voltage:}&& \quad\bm{u}^\mathrm{k}_\mathrm{s,dq}(&t) &&= R_\mathrm{s} \bm{i}^\mathrm{k}_\mathrm{s,dq}(t)+ \omega_\mathrm{k,el}(t)\bm{J}\bm{\psi}^\mathrm{k}_\mathrm{s,dq}(t) + \frac{\mathrm{d}}{\mathrm{d}t}\bm{\psi}^\mathrm{k}_\mathrm{s,dq}(t),\\}
+            \uncover<+->{&&\mbox{Rotor voltage:}&& \quad\bm{u}^\mathrm{k}_\mathrm{r,dq}(&t) &&= R_\mathrm{r} \bm{i}^\mathrm{k}_\mathrm{r,dq}(t)+\left(\omega_\mathrm{k,el}(t)-\omega_\mathrm{r,el}(t)\right)\bm{J}\bm{\psi}^\mathrm{k}_\mathrm{r,dq}(t) + \frac{\mathrm{d}}{\mathrm{d}t}\bm{\psi}^\mathrm{k}_\mathrm{r,dq}(t),\\}
+            \uncover<+->{&&\mbox{Stator flux linkage:}&& \quad \bm{\psi}^\mathrm{k}_\mathrm{s,dq}(&t) &&= (L_\mathrm{s} +\nicefrac{M_\mathrm{s}}{2}) \bm{i}^\mathrm{k}_\mathrm{s,dq}(t) +  M_{\mathrm{r}}\frac{3}{2}\frac{N_\mathrm{s}}{N_\mathrm{r}} \bm{i}^\mathrm{k}_\mathrm{r,dq}(t),\\}
+            \uncover<+->{&&\mbox{Rotor flux linkage:}&& \quad \bm{\psi}^\mathrm{k}_\mathrm{r,dq}(&t) &&= (L_\mathrm{r} +\nicefrac{M_\mathrm{r}}{2}) \bm{i}^\mathrm{k}_\mathrm{r,dq}(t) +  M_{\mathrm{s}}\frac{3}{2}\frac{N_\mathrm{r}}{N_\mathrm{s}} \bm{i}^\mathrm{k}_\mathrm{s,dq}(t),\\}
+            \uncover<+->{&&\mbox{Torque:}&& \quad T(&t) &&= \frac{3}{2} p (\bm{i}_\mathrm{s,dq}^\mathrm{k}(t))\T\bm{J}\bm{\psi}_\mathrm{s,dq}^\mathrm{k}(t)=-\frac{3}{2} p (\bm{i}^\mathrm{k}_\mathrm{r,dq}(t))\T\bm{J}\bm{\psi}^\mathrm{k}_\mathrm{r,dq}(t).} 
         \end{alignedat}
     \end{equation*}
+    \onslide<+->
     Likewise in the stator-oriented $\alpha\beta$ coordinates, one can further transform the rotor quantities based on the turn ratio $\alpha = \nicefrac{N_\mathrm{s}}{N_\mathrm{r}}$ to infer the rotor parameters from stator-based measurements (cf. next slide).
 \end{frame}
 
@@ -826,16 +846,18 @@ Considering \figref{fig:power_balance_machine} and the Clarke transf. power mapp
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
 	\frametitle{Summary: transformed IM model in general dq coordinates}
+    \onslide<1->
     The most important equations of the IM model in the general k coordinate system with dq coordinates with all rotor quantities transformed to the stator side are:
     \begin{equation*}
         \begin{alignedat}{4}
-            &&\mbox{Stator voltage:}&& \quad\bm{u}^\mathrm{k}_\mathrm{s,dq}(&t) &&= R_\mathrm{s} \bm{i}^\mathrm{k}_\mathrm{s,dq}(t)+ \omega_\mathrm{k,el}(t)\bm{J}\bm{\psi}^\mathrm{k}_\mathrm{s,dq}(t) + \frac{\mathrm{d}}{\mathrm{d}t}\bm{\psi}^\mathrm{k}_\mathrm{s,dq}(t),\\
-            &&\mbox{Rotor voltage:}&& \quad\bm{u}^{\mathrm{k}'}_\mathrm{r,dq}(&t) &&= R_\mathrm{r} \bm{i}^{\mathrm{k}'}_\mathrm{r,dq}(t)+\left(\omega_\mathrm{k,el}(t)-\omega_\mathrm{r,el}(t)\right)\bm{J}\bm{\psi}^{\mathrm{k}'}_\mathrm{r,dq}(t) +\frac{\mathrm{d}}{\mathrm{d}t}\bm{\psi}^{\mathrm{k}'}_\mathrm{r,dq}(t),\\
-            &&\mbox{Stator flux linkage:}&& \quad \bm{\psi}^\mathrm{k}_\mathrm{s,dq}(&t) &&= (L_{\sigma,\mathrm{s}} +M) \bm{i}^\mathrm{k}_\mathrm{s,dq}(t) +  M\bm{i}^{\mathrm{k}'}_\mathrm{r,dq}(t),\vphantom{\frac{\mathrm{d}}{\mathrm{d}t}}\\
-            &&\mbox{Rotor flux linkage:}&& \quad \bm{\psi}^{\mathrm{k}'}_\mathrm{r,dq}(&t) &&= (L'_{\sigma,\mathrm{r}} + M) \bm{i}^{\mathrm{k}'}_\mathrm{r,dq}(t) +  M \bm{i}^\mathrm{k}_\mathrm{s,dq}(t)\vphantom{\frac{\mathrm{d}}{\mathrm{d}t}},\\
-            &&\mbox{Torque:}&& \quad T(&t) &&= \frac{3}{2} p (\bm{i}_\mathrm{s,dq}^\mathrm{k})\T\bm{J}\bm{\psi}_\mathrm{s,dq}^\mathrm{k}=-\frac{3}{2} p (\bm{i}^{\mathrm{k}'}_\mathrm{r,dq})\T\bm{J}\bm{\psi}^{\mathrm{k}'}_\mathrm{r,dq} \vphantom{\frac{\mathrm{d}}{\mathrm{d}t}}.
+            \uncover<+->{&&\mbox{Stator voltage:}&& \quad\bm{u}^\mathrm{k}_\mathrm{s,dq}(&t) &&= R_\mathrm{s} \bm{i}^\mathrm{k}_\mathrm{s,dq}(t)+ \omega_\mathrm{k,el}(t)\bm{J}\bm{\psi}^\mathrm{k}_\mathrm{s,dq}(t) + \frac{\mathrm{d}}{\mathrm{d}t}\bm{\psi}^\mathrm{k}_\mathrm{s,dq}(t),\\
+            &&\mbox{Rotor voltage:}&& \quad\bm{u}^{\mathrm{k}'}_\mathrm{r,dq}(&t) &&= R_\mathrm{r} \bm{i}^{\mathrm{k}'}_\mathrm{r,dq}(t)+\left(\omega_\mathrm{k,el}(t)-\omega_\mathrm{r,el}(t)\right)\bm{J}\bm{\psi}^{\mathrm{k}'}_\mathrm{r,dq}(t) +\frac{\mathrm{d}}{\mathrm{d}t}\bm{\psi}^{\mathrm{k}'}_\mathrm{r,dq}(t),\\}
+            \uncover<+->{&&\mbox{Stator flux linkage:}&& \quad \bm{\psi}^\mathrm{k}_\mathrm{s,dq}(&t) &&= (L_{\sigma,\mathrm{s}} +M) \bm{i}^\mathrm{k}_\mathrm{s,dq}(t) +  M\bm{i}^{\mathrm{k}'}_\mathrm{r,dq}(t),\vphantom{\frac{\mathrm{d}}{\mathrm{d}t}}\\
+            &&\mbox{Rotor flux linkage:}&& \quad \bm{\psi}^{\mathrm{k}'}_\mathrm{r,dq}(&t) &&= (L'_{\sigma,\mathrm{r}} + M) \bm{i}^{\mathrm{k}'}_\mathrm{r,dq}(t) +  M \bm{i}^\mathrm{k}_\mathrm{s,dq}(t)\vphantom{\frac{\mathrm{d}}{\mathrm{d}t}},\\}
+            \uncover<+->{&&\mbox{Torque:}&& \quad T(&t) &&= \frac{3}{2} p (\bm{i}_\mathrm{s,dq}^\mathrm{k}(t))\T\bm{J}\bm{\psi}_\mathrm{s,dq}^\mathrm{k}(t)=-\frac{3}{2} p (\bm{i}^{\mathrm{k}'}_\mathrm{r,dq}(t))\T\bm{J}\bm{\psi}^{\mathrm{k}'}_\mathrm{r,dq}(t) \vphantom{\frac{\mathrm{d}}{\mathrm{d}t}}.}
         \end{alignedat}
     \end{equation*}
+    \onslide<+->
     The transformed rotor quantities are $\bm{u}'_\mathrm{r} = \alpha\bm{u}_\mathrm{r}$, $\bm{i}'_\mathrm{r} = \nicefrac{1}{\alpha}\bm{i}_\mathrm{r}$, $\bm{\psi}'_\mathrm{r} = \alpha\bm{\psi}_\mathrm{r}$, $R'_\mathrm{r} =  \alpha^2 R_\mathrm{r}$, $L'_\mathrm{r} =  \alpha^2 L_\mathrm{r}$, and $M'_\mathrm{r} =  \alpha M_\mathrm{r}$ with $\alpha = \nicefrac{N_\mathrm{s}}{N_\mathrm{r}}$.
 \end{frame}
 
@@ -858,7 +880,7 @@ Considering \figref{fig:power_balance_machine} and the Clarke transf. power mapp
 \begin{frame}
 	\frametitle{Stator flux orientation in the k coordinate system}
     \begin{columns}
-		\begin{column}{0.55\textwidth}
+		\begin{column}{0.5\textwidth}
 	       Per definition we can assign the stator flux linkage vector to the d-axis of the k coordinate system:
            \begin{equation}
             \renewcommand{\arraystretch}{1.4}
@@ -867,6 +889,7 @@ Considering \figref{fig:power_balance_machine} and the Clarke transf. power mapp
                 &= \begin{bmatrix}|\bm{\psi}^\mathrm{k}_\mathrm{s,dq}(t)| \\ 0 \end{bmatrix}.
             \end{split}
            \end{equation}
+           \onslide<2->{
            In this case, the torque expression simplifies to
               \begin{equation}
                 \begin{split}
@@ -875,11 +898,12 @@ Considering \figref{fig:power_balance_machine} and the Clarke transf. power mapp
                 \end{split}
                 \label{eq:IM_model_k_torque_stator_flux_orientation}
                 \end{equation}
+                }
         \end{column}
-        \begin{column}{0.45\textwidth}
+        \begin{column}{0.5\textwidth}
             \begin{figure}
                 \centering
-                \includegraphics[width=0.85\textwidth]{fig/lec06/K_coordinates_stator_flux_orientation.pdf}
+                \includegraphics[width=0.9\textwidth]{fig/lec06/K_coordinates_stator_flux_orientation.pdf}
                 \caption{Stator flux-oriented coordinate system}
                 \label{fig:K_coordinates_stator_flux_orientation}
             \end{figure}
@@ -893,7 +917,7 @@ Considering \figref{fig:power_balance_machine} and the Clarke transf. power mapp
 \begin{frame}
 	\frametitle{Rotor flux orientation in the k coordinate system}
     \begin{columns}
-		\begin{column}{0.55\textwidth}
+		\begin{column}{0.5\textwidth}
 	       Per definition we can also assign the rotor flux linkage vector to the d-axis of the k coordinate system:
               \begin{equation}
                 \renewcommand{\arraystretch}{1.4}
@@ -902,6 +926,7 @@ Considering \figref{fig:power_balance_machine} and the Clarke transf. power mapp
                  &= \begin{bmatrix}|\bm{\psi}^\mathrm{k}_\mathrm{r,dq}(t)| \\ 0 \end{bmatrix}.
                 \end{split}
               \end{equation}
+              \onslide<2->{
               In this case, the torque expression simplifies to
                 \begin{equation}
                 \begin{split}
@@ -909,11 +934,12 @@ Considering \figref{fig:power_balance_machine} and the Clarke transf. power mapp
                 & = -\frac{3}{2} p i_{\mathrm{r,q}}^\mathrm{k}(t)\psi_{\mathrm{r,d}}^\mathrm{k}(t) .
                 \end{split}
                 \end{equation}
+                }
         \end{column}
-        \begin{column}{0.45\textwidth}
+        \begin{column}{0.5\textwidth}
             \begin{figure}
                 \centering
-                \includegraphics[width=0.85\textwidth]{fig/lec06/K_coordinates_rotor_flux_orientation.pdf}
+                \includegraphics[width=0.9\textwidth]{fig/lec06/K_coordinates_rotor_flux_orientation.pdf}
                 \caption{Rotor flux-oriented coordinate system}
                 \label{fig:K_coordinates_rotor_flux_orientation}
             \end{figure}
@@ -933,19 +959,21 @@ Considering \figref{fig:power_balance_machine} and the Clarke transf. power mapp
             \bm{u}^\mathrm{k'}_\mathrm{r,dq} &= R'_\mathrm{r} \bm{i}^\mathrm{k'}_\mathrm{r,dq} +\left(\omega_\mathrm{k,el}-\omega_\mathrm{r,el}\right)\bm{J}\bm{\psi}^\mathrm{k'}_\mathrm{r,dq}.
         \end{alignedat}
     \end{equation}
-    During steady state the stator is excited by a constant three-phase voltage with the stator frequency $\omega_\mathrm{k,el} \rightarrow \omega_\mathrm{s}$ while the rotor is excited with the rotor  or slip frequency $(\omega_\mathrm{k,el}-\omega_\mathrm{r,el}) \rightarrow \omega_\mathrm{slip}$. Dropping the coordinate system indices, we have
+    \pause
+    During steady state the stator is excited by a constant three-phase voltage with the stator frequency $\omega_\mathrm{s}$ while the rotor is excited with the rotor  or slip frequency $\omega_\mathrm{slip}$:
     \begin{equation}
-        \begin{alignedat}{2}
-            \bm{u}_\mathrm{s} &= R_\mathrm{s} \bm{i}_\mathrm{s} + \omega_\mathrm{s}\bm{J} \bm{\psi}_\mathrm{s},\\
-            \bm{u}'_\mathrm{r} &= R'_\mathrm{r} \bm{i}'_\mathrm{r} +\omega_\mathrm{slip}\bm{J}\bm{\psi}'_\mathrm{r}.
-        \end{alignedat}
+        \omega_\mathrm{k,el} \rightarrow \omega_\mathrm{s}, \qquad \omega_\mathrm{k,el}-\omega_\mathrm{r,el} \rightarrow \omega_\mathrm{slip}.
     \end{equation}
+    \pause Dropping the coordinate system indices, we have
+    \begin{equation}
+            \bm{u}_\mathrm{s} = R_\mathrm{s} \bm{i}_\mathrm{s} + \omega_\mathrm{s}\bm{J} \bm{\psi}_\mathrm{s},\qquad
+            \bm{u}'_\mathrm{r} = R'_\mathrm{r} \bm{i}'_\mathrm{r} +\omega_\mathrm{slip}\bm{J}\bm{\psi}'_\mathrm{r}.
+    \end{equation}
+    \pause
     Rewriting the vectorial quantities as complex phasors $\underline{X}_\mathrm{dq} = X e^{\mathrm{j}\phi}=x_\mathrm{d} + \mathrm{j} x_\mathrm{q}$, we obtain
     \begin{equation}
-        \begin{alignedat}{2}
-            \underline{U}_\mathrm{s} &= R_\mathrm{s} \underline{I}_\mathrm{s} + \mathrm{j}\omega_\mathrm{s}\underline{\Psi}_\mathrm{s},\\
-            \underline{U}'_\mathrm{r} &= R'_\mathrm{r} \underline{I}'_\mathrm{r} +\mathrm{j}\omega_\mathrm{slip}\underline{\Psi}'_\mathrm{r}.
-        \end{alignedat}
+            \underline{U}_\mathrm{s} = R_\mathrm{s} \underline{I}_\mathrm{s} + \mathrm{j}\omega_\mathrm{s}\underline{\Psi}_\mathrm{s},\qquad
+            \underline{U}'_\mathrm{r} = R'_\mathrm{r} \underline{I}'_\mathrm{r} +\mathrm{j}\omega_\mathrm{slip}\underline{\Psi}'_\mathrm{r}.
         \label{eq:IM_model_voltage_equations_steady_state}
     \end{equation}
 \end{frame}
@@ -959,19 +987,20 @@ Considering \figref{fig:power_balance_machine} and the Clarke transf. power mapp
     \begin{equation}
         s = \frac{\omega_\mathrm{slip}}{\omega_\mathrm{s}} .
     \end{equation} 
+    \pause
     Multiplying \eqref{eq:IM_model_voltage_equations_steady_state}  with the inverse slip ratio delivers then
     \begin{equation}
             \underline{U}_\mathrm{s} = R_\mathrm{s} \underline{I}_\mathrm{s} + \mathrm{j}\omega_\mathrm{s}\underline{\Psi}_\mathrm{s}, \qquad
             \frac{1}{s}\underline{U}'_\mathrm{r} = \frac{1}{s}R'_\mathrm{r} \underline{I}'_\mathrm{r} +\mathrm{j}\omega_\mathrm{s}\underline{\Psi}'_\mathrm{r}.
         \label{eq:IM_model_voltage_equations_steady_state_slip_ratio}
     \end{equation}
-    Here, both the stator and rotor fluxes rotate with the same frequency $\omega_\mathrm{s}$. Additionally, we can insert the current-to-flux linkage relationships
+    Here, both the stator and rotor fluxes rotate with the same frequency $\omega_\mathrm{s}$. \pause  Additionally, we can insert the current-to-flux linkage relationships
     \begin{align}
         \underline{\Psi}_\mathrm{s} = (L_{\sigma,\mathrm{s}} +M) \underline{I}_\mathrm{s} +  M\underline{I}'_\mathrm{r}, \qquad
         \underline{\Psi}'_\mathrm{r} = (L'_{\sigma,\mathrm{r}} + M) \underline{I}'_\mathrm{r} +  M \underline{I}_\mathrm{s}
         \label{eq:IM_model_current_flux_linkage_equations_steady_state}
     \end{align}
-    leading to
+    \pause leading to
     \begin{equation}
         \begin{alignedat}{2}
             \underline{U}_\mathrm{s} &= R_\mathrm{s} \underline{I}_\mathrm{s} + \mathrm{j}\omega_\mathrm{s}\left[(L_{\sigma,\mathrm{s}} +M) \underline{I}_\mathrm{s} +  M\underline{I}'_\mathrm{r}\right],\\
@@ -1026,16 +1055,18 @@ Considering \figref{fig:power_balance_machine} and the Clarke transf. power mapp
     Utilizing the stator flux orientation we define
     $$ \underline{\Psi}_\mathrm{s} = \Psi_\mathrm{s,d} + \mathrm{j}\Psi_\mathrm{s,q} = \Psi_\mathrm{s,d} = \Psi_\mathrm{s}.
     $$
+    \pause
     Assuming that the stator ohmic voltage drop is negligible ($R_\mathrm{s}=0$), we get from \eqref{eq:IM_model_voltage_equations_steady_state_slip_ratio} 
     \begin{equation}
         \underline{U}_\mathrm{s} = U_\mathrm{s,d} + \mathrm{j} U_\mathrm{s,q} = \mathrm{j}\omega_\mathrm{s}\underline{\Psi}_\mathrm{s} = \mathrm{j}\omega_\mathrm{s}\Psi_\mathrm{d}
     \end{equation} 
-    and hence
+    \pause
+    and, therefore,
     \begin{equation}
         U_\mathrm{s,d} = 0, \qquad \Psi_\mathrm{s,d}  = \frac{U_\mathrm{s,q}}{\omega_\mathrm{s}}= \frac{U_\mathrm{s}}{\omega_\mathrm{s}}= \Psi_\mathrm{s}.
         \label{eq:IM_model_stator_flux_orientation_steady_state}
     \end{equation}
-    Hence, the stator voltage phasor is purely imaginary and the stator flux phasor is real due to the chosen orientation.  From \eqref{eq:IM_model_current_flux_linkage_equations_steady_state} we can rewrite the flux-to-current relationships as
+    Hence, the stator voltage phasor is purely imaginary and the stator flux phasor is real due to the chosen orientation. \pause From \eqref{eq:IM_model_current_flux_linkage_equations_steady_state} we can rewrite the flux-to-current relationships as
     \begin{equation}
         \begin{split}
             \underline{I}_\mathrm{s} &= \frac{1}{\sigma (L_{\sigma,\mathrm{s}} +M)} \underline{\Psi}_\mathrm{s} -  \frac{M}{\sigma(L_{\sigma,\mathrm{s}} +M)(L'_{\sigma,\mathrm{r}} +M)}\underline{\Psi}'_\mathrm{r},\\
@@ -1054,7 +1085,7 @@ Considering \figref{fig:power_balance_machine} and the Clarke transf. power mapp
      $$
         \underline{U}'_\mathrm{r} = 0
     $$
-    due to the short-circuited rotor winding. The rotor voltage equation \eqref{eq:IM_model_voltage_equations_steady_state_slip_ratio} then simplifies to
+    due to the short-circuited rotor winding. \pause The rotor voltage equation \eqref{eq:IM_model_voltage_equations_steady_state_slip_ratio} then simplifies to
     \begin{equation}
         0 = \frac{1}{s}R'_\mathrm{r}\underline{I}'_\mathrm{r}+\mathrm{j}\omega_\mathrm{s}\underline{\Psi}'_\mathrm{r} \quad \Leftrightarrow \quad \underline{\Psi}'_\mathrm{r} = \frac{\mathrm{j}}{\omega_\mathrm{s}}\frac{R'_\mathrm{r}}{s}\underline{I}'_\mathrm{r}. 
         \label{eq:IM_model_rotor_flux_steady_state}
@@ -1072,15 +1103,17 @@ Considering \figref{fig:power_balance_machine} and the Clarke transf. power mapp
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
 	\frametitle{Squirrel cage IM torque-speed characteristic (cont.)} 
+    \onslide<1->
     Combining \eqref{eq:IM_model_stator_flux_orientation_steady_state}, \eqref{eq:IM_model_current_flux_linkage_equations_steady_state_squirrel_cage}, and \eqref{eq:IM_model_rotor_flux_steady_state} we have a linear equation system resulting in 
     \small
     \begin{align}
-        I_\mathrm{s,d} &= \frac{U_\mathrm{s}}{\omega_\mathrm{s}}\frac{\sigma^2 \omega^2_\mathrm{slip} (L_{\sigma,\mathrm{s}} +M)(L'_{\sigma,\mathrm{r}} +M)^3 + (L'_{\sigma,\mathrm{r}} +M)(L_{\sigma,\mathrm{s}} +M)(R'_\mathrm{r})^2 - M^2(R'_\mathrm{r})^2}{\sigma (L_{\sigma,\mathrm{s}} +M)^2(L'_{\sigma,\mathrm{r}} +M) \omega_\mathrm{slip}(\sigma^2 \omega^2_\mathrm{slip}(L'_{\sigma,\mathrm{r}} +M)^2 + (R'_\mathrm{r})^2)},\\
-        I_\mathrm{s,q} &= \frac{U_\mathrm{s}}{\omega_\mathrm{s}} \frac{M^2 \omega_\mathrm{slip}R'_\mathrm{r}}{(L_{\sigma,\mathrm{s}} +M)^2(\sigma^2 (L'_{\sigma,\mathrm{r}} +M)^2\omega_\mathrm{slip}^2 + (R'_\mathrm{r})^2)},\\
-        I_\mathrm{r,d} &= -\frac{U_\mathrm{s}}{\omega_\mathrm{s}} \frac{\sigma M  \omega_\mathrm{slip}^2(L'_{\sigma,\mathrm{r}} +M)}{(L_{\sigma,\mathrm{s}} +M)(\sigma^2 (L'_{\sigma,\mathrm{r}} +M)^2\omega_\mathrm{slip}^2 + (R'_\mathrm{r})^2)},\\
-        I_\mathrm{r,q} &= -\frac{U_\mathrm{s}}{\omega_\mathrm{s}} \frac{M R'_\mathrm{r} \omega_\mathrm{slip}}{(L_{\sigma,\mathrm{s}} +M)(\sigma^2 (L'_{\sigma,\mathrm{r}} +M)^2\omega_\mathrm{slip}^2 + (R'_\mathrm{r})^2)},\\
-        \Psi_\mathrm{r,d} &= \frac{U_\mathrm{s}}{\omega_\mathrm{s}}\frac{M (R'_\mathrm{r})^2}{(L_{\sigma,\mathrm{s}} +M) (\sigma^2(L'_{\sigma,\mathrm{r}} +M)^2\omega_\mathrm{slip}^2 + (R'_\mathrm{r})^2)},\\
-        \Psi_\mathrm{r,q} &= -\frac{U_\mathrm{s}}{\omega_\mathrm{s}}\frac{\sigma M(L'_{\sigma,\mathrm{r}} +M)R'_\mathrm{r}\omega_\mathrm{slip}}{(L_{\sigma,\mathrm{s}} +M)((L'_{\sigma,\mathrm{r}} +M)^2\sigma^2\omega_\mathrm{slip}^2+(R'_\mathrm{r})^2)}.
+        \uncover<+->{
+        I_\mathrm{s,d} &= \frac{U_\mathrm{s}}{\omega_\mathrm{s}}\frac{\sigma^2 \omega^2_\mathrm{slip} (L_{\sigma,\mathrm{s}} +M)(L'_{\sigma,\mathrm{r}} +M)^3 + (L'_{\sigma,\mathrm{r}} +M)(L_{\sigma,\mathrm{s}} +M)(R'_\mathrm{r})^2 - M^2(R'_\mathrm{r})^2}{\sigma (L_{\sigma,\mathrm{s}} +M)^2(L'_{\sigma,\mathrm{r}} +M) \omega_\mathrm{slip}(\sigma^2 \omega^2_\mathrm{slip}(L'_{\sigma,\mathrm{r}} +M)^2 + (R'_\mathrm{r})^2)},\\}
+        \uncover<+->{I_\mathrm{s,q} &= \frac{U_\mathrm{s}}{\omega_\mathrm{s}} \frac{M^2 \omega_\mathrm{slip}R'_\mathrm{r}}{(L_{\sigma,\mathrm{s}} +M)^2(\sigma^2 (L'_{\sigma,\mathrm{r}} +M)^2\omega_\mathrm{slip}^2 + (R'_\mathrm{r})^2)},\\}
+        \uncover<+->{I_\mathrm{r,d} &= -\frac{U_\mathrm{s}}{\omega_\mathrm{s}} \frac{\sigma M  \omega_\mathrm{slip}^2(L'_{\sigma,\mathrm{r}} +M)}{(L_{\sigma,\mathrm{s}} +M)(\sigma^2 (L'_{\sigma,\mathrm{r}} +M)^2\omega_\mathrm{slip}^2 + (R'_\mathrm{r})^2)},\\}
+        \uncover<+->{I_\mathrm{r,q} &= -\frac{U_\mathrm{s}}{\omega_\mathrm{s}} \frac{M R'_\mathrm{r} \omega_\mathrm{slip}}{(L_{\sigma,\mathrm{s}} +M)(\sigma^2 (L'_{\sigma,\mathrm{r}} +M)^2\omega_\mathrm{slip}^2 + (R'_\mathrm{r})^2)},\\}
+        \uncover<+->{\Psi_\mathrm{r,d} &= \frac{U_\mathrm{s}}{\omega_\mathrm{s}}\frac{M (R'_\mathrm{r})^2}{(L_{\sigma,\mathrm{s}} +M) (\sigma^2(L'_{\sigma,\mathrm{r}} +M)^2\omega_\mathrm{slip}^2 + (R'_\mathrm{r})^2)},\\}
+        \uncover<+->{\Psi_\mathrm{r,q} &= -\frac{U_\mathrm{s}}{\omega_\mathrm{s}}\frac{\sigma M(L'_{\sigma,\mathrm{r}} +M)R'_\mathrm{r}\omega_\mathrm{slip}}{(L_{\sigma,\mathrm{s}} +M)((L'_{\sigma,\mathrm{r}} +M)^2\sigma^2\omega_\mathrm{slip}^2+(R'_\mathrm{r})^2)}.}
     \end{align}
     \normalsize 
 \end{frame}
@@ -1090,7 +1123,7 @@ Considering \figref{fig:power_balance_machine} and the Clarke transf. power mapp
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
 	\frametitle{Squirrel cage IM torque-speed characteristic (cont.)} 
-    With the definition of $\omega_\mathrm{max}=\nicefrac{R'_\mathrm{r}}{\sigma (L'_{\sigma,\mathrm{r}} +M)}$ we can rewrite and receive 
+    With the definition of $\omega_\mathrm{max}=\nicefrac{R'_\mathrm{r}}{\sigma (L'_{\sigma,\mathrm{r}} +M)}$ we can rewrite and receive \pause
     \small
     \begin{align}
         I_\mathrm{s,d} &= \frac{U_\mathrm{s}}{\omega_\mathrm{s}}\frac{\sigma^2 \omega^2_\mathrm{slip} (L_{\sigma,\mathrm{s}} +M)(L'_{\sigma,\mathrm{r}} +M)^3 + (L'_{\sigma,\mathrm{r}} +M)(L_{\sigma,\mathrm{s}} +M)(R'_\mathrm{r})^2 - M^2(R'_\mathrm{r})^2}{\sigma (L_{\sigma,\mathrm{s}} +M)^2(L'_{\sigma,\mathrm{r}} +M) \omega_\mathrm{slip}(\sigma^2 \omega^2_\mathrm{slip}(L'_{\sigma,\mathrm{r}} +M)^2 + (R'_\mathrm{r})^2)},\\
@@ -1112,13 +1145,15 @@ Considering \figref{fig:power_balance_machine} and the Clarke transf. power mapp
     \begin{equation}
             T = \frac{3}{2} p \sqrt{2}\Psi_\mathrm{s} \sqrt{2}I_\mathrm{s,q} = \frac{3}{2} p \frac{U_\mathrm{s}^2}{\omega_\mathrm{s}^2}\frac{M^2}{\sigma (L_{\sigma,\mathrm{s}} +M)^2(L'_{\sigma,\mathrm{r}} +M)}\frac{2}{\frac{\omega_\mathrm{slip}}{\omega_\mathrm{max}} + \frac{\omega_\mathrm{max}}{\omega_\mathrm{slip}}}.
     \end{equation}
+    \pause
     Hence, the maximum achievable torque for a constant stator excitation is
     \begin{equation}
         T_\mathrm{max} = \frac{3}{2} p \frac{U_\mathrm{s}^2}{\omega_\mathrm{s}^2}\frac{M^2}{\sigma (L_{\sigma,\mathrm{s}} +M)^2(L'_{\sigma,\mathrm{r}} +M)}
     \end{equation}
+    \pause
     since 
     $$ \max_{\omega_{\mathrm{slip}}} \left\{\frac{2}{\frac{\omega_\mathrm{slip}}{\omega_\mathrm{max}} + \frac{\omega_\mathrm{max}}{\omega_\mathrm{slip}}}\right\} = 1, \qquad \argmax_{\omega_{\mathrm{slip}}} \left\{\frac{2}{\frac{\omega_\mathrm{slip}}{\omega_\mathrm{max}} + \frac{\omega_\mathrm{max}}{\omega_\mathrm{slip}}}\right\} = \omega_\mathrm{max}=\frac{R'_\mathrm{r}}{\sigma (L'_{\sigma,\mathrm{r}} +M)}$$ 
-    applies. Above, $\Psi_\mathrm{s}$ and $I_\mathrm{s,q}$ are RMS values according to the complex phasor definitions, which is why the factor $\sqrt{2}$ appears in the torque expression.
+    applies. \pause Above, $\Psi_\mathrm{s}$ and $I_\mathrm{s,q}$ are RMS values according to the complex phasor definitions, which is why the factor $\sqrt{2}$ appears in the torque expression.
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1130,15 +1165,17 @@ Considering \figref{fig:power_balance_machine} and the Clarke transf. power mapp
     \begin{equation}
         T = T_\mathrm{max} \frac{2}{\frac{\omega_\mathrm{slip}}{\omega_\mathrm{max}} + \frac{\omega_\mathrm{max}}{\omega_\mathrm{slip}}}
     \end{equation}
-    can be also alternatively expressed as a function of the slip ratio $s$ by utilizing
+    can be also alternatively expressed as a function of the slip ratio $s$ \pause by utilizing
     $$
         \omega_\mathrm{slip} = s \omega_\mathrm{s}, \qquad s_\mathrm{max} = \frac{\omega_\mathrm{max}}{\omega_\mathrm{s}} = \frac{R'_\mathrm{r}}{\sigma (L'_{\sigma,\mathrm{r}} +M)\omega_\mathrm{s}}
     $$
+    \pause
     leading to
     \begin{equation}
         T = T_\mathrm{max} \frac{2}{\frac{s}{s_\mathrm{max}} + \frac{s_\mathrm{max}}{s}}.
     \end{equation}
-    The torque-speed characteristic of a squirrel cage IM is also known as Kloss's formula. It should be noted that $\omega_\mathrm{max}$ and $s_\mathrm{max}$ are machine-dependent parameters (for a constant stator excitation), i.e., constants. Contrary, the slip ratio $s$ and slip frequency $\omega_\mathrm{slip}$ depend on the IM's shaft speed.
+    \pause
+    The torque-speed characteristic of a squirrel cage IM is also known as Kloss's formula. \pause It should be noted that $\omega_\mathrm{max}$ and $s_\mathrm{max}$ are machine-dependent parameters (for a constant stator excitation), i.e., constants. Contrary, the slip ratio $s$ and slip frequency $\omega_\mathrm{slip}$ depend on the IM's shaft speed and vary during operation.
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1175,7 +1212,7 @@ Considering \figref{fig:power_balance_machine} and the Clarke transf. power mapp
     \end{equation}
     since 
     $$\omega_\mathrm{slip} = \omega_{\mathrm{s}} - p \omega_{\mathrm{r}} = \omega_{\mathrm{s}} - 0 = \omega_{\mathrm{s}} $$
-    holds. Depending on the machine design $T_0$ can be significantly lower than $T_\mathrm{max}$, which might be a disadvantage for certain applications. Since
+    holds. \pause Depending on the machine design $T_0$ can be significantly lower than $T_\mathrm{max}$, which might be a disadvantage for certain applications. \pause Since
     $$\omega_\mathrm{max}=\frac{R'_\mathrm{r}}{\sigma (L'_{\sigma,\mathrm{r}} +M)}, \qquad s_\mathrm{max} = \frac{R'_\mathrm{r}}{\sigma (L'_{\sigma,\mathrm{r}} +M)\omega_\mathrm{s}} $$
     depend on the rotor resistance $R'_\mathrm{r}$, the starting torque can be modified by changing the rotor resistance, e.g., via a dropping resistor or potentiometer (which would require a slip ring rotor).
 \end{frame}
@@ -1201,15 +1238,16 @@ Considering \figref{fig:power_balance_machine} and the Clarke transf. power mapp
     \begin{columns}
 		\begin{column}{0.55\textwidth}
 	      \begin{itemize}
-            \item If $\omega_\mathrm{slip} \neq 0$, the rotor bars are exposed to a time-varying magnetic field.
-            \item This induces eddy currents leading to an uneven current distribution within the bars.
-            \item As a result, the effective rotor resistance increases with the slip frequency: \begin{equation}
+            \item<1-> If $\omega_\mathrm{slip} \neq 0$, the rotor bars are exposed to a time-varying magnetic field.
+            \item<2-> This induces eddy currents leading to an uneven current distribution within the bars.
+            \item<3-> As a result, the effective rotor resistance increases with the slip frequency: \begin{equation}
                 \frac{R_\mathrm{r}(\omega_\mathrm{slip})}{R_\mathrm{r,DC}} =  \delta \frac{\sinh(2 \delta) + \sin(2 \delta)}{\cosh(2\delta)-\cos(2 \delta)}
               \end{equation}
               with $$\delta = h_\mathrm{bar}\sqrt{\omega_\mathrm{slip} \frac{\mu_0 \kappa}{2}\frac{w_\mathrm{bar}}{w_\mathrm{slot}}}$$ being the skin depth. Here, $\mu_0$ is the vacuum permeability and $\kappa$ is the bar's conductivity.
           \end{itemize}
         \end{column}
         \begin{column}{0.45\textwidth}
+            \onslide<1->
             \begin{figure}
                 \centering
                 \includegraphics[width=0.85\textwidth]{fig/lec06/Eddy_currents_rotor_bar.pdf}
@@ -1241,14 +1279,15 @@ Considering \figref{fig:power_balance_machine} and the Clarke transf. power mapp
     \begin{columns}
 		\begin{column}{0.5\textwidth}
 	      \begin{itemize}
-            \item Adaption of rotor resistance might be technically tricky. 
-            \item Alternative: vary stator frequency $\omega_\mathrm{s}$.
-            \item Shift of the torque-speed characteristic along the speed axis, i.e., the synchronous speed $\omega_\mathrm{r}=\omega_\mathrm{s}/p$.
-            \item Allows utilizing $T_\mathrm{max}$ at different speeds (including initial starting torque).
-            \item Requires a variable frequency source, e.g., a power electronic converter.
+            \item<1-> Adaption of rotor resistance might be technically tricky.
+            \item<2-> Alternative: vary stator frequency $\omega_\mathrm{s}$.
+            \item<3-> Shift of the torque-speed characteristic along the speed axis, i.e., the synchronous speed $\omega_\mathrm{r}=\omega_\mathrm{s}/p$.
+            \item<4-> Allows utilizing $T_\mathrm{max}$ at different speeds (including initial starting torque).
+            \item<5-> Requires a variable frequency source, e.g., a power electronic converter.
           \end{itemize}
         \end{column}
         \begin{column}{0.5\textwidth}
+            \onslide<2->
             \begin{figure}
                 \centering
                 \includegraphics[width=0.95\textwidth]{fig/lec06/Kloss_formula_different_excitation_frequencies.pdf}
@@ -1267,12 +1306,13 @@ Considering \figref{fig:power_balance_machine} and the Clarke transf. power mapp
     \begin{columns}
 		\begin{column}{0.5\textwidth}
 	      \begin{itemize}
-            \item The previous consideration from \figref{fig:Kloss_formula_different_excitation_frequencies} assumed that $U_\mathrm{s}/\omega_\mathrm{s}=\mathrm{const.}$ applies, that is, the stator voltage amplitude is adjusted according to the frequency.
-            \item Obviously, this is only possible to a certain extent due to the voltage source limitations.
-            \item Hence, at some point, the torque-speed characteristic is limited by the available voltage leading to a flux weakening operation mode (cf. right figure).
+            \item<1-> The previous consideration from \figref{fig:Kloss_formula_different_excitation_frequencies} assumed that $U_\mathrm{s}/\omega_\mathrm{s}=\mathrm{const.}$ applies, that is, the stator voltage amplitude is adjusted according to the frequency.
+            \item<2-> Obviously, this is only possible to a certain extent due to the voltage source limitations.
+            \item<3-> Hence, at some point, the torque-speed characteristic is limited by the available voltage leading to a flux weakening operation mode (cf. right figure).
           \end{itemize}
         \end{column}
         \begin{column}{0.5\textwidth}
+            \onslide<3->
             \begin{figure}
                 \centering
                 \includegraphics[width=0.95\textwidth]{fig/lec06/Kloss_formula_different_excitation_frequencies_field_weakening.pdf}
@@ -1291,22 +1331,26 @@ Considering \figref{fig:power_balance_machine} and the Clarke transf. power mapp
     \begin{columns}
 		\begin{column}{0.45\textwidth}
 	      \begin{itemize}
+            \onslide<1->
             \item The rotating field analysis \eqref{eq:B_three_phase_stator_coil_fourier_series_resulting_field} revealed that the air gap magnetic field contains harmonics:
           \end{itemize}
           $$
           B = \frac{6}{\pi p} \hat{B} \sum_{k}^{\infty} \frac{1}{k} \sin\left(\frac{k \pi}{2}\right) \cos(\omega t - k \vartheta_\mathrm{el}) 
           $$
+          \onslide<2->
           \begin{itemize}
             \item This induces rotor currents with the harmonic slip frequency $\omega^{(k)}_\mathrm{slip}$.
+            \onslide<3->
             \item Likewise the IM fundamental torque, these air gap field and rotor current harmonics lead to constant, i.e., non-harmonic, torque contributions distorting the torque-speed characteristic.
           \end{itemize}
         \end{column}
         \begin{column}{0.555\textwidth}
+            \onslide<3->
             \begin{figure}
                 \centering
                 \includegraphics[width=0.95\textwidth]{fig/lec06/Kloss_formula_harmonics.pdf}
                 \caption{Steady-state torque-speed characteristic of a squirrel cage IM considering torque harmonics due to stator magnetic field harmonics of order $k=1,-5,7,-11$} 
-                \label{fig:Kloss_formula_different_excitation_frequencies_field_weakening}
+                \label{fig:Kloss_formula_harmonics}
             \end{figure}
         \end{column}
     \end{columns}
