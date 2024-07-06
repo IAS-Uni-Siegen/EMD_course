@@ -324,10 +324,10 @@ which are generally applicable as only identical resistances per phase on the st
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Summary: Cylindrical SM model in $\alpha\beta$ coordinates   %%
+%% Summary: cylindrical SM model in $\alpha\beta$ coordinates   %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
-	\frametitle{Summary: Cylindrical SM model in $\alpha\beta$ coordinates}
+	\frametitle{Summary: cylindrical SM model in $\alpha\beta$ coordinates}
     The most important equations of the cylindrical SM model in the  $\alpha\beta$ coordinates are:
     \begin{equation*}
         \begin{alignedat}{4}
@@ -393,7 +393,7 @@ which are generally applicable as only identical resistances per phase on the st
 		\begin{split}
 			\bm{\psi}^\mathrm{s}_\mathrm{s,\alpha\beta}(t) &= L'_\mathrm{s} \bm{i}^\mathrm{s}_{\mathrm{s},\alpha\beta}(t) + M_\mathrm{fs} \begin{bmatrix}\cos(\varepsilon_\mathrm{r,el}(t))\\ \sin(\varepsilon_\mathrm{r,el}(t))\end{bmatrix} i^\mathrm{r}_{\mathrm{f}}(t),			 \\ \Leftrightarrow \quad 
 			 \bm{T}^{-1}_\mathrm{p}(\varepsilon_\mathrm{r,el}) \bm{\psi}_\mathrm{s,dq}(t) &= L'_\mathrm{s}  \bm{T}^{-1}_\mathrm{p}(\varepsilon_\mathrm{r,el})\bm{i}_{\mathrm{s, dq}}(t) + M_\mathrm{fs} \begin{bmatrix}\cos(\varepsilon_\mathrm{r,el}(t)) \\ \sin(\varepsilon_\mathrm{r,el}(t))\end{bmatrix}i_{\mathrm{f}}(t) \\
-			 \Leftrightarrow \quad \bm{\psi}_\mathrm{s,dq}(t) &= L'_\mathrm{s} \bm{i}_{\mathrm{s,dq}}(t) + M_\mathrm{fs} \begin{bmatrix}1 \\ 0 \end{bmatrix}i^\mathrm{r}_{\mathrm{f}}(t).
+			 \Leftrightarrow \quad \bm{\psi}_\mathrm{s,dq}(t) &= L'_\mathrm{s} \bm{i}_{\mathrm{s,dq}}(t) + \underbrace{M_\mathrm{fs} \begin{bmatrix}1 \\ 0 \end{bmatrix}}_{\bm{M}_\mathrm{fs}}i^\mathrm{r}_{\mathrm{f}}(t) = L'_\mathrm{s} \bm{i}_{\mathrm{s,dq}}(t) + \bm{M}_\mathrm{fs}i^\mathrm{r}_{\mathrm{f}}(t).
 		\end{split}
 		\label{eq:SM_stator_dq_flux_linkage}
 	\end{equation}
@@ -403,7 +403,7 @@ which are generally applicable as only identical resistances per phase on the st
              \psi^\mathrm{r}_\mathrm{f}(t) &= L_\mathrm{f} i^\mathrm{r}_\mathrm{f}(t) + M_\mathrm{fs} \begin{bmatrix}\cos(\varepsilon_\mathrm{r,el}(t)) & \sin(\varepsilon_\mathrm{r,el}(t))\end{bmatrix}\bm{i}^\mathrm{s}_\mathrm{s,\alpha\beta}(t)
 			 \\ \Leftrightarrow \quad 	 \psi^\mathrm{r}_\mathrm{f}(t) &= L_\mathrm{f} i^\mathrm{r}_\mathrm{f}(t) + M_\mathrm{fs} \begin{bmatrix}\cos(\varepsilon_\mathrm{r,el}(t)) & \sin(\varepsilon_\mathrm{r,el}(t))\end{bmatrix}  \bm{T}^{-1}_\mathrm{p}(\varepsilon_\mathrm{r,el})\bm{i}^\mathrm{s}_\mathrm{s,dq}(t)
 			 \\
-			 \Leftrightarrow \quad \psi^\mathrm{r}_\mathrm{f}(t) &= L_\mathrm{f} i^\mathrm{r}_\mathrm{f}(t) + M_\mathrm{fs} \begin{bmatrix}1 & 0\end{bmatrix} \bm{i}_\mathrm{s,dq}(t).
+			 \Leftrightarrow \quad \psi^\mathrm{r}_\mathrm{f}(t) &= L_\mathrm{f} i^\mathrm{r}_\mathrm{f}(t) + M_\mathrm{fs} \begin{bmatrix}1 & 0\end{bmatrix} \bm{i}_\mathrm{s,dq}(t)= L_\mathrm{f} i^\mathrm{r}_\mathrm{f}(t) + \bm{M}\T_\mathrm{fs} \bm{i}_\mathrm{s,dq}(t).
 		\end{split}
 	\end{equation}
 \end{frame}
@@ -412,18 +412,37 @@ which are generally applicable as only identical resistances per phase on the st
 %% Summary: Cylindrical SM model in dq coordinates   %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
-	\frametitle{Summary: Cylindrical SM model in dq coordinates}
+	\frametitle{Summary: cylindrical SM model in dq coordinates}
     The most important equations of the cylindrical SM model in the  dq coordinates are:
     \begin{equation*}
         \begin{alignedat}{4}
             &&\mbox{Stator voltage:}&& \quad\bm{u}_\mathrm{s,dq}(&t) &&= R_\mathrm{s} \bm{i}_\mathrm{s,dq}(t)+ \omega_\mathrm{r,el}(t)\bm{J}\bm{\psi}_\mathrm{s,dq}(t) + \frac{\mathrm{d}}{\mathrm{d}t}\bm{\psi}_\mathrm{s,dq}(t),\\
 			&&\mbox{Rotor / field winding  voltage:}&& \quad u_\mathrm{f}(&t) &&= R_\mathrm{f}i_\mathrm{f}(t)+\frac{\mathrm{d}}{\mathrm{d}t}\psi_\mathrm{f}(t),\\
-			&&\mbox{Stator flux linkage:}&& \quad \bm{\psi}_\mathrm{s,dq}(&t) &&= L'_\mathrm{s} \bm{i}_\mathrm{s,dq}(t) + M_\mathrm{fs} \begin{bmatrix}1 \\ 0\end{bmatrix} i_{\mathrm{f}}(t),\\
-			&&\mbox{Rotor / field winding flux linkage:}&& \psi_\mathrm{f}(&t) &&= L_\mathrm{f} i^\mathrm{r}_\mathrm{f}(t) + M_\mathrm{fs} \begin{bmatrix}1 & 0\end{bmatrix} \bm{i}_\mathrm{s,dq}(t),\\
+			&&\mbox{Stator flux linkage:}&& \quad \bm{\psi}_\mathrm{s,dq}(&t) &&= L'_\mathrm{s} \bm{i}_\mathrm{s,dq}(t) + \bm{M}_\mathrm{fs} i_{\mathrm{f}}(t),\\
+			&&\mbox{Rotor / field winding flux linkage:}&& \psi_\mathrm{f}(&t) &&= L_\mathrm{f} i^\mathrm{r}_\mathrm{f}(t) + \bm{M}\T_\mathrm{fs} \bm{i}_\mathrm{s,dq}(t),\\
 			&&\mbox{Torque:}&& \quad T(&t) &&= \frac{3}{2} p (\bm{i}_\mathrm{s,dq})\T\bm{J}\bm{\psi}_\mathrm{s,dq}.
         \end{alignedat}
     \end{equation*}
 	Here, one can observe that the d component of the stator flux linkage is directly coupled with the field winding flux and vice versa, which was to be expected due to the rotor flux orientation of the chosen coordinate system.  
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% ECD of cylindrical SM model in dq coordinates      %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{ECD of cylindrical SM model in dq coordinates}
+    \begin{figure}
+		\begin{columns}
+			\begin{column}{0.6\textwidth}
+					\centering
+					\includegraphics[width=\textwidth]{fig/lec07/SM_cylindrical_T_ECD_dq.pdf}
+			\end{column}
+			\begin{column}{0.4\textwidth}
+				\caption{\raggedright T-type ECD of a cylindrical SM in dq coordinates (note that this ECD is represented with scalar values and not as vectors or complex numbers as in the IM case).}
+				\label{fig:SM_cylindrical_T_ECD_dq}
+			\end{column}
+		\end{columns}
+    \end{figure}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -450,4 +469,68 @@ which are generally applicable as only identical resistances per phase on the st
             \end{figure}
         \end{column}
     \end{columns}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Salient pole SM model(cont.) %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Salient pole SM model (cont.) }
+	From \figref{fig:SM_salient_pole_dq_reluctance} we derive the following stator flux linkage model for the salient pole SM:
+	\begin{equation}
+			\bm{\psi}_\mathrm{s,dq}(t) = \underbrace{\begin{bmatrix}
+				L'_\mathrm{s,d} & 0\\
+				0 & L'_\mathrm{s,q}
+			\end{bmatrix}}_{\bm{L}_\mathrm{s,dq}} \bm{i}_{\mathrm{s,dq}}(t) + M_\mathrm{fs} \begin{bmatrix}1 \\ 0\end{bmatrix} i_{\mathrm{f}}(t) = \bm{L}_\mathrm{s,dq}\bm{i}_{\mathrm{s,dq}}(t) + \bm{M}_\mathrm{fs} i_{\mathrm{f}}(t)
+	\end{equation}
+	while the rotor field winding flux linkage remains identical to the cylindrical SM case. Inserting the stator flux linkage model into the torque equation yields
+	\begin{equation}
+		\begin{split}
+			T(t) &= \frac{3}{2} p (\bm{i}_\mathrm{s,dq})\T\bm{J}\bm{\psi}_\mathrm{s,dq}
+			= \frac{3}{2} p i_\mathrm{s,q}\left[ M_\mathrm{fs} i_{\mathrm{f}} + \left(L'_\mathrm{s,d}-L'_\mathrm{s,q}\right)i_\mathrm{s,d}\right]\\
+			& = \underbrace{\frac{3}{2} p M_\mathrm{fs} i_\mathrm{s,q}  i_{\mathrm{f}}}_{\mbox{main torque}} + \underbrace{\frac{3}{2} p i_\mathrm{s,q} i_\mathrm{s,d} \left( L'_\mathrm{s,d}-L'_\mathrm{s,q}\right)}_{\mbox{reluctance torque}}.
+		\end{split}
+	\end{equation}
+	The latter part is specific to the salient pole SM since $L'_\mathrm{s,d} \neq  L'_\mathrm{s,q}$ holds, while $L'_\mathrm{s,d} =  L'_\mathrm{s,q} =L'_\mathrm{s}$ applies to the cylindrical SM, that is, the reluctance torque is zero.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Summary: Salient pole SM model in dq coordinates   %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Summary: salient pole SM model in dq coordinates}
+    The most important equations of the salient pole SM model in the  dq coordinates are:
+	\begin{equation*}
+		\begin{alignedat}{4}
+			&&\mbox{Stator voltage:}&& \quad\bm{u}_\mathrm{s,dq}(&t) &&= R_\mathrm{s} \bm{i}_\mathrm{s,dq}(t)+ \omega_\mathrm{r,el}(t)\bm{J}\bm{\psi}_\mathrm{s,dq}(t) + \frac{\mathrm{d}}{\mathrm{d}t}\bm{\psi}_\mathrm{s,dq}(t),\\
+			&&\mbox{Rotor / field winding  voltage:}&& \quad u_\mathrm{f}(&t) &&= R_\mathrm{f}i_\mathrm{f}(t)+\frac{\mathrm{d}}{\mathrm{d}t}\psi_\mathrm{f}(t),\\
+			&&\mbox{Stator flux linkage:}&& \quad \bm{\psi}_\mathrm{s,dq}(&t) &&= \bm{L}_\mathrm{s,dq}\bm{i}_{\mathrm{s,dq}}(t) + \bm{M}_\mathrm{fs} i_{\mathrm{f}}(t), \vphantom{\frac{\mathrm{d}}{\mathrm{d}t}}\\
+			&&\mbox{Rotor / field winding flux linkage:}&& \psi_\mathrm{f}(&t) &&= L_\mathrm{f} i^\mathrm{r}_\mathrm{f}(t) + \bm{M}\T_\mathrm{fs} \bm{i}_\mathrm{s,dq}(t),\vphantom{\frac{\mathrm{d}}{\mathrm{d}t}}\\
+			&&\mbox{Torque:}&& \quad T(&t) &&= \frac{3}{2} p (\bm{i}_\mathrm{s,dq})\T\bm{J}\bm{\psi}_\mathrm{s,dq}\\
+			&&&&&&&=\frac{3}{2} p i_\mathrm{s,q}\left[ M_\mathrm{fs} i_{\mathrm{f}} + \left(L'_\mathrm{s,d}-L'_\mathrm{s,q}\right)i_\mathrm{s,d}\right].
+		\end{alignedat}
+	\end{equation*}      
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Damper winding %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Damper winding}
+	\begin{figure}
+		\centering
+		\begin{subfigure}{0.49\textwidth}
+			\centering
+			\includegraphics[width=0.8\textwidth]{fig/lec07/SM_salient_pole.pdf}
+			\caption{Salient pole rotor}
+		\end{subfigure}
+		\hfill
+		\begin{subfigure}{0.49\textwidth}
+			\centering
+			\includegraphics[height=0.55\textheight]{fig/lec07/Pelton_wheel_rotor_02.jpg}
+			\caption{Synchronous generator with short-circuited damper winding (source: \href{https://commons.wikimedia.org/wiki/File:Wald_am_Arlberg-OeBB_Spullersee_power_plant-M1-Rotor-11ASD.jpg}{Wikimedia Commons},  	Asurnipal, \href{https://creativecommons.org/licenses/by-sa/4.0/deed}{CC BY-SA 4.0})} 
+		\end{subfigure}
+        \caption{SM with damper winding} 
+        \label{fig:SM_damper_winding}
+	\end{figure}
 \end{frame}
