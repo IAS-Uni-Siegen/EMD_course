@@ -556,9 +556,97 @@ which are generally applicable as only identical resistances per phase on the st
             \begin{figure}
                 \centering
                 \includegraphics[width=0.825\textwidth]{fig/lec07/Salient_pole_damper_winding_02.png}
-                \caption{Rotor with solid damper bars (source: J.~Cros et al., \textit{Simulation Methods for the Transient Analysis of Synchronous Alternators}, Renewable Energy, 2016, \href{https://creativecommons.org/licenses/by/3.0/}{CC BY 3.0})}
+                \caption{SM rotor with solid damper bars (source: J.~Cros et al., \textit{Simulation Methods for the Transient Analysis of Synchronous Alternators}, Renewable Energy, 2016, \href{https://creativecommons.org/licenses/by/3.0/}{CC BY 3.0})}
                 \label{fig:Salient_pole_damper_winding_02}
             \end{figure}
         \end{column}
     \end{columns}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% SM model with damper winding %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{SM model with damper winding}
+	From the IM model in dq-coordinates (compare \figref{fig:IM_T_ECD_dq}) we introduce the short-circuited damper winding voltage equation:
+	\begin{equation}
+		0 = \bm{R}_{\mathrm{r,DQ}} \bm{i}_{\mathrm{r,DQ}}(t) + \frac{\mathrm{d}}{\mathrm{d}t}\bm{\psi}_{\mathrm{r,DQ}}(t) = \begin{bmatrix}
+			R_\mathrm{r,D} & 0 \\ 0 & R_\mathrm{r,Q} 
+		\end{bmatrix} \begin{bmatrix}
+			i_{\mathrm{r,D}}(t) \\ i_{\mathrm{r,Q}}(t)
+		\end{bmatrix} + \frac{\mathrm{d}}{\mathrm{d}t} \begin{bmatrix}
+			\psi_{\mathrm{r,D}}(t) \\ \psi_{\mathrm{r,Q}}(t)
+		\end{bmatrix}.
+		\label{eq:damper_winding_voltage}
+	\end{equation}
+	Here, the following applies:
+	\begin{itemize}
+		\item Capital indices represent the damper winding.
+		\item $\bm{i}_{\mathrm{r,DQ}}(t)$ and $\bm{\psi}_{\mathrm{r,DQ}}(t)$ are the current as well as flux linkage in the damper winding.
+		\item $\bm{R}_{\mathrm{r,DQ}}$ represents the resistance matrix: Since the damper winding eventually does not cover the entire rotor circumference, $R_\mathrm{r,D}\neq R_\mathrm{r,Q}$ can apply (compare \figref{fig:SM_damper_winding}). 
+	\end{itemize} 
+	The stator and field winding voltage equations remain unchanged:
+	$$\bm{u}_\mathrm{s,dq}(t) = R_\mathrm{s} \bm{i}_\mathrm{s,dq}(t)+ \omega_\mathrm{r,el}(t)\bm{J}\bm{\psi}_\mathrm{s,dq}(t) + \frac{\mathrm{d}}{\mathrm{d}t}\bm{\psi}_\mathrm{s,dq}(t), \quad u_\mathrm{f}(t) = R_\mathrm{f}i_\mathrm{f}(t)+\frac{\mathrm{d}}{\mathrm{d}t}\psi_\mathrm{f}(t).$$
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% SM model with damper winding (cont.) %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{SM model with damper winding (cont.)}
+	 The flux linkage equations become
+	\begin{equation}
+		\begin{split}
+			\bm{\psi}_\mathrm{s,dq}(t) &= \bm{L}_\mathrm{s,dq}\bm{i}_{\mathrm{s,dq}}(t) + \bm{M}_\mathrm{fs} i_{\mathrm{f}}(t) + \bm{M}_\mathrm{rs}\bm{i}_{\mathrm{r,DQ}}(t)\\
+			 &= \begin{bmatrix}
+				L'_\mathrm{s,d} & 0\\
+				0 & L'_\mathrm{s,q}
+			\end{bmatrix} \begin{bmatrix}
+				i_{\mathrm{s,d}}(t) \\ i_{\mathrm{s,q}}(t)
+			\end{bmatrix} + M_\mathrm{fs} \begin{bmatrix}1 \\ 0\end{bmatrix} i_{\mathrm{f}}(t) + \begin{bmatrix}
+				M_\mathrm{dD} & 0\\
+				0 & M_\mathrm{qQ}
+			\end{bmatrix} \begin{bmatrix}
+				i_{\mathrm{r,D}}(t) \\ i_{\mathrm{r,Q}}(t)
+			\end{bmatrix},\\[0.75em]
+			\psi_\mathrm{f}(t) &= L_\mathrm{f} i_\mathrm{f}(t) + \bm{M}\T_\mathrm{fs} \bm{i}_\mathrm{s,dq}(t) + \bm{M}\T_\mathrm{fr} \bm{i}_\mathrm{r,DQ}(t)\\
+			 &= L_\mathrm{f} i_\mathrm{f}(t) + M_\mathrm{fs} \begin{bmatrix}1 & 0\end{bmatrix}\begin{bmatrix}
+				i_{\mathrm{s,d}}(t) \\ i_{\mathrm{s,q}}(t)
+			\end{bmatrix} + M_\mathrm{fr} \begin{bmatrix}1 & 0\end{bmatrix}\begin{bmatrix}
+				i_{\mathrm{r,D}}(t) \\ i_{\mathrm{r,Q}}(t)
+			\end{bmatrix},\\[0.75em]
+			\bm{\psi}_\mathrm{r,DQ}(t) &= \bm{L}_\mathrm{r,DQ}\bm{i}_{\mathrm{r,DQ}}(t) + \bm{M}_\mathrm{rs}\bm{i}_{\mathrm{s,dq}}(t) + \bm{M}_\mathrm{fr} i_\mathrm{f}(t)\\
+			& = \begin{bmatrix}
+				L_\mathrm{D} & 0\\
+				0 & L_\mathrm{Q}
+			\end{bmatrix} \begin{bmatrix}
+				i_{\mathrm{r,D}}(t) \\ i_{\mathrm{r,Q}}(t)
+			\end{bmatrix} + \begin{bmatrix}
+				M_\mathrm{dD} & 0\\
+				0 & M_\mathrm{qQ}
+			\end{bmatrix} \begin{bmatrix}
+				i_{\mathrm{s,d}}(t) \\ i_{\mathrm{s,q}}(t)
+			\end{bmatrix} + M_\mathrm{fr} \begin{bmatrix}1 \\ 0\end{bmatrix} i_\mathrm{f}(t).
+		\end{split}
+	\end{equation}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% SM model with damper winding (cont.) %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{SM model with damper winding (cont.)}
+	The torque equation becomes
+	\begin{equation}
+		\begin{split}
+			T(t) &= \frac{3}{2} p (\bm{i}_\mathrm{s,dq})\T\bm{J}\bm{\psi}_\mathrm{s,dq}\\
+			&=\frac{3}{2} p \left[ M_\mathrm{fs} i_{\mathrm{f}}i_\mathrm{s,q} + \left(L'_\mathrm{s,d}-L'_\mathrm{s,q}\right)i_\mathrm{s,d}i_\mathrm{s,q}+ M_\mathrm{dD}i_\mathrm{s,q} i_\mathrm{r,D} -M_\mathrm{qQ}i_\mathrm{s,d} i_\mathrm{r,Q}\right].
+		\end{split}
+	\end{equation}
+	Here, the last two terms represent the torque contribution of the damper winding:
+	\begin{itemize}
+		\item In steady state, that is, the stator field rotates synchronously with the rotor, the damper winding current is zero, cf. \eqref{eq:damper_winding_voltage}. Consequently, the damper torque is zero. 
+		\item Only during transients, when a changing flux linkage induces a voltage within the damper winding, non-zero damper currents occur.
+		\item The resulting damper torque will oppose the transient and, e.g., dampen mechanical rotor oscillations in generator applications.
+	\end{itemize}
 \end{frame}
