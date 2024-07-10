@@ -650,3 +650,103 @@ which are generally applicable as only identical resistances per phase on the st
 		\item The resulting damper torque will oppose the transient and, e.g., dampen mechanical rotor oscillations in generator applications.
 	\end{itemize}
 \end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Permanent magnet synchronous machine (PMSM) %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Permanent magnet synchronous machine (PMSM)}
+	\begin{figure}
+		\centering
+		\begin{subfigure}{0.49\textwidth}
+			\centering
+			\includegraphics[width=0.8\textwidth]{fig/lec07/SPMSM.pdf}
+			\caption{Surface-mounted PMSM (SPMSM)}
+		\end{subfigure}
+		\hfill
+		\begin{subfigure}{0.49\textwidth}
+			\centering
+			\includegraphics[width=0.8\textwidth]{fig/lec07/IPMSM.pdf}
+			\caption{Interior PMSM (IPMSM)}
+		\end{subfigure}
+        \caption{SM with permanent magnet excitation} 
+        \label{fig:PMSMs}
+	\end{figure}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% PMSM characteristics %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{PMSM characteristics}	
+    \begin{columns}
+		\begin{column}{0.5\textwidth}
+			\begin{itemize}
+				\item Field winding is replaced by permanent magnets (PMs) in the rotor.
+				\item Typically increases efficiency and power density, since no field winding losses occur.
+				\item However, PMs are often more expensive than field windings and the machine is less flexible in terms of field weakening.
+			\end{itemize}
+			\vspace{-0.25cm}
+			\begin{varblock}
+				{PMSM applications}
+					Due to weight and size advantages, PMSMs are often used in automotive applications (e.g., electric vehicles) and in highly dynamic industrial applications (e.g., servo drives).
+			\end{varblock}
+		\end{column}
+        \begin{column}{0.5\textwidth}
+            \begin{figure}
+                \centering
+                \includegraphics[width=0.9\textwidth]{fig/lec07/External_rotor_PMSM.jpg}
+                \caption{PMSM with external rotor (source: \href{https://commons.wikimedia.org/wiki/File:General_Technic_GT_9840_-_capstan_motor-6683.jpg}{Wikimedia Commons},  R.~Spekking, \href{https://creativecommons.org/licenses/by-sa/4.0/deed}{CC BY-SA 4.0})}
+                \label{fig:External_rotor_PMSM}
+            \end{figure}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% PMSM model %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{PMSM model}
+	Due to the absence of a field winding, the PMSM model simplifies: The general stator voltage equation in the dq coordinate system remains identical to the SM model
+	$$\bm{u}_\mathrm{s,dq}(t) = R_\mathrm{s} \bm{i}_\mathrm{s,dq}(t)+ \omega_\mathrm{r,el}(t)\bm{J}\bm{\psi}_\mathrm{s,dq}(t) + \frac{\mathrm{d}}{\mathrm{d}t}\bm{\psi}_\mathrm{s,dq}(t)$$
+	while the field winding voltage equation is omitted. The stator flux linkage model becomes
+	\begin{equation}
+		\bm{\psi}_\mathrm{s,dq}(t) = \bm{L}_\mathrm{s,dq}\bm{i}_{\mathrm{s,dq}}(t) + \bm{\psi}_\mathrm{pm} = \begin{bmatrix}
+			L'_\mathrm{s,d} & 0\\
+			0 & L'_\mathrm{s,q}
+		\end{bmatrix} \begin{bmatrix}
+			i_{\mathrm{s,d}}(t) \\ i_{\mathrm{s,q}}(t)
+		\end{bmatrix} + \begin{bmatrix}
+			\bm{\psi}_\mathrm{pm} \\ 0
+		\end{bmatrix}.
+	\end{equation}
+	Here, $\bm{\psi}_\mathrm{pm}$ represents the (constant) permanent magnet flux linkage. By definition of the dq coordinate system, the permanent magnet flux linkage is directed exclusively along the d-axis (cf. \figref{fig:PMSMs}). The rotor flux linkage model is omitted, since no field winding is present. Also, a damper winding is very uncommon for PMSMs. Hence, torque equation results in
+	\begin{equation}
+		T(t) = \frac{3}{2} p (\bm{i}_\mathrm{s,dq})\T\bm{J}\bm{\psi}_\mathrm{s,dq} = \frac{3}{2} p i_\mathrm{s,q}\left[ \bm{\psi}_\mathrm{pm} + \left(L'_\mathrm{s,d}-L'_\mathrm{s,q}\right)i_\mathrm{s,d}\right].
+	\end{equation}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Isotropic vs. anisotropic PMSM %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Isotropic vs. anisotropic PMSM}
+	From \eqref{eq:PM_magnetization} we know that the relative permeability of the PM material is nearly as that of air, i.e., $$\mu_\mathrm{r,PM} \approx 1$$ applies. Consequently, the PM flux path can be considered as an (additional) air gap. Against this background, the two types for PMSM rotors as in \figref{fig:PMSMs} show different characteristics:
+	\vspace{0.5em}
+	\begin{itemize}
+		\item SPMSM: The PMs are distributed over the entire rotor circumference. 
+		\begin{itemize}
+			\item The PM flux path is isotropic, i.e., the same in all directions.
+			\item Consequently, the relucance paths in the d and q axis are identical.
+			\item $L'_\mathrm{s,d} =  L'_\mathrm{s,q} =L'_\mathrm{s}$ applies.
+		\end{itemize}
+		\vspace{0.5em}
+		\item IPMSM: The PMs are concentrated inside the rotor core.
+		\begin{itemize}
+			\item The PM flux path is anisotropic, i.e., different in the d and q axis.
+			\item Consequently, the effective reluctance along the d axis is much higher than along the q axis.
+			\item $L'_\mathrm{s,d} <  L'_\mathrm{s,q}$ applies.
+		\end{itemize}
+	\end{itemize}
+\end{frame}
