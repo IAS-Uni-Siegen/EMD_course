@@ -787,3 +787,79 @@ which are generally applicable as only identical resistances per phase on the st
 		\end{itemize}
 	\end{itemize}
 \end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Synchronous reluctance machine (SynRM) %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Synchronous reluctance machine (SynRM)}	
+    \begin{columns}
+		\begin{column}{0.5\textwidth}
+			\begin{itemize}
+				\item SynRM: utilizes only the reluctance torque.
+				\item  No field winding or PMs are present.
+				\item The rotor is designed such that the reluctance differences in the d and q axis are maximized.
+				\item PMSM model equations can be used, but the PM flux linkage is zero.
+			\end{itemize}
+			\begin{equation}
+				\begin{split}
+					\bm{\psi}_\mathrm{s,dq}(t) &= \bm{L}_\mathrm{s,dq}\bm{i}_{\mathrm{s,dq}}(t), \\
+					T(t) &= \frac{3}{2} p (\bm{i}_\mathrm{s,dq})\T\bm{J}\bm{\psi}_\mathrm{s,dq}\\ &= \frac{3}{2} p i_\mathrm{s,q} \left(L'_\mathrm{s,d}-L'_\mathrm{s,q}\right)i_\mathrm{s,d}.
+				\end{split}
+			\end{equation}
+		\end{column}
+        \begin{column}{0.5\textwidth}
+			\onslide<1->
+            \begin{figure}
+                \centering
+                \includegraphics[width=0.8\textwidth]{fig/lec07/SynRM.pdf}
+                \caption{Example of a SynRM with rotor flux barriers (no PMs or field winding present)}
+                \label{fig:SynRM}
+            \end{figure}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Steady-state behavior %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Steady-state behavior}
+	We limit the following discussion to the isotropic case
+	$$L'_\mathrm{s,d} =  L'_\mathrm{s,q} =L'_\mathrm{s}$$
+	which covers the SPMSM and the cylindrical SM. In steady state ($\nicefrac{\mathrm{d}x}{\mathrm{d}t} = 0$), the flux linked with possibly present damper windings is constant, i.e., no voltage is induced within the damper windings and $$\bm{I}_\mathrm{r,DQ} = 0$$ applies. Hence, the damper winding can be neglected in steady state. Furthermore, in steady state the field winding current is constant: $$I_\mathrm{f} = \frac{\mathrm{U}_\mathrm{f} }{\mathrm{R}_\mathrm{f}} = \mathrm{const.}$$
+	Consequently, the stator flux linkage share resulting from the field winding $\bm{M}_\mathrm{fs} I_{\mathrm{f}}$ is constant and can be interpreted as an equivalent permanent magnet flux linkage. Hence, we will focus on the steady-state behavior of the cylindrical SM in the following, which implicitly covers the SPMSM case as well.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Steady-state behavior (cont.) %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Steady-state behavior (cont.)}
+	In steady state, the flux linkage equation remains
+	$$\bm{\psi}_\mathrm{s,dq} =  L'_\mathrm{s} \bm{I}_\mathrm{s,dq} + \bm{M}_\mathrm{fs} I_{\mathrm{f}} \quad \Leftrightarrow \quad \begin{bmatrix}
+		\psi_\mathrm{s,d} \\ \psi_\mathrm{s,q}
+	\end{bmatrix} = \left(L_\mathrm{s} +\frac{M_\mathrm{s}}{2}\right)\begin{bmatrix}
+		I_\mathrm{s,d} \\ I_\mathrm{s,q}
+	\end{bmatrix} + M_\mathrm{fs} \begin{bmatrix}
+		I_\mathrm{f} \\ 0
+	\end{bmatrix}.$$
+	With the decomposition of $L_\mathrm{s}$ into its leakage part $L_{\sigma,\mathrm{s}}$ and the mutual part $M_\mathrm{s}$, 
+	\begin{equation}
+		L_\mathrm{s} = L_{\sigma,\mathrm{s}} + M_{\mathrm{s}}, 
+	\end{equation}
+	we obtain
+	\begin{equation}
+		\begin{bmatrix}
+			\psi_\mathrm{s,d} \\ \psi_\mathrm{s,q}
+		\end{bmatrix} = \left(L_{\sigma,\mathrm{s}} + \frac{3}{2}M_\mathrm{s}\right)\begin{bmatrix}
+			I_\mathrm{s,d} \\ I_\mathrm{s,q}
+		\end{bmatrix} + M_\mathrm{fs} \begin{bmatrix}
+			I_\mathrm{f} \\ 0
+		\end{bmatrix}.
+		\end{equation}
+		In the context of simplified modeling, the assumption is (often) made that the (scaled) mutual inductances are equal, i.e., $$\nicefrac{3}{2}M_\mathrm{fs} = M_\mathrm{s} = M$$ leading to
+		\begin{equation}
+				\psi_\mathrm{s,d} = \left(L_{\sigma,\mathrm{s}} + M\right)I_\mathrm{s,d} + M I_\mathrm{f}, \qquad \psi_\mathrm{s,q} = \left(L_{\sigma,\mathrm{s}} + M\right)I_\mathrm{s,q}.
+		\end{equation}
+\end{frame}
