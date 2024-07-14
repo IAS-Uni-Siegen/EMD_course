@@ -893,12 +893,12 @@ which are generally applicable as only identical resistances per phase on the st
 	Rewriting the vectorial quantities as complex phasors $\underline{X}_\mathrm{dq} = X e^{\mathrm{j}\phi}=X_\mathrm{d} + \mathrm{j} X_\mathrm{q}$ rotating with the angular frequency $\omega_\mathrm{r,el} \rightarrow \omega_\mathrm{s}$, we obtain
 	\begin{equation}
 		\begin{split}
-			\underline{U}_\mathrm{s} &= R_\mathrm{s} \underline{I}_\mathrm{s} + \mathrm{j}\omega_\mathrm{s} \left[\left(L_{\sigma,\mathrm{s}} + M\right)\underline{I}_\mathrm{s} + M I_\mathrm{f}\right]\\
-			&= R_\mathrm{s} \underline{I}_\mathrm{s} + \mathrm{j}\omega_\mathrm{s} \left(L_{\sigma,\mathrm{s}} + M\right)\underline{I}_\mathrm{s} + \underbrace{\mathrm{j}\omega_\mathrm{s} M I_\mathrm{f}}_{\underline{U}_\mathrm{i}}
+			\underline{U}_\mathrm{s} &= R_\mathrm{s} \underline{I}_\mathrm{s} + \mathrm{j}\omega_\mathrm{s} \left[\left(L_{\sigma,\mathrm{s}} + M\right)\underline{I}_\mathrm{s} + M I_\mathrm{f}\right]
+			= R_\mathrm{s} \underline{I}_\mathrm{s} + \mathrm{j} \underbrace{\omega_\mathrm{s} \left(L_{\sigma,\mathrm{s}} + M\right)}_{X_\mathrm{s}}\underline{I}_\mathrm{s} + \underbrace{\mathrm{j}\omega_\mathrm{s} M I_\mathrm{f}}_{\underline{U}_\mathrm{i}}
 		\end{split}
 		\label{eq:SM_voltage_steady_state}
 	\end{equation}
-	with $\underline{U}_\mathrm{i}$ being the internal voltage, i.e., the induced voltage due to the field winding excitation.
+	with $\underline{U}_\mathrm{i}$ being the internal voltage, i.e., the induced voltage due to the field winding excitation and $X_\mathrm{s}$ being the synchronous reactance (which can be empirically identified using open-circuit and short-circuit tests).
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -918,6 +918,25 @@ which are generally applicable as only identical resistances per phase on the st
         \caption{ECD of a (simplified) cylindrical SM in steady state represented by complex phasors}
         \label{fig:SM_ECD_steady_state}
     \end{figure}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Short-circuit and open-circuit tests %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Short-circuit and open-circuit tests} 
+	From \figref{fig:SM_ECD_steady_state} the open-circuit voltage is
+	\begin{equation}
+		\underline{U}_\mathrm{s,oc} = \underline{U}_\mathrm{i} = \mathrm{j} \omega_\mathrm{s} M I_\mathrm{f}.
+	\end{equation}
+	Here, the stator current is zero. On the other hand, the short-circuit current is given by
+	\begin{equation}
+		\underline{I}_\mathrm{s,sc} = \frac{\underline{U}_\mathrm{i}}{\mathrm{j}X_\mathrm{s}} = \frac{\omega_\mathrm{s} M I_\mathrm{f}}{\mathrm{j}\omega_\mathrm{s}\left(L_{\sigma,\mathrm{s}} + M\right)} = \frac{M}{\mathrm{j}\left(L_{\sigma,\mathrm{s}} + M\right)}I_\mathrm{f}.
+	\end{equation}
+	Here, the stator voltage is zero and one can observe that the short-circuit current $I_\mathrm{f}$ can be interpreted as the excitation current converted via the inductance ratio. Finally, the synchronous reactance can be calculated by the ratio of the open-circuit voltage and the short-circuit current:
+	\begin{equation}
+		X_\mathrm{s} = \frac{\underline{U}_\mathrm{s,oc}}{\underline{I}_\mathrm{s,sc}}.
+	\end{equation}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
