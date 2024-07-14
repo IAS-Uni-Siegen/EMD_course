@@ -19,7 +19,7 @@ jobs:
       - name: Upload PDF file
         uses: actions/upload-pages-artifact@v3 #actions/upload-artifact@v4
         with:
-          name: PDF
+          name: github-pages
           path: lecture/built/
 
   deploy:
