@@ -7,9 +7,12 @@ jobs:
       - name: Set up Git repository
         uses: actions/checkout@v4
       - name: Compile LaTeX document
-        uses: xu-cheng/latex-action@v3
+        uses: xu-cheng/texlive-action@v2
         with:
-          root_file: lecture/main.tex
+          scheme: full
+          run: |
+            cd lecture
+            python3 build.py
       - name: Upload PDF file
         uses: actions/upload-artifact@v4
         with:
