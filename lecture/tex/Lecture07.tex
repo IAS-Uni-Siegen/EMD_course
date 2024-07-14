@@ -993,6 +993,32 @@ which are generally applicable as only identical resistances per phase on the st
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Stable steady-state operation (with fixed stator excitation) %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Stable steady-state operation (with fixed stator excitation)} 
+	\begin{columns}
+		\begin{column}{0.55\textwidth}
+			\begin{itemize}
+				\item From \eqref{eq:SM_torque_steady_state} we see that the torque depends on $\sin(\theta)$.
+				\item Beyond $\theta = \pm 90^\circ$, the absolute torque decreases again.
+				\item If the SM is operated with a fixed stator excitation, e.g., by a stiff grid voltage, the load angle $\theta$ is determined by the mechanical load.
+				\item If the absolute mechanical load is increased such that $|\theta| > 90^\circ$ applies, the SM will lose synchronism and stall.
+				\item Hence, the stable operation range is limited to $|\theta| \leq 90^\circ$ (while in practice an additional safety margin is considered).
+			\end{itemize}
+        \end{column}
+        \begin{column}{0.45\textwidth}
+            \begin{figure}
+                \centering
+                \includegraphics[width=0.95\textwidth]{fig/lec07/SM_steady_state_stability.pdf}
+                \caption{Torque vs. load angle for the cylindrical SM}
+                \label{fig:SM_steady_state_stability}
+            \end{figure}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Power balance %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
