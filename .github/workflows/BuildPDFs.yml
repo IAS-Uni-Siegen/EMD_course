@@ -1,5 +1,8 @@
 name: Build LaTeX document
-on: [push]
+on: 
+  push: 
+  workflow_dispatch:
+  
 jobs:
   build_latex:
     runs-on: ubuntu-latest
@@ -17,7 +20,7 @@ jobs:
         uses: actions/upload-pages-artifact@v3 #actions/upload-artifact@v4
         with:
           name: PDF
-          path: lecture/built/main.pdf
+          path: lecture/built/
 
   deploy:
     needs: build_latex
