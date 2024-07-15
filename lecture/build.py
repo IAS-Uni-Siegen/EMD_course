@@ -26,6 +26,8 @@ with fileinput.input('main.tex', inplace=True) as f:
         elif ']{beamer}' in line:
             if 'handout' not in line:
                 print(line.replace(']{beamer}', ', handout]{beamer}'), end='')
+            else:
+                print(line, end='')    
         else:
             print(line, end='')
         
