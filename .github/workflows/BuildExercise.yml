@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
   
 jobs:
-  build_exericse_latex:
+  build_latex:
     runs-on: ubuntu-latest
     steps:
       - name: Set up Git repository
@@ -18,17 +18,7 @@ jobs:
           run: |
             cd exercise
             python3 build.py
-
-  build_lecture_latex:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Set up Git repository
-        uses: actions/checkout@v4
-      - name: Compile LaTeX document
-        uses: xu-cheng/texlive-action@v2
-        with:
-          scheme: full
-          run: |
+            cd ..
             cd lecture
             python3 build.py
       - name: Upload PDF file
@@ -37,8 +27,9 @@ jobs:
           name: github-pages
           path: built/
 
+
   deploy:
-    needs: [build_exericse_latex, build_lecture_latex]
+    needs: build_latex
 
     # Grant GITHUB_TOKEN the permissions required to make a Pages deployment
     permissions:
