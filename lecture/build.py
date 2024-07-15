@@ -22,9 +22,10 @@ with fileinput.input('main.tex', inplace=True) as f:
         if 'includeonly{' in line:
             # comment out includeonly flag
             print(f'%{line}', end='')
-        #check if a line include 'handout' parameter and if yes, delete it
-        elif 'handout' in line:
-            print(line.replace('handout', ''), end='')
+        #check if the line including '\documentclass' has the parameter 'handout' - if not add it
+        elif ']{beamer}' in line:
+            if 'handout' not in line:
+                print(line.replace(']{beamer}', ', handout]{beamer}'), end='')
         else:
             print(line, end='')
         
