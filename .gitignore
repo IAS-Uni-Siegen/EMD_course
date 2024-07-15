@@ -25,7 +25,7 @@
 ## Generated lecture slide PDFs
 lecture/*.pdf
 exercise/*.pdf
-exam/*.pdf
+exam/summer2024/*.pdf
 
 ## Bibliography auxiliary files (bibtex/biblatex/biber):
 *.bbl
