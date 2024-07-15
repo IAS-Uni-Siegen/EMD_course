@@ -1,6 +1,6 @@
 # Fundamentals of electrical machines and drives course
 
-[![Build Status](https://github.com/IAS-Uni-Siegen/EMD_Course/actions/workflows/BuildLecture.yml/badge.svg)](https://github.com/IAS-Uni-Siegen/EMD_Course/actions/workflows/BuildLecture.yml)
+![Build Status](https://github.com/IAS-Uni-Siegen/EMD_Course/actions/workflows/BuildLecture.yml/badge.svg)
 [![CC BY 4.0][cc-by-shield]][cc-by]
 [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
 [![made-with-latex](https://img.shields.io/badge/Made%20with-LaTeX-1f425f.svg)](https://www.latex-project.org/)
