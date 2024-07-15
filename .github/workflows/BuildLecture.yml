@@ -3,6 +3,7 @@ on:
   push: 
     paths:
         - lecture/**
+        - '**.tex'
   workflow_dispatch:
   
 jobs:
