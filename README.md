@@ -17,5 +17,14 @@ This work is licensed under a
 ## Lecture slides (click on preview picture)
 <a href="https://ias-uni-siegen.github.io/EMD_Course/lecture.pdf" target="_blank" class="image fit"><img src="misc/Slide_preview.png" alt=""></a>
 
+The covered topics are:
+- An initial overview of electrical machines and drives
+- Fundamental electromagnetic principles and magnetic materials
+- DC machines
+- Transformers
+- Rotating field theory
+- Induction machine
+- Synchronous machine
+
 ## Exercise tasks (click on preview picture)
 <a href="https://ias-uni-siegen.github.io/EMD_Course/exercise.pdf" target="_blank" class="image fit"><img src="misc/Exercise_preview.png" alt=""></a>
