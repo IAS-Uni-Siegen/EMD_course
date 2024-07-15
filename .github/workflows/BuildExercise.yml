@@ -16,13 +16,13 @@ jobs:
         with:
           scheme: full
           run: |
-            cd lecture
+            cd exercise
             python3 build.py
       - name: Upload PDF file
         uses: actions/upload-pages-artifact@v3 #actions/upload-artifact@v4
         with:
           name: github-pages
-          path: lecture/built/
+          path: exercise/built/
 
   deploy:
     needs: build_latex
