@@ -1,6 +1,9 @@
 # Fundamentals of electrical machines and drives course
 
+[![Build Status](https://github.com/IAS-Uni-Siegen/EMD_Course/actions/workflows/BuildPDFs.yml/badge.svg)](https://github.com/IAS-Uni-Siegen/EMD_Course/actions/workflows/BuildPDFs.yml)
 [![CC BY 4.0][cc-by-shield]][cc-by]
+[![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
+[![made-with-latex](https://img.shields.io/badge/Made%20with-LaTeX-1f425f.svg)](https://www.latex-project.org/)
 
 This work is licensed under a
 [Creative Commons Attribution-ShareAlike 4.0 International License][cc-by].
@@ -12,4 +15,16 @@ This work is licensed under a
 [cc-by-shield]: https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg
 
 ## Lecture slides (click on preview picture)
-<a href="https://ias-uni-siegen.github.io/EMD_Course/main.pdf" class="image fit"><img src="misc/Slide_preview.png" alt=""></a>
+<a href="https://ias-uni-siegen.github.io/EMD_Course/lecture.pdf" target="_blank" class="image fit"><img src="misc/Slide_preview.png" alt=""></a>
+
+The covered topics are:
+- An initial overview of electrical machines and drives
+- Fundamental electromagnetic principles and magnetic materials
+- DC machines
+- Transformers
+- Rotating field theory
+- Induction machine
+- Synchronous machine
+
+## Exercise tasks (click on preview picture)
+<a href="https://ias-uni-siegen.github.io/EMD_Course/exercise.pdf" target="_blank" class="image fit"><img src="misc/Exercise_preview.png" alt=""></a>

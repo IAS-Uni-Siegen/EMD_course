@@ -1,6 +1,8 @@
-name: Build LaTeX document
+name: Build LaTeX PDFs
 on: 
   push: 
+    paths:
+        - '**.tex'
   workflow_dispatch:
   
 jobs:
@@ -14,13 +16,17 @@ jobs:
         with:
           scheme: full
           run: |
+            cd exercise
+            python3 build.py
+            cd ..
             cd lecture
             python3 build.py
       - name: Upload PDF file
         uses: actions/upload-pages-artifact@v3 #actions/upload-artifact@v4
         with:
           name: github-pages
-          path: lecture/built/
+          path: built/
+
 
   deploy:
     needs: build_latex
