@@ -33,4 +33,4 @@ with fileinput.input('main.tex', inplace=True) as f:
         
 call(call_pdflatex_l)
 call(call_pdflatex_l)
-os.replace('main.pdf', os.path.join('built', 'main.pdf'))
+os.replace('main.pdf', os.path.join('built', 'lecture.pdf'))
