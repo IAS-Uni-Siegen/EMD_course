@@ -22,8 +22,12 @@ with fileinput.input('main.tex', inplace=True) as f:
         if 'includeonly{' in line:
             # comment out includeonly flag
             print(f'%{line}', end='')
+        #check if a line include 'handout' parameter and if yes, delete it
+        elif 'handout' in line:
+            print(line.replace('handout', ''), end='')
         else:
             print(line, end='')
+        
 call(call_pdflatex_l)
 call(call_pdflatex_l)
 os.replace('main.pdf', os.path.join('built', 'main.pdf'))
