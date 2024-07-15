@@ -1,4 +1,4 @@
-name: Build LaTeX lecture document
+name: Build LaTeX lecture PDF
 on: 
   push: 
     paths:
