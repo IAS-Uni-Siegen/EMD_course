@@ -2,7 +2,6 @@ import os
 import fileinput
 from subprocess import call
 
-#os.makedirs('built', exist_ok=True)
 call_pdflatex_l = ['pdflatex', '-synctex=1',
                    '-interaction=nonstopmode', 'main.tex']
 
@@ -33,7 +32,7 @@ with fileinput.input('main.tex', inplace=True) as f:
         
 call(call_pdflatex_l)
 call(call_pdflatex_l)
-#os.replace('main.pdf', os.path.join('built', 'exercise.pdf'))
+
 
 # go into the parent directory
 os.chdir('..')
