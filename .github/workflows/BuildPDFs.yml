@@ -1,6 +1,8 @@
-name: Build LaTeX document
+name: Build LaTeX lecture document
 on: 
   push: 
+    paths:
+        - lecture/**
   workflow_dispatch:
   
 jobs:
