@@ -23,8 +23,8 @@ The covered topics are:
 - DC machines
 - Transformers
 - Rotating field theory
-- Induction machine
-- Synchronous machine
+- Induction machines
+- Synchronous machines
 
 ## Exercise tasks (click on preview picture)
 <a href="https://ias-uni-siegen.github.io/EMD_Course/exercise.pdf" target="_blank" class="image fit"><img src="misc/Exercise_preview.png" alt=""></a>
