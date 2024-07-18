@@ -796,11 +796,12 @@ which are generally applicable as only identical resistances per phase on the st
     \begin{columns}
 		\begin{column}{0.5\textwidth}
 			\begin{itemize}
-				\item SynRM: utilizes only the reluctance torque.
-				\item  No field winding or PMs are present.
-				\item The rotor is designed such that the reluctance differences in the d and q axis are maximized.
-				\item PMSM model equations can be used, but the PM flux linkage is zero.
+				\item<2-> SynRM: utilizes only the reluctance torque.
+				\item<2->  No field winding or PMs are present.
+				\item<3-> The rotor is designed such that the reluctance difference in the d and q axis is maximized.
+				\item<4-> PMSM model equations can be used, but the PM flux linkage is zero.
 			\end{itemize}
+			\onslide<4->
 			\begin{equation}
 				\begin{split}
 					\bm{\psi}_\mathrm{s,dq}(t) &= \bm{L}_\mathrm{s,dq}\bm{i}_{\mathrm{s,dq}}(t), \\
@@ -827,8 +828,12 @@ which are generally applicable as only identical resistances per phase on the st
 	\frametitle{Steady-state behavior}
 	We limit the following discussion to the isotropic case
 	$$L'_\mathrm{s,d} =  L'_\mathrm{s,q} =L'_\mathrm{s}$$
-	which covers the SPMSM and the cylindrical SM. In steady state ($\nicefrac{\mathrm{d}x}{\mathrm{d}t} = 0$), the flux linked with possibly present damper windings is constant, i.e., no voltage is induced within the damper windings and $$\bm{I}_\mathrm{r,DQ} = 0$$ applies. Hence, the damper winding can be neglected in steady state. Furthermore, in steady state the field winding current is constant: $$I_\mathrm{f} = \frac{\mathrm{U}_\mathrm{f} }{\mathrm{R}_\mathrm{f}} = \mathrm{const.}$$
-	Consequently, the stator flux linkage share resulting from the field winding $\bm{M}_\mathrm{fs} I_{\mathrm{f}}$ is constant and can be interpreted as an equivalent permanent magnet flux linkage. Hence, we will focus on the steady-state behavior of the cylindrical SM in the following, which implicitly covers the SPMSM case as well.
+	which covers the SPMSM and the cylindrical SM. \pause In steady state ($\nicefrac{\mathrm{d}x}{\mathrm{d}t} = 0$), the flux linked with possibly present damper windings is constant, i.e., no voltage is induced within the damper windings and 
+	$$\bm{I}_\mathrm{r,DQ} = 0$$ 
+	applies. \pause Hence, the damper winding can be neglected in steady state. \pause Furthermore, in steady state the field winding current is constant: 
+	$$I_\mathrm{f} = \frac{\mathrm{U}_\mathrm{f} }{\mathrm{R}_\mathrm{f}} = \mathrm{const.}$$
+	\pause
+	Consequently, the stator flux linkage share resulting from the field winding $\bm{M}_\mathrm{fs} I_{\mathrm{f}}$ is constant and can be interpreted as an equivalent permanent magnet flux linkage. Hence, we will focus on the steady-state behavior of the cylindrical SM in the following, which implicitly covers the SPMSM case as well. The steady-state characteristics of the other SM types are not covered.
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -844,10 +849,12 @@ which are generally applicable as only identical resistances per phase on the st
 	\end{bmatrix} + M_\mathrm{fs} \begin{bmatrix}
 		I_\mathrm{f} \\ 0
 	\end{bmatrix}.$$
+	\pause
 	With the decomposition of $L_\mathrm{s}$ into its leakage part $L_{\sigma,\mathrm{s}}$ and the mutual part $M_\mathrm{s}$, 
 	\begin{equation}
 		L_\mathrm{s} = L_{\sigma,\mathrm{s}} + M_{\mathrm{s}}, 
 	\end{equation}
+	\pause
 	we obtain
 	\begin{equation}
 		\begin{bmatrix}
@@ -858,11 +865,15 @@ which are generally applicable as only identical resistances per phase on the st
 			I_\mathrm{f} \\ 0
 		\end{bmatrix}.
 		\end{equation}
-		In the context of simplified modeling, the assumption is (often) made that the (scaled) mutual inductances are equal, i.e., $$M_\mathrm{fs} = \nicefrac{3}{2} M_\mathrm{s} = M$$ leading to
-		\begin{equation}
-				\psi_\mathrm{s,d} = \left(L_{\sigma,\mathrm{s}} + M\right)I_\mathrm{s,d} + M I_\mathrm{f}, \qquad \psi_\mathrm{s,q} = \left(L_{\sigma,\mathrm{s}} + M\right)I_\mathrm{s,q}.
-				\label{eq:SM_stator_flux_linkage_steady_state}
-		\end{equation}
+		\pause
+	In the context of simplified modeling, the assumption is (often) made that the (scaled) mutual inductances are equal, i.e., 
+	$$M_\mathrm{fs} = \nicefrac{3}{2} M_\mathrm{s} = M$$ 
+	\pause 
+	leading to
+	\begin{equation}
+			\psi_\mathrm{s,d} = \left(L_{\sigma,\mathrm{s}} + M\right)I_\mathrm{s,d} + M I_\mathrm{f}, \qquad \psi_\mathrm{s,q} = \left(L_{\sigma,\mathrm{s}} + M\right)I_\mathrm{s,q}.
+			\label{eq:SM_stator_flux_linkage_steady_state}
+	\end{equation}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -870,7 +881,8 @@ which are generally applicable as only identical resistances per phase on the st
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
 	\frametitle{Steady-state behavior (cont.)}
-	The steady state voltage equation is
+	\onslide<+->
+	The steady-state voltage equation is
 	\begin{equation}
 		\bm{U}_\mathrm{s,dq} = R_\mathrm{s} \bm{I}_\mathrm{s,dq}+ \omega_\mathrm{r,el}\bm{J}\bm{\psi}_\mathrm{s,dq} \quad \Leftrightarrow \quad \begin{bmatrix}
 			U_\mathrm{s,d} \\ U_\mathrm{s,q}
@@ -880,7 +892,8 @@ which are generally applicable as only identical resistances per phase on the st
 			-\psi_\mathrm{s,q} \\ \psi_\mathrm{s,d}
 		\end{bmatrix}.
 	\end{equation}
-	Inserting the flux linkage equation \eqref{eq:SM_stator_flux_linkage_steady_state} yields
+	\onslide<+->
+	Inserting the (simplified) flux linkage equation \eqref{eq:SM_stator_flux_linkage_steady_state} yields
 	\begin{equation}
 		\begin{bmatrix}
 			U_\mathrm{s,d} \\ U_\mathrm{s,q}
@@ -890,15 +903,17 @@ which are generally applicable as only identical resistances per phase on the st
 			-\left(L_{\sigma,\mathrm{s}} + M\right)I_\mathrm{s,q} \\ \left(L_{\sigma,\mathrm{s}} + M\right)I_\mathrm{s,d} + M I_\mathrm{f}
 		\end{bmatrix}.
 	\end{equation}
+	\onslide<+->
 	Rewriting the vectorial quantities as complex phasors $\underline{X}_\mathrm{dq} = X e^{\mathrm{j}\phi}=X_\mathrm{d} + \mathrm{j} X_\mathrm{q}$ rotating with the angular frequency $\omega_\mathrm{r,el} \rightarrow \omega_\mathrm{s}$, we obtain
 	\begin{equation}
 		\begin{split}
-			\underline{U}_\mathrm{s} &= R_\mathrm{s} \underline{I}_\mathrm{s} + \mathrm{j}\omega_\mathrm{s} \left[\left(L_{\sigma,\mathrm{s}} + M\right)\underline{I}_\mathrm{s} + M I_\mathrm{f}\right]
-			= R_\mathrm{s} \underline{I}_\mathrm{s} + \mathrm{j} \underbrace{\omega_\mathrm{s} \left(L_{\sigma,\mathrm{s}} + M\right)}_{X_\mathrm{s}}\underline{I}_\mathrm{s} + \underbrace{\mathrm{j}\omega_\mathrm{s} M I_\mathrm{f}}_{\underline{U}_\mathrm{i}}
+			\uncover<+->{\underline{U}_\mathrm{s} &= R_\mathrm{s} \underline{I}_\mathrm{s} + \mathrm{j}\omega_\mathrm{s} \left[\left(L_{\sigma,\mathrm{s}} + M\right)\underline{I}_\mathrm{s} + M I_\mathrm{f}\right]}
+			\uncover<+->{= R_\mathrm{s} \underline{I}_\mathrm{s} + \mathrm{j} \underbrace{\omega_\mathrm{s} \left(L_{\sigma,\mathrm{s}} + M\right)}_{X_\mathrm{s}}\underline{I}_\mathrm{s} + \underbrace{\mathrm{j}\omega_\mathrm{s} M I_\mathrm{f}}_{\underline{U}_\mathrm{i}}}
 		\end{split}
 		\label{eq:SM_voltage_steady_state}
 	\end{equation}
-	with $\underline{U}_\mathrm{i}$ being the internal voltage, i.e., the induced voltage due to the field winding excitation and $X_\mathrm{s}$ being the synchronous reactance (which can be empirically identified using open-circuit and short-circuit tests).
+	\onslide<+->
+	with $\underline{U}_\mathrm{i}$ being the internal voltage, i.e., the induced voltage due to the field winding excitation and $X_\mathrm{s}$ being the synchronous reactance (which can be empirically identified using open-circuit and short-circuit tests, cf. after next slide).
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -906,12 +921,14 @@ which are generally applicable as only identical resistances per phase on the st
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
 	\frametitle{Steady-state behavior (cont.)} 
-	The ECD of the cylindrical SM is sown in \figref{fig:SM_ECD_steady_state}. Here, the following can be noted:
+	\onslide<1->
+	The ECD of the cylindrical SM is sown in \figref{fig:SM_ECD_steady_state}. \onslide<2->Here, the following can be noted:
 	\begin{itemize}
-		\item The internal voltage $\underline{U}_\mathrm{i}$ is purely imaginary as the field winding current is a DC current and defined as real.
-		\item If $\underline{U}_\mathrm{s}$ is fixed, e.g., by a stiff grid voltage, the stator current $\underline{I}_\mathrm{s}$ is determined by the voltage difference $\Delta\underline{U} = \underline{U}_\mathrm{s} - \underline{U}_\mathrm{i}$.
-		\item Hence, in grid operation the field winding current $I_\mathrm{f}$ is adjusted to reach a certain operation point, that is, the field excitation is controlled.
+		\item<2-> The internal voltage $\underline{U}_\mathrm{i}$ is purely imaginary as the field winding current is a DC current and defined as real (convention).
+		\item<3-> If $\underline{U}_\mathrm{s}$ is fixed, e.g., by a stiff grid voltage, the stator current $\underline{I}_\mathrm{s}$ is determined by the voltage difference $\Delta\underline{U} = \underline{U}_\mathrm{s} - \underline{U}_\mathrm{i}$.
+		\item<4-> Hence, in grid operation the field winding current $I_\mathrm{f}$ is adjusted to reach a certain operation point, that is, the field excitation is controlled.
 	\end{itemize}
+	\onslide<1->
     \begin{figure}
         \centering
         \includegraphics[width=0.65\textwidth]{fig/lec07/SM_ECD_steady_state.pdf}
@@ -929,11 +946,11 @@ which are generally applicable as only identical resistances per phase on the st
 	\begin{equation}
 		\underline{U}_\mathrm{s,oc} = \underline{U}_\mathrm{i} = \mathrm{j} \omega_\mathrm{s} M I_\mathrm{f}.
 	\end{equation}
-	Here, the stator current is zero. On the other hand, the short-circuit current is given by
+	Here, the stator current is zero. \pause On the other hand, the short-circuit current is given by
 	\begin{equation}
 		\underline{I}_\mathrm{s,sc} = -\frac{\underline{U}_\mathrm{i}}{\mathrm{j}X_\mathrm{s}} = -\frac{\omega_\mathrm{s} M I_\mathrm{f}}{\mathrm{j}\omega_\mathrm{s}\left(L_{\sigma,\mathrm{s}} + M\right)} = \frac{\mathrm{j} M}{\left(L_{\sigma,\mathrm{s}} + M\right)}I_\mathrm{f}.
 	\end{equation}
-	Here, the stator voltage is zero and one can observe that the short-circuit current $I_\mathrm{f}$ can be interpreted as the excitation current converted via the inductance ratio. Finally, the synchronous reactance can be calculated by the ratio of the open-circuit voltage and the short-circuit current:
+	Here, the stator voltage is zero and one can observe that the short-circuit current $I_\mathrm{f}$ can be interpreted as the excitation current converted via the inductance ratio. \pause Finally, the synchronous reactance can be calculated by the ratio of the open-circuit voltage and the short-circuit current:
 	\begin{equation}
 		X_\mathrm{s} = \frac{\underline{U}_\mathrm{s,oc}}{\underline{I}_\mathrm{s,sc}}.
 	\end{equation}
@@ -946,11 +963,13 @@ which are generally applicable as only identical resistances per phase on the st
 	\frametitle{Steady-state torque} 
 	The steady-state torque of the cylindrical SM is given by
 	$$ T = \frac{3}{2} p \sqrt{2}I_\mathrm{s,q} M I_\mathrm{f} = \frac{3}{\sqrt{2}} p I_\mathrm{s,q} M I_\mathrm{f}.$$
-	Here, the factor $\sqrt{2}$ results from the RMS value representation of the AC stator current in the complex phasor component $I_\mathrm{s,q}$. Note that $I_\mathrm{f}$ is a DC quantity, i.e., its RMS value is equal to the DC value in the time domain. 
+	\pause
+	Here, the factor $\sqrt{2}$ results from the RMS value representation of the AC stator current in the complex phasor component $I_\mathrm{s,q}$.  Note that $I_\mathrm{f}$ is a DC quantity, i.e., its RMS value is equal to the DC value in the time domain. \pause 
 	From \eqref{eq:SM_voltage_steady_state} we obtain the stator current as
 	\begin{equation}
 	\underline{I}_\mathrm{s} = \frac{\underline{U}_\mathrm{s} - \underline{U}_\mathrm{i}}{R_\mathrm{s} + \mathrm{j}\omega_\mathrm{s} \left(L_{\sigma,\mathrm{s}} + M\right)}.
 	\end{equation}
+	\pause
 	Assuming that the ohmic voltage drop is negligible ($R_\mathrm{s}\approx 0$), which typically applies to high power machines, the stator current simplifies to
 	\begin{equation}
 		\underline{I}_\mathrm{s} = \mathrm{j} \frac{\underline{U}_\mathrm{i} - \underline{U}_\mathrm{s}}{\omega_\mathrm{s} \left(L_{\sigma,\mathrm{s}} + M\right)}.
@@ -965,19 +984,24 @@ which are generally applicable as only identical resistances per phase on the st
 	\frametitle{Steady-state torque (cont.)}
     \begin{columns}
 		\begin{column}{0.55\textwidth}
-			The q part from $\underline{I}_\mathrm{s}=I_\mathrm{s,d} + \mathrm{j}I_\mathrm{s,q}$ is
-			\begin{equation}
-				I_\mathrm{s,q} = \frac{\left|\underline{U}_\mathrm{i} - \underline{U}_\mathrm{s}\right|}{\omega_\mathrm{s} \left(L_{\sigma,\mathrm{s}} + M\right)}.
-			\end{equation}
+		\onslide<+->
+		The q part from $\underline{I}_\mathrm{s}=I_\mathrm{s,d} + \mathrm{j}I_\mathrm{s,q}$ is
+		\begin{equation}
+			I_\mathrm{s,q} = \frac{\left|\underline{U}_\mathrm{i} - \underline{U}_\mathrm{s}\right|}{\omega_\mathrm{s} \left(L_{\sigma,\mathrm{s}} + M\right)}.
+		\end{equation}
+		\onslide<+->
 		From \figref{fig:Load_angle_voltage_phasors} we identify 
 		$$\sin(\theta) = \frac{\left|\underline{U}_\mathrm{i} - \underline{U}_\mathrm{s}\right|}{\left|\underline{U}_\mathrm{s}\right|}$$
+		\onslide<+->
 		and can rewrite $I_\mathrm{s,q}$ as
 		\begin{equation}
 			I_\mathrm{s,q} = \frac{\left|\underline{U}_\mathrm{s}\right|}{\omega_\mathrm{s} \left(L_{\sigma,\mathrm{s}} + M\right)} \sin(\theta).
 		\end{equation}
+		\onslide<+->
 		Here, $\theta$ is the load angle counted from $\underline{U}_\mathrm{i}$ to $\underline{U}_\mathrm{s}$.
         \end{column}
         \begin{column}{0.45\textwidth}
+			\onslide<2->
             \begin{figure}
                 \centering
                 \includegraphics[width=0.95\textwidth]{fig/lec07/Load_angle_voltage_phasors.pdf}
@@ -993,21 +1017,24 @@ which are generally applicable as only identical resistances per phase on the st
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
 	\frametitle{Steady-state torque (cont.)} 
+	\onslide<+->
 	Moreover, from \eqref{eq:SM_voltage_steady_state} we can express the field winding current (amplitude, DC quantitity) as
 	\begin{equation}
 		I_\mathrm{f} = \sqrt{2}\frac{\left|\underline{U}_\mathrm{i}\right|}{\omega_\mathrm{s}M}.
 	\end{equation}
+	\onslide<+->
 	Inserting the expressions for $I_\mathrm{s,q}$ and $I_\mathrm{f}$ into the torque equation yields
 	\begin{equation}
 		T = 3 p \frac{\left|\underline{U}_\mathrm{s}\right| \left|\underline{U}_\mathrm{i}\right|}{\omega_\mathrm{s}^2 \left(L_{\sigma,\mathrm{s}} + M\right)}  \sin(\theta)  = 3 p \frac{U_\mathrm{s} U_\mathrm{i}}{\omega_\mathrm{s}^2 \left(L_{\sigma,\mathrm{s}} + M\right)}  \sin(\theta). 
 		\label{eq:SM_torque_steady_state}
 	\end{equation}
+	\onslide<+->
 	Hence, the load angle $\theta$ determines the torque of the cylindrical SM:
 	\begin{itemize}
-		\item For $\theta < 0^\circ$, the torque is negative (generator mode, if $\omega_\mathrm{r}>0$).
-		\item For $\theta = 0^\circ$, the torque is zero.
-		\item For $\theta > 0^\circ$, the torque is positive (motor mode, if $\omega_\mathrm{r}>0$).
-		\item For $\theta = \pm 90^\circ$, the absolute torque is maximal.
+		\item<+-> For $\theta < 0^\circ$, the torque is negative (generator mode, if $\omega_\mathrm{r}>0$).
+		\item<+-> For $\theta = 0^\circ$, the torque is zero.
+		\item<+-> For $\theta > 0^\circ$, the torque is positive (motor mode, if $\omega_\mathrm{r}>0$).
+		\item<+-> For $\theta = \pm 90^\circ$, the absolute torque is maximal.
 	\end{itemize}
 \end{frame}
 
@@ -1019,14 +1046,15 @@ which are generally applicable as only identical resistances per phase on the st
 	\begin{columns}
 		\begin{column}{0.55\textwidth}
 			\begin{itemize}
-				\item From \eqref{eq:SM_torque_steady_state} we see that the torque depends on $\sin(\theta)$.
-				\item Beyond $\theta = \pm 90^\circ$, the absolute torque decreases again.
-				\item If the SM is operated with a fixed stator excitation, e.g., by a stiff grid voltage, the load angle $\theta$ is determined by the mechanical load.
-				\item If the absolute mechanical load is increased such that $|\theta| > 90^\circ$ applies, the SM will lose synchronism and stall.
-				\item Hence, the stable operation range is limited to $|\theta| \leq 90^\circ$ (while in practice an additional safety margin is considered).
+				\item<1-> From \eqref{eq:SM_torque_steady_state} we see that the torque depends on $\sin(\theta)$.
+				\item<2-> Beyond $\theta = \pm 90^\circ$, the absolute torque decreases again.
+				\item<3-> If the SM is operated with a fixed stator excitation, e.g., by a stiff grid voltage, the load angle $\theta$ is determined by the mechanical load.
+				\item<4-> If the absolute mechanical load is increased such that $|\theta| > 90^\circ$ applies, the SM will lose synchronism and stall.
+				\item<5-> Hence, the stable operation range is limited to $|\theta| \leq 90^\circ$ (while in practice an additional safety margin is considered).
 			\end{itemize}
         \end{column}
         \begin{column}{0.45\textwidth}
+			\onslide<1->
             \begin{figure}
                 \centering
                 \includegraphics[width=0.95\textwidth]{fig/lec07/SM_steady_state_stability.pdf}
@@ -1046,15 +1074,17 @@ which are generally applicable as only identical resistances per phase on the st
 	\begin{equation}
 			\underline{S}= 3\underline{U}_\mathrm{s} \overline{\underline{I}}_\mathrm{s} =  3(P + \mathrm{j}Q) = 3S e^{\mathrm{j}\varphi} 
 	\end{equation}
-	with $\overline{\underline{X}}$ being the complex conjugate and the factor $3$ results from the representation of the three-phase machine in an orthogonal coordinate system (cf. Clarke transf.) plus the RMS phasor reprentation of currents and voltages. Above, $S$ is the apparent power, $P$ and $Q$ are the active and reactive power, respectively. The active power is
+	with $\overline{\underline{X}}$ being the complex conjugate and the factor $3$ results from the representation of the three-phase machine in an orthogonal coordinate system (cf. Clarke transf.) plus the RMS phasor reprentation of currents and voltages. \pause Above, $S$ is the apparent power, $P$ and $Q$ are the active and reactive power, respectively. \pause The active power is
 	\begin{equation}
 		P = 3\mathrm{Re}\left\{ \underline{U}_\mathrm{s} \overline{\underline{I}}_\mathrm{s}\right\} = 3 U_\mathrm{s} I_\mathrm{s} \cos(\varphi)
 	\end{equation}
+	\pause
 	and the reactive power is
 	\begin{equation}
 		Q = 3\mathrm{Im}\left\{\underline{U}_\mathrm{s} \overline{\underline{I}}_\mathrm{s}\right\} = 3 U_\mathrm{s} I_\mathrm{s} \sin(\varphi).
 		\label{eq:SM_reactive_power}
 	\end{equation}
+	\pause
 	Here, $\varphi$ is the power factor angle, that is, the phase change between stator voltage and current (compare \figref{fig:Load_angle_voltage_phasors}). 
 \end{frame}
 
@@ -1067,10 +1097,12 @@ which are generally applicable as only identical resistances per phase on the st
 	\begin{equation}
 		P = T \omega_\mathrm{r} = T \frac{\omega_\mathrm{s}}{p} = 3 \frac{U_\mathrm{s} U_\mathrm{i}}{\omega_\mathrm{s} \left(L_{\sigma,\mathrm{s}} + M\right)}  \sin(\theta).
 	\end{equation} 
+	\pause
 	For the reactive power we insert \eqref{eq:SM_stator_current_steady_state} in \eqref{eq:SM_reactive_power} and obtain (after some rewritting)
 	\begin{equation}
 		Q = 3 \frac{U_\mathrm{s}}{\omega_\mathrm{s} \left(L_{\sigma,\mathrm{s}} + M\right)} \left(U_\mathrm{s} - U_\mathrm{i} \cos(\theta) \right).
 	\end{equation}
+	\pause
 	\begin{varblock}{Four quadrant operation}
 		Due to a combination of $\theta$ and $U_\mathrm{i}$, which are adjustable via the field winding current $I_\mathrm{f}$, the (cylindrical) SM can cover all four quadrants of operation (i.e., combine positive / negative signs of both the active and reactive power). This is why the externally-excited SM is often used in generator / power plant applications. 
 	\end{varblock}
