@@ -63,10 +63,6 @@
 
 %---Grafiken---
 \graphicspath{ {./fig/} }
-% \graphicspath{ {./fig/ex03/} }
-% \graphicspath{ {./fig/ex04/} }
-% \graphicspath{ {./fig/ex05/} }
-% \graphicspath{ {./fig/ex06/} }
 
 
 % Setup page geometry
