@@ -754,7 +754,7 @@ which are generally applicable as only identical resistances per phase on the st
 		\end{bmatrix} \begin{bmatrix}
 			i_{\mathrm{s,d}}(t) \\ i_{\mathrm{s,q}}(t)
 		\end{bmatrix} + \begin{bmatrix}
-			\bm{\psi}_\mathrm{pm} \\ 0
+			\psi_\mathrm{pm} \\ 0
 		\end{bmatrix}.
 	\end{equation}
 	Here, $\bm{\psi}_\mathrm{pm}$ represents the (constant) permanent magnet flux linkage. \pause By definition of the dq coordinate system, the permanent magnet flux linkage is directed exclusively along the d-axis (cf. \figref{fig:PMSMs}). The rotor flux linkage model is omitted, since no field winding is present. Also, a damper winding is very uncommon for PMSMs. \pause Hence, torque equation results in
@@ -950,7 +950,7 @@ which are generally applicable as only identical resistances per phase on the st
 	\begin{equation}
 		\underline{I}_\mathrm{s,sc} = -\frac{\underline{U}_\mathrm{i}}{\mathrm{j}X_\mathrm{s}} = -\frac{\omega_\mathrm{s} M I_\mathrm{f}}{\mathrm{j}\omega_\mathrm{s}\left(L_{\sigma,\mathrm{s}} + M\right)} = \frac{\mathrm{j} M}{\left(L_{\sigma,\mathrm{s}} + M\right)}I_\mathrm{f}.
 	\end{equation}
-	Here, the stator voltage is zero and one can observe that the short-circuit current $I_\mathrm{f}$ can be interpreted as the excitation current converted via the inductance ratio. \pause Finally, the synchronous reactance can be calculated by the ratio of the open-circuit voltage and the short-circuit current:
+	Here, the stator voltage is zero and one can observe that the short-circuit current $\underline{I}_\mathrm{s,sc}$ can be interpreted as the excitation current $I_\mathrm{f}$ converted via the inductance ratio. \pause Finally, the synchronous reactance can be calculated by the ratio of the open-circuit voltage and the short-circuit current:
 	\begin{equation}
 		X_\mathrm{s} = \frac{\underline{U}_\mathrm{s,oc}}{\underline{I}_\mathrm{s,sc}}.
 	\end{equation}
