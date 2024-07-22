@@ -44,6 +44,8 @@
 \RequirePackage{circuitikz}
 \RequirePackage{multirow}
 \RequirePackage{newfloat}
+\RequirePackage{mathtools}
+\RequirePackage{placeins}
 
 %% Tikz
 \pgfplotsset{compat=1.18}
@@ -61,8 +63,6 @@
 
 %---Grafiken---
 \graphicspath{ {./fig/} }
-\graphicspath{ {./fig/ex03/} }
-\graphicspath{ {./fig/ex04/} }
 
 
 % Setup page geometry
@@ -119,7 +119,7 @@
 %% Solution figure %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \NewDocumentEnvironment{solutionfigure}{+b}{
-    \figure
+    \figure[htb]
     \captionsetup{labelfont={color=blue},textfont={color=blue}}
     \color{blue}
     #1}
