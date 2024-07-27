@@ -168,7 +168,7 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%% task %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newcounter{taskCount}[exerciseCount]
+\newcounter{taskCount}%[exerciseCount]
 \setcounter{taskCount}{0}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -222,8 +222,8 @@
         \normalsize \section*{\textbf{Task~\thetaskCount:~#1 \hfill [\total{taskPointsD}~Points]}}
     \fi
 
-    \addcontentsline{toc}{section}{\protect\numberline{}Task~\thetaskCount:~#1}
-    \setlength{\parskip}{-12pt}
+    % \addcontentsline{toc}{section}{\protect\numberline{}Task~\thetaskCount:~#1}
+    % \setlength{\parskip}{-12pt}
 }
 
 
@@ -248,17 +248,17 @@
         \fi
 
         % sum up subtask points for task 1
-        \ifnum \value{subtaskCount} = 1
+        \ifnum \value{taskCount} = 1
             \addtocounter{taskPointsA}{#2}
         \fi
         % task 2
-        \ifnum \value{subtaskCount} = 2
+        \ifnum \value{taskCount} = 2
             \addtocounter{taskPointsB}{#2}
         \fi
-        \ifnum \value{subtaskCount} = 3
+        \ifnum \value{taskCount} = 3
             \addtocounter{taskPointsC}{#2}
         \fi
-        \ifnum \value{subtaskCount} = 4
+        \ifnum \value{taskCount} = 4
             \addtocounter{taskPointsD}{#2}
         \fi
     }
