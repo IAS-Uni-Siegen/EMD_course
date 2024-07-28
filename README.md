@@ -28,3 +28,6 @@ The covered topics are:
 
 ## Exercise tasks (click on preview picture)
 <a href="https://ias-uni-siegen.github.io/EMD_Course/exercise.pdf" target="_blank" class="image fit"><img src="misc/Exercise_preview.png" alt=""></a>
+
+## Exercise tasks including solutions (click on preview picture)
+<a href="https://ias-uni-siegen.github.io/EMD_Course/exercise_with_solutions.pdf" target="_blank" class="image fit"><img src="misc/Exercise_with_solutions_preview.png" alt=""></a>
