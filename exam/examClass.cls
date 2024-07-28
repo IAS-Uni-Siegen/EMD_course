@@ -5,8 +5,10 @@
 
 
 \newif\ifsolution
+\newif\ifgerman
 
 \DeclareOption{solution}{\solutiontrue}
+\DeclareOption{german}{\germantrue}
 \ProcessOptions\relax
 
 
@@ -96,6 +98,7 @@
     %\par
     \setlength{\parskip}{0pt}
     \noindent \ignorespaces 
+    \underline{Answer:}\\
     #1
     \fi
 }
@@ -105,10 +108,12 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \NewDocumentEnvironment{germanblock}{+b}
 {
-    \color{gray}
-    \setlength{\parskip}{0pt}
-    \noindent \ignorespaces 
-    #1
+    \ifgerman
+        \color{gray}
+        \setlength{\parskip}{0pt}
+        \noindent \ignorespaces 
+        #1
+    \fi
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -221,9 +226,6 @@
         \color{black}
         \normalsize \section*{\textbf{Task~\thetaskCount:~#1 \hfill [\total{taskPointsD}~Points]}}
     \fi
-
-    % \addcontentsline{toc}{section}{\protect\numberline{}Task~\thetaskCount:~#1}
-    % \setlength{\parskip}{-12pt}
 }
 
 
@@ -271,16 +273,18 @@
 \setcounter{taskCountGerman}{0}
 
 \newcommand{\taskGerman}[1]{
-    \stepcounter{taskCountGerman}
-        \ifnum\value{taskCountGerman}=1
+    \ifgerman
+        \stepcounter{taskCountGerman}
+            \ifnum\value{taskCountGerman}=1
+            \setlength{\parskip}{-12pt}
+            \else
+            \setlength{\parskip}{-12pt}
+            \fi
+        \normalsize \color{gray} \section*{\textbf{Aufgabe~\thetaskCountGerman:~#1}}
+        \addcontentsline{toc}{section}{\protect\numberline{}Aufgabe~\thetaskCountGerman:~#1}
         \setlength{\parskip}{-12pt}
-        \else
-        \setlength{\parskip}{-12pt}
-        \fi
-    \normalsize \color{gray} \section*{\textbf{Aufgabe~\thetaskCountGerman:~#1}}
-    \addcontentsline{toc}{section}{\protect\numberline{}Aufgabe~\thetaskCountGerman:~#1}
-    \setlength{\parskip}{-12pt}
-    \color{black}
+        \color{black}
+    \fi
 }
 
 
@@ -292,13 +296,14 @@
 \setcounter{subtaskCountGerman}{0}
 
 \newcommand{\subtaskGerman}[1]{
-    {\stepcounter{subtaskCountGerman}
-        \color{gray}
-        \normalsize
-        \setlength{\parskip}{0pt}
-        \thetaskCountGerman.\thesubtaskCountGerman \ #1
-    }
-
+    \ifgerman
+        {\stepcounter{subtaskCountGerman}
+            \color{gray}
+            \normalsize
+            \setlength{\parskip}{0pt}
+            \thetaskCountGerman.\thesubtaskCountGerman \ #1
+        }
+    \fi
 }
 
 
@@ -345,3 +350,10 @@
 \newcolumntype{R}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
 \newcolumntype{L}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
 \newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Further counters and caption %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand{\thetable}{\arabic{table}}
+\renewcommand{\thefigure}{\arabic{figure}}
