@@ -64,6 +64,5 @@ call(call_pdflatex_l)
 
 # go into the parent directory
 os.chdir('..')
-os.makedirs('built', exist_ok=True)
 #take main.pdf from the exercise folder and move it to the parent folder
 os.replace('exercise/main.pdf', os.path.join('built', 'exercise.pdf'))
