@@ -167,7 +167,7 @@
         \setlength{\parskip}{12pt}
         \fi
     \normalsize \section*{\textbf{Task~\thetaskCount:~#1}}
-    \addcontentsline{toc}{section}{\protect\numberline{}Task~\thetaskCount:~#1}
+    \addcontentsline{toc}{section}{\protect\numberline{}#1}
     \setlength{\parskip}{-12pt}
 }
 
