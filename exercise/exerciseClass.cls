@@ -97,6 +97,7 @@
     %\par
     \setlength{\parskip}{0pt}
     \noindent \ignorespaces 
+    \underline{Answer:}\\
     #1
     \fi
 }

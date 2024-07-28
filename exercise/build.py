@@ -52,7 +52,7 @@ with fileinput.input('main.tex', inplace=True) as f:
         #check if the line including '\documentclass' has the parameter 'solution' - if yes remove it
         elif '{exerciseClass}' in line:
             if 'solution' in line:
-                print(line.replace(', [solution]{exerciseClass}', '{exerciseClass}'), end='')
+                print(line.replace('solution]{exerciseClass}', ']{exerciseClass}'), end='')
             else:
                 print(line, end='')    
         else:
