@@ -48,7 +48,7 @@
 
 %% Tikz
 \pgfplotsset{compat=1.18}
-\usetikzlibrary{shapes, arrows, positioning, fit, calc, patterns, decorations.pathmorphing,decorations.pathreplacing,decorations.shapes,decorations.text}
+\usetikzlibrary{shapes, angles, arrows, intersections, quotes, positioning, fit, calc, patterns, decorations.pathmorphing,decorations.pathreplacing,decorations.shapes,decorations.text}
 \usepgfplotslibrary{groupplots}
 
 \RequirePackage{fancyhdr}
