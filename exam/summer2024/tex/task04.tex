@@ -98,16 +98,16 @@
     $$T = \frac{P}{2\pi f/p} = \frac{3\cdot\SI{-4}{\mega\watt}}{2\pi \cdot \SI{50}{\hertz}} = \SI{-38.2}{\kilo\newton\meter}.$$
     Furthermore, the torque is also defined via 
     $$
-    T = 3 p \frac{U_\mathrm{s}U_\mathrm{i}}{\omega_\mathrm{s} X_\mathrm{s}}\sin(\delta) = T_\mathrm{max} \sin(\delta)
+    T = 3 p \frac{U_\mathrm{s}U_\mathrm{i}}{\omega_\mathrm{s} X_\mathrm{s}}\sin(\theta) = T_\mathrm{max} \sin(\theta)
     $$ 
-    where $\delta$ is the load angle. The maximum torque is then 
+    where $\theta$ is the load angle. The maximum torque is then 
     $$
-    T_\mathrm{max} = \frac{T}{\sin(\delta)} = \frac{\SI{-38.2}{\kilo\newton\meter}}{\sin(\SI{-26.5}{\degree})} = \SI{85.6}{\kilo\newton\meter}.
+    T_\mathrm{max} = \frac{T}{\sin(\theta)} = \frac{\SI{-38.2}{\kilo\newton\meter}}{\sin(\SI{-26.5}{\degree})} = \SI{85.6}{\kilo\newton\meter}.
     $$
 \end{solutionblock}
 
-\subtask{Determine a modified field excitation current $I_\mathrm{f}$ which delivers the same active power but reduces the reactive power to zero. Which load angle $\delta$ results?}{2}
-\subtaskGerman{Bestimmen Sie den Felderregungsstrom $I_\mathrm{f}$, der die gleiche Wirkleistung liefert, aber die Blindleistung auf null reduziert. Welcher Lastwinkel $\delta$ ergibt sich?}
+\subtask{Determine a modified field excitation current $I_\mathrm{f}$ which delivers the same active power but reduces the reactive power to zero. Which load angle $\theta$ results?}{2}
+\subtaskGerman{Bestimmen Sie den Felderregungsstrom $I_\mathrm{f}$, der die gleiche Wirkleistung liefert, aber die Blindleistung auf null reduziert. Welcher Lastwinkel $\theta$ ergibt sich?}
 
 \begin{solutionblock}
     The described scenario renders $\varphi=0$. The resulting stator current for this new scenario is
@@ -125,9 +125,9 @@
     $$
     I_\mathrm{f} = \frac{\SI{2.62}{\kilo\volt}}{\SI{3}{\kilo\volt}} \cdot\SI{100}{\ampere} = \SI{87.28}{\ampere}.
     $$
-    The new load angle $\delta$ is then
+    The new load angle $\theta$ is then
     $$
-    \delta = -\arccos\left(\frac{U_\mathrm{s}}{U_\mathrm{i}}\right) = -\arccos\left(\frac{\SI{2.24}{\kilo\volt}}{\SI{2.62}{\kilo\volt}}\right) = \SI{-31.24}{\degree}.
+    \theta = -\arccos\left(\frac{U_\mathrm{s}}{U_\mathrm{i}}\right) = -\arccos\left(\frac{\SI{2.24}{\kilo\volt}}{\SI{2.62}{\kilo\volt}}\right) = \SI{-31.24}{\degree}.
     $$
 \end{solutionblock}
 
