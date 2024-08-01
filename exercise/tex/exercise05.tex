@@ -194,7 +194,7 @@ Given is a squirrel cage motor with the characteristics in Tab.~\ref{tab:charact
 
 \begin{solutionblock}
     The current in the dq coordinate system is shown in \autoref{fig:i_dq_noLoad}. After the steady state is reached, the current values are constant, which could be expected in the rotor flux-oriented coordinate system.
-    \begin{solutionfigure}[h]
+    \begin{solutionfigure}[ht]
         \centering
         \includegraphics{ex05/i_dq_noLoad.pdf}
         \caption{Transient process of an IM in the dq coordinate system.}
@@ -202,7 +202,7 @@ Given is a squirrel cage motor with the characteristics in Tab.~\ref{tab:charact
     \end{solutionfigure}
 
     In \autoref{fig:i_ab_noLoad} the current in the $\upalpha, \upbeta$ coordinate system is visualized. The transient process is also clearly visible in this coordinate system.
-    \begin{solutionfigure}[h]
+    \begin{solutionfigure}[ht]
         \centering
         \includegraphics{ex05/i_alphaBeta_noLoad.pdf}
         \caption{Transient process of an IM in the $\upalpha \upbeta$ coordinate system.}
@@ -212,7 +212,7 @@ Given is a squirrel cage motor with the characteristics in Tab.~\ref{tab:charact
     \autoref{fig:i_abc_noLoad} shows the transient process of the current in the three-phase abc coordinate system.
     
     Compared to the abc current plot, one can observe also a sinusoidal signalform with the same amplitude and frequency evolution, while the phase difference between the currents is 120° in abc and 90° in $\upalpha\upbeta$. This fits to the expectations resulting from the amplitude-invariant Clarke transformation.
-    \begin{solutionfigure}[h]
+    \begin{solutionfigure}[ht]
         \centering
         \includegraphics{ex05/i_abc_noLoad.pdf}
         \caption{Transient process of an IM in the abc coordinate system.}
@@ -220,7 +220,7 @@ Given is a squirrel cage motor with the characteristics in Tab.~\ref{tab:charact
     \end{solutionfigure}
 
     The electrical angular frequency of the stator and the angular frequency of the rotor are shown in \autoref{fig:speed_noLoad}. Due to the no load operation (also no friction) of the IM, the angular frequency of the rotor is equal to the angular electrical stator frequency.
-    \begin{solutionfigure}[h]
+    \begin{solutionfigure}[ht]
         \centering
         \includegraphics{ex05/speed_noLoad.pdf}
         \caption{Electric angular frequency of the stator and angular frequency of the rotor during the transient process at no load.}
@@ -228,7 +228,7 @@ Given is a squirrel cage motor with the characteristics in Tab.~\ref{tab:charact
     \end{solutionfigure}
 
     The produced torque is shown in \autoref{fig:torque_noLoad}. During the transient process, very high torque values are reached and an oscillation of the rotor is visible. In the steady state, the torque is equal to zero, due to the no-load operation.
-    \begin{solutionfigure}[h]
+    \begin{solutionfigure}[ht]
         \centering
         \includegraphics{ex05/torque_noLoad.pdf}
         \caption{Produced torque of an IM during the transient process at no load.}
@@ -236,21 +236,21 @@ Given is a squirrel cage motor with the characteristics in Tab.~\ref{tab:charact
     \end{solutionfigure}
 
     In \autoref{fig:rotorFlux_noLoad} the rotor flux is shown, which also shows the transient process. The d-axis of the coordinate system is oriented on the rotor flux and, therefore, the flux aligned to the q-axis is zero. Thus, only the rotor flux aligned to the d-axis is visualized.
-    \begin{solutionfigure}[h]
+    \begin{solutionfigure}[ht]
         \centering
         \includegraphics{ex05/psi_rd_noLoad.pdf}
         \caption{Rotor flux in dq coordinate system during the transient process at no load.}
         \label{fig:rotorFlux_noLoad}
     \end{solutionfigure}
 
-    \begin{solutionfigure}[h]
+    \begin{solutionfigure}[ht]
         \centering
         \includegraphics{ex05/psi_r_ab_noLoad.pdf}
         \caption{Rotor flux in $\upalpha\upbeta$ coordinate system during the transient process at no load.}
         \label{fig:rotorFlux_r_ab_noLoad}
     \end{solutionfigure}
 
-    \begin{solutionfigure}[h]
+    \begin{solutionfigure}[ht]
         \centering
         \includegraphics{ex05/psi_r_abc_noLoad.pdf}
         \caption{Rotor flux in abc coordinate system during the transient process at no load.}
@@ -267,7 +267,7 @@ Given is a squirrel cage motor with the characteristics in Tab.~\ref{tab:charact
 
 \begin{solutionblock}
     In \autoref{fig:speed_friction} the speed of the stator and rotor field is visualized. For this simulation a load term representing the friction is added, thus this load is speed dependent. Hence, this results in a different speed of the rotor in the steady state in comparison to the stator field. This occurs due to the load of the machine, and is representing with the slip of the machine.
-    \begin{solutionfigure}[h]
+    \begin{solutionfigure}[ht]
         \centering
         \includegraphics{ex05/speed_friction.pdf}
         \caption{Electrical angular frequency of the stator and angular frequency of the rotor during the transient process with a speed dependent load.}
@@ -275,7 +275,7 @@ Given is a squirrel cage motor with the characteristics in Tab.~\ref{tab:charact
     \end{solutionfigure}
     
     To highlight the difference between the stator and rotor field, in \autoref{fig:speed_zoom_friction} the boundaries of the vertical axis are limited. Hence, the speed difference in the steady state is clearly visible.
-    \begin{solutionfigure}[h]
+    \begin{solutionfigure}[ht]
         \centering
         \includegraphics{ex05/speed_zoom_friction.pdf}
         \caption{Zoom into the electrical angular frequency of the stator and angular frequency of the rotor to visualize the difference in the steady state.}
@@ -283,14 +283,14 @@ Given is a squirrel cage motor with the characteristics in Tab.~\ref{tab:charact
     \end{solutionfigure}
 
     The produced torque during the transient process is shown in \autoref{fig:torque_friction}.
-    \begin{solutionfigure}[h]
+    \begin{solutionfigure}[ht]
         \centering
         \includegraphics{ex05/torque_friction.pdf}
         \caption{Produced torque of an IM during the transient process and in the steady-state operation with a speed-dependent load.}
         \label{fig:torque_friction}
     \end{solutionfigure}
     \autoref{fig:torque_zoom_friction} shows a zoomed version of the produced torque to highlight the torque in the steady state.
-    \begin{solutionfigure}[h]
+    \begin{solutionfigure}[ht]
         \centering
         \includegraphics{ex05/torque_zoom_friction.pdf}
         \caption{Produced torque of an IM during the transient process and in the steady-state operation with a speed-dependent load.}
@@ -298,42 +298,42 @@ Given is a squirrel cage motor with the characteristics in Tab.~\ref{tab:charact
     \end{solutionfigure}
 
     In \autoref{fig:i_dq_friction} the currents in the dq coordinate system are visualized. Due to the load and, thus, the generated torque, the current $i_{\mathrm{q}}$ is no longer zero in the steady state. 
-    \begin{solutionfigure}[h]
+    \begin{solutionfigure}[ht]
         \centering
         \includegraphics{ex05/i_dq_friction.pdf}
         \caption{Currents in dq coordinate system of an IM during the transient process and in the steady-state operation with a speed-dependent load.}
         \label{fig:i_dq_friction}
     \end{solutionfigure}
 
-    \begin{solutionfigure}[h]
+    \begin{solutionfigure}[ht]
         \centering
         \includegraphics{ex05/i_alphaBeta_friction.pdf}
         \caption{Currents in $\upalpha \upbeta$ coordinate system of an IM during the transient process and in the steady-state operation with a speed-dependent load.}
         \label{fig:i_ab_friction}
     \end{solutionfigure}
 
-    \begin{solutionfigure}[h]
+    \begin{solutionfigure}[ht]
         \centering
         \includegraphics{ex05/i_abc_friction.pdf}
         \caption{Currents in abc coordinate system of an IM during the transient process and in the steady-state operation with a speed-dependent load.}
         \label{fig:i_abc_friction}
     \end{solutionfigure}
 
-    \begin{solutionfigure}[h]
+    \begin{solutionfigure}[ht]
         \centering
         \includegraphics{ex05/psi_rd_friction.pdf}
         \caption{Rotor flux linkage in dq coordinate system of an IM during the transient process and in the steady-state operation with a speed-dependent load.}
         \label{fig:psi_rq_friction}
     \end{solutionfigure}
 
-    \begin{solutionfigure}[h]
+    \begin{solutionfigure}[ht]
         \centering
         \includegraphics{ex05/psi_r_ab_friction.pdf}
         \caption{Rotor flux linkage in $\upalpha\upbeta$ coordinate system of an IM during the transient process and in the steady-state operation with a speed-dependent load.}
         \label{fig:psi_r_ab_friction}
     \end{solutionfigure}
 
-    \begin{solutionfigure}[h]
+    \begin{solutionfigure}[ht]
         \centering
         \includegraphics{ex05/psi_r_abc_friction.pdf}
         \caption{Rotor flux linkage in abc coordinate system of an IM during the transient process and in the steady-state operation with a speed-dependent load.}

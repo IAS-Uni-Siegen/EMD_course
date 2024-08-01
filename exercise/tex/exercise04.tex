@@ -105,7 +105,7 @@ The winding of a three-phase and four-pole machine is described with the followi
 
     For the calculation up to the $19\textsuperscript{th}$ harmonic, a short Python script is written.
     The results are visualized in \autoref{tab:windingFactors}.
-    \begin{solutiontable}[h]
+    \begin{solutiontable}[ht]
         \caption{Distribution, pitch, and winding factors as well as relative harmonic flux density  amplitudes.}
         \centering
         \begin{tabular}{rcrrr}\toprule
@@ -130,7 +130,7 @@ The winding of a three-phase and four-pole machine is described with the followi
 
 \begin{solutionblock}
     The calculation is performed with \eqref{eq:harmonicOrderFluxDensity} in a separate Python script. The resulting trajectories are shown in \autoref{fig:fundamentalAnd11thHarm}.
-    \begin{solutionfigure}[h]
+    \begin{solutionfigure}[ht]
         \centering
         \includegraphics{ex04/FundamentalAnd11thHarmonic.pdf}
         \caption{Visualization of the flux density of the fundamental wave and the $11\textsuperscript{th}$ harmonic of phase~a.}
@@ -247,7 +247,7 @@ Consider a 4-pole three-phase motor with 15 stator slots. A simplified sketch of
     which fulfills the requirement too.
     With the calculated phase shift and the knowledge of the coil width of three slots from the figure, the winding scheme is completed.
     In \autoref{tab:solution_distributedWinding} the inputs and outputs of each winding are given.
-    \begin{solutiontable}[h]
+    \begin{solutiontable}[ht]
         \caption{Solution of the distributed winding scheme.}
         \centering
         \begin{tabular}{c|C{1cm}|C{1cm}|C{1cm}|C{1cm}|C{1cm}|C{1cm}}\toprule
@@ -265,7 +265,7 @@ Consider a 4-pole three-phase motor with 15 stator slots. A simplified sketch of
     \end{solutiontable}
 
     The sketch of the distributed winding scheme is visualized in \autoref{fig:solution_MMF_distributed}.
-    \begin{solutionfigure}[h]
+    \begin{solutionfigure}[ht]
         \centering
         \includegraphics{ex04/solution_MMF_distributed.pdf}
         \caption{Solution of the distributed winding.}
@@ -309,7 +309,7 @@ Consider a 4-pole three-phase motor with 15 stator slots. A simplified sketch of
     \end{equation}
     where $i$ represents the number of the stator slot.
     Therefore, the mechanical angles are given in \autoref{tab:mechanicalAngles_distributedWinding}.
-    \begin{solutiontable}[h]
+    \begin{solutiontable}[ht]
         \caption{Mechanical angles of the distributed winding from \autoref{fig:MMF_distributed}.}
         \centering
         \begin{tabular}{C{3cm}|C{3cm}}\toprule
@@ -323,7 +323,7 @@ Consider a 4-pole three-phase motor with 15 stator slots. A simplified sketch of
     \end{solutiontable}
 
     To calculate the winding factors, the total number of turns of the respective phase $N_{\mathrm{a}}$ is determined for each stator slot. A negative sign indicates, that the winding turn is oriented towards the negative $z$-axis. When no conductor is in a slot, $N_{\mathrm{a,}i}$ = 0. The result is shown in \autoref{tab:WindingTurns_distributedWinding}.
-    \begin{solutiontable}[h]
+    \begin{solutiontable}[ht]
         \caption{Winding turns of phase a of the distributed winding.}
         \centering
         \begin{tabular}{C{3cm}C{3cm}C{3cm}}\toprule
@@ -501,7 +501,7 @@ Consider a 4-pole three-phase motor with 15 stator slots. A simplified sketch of
 
 \begin{solutionblock}
     The Python script is separately available, therefore, only the solution is presented in Tab~\ref{tab:complexWindingFactor_python}.
-    \begin{solutiontable}[h]
+    \begin{solutiontable}[ht]
         \caption{Complex winding factor $\underline{\xi}_{\mathrm{a,}k}$ up to the $12\textsuperscript{th}$ harmonic order.}
         \centering
         \begin{tabular}{R{5cm}R{5cm}R{5cm}}\toprule
@@ -631,7 +631,7 @@ Consider the shown 10-pole 3-phase motor with 12 stator slots in \autoref{fig:MM
     which fulfills the requirement too.
 
     With the coil width of one slot, the resulting winding is determined. The solution of this winding scheme is shown in \autoref{tab:solution_concentratedWinding}.
-    \begin{solutiontable}[h]
+    \begin{solutiontable}[ht]
         \caption{Solution of the winding scheme of a concentrated winding.}
         \centering
         \begin{tabular}{c|C{1cm}|C{1cm}|C{1cm}|C{1cm}|C{1cm}|C{1cm}}\toprule
@@ -649,7 +649,7 @@ Consider the shown 10-pole 3-phase motor with 12 stator slots in \autoref{fig:MM
     
 
     The completed winding scheme is visualized in Fig.\ref{fig:solution_MMF_concentrated}.
-    \begin{solutionfigure}[h]
+    \begin{solutionfigure}[ht]
         \centering
         \includegraphics{ex04/solution_MMF_concentrated.pdf}
         \captionsetup{labelfont={color=blue},textfont={color=blue}}
@@ -693,7 +693,7 @@ Consider the shown 10-pole 3-phase motor with 12 stator slots in \autoref{fig:MM
     \end{equation}
     where $i$ represents the number of the stator slot.
     Therefore, the mechanical angles are given in \autoref{tab:mechanicalAngles_concentratedWinding}.
-    \begin{solutiontable}[h]
+    \begin{solutiontable}[ht]
         \caption{Mechanical angles of the concentrated winding from \autoref{fig:MMF_concentrated}.}
         \centering
         \begin{tabular}{C{3cm}|C{3cm}}\toprule
@@ -706,7 +706,7 @@ Consider the shown 10-pole 3-phase motor with 12 stator slots in \autoref{fig:MM
     \end{solutiontable}
 
     To calculate the winding factors, the total number of turns of the respective phase $N_{\mathrm{a}}$ is determined for each stator slot. A negative sign indicates, that the winding turn is oriented towards the negative $z$-axis. When no conductor is in a slot, $N_{\mathrm{a,}i}$ = 0. The result is shown in \autoref{tab:WindingTurns_concentratedWinding}.
-    \begin{solutiontable}[h]
+    \begin{solutiontable}[ht]
         \caption{Winding turns of phase a of the concentrated winding rom \autoref{fig:MMF_concentrated}.}
         \centering
         \begin{tabular}{C{3cm}C{3cm}C{3cm}}\toprule
@@ -893,7 +893,7 @@ Consider the shown 10-pole 3-phase motor with 12 stator slots in \autoref{fig:MM
 
 \begin{solutionblock}
     The Python script is separately available, therefore, only the solution is presented in Tab~\ref{tab:complexWindingFactor_concentratedW_python}.
-    \begin{solutiontable}[h]
+    \begin{solutiontable}[ht]
         \caption{Complex winding factors $\underline{\xi}_{\mathrm{a,}k}$ for the concentrated winding up to the $12\textsuperscript{th}$ harmonic order.}
         \centering
         \begin{tabular}{R{3cm}R{3cm}R{3cm}R{3cm}}\toprule
