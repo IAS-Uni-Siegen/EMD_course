@@ -104,8 +104,8 @@ The winding of a three-phase and four-pole machine is described with the followi
     \end{equation}
 
     For the calculation up to the $19\textsuperscript{th}$ harmonic, a short Python script is written.
-    The results are visualized in Tab.~\ref{tab:windingFactors}.
-    \begin{solutiontable}
+    The results are visualized in \autoref{tab:windingFactors}.
+    \begin{solutiontable}[h]
         \caption{Distribution, pitch, and winding factors as well as relative harmonic flux density  amplitudes.}
         \centering
         \begin{tabular}{rcrrr}\toprule
@@ -129,8 +129,8 @@ The winding of a three-phase and four-pole machine is described with the followi
 \subtask{Sketch the flux density of the fundamental wave in the air gap of phase a as a function of the electrical stator circumference $\vartheta_\mathrm{el}$. Assume $i_a(t) = I_s \cdot \sqrt{2}$, i.e., the phase a is at its current peak. In addition, draw the flux density of the $11\textsuperscript{th}$ harmonic.}
 
 \begin{solutionblock}
-    The calculation is performed with \eqref{eq:harmonicOrderFluxDensity} in a separate Python script. The resulting trajectories are shown in Fig.~\ref{fig:fundamentalAnd11thHarm}.
-    \begin{solutionfigure}
+    The calculation is performed with \eqref{eq:harmonicOrderFluxDensity} in a separate Python script. The resulting trajectories are shown in \autoref{fig:fundamentalAnd11thHarm}.
+    \begin{solutionfigure}[h]
         \centering
         \includegraphics{ex04/FundamentalAnd11thHarmonic.pdf}
         \caption{Visualization of the flux density of the fundamental wave and the $11\textsuperscript{th}$ harmonic of phase~a.}
@@ -147,7 +147,7 @@ The winding of a three-phase and four-pole machine is described with the followi
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \task{Distributed windings}
-Consider a 4-pole three-phase motor with 15 stator slots. A simplified sketch of this motor with the winding scheme of phase a is shown in Fig.~\ref{fig:MMF_distributed}.
+Consider a 4-pole three-phase motor with 15 stator slots. A simplified sketch of this motor with the winding scheme of phase a is shown in \autoref{fig:MMF_distributed}.
 
 \begin{figure}[htb]
     \centering
@@ -193,10 +193,10 @@ Consider a 4-pole three-phase motor with 15 stator slots. A simplified sketch of
 \end{solutionblock}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subtask{Complete the winding scheme of the given machine in Tab.~\ref{tab:distributed_winding} for the phases b and c. Sketch the resulting winding scheme into Fig.~\ref{fig:MMF_distributed}.}
+\subtask{Complete the winding scheme of the given machine in \autoref{tab:distributed_winding} for the phases b and c. Sketch the resulting winding scheme into \autoref{fig:MMF_distributed}.}
 
 \begin{table}[ht]
-    \caption{Winding scheme of the distributed winding from Fig.~\ref{fig:MMF_distributed}.}
+    \caption{Winding scheme of the distributed winding from \autoref{fig:MMF_distributed}.}
     \centering
     \begin{tabular}{c|C{1cm}|C{1cm}|C{1cm}|C{1cm}|C{1cm}|C{1cm}}\toprule
         \multirow{2}{*}{Coil nr.} & \multicolumn{2}{c}{Phase a} & \multicolumn{2}{c}{Phase b} & \multicolumn{2}{c}{Phase c} \\
@@ -246,8 +246,8 @@ Consider a 4-pole three-phase motor with 15 stator slots. A simplified sketch of
     \end{align}
     which fulfills the requirement too.
     With the calculated phase shift and the knowledge of the coil width of three slots from the figure, the winding scheme is completed.
-    In Tab.~\ref{tab:solution_distributedWinding} the inputs and outputs of each winding are given.
-    \begin{solutiontable}
+    In \autoref{tab:solution_distributedWinding} the inputs and outputs of each winding are given.
+    \begin{solutiontable}[h]
         \caption{Solution of the distributed winding scheme.}
         \centering
         \begin{tabular}{c|C{1cm}|C{1cm}|C{1cm}|C{1cm}|C{1cm}|C{1cm}}\toprule
@@ -264,8 +264,8 @@ Consider a 4-pole three-phase motor with 15 stator slots. A simplified sketch of
         \label{tab:solution_distributedWinding}
     \end{solutiontable}
 
-    The sketch of the distributed winding scheme is visualized in Fig.~\ref{fig:solution_MMF_distributed}.
-    \begin{solutionfigure}
+    The sketch of the distributed winding scheme is visualized in \autoref{fig:solution_MMF_distributed}.
+    \begin{solutionfigure}[h]
         \centering
         \includegraphics{ex04/solution_MMF_distributed.pdf}
         \caption{Solution of the distributed winding.}
@@ -308,9 +308,9 @@ Consider a 4-pole three-phase motor with 15 stator slots. A simplified sketch of
         = \left(i-1 \right) \cdot \SI{24}{\degree},
     \end{equation}
     where $i$ represents the number of the stator slot.
-    Therefore, the mechanical angles are given in Tab.~\ref{tab:mechanicalAngles_distributedWinding}.
-    \begin{solutiontable}
-        \caption{Mechanical angles of the distributed winding from Fig.~\ref{fig:MMF_distributed}.}
+    Therefore, the mechanical angles are given in \autoref{tab:mechanicalAngles_distributedWinding}.
+    \begin{solutiontable}[h]
+        \caption{Mechanical angles of the distributed winding from \autoref{fig:MMF_distributed}.}
         \centering
         \begin{tabular}{C{3cm}|C{3cm}}\toprule
             $\vartheta_{\mathrm{a,}1} = \SI{0}{\degree}$     & $\vartheta_{\mathrm{a,}9} = \SI{192}{\degree}$ \\
@@ -322,8 +322,8 @@ Consider a 4-pole three-phase motor with 15 stator slots. A simplified sketch of
         \label{tab:mechanicalAngles_distributedWinding}
     \end{solutiontable}
 
-    To calculate the winding factors, the total number of turns of the respective phase $N_{\mathrm{a}}$ is determined for each stator slot. A negative sign indicates, that the winding turn is oriented towards the negative $z$-axis. When no conductor is in a slot, $N_{\mathrm{a,}i}$ = 0. The result is shown in Tab.~\ref{tab:WindingTurns_distributedWinding}.
-    \begin{solutiontable}
+    To calculate the winding factors, the total number of turns of the respective phase $N_{\mathrm{a}}$ is determined for each stator slot. A negative sign indicates, that the winding turn is oriented towards the negative $z$-axis. When no conductor is in a slot, $N_{\mathrm{a,}i}$ = 0. The result is shown in \autoref{tab:WindingTurns_distributedWinding}.
+    \begin{solutiontable}[h]
         \caption{Winding turns of phase a of the distributed winding.}
         \centering
         \begin{tabular}{C{3cm}C{3cm}C{3cm}}\toprule
@@ -388,7 +388,7 @@ Consider a 4-pole three-phase motor with 15 stator slots. A simplified sketch of
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subtask{Assume a block-shaped distribution of the flux density with a maximal value of $\hat{B} = \SI{1}{\tesla}$ and a number of winding turns $N'_{\mathrm{a}}$ = 30 (i.e., there are more turns per coil as indicated within Fig.~\ref{fig:MMF_distributed}). The axial length of the machine is $l=\SI{0.35}{\metre}$ and the diameter is $d_{\mathrm{s}} = \SI{0.10}{\metre}$. The machine rotates with a mechanical speed of $n=\SI{250}{\per \minute}$. Calculate the induced voltage of phase a for the fundamental wave as well as of the $5\textsuperscript{th}$ and $7\textsuperscript{th}$ harmonics.}
+\subtask{Assume a block-shaped distribution of the flux density with a maximal value of $\hat{B} = \SI{1}{\tesla}$ and a number of winding turns $N'_{\mathrm{a}}$ = 30 (i.e., there are more turns per coil as indicated within \autoref{fig:MMF_distributed}). The axial length of the machine is $l=\SI{0.35}{\metre}$ and the diameter is $d_{\mathrm{s}} = \SI{0.10}{\metre}$. The machine rotates with a mechanical speed of $n=\SI{250}{\per \minute}$. Calculate the induced voltage of phase a for the fundamental wave as well as of the $5\textsuperscript{th}$ and $7\textsuperscript{th}$ harmonics.}
 
 \begin{solutionblock}
     The Fourier coefficient of the flux density is given with
@@ -501,7 +501,7 @@ Consider a 4-pole three-phase motor with 15 stator slots. A simplified sketch of
 
 \begin{solutionblock}
     The Python script is separately available, therefore, only the solution is presented in Tab~\ref{tab:complexWindingFactor_python}.
-    \begin{solutiontable}
+    \begin{solutiontable}[h]
         \caption{Complex winding factor $\underline{\xi}_{\mathrm{a,}k}$ up to the $12\textsuperscript{th}$ harmonic order.}
         \centering
         \begin{tabular}{R{5cm}R{5cm}R{5cm}}\toprule
@@ -531,7 +531,7 @@ Consider a 4-pole three-phase motor with 15 stator slots. A simplified sketch of
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \task{Concentrated windings}
-Consider the shown 10-pole 3-phase motor with 12 stator slots in Fig.~\ref{fig:MMF_concentrated}. The winding scheme of phase a is shown in the figure.
+Consider the shown 10-pole 3-phase motor with 12 stator slots in \autoref{fig:MMF_concentrated}. The winding scheme of phase a is shown in the figure.
 
 \begin{figure}[htb]
     \centering
@@ -577,10 +577,10 @@ Consider the shown 10-pole 3-phase motor with 12 stator slots in Fig.~\ref{fig:M
 \end{solutionblock}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subtask{Complete Tab.~\ref{tab:concentrated_winding} with the winding scheme for phases b and c. Sketch the resulting winding scheme in Fig.~\ref{fig:MMF_concentrated}.}
+\subtask{Complete \autoref{tab:concentrated_winding} with the winding scheme for phases b and c. Sketch the resulting winding scheme in \autoref{fig:MMF_concentrated}.}
 
 \begin{table}[ht]
-    \caption{Winding scheme of a concentrated winding from Fig.~\ref{fig:MMF_concentrated}.}
+    \caption{Winding scheme of a concentrated winding from \autoref{fig:MMF_concentrated}.}
     \centering
     \begin{tabular}{c|C{1cm}|C{1cm}|C{1cm}|C{1cm}|C{1cm}|C{1cm}}\toprule
         \multirow{2}{*}{Coil nr.} & \multicolumn{2}{c}{Phase a} & \multicolumn{2}{c}{Phase b} & \multicolumn{2}{c}{Phase c} \\
@@ -630,8 +630,8 @@ Consider the shown 10-pole 3-phase motor with 12 stator slots in Fig.~\ref{fig:M
     \end{align}
     which fulfills the requirement too.
 
-    With the coil width of one slot, the resulting winding is determined. The solution of this winding scheme is shown in Tab.~\ref{tab:solution_concentratedWinding}.
-    \begin{solutiontable}
+    With the coil width of one slot, the resulting winding is determined. The solution of this winding scheme is shown in \autoref{tab:solution_concentratedWinding}.
+    \begin{solutiontable}[h]
         \caption{Solution of the winding scheme of a concentrated winding.}
         \centering
         \begin{tabular}{c|C{1cm}|C{1cm}|C{1cm}|C{1cm}|C{1cm}|C{1cm}}\toprule
@@ -649,7 +649,7 @@ Consider the shown 10-pole 3-phase motor with 12 stator slots in Fig.~\ref{fig:M
     
 
     The completed winding scheme is visualized in Fig.\ref{fig:solution_MMF_concentrated}.
-    \begin{solutionfigure}
+    \begin{solutionfigure}[h]
         \centering
         \includegraphics{ex04/solution_MMF_concentrated.pdf}
         \captionsetup{labelfont={color=blue},textfont={color=blue}}
@@ -692,9 +692,9 @@ Consider the shown 10-pole 3-phase motor with 12 stator slots in Fig.~\ref{fig:M
         = \left(i-1 \right)\cdot \SI{30}{\degree},
     \end{equation}
     where $i$ represents the number of the stator slot.
-    Therefore, the mechanical angles are given in Tab.~\ref{tab:mechanicalAngles_concentratedWinding}.
-    \begin{solutiontable}
-        \caption{Mechanical angles of the concentrated winding from Fig.~\ref{fig:MMF_concentrated}.}
+    Therefore, the mechanical angles are given in \autoref{tab:mechanicalAngles_concentratedWinding}.
+    \begin{solutiontable}[h]
+        \caption{Mechanical angles of the concentrated winding from \autoref{fig:MMF_concentrated}.}
         \centering
         \begin{tabular}{C{3cm}|C{3cm}}\toprule
             $\vartheta_{\mathrm{a,}1} = \SI{0}{\degree}$     & $\vartheta_{\mathrm{a,}9} = \SI{180}{\degree}$ \\
@@ -705,9 +705,9 @@ Consider the shown 10-pole 3-phase motor with 12 stator slots in Fig.~\ref{fig:M
         \label{tab:mechanicalAngles_concentratedWinding}
     \end{solutiontable}
 
-    To calculate the winding factors, the total number of turns of the respective phase $N_{\mathrm{a}}$ is determined for each stator slot. A negative sign indicates, that the winding turn is oriented towards the negative $z$-axis. When no conductor is in a slot, $N_{\mathrm{a,}i}$ = 0. The result is shown in Tab.~\ref{tab:WindingTurns_concentratedWinding}.
-    \begin{solutiontable}
-        \caption{Winding turns of phase a of the concentrated winding rom Fig.~\ref{fig:MMF_concentrated}.}
+    To calculate the winding factors, the total number of turns of the respective phase $N_{\mathrm{a}}$ is determined for each stator slot. A negative sign indicates, that the winding turn is oriented towards the negative $z$-axis. When no conductor is in a slot, $N_{\mathrm{a,}i}$ = 0. The result is shown in \autoref{tab:WindingTurns_concentratedWinding}.
+    \begin{solutiontable}[h]
+        \caption{Winding turns of phase a of the concentrated winding rom \autoref{fig:MMF_concentrated}.}
         \centering
         \begin{tabular}{C{3cm}C{3cm}C{3cm}}\toprule
             $N_{\mathrm{a1}}$ = 2     & $N_{\mathrm{a2}}$ = -1  & $N_{\mathrm{a6}}$ = 1 \\
@@ -893,7 +893,7 @@ Consider the shown 10-pole 3-phase motor with 12 stator slots in Fig.~\ref{fig:M
 
 \begin{solutionblock}
     The Python script is separately available, therefore, only the solution is presented in Tab~\ref{tab:complexWindingFactor_concentratedW_python}.
-    \begin{solutiontable}
+    \begin{solutiontable}[h]
         \caption{Complex winding factors $\underline{\xi}_{\mathrm{a,}k}$ for the concentrated winding up to the $12\textsuperscript{th}$ harmonic order.}
         \centering
         \begin{tabular}{R{3cm}R{3cm}R{3cm}R{3cm}}\toprule

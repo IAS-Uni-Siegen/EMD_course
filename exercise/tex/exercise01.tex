@@ -13,7 +13,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \task{Magnetic iron yoke}
-The iron core consists of thin single metal sheets with a cross-sectional area of $A$ = 900 $\si{mm}^2$ and with an air gap of $\delta$ = 3 mm. A simplified sketch is shown in Fig.~\ref{fig:MagneticIronCircle}. The material behavior of the selected iron is visualized in Fig.~\ref{fig:BH_curve}. The coil with $N$ turns contains a direct current which results in a homogeneous magnetic flux density of $B_{\mathrm{\delta}}$ = 1.8 T in the air gap.
+The iron core consists of thin single metal sheets with a cross-sectional area of $A$ = 900 $\si{mm}^2$ and with an air gap of $\delta$ = 3 mm. A simplified sketch is shown in \autoref{fig:MagneticIronCircle}. The material behavior of the selected iron is visualized in \autoref{fig:BH_curve}. The coil with $N$ turns contains a direct current which results in a homogeneous magnetic flux density of $B_{\mathrm{\delta}}$ = 1.8 T in the air gap.
 
 
 \begin{figure}[htb]
@@ -55,7 +55,7 @@ The iron core consists of thin single metal sheets with a cross-sectional area o
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subtask{How big is the magnetic flux density $B_{\mathrm{Fe}}$ in the iron core at the dotted line in Fig.~\ref{fig:MagneticIronCircle}? Neglect the leakage flux.}
+\subtask{How big is the magnetic flux density $B_{\mathrm{Fe}}$ in the iron core at the dotted line in \autoref{fig:MagneticIronCircle}? Neglect the leakage flux.}
 \begin{solutionblock}
     Since the leakage flux is neglected, the fluxes $\phi_{\mathrm{\updelta}}$ in the air gap and $\phi_{\mathrm{Fe}}$ in the iron are equal. This results in the following equation:
     \begin{equation}
@@ -83,7 +83,7 @@ The iron core consists of thin single metal sheets with a cross-sectional area o
         = 1432395 \ \frac{\si{A}}{\si{m}}.
     \end{equation}
 
-    The curve (1) on the left side in Fig.~\ref{fig:BH_curve} shows for $B_{\mathrm{Fe}}$ = 1.8 \si{T} a magnetic filed strength of \newline $H_{\mathrm{Fe}} = 80 \ \frac{\si{A}}{\si{cm}}$ = $8000 \ \frac{\si{A}}{\si{m}}$. With the filed strength $H_{\mathrm{Fe}}$ the permeability of the iron is calculated:
+    The curve (1) on the left side in \autoref{fig:BH_curve} shows for $B_{\mathrm{Fe}}$ = 1.8 \si{T} a magnetic filed strength of \newline $H_{\mathrm{Fe}} = 80 \ \frac{\si{A}}{\si{cm}}$ = $8000 \ \frac{\si{A}}{\si{m}}$. With the filed strength $H_{\mathrm{Fe}}$ the permeability of the iron is calculated:
     \begin{equation}
         \mu_{\mathrm{Fe}} = \frac{B_{\mathrm{Fe}}}{H_{\mathrm{Fe}}}
         = \frac{1.8 \ \si{T}}{8000 \ \si{A/m}}
@@ -144,9 +144,9 @@ The iron core consists of thin single metal sheets with a cross-sectional area o
 
 
 \task{Electromagnetic induction}
-A magnetic circuit (cf. Fig.~\ref{fig:MagneticIron3D}) has the dimension of $\delta$ = 3 mm, $b$ = $l$ = 30 mm. The excitation coil with $N$ = 500 tuns id fed with an alternating current $i(t) = \hat{I} \sin(2\pi f t)$ with $f$ = 100 Hz and $\hat{I}$ = 7.8 A.
+A magnetic circuit (cf. \autoref{fig:MagneticIron3D}) has the dimension of $\delta$ = 3 mm, $b$ = $l$ = 30 mm. The excitation coil with $N$ = 500 tuns id fed with an alternating current $i(t) = \hat{I} \sin(2\pi f t)$ with $f$ = 100 Hz and $\hat{I}$ = 7.8 A.
 The permeability of the iron $\mu_{\mathrm{Fe}}$ is assumed to be infinite and the flux leakage can be neglected.
-A quadratic, non-moving coil with a side length of 30 mm and $N_{\mathrm{C}}$ = 10 turns is within the air gap of the yoke. The orientation of the coil is shown in Fig.~\ref{fig:CoilSurface}. 
+A quadratic, non-moving coil with a side length of 30 mm and $N_{\mathrm{C}}$ = 10 turns is within the air gap of the yoke. The orientation of the coil is shown in \autoref{fig:CoilSurface}. 
 
 \begin{figure}[htb]
     \centering
@@ -218,13 +218,13 @@ Sketch the trajectories of $i(t)$ and $B_{\mathrm{\updelta}}(t)$.}
         = 1.63 \ \si{T} \cdot \sin(2 \pi \cdot 100 \ \si{Hz} \cdot t).
     \end{equation}
 
-    In the upper part of Fig.~\ref{fig:solution_FluxDensity} the trajectory of the current is shown. In addition, the trajectory of the magnetic flux density is visualized in the lower part.
-    \begin{figure}[ht]
+    In the upper part of \autoref{fig:solution_FluxDensity} the trajectory of the current is shown. In addition, the trajectory of the magnetic flux density is visualized in the lower part.
+    \begin{solutionfigure}[ht]
         \centering
         \includegraphics{ex01/solution_FluxDensity.pdf}
         \caption{Trajectories of the current $i(t)$ in the upper and the magnetic flux density $B(t)$ in the lower part of the figure.}
         \label{fig:solution_FluxDensity}
-    \end{figure}
+    \end{solutionfigure}
 
 \end{solutionblock}
 
@@ -235,7 +235,7 @@ Sketch the trajectories of $i(t)$ and $B_{\mathrm{\updelta}}(t)$.}
 \subtask{How large is the magnetic flux linkage $\mathit{\Psi}(t)$ of the magnetic field generated by the excitation coil to the coil in the air gap?}
 \begin{solutionblock}
 
-    According to Fig.~\ref{fig:CoilSurface}, the direction of vector d$\boldsymbol{S}$ is in the opposite direction of the flux density vector $\boldsymbol{{B}}_{\updelta}$. Therefore, the flux linkage has a negative sign:
+    According to \autoref{fig:CoilSurface}, the direction of vector d$\boldsymbol{S}$ is in the opposite direction of the flux density vector $\boldsymbol{{B}}_{\updelta}$. Therefore, the flux linkage has a negative sign:
     \begin{equation}
         \psi(t) = N_{\mathrm{c}} \phi(t)
         = - N_{\mathrm{c}} A_{\mathrm{\updelta}} B_{\mathrm{\updelta}}(t).
@@ -266,13 +266,13 @@ Sketch the trajectories of $i(t)$ and $B_{\mathrm{\updelta}}(t)$.}
         = 9.2 \ \si{V} \cdot \cos(2 \pi \cdot 100 \ \si{Hz} \cdot t).
     \end{equation}
 
-    In the upper part of Fig.~\ref{fig:solution_InducedVoltage}, the calculated current from the previous task is shown again. The induced voltage is visualized in the lower part of the figure. 
-    \begin{figure}[ht]
+    In the upper part of \autoref{fig:solution_InducedVoltage}, the calculated current from the previous task is shown again. The induced voltage is visualized in the lower part of the figure. 
+    \begin{solutionfigure}[ht]
         \centering
         \includegraphics{ex01/solution_InducedVoltage.pdf}
         \caption{Trajectories of the current $i(t)$ in the upper and the induced voltage $u_{\mathrm{i}}(t)$ in the lower part of the figure.}
         \label{fig:solution_InducedVoltage}
-    \end{figure}
+    \end{solutionfigure}
     
 \end{solutionblock}
 
@@ -318,19 +318,19 @@ The magnetic flux density directed downwards perpendicular to the conductor axis
 
 \subtask{Draw the electrical equivalent circuit diagram of the battery and resting conductor, and enter the direction of current flow $I$ in the load convention style. How large is $I$?}
 \begin{solutionblock}
-    As the magnetic field is constant over time, no induction occurs. Only the electrical battery voltage acts according to the equivalent circuit diagram in Fig.~\ref{fig:solution_EquivalentCircuitDiagram}. Hence, the current is calculated with:
+    As the magnetic field is constant over time, no induction occurs. Only the electrical battery voltage acts according to the equivalent circuit diagram in \autoref{fig:solution_EquivalentCircuitDiagram}. Hence, the current is calculated with:
     \begin{equation}
         I = \frac{U_{\mathrm{B0}}}{R_{\mathrm{Bi}}+R}
         = \frac{12 \ \si{V}}{(0.1+0.2) \ \si{\Omega}}
         = 40 \ \si{A}.
     \end{equation}
 
-    \begin{figure}[ht]
+    \begin{solutionfigure}[ht]
         \centering
         \includegraphics{ex01/solution_equivalentCircuitDiagram.pdf}
         \caption{Equivalent circuit diagram for the battery and resting conductor marked here with $R$.}
         \label{fig:solution_EquivalentCircuitDiagram}
-    \end{figure}
+    \end{solutionfigure}
 
 \end{solutionblock}
 
@@ -340,7 +340,7 @@ The magnetic flux density directed downwards perpendicular to the conductor axis
 
 \subtask{In which direction shows the Lorentz force $F$ on the conductor? How big is this force?}
 \begin{solutionblock}
-    The force $F$ acts at right angles to the field and current flow direction, this means, in the direction of the air gap surface to the right, which is shown in Fig.~\ref{fig:solution_LorentzForce}. Since the direction of current flow and field direction form a right angle with each other, the maximum possible force occurs:
+    The force $F$ acts at right angles to the field and current flow direction, this means, in the direction of the air gap surface to the right, which is shown in \autoref{fig:solution_LorentzForce}. Since the direction of current flow and field direction form a right angle with each other, the maximum possible force occurs:
     \begin{equation}
         F = I l B_{\mathrm{\updelta}}
         = 40 \ \si{A} \cdot 1 \ \si{m} \cdot 0.8 \ \si{T}
@@ -378,13 +378,13 @@ The magnetic flux density directed downwards perpendicular to the conductor axis
         = U_{\mathrm{i}}.
     \end{equation}
 
-    In the equivalent circuit diagram (Fig.~\ref{fig:solution_movingConductor}), the induced voltage acts in series with the battery voltage:
+    In the equivalent circuit diagram (\autoref{fig:solution_movingConductor}), the induced voltage acts in series with the battery voltage:
     \begin{equation}
         U_{\mathrm{B0}} + U_{\mathrm{i}} = (R_{\mathrm{Bi}} + R) I
         = U_{\mathrm{B0}} - v B_{\updelta} l.
     \end{equation}
 
-    As long as $v B_{\updelta} l$ is less than $U_{\mathrm{B0}}$, is $I$ > 0 and the driving force $F$ > 0 remains effective. The induced voltage acts against the current direction $I$, which is the cause of the conductor movement through $F$, and therefore acts against the cause of its creation (Lenz's rule, Fig.~\ref{fig:solution_movingConductor}).
+    As long as $v B_{\updelta} l$ is less than $U_{\mathrm{B0}}$, is $I$ > 0 and the driving force $F$ > 0 remains effective. The induced voltage acts against the current direction $I$, which is the cause of the conductor movement through $F$, and therefore acts against the cause of its creation (Lenz's rule, \autoref{fig:solution_movingConductor}).
 
     \begin{solutionfigure}[ht]
         \centering
@@ -404,7 +404,7 @@ The magnetic flux density directed downwards perpendicular to the conductor axis
 \begin{solutionblock}
 
     The final velocity $v_{\mathrm{0}}$ in the air gap is reached when, the sum of all forces acting on the conductor is zero ($\sum F = 0$), according to Newton's second axiom.
-    Without mechanical forces from outside, this is this only true when $I$ = 0 due to $F = I l B_{\updelta}$. With the equivalent circuit from Fig.~\ref{fig:solution_movingConductor} the following equation is defined:
+    Without mechanical forces from outside, this is this only true when $I$ = 0 due to $F = I l B_{\updelta}$. With the equivalent circuit from \autoref{fig:solution_movingConductor} the following equation is defined:
     \begin{equation}
         U_{\mathrm{B0}} = (R_{\mathrm{Bi}} + R) I - U_{\mathrm{i}},
     \end{equation}
@@ -456,7 +456,7 @@ The magnetic flux density directed downwards perpendicular to the conductor axis
         = 10.31 \ \frac{\si{m}}{\si{s}}.
     \end{equation}
 
-    The Lorentz force and the friction force are visualized in Fig.~\ref{fig:solution_LorentzForce_balanceOfForces} after reaching the final speed.
+    The Lorentz force and the friction force are visualized in \autoref{fig:solution_LorentzForce_balanceOfForces} after reaching the final speed.
     \begin{solutionfigure}[ht]
         \centering
         \includegraphics{ex01/solution_LorentzForce_balanceOfForces.pdf}
@@ -484,12 +484,12 @@ The magnetic flux density directed downwards perpendicular to the conductor axis
     \begin{equation}
         v = \frac{U_{\mathrm{B0}}-(R_{\mathrm{Bi}}+R)I}{B_{\updelta} l},
     \end{equation}
-    by changing the value of the current. This results in the left part of Fig.~\ref{fig:solution_conductorSpeed}.
+    by changing the value of the current. This results in the left part of \autoref{fig:solution_conductorSpeed}.
     The corresponding force $F$ is calculated as:
     \begin{equation}
         F = I l B_{\updelta},
     \end{equation}
-    and the resulting values are shown in der right part of Fig.~\ref{fig:solution_conductorSpeed}.
+    and the resulting values are shown in der right part of \autoref{fig:solution_conductorSpeed}.
     \begin{solutionfigure}[ht]
         \centering
         \includegraphics{ex01/solution_conductorSpeed.pdf}

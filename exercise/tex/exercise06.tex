@@ -391,16 +391,16 @@ Given is a salient pole synchronous machine with the parameters in Tab.~\ref{tab
         \frac{\mathrm{d}}{\mathrm{d}t} \varepsilon(t) = \omega(t).
     \end{equation}
 
-    In Fig.~\ref{fig:i_dq_omega_const_analytical_ode} a comparison between the analytical and the numerical solution of is shown. The currents are initialized with the same values at $t=0$. The trajectories of the analytical and the numerical current values are identical, except that a damping behavior is visible in the numerical solution. This results from the consideration of the winding resistances in the numerical solution, in comparison to the simplified analytical one.
-    \begin{solutionfigure}
+    In \autoref{fig:i_dq_omega_const_analytical_ode} a comparison between the analytical and the numerical solution of is shown. The currents are initialized with the same values at $t=0$. The trajectories of the analytical and the numerical current values are identical, except that a damping behavior is visible in the numerical solution. This results from the consideration of the winding resistances in the numerical solution, in comparison to the simplified analytical one.
+    \begin{solutionfigure}[h]
         \centering
         \includegraphics{ex06/i_dq_omega_const_analytical_ode.pdf}
         \caption{Transient process of $i_{\mathrm{dq}}$ of a salient synchronous machine with a stator and field winding short circuit.}
         \label{fig:i_dq_omega_const_analytical_ode}
     \end{solutionfigure}
 
-    The trajectories of the field current $i_{\mathrm{f}}$ are visualized in Fig.~\ref{fig:i_f_omega_const_analytical_ode}. The behavior of this two trajectories are identical, except to the damping in the numerical solution, due to the considered winding resistance.
-    \begin{solutionfigure}
+    The trajectories of the field current $i_{\mathrm{f}}$ are visualized in \autoref{fig:i_f_omega_const_analytical_ode}. The behavior of this two trajectories are identical, except to the damping in the numerical solution, due to the considered winding resistance.
+    \begin{solutionfigure}[h]
         \centering
         \includegraphics{ex06/i_f_omega_const_analytical_ode.pdf}
         \caption{Transient process of the field current $i_{\mathrm{f}}$ of a salient synchronous machine with a stator and field winding short circuit.}
@@ -415,16 +415,16 @@ Given is a salient pole synchronous machine with the parameters in Tab.~\ref{tab
 \subtask{Add a load with the following characteristic $T_{\mathrm{l}}(t) = 0.0001\cdot \omega_{\mathrm{r}}^{2}(t)$ to the existing simulation. Repeat the simulation with the same initial conditions as in the task before. Extend the simulation time to $T_{\mathrm{sim}} = \SI{0.5}{\second}$ and plot the currents $i_{\mathrm{d}}(t)$, $i_{\mathrm{f}}(t)$, the angular frequency of the rotor $\omega_{\mathrm{r,el}}(t)$ and the torque $T(t)$.}
 
 \begin{solutionblock}
-    The resulting currents for the new operating point are shown in Fig.~\ref{fig:i_dq_ode}.
-    \begin{solutionfigure}
+    The resulting currents for the new operating point are shown in \autoref{fig:i_dq_ode}.
+    \begin{solutionfigure}[h]
         \centering
         \includegraphics{ex06/i_dq_ode.pdf}
         \caption{Transient process of $i_{\mathrm{dq}}$ of a salient synchronous machine with a stator and field winding short circuit and a load resistance.}
         \label{fig:i_dq_ode}
     \end{solutionfigure}
 
-    The filed winding current is visualized in Fig.~\ref{fig:i_f_ode}.
-    \begin{solutionfigure}
+    The filed winding current is visualized in \autoref{fig:i_f_ode}.
+    \begin{solutionfigure}[h]
         \centering
         \includegraphics{ex06/i_f_ode.pdf}
         \caption{Transient process of $i_{\mathrm{f}}$ of a salient synchronous machine with a stator and field winding short circuit and a load resistance.}
@@ -432,15 +432,15 @@ Given is a salient pole synchronous machine with the parameters in Tab.~\ref{tab
     \end{solutionfigure}
 
     Fig~\ref{fig:omega_r_el_ode} shows the angular frequency of the rotor. Due to the winding resistance and the additional load, the currents are reduced over time, until the machine comes to a standstill.
-    \begin{solutionfigure}
+    \begin{solutionfigure}[h]
         \centering
         \includegraphics{ex06/omega_r_el_ode.pdf}
         \caption{Transient process of a salient synchronous machine with a stator and field winding short circuit and a load resistance.}
         \label{fig:omega_r_el_ode}
     \end{solutionfigure}
 
-    The generated torque during the transient process is shown in Fig.~\ref{fig:T_ode}.
-    \begin{solutionfigure}
+    The generated torque during the transient process is shown in \autoref{fig:T_ode}.
+    \begin{solutionfigure}[h]
         \centering
         \includegraphics{ex06/T_ode.pdf}
         \caption{Generated torque of a salient synchronous machine with a stator and field winding short circuit and a load resistance.}
@@ -641,38 +641,37 @@ Given is a salient pole synchronous machine with the parameters in Tab.~\ref{tab
         \end{pmatrix}.
     \end{equation}
 
-    In Fig.~\ref{fig:i_dq_dampingW_ode} the $i_{\mathrm{dq}}$ current trajectories during the transient process are shown.
-    \begin{solutionfigure}
+    In \autoref{fig:i_dq_dampingW_ode} the $i_{\mathrm{dq}}$ current trajectories during the transient process are shown.
+    \begin{solutionfigure}[h]
         \centering
         \includegraphics{ex06/i_dq_dampingW_ode.pdf}
         \caption{Transient process of a salient synchronous machine with a stator and field winding short circuit and a damper winding.}
         \label{fig:i_dq_dampingW_ode}
     \end{solutionfigure}
 
-    The field current is visualized in Fig.~\ref{fig:i_f_dampingW_ode}.
-    \begin{solutionfigure}
+    The field current is visualized in \autoref{fig:i_f_dampingW_ode}.
+    \begin{solutionfigure}[h]
         \centering
         \includegraphics{ex06/i_f_dampingW_ode.pdf}
         \caption{Field current of a salient synchronous machine with a stator and field winding short circuit and a damper winding.}
         \label{fig:i_f_dampingW_ode}
     \end{solutionfigure}
 
-    The rotational speed of the rotor is shown in Fig.~\ref{fig:omega_r_el_dampingW_ode}. The steady state is reached faster than in the simulation before, due to the added damping winding.
-    \begin{solutionfigure}
+    The rotational speed of the rotor is shown in \autoref{fig:omega_r_el_dampingW_ode}. The steady state is reached faster than in the simulation before, due to the added damping winding.
+    \begin{solutionfigure}[h]
         \centering
         \includegraphics{ex06/omega_r_el_dampingW_ode.pdf}
         \caption{Speed of a salient synchronous machine with a stator and field winding short circuit and a damper winding.}
         \label{fig:omega_r_el_dampingW_ode}
     \end{solutionfigure}
 
-    Fig.~\ref{fig:T_dampingW_ode} shows the generated torque during the transient process. The faster transient process is also visible in the torque curve, which faster converts to zero.
-    \begin{solutionfigure}
+    \autoref{fig:T_dampingW_ode} shows the generated torque during the transient process. The faster transient process is also visible in the torque curve, which faster converts to zero.
+    \begin{solutionfigure}[h]
         \centering
         \includegraphics{ex06/T_dampingW_ode.pdf}
         \caption{Torque of a salient synchronous machine with a stator and field winding short circuit and a damper winding.}
         \label{fig:T_dampingW_ode}
     \end{solutionfigure}
-
 \end{solutionblock}
 \FloatBarrier
 
@@ -834,8 +833,8 @@ In a thermal power station, a cylinderical synchronous generator is used which h
         = \SI{23.77}{\ampere}.
     \end{equation}
 
-    The phase shift angle is $\varphi = \SI{90}{\degree}$ and the load angle is $\theta = \SI{0}{\degree}$. The phasor diagram is visualized in Fig.~\ref{fig:Phasor_diagram_reactive}, the inner voltage $\underline{U}_{\mathrm{i}}$ is purely imaginary, as defined in the lecture notes. The stator voltage $\underline{U}_{\mathrm{s}}$ and the internal voltage are directly on top of each other due to the zero load angle $\theta$.
-    \begin{solutionfigure}
+    The phase shift angle is $\varphi = \SI{90}{\degree}$ and the load angle is $\theta = \SI{0}{\degree}$. The phasor diagram is visualized in \autoref{fig:Phasor_diagram_reactive}, the inner voltage $\underline{U}_{\mathrm{i}}$ is purely imaginary, as defined in the lecture notes. The stator voltage $\underline{U}_{\mathrm{s}}$ and the internal voltage are directly on top of each other due to the zero load angle $\theta$.
+    \begin{solutionfigure}[h]
         \centering
         \includegraphics{ex06/Phasor_diagram_reactive.pdf}
         \caption{Phasor diagram for the given operating point. The scala is for the voltage 1 cm $\widehat{=}~ \SI{1000}{\volt}$ and for the current 1 cm $\widehat{=}~ \SI{2000}{\ampere}$.}
@@ -882,7 +881,7 @@ In a thermal power station, a cylinderical synchronous generator is used which h
         = \SI{3600}{\volt}.
     \end{equation}
 
-    The phasor diagram is visualized in Fig.~\ref{fig:Phasor_diagram_reactive_active}, the inner voltage $\underline{U}_{\mathrm{i}}$ is purely imaginary, as defined in the lecture notes.
+    The phasor diagram is visualized in \autoref{fig:Phasor_diagram_reactive_active}, the inner voltage $\underline{U}_{\mathrm{i}}$ is purely imaginary, as defined in the lecture notes.
     \begin{solutionfigure}
         \centering
         \includegraphics{ex06/Phasor_diagram_reactive_active.pdf}
@@ -951,7 +950,7 @@ In a thermal power station, a cylinderical synchronous generator is used which h
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \task{Steady-state operation of a synchronous machine}
-Consider a loss-free synchronous machine with the parameters from Tab.~\ref{tab:para_SynchonousMachine}. First, the synchronous machine is operated as a a motor. Using the data given above, determine the following characteristic variables of the synchronous machine at rated operation. An example phasor diagram for this operation is shown in Fig.~\ref{fig:Phasor_diagrams_m_oe}.
+Consider a loss-free synchronous machine with the parameters from Tab.~\ref{tab:para_SynchonousMachine}. First, the synchronous machine is operated as a a motor. Using the data given above, determine the following characteristic variables of the synchronous machine at rated operation. An example phasor diagram for this operation is shown in \autoref{fig:Phasor_diagrams_m_oe}.
 
 
 \begin{table}[htb]
@@ -971,7 +970,7 @@ Consider a loss-free synchronous machine with the parameters from Tab.~\ref{tab:
     \label{tab:para_SynchonousMachine}
 \end{table}
 
-\begin{figure}
+\begin{figure}[h]
     \centering
     \includegraphics{ex06/Phasor_diagrams_m_oe.pdf}
     \caption{Phasor diagram of a over excited synchronous machine in motor mode.}
@@ -1025,7 +1024,7 @@ Consider a loss-free synchronous machine with the parameters from Tab.~\ref{tab:
 \subtask{Which load angle $\theta$ is set at the nominal operating point?}
 
 \begin{solutionblock}
-    The load angle can be determined by geometric transformations, which are shown in Fig.~\ref{fig:syn_motor_overExcited}.
+    The load angle can be determined by geometric transformations, which are shown in \autoref{fig:syn_motor_overExcited}.
     \begin{solutionfigure}
         \centering
         \includegraphics{ex06/syn_Motor_overExcited.pdf}
@@ -1083,9 +1082,9 @@ Consider a loss-free synchronous machine with the parameters from Tab.~\ref{tab:
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subtask{In the next task, the machine operates as generator and the power is 500 kW. The phasor diagram for this operation is shown in Fig.~\ref{fig:Phasor_diagrams_gen_oe}. Which load angle $\theta$ is set at the new operating point?}
+\subtask{In the next task, the machine operates as generator and the power is 500 kW. The phasor diagram for this operation is shown in \autoref{fig:Phasor_diagrams_gen_oe}. Which load angle $\theta$ is set at the new operating point?}
 
-\begin{figure}
+\begin{figure}[h]
     \centering
     \includegraphics{ex06/Phasor_diagrams_gen_oe.pdf}
     \caption{Phasor diagram of an over excited synchronous machine in generator mode.}
