@@ -25,8 +25,8 @@
 \end{figure}
 
 
-\subtask{Determine the operating mode of the machine characterized by Fig.~\ref{fig:phasor_SM}.}{2}
-\subtaskGerman{Bestimmen Sie die Betriebsart der Maschine auf Basis von Abb.~\ref{fig:phasor_SM}.}
+\subtask{Determine the operating mode of the machine characterized by \autoref{fig:phasor_SM}.}{2}
+\subtaskGerman{Bestimmen Sie die Betriebsart der Maschine auf Basis von \autoref{fig:phasor_SM}.}
 
 \begin{solutionblock}
     The machine is operating as an overexcited generator, since the excitation voltage $\underline{U}_\mathrm{i}$ is leading the stator voltage $\underline{U}_\mathrm{s}$ by an angle $\theta$ and the induced voltage amplitude is larger than the stator voltage amplitude.
@@ -39,7 +39,7 @@
 \begin{solutionblock}
     The short-circuit current $\underline{I}_\mathrm{s,sc}$ is orthogonal to $\underline{U}_\mathrm{i}$ and lagging behind by $\SI{90}{\degree}$, that is, pointing towards the real axis with a length of \SI{1.33}{\cm}. The synchronous reactance is then
     $$X_\mathrm{s} = \frac{\underline{U}_\mathrm{i}}{\underline{I}_\mathrm{s,sc}} = \frac{\SI{3}{\kilo\volt}}{\SI{1.33}{\kilo\ampere}} = \SI{2.26}{\ohm}.$$
-    Here, the induced voltage $\underline{U}_\mathrm{i}$ has been obtained from optical measurement of the phasor diagram and also represents the open-circuit voltage.
+    Here, the induced voltage $\underline{U}_\mathrm{i}$ has been obtained from optical measurement of the phasor diagram and also represents the open-circuit voltage. The completed phasor diagram is shown in \autoref{fig:phasor_SM_final}.
 \end{solutionblock}
 
 
@@ -54,11 +54,8 @@
     The angle $\varphi$ is then
     $$\varphi = -\arccos(0.96) = \SI{-16.25}{\degree}.$$
     The power factor angle is negative as the generator operates in an over-excited mode, i.e., its reactive power is negative. The resulting complex stator current is then $$\underline{I}_\mathrm{s} = \SI{0.62}{\kilo\ampere} \cdot e^{\mathrm{j}(\SI{16.25}{\degree} + \SI{63.5}{\degree})}  = \SI{0.11}{\kilo\ampere} + \mathrm{j} \SI{0.61}{\kilo\ampere}.$$
-    Here, the angle $\SI{63.5}{\degree}$ is the stator voltage angle counted from the real axis.
-\end{solutionblock}
-
-\begin{solutionblock}
-    \begin{figure}[h!]
+    Here, the angle $\SI{63.5}{\degree}$ is the stator voltage angle counted from the real axis. The final solution phasor diagram is shown in \autoref{fig:phasor_SM_final}.
+    \begin{solutionfigure}[ht]
         \centering
         \begin{tikzpicture}
             \coordinate (b) at (0,0);
@@ -77,8 +74,12 @@
             \pic[draw, <-, angle eccentricity=1.7, angle radius=1.25cm]{angle = a--b--d};
             \node at (0.45,1.5) {$\varphi$};
         \end{tikzpicture}
-    \end{figure}
+        \caption{Final phasor diagram}
+        \label{fig:phasor_SM_final}
+    \end{solutionfigure}
 \end{solutionblock}
+  
+
 
 \subtask{Determine the apparent power $S$ and the reactive power $Q$.}{2}
 \subtaskGerman{Bestimmen Sie die Scheinleistung $S$ und die Blindleistung $Q$.}

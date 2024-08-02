@@ -119,30 +119,29 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Solution table %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\NewDocumentEnvironment{solutiontable}{+b}{
-    \table[ht]
-    \captionsetup{labelfont={color=blue},textfont={color=blue}}
-    \color{blue}
-    #1}
-    {
-        \endtabularx
-        \endtable
-    }
+\DeclareFloatingEnvironment[autorefname=Sol.-Tab.]{solutiontable}
+\captionsetup[solutiontable]{name=Solution Table, labelfont={color=blue},textfont={color=blue}}
+\renewcommand{\thesolutiontable}{\arabic{solutiontable}}
+
+% Change autorefname of table to Tab.
+\addto\extrasenglish{%
+    \renewcommand{\tableautorefname}{Tab.}%
+}
+    
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Solution figure %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\NewDocumentEnvironment{solutionfigure}{+b}{
-    \figure
-    \captionsetup{labelfont={color=blue},textfont={color=blue}}
-    \color{blue}
-    #1}
-    {
-        \endfigure
-    }
+\DeclareFloatingEnvironment[autorefname=Sol.-Fig.]{solutionfigure}
+\captionsetup[solutionfigure]{name=Solution Figure, labelfont={color=blue},textfont={color=blue}}
+\renewcommand{\thesolutionfigure}{\arabic{solutionfigure}}
 
-\renewcommand{\figurename}{Fig.}
+
+% Change autorefname of figure to Fig.
+\addto\extrasenglish{%
+    \renewcommand{\figureautorefname}{Fig.}%
+}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -164,6 +163,8 @@
     \fi
     \normalsize
     \setlength{\parskip}{1em}
+    \setcounter{solutionfigure}{0}
+    \setcounter{solutiontable}{0}
 }
 
 \titleformat*{\section}{\normalfont}
