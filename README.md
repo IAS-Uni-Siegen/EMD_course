@@ -15,7 +15,7 @@ This work is licensed under a
 [cc-by-shield]: https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg
 
 ## Lecture slides (click on preview picture)
-<a href="https://ias-uni-siegen.github.io/EMD_Course/lecture.pdf" target="_blank" class="image fit"><img src="misc/Slide_preview.png" alt=""></a>
+<a href="https://ias-uni-siegen.github.io/EMD_course/lecture.pdf" target="_blank" class="image fit"><img src="misc/Slide_preview.png" alt=""></a>
 
 The covered topics are:
 - An initial overview of electrical machines and drives
@@ -27,7 +27,7 @@ The covered topics are:
 - Synchronous machines
 
 ## Exercise tasks (click on preview picture)
-<a href="https://ias-uni-siegen.github.io/EMD_Course/exercise.pdf" target="_blank" class="image fit"><img src="misc/Exercise_preview.png" alt=""></a>
+<a href="https://ias-uni-siegen.github.io/EMD_course/exercise.pdf" target="_blank" class="image fit"><img src="misc/Exercise_preview.png" alt=""></a>
 
 ## Exercise tasks including solutions (click on preview picture)
-<a href="https://ias-uni-siegen.github.io/EMD_Course/exercise_with_solution.pdf" target="_blank" class="image fit"><img src="misc/Exercise_with_solution_preview.png" alt=""></a>
+<a href="https://ias-uni-siegen.github.io/EMD_course/exercise_with_solution.pdf" target="_blank" class="image fit"><img src="misc/Exercise_with_solution_preview.png" alt=""></a>
