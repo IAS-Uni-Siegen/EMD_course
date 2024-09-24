@@ -47,6 +47,7 @@
 \RequirePackage{multirow}
 \RequirePackage{newfloat}
 \RequirePackage{totcount}
+\RequirePackage{nicefrac}
 
 %% Tikz
 \pgfplotsset{compat=1.18}
@@ -71,7 +72,6 @@
 \setlength{\parskip}{0pt}
 \setlength{\headheight}{15mm}
 \setlength{\headsep}{8mm}
-%\setlength{\textheight}{674pt}
 \setlength{\textheight}{250mm}
 
 
@@ -86,7 +86,28 @@
 
 \fancyfoot[C]{\thepage}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% hint block block %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\NewDocumentEnvironment{hintblock}{+b}
+{
+    \setlength{\parskip}{0pt}
+    \noindent \ignorespaces 
+    \underline{Hint:} #1
+}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% hint german block %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\NewDocumentEnvironment{germanhintblock}{+b}
+{
+    \ifgerman
+        \color{gray}
+        \setlength{\parskip}{0pt}
+        \noindent \ignorespaces 
+        \underline{Hinweis:} #1
+    \fi
+}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Solution block %%
@@ -98,6 +119,9 @@
     %\par
     \setlength{\parskip}{0pt}
     \noindent \ignorespaces 
+    
+    \vspace{0.5em}
+    
     \underline{Answer:}\\
     #1
     \fi
