@@ -1,70 +1,153 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% Task 1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\task{Fundamentals}
+\task{Lifting magnet}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\taskGerman{Grundlagen}
+\taskGerman{Hubmagnet}
+% Lukas
+% EMA Uebungen PDF Binder 3a -> leicht veränderte Zahlenwerte 
+% Ergänzungsfrage: Bestimmung des Flusses sowie der Flussverkettung durch eine Spule 
+A lifting magnet made of steel with the dimensions shown in \autoref{fig:LiftingMagnet} is to carry an iron load with a mass of 700 kg. The average field line length in the load is $l_{\mathrm{load}} = \SI{250}{\milli\metre}$, the flux-carrying cross-section $A_{\mathrm{load}}$ is $\SI{0.0095}{\metre^2}$. The winding of both coils have ${N = 300}$ turns. The magnet has a circular cross-section with a diameter of $\SI{70}{\milli\metre}$. The roughness of the surfaces of the magnet and load results in an average air gap length of $\delta = \SI{0.5}{\milli\metre}$. Neglect all leakage fluxes.
+
+
+
+
+
+\begin{germanblock}
+    Ein Hubmagnet aus Stahlguss mit den Abmessungen laut \autoref{fig:LiftingMagnet} soll eine gusseiserne Last mit einer Masse von 700 kg tragen. Die mittlere Feldlinienlänge in der Last beträgt $l_{\mathrm{load}} = \SI{250}{\milli\metre}$, der flussführende Querschnitt $A_{\mathrm{load}}$ beträgt $\SI{0,0095}{\metre^2}$. Beide Spulen haben eine Windungszahl von ${N = 300}$. Der Hubmagnet besitzt einen kreisrunden Querschnitt mit einem Durchmesser von $\SI{70}{\milli\metre}$. Durch die Rauhigkeit der Oberflächen von Magnet und Last entsteht eine mittlere Luftspaltlänge von $\delta = \SI{0,5}{\milli\metre}$. Vernachlässigen Sie Streuflüsse.
+\end{germanblock}
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.6\textwidth]{fig/Faradays_disc.pdf}
-    \caption{Faraday's disk (rotating copper disk in a homogenous magnetic field)}
-    \label{fig:faraday_disk}
+    \includegraphics[width=0.6\textwidth]{fig/LiftingMagnet.pdf}
+    \caption{Sketch of the lifting magnet and load with their dimensions.}
+    \label{fig:LiftingMagnet}
 \end{figure}
 
 
 
-\subtask{The disc from \autoref{fig:faraday_disk} has a diameter of $d=\SI{60}{\cm}$ and is rotating with the circumferential speed $v_\mathrm{d} = \SI{100}{\meter\per\second}$. What is the rotational speed and angular velocity of the copper disk?}{2}
-\subtaskGerman{Die Scheibe aus \autoref{fig:faraday_disk} hat einen Durchmesser von $d=\SI{60}{\cm}$ und ihre Oberfläche rotiert mit der Umfangsgeschwindigkeit $v_\mathrm{d} = \SI{100}{\meter\per\second}$. Wie groß ist die Drehzahl $n_\mathrm{d}$ und die Winkelgeschwindigkeit $\omega_\mathrm{d}$ der Kupferscheibe?}
+\subtask{Formulate Ampère's circuital law in the general form and in a form adapted to the magnetic circuit shown here. Use the average field line length indication as the closed curve $\partial S$.}{2}
+\subtaskGerman{Stellen Sie das Durchflutungsgesetz in der allgemeinen Form und in einer der dem hier gezeigten Magnetkreis angepassten Form auf. Als geschlossene Kurve $\partial S$ verwenden Sie die mittleren Feldlinienlängen.}
 
 \begin{solutionblock}
-    The rotational speed is given by
-    $$ n_\mathrm{d} = \frac{v_\mathrm{d}}{2\pi r} = \frac{\SI{100}{\meter\per\second}\cdot \SI{60}{\second\per\minute}}{2\pi \cdot \SI{0.3}{\meter}} = \SI{3183}{\per\minute}.$$
-    The angular velocity is
-    $$ \omega_\mathrm{d} = 2\pi n_\mathrm{d} \SI{\frac{1}{60}}{\minute\per\second} = \SI{333}{\per\second}.$$
+    The general form of Ampère's circuital law is defined as 
+    $$ \oint_{\partial S} \bm{H} \cdot \mathrm{d}\bm{s} = \sum_k \theta_k$$
+
+    with the extension to the given task:
+    $$ \sum_k \theta_k = l_{\mathrm{load}} H_{\mathrm{load}} + 2 l_{\updelta} H_{\mathrm{\updelta}} + l_{\mathrm{m}} H_{\mathrm{m}}. $$
 \end{solutionblock}
 
 
-\subtask{Assuming that the permanent magnet is not rotating ($\omega_\mathrm{r}=0$) while delivering a homogenous and constant magnetic field with $B=\SI{1.8}{\tesla}$, what is the measured induced voltage $U$?}{2}
-\subtaskGerman{Angenommen, dass der Permanentmagnet nicht rotiert ($\omega_\mathrm{r}=0$) allerdings ein homogenes und konstantes Magnetfeld mit $B=\SI{1.8}{\tesla}$ liefert, wie groß ist die gemessene induzierte Spannung $U$?}
+\subtask{Add current direction symbols of the two coils to the above figure such that they fit to the already indicated magnetic flux orientation.}{2}
+\subtaskGerman{Zeichnen Sie in der Abbildung die Stromrichtung der beiden Spulen so ein, dass sich die Richtung des bereits skizzierten Magnetfeldes ergibt.}
 
 \begin{solutionblock}
-    Faraday's law of induction reads 
-    $$u_\mathrm{i} =\oint_{\partial\mathcal{S}} \bm{E} \cdot \mathrm{d}\bm{s}$$ 
-    where $\bm{E}$ is the electric field and $\partial\mathcal{S}$ is the boundary of the surface $\mathcal{S}$, which is the copper disk in this case. The electric field is a result of the rotating copper disk within the static magnetic field pointing from the center to the edge of the disk along the radial direction:
-    $$\bm{E} = \bm{v} \times \bm{B} = v(r) B \bm{e}_\mathrm{r} .$$
-    Here, $\bm{v}(r) = 2 \pi r n_\mathrm{d}$ is the velocity field of the disk for a given radius element $r$ and $\bm{e}_\mathrm{r}$ is the unit vector in the radial direction. The induced voltage is then
+    The current direction is visualized in \autoref{fig:LiftingManet_sol_current} with red color.
+
+    \begin{solutionfigure}[ht]
+    \centering
+    \includegraphics{fig/LiftingMagnet_sol_current.pdf}
+    \caption{Necessary current direction marked in red.}
+    \label{fig:LiftingManet_sol_current}
+\end{solutionfigure} 
+    
+\end{solutionblock}
+
+\subtask{How large is the weight force acting on the load assuming nominal gravity at sea level? Calculate the magnetic flux density in the air gap, so that the load floats straight. Use $F = \frac{B_{\updelta}^2}{2\mu_{0}}2 A_{\mathrm{m}}$ to calculate the force with $\mu_0 = 4\pi \cdot \SI{10^{-7}}{\volt \second \per \ampere \per\metre}$ being the magnetic field constant.} {2}
+\begin{hintblock}
+if and only if you are not able to solve this subtask, use $B_{\updelta} = \SI{1.6}{\tesla}$ as a substitute result for the following questions.
+\end{hintblock}
+\subtaskGerman{Wie groß ist die Gewichtskraft, die auf die Last wirkt, wenn diese auf Meereshöhe der nominellen Gravitation ausgesetzt sind? Berechnen Sie die magnetische Flussdichte im Luftspalt, so dass die Last gerade schwebt. Benutzen Sie für die Berechnung der Kraft folgende Gleichung: $F = \frac{B_{\updelta}^2}{2\mu_{0}}2 A_{\mathrm{m}}$, mit der magnetischen Feldkonstante $\mu_0 = 4\pi \cdot \SI{10^{-7}}{\volt \second \per \ampere \per\metre}$.}
+\begin{germanhintblock}
+nur für den Fall, dass Sie kein Ergebnis in dieser Subaufgabe berechnen können, verwenden Sie $B_{\updelta} = \SI{1,6}{\tesla}$ als Ersatzwert für die folgenden Fragen.
+\end{germanhintblock}
+
+\begin{solutionblock}
+    The air gap area is calculated with
+    $$ A_{\updelta} = \pi \frac{d^2}{4} = \pi \cdot \frac{\left(\SI{0.07}{\metre}\right)^2}{4} = \SI{0.0038}{\metre^2}$$
+
+    and the weight force is definded as follwos:
+    $$ F = m g = \SI{700}{\kg} \cdot \SI{9.81}{\metre\per\second^2} = \SI{6867}{\newton}.$$
+
+
+    Hence, and the given equation in the task, the flux density in the air gap is determined by:
+    $$ B_{\updelta} = \sqrt{\frac{\SI{6867}{\kg\metre\per\second^2}\cdot 2 \cdot 4\pi \cdot \SI{10^{-7}}{\volt \second \per \ampere \per\metre}}{2 \cdot \SI{0.0038}{\metre^2}}} = \SI{1.51}{\tesla}.$$
+
+    
+\end{solutionblock}
+
+
+
+\subtask{How large is the necessary current $I$ for both coils to achieve this lifting task? Use the magnetization curves in \autoref{fig:magCurve}.}{3}
+
+\subtaskGerman{Wie groß ist der benötigte Strom $I$ durch die beiden Spulen zur Realisierung des Hubs? Nutzen Sie dafür die Magnetisierungskurven in \autoref{fig:magCurve}.}
+
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics{fig/magCurve.pdf}
+    \caption{Magnetization curves for the yoke (steel) and the load (iron).}
+    \label{fig:magCurve}
+\end{figure}
+
+
+
+\begin{solutionblock}
+    The given magneto static situation is represented with
+    $$ N I = \sum_k \theta_k = \sum_k l_k H_k, $$
+    and, therefore, the single contributions must be determined.
+    Since the leakage flux is neglected, the fluxes $\phi_{\updelta}$ in the air gap and $\phi_{\mathrm{load}}$ in the iron are equal. This results into
+    $$\phi_{\updelta} = \phi_{\mathrm{load}} = A_{\updelta} B_{\updelta} = A_{\mathrm{load}} B_{\mathrm{load}} $$
+
+    thus, the magentic flux density in the load is determined as
+    $$ B_{\mathrm{load}} = \frac{A_{\updelta}}{A_{\mathrm{load}}} B_{\updelta} = \frac{\SI{0.0038}{\metre^2}}{\SI{0.0095}{\metre^2}} \cdot \SI{1.51}{\tesla} = \SI{0.60}{\tesla},$$
+
+    and the corresponding magnetic field is $H_{\mathrm{load}} = \SI{2000}{\ampere\per\metre}$ derived from \autoref{fig:magCurve}. 
+
+    Also, the magnetic flux in the yoke $\phi_{\mathrm{m}}$ is equal to the air gap flux, which results in
+    $$ \phi_{\updelta} = \phi_{\mathrm{m}} = A_{\updelta} B_{\updelta} = A_{\mathrm{m}} B_{\mathrm{m}}, $$
+
+    hence, the flux density is calculated with
+    $$ B_{\mathrm{m}} = \frac{A_{\updelta}}{A_{\mathrm{m}}} B_{\updelta} = \frac{\SI{0.0038}{\metre^2}}{\SI{0.0038}{\metre^2}} \cdot \SI{1.51}{\tesla} = \SI{1.51}{\tesla}$$
+
+    and the corresponding magnetic field is determined from \autoref{fig:magCurve} to $H_{\mathrm{m}} = \SI{2000}{\ampere\per\metre}$.
+
+
+    The magnetic field in the air gap is calculated with the magnetic constant and the relative permeability, which is $\mu_{\mathrm{r}} \approx 1$ for air. Therefore, only the magnetic constant $\mu_{0}$ applies to:
+    $$ H_{\updelta} = \frac{B_{\updelta}}{\mu_{0}} = \frac{\SI{1.51}{\tesla}}{4\pi \cdot \SI{10^{-7}}{\volt\second\per\ampere\per\metre} } = \SI{1201619}{\ampere\per\metre}.$$
+
+
+    Hence, the magnetic voltage is calculated by
     \begin{align*}
-        u_\mathrm{i} &= \int_{0}^{d/2} v(r) B \mathrm{d}r = B \int_{r=0}^{d/2} 2 \pi r n_\mathrm{d} \mathrm{d}r = 2 \pi Bn_\mathrm{d} \left[\frac{r^2}{2}\right]_{0}^{d/2} = \pi B n_\mathrm{d} \frac{d^2}{4} = \pi \cdot \SI{1.8}{\tesla} \cdot \SI{53.05}{\per\second}\cdot \SI{0.09}{\meter} \\&= \SI{27}{\volt}.
+    \begin{split}
+        \theta &= 2 l_{\updelta} H_{\updelta} + l_{\mathrm{m}} H_{\mathrm{m}} + l_{\mathrm{load}} H_{\mathrm{load}} \\
+        &= 2\cdot \SI{\frac{0.5}{1000}}{\metre} \cdot \SI{1201619}{\ampere\per\metre} + \SI{0.3142}{\metre} \cdot \SI{2000}{\ampere\per\metre} + \SI{0.280}{\metre} \cdot \SI{2000}{\ampere\per\metre} = \SI{2390}{\ampere},
+    \end{split}
     \end{align*}
+
+    which leads to the necessary current as follows:
+    $$ I = \frac{\theta}{N} = \frac{\SI{2390}{\ampere}}{600} = \SI{3.98}{\ampere}.$$
+
+    
+    
 \end{solutionblock}
 
-\subtask{Assume that the volt meter is exchanged for a resistor with $R=\SI{1}{\ohm}$. How big are the resulting current $I$ and electrical power $P$? Is the disc operating as a motor or generator?}{2}
-\subtaskGerman{Nehmen Sie nun an, dass das Spannungsmessgerät durch einen Widerstand mit $R=\SI{1}{\ohm}$ ersetzt wird. Wie groß sind der resultierende Strom $I$ und die elektrische Leistung $P$? Funktioniert die Scheibe als Motor oder Generator?}
+
+\subtask{Determine the flux $\phi_{\mathrm{coil}}$ through one coil.}{1}
+\subtaskGerman{Bestimmen Sie den Fluss $\phi_{\mathrm{coil}}$ durch eine Spule.}
 
 \begin{solutionblock}
-    The current is given by Ohm's law $$I = -U/R = \SI{-27}{\volt}/\SI{1}{\ohm} = \SI{-27}{\ampere}.$$ The current is to be counted negative as the voltage and current in the above figure are oriented in opposite directions (load convention). The electrical power is $$P = I U = \SI{27}{\ampere} \cdot \SI{-27}{\volt} = \SI{-729}{\watt}.$$ The disc is operating as a generator, since the mechanical energy (which is introduced to rotate the disc) is converted into electrical energy. Also, there is no electrical energy source to power the disc, so it cannot operate as a motor.
+    The flux through one coil is calculated with:
+    $$\phi_{\mathrm{coil}} = B_{\mathrm{m}} A_{\mathrm{m}} = \SI{1.51}{\tesla} \cdot \SI{0.0038}{\metre^2} =  \SI{5.74}{\milli\volt\second}.$$ 
 \end{solutionblock}
 
 
-
-\subtask{Discuss the three following cases regarding the presence of an induced voltage:}{2}
-\begin{itemize}    
-    \item The disc is at standstill, but the permanent magnet is rotating.
-    \item The disc and the permanent magnet are rotating, but with different speeds.
-    \item The disc and the permanent magnets are at standstill, but the  electrical circuit is rotating. 
-\end{itemize}
-\subtaskGerman{Diskutieren Sie die drei folgenden Fälle bezüglich der Präsenz einer induzierten Spannung $U$: \begin{itemize}
-    \item Die Scheibe steht still, aber der Permanentmagnet rotiert.
-    \item Die Scheibe und der Permanentmagnet rotieren, aber mit unterschiedlichen Geschwindigkeiten.
-    \item Die Scheibe und die Permanentmagneten stehen still, aber der  elektrische Stromkreis rotiert.
-\end{itemize}}
+\subtask{Calculate the flux linkage $\psi_{\mathrm{coil}}$ of one coil.}{1}
+\subtaskGerman{Berechnen Sie den verketteten Fluss von einer Spule $\psi_{\mathrm{coil}}$.}
 
 \begin{solutionblock}
-    \begin{itemize}
-        \item In the first case, there is no induced voltage as the magnetic field of the magnet is symmetric around the rotation axis, that is, the flux through the disc remains constant despite the magnet's rotation.
-        \item In the second case it is only important to note that the disc is rotating (like in the original setup), which is the important factor for the induced voltage. The relative speed between the disc and the magnetic is not relevant due to the discussed rotational symmetry of the magnetic field.
-        \item In the third case, the electrical circuit rotates through the constant magnetic field of the magnets which is analogously to the original setup of a rotating disc. Consequently, in this final case also a voltage is induced.
-    \end{itemize}
+    The flux linkage of one coil is calculated by:
+    $$ \psi_{\mathrm{coil}} = N \phi_{\mathrm{coil}} = 300 \cdot \SI{5.74}{\milli\volt\second} = \SI{1.72}{\volt\second}.$$
 \end{solutionblock}
+

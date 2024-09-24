@@ -1,136 +1,166 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% Task 4 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\task{Synchronous machine}
+\task{Synchronous generator}
+% Lukas 
+% Entsprechend Binder EMA Aufgabensammlung Teil 1, Aufgabe 1.8 (Windgenerator)
+% Fragen grundsätzlich identisch, ggf. mit einfachen weiteren Fragen vorab
+% Ergänzungsfrage 1: Bestimmung Nenndrehmoment, sofern angneommen wird das Pn = 1.5 MW die elektrische Abgabeleistung im Nennbetrieb ist und der Wirkungsgrad 0.95 beträgt (-> mech. Leistung im Generatorbetrieb ist dann 1.5/0.95 MW)
+% Ergänzungsfrage 2: Kann der Synchrongenerator der Windkraftanlage direkt am Netz betrieben werden? Nein -> weil die Drehzahl der WKA variert, während das Netz eine konstante Frequenz hat  
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\taskGerman{Synchronmaschine}
 
-\begin{figure}[h!]
+
+
+% extern%%%%ally ecx%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\taskGerman{Synchrongenerator}
+
+An externally excited synchronous generator is directly fed from a wind turbine without utilizing a gear.
+For the three-phase generator the parameters from \autoref{tab:para_SynchonousMachine} are known.
+
+\vspace{1em}
+\color{gray}
+Ein elektrisch erregter Synchrongenerator wird von einer Windturbine direkt angetrieben (getriebeloser Windgenerator). Für den Drehstromgenerator sind die Parameter aus \autoref{tab:para_SynchonousMachine} bekannt.
+\color{black}
+
+\begin{table}[htb]
+    \caption{Parameters of the synchronous generator.}
     \centering
-    \begin{tikzpicture}
-        \coordinate (b) at (0,0);
-        \coordinate (a) at (1,2);
-        \coordinate (c) at (0,3);
-        \draw[->] (0,-2) -- (0,4) node[above]{$\mathrm{Im}$};
-        \draw[->] (-4,0) -- (4,0) node[right]{$\mathrm{Re}$};
-        \draw[-{Latex[length=3mm]}, blue, thick] (0,0) -- (0,3) node[left, text=black]{$\underline{U}_\mathrm{i}$};
-        \draw[-{Latex[length=3mm]}, blue, thick] (0,0) -- (1,2) node[right, text=black]{$\underline{U}_\mathrm{s}$};
-        \draw[-{Latex[length=3mm]}, blue, thick] (0,3) --  node[right, text=black]{$\Delta \underline{U}$} ++ (1,-1);
-        \pic[draw, <-, angle eccentricity=1.7, angle radius=1cm]{angle = a--b--c};
-        \node at (0.125,0.65) {$\theta$};
-    \end{tikzpicture}
-    \caption{Phasor diagram of a synchronous machine with scaling $\SI{1}{\kilo\volt} = \SI{1}{\centi\meter}$ and $\SI{1}{\kilo\ampere} = \SI{1}{\centi\meter}$.}
-    \label{fig:phasor_SM}
-\end{figure}
-
-
-\subtask{Determine the operating mode of the machine characterized by \autoref{fig:phasor_SM}.}{2}
-\subtaskGerman{Bestimmen Sie die Betriebsart der Maschine auf Basis von \autoref{fig:phasor_SM}.}
+    \begin{tabular}{llll}\toprule
+    Symbol       & Value    & Symbol    & Value \\
+    \midrule
+    $P_{\mathrm{n,el}}$    & $\SI{-1.5}{\mega\watt}$ & $l_{\mathrm{z}}$   & $\SI{700}{\milli\metre}$ \\
+    $d_{\mathrm{s}}$       & $\SI{5}{\metre}$       & $n_{\mathrm{n}}$    & $\SI{15}{\per\minute}$ \\
+    $N_{\mathrm{w}}$       & 3 windings per coil    & $q$    & 2 \\
+    $2p$                   & 90                     & $\frac{y}{\rho_{\mathrm{p}}}$    & $\frac{5}{6}$ \\
+    \bottomrule
+    \end{tabular}
+    \label{tab:para_SynchonousMachine}
+\end{table}
+\vspace{-1.3em}
+ \subtask{Calculate the nominal torque $T_{\mathrm{n}}$ at the rated conditions of the generator. At this operating point, the efficiency is given with $\eta_{\mathrm{n}}$ = 95 \%.}{2}
+\subtaskGerman{Berechne das Nenndrehmoment $T_{\mathrm{n}}$ im Nennarbeitspunkt. In diesem Arbeitspunkt ist der \\ Wirkungsgrad mit $\eta_{\mathrm{n}}$ = 95 \% gegeben. }
 
 \begin{solutionblock}
-    The machine is operating as an overexcited generator, since the excitation voltage $\underline{U}_\mathrm{i}$ is leading the stator voltage $\underline{U}_\mathrm{s}$ by an angle $\theta$ and the induced voltage amplitude is larger than the stator voltage amplitude.
+    In the task, only the electrical power is given, therefore, calculating the mechanical power by
+    $$ P_{\mathrm{n,mech}} = \frac{P_{\mathrm{n,el}}}{\eta_{\mathrm{n}}} = \frac{\SI{-1.5}{\mega\watt}}{0.95} = \SI{-1.578947}{\mega\watt}$$
+    
+    and the torque at the nominal operating is determined as:
+    $$ T_{\mathrm{n}} = \frac{P_{\mathrm{n,mech}}}{\omega_{\mathrm{n}}} = \frac{\SI{-1.578947}{\mega\watt}}{2\pi \cdot \SI{0.25}{\per\second}} = \SI{-1005.189}{\kilo\newton\metre}.$$
+\end{solutionblock}
+
+\subtask{How large is the number of winding turns per phase $N_{\mathrm{w,phase}}$, when the total 90 coils are parallelized in 5 groups?}{1}
+\subtaskGerman{Wie groß ist die Windungszahl pro Phase $N_{\mathrm{w,phase}}$ bei Parallelschaltung der insgesammt 90 Spulen in 5 Gruppen?}
+
+\begin{solutionblock}
+    The number of winding turns per phase is: 
+    $$
+    N_{\mathrm{w,phase}} = \frac{2p q N_{\mathrm{w}}}{a} = \frac{90 \cdot 2 \cdot 3}{5} = 108.
+    $$
 \end{solutionblock}
 
 
-\subtask{An experiment revealed the short-circuit current  $I_\mathrm{s,sc}=\SI{1.33}{\kilo\ampere}$ for a nominal field excitation current $I_\mathrm{f} = \SI{100}{\ampere}$. Insert the short-circuit current into the above sketch and calculate the synchronous reactance $X_\mathrm{s}$.}{2}
-\subtaskGerman{Ein Kurzschlussstromversuch ergab $I_\mathrm{s,sc}=\SI{1.33}{\kilo\ampere}$ für eine Nennerregung mit $I_\mathrm{f} = \SI{100}{\ampere}$. Zeichnen Sie den Kurzschlussstrom in die obige Skizze ein und berechnen Sie die synchrone Reaktanz $X_\mathrm{s}$.}
+\subtask{Calculate the winding factor $\zeta_{\mathrm{w,}k}$ for the fundamental wave ($k$ = 1).}{2}
+\subtaskGerman{Berechne den Wicklungsfaktor $\zeta_{\mathrm{w,}k}$ für die Grundwelle ($k$ = 1).}
 
 \begin{solutionblock}
-    The short-circuit current $\underline{I}_\mathrm{s,sc}$ is orthogonal to $\underline{U}_\mathrm{i}$ and lagging behind by $\SI{90}{\degree}$, that is, pointing towards the real axis with a length of \SI{1.33}{\cm}. The synchronous reactance is then
-    $$X_\mathrm{s} = \frac{\underline{U}_\mathrm{i}}{\underline{I}_\mathrm{s,sc}} = \frac{\SI{3}{\kilo\volt}}{\SI{1.33}{\kilo\ampere}} = \SI{2.26}{\ohm}.$$
-    Here, the induced voltage $\underline{U}_\mathrm{i}$ has been obtained from optical measurement of the phasor diagram and also represents the open-circuit voltage. The completed phasor diagram is shown in \autoref{fig:phasor_SM_final}.
+    The winding factor is defined by
+    $$ \zeta_{\mathrm{w,}k} = \zeta_{\mathrm{d,}k} \zeta_{\mathrm{p,}k}, $$
+    where $\zeta_{\mathrm{d,}k}$ represents the distribution and $\zeta_{\mathrm{p,}k}$ the pitch factor.
+    With $m$ = 3 phases, the distribution factor calculates as
+    $$\zeta_{\mathrm{d,}1} = \frac{\sin\left(\frac{\pi}{2m} \right)}{q\sin\left(\frac{\pi}{2mq} \right)} 
+    = \frac{\sin\left(\frac{\pi}{2\cdot3}\right)}{2 \cdot \sin\left(\frac{\pi}{2\cdot3\cdot 2} \right)}
+    = 0.966,
+    $$
+    and, the pitch factor is determined with
+    $$
+    \zeta_{\mathrm{p,}1} = \sin\left(\frac{\pi}{2} \frac{y}{\rho_{\mathrm{p}}}\right)
+    = \sin\left(\frac{\pi}{2} \cdot \frac{5}{6} \right) = 0.966,
+    $$
+    which results in the winding factor by
+    $$ \zeta_{\mathrm{w,}1} =  \zeta_{\mathrm{d,}1}  \zeta_{\mathrm{p,}1} = 0.966 \cdot 0.966 = 0.933. $$
+    
 \end{solutionblock}
 
 
-\subtask{Determine the stator current $\underline{I}_\mathrm{s}$, the power factor $\cos(\varphi)$ and the corresponding angle $\varphi$. Add those into the above diagram. The nominal active power is $P=\SI{-4}{\mega\watt}$ while the ohmic stator resistance can be neglected.}{3}
-\subtaskGerman{Bestimmen Sie den Statorstrom $\underline{I}_\mathrm{s}$, den Leistungsfaktor $\cos(\varphi)$ und den zugehörigen Winkel $\varphi$. Tragen Sie diese in die obige Skizze ein. Die Nennwirkleistung beträgt $P=\SI{-4}{\mega\watt}$ während der ohmsche Statorwiderstand vernachlässigt werden kann.}
+\subtask{The flux density of the fundamental wave of one phase is given with $\hat{B}_{\updelta}^{(1)} = \SI{1}{\tesla}$. Determine at nominal speed $n_{\mathrm{n}}$ the flux per pole $\phi_{\updelta}$ and the induced voltage per phase $U_{\mathrm{i,phase}}$.}{2}
+\subtaskGerman{Die Grundwelle der Flussdichte für eine Phase ist gegeben mit $\hat{B}_{\updelta}^{(1)} = \SI{1}{\tesla}$. Bestimmen Sie den Fluss pro Pol $\phi_{\updelta}$ und die induzierte Spannung pro Phase $U_{\mathrm{i,phase}}$ bei der nominellen Drehzahl.}
+
 
 \begin{solutionblock}
-    The stator current is given by
-    $$I_\mathrm{s} = \frac{\Delta U}{X_\mathrm{s}} = \frac{\SI{1.41}{\kilo\volt}}{\SI{2.26}{\ohm}} = \SI{0.62}{\kilo\ampere}.$$
-    From the nominal active power we can derive the power factor
-    $$\cos(\varphi) = \frac{P}{3 U_\mathrm{s} I_\mathrm{s}} = \frac{\SI{-4}{\mega\watt}}{3 \cdot \SI{2.24}{\kilo\volt} \cdot \SI{0.62}{\kilo\ampere}} = -0.96.$$
-    The angle $\varphi$ is then
-    $$\varphi = -\arccos(0.96) = \SI{-16.25}{\degree}.$$
-    The power factor angle is negative as the generator operates in an over-excited mode, i.e., its reactive power is negative. The resulting complex stator current is then $$\underline{I}_\mathrm{s} = \SI{0.62}{\kilo\ampere} \cdot e^{\mathrm{j}(\SI{16.25}{\degree} + \SI{63.5}{\degree})}  = \SI{0.11}{\kilo\ampere} + \mathrm{j} \SI{0.61}{\kilo\ampere}.$$
-    Here, the angle $\SI{63.5}{\degree}$ is the stator voltage angle counted from the real axis. The final solution phasor diagram is shown in \autoref{fig:phasor_SM_final}.
-    \begin{solutionfigure}[ht]
-        \centering
-        \begin{tikzpicture}
-            \coordinate (b) at (0,0);
-            \coordinate (a) at (1,2);
-            \coordinate (c) at (0,3);
-            \coordinate (d) at (0.11,0.62);
-            \draw[->] (0,-2) -- (0,4) node[above]{$\mathrm{Im}$};
-            \draw[->] (-4,0) -- (4,0) node[right]{$\mathrm{Re}$};
-            \draw[-{Latex[length=3mm]}, blue, thick] (0,0) -- (0,3) node[left, text=black]{$\underline{U}_\mathrm{i}$};
-            \draw[-{Latex[length=3mm]}, blue, thick] (0,0) -- (1,2) node[right, text=black]{$\underline{U}_\mathrm{s}$};
-            \draw[-{Latex[length=3mm]}, blue, thick] (0,3) --  node[right, text=black]{$\Delta \underline{U}$} ++ (1,-1);
-            \pic[draw, <-, angle eccentricity=1.7, angle radius=1cm]{angle = a--b--c};
-            \node at (0.65,0.8) {$\theta$};
-            \draw[-{Latex[length=3mm]}, red, thick] (0,0) -- (1.33,0) node[above, text=black]{$\underline{I}_\mathrm{s,sc}$};
-            \draw[-{Latex[length=3mm]}, red, thick] (0,0) -- (0.11,0.62) node[left, text=black]{$\underline{I}_\mathrm{s}$};
-            \pic[draw, <-, angle eccentricity=1.7, angle radius=1.25cm]{angle = a--b--d};
-            \node at (0.45,1.5) {$\varphi$};
-        \end{tikzpicture}
-        \caption{Final phasor diagram}
-        \label{fig:phasor_SM_final}
+    The pole pitch as a distance in meter is calculated by
+    $$ \tau_{\mathrm{p}} = \frac{d_{\mathrm{si}} \pi}{2p} = \frac{\SI{5}{\metre}\cdot \pi}{90} = \SI{0.1745}{\metre},$$
+
+    and the effective cross-sectional area of the machine per pole is determined with
+    $$ A_{\updelta} = \tau_{\mathrm{p}} l_{\mathrm{z}} = \SI{0.1745}{\metre} \cdot \SI{0.7}{\metre}
+    = \SI{0.122}{\metre^2}.$$
+
+    Hence, the air gap flux is given with
+    $$ \phi_{\updelta} = A_{\updelta} \hat{B}_{\updelta}^{(1)} = \SI{0.122}{\metre^2} \cdot \SI{1}{\tesla} = \SI{0.122}{\volt\second},$$
+
+    the electrical angular frequency is determined by
+    $$ \omega_{\mathrm{el}} = 2 \pi f_{\mathrm{mech}} p = 2 \pi \cdot \SI{0.25}{\per\second} \cdot 45 = \SI{70.69}{\per\second}$$
+
+    resulting in the induced voltage of 
+    $$ U_{\mathrm{i,phase}} = \omega_{\mathrm{el}} N_{\mathrm{w,phase}} \zeta_{\mathrm{w,}1} \phi_{\updelta} = \SI{70.69}{\per\second} \cdot 108 \cdot 0.933 \cdot \SI{0.122}{\volt\second} = \SI{869}{\volt}. $$
+    
+\end{solutionblock}
+
+
+
+
+\subtask{Assume that the flux density in the air gap is a superposition of sine waves. Draw the trajectories of the flux densities $B_{\updelta}^{(1)}(\vartheta)$ and $B_{\updelta}^{(3)}(\vartheta)$ for one phase in the template (\autoref{fig:B_sketch_fund}).}{2}
+
+\subtaskGerman{Nehmen Sie an, dass die Flussdichte im Luftspalt eine Überlagerung von Sinuswellen darstellt. Zeichnen Sie die Trajektorien der Flussdichten $B_{\updelta}^{(1)}(\vartheta)$ und $B_{\updelta}^{(3)}(\vartheta)$ für eine Phase in die \autoref{fig:B_sketch_fund}.}
+\begin{figure}[ht!]
+    \centering
+    \includegraphics{fig/B_sketch_fund.pdf}
+    \caption{Template to draw the flux densities over the stator circumference $\vartheta$.}
+    \label{fig:B_sketch_fund}
+\end{figure}%
+
+\begin{solutionblock}
+    The distribution factor for the third harmonic ($k$ = 3) calculates as
+    $$\zeta_{\mathrm{d,}3} = \frac{\sin\left(\frac{3\pi}{2m} \right)}{q\sin\left(\frac{3\pi}{2mq} \right)} 
+    = \frac{\sin\left(\frac{3\cdot \pi}{2\cdot3}\right)}{2 \cdot \sin\left(\frac{3\cdot \pi}{2\cdot3\cdot 2} \right)}
+    = 0.707,
+    $$
+    and, the pitch factor is determined with
+    $$
+    \zeta_{\mathrm{p,}3} = \sin\left(3 \cdot \frac{\pi}{2} \frac{y}{\rho_{\mathrm{p}}}\right)
+    = \sin\left(3 \cdot \frac{\pi}{2} \cdot \frac{5}{6} \right) = -0.707,
+    $$
+    which results in the winding factor by
+    $$ \zeta_{\mathrm{w,}3} =  \zeta_{\mathrm{d,}3}  \zeta_{\mathrm{p,}3} = 0.707 \cdot -0.707 = -0.500. $$
+
+    The winding factor must set into the relationship of the fundamental wave by
+    $$ \frac{B_{\updelta}^{(3)}(\vartheta)}{B_{\updelta}^{(1)}(\vartheta)} = \frac{-0.5}{0.933} = -0.54, $$
+    which is the amplitude for the third harmonic. Both trajectories are shown in \autoref{fig:sol_B_sketch_fund}.
+
+    \begin{solutionfigure}[ht!]
+    \centering
+    \includegraphics{fig/sol_B_sketch_fund.pdf}
+    \caption{Solution trajectories for $B_{\updelta}^{(1)}(\vartheta)$ and $B_{\updelta}^{(3)}(\vartheta)$.}
+    \label{fig:sol_B_sketch_fund}
     \end{solutionfigure}
 \end{solutionblock}
-  
 
 
-\subtask{Determine the apparent power $S$ and the reactive power $Q$.}{2}
-\subtaskGerman{Bestimmen Sie die Scheinleistung $S$ und die Blindleistung $Q$.}
-
-\begin{solutionblock}
-    The apparent power is
-    $$S = 3 U_\mathrm{s} I_\mathrm{s} = 3 \cdot \SI{2.24}{\kilo\volt} \cdot \SI{0.62}{\kilo\ampere} = \SI{4.17}{\mega\volt\ampere}.$$
-    The reactive power is
-    $$Q = 3 U_\mathrm{s} I_\mathrm{s} \sin(\varphi) = 3 \cdot \SI{2.24}{\kilo\volt} \cdot \SI{0.62}{\kilo\ampere} \cdot \sin(\SI{-16.25}{\degree}) = \SI{-1.17}{\mega\volt\ampere}.$$
-\end{solutionblock}
-
-\subtask{What torque $T$ is associated with the above operating point for a pole pair number $p=3$? What is the theoretical maximum torque $T_\mathrm{max}$ for the given stator voltage operating at a grid frequency of $f=\SI{50}{\hertz}$?}{2}
-\subtaskGerman{Welches Drehmoment $T$ ist dem obigen Betriebspunkt zugeordnet, wenn eine Polpaarzahl $p=3$ angenommen wird? Was ist das theoretische maximale Drehmoment $T_\mathrm{max}$ für die gegebene Statorspannung bei einer Netzfrequenz von $f=\SI{50}{\hertz}$?}
+\subtask{Is the third harmonic ($k$ = 3) problematic for this type of machine?}{1}
+\subtaskGerman{Ist die dritte Harmonische ($k$ = 3) für diesen Maschinentyp problematisch?}
 
 \begin{solutionblock}
-    The torque can be calculated from the active power as
-    $$T = \frac{P}{2\pi f/p} = \frac{3\cdot\SI{-4}{\mega\watt}}{2\pi \cdot \SI{50}{\hertz}} = \SI{-38.2}{\kilo\newton\meter}.$$
-    Furthermore, the torque is also defined via 
-    $$
-    T = 3 p \frac{U_\mathrm{s}U_\mathrm{i}}{\omega_\mathrm{s} X_\mathrm{s}}\sin(\theta) = T_\mathrm{max} \sin(\theta)
-    $$ 
-    where $\theta$ is the load angle. The maximum torque is then 
-    $$
-    T_\mathrm{max} = \frac{T}{\sin(\theta)} = \frac{\SI{-38.2}{\kilo\newton\meter}}{\sin(\SI{-26.5}{\degree})} = \SI{85.6}{\kilo\newton\meter}.
-    $$
+    Due to the three-phase winding system of this machine, the third harmonic is canceled out and, therefore, no problem occurs.
 \end{solutionblock}
 
-\subtask{Determine a modified field excitation current $I_\mathrm{f}$ which delivers the same active power but reduces the reactive power to zero. Which load angle $\theta$ results?}{2}
-\subtaskGerman{Bestimmen Sie den Felderregungsstrom $I_\mathrm{f}$, der die gleiche Wirkleistung liefert, aber die Blindleistung auf null reduziert. Welcher Lastwinkel $\theta$ ergibt sich?}
+
+\subtask{Is it possible to connect the wind turbine directly to the grid?}{1}
+\subtaskGerman{Kann der Synchrongenerator der Windkraftanlage direkt am Netz betrieben werden?}
 
 \begin{solutionblock}
-    The described scenario renders $\varphi=0$. The resulting stator current for this new scenario is
-    $$
-    I_\mathrm{s} = \frac{|P|}{3 U_\mathrm{s}} = \frac{\SI{4}{\mega\watt}}{3 \cdot \SI{2.24}{\kilo\volt}} = \SI{0.60}{\kilo\ampere}.$$
-    From that the new voltage difference is
-    $$
-    \Delta U = X_\mathrm{s} I_\mathrm{s} = \SI{2.26}{\ohm} \cdot \SI{0.6}{\kilo\ampere} = \SI{1.36}{\kilo\volt}
-    $$
-    and the resulting induced voltage magnitude is
-    $$
-    U_\mathrm{i} = \sqrt{U_\mathrm{s}^2 + \Delta U^2} = \sqrt{(\SI{2.24}{\kilo\volt})^2 + (\SI{1.36}{\kilo\volt})^2} = \SI{2.62}{\kilo\volt}.
-    $$
-    Since $U_\mathrm{i}$ is directly proportional to $I_\mathrm{f}$, we can find
-    $$
-    I_\mathrm{f} = \frac{\SI{2.62}{\kilo\volt}}{\SI{3}{\kilo\volt}} \cdot\SI{100}{\ampere} = \SI{87.28}{\ampere}.
-    $$
-    The new load angle $\theta$ is then
-    $$
-    \theta = -\arccos\left(\frac{U_\mathrm{s}}{U_\mathrm{i}}\right) = -\arccos\left(\frac{\SI{2.24}{\kilo\volt}}{\SI{2.62}{\kilo\volt}}\right) = \SI{-31.24}{\degree}.
-    $$
+    No, due the the changing wind stream and the varying rotational speed of the generator an inverter is necessary to transform this changing generator frequency to a constant grid frequency.
 \end{solutionblock}
+
+
 
 
 

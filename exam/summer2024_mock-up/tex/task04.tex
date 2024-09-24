@@ -1,0 +1,137 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Task 4 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\task{Synchronous machine}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\taskGerman{Synchronmaschine}
+
+\begin{figure}[h!]
+    \centering
+    \begin{tikzpicture}
+        \coordinate (b) at (0,0);
+        \coordinate (a) at (1,2);
+        \coordinate (c) at (0,3);
+        \draw[->] (0,-2) -- (0,4) node[above]{$\mathrm{Im}$};
+        \draw[->] (-4,0) -- (4,0) node[right]{$\mathrm{Re}$};
+        \draw[-{Latex[length=3mm]}, blue, thick] (0,0) -- (0,3) node[left, text=black]{$\underline{U}_\mathrm{i}$};
+        \draw[-{Latex[length=3mm]}, blue, thick] (0,0) -- (1,2) node[right, text=black]{$\underline{U}_\mathrm{s}$};
+        \draw[-{Latex[length=3mm]}, blue, thick] (0,3) --  node[right, text=black]{$\Delta \underline{U}$} ++ (1,-1);
+        \pic[draw, <-, angle eccentricity=1.7, angle radius=1cm]{angle = a--b--c};
+        \node at (0.125,0.65) {$\theta$};
+    \end{tikzpicture}
+    \caption{Phasor diagram of a synchronous machine with scaling $\SI{1}{\kilo\volt} = \SI{1}{\centi\meter}$ and $\SI{1}{\kilo\ampere} = \SI{1}{\centi\meter}$.}
+    \label{fig:phasor_SM}
+\end{figure}
+
+
+\subtask{Determine the operating mode of the machine characterized by \autoref{fig:phasor_SM}.}{2}
+\subtaskGerman{Bestimmen Sie die Betriebsart der Maschine auf Basis von \autoref{fig:phasor_SM}.}
+
+\begin{solutionblock}
+    The machine is operating as an overexcited generator, since the excitation voltage $\underline{U}_\mathrm{i}$ is leading the stator voltage $\underline{U}_\mathrm{s}$ by an angle $\theta$ and the induced voltage amplitude is larger than the stator voltage amplitude.
+\end{solutionblock}
+
+
+\subtask{An experiment revealed the short-circuit current  $I_\mathrm{s,sc}=\SI{1.33}{\kilo\ampere}$ for a nominal field excitation current $I_\mathrm{f} = \SI{100}{\ampere}$. Insert the short-circuit current into the above sketch and calculate the synchronous reactance $X_\mathrm{s}$.}{2}
+\subtaskGerman{Ein Kurzschlussstromversuch ergab $I_\mathrm{s,sc}=\SI{1.33}{\kilo\ampere}$ für eine Nennerregung mit $I_\mathrm{f} = \SI{100}{\ampere}$. Zeichnen Sie den Kurzschlussstrom in die obige Skizze ein und berechnen Sie die synchrone Reaktanz $X_\mathrm{s}$.}
+
+\begin{solutionblock}
+    The short-circuit current $\underline{I}_\mathrm{s,sc}$ is orthogonal to $\underline{U}_\mathrm{i}$ and lagging behind by $\SI{90}{\degree}$, that is, pointing towards the real axis with a length of \SI{1.33}{\cm}. The synchronous reactance is then
+    $$X_\mathrm{s} = \frac{\underline{U}_\mathrm{i}}{\underline{I}_\mathrm{s,sc}} = \frac{\SI{3}{\kilo\volt}}{\SI{1.33}{\kilo\ampere}} = \SI{2.26}{\ohm}.$$
+    Here, the induced voltage $\underline{U}_\mathrm{i}$ has been obtained from optical measurement of the phasor diagram and also represents the open-circuit voltage. The completed phasor diagram is shown in \autoref{fig:phasor_SM_final}.
+\end{solutionblock}
+
+
+\subtask{Determine the stator current $\underline{I}_\mathrm{s}$, the power factor $\cos(\varphi)$ and the corresponding angle $\varphi$. Add those into the above diagram. The nominal active power is $P=\SI{-4}{\mega\watt}$ while the ohmic stator resistance can be neglected.}{3}
+\subtaskGerman{Bestimmen Sie den Statorstrom $\underline{I}_\mathrm{s}$, den Leistungsfaktor $\cos(\varphi)$ und den zugehörigen Winkel $\varphi$. Tragen Sie diese in die obige Skizze ein. Die Nennwirkleistung beträgt $P=\SI{-4}{\mega\watt}$ während der ohmsche Statorwiderstand vernachlässigt werden kann.}
+
+\begin{solutionblock}
+    The stator current is given by
+    $$I_\mathrm{s} = \frac{\Delta U}{X_\mathrm{s}} = \frac{\SI{1.41}{\kilo\volt}}{\SI{2.26}{\ohm}} = \SI{0.62}{\kilo\ampere}.$$
+    From the nominal active power we can derive the power factor
+    $$\cos(\varphi) = \frac{P}{3 U_\mathrm{s} I_\mathrm{s}} = \frac{\SI{-4}{\mega\watt}}{3 \cdot \SI{2.24}{\kilo\volt} \cdot \SI{0.62}{\kilo\ampere}} = -0.96.$$
+    The angle $\varphi$ is then
+    $$\varphi = -\arccos(0.96) = \SI{-16.25}{\degree}.$$
+    The power factor angle is negative as the generator operates in an over-excited mode, i.e., its reactive power is negative. The resulting complex stator current is then $$\underline{I}_\mathrm{s} = \SI{0.62}{\kilo\ampere} \cdot e^{\mathrm{j}(\SI{16.25}{\degree} + \SI{63.5}{\degree})}  = \SI{0.11}{\kilo\ampere} + \mathrm{j} \SI{0.61}{\kilo\ampere}.$$
+    Here, the angle $\SI{63.5}{\degree}$ is the stator voltage angle counted from the real axis. The final solution phasor diagram is shown in \autoref{fig:phasor_SM_final}.
+    \begin{solutionfigure}[ht]
+        \centering
+        \begin{tikzpicture}
+            \coordinate (b) at (0,0);
+            \coordinate (a) at (1,2);
+            \coordinate (c) at (0,3);
+            \coordinate (d) at (0.11,0.62);
+            \draw[->] (0,-2) -- (0,4) node[above]{$\mathrm{Im}$};
+            \draw[->] (-4,0) -- (4,0) node[right]{$\mathrm{Re}$};
+            \draw[-{Latex[length=3mm]}, blue, thick] (0,0) -- (0,3) node[left, text=black]{$\underline{U}_\mathrm{i}$};
+            \draw[-{Latex[length=3mm]}, blue, thick] (0,0) -- (1,2) node[right, text=black]{$\underline{U}_\mathrm{s}$};
+            \draw[-{Latex[length=3mm]}, blue, thick] (0,3) --  node[right, text=black]{$\Delta \underline{U}$} ++ (1,-1);
+            \pic[draw, <-, angle eccentricity=1.7, angle radius=1cm]{angle = a--b--c};
+            \node at (0.65,0.8) {$\theta$};
+            \draw[-{Latex[length=3mm]}, red, thick] (0,0) -- (1.33,0) node[above, text=black]{$\underline{I}_\mathrm{s,sc}$};
+            \draw[-{Latex[length=3mm]}, red, thick] (0,0) -- (0.11,0.62) node[left, text=black]{$\underline{I}_\mathrm{s}$};
+            \pic[draw, <-, angle eccentricity=1.7, angle radius=1.25cm]{angle = a--b--d};
+            \node at (0.45,1.5) {$\varphi$};
+        \end{tikzpicture}
+        \caption{Final phasor diagram}
+        \label{fig:phasor_SM_final}
+    \end{solutionfigure}
+\end{solutionblock}
+  
+
+
+\subtask{Determine the apparent power $S$ and the reactive power $Q$.}{2}
+\subtaskGerman{Bestimmen Sie die Scheinleistung $S$ und die Blindleistung $Q$.}
+
+\begin{solutionblock}
+    The apparent power is
+    $$S = 3 U_\mathrm{s} I_\mathrm{s} = 3 \cdot \SI{2.24}{\kilo\volt} \cdot \SI{0.62}{\kilo\ampere} = \SI{4.17}{\mega\volt\ampere}.$$
+    The reactive power is
+    $$Q = 3 U_\mathrm{s} I_\mathrm{s} \sin(\varphi) = 3 \cdot \SI{2.24}{\kilo\volt} \cdot \SI{0.62}{\kilo\ampere} \cdot \sin(\SI{-16.25}{\degree}) = \SI{-1.17}{\mega\volt\ampere}.$$
+\end{solutionblock}
+
+\subtask{What torque $T$ is associated with the above operating point for a pole pair number $p=3$? What is the theoretical maximum torque $T_\mathrm{max}$ for the given stator voltage operating at a grid frequency of $f=\SI{50}{\hertz}$?}{2}
+\subtaskGerman{Welches Drehmoment $T$ ist dem obigen Betriebspunkt zugeordnet, wenn eine Polpaarzahl $p=3$ angenommen wird? Was ist das theoretische maximale Drehmoment $T_\mathrm{max}$ für die gegebene Statorspannung bei einer Netzfrequenz von $f=\SI{50}{\hertz}$?}
+
+\begin{solutionblock}
+    The torque can be calculated from the active power as
+    $$T = \frac{P}{2\pi f/p} = \frac{3\cdot\SI{-4}{\mega\watt}}{2\pi \cdot \SI{50}{\hertz}} = \SI{-38.2}{\kilo\newton\meter}.$$
+    Furthermore, the torque is also defined via 
+    $$
+    T = 3 p \frac{U_\mathrm{s}U_\mathrm{i}}{\omega_\mathrm{s} X_\mathrm{s}}\sin(\theta) = T_\mathrm{max} \sin(\theta)
+    $$ 
+    where $\theta$ is the load angle. The maximum torque is then 
+    $$
+    T_\mathrm{max} = \frac{T}{\sin(\theta)} = \frac{\SI{-38.2}{\kilo\newton\meter}}{\sin(\SI{-26.5}{\degree})} = \SI{85.6}{\kilo\newton\meter}.
+    $$
+\end{solutionblock}
+
+\subtask{Determine a modified field excitation current $I_\mathrm{f}$ which delivers the same active power but reduces the reactive power to zero. Which load angle $\theta$ results?}{2}
+\subtaskGerman{Bestimmen Sie den Felderregungsstrom $I_\mathrm{f}$, der die gleiche Wirkleistung liefert, aber die Blindleistung auf null reduziert. Welcher Lastwinkel $\theta$ ergibt sich?}
+
+\begin{solutionblock}
+    The described scenario renders $\varphi=0$. The resulting stator current for this new scenario is
+    $$
+    I_\mathrm{s} = \frac{|P|}{3 U_\mathrm{s}} = \frac{\SI{4}{\mega\watt}}{3 \cdot \SI{2.24}{\kilo\volt}} = \SI{0.60}{\kilo\ampere}.$$
+    From that the new voltage difference is
+    $$
+    \Delta U = X_\mathrm{s} I_\mathrm{s} = \SI{2.26}{\ohm} \cdot \SI{0.6}{\kilo\ampere} = \SI{1.36}{\kilo\volt}
+    $$
+    and the resulting induced voltage magnitude is
+    $$
+    U_\mathrm{i} = \sqrt{U_\mathrm{s}^2 + \Delta U^2} = \sqrt{(\SI{2.24}{\kilo\volt})^2 + (\SI{1.36}{\kilo\volt})^2} = \SI{2.62}{\kilo\volt}.
+    $$
+    Since $U_\mathrm{i}$ is directly proportional to $I_\mathrm{f}$, we can find
+    $$
+    I_\mathrm{f} = \frac{\SI{2.62}{\kilo\volt}}{\SI{3}{\kilo\volt}} \cdot\SI{100}{\ampere} = \SI{87.28}{\ampere}.
+    $$
+    The new load angle $\theta$ is then
+    $$
+    \theta = -\arccos\left(\frac{U_\mathrm{s}}{U_\mathrm{i}}\right) = -\arccos\left(\frac{\SI{2.24}{\kilo\volt}}{\SI{2.62}{\kilo\volt}}\right) = \SI{-31.24}{\degree}.
+    $$
+\end{solutionblock}
+
+
+
+

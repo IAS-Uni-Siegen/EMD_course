@@ -291,7 +291,6 @@
     }
 }
 
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%% task german %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcounter{taskCountGerman}[exerciseCount]
@@ -306,12 +305,10 @@
             \setlength{\parskip}{-12pt}
             \fi
         \normalsize \color{gray} \section*{\textbf{Aufgabe~\thetaskCountGerman:~#1}}
-        \addcontentsline{toc}{section}{\protect\numberline{}Aufgabe~\thetaskCountGerman:~#1}
         \setlength{\parskip}{-12pt}
         \color{black}
     \fi
 }
-
 
 
 
@@ -327,6 +324,7 @@
             \normalsize
             \setlength{\parskip}{0pt}
             \thetaskCountGerman.\thesubtaskCountGerman \ #1
+            
         }
     \fi
 }

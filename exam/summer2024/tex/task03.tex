@@ -1,93 +1,124 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% Task 3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\task{Induction machine}
+\task{Transformer}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\taskGerman{Asynchronmaschine}
+\taskGerman{Transformator}
+% Frage 5: Welche idealisierte sekundäre Ausgangsspannung ergibt sich, wenn der Transformator zum Spartransformator umgewickelt wird? Welcher primäre Kurzschlusstrom ergibt sich nun, falls sekundär kurzgeschlossen wird? 
 
 
-\subtask{Draw and label the stationary equivalent circuit diagram of the general induction machine. What simplification can you make if the machine is at standstill ($\omega_\mathrm{r}=\SI{0}{\per\second}$)?}{1}
-\subtaskGerman{Zeichnen und beschriften Sie das stationäre Ersatzschaltbild der allgemeinen Asynchronmaschine. Welche Vereinfachung können Sie hierbei vornehmen, falls die Maschine stillsteht ($\omega_\mathrm{r}=\SI{0}{\per\second}$)?}
+\subtask{Draw and label the T-type equivalent circuit diagram of a single phase transformer.}{1}
+\subtaskGerman{Zeichnen und beschriften Sie das T-Ersatzschaltbild eines einphasigen Transformators.}
 
 \begin{solutionblock}
-    The general induction machine equivalent circuit diagram is given by:
-    \begin{center}
-        \includegraphics[width=0.6\textwidth]{../../lecture/fig/lec06/IM_T_ECD_steady_state.pdf}
-    \end{center}
-    If $\omega_\mathrm{r}=\SI{0}{\per\second}$ the mechanical rotor frequency is zero and the slip angular frequency is equal to the electrical angular frequency of the stator excitation: $\omega_\mathrm{s}= \omega_\mathrm{slip}$. Consequently, the slip ratio is equal to one ($s=\omega_\mathrm{slip}/\omega_\mathrm{s}=1$) and could be dropped from the equivalent circuit diagram.
-\end{solutionblock}
-
-\subtask{From now on consider a \textbf{squire cage induction machine} with the  parameters from \autoref{tab:characteristicsIM_task3}. Calculate the no-load speed $n_0$. }{2}
-\subtaskGerman{Wir betrachten nun eine \textbf{Käfigläufer-Asynchronmaschine} mit den Parametern aus \autoref{tab:characteristicsIM_task3}. Berechnen Sie die Leerlaufdrehzahl $n_0$.}
-\begin{table}[htb]
-    \caption{Characteristics of the given induction machine.}
+    \begin{solutionfigure}[ht]
     \centering
-    \begin{tabular}{lll}\toprule
-    Symbol  & Description       & Values \\
-    \midrule
-    $U_{\mathrm{n}}$    & Nominal voltage           & $\SI{400}{\volt}$ \\
-    $f_{\mathrm{s,n}}$  & Nominal frequency         & $\SI{60}{\hertz}$ \\
-    $P_{\mathrm{n}}$    & Nominal power             & $\SI{20}{\kilo\watt}$ \\
-    $n_{\mathrm{n}}$    & Nominal speed             & $\SI{1700}{\per\minute}$ \\
-    $p$     & Pole pair number              & 2 \\
-    \midrule
-    $R_{\mathrm{s}}$    & Stator resistance         & $\SI{0}{\Omega}$ \\
-    $R_{\mathrm{r}}'$    & Rotor resistance          & $\SI{2}{\ohm}$ \\
-    $M$                 & Mutual inductance         & $\SI{70}{\milli\henry}$ \\
-    $L_{\mathrm{\sigma,s}}$    & Stator leakage inductance  & $\SI{2}{\milli\henry}$ \\
-    $L_{\mathrm{\sigma,r}}'$    & Rotor leakage inductance   & $\SI{2}{\milli\henry}$ \\
-    \bottomrule
-    \end{tabular}
-    \label{tab:characteristicsIM_task3}
-\end{table}
-
-\begin{solutionblock}
-    The no-load case is characterized by
-    $$s = \frac{\omega_{\mathrm{slip}}}{\omega_{\mathrm{s}}} = \frac{0}{\omega_{\mathrm{s}}}=0, \qquad \omega_{\mathrm{s}} = \omega_{\mathrm{r,el}}.$$
-    Hence, we have $$\omega_{\mathrm{s}} = 2\pi f_{\mathrm{s}} = 2\pi \cdot \SI{60}{\hertz} = \SI{377}{\per\second} = \omega_{\mathrm{r,el}}.$$ Converting this to the mechanical speed, we get
-    $$n_0 = \frac{\omega_{\mathrm{r,el}}}{2 \pi p } \cdot \SI{60}{\second\per\minute} = \SI{1800}{\per\minute}.$$ 
+    \includegraphics[width=0.6\textwidth]{fig/Transformer_T_ECD.pdf}
+    \caption{T-type equivalent circuit diagram of a single phase transformer}
+    \label{fig:Transformer_T_ECD}
+    \end{solutionfigure}
 \end{solutionblock}
 
-\subtask{Calculate the nominal torque $T_\mathrm{n}$ and nominal slip $s_\mathrm{n}$.}{2}
-\subtaskGerman{Berechnen Sie das Nennmoment $T_\mathrm{n}$ und den Nennschlupf $s_\mathrm{n}$.}
+\subtask{The primary side has $N_1 = 23$ and the secondary side has $N_2=10$ turns. For $\underline{U}_1 = \SI{230}{\volt}$, which secondary voltage $U_2$ would you expect for an unloaded, idealized transformer?}{1}
+\subtaskGerman{Die Primärwicklung hat $N_1 = 23$ und die Sekundärwicklung hat $N_2=10$ Windungen. Welche Sekundärspannung $U_2$ würden Sie bei $\underline{U}_1 = \SI{230}{\volt}$ für einen unbelasteten, idealisierten Transformator erwarten?}
 
 \begin{solutionblock}
-    The nominal mechanical power is given by
-    $$ P_{\mathrm{n}} = T_{\mathrm{n}} \omega_{\mathrm{r,n}}=T_{\mathrm{n}} 2\pi n_{\mathrm{n}} \SI{\frac{1}{60}}{\minute\per\second}.$$
-    Hence, we can calculate the nominal torque as
-    $$ T_{\mathrm{n}} = \frac{P_{\mathrm{n}} 60}{2\pi n_{\mathrm{n}}} \si{\second\per\minute}= \SI{112.35}{\newton\meter}.$$
-    The slip angular frequency is 
-    $$\omega_{\mathrm{slip,n}} = \omega_{\mathrm{s,n}} - \omega_{\mathrm{r,el,n}} = 2\pi (\SI{60}{\per\second} - \SI{\frac{2\cdot 1700}{60}}{\per\second}) = \SI{20.94}{\per\second}$$
-    leading to a nominal slip of
-    $$s_{\mathrm{n}} = \frac{\omega_{\mathrm{slip,n}}}{\omega_{\mathrm{s,n}}} = \frac{\SI{20.94}{\per\second}}{\SI{377}{\per\second}} = 0.0556.$$
+    For the described idealized case the voltage transformation ratio is
+    $$
+    U_2 = \frac{U_1}{\"u} = U_1 \frac{N_2}{N_1} = \SI{230}{\volt} \cdot \frac{10}{23} = \SI{100}{\volt}. 
+    $$
 \end{solutionblock}
 
-\subtask{Determine the nominal electrical power $P_\mathrm{el,n}$ and the efficiency $\eta_\mathrm{n}$. For this purpose neglect the impact of the stator leakage inductance.}{2}
-\subtaskGerman{Bestimmen Sie die Nennleistung $P_\mathrm{el,n}$ und den Wirkungsgrad $\eta_\mathrm{n}$. Vernachlässigen Sie hierbei den Einfluss der Statorstreuinduktivität.}
+\subtask{Which actual voltage $U_2$ is to be expected if the transformer is loaded with $\underline{I}_2=\SI{-10}{\ampere}$ considering the following parameters: $R_1 \approx \SI{0}{\ohm}$, $R_2 = \SI{0.1}{\ohm}$, $M = \SI{0.42}{\henry}$, $L_1 =\SI{1}{\henry}$, $L_2 =\SI{0.17}{\henry}$?}{2}
+\subtaskGerman{Welche tatsächliche Spannung $U_2$ ist zu erwarten, wenn der Transformator mit $\underline{I}_2=\SI{-10}{\ampere}$ belastet wird und folgende Parameter aufweist: $R_1 \approx \SI{0}{\ohm}$, $R_2 = \SI{0,1}{\ohm}$, $M = \SI{0,42}{\henry}$, $L_1 =\SI{1}{\henry}$, $L_2 =\SI{0,17}{\henry}$?}
 
 \begin{solutionblock}
-    To determine the requested values, we first need to calculate the machine power losses. Since the stator ohmic losses can be neglected, we only have to consider the rotor ohmic losses. The nominal RMS rotor current is given by
-    $$ I_{\mathrm{r,n}} = \frac{U_{\mathrm{n}}}{\sqrt{3}}\frac{1}{\sqrt{\frac{R_{\mathrm{r}}'}{s_\mathrm{n}}^2 + \left(\omega_{\mathrm{s}} L'_\mathrm{\sigma,r}\right)^2}} = \SI{230.94}{\volt} \cdot\frac{1}{\sqrt{(\SI{35.71}{\ohm})^2 + (\SI{0.75}{\ohm})^2}} = \SI{230.94}{\volt} \cdot \frac{1}{\SI{35.72}{\ohm}} = \SI{6.47}{\ampere}. $$
-    The power losses of the rotor are then 
-    $$ P_{\mathrm{r,l,n}} = \frac{3}{2} (I_{\mathrm{r,n}})^2 \frac{R_{\mathrm{r}}'}{s_\mathrm{n}} = \frac{3}{2} \cdot \SI{31.80}{\ampere\squared} \cdot \SI{35.72}{\ohm} = \SI{1492.91}{\watt}.$$
-    The total electrical power sums up to
-    $$ P_{\mathrm{el,n}} = P_{\mathrm{n}} + P_{\mathrm{r,l,n}} = \SI{20}{\kilo\watt} + \SI{1.49}{\kilo\watt} = \SI{21.49}{\kilo\watt}.$$
-    The efficiency is then
-    $$ \eta_{\mathrm{n}} = \frac{P_{\mathrm{n}}}{P_{\mathrm{el,n}}} = \frac{\SI{20}{\kilo\watt}}{\SI{21.49}{\kilo\watt}} = 0.931 = \SI{93.1}{\percent}.$$
+    The steady-state complex current and voltage phasors of the transformer are:
+    \begin{align*}
+			 \begin{bmatrix} \underline{U}_1 \\ \underline{U}_2 \end{bmatrix} =  \begin{bmatrix} R_1 + \mathrm{j} \omega_\mathrm{el} L_1 & \mathrm{j} \omega_\mathrm{el} M \\ \mathrm{j} \omega_\mathrm{el} M & R_2 + \mathrm{j}\omega_\mathrm{el} L_2 \end{bmatrix} \begin{bmatrix} \underline{I}_1 \\ \underline{I}_2 \end{bmatrix}.
+		\end{align*}
+    Considering $R_1\approx 0$ and rearranging the first line yields
+    $$
+    \underline{I}_1 = \frac{\underline{U}_1 - \mathrm{j} \omega_\mathrm{el} M \underline{I}_2}{\mathrm{j} \omega_\mathrm{el} L_1}. 
+    $$
+    Inserting that into the second line
+    $$
+    \underline{U}_2 = \mathrm{j} \omega_\mathrm{el} M \underline{I}_1 + (R_2 + \mathrm{j}\omega_\mathrm{el} L_2)\underline{I}_2 
+    $$
+    delivers
+    $$
+    \underline{U}_2 = \frac{M}{L_1}\underline{U}_1 + \left[R_2 + \mathrm{j}\omega_\mathrm{el}\left( L_2-\frac{M^2}{L_1}\right)\right]\underline{I}_2.
+    $$
+    Inserting the given parameter values yields
+    \begin{align*}
+    \underline{U}_2 &= \frac{\SI{0.42}{\henry}}{\SI{1}{\henry}}\cdot\SI{230}{\volt} + \left[\SI{0.1}{\ohm} + \mathrm{j}\SI{314.16}{\per\second}\left( \SI{0.17}{\henry}-\frac{(\SI{0.42}{\henry})^2}{\SI{1}{\henry}}\right)\right]\cdot(\SI{-10}{\ampere})\\
+     &= \SI{95.6}{\volt} - \mathrm{j} \SI{20.11}{\volt}
+    \end{align*}
+    finally leading to
+    $$
+    U_2 = \SI{97.69}{\volt}.
+    $$
 \end{solutionblock}
 
-\subtask{Determine the maximum possible torque $T_\mathrm{max}$ of the machine. Which speed $n_\mathrm{max}$ corresponds to that operating point?}{2}
-\subtaskGerman{Bestimmen Sie das maximale Drehmoment $T_\mathrm{max}$ der Maschine. Welche Drehzahl $n_\mathrm{max}$ entspricht dieser Betriebspunkt?}
+\subtask{Which primary prospective short-circuit current $I_{1,\mathrm{psc}}$ occurs if the secondary side is short-circuited?}{2}
+\subtaskGerman{Welcher primäre Dauerkurzschlussstrom $I_{1,\mathrm{psc}}$ tritt auf, wenn die Sekundärseite kurzgeschlossen wird?}
 
 \begin{solutionblock}
-    The maximum achievable torque is 
-    $$ T_\mathrm{max} = \frac{3}{2} p \frac{U_\mathrm{s}^2}{\omega_\mathrm{s}^2}\frac{M^2}{\sigma (L_{\sigma,\mathrm{s}} +M)^2(L'_{\sigma,\mathrm{r}} +M)} = \frac{3}{2} \cdot2 \cdot \frac{(\SI{230.94}{\volt})^2}{(\SI{376.99}{\per\second})^2} \cdot\frac{(\SI{70}{\milli\henry})^2}{0.055\cdot(\SI{72}{\milli\henry})^3} = \SI{268.72}{\newton\metre}.$$
-    The corresponding slip frequency is
-    $$ \omega_{\mathrm{max}} = \frac{R'_\mathrm{r}}{\sigma (L'_{\sigma,\mathrm{r}} +M)} = \frac{\SI{2}{\ohm}}{0.055\cdot(\SI{72}{\milli\henry})} = \SI{416.6}{\per\second}$$
-    leading to a rotor angular speed of
-    $$ \omega_{\mathrm{r,max}} = \frac{1}{p} (\omega_\mathrm{s} - \omega_{\mathrm{max}}) = \SI{-19.81}{\per\second}$$
-    resulting in a mechanical speed of
-    $$ n_{\mathrm{max}} = \frac{\omega_{r,\mathrm{max}}}{2\pi} \cdot \SI{60}{\second\per\minute} = \SI{-2.07}{\per\minute}.$$
-    Hence, the maximum torque is achieved at a negative speed which is necessary due to the relatively large slip frequency at the maximum torque operating point (which is mostly due to the relatively large rotor resistance).
+    The short circuit relates to $U_2=0$ leading to
+    $$
+    0 = \mathrm{j} \omega_\mathrm{el} M \underline{I}_1 + (R_2 + \mathrm{j}\omega_\mathrm{el} L_2)\underline{I}_2 \quad \Leftrightarrow \quad  \underline{I}_2 = \frac{-\mathrm{j} \omega_\mathrm{el} M }{R_2 + \mathrm{j}\omega_\mathrm{el} L_2} \underline{I}_1.
+    $$
+    Inserting into the primary voltage equations yields
+    $$
+    \underline{I}_1 = \frac{1}{\mathrm{j} \omega_\mathrm{el} L_1}\underline{U}_1 + \frac{M}{L_1} \frac{\mathrm{j} \omega_\mathrm{el} M }{R_2 + \mathrm{j}\omega_\mathrm{el} L_2} \underline{I}_1. 
+    $$
+    Solving for $\underline{I}_1$
+    $$
+    \underline{I}_1 = \left(1 - \frac{M}{L_1} \frac{\mathrm{j} \omega_\mathrm{el} M }{R_2 + \mathrm{j}\omega_\mathrm{el} L_2}\right)^{-1}\frac{1}{\mathrm{j} \omega_\mathrm{el} L_1}\underline{U}_1
+    $$
+    and some rewriting
+    \begin{align*}
+        \underline{I}_1 
+        & =\left(\frac{L_1 R_2 +\mathrm{j} \omega_\mathrm{el} (L_1 L_2-M^2)}{L_1(R_2 + \mathrm{j}\omega_\mathrm{el} L_2)}\right)^{-1}\frac{1}{\mathrm{j} \omega_\mathrm{el} L_1}\underline{U}_1\\
+        & =\left(\frac{(R_2 + \mathrm{j}\omega_\mathrm{el} L_2)}{L_1 R_2 +\mathrm{j} \omega_\mathrm{el} (L_1 L_2 -M^2)}\right)\frac{1}{\mathrm{j} \omega_\mathrm{el}}\underline{U}_1\\ 
+        & =\left(\frac{(R_2 + \mathrm{j}\omega_\mathrm{el} L_2)}{L_1 R_2\mathrm{j}\omega_\mathrm{el} - \omega_\mathrm{el}^2 (L_1 L_2 -M^2)}\right)\underline{U}_1 \\
+        & =-\left(\frac{(R_2 + \mathrm{j}\omega_\mathrm{el} L_2)(L_1 R_2\mathrm{j}\omega_\mathrm{el} + \omega_\mathrm{el}^2 (L_1 L_2 -M^2))}{(L_1 R_2\omega_\mathrm{el})^2 + \omega_\mathrm{el}^4 (L_1 L_2 -M^2)^2}\right)\underline{U}_1
+    \end{align*}
+finally leads to
+\begin{align*}
+\underline{I}_{1,\mathrm{psc}} &= (\SI{4.4\cdot 10^{-3}}{\per\ohm} + \mathrm{j}\cdot\SI{84.3\cdot 10^{-3}}{\per\ohm}) \cdot \SI{230}{\volt}\\
+                              &= \SI{1.0}{\ampere} + \mathrm{j}\cdot\SI{19.40}{\ampere},
+\end{align*}     
+that is, is $I_{1,\mathrm{psc}} = \SI{19.42}{\ampere}$.
+\end{solutionblock}
+
+\subtask{What idealized secondary output voltage results in the unloaded case when the transformer is reconfigured as an autotransformer connecting the terminals 1.1 and 2.2?}{1}
+\subtaskGerman{Welche idealisierte sekundäre Ausgangsspannung ergibt sich im unbelasteten Fall, wenn der Transformator zum Spartransformator mittels Verbinden der Klemmen 1.1 und 2.2 abgewandelt wird?}
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.3\textwidth]{fig/Autotransformer_connection.pdf}
+    \caption{Transformer connection nomenclature}
+    \label{fig:Autotransformer_connection}
+\end{figure}
+
+\begin{solutionblock}
+The described case refers to a step-up autotransformer, cf. \autoref{fig:Autotransformer_step_up}. Hence, the new secondary output voltage is $U_\mathrm{at,out} = U_1 + U_2 = \SI{330}{\volt}.$
+    \begin{solutionfigure}[ht]
+    \centering
+    \includegraphics[width=0.3\textwidth]{fig/Autotransformer_step_up.pdf}
+    \caption{Step-up autotransformer}
+    \label{fig:Autotransformer_step_up}
+\end{solutionfigure}
+\end{solutionblock}
+
+\subtask{Calculate the change in primary current in the event of a short circuit on the secondary side of the autotransformer compared to the original galvanically isolated transformer.}{1}
+\subtaskGerman{Beziffern Sie die Veränderung des Primärstroms im Fall eines Kurzschlusses auf der Sekundärseite des Spartransformators im Vergleich zum ursprünglichen galvanisch getrennten Transformator.}
+
+\begin{solutionblock}
+    Due to the reconfiguration the effective short-circuit impedance is decreased and the resulting primary short-circuit current is increased:
+    $$
+    I_{1,\mathrm{at,psc}} = \left(1+ \frac{N_1}{N_2}\right) I_{1,\mathrm{psc}} = (1+2.3) \cdot \SI{19.42}{\ampere} = \SI{64.09}{\ampere}. 
+    $$
+    The primary short-circuit current is $3.3$ times higher than for the original transformer configuration. 
 \end{solutionblock}
