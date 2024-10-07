@@ -1,6 +1,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%% Very basic document style settings %%%%%%%%%
-\documentclass[aspectratio=169, usepdftitle=false, handout]{beamer}
+\documentclass{lectureClass}
 \usetheme{Madrid}
 \usefonttheme{professionalfonts}
 \setbeamertemplate{itemize items}[triangle]
@@ -63,31 +63,31 @@
 \definecolor{unilightblue}{HTML}{009ED4}
 \definecolor{unigrey}{HTML}{64727f}
 \definecolor{links}{HTML}{2A1B81}
-\newcommand{\hl}[1]{\textcolor{red}{#1}} %Highlights in text
-\newcommand{\hlh}[1]{\textbf{#1}} %Highlights in sub-headings
+%\newcommand{\hl}[1]{\textcolor{red}{#1}} %Highlights in text
+%\newcommand{\hlh}[1]{\textbf{#1}} %Highlights in sub-headings
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%% New footnote comamand without numbering %%%%%
-\newcommand\blfootnote[1]{%
-  \begingroup
-  \renewcommand\thefootnote{}\footnote{#1}%
-  \addtocounter{footnote}{-1}%
-  \endgroup
-}
+%\newcommand\blfootnote[1]{%
+  %\begingroup
+  %\renewcommand\thefootnote{}\footnote{#1}%
+  %\addtocounter{footnote}{-1}%
+  %\endgroup
+%}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%% check- and x-mark %%%%%
 \usepackage{pifont}% http://ctan.org/pkg/pifont
-\newcommand{\cmark}{\ding{51}}%
-\newcommand{\xmark}{\ding{55}}%
+%\newcommand{\cmark}{\ding{51}}%
+%\newcommand{\xmark}{\ding{55}}%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%% Centered p-box & m-box in table env. using array package %%%%%
-\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
-\newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}}
+%\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+%\newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -110,7 +110,7 @@
 \setbeamercolor{block body}{fg=black,bg=gray!15} 
 
 %Centered block with adjustable width
-\newenvironment<>{varblock}[2][.9\textwidth]{
+\renewenvironment<>{varblock}[2][.9\textwidth]{
 \begin{center}
   \begin{minipage}{#1}
     \begin{actionenv}#3%
@@ -125,13 +125,13 @@
 }
 
 %Math. definitions
-\newtcbtheorem[number within=part, reset counter on overlays=true]{defi}{Definition}{grow to left by=0.15cm, grow to right by=0.15cm, left=0.05cm, right=0.05cm,bottom=0.05cm, top=0.05cm,arc=1mm, colback = gray!15, colframe = black!60}{defi}
+%\newtcbtheorem[number within=part, reset counter on overlays=true]{mydefi}{Definition}{grow to left by=0.15cm, grow to right by=0.15cm, left=0.05cm, right=0.05cm,bottom=0.05cm, top=0.05cm,arc=1mm, colback = gray!15, colframe = black!60}{defi}
 
 %Math. theorems		
-\newtcbtheorem[number within=part, reset counter on overlays=true]{theo}{Theorem}{grow to left by=0.15cm, grow to right by=0.15cm, left=0.05cm, right=0.05cm,bottom=0.05cm, top=0.05cm,arc=1mm, colback = gray!15, colframe = black!60}{theo}
+%\newtcbtheorem[number within=part, reset counter on overlays=true]{mytheo}{Theorem}{grow to left by=0.15cm, grow to right by=0.15cm, left=0.05cm, right=0.05cm,bottom=0.05cm, top=0.05cm,arc=1mm, colback = gray!15, colframe = black!60}{theo}
 
 %Algorithms	
-\newtcbtheorem[number within=part, reset counter on overlays=true]{algo}{Algorithm}{grow to left by=0.15cm, grow to right by=0.15cm, left=0.05cm, right=0.05cm,bottom=0.05cm, top=0.05cm,arc=1mm, colback = gray!15, colframe = black!60}{algo}
+%\newtcbtheorem[number within=part, reset counter on overlays=true]{myalgo}{Algorithm}{grow to left by=0.15cm, grow to right by=0.15cm, left=0.05cm, right=0.05cm,bottom=0.05cm, top=0.05cm,arc=1mm, colback = gray!15, colframe = black!60}{algo}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -175,15 +175,15 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%% References %%%%%
-\newcommand{\figref}[1]{\figurename~\ref{#1}}
-\newcommand{\satzref}[1]{Theo.~\ref{#1}}
-\newcommand{\defref}[1]{Def.~\ref{#1}}
-\newcommand{\theoref}[1]{Theo.~\ref{#1}}
-\newcommand{\tabref}[1]{\tablename~\ref{#1}}
-\newcommand{\capref}[1]{\capname~\ref{#1}}
-\newcommand{\apref}[1]{\apname~\ref{#1}}
-\newcommand{\algname}{Algo.}
-\newcommand{\algoref}[1]{\algname~\ref{#1}}
+%\newcommand{\figref}[1]{\figurename~\ref{#1}}
+%\newcommand{\satzref}[1]{Theo.~\ref{#1}}
+%\newcommand{\defref}[1]{Def.~\ref{#1}}
+%\newcommand{\theoref}[1]{Theo.~\ref{#1}}
+%\newcommand{\tabref}[1]{\tablename~\ref{#1}}
+%\newcommand{\capref}[1]{\capname~\ref{#1}}
+%\newcommand{\apref}[1]{\apname~\ref{#1}}
+%\newcommand{\algname}{Algo.}
+%\newcommand{\algoref}[1]{\algname~\ref{#1}}
 \setbeamertemplate{caption}{\raggedright\centering\insertcaption\par}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -202,14 +202,14 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%% Math short commands  %%%%%
-\newcommand{\E}[1]{\mathbb{E}\left[#1\right]} %Expected value
-\newcommand{\Var}[1]{\mathrm{Var}\left[#1\right]} %Variance value
-\newcommand{\El}[2]{\mathbb{E}_{#2}\left[#1\right]} %Expected value with lower index
-\newcommand{\Pb}[1]{\mathbb{P}\left[#1\right]} %Propability
-\newcommand{\T}{^{\mkern-1.5mu\mathsf{T}}} %Transpose
-\newcommand{\iu}{\mathrm{j}\mkern1mu} %imaginary unit
-\DeclareMathOperator*{\argmax}{arg\,max} % arg max
-\DeclareMathOperator*{\argmin}{arg\,min} % arg min
+%\newcommand{\E}[1]{\mathbb{E}\left[#1\right]} %Expected value
+%\newcommand{\Var}[1]{\mathrm{Var}\left[#1\right]} %Variance value
+%\newcommand{\El}[2]{\mathbb{E}_{#2}\left[#1\right]} %Expected value with lower index
+%\newcommand{\Pb}[1]{\mathbb{P}\left[#1\right]} %Propability
+%\newcommand{\T}{^{\mkern-1.5mu\mathsf{T}}} %Transpose
+%\newcommand{\iu}{\mathrm{j}\mkern1mu} %imaginary unit
+%\DeclareMathOperator*{\argmax}{arg\,max} % arg max
+%\DeclareMathOperator*{\argmin}{arg\,min} % arg min
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
