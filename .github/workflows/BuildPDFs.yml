@@ -13,16 +13,35 @@ jobs:
     steps:
       - name: Set up Git repository
         uses: actions/checkout@v4
-      - name: Compile LaTeX document
+      - name: Initialize and update submodules  #initialize and update submodules
+        run: |
+          git submodule init
+          git submodule update
+      - name: Compile LaTeX document    
         uses: xu-cheng/texlive-action@v2
         with:
           scheme: full
-          run: |
+          run: |            #runs build.py with submodule location and loopthrough examfolders and build pdf
             cd exercise
+            cp ../course_template/exerciseClass.cls ./
             python3 build.py
             cd ..
+
             cd lecture
+            cp ../course_template/lectureClass.cls ./
             python3 build.py
+            cd ..
+
+            for dir in exam/*/; do
+            if [ -f "$dir/build.py" ]; then
+              echo "Building in $dir"
+              cp ../../course_template/examClass "$dir"
+              cd "$dir" && python3 build.py && cd - 
+            else
+              echo "Skipping $dir: no build.py found."
+            fi
+            done
+            
       - name: Upload PDF file
         uses: actions/upload-pages-artifact@v3 #actions/upload-artifact@v4
         with:
