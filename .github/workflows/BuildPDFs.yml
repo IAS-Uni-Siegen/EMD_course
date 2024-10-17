@@ -32,15 +32,11 @@ jobs:
             python3 build.py
             cd ..
 
-            for dir in exam/*/; do
-            if [ -f "$dir/build.py" ]; then
-              echo "Building in $dir"
-              cp ../../course_template/examClass "$dir"
-              cd "$dir" && python3 build.py && cd - 
-            else
-              echo "Skipping $dir: no build.py found."
-            fi
-            done
+            cd exam
+            cp ../course_template/examClass.cls ./
+            python3 build.py
+            
+
             
       - name: Upload PDF file
         uses: actions/upload-pages-artifact@v3 #actions/upload-artifact@v4
