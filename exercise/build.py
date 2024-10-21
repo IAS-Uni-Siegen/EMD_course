@@ -13,56 +13,63 @@ def clear_tex_binaries():
             if not file.endswith(('.tex', '.pdf')):
                 os.remove(file)
 
+def build_pdf(with_solution):
+    # Modify and build the main.tex file
+    clear_tex_binaries()
 
-# build main pdf (with solutions)
-clear_tex_binaries()
-with fileinput.input('main.tex', inplace=True) as f:
-    for line in f:
-        if 'includeonly{' in line:
-            # comment out includeonly flag
-            print(f'%{line}', end='')
-        #check if the line including '\documentclass' has the parameter 'solution' - if not add it
-        elif '{exerciseClass}' in line:
-            if 'solution' not in line:
-                print(line.replace('{exerciseClass}', ', [solution]{exerciseClass}'), end='')
+    # Flag to ensure documentclass line is modified correctly
+    docclass_modified = False
+    
+    with fileinput.input('main.tex', inplace=True) as f:
+        for line in f:
+            if 'includeonly{' in line:
+                # Comment out the includeonly flag
+                print(f'%{line}', end='')
+            # Look for the documentclass line
+            elif '\\documentclass' in line and 'exerciseClass' in line:
+                docclass_modified = True  # Set the flag that we have modified the line
+
+                # Split documentclass into its components
+                preamble, class_info = line.split('{', 1)
+                class_name = class_info.rstrip('}\n')  # Remove the trailing }
+                
+                if with_solution:
+                    # Add the [solution] option if not present
+                    if '[' not in preamble:
+                        preamble = preamble.replace('\\documentclass', '\\documentclass[solution]')
+                    else:
+                        preamble = preamble.replace('[', '[solution, ')
+                else:
+                    # Remove the [solution] option if present
+                    preamble = preamble.replace('[solution, ', '[').replace('[solution]', '')
+
+                # Reassemble the documentclass line
+                print(f'{preamble}{{{class_name}}}', end='\n')
             else:
-                print(line, end='')    
-        else:
-            print(line, end='')
-        
-call(call_pdflatex_l)
-call(call_pdflatex_l)
+                print(line, end='')
+    
+    # If we didn't modify the documentclass, raise an exception for debugging
+    if not docclass_modified:
+        raise ValueError("documentclass line with 'exerciseClass' not found or not modified.")
+
+    # Run pdflatex twice for proper compilation
+    call(call_pdflatex_l)
+    call(call_pdflatex_l)
 
 
 # go into the parent directory
 os.chdir('..')
 os.makedirs('built', exist_ok=True)
-#take main.pdf from the exercise folder and move it to the parent folder
-os.replace('exercise/main.pdf', os.path.join('built', 'exercise_with_solution.pdf'))
 
 
 # build main pdf (without solutions)
 os.chdir('exercise')
-clear_tex_binaries()
-with fileinput.input('main.tex', inplace=True) as f:
-    for line in f:
-        if 'includeonly{' in line:
-            # comment out includeonly flag
-            print(f'%{line}', end='')
-        #check if the line including '\documentclass' has the parameter 'solution' - if yes remove it
-        elif '{exerciseClass}' in line:
-            if 'solution' in line:
-                print(line.replace('solution]{exerciseClass}', ']{exerciseClass}'), end='')
-            else:
-                print(line, end='')    
-        else:
-            print(line, end='')
-        
-call(call_pdflatex_l)
-call(call_pdflatex_l)
 
+build_pdf(with_solution=True)
+#os.makedirs('../built', exist_ok=True)
+os.replace('main.pdf', os.path.join('../built', 'exercise_with_solution.pdf'))
+    
+    # Build without solutions
+build_pdf(with_solution=False)
+os.replace('main.pdf', os.path.join('../built', 'exercise.pdf'))
 
-# go into the parent directory
-os.chdir('..')
-#take main.pdf from the exercise folder and move it to the parent folder
-os.replace('exercise/main.pdf', os.path.join('built', 'exercise.pdf'))
