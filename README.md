@@ -15,7 +15,7 @@ This work is licensed under a
 [cc-by-shield]: https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg
 
 ## Lecture slides (click on preview picture)
-<a href="https://ias-uni-siegen.github.io/EMD_course/lecture.pdf" target="_blank" class="image fit"><img src="misc/Slide_preview.png" alt=""></a>
+<a href="https://ias-uni-siegen.github.io/EMD_course/lecture.pdf" target="_blank" class="image fit"><img src="misc/Lecture_preview.png" alt=""></a>
 
 The covered topics are:
 - An initial overview of electrical machines and drives
@@ -31,3 +31,10 @@ The covered topics are:
 
 ## Exercise tasks including solutions (click on preview picture)
 <a href="https://ias-uni-siegen.github.io/EMD_course/exercise_with_solution.pdf" target="_blank" class="image fit"><img src="misc/Exercise_with_solution_preview.png" alt=""></a>
+
+## Exam history
+
+| Exam       | Only Tasks                                  | Tasks with Solutions                            |
+|------------|---------------------------------------------|-------------------------------------------------|
+| Summer 2024       | [Only Tasks](https://ias-uni-siegen.github.io/EMD_course/summer2024.pdf)   | [Tasks with Solutions](https://ias-uni-siegen.github.io/EMD_course/summer2024_with_solution.pdf) |
+| Summer 2024 (mock-up)| [Only Tasks](https://ias-uni-siegen.github.io/EMD_course/summer2024_mock-up.pdf)   | [Tasks with Solutions](https://ias-uni-siegen.github.io/EMD_course/summer2024_mock-up_with_solution.pdf) |
