@@ -3,8 +3,6 @@ on:
   push: 
     paths:
         - '**.tex'
-    tags:
-        - '*'  # This line allows all tags to trigger the workflow
   workflow_dispatch:
   
 jobs:
