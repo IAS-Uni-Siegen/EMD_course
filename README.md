@@ -41,3 +41,16 @@ The covered topics are:
 |------------|---------------------------------------------|-------------------------------------------------|
 | Summer 2024       | [Only Tasks](https://ias-uni-siegen.github.io/EMD_course/summer2024.pdf)   | [Tasks with Solutions](https://ias-uni-siegen.github.io/EMD_course/summer2024_with_solution.pdf) |
 | Summer 2024 (mock-up)| [Only Tasks](https://ias-uni-siegen.github.io/EMD_course/summer2024_mock-up.pdf)   | [Tasks with Solutions](https://ias-uni-siegen.github.io/EMD_course/summer2024_mock-up_with_solution.pdf) |
+
+
+## Citation
+See "Cite this repository" info box on the top-right or use the following BibTeX entry for citing it:
+```
+@misc{Wallscheid_Fundamentals_of_electrical_2024,
+    author = {Wallscheid, Oliver and Hölsch, Lukas},
+    doi = {10.5281/zenodo.14215440},
+    title = {{Fundamentals of electrical machines and drives}},
+    url = {https://github.com/IAS-Uni-Siegen/EMD_course},
+    year = {2024}
+}
+```
