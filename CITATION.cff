@@ -10,6 +10,7 @@ authors:
 title: "Fundamentals of electrical machines and drives"
 date-released: 2024-09-27
 url: "https://github.com/IAS-Uni-Siegen/EMD_course"
+doi: https://doi.org/10.5281/zenodo.14215440 
 license: CC-BY-4.0
 preferred-citation:
   type: generic
@@ -23,3 +24,4 @@ preferred-citation:
   title: "Fundamentals of electrical machines and drives"
   year: 2024
   url: "https://github.com/IAS-Uni-Siegen/EMD_course"
+doi: https://doi.org/10.5281/zenodo.14215440
