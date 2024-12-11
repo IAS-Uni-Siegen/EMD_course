@@ -1,0 +1,46 @@
+'@context': https://schema.org/
+creativeWorkStatus: Published
+type: LearningResource
+name: Fundamentals of electrical machines and drives
+description: >-
+  Course materials on the basics of electrical machines and drives. Includes lecture, exercise and exam materials incl. release of source files using LaTeX, Python and Inkscape.
+license: https://creativecommons.org/licenses/by/4.0/deed.de
+id: https://github.com/IAS-Uni-Siegen/EMD_course
+creator:
+  - givenName: Oliver
+    familyName: Wallscheid
+    id: https://orcid.org/0000-0001-9362-8777
+    type: Person
+    affiliation:
+      name: Universität Siegen
+      id: https://ror.org/02azyry73
+      type: Organization
+  - givenName: Lukas
+    familyName: Hölsch
+    id: https://orcid.org/0009-0006-4112-2444
+    type: Person
+    affiliation:
+      name: Universität Siegen
+      id: https://ror.org/02azyry73
+      type: Organization
+keywords:
+  - Elektrische Maschinen
+  - Antriebe
+  - Energiewandlung
+  - Energietechnik
+  - Elektrotechnik
+inLanguage:
+  - en
+about:
+  - https://w3id.org/kim/hochschulfaechersystematik/n048
+  - https://w3id.org/kim/hochschulfaechersystematik/n316
+  - https://w3id.org/kim/hochschulfaechersystematik/n8
+image: https://upload.wikimedia.org/wikipedia/commons/8/80/Electric_Motor_Rotor.jpg
+learningResourceType:
+  - https://w3id.org/kim/hcrt/drill_and_practice
+  - https://w3id.org/kim/hcrt/simulation
+  - https://w3id.org/kim/hcrt/slide
+  - https://w3id.org/kim/hcrt/worksheet
+educationalLevel:
+  - https://w3id.org/kim/educationalLevel/level_A
+datePublished: '2024-09-27'

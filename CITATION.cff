@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+message: "If you use or refer to this material, please cite it as below."
+authors:
+- family-names: "Wallscheid"
+  given-names: "Oliver"
+  orcid: "https://orcid.org/0000-0001-9362-8777"
+- family-names: "Hölsch"
+  given-names: "Lukas"
+  orcid: "https://orcid.org/0009-0006-4112-2444"
+title: "Fundamentals of electrical machines and drives"
+date-released: 2024-09-27
+url: "https://github.com/IAS-Uni-Siegen/EMD_course"
+doi: 10.5281/zenodo.14215440 
+license: CC-BY-4.0
+preferred-citation:
+  type: generic
+  authors:
+  - family-names: "Wallscheid"
+    given-names: "Oliver"
+    orcid: "https://orcid.org/0000-0001-9362-8777"
+  - family-names: "Hölsch"
+    given-names: "Lukas"
+    orcid: "https://orcid.org/0009-0006-4112-2444"
+  title: "Fundamentals of electrical machines and drives"
+  year: 2024
+  url: "https://github.com/IAS-Uni-Siegen/EMD_course"
+  doi: 10.5281/zenodo.14215440
