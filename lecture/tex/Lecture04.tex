@@ -381,7 +381,7 @@
 %% Core loss model (hyteresis and eddy current losses) %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
-	\frametitle{Core loss model (hyteresis and eddy current losses)}
+	\frametitle{Core loss model (hysteresis and eddy current losses)}
 	To also consider the iron losses inside the transformer core, a first-order model with the additional core loss resistance $R_{\mathrm{c}}$ can be introduced:
 	\begin{equation}
 		P_{\mathrm{l,c}} \approx R_{\mathrm{c}} I_{\mathrm{c}}^2 \approx \frac{U_1^2}{R_{\mathrm{c}}}. 
@@ -491,7 +491,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
 	\frametitle{Voltage transformer application: measuring high AC voltages}
-	If the voltage to be measured is too high for direct measurement, a voltage transformer can be used to step-down the voltage to a suitable level:
+	If the voltage to be measured is too high for direct measurement, a voltage transformer can be used to step down the voltage to a suitable level:
 	$$u_2(t) = \frac{1}{\ddot{u}} u_1(t).$$
 	\pause
 	Hence, we choose $\ddot{u} > 1$. \pause Moreover, the voltage sensor on the secondary side comes with a high internal resistance $R_\mathrm{i}$ to avoid a significant current and, therefore, power flow. Neglecting the leakage inductance, we can model the voltage transformer as shown in \figref{fig:Voltage_transformer_meas_ECD} with
@@ -518,7 +518,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
 	\frametitle{Current transformer application: measuring high AC currents}
-	If the current to be measured is too high for direct measurement, a current transformer can be used to step-down the current to a suitable level:
+	If the current to be measured is too high for direct measurement, a current transformer can be used to step down the current to a suitable level:
 	$$i_2(t) = \ddot{u} i_1(t).$$ \pause
 	Hence, we choose $\ddot{u} < 1$. \pause Moreover, the current sensor on the secondary side comes with a minimal internal resistance $R_\mathrm{i}$ to avoid a significant ohmic power losses. Likewise, the transformer should be designed for low $R_1$ and $R_2$ (e.g., $N_1=1$ on the primary and sufficiently large cable cross-sections).\\ \pause
 	\vspace{1em}
@@ -747,7 +747,7 @@
            \begin{itemize}
 				\item If the flux zero component $\phi_0$ can be avoided, a three-leg design as shown in \figref{fig:Three_phase_transformer_3_legs_star} can be used. \pause
 				\item However, if $\phi_0 \neq 0$ due to an asymmetric design, magnetic saturation or non-ideal symmetrical operation, the zero component will act as a stray field leaving the core. \pause
-				\item This can lead to increased losses in auxillary components (e.g., housing) and electromagnetic interference issues.
+				\item This can lead to increased losses in auxiliary components (e.g., housing) and electromagnetic interference issues.
 			\end{itemize}
 		\end{column}
         \hfill
