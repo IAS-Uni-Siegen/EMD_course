@@ -436,13 +436,13 @@ The effective area of the core is $S_{\mathrm{Fe}}$ = 0.187 $\mathrm{m}^2$ and a
 
   The following equation is used to calculate the mutual inductance
   \begin{equation}
-    \omega_{\mathrm{el}} M' \approx \frac{U_{\mathrm{1,o}}}{I_{\mathrm{1,o}} \sin(\varphi_{\mathrm{o}})},
+    \omega_{\mathrm{el}} M' \approx \frac{U_{\mathrm{1,o}}}{I_{\mathrm{1,o}}}\sin(\varphi_{\mathrm{o}}),
   \end{equation}
   which is rearranged to:
   \begin{equation}
-    M' = \frac{U_{\mathrm{1,o}}}{I_{\mathrm{1,o}} \sin(\varphi_{\mathrm{o}}) \omega_{\mathrm{el}}}
-    = \frac{\SI{5}{\kilo\volt}}{\SI{2.6}{\ampere}\cdot \sin(\SI{47.16}{\degree})\cdot 2\pi \cdot \SI{50}{\hertz}}
-    = \SI{8.35}{\henry}.
+    M' = \frac{U_{\mathrm{1,o}}\sin(\varphi_{\mathrm{o}})}{I_{\mathrm{1,o}} \omega_{\mathrm{el}}}
+    = \frac{\SI{5}{\kilo\volt}\cdot \sin(\SI{47.16}{\degree})}{\SI{2.6}{\ampere}\cdot 2\pi \cdot \SI{50}{\hertz}}
+    = \SI{4.49}{\henry}.
   \end{equation}
 
   With the geometric addition the magnetization currents is calculated with:
