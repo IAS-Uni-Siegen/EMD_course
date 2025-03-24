@@ -1,0 +1,24 @@
+\glossarysection[\glossarytoctitle]{\glossarytitle}\glossarypreamble
+\begin{theglossary}\glossaryheader
+\glsgroupheading{glsnumbers}\relax \glsresetentrylist %
+\glossentry{scalar_signal}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glsignore{353}}}%
+\glossentry{amplitude}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glsignore{353}}}%
+\glossentry{amplitude_harmonic}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glsignore{353}}}%
+\glossentry{vectorial_signal}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glsignore{353}}}%
+\glossentry{const_signal}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glsignore{353}}}%
+\glossentry{matrix}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glsignore{353}}}%
+\glossentry{average_signal}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glsignore{353}}}%
+\glossentry{complex_signal}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glsignore{353}}}%
+\glossentry{complex_signal_conjugate}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glsignore{353}}}%
+\glossentry{derivative_signal}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glsignore{353}}}%
+\end{theglossary}\glossarypostamble

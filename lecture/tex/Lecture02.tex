@@ -1,11 +1,10 @@
 \section{Fundamental electromagnetic principles and magnetic materials}
-\title[Electromagnetic and material fundamentals]{Fundamental electromagnetic principles and magnetic materials}  
-
-\begin{frame}[plain]
-    \titlepage
-\end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Amp\`ere's--Maxwell equation}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 %% Ampere's circuital law: magnetic field strength %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
@@ -207,6 +206,11 @@
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Magnetic flux, flux linkage and inductance}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Magnetic leakage flux %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
@@ -339,6 +343,11 @@
     \end{equation}
     which indicates how strong or week the inductive coupling between the coils is.
 \end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Magnetic material properties}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Boosting the magnet field with ferromagnetic materials %%
@@ -675,6 +684,11 @@
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Electromagnetic induction}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Electromagnetic induction (Maxwell–-Faraday equation) %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
@@ -742,80 +756,11 @@
     \end{figure}
 \end{frame}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Lorentz force %%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}
-	\frametitle{Lorentz force}
-    \begin{columns}
-		\begin{column}{0.6\textwidth}
-        The force $\bm{F}$ acting on a particle of electric charge $q$ with instantaneous velocity $\bm{v}$, due to an external electric field $\bm{E}$ and magnetic field $\bm{B}$, is given by
-            \begin{equation}
-                \bm{F} = q\left(\bm{E} + \bm{v}\times\bm{B}\right).
-            \end{equation}
-            \pause
-            \begin{itemize}
-                \item The term $q\bm{E}$  is called the electric force. \pause
-                \item The term $q\left(\bm{v}\times\bm{B}\right)$ is called the magnetic force. \pause
-                \item In Cartesian coordinates, the Lorentz force is given by:
-            \end{itemize}
-            \begin{equation}
-                \begin{aligned}
-                    F_x &= q\left(E_x + v_yB_z - v_zB_y\right),\\
-                    F_y &= q\left(E_y + v_zB_x - v_xB_z\right),\\
-                    F_z &= q\left(E_z + v_xB_y - v_yB_x\right).
-                \end{aligned}
-            \end{equation}
-		\end{column}
-        \hfill
-		\begin{column}{0.40\textwidth}
-			\begin{figure}
-				\centering
-				\includegraphics[height=0.5\textheight]{fig/lec02/Lorentz_force_particle.pdf}
-				\caption{Lorentz force $\bm{F}$ on a particle (of charge $q$) in motion (instantaneous velocity $\bm{v}$) with given $\bm{E}$ and $\bm{B}$ fields (adapted from: \href{https://commons.wikimedia.org/wiki/File:Lorentz_force_particle.svg}{Wikimedia Commons}, Maschen, \href{https://creativecommons.org/publicdomain/zero/1.0/deed.en}{CC0})}
-			\end{figure}
-		\end{column}
-		\end{columns}
-\end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Hand rule of the magnetic Lorentz force %%
+\subsection{Magnetic networks}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}
-	\frametitle{Hand rule of the magnetic Lorentz force}
-    \begin{figure}
-        \centering
-        \includegraphics[height=0.6\textheight]{fig/lec02/Hand-rule-charges-both-hands.pdf}
-        \caption{Right and left hand rule for the magnetic Lorentz force $q\left(\bm{v}\times\bm{B}\right)$ (adapted from: \href{https://commons.wikimedia.org/wiki/File:Right-hand-rule-charges-both-hands.svg}{Wikimedia Commons}, M. Run, \href{https://creativecommons.org/licenses/by-sa/3.0/deed.en}{CC BY-SA 3.0})}
-    \end{figure}
-\end{frame}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Lorentz force density for a continuous charge distribution %%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}
-	\frametitle{Lorentz force density for a continuous charge distribution}
-    \begin{columns}
-		\begin{column}{0.5\textwidth}
-         For a continuous charge distribution in motion, the Lorentz force density (force per unit volume) becomes: 
-            \begin{equation}
-                \bm{f} = \rho\bm{E} + \bm{J}\times\bm{B}.
-            \end{equation}
-            \begin{itemize}
-                \item $\rho$ is the charge density (charge per unit volume).
-                \item $\bm{J} = \rho \bm{v}$ is the current density.
-            \end{itemize}
-		\end{column}
-        \hfill
-		\begin{column}{0.5\textwidth}
-			\begin{figure}
-				\centering
-				\includegraphics[height=0.6\textheight]{fig/lec02/Lorentz_force_continuum.pdf}
-				\caption{Lorentz force density $\bm{f}$ on a continuous charge distribution (charge density $\rho$) in motion (adapted from: \href{https://commons.wikimedia.org/wiki/File:Lorentz_force_continuum.svg}{Wikimedia Commons}, Maschen, \href{https://creativecommons.org/publicdomain/zero/1.0/deed.en}{CC0})}
-			\end{figure}
-		\end{column}
-		\end{columns}
-\end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Magnetic networks %%
@@ -951,6 +896,139 @@
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Lorentz force}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Lorentz force %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Lorentz force}
+    \begin{columns}
+		\begin{column}{0.6\textwidth}
+        The force $\bm{F}$ acting on a particle of electric charge $q$ with instantaneous velocity $\bm{v}$, due to an external electric field $\bm{E}$ and magnetic field $\bm{B}$, is given by
+            \begin{equation}
+                \bm{F} = q\left(\bm{E} + \bm{v}\times\bm{B}\right).
+            \end{equation}
+            \pause
+            \begin{itemize}
+                \item The term $q\bm{E}$  is called the electric force. \pause
+                \item The term $q\left(\bm{v}\times\bm{B}\right)$ is called the magnetic force. \pause
+                \item In Cartesian coordinates, the Lorentz force is given by:
+            \end{itemize}
+            \begin{equation}
+                \begin{aligned}
+                    F_x &= q\left(E_x + v_yB_z - v_zB_y\right),\\
+                    F_y &= q\left(E_y + v_zB_x - v_xB_z\right),\\
+                    F_z &= q\left(E_z + v_xB_y - v_yB_x\right).
+                \end{aligned}
+            \end{equation}
+		\end{column}
+        \hfill
+		\begin{column}{0.40\textwidth}
+			\begin{figure}
+				\centering
+				\includegraphics[height=0.5\textheight]{fig/lec02/Lorentz_force_particle.pdf}
+				\caption{Lorentz force $\bm{F}$ on a particle (of charge $q$) in motion (instantaneous velocity $\bm{v}$) with given $\bm{E}$ and $\bm{B}$ fields (adapted from: \href{https://commons.wikimedia.org/wiki/File:Lorentz_force_particle.svg}{Wikimedia Commons}, Maschen, \href{https://creativecommons.org/publicdomain/zero/1.0/deed.en}{CC0})}
+			\end{figure}
+		\end{column}
+		\end{columns}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Hand rule of the magnetic Lorentz force %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Hand rule of the magnetic Lorentz force}
+    \begin{figure}
+        \centering
+        \includegraphics[height=0.6\textheight]{fig/lec02/Hand-rule-charges-both-hands.pdf}
+        \caption{Right and left hand rule for the magnetic Lorentz force $q\left(\bm{v}\times\bm{B}\right)$ (adapted from: \href{https://commons.wikimedia.org/wiki/File:Right-hand-rule-charges-both-hands.svg}{Wikimedia Commons}, M. Run, \href{https://creativecommons.org/licenses/by-sa/3.0/deed.en}{CC BY-SA 3.0})}
+    \end{figure}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Lorentz force density for a continuous charge distribution %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Lorentz force density for a continuous charge distribution}
+    \begin{columns}
+		\begin{column}{0.5\textwidth}
+         For a continuous charge distribution in motion, the Lorentz force density (force per unit volume) becomes: 
+            \begin{equation}
+                \bm{f} = \rho\bm{E} + \bm{J}\times\bm{B}.
+            \end{equation}
+            \begin{itemize}
+                \item $\rho$ is the charge density (charge per unit volume).
+                \item $\bm{J} = \rho \bm{v}$ is the current density.
+            \end{itemize}
+		\end{column}
+        \hfill
+		\begin{column}{0.5\textwidth}
+			\begin{figure}
+				\centering
+				\includegraphics[height=0.6\textheight]{fig/lec02/Lorentz_force_continuum.pdf}
+				\caption{Lorentz force density $\bm{f}$ on a continuous charge distribution (charge density $\rho$) in motion (adapted from: \href{https://commons.wikimedia.org/wiki/File:Lorentz_force_continuum.svg}{Wikimedia Commons}, Maschen, \href{https://creativecommons.org/publicdomain/zero/1.0/deed.en}{CC0})}
+			\end{figure}
+		\end{column}
+		\end{columns}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Electrical machine losses}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Power losses overview in electrical machines %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Power loss types in electrical machines}
+    \begin{figure}
+        \centering
+        \begin{tikzpicture}[
+            level 1/.style={sibling distance=50mm},
+            edge from parent/.style={->,draw},
+            >=latex]
+        
+        % root of the the initial tree, level 1
+        \node[root] {Electrical machine losses}
+        % The first level, as children of the initial tree
+            child {node[level 2] (c1) {Copper losses}}
+            child {node[level 2] (c2) {Iron losses}}
+            child {node[level 2] (c3) {Mechanical losses}};
+        
+        % The second level, relatively positioned nodes
+        \begin{scope}[every node/.style={level 3}]
+        \node [below of = c1, xshift=25pt] (c11) {Stator winding};
+        \node [below of = c11] (c12) {(Rotor winding)};
+        \node [below of = c12] (c13) {(Skin effect)};
+        \node [below of = c13] (c14) {(Proximity effect)};
+        
+        \node [below of = c2, xshift=25pt] (c21) {Hyteresis};
+        \node [below of = c21] (c22) {Eddy currents};
+        \node [below of = c22] (c23) {Excess losses};
+        
+        \node [below of = c3, xshift=25pt] (c31) {Windage};
+        \node [below of = c31] (c32) {Friction};
+        \end{scope}
+        
+        % lines from each level 1 node to every one of its "children"
+        \foreach \value in {1,...,4}
+            \draw[->] (c1.195) |- (c1\value.west);
+        
+        \foreach \value in {1,...,3}
+            \draw[->] (c2.195) |- (c2\value.west);
+        
+        \foreach \value in {1,...,2}
+            \draw[->] (c3.195) |- (c3\value.west);
+        \end{tikzpicture}
+        \caption{Overview of power loss types in electrical machines}
+    \end{figure}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Eddy currents %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
@@ -1045,50 +1123,3 @@
     model for the eddy currents: $$p_{\mathrm{e}}\approx k_{\mathrm{e}} f^2 \hat{B}^2 .$$
 \end{frame}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Power losses overview in electrical machines %%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}
-	\frametitle{Power loss types in electrical machines}
-    \begin{figure}
-        \centering
-        \begin{tikzpicture}[
-            level 1/.style={sibling distance=50mm},
-            edge from parent/.style={->,draw},
-            >=latex]
-        
-        % root of the the initial tree, level 1
-        \node[root] {Electrical machine losses}
-        % The first level, as children of the initial tree
-            child {node[level 2] (c1) {Copper losses}}
-            child {node[level 2] (c2) {Iron losses}}
-            child {node[level 2] (c3) {Mechanical losses}};
-        
-        % The second level, relatively positioned nodes
-        \begin{scope}[every node/.style={level 3}]
-        \node [below of = c1, xshift=25pt] (c11) {Stator winding};
-        \node [below of = c11] (c12) {(Rotor winding)};
-        \node [below of = c12] (c13) {(Skin effect)};
-        \node [below of = c13] (c14) {(Proximity effect)};
-        
-        \node [below of = c2, xshift=25pt] (c21) {Hyteresis};
-        \node [below of = c21] (c22) {Eddy currents};
-        \node [below of = c22] (c23) {Excess losses};
-        
-        \node [below of = c3, xshift=25pt] (c31) {Windage};
-        \node [below of = c31] (c32) {Friction};
-        \end{scope}
-        
-        % lines from each level 1 node to every one of its "children"
-        \foreach \value in {1,...,4}
-            \draw[->] (c1.195) |- (c1\value.west);
-        
-        \foreach \value in {1,...,3}
-            \draw[->] (c2.195) |- (c2\value.west);
-        
-        \foreach \value in {1,...,2}
-            \draw[->] (c3.195) |- (c3\value.west);
-        \end{tikzpicture}
-        \caption{Overview of power loss types in electrical machines}
-    \end{figure}
-\end{frame}

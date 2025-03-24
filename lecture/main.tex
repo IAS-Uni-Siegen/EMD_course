@@ -1,14 +1,28 @@
 \documentclass{../course_template/lectureClass}
+
+\title{Electrical machines and drives}
+\author{Oliver Wallscheid}
+\date{}
+
 \makeglossaries
+
+%\includeonly{tex/Lecture01} % build only the specified file
+
+\makeatletter
+\patchcmd{\beamer@sectionintoc} % reduce space between sections in table of content (from 1.5em coming from beamerbasetoc.sty to 1.0em)
+  {\vskip1.5em}
+  {\vskip1.0em}
+  {}
+  {}
+\makeatother
+
 \begin{document}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Cover slide %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\title[Electrical Machines and Drives]{Electrical Machines and Drives}
-\author{Oliver Wallscheid}
-\date{}
+
 \begin{frame}[plain]
     \titlepage
 \end{frame}
@@ -17,15 +31,12 @@
 %% Outline / table of content %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}{Content}
-    \tableofcontents
+    \tableofcontents[hideallsubsections]
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Lecture sections %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%\includeonly{tex/Lecture01} % build only the specified file
-%
 
 \include{tex/Lecture01} % Overview / introduction
 \include{tex/Lecture02} % Fundamental electromagnetic principles
@@ -34,5 +45,9 @@
 \include{tex/Lecture05} % Rotating field theory
 \include{tex/Lecture06} % Induction machine
 \include{tex/Lecture07} % Synchronous machine
-\include{tex/dict} % English-German dictionary
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Appendix} % Appendix
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\include{tex/dict} % English-German dictionary (subsection)
+\include{tex/nomen} % Nomenclature (subsection)
 \end{document}

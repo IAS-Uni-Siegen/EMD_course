@@ -1,9 +1,8 @@
 \section{Induction machines}
-\title[Induction machines]{Induction machines}  
 
-\begin{frame}[plain]
-    \titlepage
-\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Operation principle}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Basic induction machine (IM) representation %%
@@ -39,7 +38,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
 	\frametitle{Visualization of the asynchronous IM operation}
-    \vspace{-0.275cm}
     \begin{figure}
         \centering
         \movie{\includegraphics[height=0.85\textheight]{fig/lec06/IM_slip_0_load_angle_90_preview.png}}{fig/lec06/IM_slip_0_load_angle_90_animation.gif}
@@ -54,7 +52,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
 	\frametitle{Visualization of the asynchronous IM operation (cont.)}
-    \vspace{-0.275cm}
     \begin{figure}
         \centering
         \movie{\includegraphics[height=0.85\textheight]{fig/lec06/IM_slip_0_load_angle_0_preview.png}}{fig/lec06/IM_slip_0_load_angle_0_animation.gif}
@@ -63,6 +60,10 @@
         \label{fig:IM_slip_0_load_angle_0_animation}
     \end{figure}
 \end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Model in stationary three-phase coordinates}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Dynamical IM model %%
@@ -198,6 +199,10 @@ which are generally applicable as only identical resistances per phase on the st
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Model in stationary alpha-beta coordinates}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Orthogonal representation: alpha-beta coordinates %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
@@ -314,99 +319,6 @@ which are generally applicable as only identical resistances per phase on the st
         transformation without zero components: mapping $\bm{x}_\mathrm{abc}\in\mathbb{R}^3$ to $\bm{x}_{\alpha\beta}\in\mathbb{R}^2$ without information loss (adapted from J.~B\"ocker, \textit{Controlled Three-Phase Drives}, Paderborn University, 2021)}
         \label{fig:abc_alphabeta_vectors}
     \end{figure}    
-\end{frame}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Park transformation %%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}
-	\frametitle{Park transformation}
-    The Park transform rotates a vector $\bm{x}_{\alpha \beta}\in\mathbb{R}^2$ by a certain angle $\varepsilon$ to obtain $\bm{x}_\mathrm{dq}\in\mathbb{R}^2$, that is, 
-    \begin{equation}
-        \renewcommand{\arraystretch}{1.2}
-        \bm{x}_{\mathrm{dq}} = \begin{bmatrix} x_\mathrm{d} \\ x_\mathrm{q} \end{bmatrix} = \begin{bmatrix}
-            \cos(\varepsilon) & \sin(\varepsilon)\\
-            -\sin(\varepsilon) & \cos(\varepsilon)
-        \end{bmatrix} \begin{bmatrix} x_\alpha \\ x_\beta \end{bmatrix} = \bm{T}_\mathrm{p}^{-1}(\varepsilon) \bm{x}_\mathrm{\alpha \beta} 
-        \label{eq:Park_transformation}
-    \end{equation}
-    \pause
-    with the counter rotation
-    \begin{equation}
-        \renewcommand{\arraystretch}{1.2}
-        \bm{x}_{\alpha \beta} = \begin{bmatrix}
-            \cos(\varepsilon) & -\sin(\varepsilon)\\
-            \sin(\varepsilon) & \cos(\varepsilon)
-        \end{bmatrix} \begin{bmatrix} x_\mathrm{d} \\ x_\mathrm{q} \end{bmatrix} = \bm{T}_\mathrm{p}(\varepsilon) \bm{x}_{\mathrm{dq}}.
-    \end{equation}
-    \pause
-    Above, $\bm{T}_\mathrm{p}\in\mathbb{R}^{2\times 2}$ is the Park transformation matrix. It might be noted that is a (historical) convention to define that $\bm{T}_\mathrm{p}$ rotates into the mathematically positive direction. Depending on the application background and choice of $\varepsilon$, the interpretation of $\bm{x}_\mathrm{dq}$ can vary.
-\end{frame}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Park transformation (cont.) %%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}
-	\frametitle{Park transformation (cont.)}
-    \begin{figure}
-        \centering
-        \includegraphics[width=0.4\textwidth]{fig/lec06/Alphabeta_dq_vectors.pdf}
-        \caption{Geometrical interpretation of the Park
-        transformation: mapping $\bm{x}_{\alpha\beta}\in\mathbb{R}^2$ to $\bm{x}_{\mathrm{dq}}\in\mathbb{R}^2$ (adapted from J.~B\"ocker, \textit{Controlled Three-Phase Drives}, Paderborn University, 2021)}
-        \label{fig:Alphabeta_dq_vectors}
-    \end{figure}    
-\end{frame}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Park transformation: some properties %%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}
-	\frametitle{Park transformation: some properties}
-    \onslide<+->
-    Performing the Park and inverse Park transformation sequentially, does not change the vector:
-    \begin{equation}
-        \bm{x}_{\alpha \beta} = \bm{T}_\mathrm{p} \bm{T}_\mathrm{p}^{-1} \bm{x}_{\alpha \beta} = \bm{T}_\mathrm{p}^{-1} \bm{T}_\mathrm{p} \bm{x}_{\alpha \beta}.
-    \end{equation}
-    \onslide<+->
-    A frequent rotation within the electric machines and drives context is
-    \begin{equation}
-        \renewcommand{\arraystretch}{1.1}
-         \bm{T}_\mathrm{p}(\varepsilon = \nicefrac{\pi}{2}) = \begin{bmatrix}
-            \cos(\nicefrac{\pi}{2}) & -\sin(\nicefrac{\pi}{2})\\
-            \sin(\nicefrac{\pi}{2}) & \cos(\nicefrac{\pi}{2})
-        \end{bmatrix} = \begin{bmatrix}
-            0 & -1\\
-            1 & 0
-        \end{bmatrix} = \bm{J}
-    \end{equation}
-    leading to the definition of $\bm{J}\in\mathbb{R}^{2 \times 2}$ which will be used for brevity in the following.  \onslide<+-> Moreover, if $\varepsilon$ results from some rotation, i.e., $\nicefrac{\mathrm{d}}{\mathrm{d}t}\,\varepsilon(t)=\omega(t)$, we have:
-    \begin{align}
-        \renewcommand{\arraystretch}{1.1}
-        \uncover<+->{\frac{\mathrm{d}}{\mathrm{d}t}\bm{T}_\mathrm{p}(\varepsilon(t)) &= \begin{bmatrix}
-            -\sin(\varepsilon(t)) & -\cos(\varepsilon(t))\\
-            \cos(\varepsilon(t)) & -\sin(\varepsilon(t))
-        \end{bmatrix} \frac{\mathrm{d}}{\mathrm{d}t}\varepsilon(t)}  \uncover<+->{= \bm{T}_\mathrm{p}(\varepsilon(t)) \bm{J}\omega(t),}\\
-        \uncover<+->{\frac{\mathrm{d}}{\mathrm{d}t}\bm{T}_\mathrm{p}^{-1}(\varepsilon(t)) &= \begin{bmatrix}
-            -\sin(\varepsilon(t)) & \cos(\varepsilon(t))\\
-            -\cos(\varepsilon(t)) & -\sin(\varepsilon(t))
-        \end{bmatrix} \frac{\mathrm{d}}{\mathrm{d}t}\varepsilon(t)  = -\bm{T}_\mathrm{p}^{-1}(\varepsilon(t)) \bm{J}\omega(t).}
-        \label{eq:Park_transformation_derivative}
-    \end{align}
-\end{frame}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Visualization of different coordinate systems %%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}
-	\frametitle{Visualization of different coordinate systems}
-    \begin{figure}
-        \centering
-        \movie{\includegraphics[height=0.8\textheight]{fig/lec06/Clarke_Park_preview.png}}{fig/lec06/Clarke_Park.gif}
-        \vspace{-0.25cm}
-        \caption{Representation of a rotating phasor (without zero component) in different coordinate systems}
-        \label{fig:Clarke_Park_animation}
-    \end{figure}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -623,6 +535,10 @@ Considering \figref{fig:power_balance_machine} and the Clarke transf. power mapp
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Mathematical transformation of the rotor quantities}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Transformation of the rotor quantities based on the turn ratio  %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
@@ -737,6 +653,104 @@ Considering \figref{fig:power_balance_machine} and the Clarke transf. power mapp
     \onslide<+->
     The transformed rotor quantities are $\bm{u}'_\mathrm{r} = \alpha\bm{u}_\mathrm{r}$, $\bm{i}'_\mathrm{r} = \nicefrac{1}{\alpha}\bm{i}_\mathrm{r}$, $\bm{\psi}'_\mathrm{r} = \alpha\bm{\psi}_\mathrm{r}$, $R'_\mathrm{r} =  \alpha^2 R_\mathrm{r}$, $L'_\mathrm{r} =  \alpha^2 L_\mathrm{r}$, and $M'_\mathrm{r} =  \alpha M_\mathrm{r}$ with $\alpha = \nicefrac{N_\mathrm{s}}{N_\mathrm{r}}$.
 \end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Model in rotary d-q coordinates}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Park transformation %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Park transformation}
+    The Park transform rotates a vector $\bm{x}_{\alpha \beta}\in\mathbb{R}^2$ by a certain angle $\varepsilon$ to obtain $\bm{x}_\mathrm{dq}\in\mathbb{R}^2$, that is, 
+    \begin{equation}
+        \renewcommand{\arraystretch}{1.2}
+        \bm{x}_{\mathrm{dq}} = \begin{bmatrix} x_\mathrm{d} \\ x_\mathrm{q} \end{bmatrix} = \begin{bmatrix}
+            \cos(\varepsilon) & \sin(\varepsilon)\\
+            -\sin(\varepsilon) & \cos(\varepsilon)
+        \end{bmatrix} \begin{bmatrix} x_\alpha \\ x_\beta \end{bmatrix} = \bm{T}_\mathrm{p}^{-1}(\varepsilon) \bm{x}_\mathrm{\alpha \beta} 
+        \label{eq:Park_transformation}
+    \end{equation}
+    \pause
+    with the counter rotation
+    \begin{equation}
+        \renewcommand{\arraystretch}{1.2}
+        \bm{x}_{\alpha \beta} = \begin{bmatrix}
+            \cos(\varepsilon) & -\sin(\varepsilon)\\
+            \sin(\varepsilon) & \cos(\varepsilon)
+        \end{bmatrix} \begin{bmatrix} x_\mathrm{d} \\ x_\mathrm{q} \end{bmatrix} = \bm{T}_\mathrm{p}(\varepsilon) \bm{x}_{\mathrm{dq}}.
+    \end{equation}
+    \pause
+    Above, $\bm{T}_\mathrm{p}\in\mathbb{R}^{2\times 2}$ is the Park transformation matrix. It might be noted that is a (historical) convention to define that $\bm{T}_\mathrm{p}$ rotates into the mathematically positive direction. Depending on the application background and choice of $\varepsilon$, the interpretation of $\bm{x}_\mathrm{dq}$ can vary.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Park transformation (cont.) %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Park transformation (cont.)}
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.4\textwidth]{fig/lec06/Alphabeta_dq_vectors.pdf}
+        \caption{Geometrical interpretation of the Park
+        transformation: mapping $\bm{x}_{\alpha\beta}\in\mathbb{R}^2$ to $\bm{x}_{\mathrm{dq}}\in\mathbb{R}^2$ (adapted from J.~B\"ocker, \textit{Controlled Three-Phase Drives}, Paderborn University, 2021)}
+        \label{fig:Alphabeta_dq_vectors}
+    \end{figure}    
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Park transformation: some properties %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Park transformation: some properties}
+    \onslide<+->
+    Performing the Park and inverse Park transformation sequentially, does not change the vector:
+    \begin{equation}
+        \bm{x}_{\alpha \beta} = \bm{T}_\mathrm{p} \bm{T}_\mathrm{p}^{-1} \bm{x}_{\alpha \beta} = \bm{T}_\mathrm{p}^{-1} \bm{T}_\mathrm{p} \bm{x}_{\alpha \beta}.
+    \end{equation}
+    \onslide<+->
+    A frequent rotation within the electric machines and drives context is
+    \begin{equation}
+        \renewcommand{\arraystretch}{1.1}
+         \bm{T}_\mathrm{p}(\varepsilon = \nicefrac{\pi}{2}) = \begin{bmatrix}
+            \cos(\nicefrac{\pi}{2}) & -\sin(\nicefrac{\pi}{2})\\
+            \sin(\nicefrac{\pi}{2}) & \cos(\nicefrac{\pi}{2})
+        \end{bmatrix} = \begin{bmatrix}
+            0 & -1\\
+            1 & 0
+        \end{bmatrix} = \bm{J}
+    \end{equation}
+    leading to the definition of $\bm{J}\in\mathbb{R}^{2 \times 2}$ which will be used for brevity in the following.  \onslide<+-> Moreover, if $\varepsilon$ results from some rotation, i.e., $\nicefrac{\mathrm{d}}{\mathrm{d}t}\,\varepsilon(t)=\omega(t)$, we have:
+    \begin{align}
+        \renewcommand{\arraystretch}{1.1}
+        \uncover<+->{\frac{\mathrm{d}}{\mathrm{d}t}\bm{T}_\mathrm{p}(\varepsilon(t)) &= \begin{bmatrix}
+            -\sin(\varepsilon(t)) & -\cos(\varepsilon(t))\\
+            \cos(\varepsilon(t)) & -\sin(\varepsilon(t))
+        \end{bmatrix} \frac{\mathrm{d}}{\mathrm{d}t}\varepsilon(t)}  \uncover<+->{= \bm{T}_\mathrm{p}(\varepsilon(t)) \bm{J}\omega(t),}\\
+        \uncover<+->{\frac{\mathrm{d}}{\mathrm{d}t}\bm{T}_\mathrm{p}^{-1}(\varepsilon(t)) &= \begin{bmatrix}
+            -\sin(\varepsilon(t)) & \cos(\varepsilon(t))\\
+            -\cos(\varepsilon(t)) & -\sin(\varepsilon(t))
+        \end{bmatrix} \frac{\mathrm{d}}{\mathrm{d}t}\varepsilon(t)  = -\bm{T}_\mathrm{p}^{-1}(\varepsilon(t)) \bm{J}\omega(t).}
+        \label{eq:Park_transformation_derivative}
+    \end{align}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Visualization of different coordinate systems %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Visualization of different coordinate systems}
+    \begin{figure}
+        \centering
+        \movie{\includegraphics[height=0.8\textheight]{fig/lec06/Clarke_Park_preview.png}}{fig/lec06/Clarke_Park.gif}
+        \vspace{-0.25cm}
+        \caption{Representation of a rotating phasor (without zero component) in different coordinate systems}
+        \label{fig:Clarke_Park_animation}
+    \end{figure}
+\end{frame}
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% General rotating coordinate system k %%
@@ -948,6 +962,10 @@ Considering \figref{fig:power_balance_machine} and the Clarke transf. power mapp
         \end{column}
     \end{columns}
 \end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Complex steady-state model}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Steady-state behavior %%

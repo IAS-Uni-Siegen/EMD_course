@@ -1,0 +1,92 @@
+\subsection{Nomenclature}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Mathematical nomenclature (via glossaries-extra package) %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newglossaryentry{scalar_signal}{
+    type=nomen,
+    name={$x(t)$},
+    description={time-dependent, scalar quantity},
+    sort = 010
+}
+
+\newglossaryentry{amplitude}{
+    type=nomen,
+    name={$\hat{x}$},
+    description={(fundamental) amplitude of a signal $x(t)$},
+    sort = 011
+}
+
+\newglossaryentry{amplitude_harmonic}{
+    type=nomen,
+    name={$\hat{x}^{(k)}$},
+    description={$k$-th harmonic amplitude of a signal $x(t)$},
+    sort = 012
+}
+
+\newglossaryentry{vectorial_signal}{
+    type=nomen,
+    name={$\bm{x}(t)$},
+    description={time-dependent, vectorial quantity},
+    sort = 020
+}
+
+\newglossaryentry{const_signal}{
+    type=nomen,
+    name={$X$},
+    description={constant, scalar quantity (e.g., root mean square value)},
+    sort = 021
+}
+
+\newglossaryentry{matrix}{
+    type=nomen,
+    name={$\bm{X}$},
+    description={matrix},
+    sort = 022
+}
+
+\newglossaryentry{average_signal}{
+    type=nomen,
+    name={$\overline{x}$},
+    description={average},
+    sort = 030
+}
+
+
+\newglossaryentry{complex_signal}{
+    type=nomen,
+    name={\ensuremath{\protect\underline{X}}},
+    description={complex quantity},
+    sort = 032
+}
+
+\newglossaryentry{complex_signal_conjugate}{
+    type=nomen,
+    name={\ensuremath{\protect\underline{X}^*}},
+    description={complex conjugate},
+    sort = 033
+}
+
+\newglossaryentry{derivative_signal}{
+    type=nomen,
+    name={$\frac{\mathrm{d}}{\mathrm{d}t}{x(t)}$},
+    description={derivative (first derivative w.r.t. time)},
+    sort = 040
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Build nomenclature %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\begin{frame}[allowframebreaks]{Nomenclature}
+    \glsaddallunused
+    \small
+    \setlength{\glslistdottedwidth}{.25\linewidth} % Set the width of the dotted lines in the glossary
+    \printglossary[style = listdotted, nogroupskip, title = , type = nomen]
+\end{frame}
+

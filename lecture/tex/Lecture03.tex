@@ -1,9 +1,10 @@
 \section{DC machines}
-\title{DC machines}  
 
-\begin{frame}[plain]
-    \titlepage
-\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Homopolar machines}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Homopolar / unipolar machines %%
@@ -55,6 +56,12 @@
 		\end{column}
 		\end{columns}
 \end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Working principle of usual DC machines}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Working principle of usual DC machines %%
@@ -170,6 +177,60 @@
         \label{fig:Armature_and_commutator_02}
 	\end{figure}
 \end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Commutation process %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Commutation process}
+	During the commutation time $\Delta t_\mathrm{c}$ the brush bridges two commutator segments and the short-circuited conductor coil current $i_\mathrm{c}$ is changing signs.\onslide<2->{ Here, two major scenarios can be distinguished:}
+	\begin{itemize}
+		\item<2-> The commutation is such fast that high local current densities are prevented.
+		\item<3-> The commutation is slow and high local current densities lead to sparking effects.
+	\end{itemize}
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.75\textwidth]{fig/lec03/Commutation_process_time_trajectory.pdf}
+        \caption{Left: simplified equivalent circuit diagram of the short-circuited coil during commutation. Right: qualitative trajectories of the conductor current $i_\mathrm{c}$} 
+		\label{fig:Commutation_process_time_trajectory}
+    \end{figure}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Commutation process %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Commutation process (cont.)}
+	\begin{columns}
+		\begin{column}{0.4\textwidth}
+			\begin{figure}
+				\centering
+				\includegraphics[width=0.95\textwidth]{fig/lec03/Commutator_sparking.jpg}
+				\caption{Commutator sparking of a simple DC machine (source: \href{https://commons.wikimedia.org/wiki/File:Bürstenfeuer_eines_einfachen_Elektromotors.JPG}{Wikimedia Commons}, M. Frey, \href{https://creativecommons.org/licenses/by-sa/4.0/deed.den}{CC BY-SA 4.0})} 
+				\label{fig:Commutator_sparking}
+			\end{figure}
+		\end{column}
+		\begin{column}{0.6\textwidth}
+			Assuming that the brush width $w_\mathrm{b}$ is much bigger than one commutator segment (which is usual practice), the commutation time $\Delta t_\mathrm{c}$ is given by
+			\begin{equation}
+				\Delta t_\mathrm{c} \approx \frac{w_\mathrm{b}}{v_\mathrm{c}}.
+			\end{equation}\pause
+			Here, $v_\mathrm{c}$ is the brush velocity
+			\begin{equation}
+				v_\mathrm{c} = \omega \frac{d_\mathrm{a}}{2}
+			\end{equation}
+			with the armature angular velocity $\omega$ and the armature diameter $d_\mathrm{a}$. \pause Due to the changing current in the coil, the so-called reactane voltage $u_\mathrm{r}$ is induced:
+			\begin{equation}
+				u_\mathrm{r} = L_\mathrm{c} \frac{\mathrm{d}i_\mathrm{c}}{\mathrm{d}t} \approx L_\mathrm{c} \frac{i_\mathrm{a}}{a \Delta t_\mathrm{c}} = L_\mathrm{c} i_\mathrm{a} \frac{\omega d_\mathrm{a}}{a w_\mathrm{b}2}.
+				\label{eq:reactance_voltage_commutation}
+			\end{equation}
+		\end{column}
+	\end{columns}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Armature winding schemes}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Basic structure of the armature %%
@@ -430,54 +491,8 @@
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Commutation process %%
+\subsection{Air gap field, torque and induced voltage}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}
-	\frametitle{Commutation process}
-	During the commutation time $\Delta t_\mathrm{c}$ the brush bridges two commutator segments and the short-circuited conductor coil current $i_\mathrm{c}$ is changing signs.\onslide<2->{ Here, two major scenarios can be distinguished:}
-	\begin{itemize}
-		\item<2-> The commutation is such fast that high local current densities are prevented.
-		\item<3-> The commutation is slow and high local current densities lead to sparking effects.
-	\end{itemize}
-    \begin{figure}
-        \centering
-        \includegraphics[width=0.75\textwidth]{fig/lec03/Commutation_process_time_trajectory.pdf}
-        \caption{Left: simplified equivalent circuit diagram of the short-circuited coil during commutation. Right: qualitative trajectories of the conductor current $i_\mathrm{c}$} 
-		\label{fig:Commutation_process_time_trajectory}
-    \end{figure}
-\end{frame}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Commutation process %%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}
-	\frametitle{Commutation process (cont.)}
-	\begin{columns}
-		\begin{column}{0.4\textwidth}
-			\begin{figure}
-				\centering
-				\includegraphics[width=0.95\textwidth]{fig/lec03/Commutator_sparking.jpg}
-				\caption{Commutator sparking of a simple DC machine (source: \href{https://commons.wikimedia.org/wiki/File:Bürstenfeuer_eines_einfachen_Elektromotors.JPG}{Wikimedia Commons}, M. Frey, \href{https://creativecommons.org/licenses/by-sa/4.0/deed.den}{CC BY-SA 4.0})} 
-				\label{fig:Commutator_sparking}
-			\end{figure}
-		\end{column}
-		\begin{column}{0.6\textwidth}
-			Assuming that the brush width $w_\mathrm{b}$ is much bigger than one commutator segment (which is usual practice), the commutation time $\Delta t_\mathrm{c}$ is given by
-			\begin{equation}
-				\Delta t_\mathrm{c} \approx \frac{w_\mathrm{b}}{v_\mathrm{c}}.
-			\end{equation}\pause
-			Here, $v_\mathrm{c}$ is the brush velocity
-			\begin{equation}
-				v_\mathrm{c} = \omega \frac{d_\mathrm{a}}{2}
-			\end{equation}
-			with the armature angular velocity $\omega$ and the armature diameter $d_\mathrm{a}$. \pause Due to the changing current in the coil, the so-called reactane voltage $u_\mathrm{r}$ is induced:
-			\begin{equation}
-				u_\mathrm{r} = L_\mathrm{c} \frac{\mathrm{d}i_\mathrm{c}}{\mathrm{d}t} \approx L_\mathrm{c} \frac{i_\mathrm{a}}{a \Delta t_\mathrm{c}} = L_\mathrm{c} i_\mathrm{a} \frac{\omega d_\mathrm{a}}{a w_\mathrm{b}2}.
-				\label{eq:reactance_voltage_commutation}
-			\end{equation}
-		\end{column}
-	\end{columns}
-\end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Air gap field %%
@@ -744,6 +759,9 @@
 	\end{equation}
 \end{frame}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Intermediate summary of the DC machine model}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Equivalent circuit diagram and summary of important equations %%
@@ -847,6 +865,10 @@
 		We represent the DC machine by a time-invariant, lumped-parameter model which is based on several substantial simplifications. While this model is likely sufficient for many applications, systematic deviations between the observed behavior of real machines and the model predictions are to be expected.
 	\end{varblock}
 \end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Armature reaction and counter measures}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Armature reaction %%
@@ -1025,7 +1047,9 @@
 \end{columns}
 \end{frame}
 
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Connection types of DC machines and their steady-state behavior}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Connection types of DC machines %%

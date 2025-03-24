@@ -1,6 +1,4 @@
-\title[Dictionary]{English-German dictionary}  
-\date{}  
-\frame{\titlepage} 
+\subsection{English-German dictionary}  
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% English-German dictionary (via glossaries-extra package) %%
@@ -565,10 +563,12 @@
 }
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Build dictionary %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \begin{frame}[allowframebreaks]{English-German dictionary}
     \glsaddallunused
     \small
-    \setglossarysection{part}
-    \renewcommand{\numberline}{test}
-    \printglossary[style = listdotted, nogroupskip, title = {}]
+    \printglossary[style = listdotted, nogroupskip, title = ]
 \end{frame}

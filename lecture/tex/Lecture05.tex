@@ -1,9 +1,5 @@
 \section{Rotating field theory}
-\title[Rotating field theory]{Rotating field theory}  
 
-\begin{frame}[plain]
-    \titlepage
-\end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Conceptual idea of a rotating magnetic field %%
@@ -17,6 +13,10 @@
         \label{fig:Three_phase_coils_rotating_field_animation}
     \end{figure}
 \end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Single-phase model}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% MMF distribution of a single-phase coil %%
@@ -192,10 +192,14 @@
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Extension to machines with more than one pole pair}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Multipole stators %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
-	\frametitle{Multipole stators}
+	\frametitle{Stators with multiple pole pairs}
         \begin{figure}
                 \centering
                 \includegraphics[width=0.8\textwidth]{fig/lec05/MMF_single_phase_two_pole_pairs.pdf}
@@ -208,7 +212,7 @@
 %% Multipole stators (cont.) %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
-	\frametitle{Multipole stators (cont.)}
+	\frametitle{Stators with multiple pole pairs (cont.)}
         Following the same derivation as previously for machines with $p\geq 1$ pole pairs, we have    \begin{equation}
             \begin{split}
                 B_\mathrm{a}(\vartheta, t) &= \frac{2 \mu_0 N \hat{i}}{\delta \pi p}\cos(\omega t)\sum_{k=1,3,5,\ldots}^{\infty}   \frac{1}{k}\sin(\frac{k \pi}{2}) \cos(k p \vartheta)\\ &= \frac{4}{\pi p} \hat{B} \cos(\omega t)\sum_{k=1,3,5,\ldots}^{\infty}   \frac{1}{k}\sin(\frac{k \pi}{2}) \cos(k p \vartheta).
@@ -229,7 +233,7 @@
 %% Multipole stators (cont.) %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
-	\frametitle{Multipole stators (cont.)}
+	\frametitle{Stators with multiple pole pairs (cont.)}
         From  the previous finding
         \begin{equation*}
                 B_\mathrm{a}(\vartheta, t) = \frac{4}{\pi p} \hat{B} \cos(\omega t)\sum_{k=1,3,5,\ldots}^{\infty}   \frac{1}{k}\sin(\frac{k \pi}{2}) \cos(k p \vartheta)
@@ -244,6 +248,10 @@
            i.e., to complete one mechanical revolution, the electrical angle has to complete $p$ revolutions. The field description in the electrical coordinate system is therefore sufficient, as this is merely repeated in the mechanical system.
         \end{varblock}
 \end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Model superposition to three-phase stator windings}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Basic rotating field model %%
@@ -277,6 +285,8 @@
         \end{column}
     \end{columns}
 \end{frame}
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Basic rotating field model (cont.) %%
@@ -446,6 +456,10 @@
     \pause
     Here, the negative sequences are represented by the negative harmonic orders. Finally, one can note that the amplitudes of the resulting field from the three-phase excitation \eqref{eq:B_three_phase_stator_coil_fourier_series_resulting_field} are $3/2$ times higher than in the single-phase case from \eqref{eq:B_single_phase_coil_fourier_series_multi_pole}.
 \end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Three-phase stator winding schemes and winding factor}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Stator winding examples %%
