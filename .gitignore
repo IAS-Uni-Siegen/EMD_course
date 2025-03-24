@@ -118,6 +118,7 @@ acs-*.bib
 *.slo
 *.sls
 
+
 # uncomment this for glossaries-extra (will ignore makeindex's style files!)
 # *.ist
 
@@ -184,6 +185,8 @@ _minted*
 *.nlg
 *.nlo
 *.nls
+*.nomc
+*.nom
 
 # pax
 *.pax
