@@ -1,12 +1,12 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Begin exercise %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\ex{Transient and steady state of an induction machine}
+\ex{Rotating field theory and winding factor}
 
 
-\normalsize{\textbf{Acknowledgement}: The following exercise is adapted from ``Geregelte Drehstromantriebe / Controlled AC Drives'' by J. Böcker, Paderborn University, 2021
+\normalsize{\textbf{Acknowledgement}: The following exercise is adapted from ``Geregelte Drehstromantriebe / Controlled AC Drives'' by J. Böcker, Paderborn University, 2021 and 
+``Elektrische Maschinen und Antriebe Übungsbuch: Aufgaben mit Lösungsweg'' by A. Binder, Springer, 2017
 }\\
-
 
 
 
@@ -14,642 +14,899 @@
 %% Task 1 %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\task{Transient simulation of an induction machine}
-Given is a squirrel cage motor with the characteristics in Tab.~\ref{tab:characteristicsIM}. The motor is operated with the stator frequency $f_{\mathrm{s}}$ = 50 Hz and a line-to-line voltage of $U_{\mathrm{ll}}$ = 400 V, that is, connected to grid.
-
-\begin{table}[htb]
-    \caption{Characteristics of the induction machine.}
-    \centering
-    \begin{tabular}{lll}\toprule
-    Symbol  & Description       & Value \\
-    \midrule
-    $T_{\mathrm{n}}$    & Nominal torque            & $\SI{4.7}{\newton\metre}$ \\
-    $I_{\mathrm{n}}$    & Nominal phase current     & $\SI{3.9}{\ampere}$ \\
-    $P_{\mathrm{n}}$    & Nominal power             & $\SI{1.5}{\kilo\watt}$ \\
-    $n_{\mathrm{n}}$    & Nominal speed             & $\SI{3000}{\per\minute}$ \\
-    \bottomrule
-    \end{tabular}
-    \label{tab:characteristicsIM}
-\end{table}
-
+\task{Fourier analysis of a field distribution of a three-phase winding}
+The winding of a three-phase and four-pole machine is described with the following parameters. The number of notches is given with $q$ = 2 and the winding chording is $y/\rho_{\mathrm{p}}$ = 5/6. The number of windings per coil is given with $N_{\mathrm{c}}$ = 5 with $a$ = 1. The air gap is given with $\delta$ = 1 mm and the inner stator diameter is $d_{\mathrm{s}}$ = 80 mm. The phase current root mean square value is given with $I_{\mathrm{s}}$ = 30  A.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subtask{Determine the equations of the induction machine in the rotor flux oriented coordinate system. Therefore, only the stator current $i_{\mathrm{s,dq}}(t)$ and the rotor flux $\psi_{\mathrm{r,d}}(t)$ should occur as state variables.}
+\subtask{Calculate the number of slots per pole pair. In addition, determine the pole pitch $\rho_{\mathrm{p}}$ as an angular information and calculate the pole pitch $\tau_{\mathrm{p}}$ as a distance in m. Furthermore, determine the number of conductors per phase.}
 
 \begin{solutionblock}
-    The stator equations in the k coordinate system from the lecture are defined by:
+    The number of slots is calculated with
     \begin{equation}
-        \frac{\mathrm{d}}{\mathrm{d}t} \psi_{\mathrm{s,d}}^{\mathrm{k}}(t) = \omega_{\mathrm{k,el}} \psi_{\mathrm{s,q}}^{\mathrm{k}}(t) + u_{\mathrm{s,d}}^{\mathrm{k}}(t) - R_{\mathrm{s}} i_{\mathrm{s,d}}^{\mathrm{k}}(t),
-        \label{eq:ode_stator_d}
+        Q = q 2 p m
+        = 2\cdot 2\cdot 2\cdot 3
+        = 24,
+    \end{equation}
+    where $p$ is the number of pole pairs and $m$ is the number of phases. Therefore, the number of slots per pole pair is given with:
+    \begin{equation}
+        \frac{Q}{p} = \frac{24}{2} = 12.
     \end{equation}
 
+    The pole pitch as an angular information is calculated with
     \begin{equation}
-        \frac{\mathrm{d}}{\mathrm{d}t} \psi_{\mathrm{s,q}}^{\mathrm{k}}(t) = - \omega_{\mathrm{k,el}} \psi_{\mathrm{s,d}}^{\mathrm{k}}(t) + u_{\mathrm{s,q}}^{\mathrm{k}}(t) - R_{\mathrm{s}} i_{\mathrm{s,q}}^{\mathrm{k}}(t).
+        \rho_{\mathrm{p}} = \frac{\pi}{p}
+        = \frac{\pi}{2},
+    \end{equation}
+    and in comparison, the pole pitch as a distance information is determined as:
+    \begin{equation}
+        \tau_{\mathrm{p}} = \frac{d_{\mathrm{s}}\pi}{2p}
+        = \frac{\SI{80}{\milli \metre \cdot \pi}}{2 \cdot 2}
+        = \SI{62.8}{\milli\metre}.
     \end{equation}
 
-
-    The rotor equations in the k coordinate system are defined as: 
+    The conductors per phase are calculated by:
     \begin{equation}
-        \frac{\mathrm{d}}{\mathrm{d}t} \psi_{\mathrm{r,d}}^{\mathrm{k}}(t) = (\omega_{\mathrm{k,el}}(t)-\omega_{\mathrm{r,el}}(t))\psi_{\mathrm{r,q}}^{\mathrm{k}}(t) + u_{\mathrm{r,d}}^{\mathrm{k}}(t) - R_{\mathrm{r}}i_{\mathrm{r,d}}^{\mathrm{k}}(t),
-        \label{eq:ode_rotor_d}
+        N_{\mathrm{a}} = \frac{2pqN_{\mathrm{c}}}{a}
+        = \frac{2\cdot 2\cdot 2\cdot 5}{1}
+        = 40.
     \end{equation}
-
-    \begin{equation}
-        \frac{\mathrm{d}}{\mathrm{d}t} \psi_{\mathrm{r,q}}^{\mathrm{k}}(t) = -(\omega_{\mathrm{k,el}}(t)-\omega_{\mathrm{r,el}}(t))\psi_{\mathrm{r,d}}^{\mathrm{k}}(t) + u_{\mathrm{r,q}}^{\mathrm{k}}(t) - R_{\mathrm{r}}i_{\mathrm{r,q}}^{\mathrm{k}}(t).
-    \end{equation}
-    
-    For the further consideration, only the stator current and the rotor flux are of interest as state variables. Therefore, the rotor current and stator flux are being eliminated with the help of the following equations
-    \begin{align}
-        \begin{split}
-            i_{\mathrm{r,d}}(t) &= \frac{1}{L_{\mathrm{r}}} \psi_{\mathrm{r,d}}(t) - \frac{M_{\mathrm{r}}}{L_{\mathrm{r}}}i_{\mathrm{s,d}}(t), \\
-            i_{\mathrm{r,q}}(t) &= \frac{1}{L_{\mathrm{r}}} \psi_{\mathrm{r,q}}(t) - \frac{M_{\mathrm{r}}}{L_{\mathrm{r}}}i_{\mathrm{s,q}}(t), \\
-        \end{split}
-        \label{eq:rotorCurrent}
-    \end{align}
-    and:
-    \begin{align}
-        \begin{split}
-            \psi_{\mathrm{s,d}}(t) &= \sigma L_{\mathrm{s}} i_{\mathrm{s,d}}(t) + \frac{M_{\mathrm{s}}}{L_{\mathrm{r}}} \psi_{\mathrm{r,d}}(t), \\
-            \psi_{\mathrm{s,q}}(t) &= \sigma L_{\mathrm{s}} i_{\mathrm{s,q}}(t) + \frac{M_{\mathrm{s}}}{L_{\mathrm{r}}} \psi_{\mathrm{r,q}}(t). \\
-        \end{split}
-        \label{eq:statorFlux}
-    \end{align}
-    These equations are derived from the magnetic circuit of the induction machine.
-
-
-    The rotor current from \eqref{eq:rotorCurrent} is inserted in the rotor equation \eqref{eq:ode_rotor_d}. In addition, the coordinate system is aligned with the rotor flux.
-    This results in the following equation for the d-axis:
-    \begin{equation}
-        \frac{\mathrm{d}}{\mathrm{d}t} \psi_{\mathrm{r,d}}(t) = (\omega_{\mathrm{k,el}}(t)-\omega_{\mathrm{r,el}}(t))\psi_{\mathrm{r,q}}(t) + u_{\mathrm{r,d}}(t) - R_{\mathrm{r}} \left(\frac{1}{L_{\mathrm{r}}} \psi_{\mathrm{r,d}}(t) - \frac{M_{\mathrm{r}}}{L_{\mathrm{r}}}i_{\mathrm{s,d}}(t) \right).
-    \end{equation}
-    
-    Within the rotor flux-oriented coordinate system, only a flux in d-axis occurs, therefore, the equation can be simplified into
-    \begin{equation}
-        \frac{\mathrm{d}}{\mathrm{d}t}\psi_{\mathrm{r,d}} = u_{\mathrm{r,d}}(t) - \frac{R_{\mathrm{r}}}{L_{\mathrm{r}}} \psi_{\mathrm{r,d}}(t) + \frac{R_{\mathrm{r}}M_{\mathrm{r}}}{L_{\mathrm{r}}}i_{\mathrm{s,d}}(t),
-    \end{equation}
-    and due to the squirrel cage machine the rotor voltage is zero. This leads to:
-    \begin{equation}
-        \frac{\mathrm{d}}{\mathrm{d}t}\psi_{\mathrm{r,d}} = - \frac{R_{\mathrm{r}}}{L_{\mathrm{r}}} \psi_{\mathrm{r,d}}(t) + \frac{R_{\mathrm{r}}M_{\mathrm{r}}}{L_{\mathrm{r}}}i_{\mathrm{s,d}}(t).
-    \end{equation}
-
-    For the q-axis, the rotor current form \eqref{eq:rotorCurrent} is also used in the rotor flux differential equation. This leads to:
-    \begin{equation}
-        \frac{\mathrm{d}}{\mathrm{d}t} \psi_{\mathrm{r,q}}(t) = -(\omega_{\mathrm{k,el}}(t)-\omega_{\mathrm{r,el}}(t))\psi_{\mathrm{r,d}}(t) + u_{\mathrm{r,q}}(t) - R_{\mathrm{r}} \left(\frac{1}{L_{\mathrm{r}}} \psi_{\mathrm{r,q}}(t) - \frac{M_{\mathrm{r}}}{L_{\mathrm{r}}}i_{\mathrm{s,q}}(t) \right),
-    \end{equation}
-    and with the definition for $\psi_{\mathrm{r,q}}(t)$ = 0:
-    \begin{equation}
-        \frac{\mathrm{d}}{\mathrm{d}t} \psi_{\mathrm{r,q}}(t) = 0 = -(\omega_{\mathrm{k,el}}(t)-\omega_{\mathrm{r,el}}(t))\psi_{\mathrm{r,d}}(t) + u_{\mathrm{r,q}}(t) + R_{\mathrm{r}} \frac{M_{\mathrm{r}}}{L_{\mathrm{r}}}i_{\mathrm{s,q}}(t).
-    \end{equation}
-    Due to the squirrel cage motor type, the rotor voltage is zero. However, the slip frequency is determined from this equation as follows:
-    \begin{equation}
-        -(\omega_{\mathrm{k,el}}(t)-\omega_{\mathrm{r,el}}(t))
-        = R_{\mathrm{r}} \frac{M_{\mathrm{r}}}{L_{\mathrm{r}}} \frac{i_{\mathrm{s,q}}(t)}{\psi_{\mathrm{r,d}}(t)}.
-    \end{equation}
-
-    In the next step, the stator flux is eliminated in \eqref{eq:ode_stator_d}. Therefore, \eqref{eq:statorFlux}  is used as follows
-    \begin{equation}
-        \sigma L_{\mathrm{s}} \frac{\mathrm{d}}{\mathrm{d}t} i_{\mathrm{s,d}}(t) + \frac{M_{\mathrm{s}}}{L_{\mathrm{r}}} \frac{\mathrm{d}}{\mathrm{d}t}\psi_{\mathrm{r,d}}(t) = \omega_{\mathrm{k,el}}(t) \left(\sigma L_{\mathrm{s}} i_{\mathrm{s,q}}(t) + \frac{M_{\mathrm{s}}}{L_{\mathrm{r}}} \psi_{\mathrm{r,q}}(t) \right) + u_{\mathrm{s,d}}(t) - R_{\mathrm{s}} i_{\mathrm{s,d}}(t),
-    \end{equation}
-    with the derivative of the previous determined rotor flux
-    \begin{equation}
-        \sigma L_{\mathrm{s}} \frac{\mathrm{d}}{\mathrm{d}t} i_{\mathrm{s,d}}(t) + \frac{M_{\mathrm{s}}}{L_{\mathrm{r}}} \left(u_{\mathrm{r,d}}(t) - \frac{R_{\mathrm{r}}}{L_{\mathrm{r}}} \psi_{\mathrm{r,d}}(t) + \frac{R_{\mathrm{r}}M_{\mathrm{r}}}{L_{\mathrm{r}}}i_{\mathrm{s,d}}(t) \right)
-        =
-        \omega_{\mathrm{k,el}} \sigma L_{\mathrm{s}} i_{\mathrm{s,q}}(t) + u_{\mathrm{s,d}}(t) - R_{\mathrm{s}} i_{\mathrm{s,d}}(t),
-    \end{equation}
-    which leads to:
-    \begin{align}
-        \begin{split}
-            \frac{\mathrm{d}}{\mathrm{d}t} i_{\mathrm{s,d}}(t) &= \frac{1}{\sigma L_{\mathrm{s}}}
-            \left[ 
-                -\frac{M_{\mathrm{s}}}{L_{\mathrm{r}}} u_{\mathrm{r,d}}(t) + \psi_{\mathrm{r,d}}(t) \frac{M_{\mathrm{s}}R_{\mathrm{r}}}{L_{\mathrm{r}}^{2}} \right.\\
-                &+ \left. \omega_{\mathrm{k,el}}(t) \sigma L_{\mathrm{s}} i_{\mathrm{s,q}}(t) + u_{\mathrm{s,d}}(t) + i_{\mathrm{s,d}}(t) \left(-\frac{R_{\mathrm{r}}M_{\mathrm{s}}^2}{L_{\mathrm{r}}^2} - R_{\mathrm{s}} \right)
-            \right].
-        \end{split}
-    \end{align}
-
-
-    Again, eliminate the stator flux in the ode with \eqref{eq:statorFlux} for the q-axis, which leads to
-    \begin{equation}
-        \sigma L_{\mathrm{s}} \frac{\mathrm{d}}{\mathrm{d}t} i_{\mathrm{s,q}}(t) + \frac{M_{\mathrm{s}}}{L_{\mathrm{r}}} \frac{\mathrm{d}}{\mathrm{d}t} \psi_{\mathrm{r,q}}(t)
-        =
-        - \omega_{\mathrm{k,el}}(t) \psi_{\mathrm{s,d}}(t) + u_{\mathrm{s,q}}(t) - R_{\mathrm{s}} i_{\mathrm{s,q}}(t),
-    \end{equation}
-
-    with $\psi_{\mathrm{r,q}} = 0$ and the derivative $\frac{\mathrm{d}}{\mathrm{d}t}\psi_{\mathrm{r,q}} = 0$, the equation results in:
-    \begin{equation}
-        \sigma L_{\mathrm{s}} \frac{\mathrm{d}}{\mathrm{d}t} i_{\mathrm{s,q}}(t)
-        =
-        -\omega_{\mathrm{k,el}}(t)\psi_{\mathrm{s,d}}(t) + u_{\mathrm{s,q}}(t) - R_{\mathrm{s}} i_{\mathrm{r,q}}(t).
-    \end{equation}
-
-    Hence, the ODEs for the stator currents and the rotor flux are given in the following. It starts with the d-current component, which is given with:
-    \begin{align}
-        \begin{split}
-            \frac{\mathrm{d}}{\mathrm{d}t} i_{\mathrm{s,d}}(t) &= \frac{1}{\sigma L_{\mathrm{s}}}
-            \left[ 
-                -\frac{M_{\mathrm{s}}}{L_{\mathrm{r}}} u_{\mathrm{r,d}}(t) + \psi_{\mathrm{r,d}}(t) \frac{M_{\mathrm{s}}R_{\mathrm{r}}}{L_{\mathrm{r}}^{2}} \right.\\
-                &+ \left. \omega_{\mathrm{k,el}}(t) \sigma L_{\mathrm{s}} i_{\mathrm{s,q}}(t) + u_{\mathrm{s,d}}(t) + i_{\mathrm{s,d}}(t) \left(-\frac{R_{\mathrm{r}}M_{\mathrm{s}}^2}{L_{\mathrm{r}}^2} - R_{\mathrm{s}} \right)
-            \right],
-        \end{split}
-    \end{align}
-    for the stator q-current
-    \begin{equation}
-        \frac{\mathrm{d}}{\mathrm{d}t} i_{\mathrm{s,q}}(t) = \frac{1}{\sigma L_{\mathrm{s}}}
-            \left[-\omega_{\mathrm{k,el}}(t)\psi_{\mathrm{s,d}}(t) + u_{\mathrm{s,q}}(t) - R_{\mathrm{s}} i_{\mathrm{r,q}}(t)\right],
-    \end{equation}
-    and the rotor flux in the d-axis:
-    \begin{equation}
-        \frac{\mathrm{d}}{\mathrm{d}t}\psi_{\mathrm{r,d}} = - \frac{R_{\mathrm{r}}}{L_{\mathrm{r}}} \psi_{\mathrm{r,d}}(t) + \frac{R_{\mathrm{r}}M_{\mathrm{r}}}{L_{\mathrm{r}}}i_{\mathrm{s,d}}(t).
-    \end{equation}
-
-    To simulate the induction machine, also the mechanical part must be taken into account. Hence, the mechanical equation is given by
-    \begin{equation}
-        J \frac{\mathrm{d}}{\mathrm{d}t}\omega_{\mathrm{r,el}}(t) = T(t) - T_{\mathrm{l}}(t),
-    \end{equation}
-    where $T(t)$ represents the produced torque and $T_{\mathrm{l}}(t)$ is the load torque. This leads to
-    \begin{equation}
-        \frac{\mathrm{d}}{\mathrm{d}t}\omega_{\mathrm{r,el}}(t) = \frac{1}{J}\left(T(t)-T_{\mathrm{l}}(t)\right),
-    \end{equation}
-    where $T(t)$ is defined as
-    \begin{equation}
-        T(t) = -\frac{3}{2} p \left(i_{\mathrm{r,dq}}^{\mathrm{k}}(t)\right)^{\top} \bm{J} \psi_{\mathrm{r,dq}}^{\mathrm{k}}(t),
-    \end{equation}
-    which results in the rotor oriented coordinate system into:
-    \begin{equation}
-        T(t) = \frac{3}{2} p \hspace{0.5mm} i_{\mathrm{r,d}}(t)\psi_{\mathrm{r,q}}(t) - \frac{3}{2} p \hspace{0.5mm} i_{\mathrm{r,q}}(t)\psi_{\mathrm{r,d}}(t).
-    \end{equation}
-    The first part from the equation above is zero, due to the definition of the coordinate system. The rotor current is replaced with \eqref{eq:rotorCurrent}, that leads to:
-    \begin{align}
-        \begin{split}
-            T(t) &= -\frac{3}{2} p \left(\frac{1}{L_{\mathrm{r}}} \psi_{\mathrm{r,q}}(t) - \frac{M_{\mathrm{r}}}{L_{\mathrm{r}}} i_{\mathrm{s,q}}(t) \right) \psi_{\mathrm{r,d}}(t) \\
-            &= \frac{3}{2} \frac{M_{\mathrm{r}}}{L_{\mathrm{r}}} i_{\mathrm{s,q}}(t) \psi_{\mathrm{r,d}}(t).
-        \end{split}
-    \end{align}
-
-
 \end{solutionblock}
 
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subtask{Write a Jupyter notebook to solve the derived equations in the dq coordinate system aligned to the rotor flux from the previous task. First, simulate the machine with no load. Analyze the transient motor response starting from the initial state $i_{\mathrm{d}}(t=0)=i_{\mathrm{q}}(t=0)=\psi_{\mathrm{d}}(t=0)=\omega_{\mathrm{el}}(t=0)=\epsilon_{\mathrm{el}}(t=0)=0$ when excited with the above-mentioned stator voltage. Simulate as well as visualize the torque, speed, flux and current responses and plot the latter two in abc, $\upalpha\upbeta$ and dq coordinates.}
+\subtask{Calculate the amplitude of the flux density fundamental in the air gap assuming an ideal homogenous and block-shaped flux distribution along the stator circumference.}
 
 \begin{solutionblock}
-    The current in the dq coordinate system is shown in \autoref{fig:i_dq_noLoad}. After the steady state is reached, the current values are constant, which could be expected in the rotor flux-oriented coordinate system.
-    \begin{solutionfigure}[ht]
-        \centering
-        \includegraphics{ex05/i_dq_noLoad.pdf}
-        \caption{Transient process of an IM in the dq coordinate system.}
-        \label{fig:i_dq_noLoad}
-    \end{solutionfigure}
+    The maximum flux density is given with:
+    \begin{equation}
+        \hat{B} = \frac{\mu_{\mathrm{0}}N \hat{i}}{2 \delta}
+        = \frac{\SI{4\pi\cdot10^{-7}}{\volt\second\per\ampere\metre}\cdot 40 \cdot \SI{\left(30\cdot \sqrt{2} \right)}{\ampere}}{2\cdot \SI{0.001}{\metre}}
+        = \SI{1.07}{\volt\second}.
+    \end{equation}
 
-    In \autoref{fig:i_ab_noLoad} the current in the $\upalpha, \upbeta$ coordinate system is visualized. The transient process is also clearly visible in this coordinate system.
-    \begin{solutionfigure}[ht]
-        \centering
-        \includegraphics{ex05/i_alphaBeta_noLoad.pdf}
-        \caption{Transient process of an IM in the $\upalpha \upbeta$ coordinate system.}
-        \label{fig:i_ab_noLoad}
-    \end{solutionfigure}
+    The general form to calculate the flux density for phase a of a harmonic order is defined by
+    \begin{equation}
+        \hat{B}_{\mathrm{a}}^{(k)}(t) = \frac{4}{\pi} \hat{B} \cos(\omega t) \frac{1}{k} \xi_{\mathrm{d,}k} \xi_{\mathrm{p,}k},
+        \label{eq:harmonicOrderFluxDensity}
+    \end{equation}
+    with $\xi_{\mathrm{d,}k}$ is the distribution and $\xi_{\mathrm{p,}k}$ is the pitch factor. Hence, for the fundamental wave is $k$ = 1, which leads to
+    \begin{equation}
+        \xi_{\mathrm{d,}1} = \frac{\sin\left( \frac{1\cdot \pi}{2m}\right)}{q\sin\left(\frac{1\cdot\pi}{2mq}\right)}
+        = \frac{\sin\left(\frac{1\cdot\pi}{2\cdot3}\right)}{2\cdot \sin\left(\frac{1\cdot\pi}{2\cdot3\cdot2}\right)}
+        = 0.966,
+        \label{eq:distributionFactor}
+    \end{equation}
+    and,
+    \begin{equation}
+        \xi_{\mathrm{p,}1} = \sin\left(1\cdot \frac{\pi}{2} \frac{y}{\rho_{\mathrm{p}}} \right)
+        = \sin\left(1 \cdot \frac{\pi}{2} \cdot \frac{5}{6} \right)
+        = 0.966.
+        \label{eq:pitchFactor}
+    \end{equation}
 
-    \autoref{fig:i_abc_noLoad} shows the transient process of the current in the three-phase abc coordinate system.
-    
-    Compared to the abc current plot, one can observe also a sinusoidal signalform with the same amplitude and frequency evolution, while the phase difference between the currents is 120° in abc and 90° in $\upalpha\upbeta$. This fits to the expectations resulting from the amplitude-invariant Clarke transformation.
-    \begin{solutionfigure}[ht]
-        \centering
-        \includegraphics{ex05/i_abc_noLoad.pdf}
-        \caption{Transient process of an IM in the abc coordinate system.}
-        \label{fig:i_abc_noLoad}
-    \end{solutionfigure}
-
-    The electrical angular frequency of the stator and the angular frequency of the rotor are shown in \autoref{fig:speed_noLoad}. Due to the no load operation (also no friction) of the IM, the angular frequency of the rotor is equal to the angular electrical stator frequency.
-    \begin{solutionfigure}[ht]
-        \centering
-        \includegraphics{ex05/speed_noLoad.pdf}
-        \caption{Electric angular frequency of the stator and angular frequency of the rotor during the transient process at no load.}
-        \label{fig:speed_noLoad}
-    \end{solutionfigure}
-
-    The produced torque is shown in \autoref{fig:torque_noLoad}. During the transient process, very high torque values are reached and an oscillation of the rotor is visible. In the steady state, the torque is equal to zero, due to the no-load operation.
-    \begin{solutionfigure}[ht]
-        \centering
-        \includegraphics{ex05/torque_noLoad.pdf}
-        \caption{Produced torque of an IM during the transient process at no load.}
-        \label{fig:torque_noLoad}
-    \end{solutionfigure}
-
-    In \autoref{fig:rotorFlux_noLoad} the rotor flux is shown, which also shows the transient process. The d-axis of the coordinate system is oriented on the rotor flux and, therefore, the flux aligned to the q-axis is zero. Thus, only the rotor flux aligned to the d-axis is visualized.
-    \begin{solutionfigure}[ht]
-        \centering
-        \includegraphics{ex05/psi_rd_noLoad.pdf}
-        \caption{Rotor flux in dq coordinate system during the transient process at no load.}
-        \label{fig:rotorFlux_noLoad}
-    \end{solutionfigure}
-
-    \begin{solutionfigure}[ht]
-        \centering
-        \includegraphics{ex05/psi_r_ab_noLoad.pdf}
-        \caption{Rotor flux in $\upalpha\upbeta$ coordinate system during the transient process at no load.}
-        \label{fig:rotorFlux_r_ab_noLoad}
-    \end{solutionfigure}
-
-    \begin{solutionfigure}[ht]
-        \centering
-        \includegraphics{ex05/psi_r_abc_noLoad.pdf}
-        \caption{Rotor flux in abc coordinate system during the transient process at no load.}
-        \label{fig:rotorFlux_r_abc_noLoad}
-    \end{solutionfigure}
+    Finally, \eqref{eq:harmonicOrderFluxDensity} is multiplied by a factor of $\frac{3}{2}$ to calculate the amplitude of the fundamental wave of the three phases acting on the air gap flux. This leads to:
+    \begin{equation}
+        \hat{B}^{(1)} = \frac{3}{2}\cdot\frac{4}{\pi} \cdot \SI{1.07}{\volt\second} \cdot \frac{1}{1} \cdot 0.966 \cdot 0.966
+        = \SI{1.27}{\volt\second}.
+        \label{eq:Fourier_threePhases}
+    \end{equation}
 
 \end{solutionblock}
 
 
-\FloatBarrier
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subtask{Add a speed dependent load with the following equation $T_{\mathrm{l}} = 0.00004*\omega_{\mathrm{r,el}}^2$ to the machine model. Repeat the simulation from the previous task. How does the currents, torque and flux change? In addition, how changes the rotational speed of the machine between these two operating points?}
+\subtask{Determine the amplitudes of the resulting flux density for the fundamental wave and the following six harmonic orders. Give the results as relative fractions to the amplitude of the fundamental wave. In addition, calculate the distribution, pitch and winding factor for the given harmonics and the fundamental wave.}
 
 \begin{solutionblock}
-    In \autoref{fig:speed_friction} the speed of the stator and rotor field is visualized. For this simulation a load term representing the friction is added, thus this load is speed dependent. Hence, this results in a different speed of the rotor in the steady state in comparison to the stator field. This occurs due to the load of the machine, and is representing with the slip of the machine.
-    \begin{solutionfigure}[ht]
-        \centering
-        \includegraphics{ex05/speed_friction.pdf}
-        \caption{Electrical angular frequency of the stator and angular frequency of the rotor during the transient process with a speed dependent load.}
-        \label{fig:speed_friction}
-    \end{solutionfigure}
-    
-    To highlight the difference between the stator and rotor field, in \autoref{fig:speed_zoom_friction} the boundaries of the vertical axis are limited. Hence, the speed difference in the steady state is clearly visible.
-    \begin{solutionfigure}[ht]
-        \centering
-        \includegraphics{ex05/speed_zoom_friction.pdf}
-        \caption{Zoom into the electrical angular frequency of the stator and angular frequency of the rotor to visualize the difference in the steady state.}
-        \label{fig:speed_zoom_friction}
-    \end{solutionfigure}
+    The flux density for the harmonic orders is calculated with \eqref{eq:Fourier_threePhases}. The pitch factors are determined with \eqref{eq:pitchFactor} and the distribution factors with \eqref{eq:distributionFactor}. The winding factor is given with:
+    \begin{equation}
+        \xi_{\mathrm{w,}k} = \xi_{\mathrm{d,}k} \xi_{\mathrm{p,}k}.
+    \end{equation}
 
-    The produced torque during the transient process is shown in \autoref{fig:torque_friction}.
+    For the calculation up to the $19\textsuperscript{th}$ harmonic, a short Python script is written.
+    The results are visualized in \autoref{tab:windingFactors}.
+    \begin{solutiontable}[ht]
+        \caption{Distribution, pitch, and winding factors as well as relative harmonic flux density  amplitudes.}
+        \centering
+        \begin{tabular}{rcrrr}\toprule
+        $k$ & $\frac{\hat{B}^{(k)}}{\hat{B}^{(1)}}$ in \%   & $\xi_{\mathrm{p,}k}$  & $\xi_{\mathrm{d,}k}$ & $\xi_{\mathrm{w,}k}$\\
+        \midrule
+        1   & 100   & 0.966 & 0.966 & 0.966 \\
+        5   & 1.4   & 0.259 & 0.259 & 0.067 \\
+        7   & 1.0   & 0.259 & 0.259 & 0.067 \\
+        11  & 9.1   & 0.966 & 0.966 & 0.933 \\
+        13  & 7.7   & 0.966 & 0.966 & 0.933 \\
+        17  & 0.4   & 0.259 & 0.259 & 0.067 \\
+        19  & 0.38  & 0.259 & 0.259 & 0.067 \\
+        \bottomrule
+        \end{tabular}
+        \label{tab:windingFactors}
+    \end{solutiontable}
+
+\end{solutionblock}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subtask{Sketch the flux density of the fundamental wave in the air gap of phase a as a function of the electrical stator circumference $\vartheta_\mathrm{el}$. Assume $i_a(t) = I_s \cdot \sqrt{2}$, i.e., the phase a is at its current peak. In addition, draw the flux density of the $11\textsuperscript{th}$ harmonic.}
+
+\begin{solutionblock}
+    The calculation is performed with \eqref{eq:harmonicOrderFluxDensity} in a separate Python script. The resulting trajectories are shown in \autoref{fig:fundamentalAnd11thHarm}.
     \begin{solutionfigure}[ht]
         \centering
-        \includegraphics{ex05/torque_friction.pdf}
-        \caption{Produced torque of an IM during the transient process and in the steady-state operation with a speed-dependent load.}
-        \label{fig:torque_friction}
-    \end{solutionfigure}
-    \autoref{fig:torque_zoom_friction} shows a zoomed version of the produced torque to highlight the torque in the steady state.
-    \begin{solutionfigure}[ht]
-        \centering
-        \includegraphics{ex05/torque_zoom_friction.pdf}
-        \caption{Produced torque of an IM during the transient process and in the steady-state operation with a speed-dependent load.}
-        \label{fig:torque_zoom_friction}
-    \end{solutionfigure}
-
-    In \autoref{fig:i_dq_friction} the currents in the dq coordinate system are visualized. Due to the load and, thus, the generated torque, the current $i_{\mathrm{q}}$ is no longer zero in the steady state. 
-    \begin{solutionfigure}[ht]
-        \centering
-        \includegraphics{ex05/i_dq_friction.pdf}
-        \caption{Currents in dq coordinate system of an IM during the transient process and in the steady-state operation with a speed-dependent load.}
-        \label{fig:i_dq_friction}
-    \end{solutionfigure}
-
-    \begin{solutionfigure}[ht]
-        \centering
-        \includegraphics{ex05/i_alphaBeta_friction.pdf}
-        \caption{Currents in $\upalpha \upbeta$ coordinate system of an IM during the transient process and in the steady-state operation with a speed-dependent load.}
-        \label{fig:i_ab_friction}
-    \end{solutionfigure}
-
-    \begin{solutionfigure}[ht]
-        \centering
-        \includegraphics{ex05/i_abc_friction.pdf}
-        \caption{Currents in abc coordinate system of an IM during the transient process and in the steady-state operation with a speed-dependent load.}
-        \label{fig:i_abc_friction}
-    \end{solutionfigure}
-
-    \begin{solutionfigure}[ht]
-        \centering
-        \includegraphics{ex05/psi_rd_friction.pdf}
-        \caption{Rotor flux linkage in dq coordinate system of an IM during the transient process and in the steady-state operation with a speed-dependent load.}
-        \label{fig:psi_rq_friction}
-    \end{solutionfigure}
-
-    \begin{solutionfigure}[ht]
-        \centering
-        \includegraphics{ex05/psi_r_ab_friction.pdf}
-        \caption{Rotor flux linkage in $\upalpha\upbeta$ coordinate system of an IM during the transient process and in the steady-state operation with a speed-dependent load.}
-        \label{fig:psi_r_ab_friction}
-    \end{solutionfigure}
-
-    \begin{solutionfigure}[ht]
-        \centering
-        \includegraphics{ex05/psi_r_abc_friction.pdf}
-        \caption{Rotor flux linkage in abc coordinate system of an IM during the transient process and in the steady-state operation with a speed-dependent load.}
-        \label{fig:psi_r_abc_friction}
-    \end{solutionfigure}
-
-
+        \includegraphics{ex04/FundamentalAnd11thHarmonic.pdf}
+        \caption{Visualization of the flux density of the fundamental wave and the $11\textsuperscript{th}$ harmonic of phase~a.}
+        \label{fig:fundamentalAnd11thHarm}
+    \end{solutionfigure}    
 
 \end{solutionblock}
 
 
-\FloatBarrier
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Task 2 %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\task{Steady-state operation of an induction machine}
+\task{Distributed windings}
+Consider a 4-pole three-phase motor with 15 stator slots. A simplified sketch of this motor with the winding scheme of phase a is shown in \autoref{fig:MMF_distributed}.
 
-An induction machine with the characteristics in Tab.~\ref{tab:characteristicsIM_task2} is given.
-\begin{table}[htb]
-    \caption{Characteristics of the given induction machine.}
+\begin{figure}[htb]
     \centering
-    \begin{tabular}{lll}\toprule
-    Symbol  & Description       & Values \\
-    \midrule
-    $U_{\mathrm{n}}$    & Nominal voltage           & $\SI{380}{\volt}$ \\
-    $I_{\mathrm{n}}$    & Nominal phase current     & $\SI{54}{\ampere}$ \\
-    $f_{\mathrm{s,n}}$  & Nominal frequency         & $\SI{50}{\hertz}$ \\
-    $P_{\mathrm{n}}$    & Nominal power             & $\SI{25}{\kilo\watt}$ \\
-    $n_{\mathrm{n}}$    & Nominal speed             & $\SI{1465}{\per\minute}$ \\
-    $\cos(\varphi)$     & Power factor              & 0.77 \\
-    \midrule
-    $R_{\mathrm{s}}$    & Stator resistance         & $\SI{0.48}{\Omega}$ \\
-    $R_{\mathrm{r}}'$    & Rotor resistance          & $\SI{85}{\milli\Omega}$ \\
-    $M$                 & Mutual inductance         & $\SI{100}{\milli\henry}$ \\
-    $L_{\mathrm{\sigma,s}}$    & Stator leakage inductance  & $\SI{2}{\milli\henry}$ \\
-    $L_{\mathrm{\sigma,r}}'$    & Rotor leakage inductance   & $\SI{2}{\milli\henry}$ \\
-    \bottomrule
+    \includegraphics{ex04/MMF_distributed.pdf}
+    \caption{Simplified sketch of a distributed winding scheme. Only phase a is shown.}
+    \label{fig:MMF_distributed}
+\end{figure}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subtask{Determine the pole pitch $\rho_{\mathrm{p}}$ and the number of notches. Is it an integral-slot or a fractional-slot winding?}
+
+\begin{solutionblock}
+    The number of slots are shown in the figure, which leads to $Q$ = 15. Furthermore, the number of phases is given in the task, that is $m$ = 3.
+
+    Hence, the pole pitch is calculated as:
+    \begin{equation}
+        \rho_{\mathrm{p}} = \frac{2\pi}{2p}
+        = \frac{\pi}{2}.
+    \end{equation}
+    
+    The number of notches is defined with:
+    \begin{equation}
+        q = \frac{Q}{2pm} = \frac{15}{2\cdot 2 \cdot 3}
+        = \frac{15}{12} = \frac{5}{4}.
+    \end{equation}
+    Since the number of notches per pole and phase is not an integer, it is a fractional slot winding.
+    The coil width $y$ is three stator slots, which leads to the angular coil width:
+    \begin{equation}
+        w = \frac{2\pi}{Q}m
+        = \frac{2\pi}{15} \cdot 3
+        = \frac{2\pi}{5}.
+    \end{equation}
+
+    Therefore, the chording factor is determined with:
+    \begin{equation}
+        s = \frac{w}{\tau_{\mathrm{p}}}
+        = \frac{6\pi \cdot 2}{15 \pi}
+        =\frac{12}{15}.
+    \end{equation}
+
+\end{solutionblock}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subtask{Complete the winding scheme of the given machine in \autoref{tab:distributed_winding} for the phases b and c. Sketch the resulting winding scheme into \autoref{fig:MMF_distributed}.}
+
+\begin{table}[ht]
+    \caption{Winding scheme of the distributed winding from \autoref{fig:MMF_distributed}.}
+    \centering
+    \begin{tabular}{c|C{1cm}|C{1cm}|C{1cm}|C{1cm}|C{1cm}|C{1cm}}\toprule
+        \multirow{2}{*}{Coil nr.} & \multicolumn{2}{c}{Phase a} & \multicolumn{2}{c}{Phase b} & \multicolumn{2}{c}{Phase c} \\
+          & In  & Out   & In & Out & In & Out \\
+        \midrule
+        1  & 1  & 4  & & & & \\
+        2  & 8  & 5  & & & & \\
+        3  & 8  & 11 & & & & \\
+        4  & 9  & 12 & & & & \\
+        5  & 15 & 12 & & & & \\
+        \bottomrule
     \end{tabular}
-    \label{tab:characteristicsIM_task2}
+    \label{tab:distributed_winding}
+\end{table}
+
+\begin{solutionblock}
+    In the task only phase a of the winding scheme is given. However, to complete the winding scheme, phase b must have an electrical phase shift of $\SI{120}{\degree}$ and phase c of $\SI{240}{\degree}$ respectively.
+    This leads to
+    \begin{equation}
+        n_{\mathrm{b}} p \frac{\SI{360}{\degree}}{Q} = \SI{120}{\degree} \ \mathrm{mod} \ \SI{360}{\degree},
+    \end{equation}
+    where $n_{\mathrm{b}}$ is the displacement in slots. This expression is rewritten into
+    \begin{equation}
+        n_{\mathrm{b}} p \frac{\SI{360}{\degree}}{Q} = \SI{120}{\degree} + k \SI{360}{\degree},
+        \label{eq:nb}
+    \end{equation}
+    and also for phase c:
+    \begin{equation}
+        n_{\mathrm{c}} p \frac{\SI{360}{\degree}}{Q} = \SI{240}{\degree} + k \SI{360}{\degree}.
+        \label{eq:nc}
+    \end{equation}
+    
+    Now, an integral solution must be found for \eqref{eq:nb} and \eqref{eq:nc} to determine the winding scheme.
+    This is done with trial and error, the first assumption is $n_{\mathrm{b}} = 10, k = 1$, which results in
+    \begin{align}
+        \begin{split}
+            10\cdot 2\cdot \frac{\SI{360}{\degree}}{15} &= \SI{120}{\degree}+\SI{360}{\degree}, \\
+            \SI{480}{\degree} &= \SI{480}{\degree},
+        \end{split}
+    \end{align}
+    therefore, the requirement is fulfilled. For phase c the assumption is given with $n_{\mathrm{c}} = 5, k = 1$ into \eqref{eq:nc}
+    \begin{align}
+        \begin{split}
+            5 \cdot 2 \cdot \frac{\SI{360}{\degree}}{15} &= \SI{240}{\degree} + k \SI{360}{\degree}, \\
+            \SI{240}{\degree} &= \SI{240}{\degree},
+        \end{split}
+    \end{align}
+    which fulfills the requirement too.
+    With the calculated phase shift and the knowledge of the coil width of three slots from the figure, the winding scheme is completed.
+    In \autoref{tab:solution_distributedWinding} the inputs and outputs of each winding are given.
+    \begin{solutiontable}[ht]
+        \caption{Solution of the distributed winding scheme.}
+        \centering
+        \begin{tabular}{c|C{1cm}|C{1cm}|C{1cm}|C{1cm}|C{1cm}|C{1cm}}\toprule
+            \multirow{2}{*}{Coil nr.} & \multicolumn{2}{c}{Phase a} & \multicolumn{2}{c}{Phase b} & \multicolumn{2}{c}{Phase c} \\
+              & In  & Out   & In & Out & In & Out \\
+            \midrule
+            1  & 1  & 4  & 11 & 14 & 6  & 9 \\
+            2  & 8  & 5  & 3  & 15 & 13 & 10 \\
+            3  & 8  & 11 & 3  & 6  & 13 & 1 \\
+            4  & 9  & 12 & 4  & 7  & 14 & 2 \\
+            5  & 15 & 12 & 10 & 7  & 5  & 2 \\
+            \bottomrule
+        \end{tabular}
+        \label{tab:solution_distributedWinding}
+    \end{solutiontable}
+
+    The sketch of the distributed winding scheme is visualized in \autoref{fig:solution_MMF_distributed}.
+    \begin{solutionfigure}[ht]
+        \centering
+        \includegraphics{ex04/solution_MMF_distributed.pdf}
+        \caption{Solution of the distributed winding.}
+        \label{fig:solution_MMF_distributed}
+    \end{solutionfigure}
+
+\end{solutionblock}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subtask{How many layers are there in this winding scheme?}
+
+\begin{solutionblock}
+    The winding diagram has 2 winding layers, due to the two conductors per slot.
+\end{solutionblock}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subtask{Calculate the complex winding factors $\underline{\xi}_{\mathrm{a,}k}$ for the fundamental as well as for the $5\textsuperscript{th}$ and $7\textsuperscript{th}$ harmonic.}
+
+\begin{solutionblock}
+    The complex winding factor is defined by
+    \begin{equation}
+        \xi_{\mathrm{a,}k} = \frac{1}{\mathrm{j}N_{\mathrm{a}}} \sum_{i=1}^{Q} N_{\mathrm{a,}i}e^{\mathrm{j}k\vartheta_{\mathrm{el,a,}i}},
+        \label{eq:complexWindingFactor}
+    \end{equation}
+    with
+    \begin{equation}
+        N_{\mathrm{a}} = \sum_{i=1}^{Q} |N_{\mathrm{a,}i} |,
+    \end{equation}
+    and the electrical angle:
+    \begin{equation}
+        \vartheta_{\mathrm{el,a,}i} = \vartheta_{\mathrm{a,}i} \cdot p.
+    \end{equation}
+
+    The mechanical angles are calculated with
+    \begin{equation}
+        \vartheta_{\mathrm{a,}i} = \left(i-1 \right) \frac{\SI{360}{\degree}}{Q}
+        = \left(i-1 \right) \cdot \frac{\SI{360}{\degree}}{15}
+        = \left(i-1 \right) \cdot \SI{24}{\degree},
+    \end{equation}
+    where $i$ represents the number of the stator slot.
+    Therefore, the mechanical angles are given in \autoref{tab:mechanicalAngles_distributedWinding}.
+    \begin{solutiontable}[ht]
+        \caption{Mechanical angles of the distributed winding from \autoref{fig:MMF_distributed}.}
+        \centering
+        \begin{tabular}{C{3cm}|C{3cm}}\toprule
+            $\vartheta_{\mathrm{a,}1} = \SI{0}{\degree}$     & $\vartheta_{\mathrm{a,}9} = \SI{192}{\degree}$ \\
+            $\vartheta_{\mathrm{a,}4} = \SI{72}{\degree}$    & $\vartheta_{\mathrm{a,}11} = \SI{240}{\degree}$ \\
+            $\vartheta_{\mathrm{a,}5} = \SI{96}{\degree}$    & $\vartheta_{\mathrm{a,}12} = \SI{264}{\degree}$ \\
+            $\vartheta_{\mathrm{a,}8} = \SI{168}{\degree}$   & $\vartheta_{\mathrm{a,}15} = \SI{336}{\degree}$ \\
+            \bottomrule
+        \end{tabular}
+        \label{tab:mechanicalAngles_distributedWinding}
+    \end{solutiontable}
+
+    To calculate the winding factors, the total number of turns of the respective phase $N_{\mathrm{a}}$ is determined for each stator slot. A negative sign indicates, that the winding turn is oriented towards the negative $z$-axis. When no conductor is in a slot, $N_{\mathrm{a,}i}$ = 0. The result is shown in \autoref{tab:WindingTurns_distributedWinding}.
+    \begin{solutiontable}[ht]
+        \caption{Winding turns of phase a of the distributed winding.}
+        \centering
+        \begin{tabular}{C{3cm}C{3cm}C{3cm}}\toprule
+            $N_{\mathrm{a1}}$ = -1     & $N_{\mathrm{a4}}$ = 1  & $N_{\mathrm{a5}}$ = 1 \\
+            $N_{\mathrm{a8}}$ = -2    & $N_{\mathrm{a9}}$ = -1   & $N_{\mathrm{a11}}$ = 1\\
+            $N_{\mathrm{a12}}$ = 2  & $N_{\mathrm{a15}}$ = -1   & \\
+            \bottomrule
+        \end{tabular}
+        \label{tab:WindingTurns_distributedWinding}
+    \end{solutiontable}
+    
+    For the fundamental wave $k$ = 1 applies and, therefore, with \eqref{eq:complexWindingFactor}, the winding factor of the fundamental wave calculates as follows
+    \begin{align}
+        \begin{split}
+            \underline{\xi}_{\mathrm{a,}1} = \frac{1}{10j}\cdot \left[ \right. -e^{j\cdot1\cdot2\cdot\SI{0}{\degree}}
+            &+e^{j\cdot1\cdot2\cdot\SI{72}{\degree}}+e^{j\cdot1\cdot2\cdot\SI{92}{\degree}}-2e^{j\cdot1\cdot2\cdot\SI{168}{\degree}}-e^{j\cdot1\cdot2\cdot\SI{192}{\degree}}
+            +e^{j\cdot1\cdot2\cdot\SI{240}{\degree}} \\
+            & +2e^{j\cdot1\cdot2\cdot\SI{264}{\degree}}-e^{j\cdot1\cdot2\cdot\SI{336}{\degree}}
+            \left. \right]
+            = 0.2812 + 0.8653j,
+        \end{split}
+    \end{align}
+    with the corresponding absolute value:
+    \begin{equation}
+        |\xi_{\mathrm{a,}1}| = 0.9099.
+    \end{equation}
+
+    For the $5\textsuperscript{th}$ harmonic is $k$ = 5, which results in
+    \begin{align}
+        \begin{split}
+            \underline{\xi}_{\mathrm{a,}5} = \frac{1}{10j}\cdot \left[ \right. -e^{j\cdot5\cdot2\cdot\SI{0}{\degree}}
+            &+e^{j\cdot5\cdot2\cdot\SI{72}{\degree}}+e^{j\cdot5\cdot2\cdot\SI{92}{\degree}}-2e^{j\cdot5\cdot2\cdot\SI{168}{\degree}}-e^{j\cdot5\cdot2\cdot\SI{192}{\degree}}
+            +e^{j\cdot5\cdot2\cdot\SI{240}{\degree}} \\
+            & +2e^{j\cdot5\cdot2\cdot\SI{264}{\degree}}-e^{j\cdot5\cdot2\cdot\SI{336}{\degree}}
+            \left. \right]
+            = 0,
+        \end{split}
+    \end{align}
+    with the corresponding absolute value:
+    \begin{equation}
+        |\xi_{\mathrm{a,}5}| = 0.
+    \end{equation}
+
+    The complex winding factor for the $7\textsuperscript{th}$ harmonic results by
+    \begin{align}
+        \begin{split}
+            \underline{\xi}_{\mathrm{a,}7} = \frac{1}{10j}\cdot \left[ \right. -e^{j\cdot7\cdot2\cdot\SI{0}{\degree}}
+            &+e^{j\cdot7\cdot2\cdot\SI{72}{\degree}}+e^{j\cdot7\cdot2\cdot\SI{92}{\degree}}-2e^{j\cdot7\cdot2\cdot\SI{168}{\degree}}-e^{j\cdot7\cdot2\cdot\SI{192}{\degree}}
+            +e^{j\cdot7\cdot2\cdot\SI{240}{\degree}} \\
+            & +2e^{j\cdot7\cdot2\cdot\SI{264}{\degree}}-e^{j\cdot7\cdot2\cdot\SI{336}{\degree}}
+            \left. \right]
+            = 0.0711 - 0.0516j,
+        \end{split}
+    \end{align}
+    with the corresponding absolute value:
+    \begin{equation}
+        |\xi_{\mathrm{a,}7}| = 0.087.
+    \end{equation}
+
+
+\end{solutionblock}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subtask{Assume a block-shaped distribution of the flux density with a maximal value of $\hat{B} = \SI{1}{\tesla}$ and a number of winding turns $N'_{\mathrm{a}}$ = 30 (i.e., there are more turns per coil as indicated within \autoref{fig:MMF_distributed}). The axial length of the machine is $l=\SI{0.35}{\metre}$ and the diameter is $d_{\mathrm{s}} = \SI{0.10}{\metre}$. The machine rotates with a mechanical speed of $n=\SI{250}{\per \minute}$. Calculate the induced voltage of phase a for the fundamental wave as well as of the $5\textsuperscript{th}$ and $7\textsuperscript{th}$ harmonics.}
+
+\begin{solutionblock}
+    The Fourier coefficient of the flux density is given with
+    \begin{equation}
+        B(\vartheta_{\mathrm{el}},t) = \frac{6}{\pi p} \hat{B} \sum_{k}^{\infty} \frac{1}{k} \sin\left(\frac{k\pi}{2} \right) \cos(\omega t - k \vartheta_{\mathrm{el}}),
+    \end{equation}
+    and for the fundamental wave:
+    \begin{equation}
+        B^{(1)}(\vartheta_{\mathrm{el}},t) = \frac{6}{\pi p} \hat{B} \sin\left(\frac{\pi}{2}\right) \cos(\omega t - \vartheta_{\mathrm{el}}).
+    \end{equation}
+
+    The flux linkage of phase a is calculated as
+    \begin{equation}
+        \phi_{\mathrm{a,}k}(t) = l \frac{d_{\mathrm{s}}}{2} |\xi_{\mathrm{a},k}| \int_{-\frac{\pi}{2}}^{\frac{\pi}{2}} B(\vartheta_{\mathrm{el}},t) \mathrm{d}\vartheta_{\mathrm{el}},
+        \label{eq:phi_a_k}
+    \end{equation}
+    with the complex winding factor to cover the winding distribution inside the stator.
+    Hence, the fundamental wave calculates as follows:
+    \begin{align}
+        \begin{split}
+            \phi_{\mathrm{a,}1}(t) &= l \frac{d_{\mathrm{s}}}{2} |\xi_{\mathrm{a},1}|
+            \frac{6}{\pi p} \hat{B} \sin\left(\frac{\pi}{2}\right) \int_{-\frac{\pi}{2}}^{\frac{\pi}{2}} \cos(\omega t - \vartheta_{\mathrm{el}}) \mathrm{d}\vartheta_{\mathrm{el}} \\
+            &= l d_{\mathrm{s}} |\xi_{\mathrm{a},1}|
+            \frac{3}{\pi p} \hat{B}
+            \int_{-\frac{\pi}{2}}^{\frac{\pi}{2}}\cos(\omega t) \cos(\vartheta_{\mathrm{el}}) + \sin(\omega t) \sin(\vartheta_{\mathrm{el}}) \mathrm{d}\vartheta_{\mathrm{el}} \\
+            &= l d_{\mathrm{s}} |\xi_{\mathrm{a},1}|
+            \frac{3}{\pi p} \hat{B}
+            \left[\cos(\omega t) \int_{-\frac{\pi}{2}}^{\frac{\pi}{2}} \cos(\vartheta_{\mathrm{el}}) \mathrm{d}\vartheta_{\mathrm{el}} + \sin(\omega t) \int_{-\frac{\pi}{2}}^{\frac{\pi}{2}} \sin(\vartheta_{\mathrm{el}}) \mathrm{d} \vartheta_{\mathrm{el}} \right] \\
+            &= l d_{\mathrm{s}} |\xi_{\mathrm{a},1}|
+            \frac{3}{\pi p} \hat{B}
+            \left[\cos(\omega t) \left[\sin(\vartheta_{\mathrm{el}}) \right]_{-\frac{\pi}{2}}^{\frac{\pi}{2}} + \sin(\omega t) \left[-\cos(\vartheta_{\mathrm{el}}) \right]_{-\frac{\pi}{2}}^{\frac{\pi}{2}} \right] \\
+            &= l d_{\mathrm{s}} |\xi_{\mathrm{a},1}|
+            \frac{3}{\pi p} \hat{B} \left[ 2 \cos(\omega t)\right] \\
+            &= l d_{\mathrm{s}} |\xi_{\mathrm{a},1}|
+            \frac{6}{\pi p} \hat{B} \cos(\omega t). \\
+        \end{split}
+    \end{align}
+
+   Taking into account also the number of winding turns $N_{\mathrm{a}}'$, the flux linkage of phase a is given with 
+    \begin{equation}
+        \psi_{\mathrm{a,}k}(t) = N_{\mathrm{a}}' \phi_{\mathrm{a,}k}(t),
+        \label{eq:psi_a_k}
+    \end{equation}
+    which results for the fundamental wave into:
+    \begin{align}
+        \begin{split}
+            \psi_{\mathrm{a,}1}(t) &= N_{\mathrm{a}}' \phi_{\mathrm{a,}k}(t) 
+            = N_{\mathrm{a}}' l d_{\mathrm{s}} |\xi_{\mathrm{a},1}| \frac{6}{\pi p} \hat{B} \cos(\omega t) \\
+            &= 30 \cdot \SI{0.35}{\metre} \cdot \SI{0.10}{\metre} \cdot \frac{6}{2\pi} \cdot \SI{1}{\tesla} \cos(\omega t) \cdot 0.9099 \\
+            &= \SI{0.9123}{\volt\second} \cdot \cos(\omega t).
+        \end{split}
+    \end{align}
+
+    The equation for the induced voltage of the fundamental wave is given with:
+    \begin{align}
+        \begin{split}
+            u_{\mathrm{ind,a,}1}(t) &= -\frac{\mathrm{d}}{\mathrm{d}t}\psi_{\mathrm{a,}1} \\
+            &= -\frac{\mathrm{d}}{\mathrm{d}t} \SI{0.9123}{\volt\second} \cdot \cos(\omega t) \\
+            &= \SI{0.9123}{\volt\second} \cdot \sin(\omega t) \omega \\
+            &= \SI{0.9123}{\volt\second} \cdot \sin(\omega t) \cdot 2\pi \cdot 2 \cdot \SI{\frac{250}{60}}{\per\second} \\
+            &= \SI{47.78}{\volt} \cdot \sin(\omega t).
+        \end{split}
+    \end{align}
+
+    The flux linkage of the $5\textsuperscript{th}$ harmonic is determined with \eqref{eq:phi_a_k}, which results into
+    \begin{equation}
+        \phi_{\mathrm{a},5} = 0,
+    \end{equation}
+    due to $|\xi_{\mathrm{a},5}|$ = 0. Therefore, the induced voltage results by:
+    \begin{equation}
+        u_{\mathrm{ind,a,}5}  = 0.
+    \end{equation}
+
+    With \eqref{eq:phi_a_k} the flux linkage for the $7\textsuperscript{th}$ harmonic is calculated by:
+    \begin{align}
+        \begin{split}
+            \phi_{\mathrm{a,}7}(t) &= l \frac{d_{\mathrm{s}}}{2} |\xi_{\mathrm{a},7}|
+            \frac{6}{\pi p} \hat{B}\frac{1}{7} \sin\left(\frac{7\pi}{2}\right) \int_{-\frac{\pi}{2}}^{\frac{\pi}{2}} \cos(\omega t - 7\vartheta_{\mathrm{el}}) \mathrm{d}\vartheta_{\mathrm{el}} \\
+            &  \vdots \\
+            &= l \frac{d_{\mathrm{s}}}{2} |\xi_{\mathrm{a},7}|
+            \frac{6}{\pi p} \hat{B} \frac{1}{7} \cos(\omega t).
+        \end{split}
+    \end{align}
+
+    The resulting flux linkage is calculated by taking into account the number of winding turns as
+    \begin{align}
+        \begin{split}
+            \psi_{\mathrm{a,}7} &= N_{\mathrm{a}}' \phi_{\mathrm{a,}7}(t) 
+            = N_{\mathrm{a}}' l \frac{d_{\mathrm{s}}}{2} |\xi_{\mathrm{a},7}| \frac{6}{\pi p} \hat{B} \frac{1}{7} \cos(\omega t) \\
+            &= 30 \cdot \SI{0.35}{\metre} \cdot \SI{\frac{10}{2}}{\metre} \cdot \frac{6}{2\pi} \cdot \SI{1}{\tesla} \cdot \frac{1}{7} \cdot \cos(\omega t) \cdot 0.087 \\
+            &= \SI{0.0126}{\volt\second} \cdot \cos(\omega t),
+        \end{split}
+    \end{align}
+    therefore, the induced voltage is given with:
+    \begin{align}
+        \begin{split}
+            u_{\mathrm{ind,a,}7}(t) &= -\frac{\mathrm{d}}{\mathrm{d}t}\psi_{\mathrm{a,}7} \\
+            &= \SI{0.0126}{\volt\second} \cdot \sin(\omega t) \omega \\
+            &= \SI{0.0126}{\volt\second} \cdot \sin(\omega t) \cdot \SI{2\pi\cdot 2\cdot \frac{250}{60}}{\per\second} \\
+            &= \SI{0.66}{\volt} \cdot \sin(\omega t).
+        \end{split}
+    \end{align}
+    
+\end{solutionblock}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subtask{Write a Python script to calcualte the complex winding factor $\underline{\xi}_{\mathrm{a,}k}$ up to various harmonics.}
+
+\begin{solutionblock}
+    The Python script is separately available, therefore, only the solution is presented in Tab~\ref{tab:complexWindingFactor_python}.
+    \begin{solutiontable}[ht]
+        \caption{Complex winding factor $\underline{\xi}_{\mathrm{a,}k}$ up to the $12\textsuperscript{th}$ harmonic order.}
+        \centering
+        \begin{tabular}{R{5cm}R{5cm}R{5cm}}\toprule
+              $\underline{\xi}_{\mathrm{a,}1}$ = 0.2812+0.8653j
+            & $\underline{\xi}_{\mathrm{a,}2}$ = -0.0486+0.0353j
+            & $\underline{\xi}_{\mathrm{a,}3}$ = 0.3078+0.2236j \\
+              $\underline{\xi}_{\mathrm{a,}4}$ = 0.0322-0.099j
+            & $\underline{\xi}_{\mathrm{a,}5}$ = 0
+            & $\underline{\xi}_{\mathrm{a,}6}$ = -0.0727-0.2236j \\
+              $\underline{\xi}_{\mathrm{a,}7}$ = 0.0711-0.0516j
+            & $\underline{\xi}_{\mathrm{a,}8}$ = -0.0711-0.0516j
+            & $\underline{\xi}_{\mathrm{a,}9}$ = 0.0727-0.2236j \\
+              $\underline{\xi}_{\mathrm{a,}10}$ = 0
+            & $\underline{\xi}_{\mathrm{a,}11}$ = -0.0322-0.099j
+            & $\underline{\xi}_{\mathrm{a,}12}$ = -0.3078+0.2236j \\
+            \bottomrule
+        \end{tabular}
+        \label{tab:complexWindingFactor_python}
+    \end{solutiontable}
+\end{solutionblock}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Task 3 %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\task{Concentrated windings}
+Consider the shown 10-pole 3-phase motor with 12 stator slots in \autoref{fig:MMF_concentrated}. The winding scheme of phase a is shown in the figure.
+
+\begin{figure}[htb]
+    \centering
+    \includegraphics{ex04/MMF_concentrated.pdf}
+    %\captionsetup{labelfont={color=blue},textfont={color=blue}}
+    \caption{Simplified sketch of a concentrated winding. Only phase a is shown.}
+    \label{fig:MMF_concentrated}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subtask{Determine the pole pitch and und the number of notches. Is it an integral-slot or a fractional-slot winding?}
+
+\begin{solutionblock}
+    The number of slots is determined by counting the slots in the given figure of the machine.
+    Hence, the number of slots is $Q$ = 12. The number of phases is given in the task, which is $m$=3.
+    Therefore, the pole pitch calculates as:
+    \begin{equation}
+        \rho_{\mathrm{p}} = \frac{2\pi}{2p}
+        = \frac{\pi}{5}.
+    \end{equation}
+
+    The number of notches is determined with:
+    \begin{equation}
+        q = \frac{Q}{2pm}
+        = \frac{12}{2 \cdot 5 \cdot 3}
+        = \frac{2}{5}.
+    \end{equation}
+    Since the number of notches per pole and phase is not an integer, it is a fractional slot winding.
+    The coil width $y$ is one stator slot, as it is shown in the figure. This results in the angular coil width: 
+    \begin{equation}
+        w = \frac{2\pi}{Q}
+        = \frac{2\pi}{12}
+        = \frac{\pi}{6}.
+    \end{equation}
+
+    Hence, the chording factor is calculated by:
+    \begin{equation}
+        s = \frac{w}{\tau_{\mathrm{p}}}
+        = \frac{\pi \cdot 5}{6\pi}
+        = \frac{5}{6}.
+    \end{equation}
+
+\end{solutionblock}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subtask{Complete \autoref{tab:concentrated_winding} with the winding scheme for phases b and c. Sketch the resulting winding scheme in \autoref{fig:MMF_concentrated}.}
+
+\begin{table}[ht]
+    \caption{Winding scheme of a concentrated winding from \autoref{fig:MMF_concentrated}.}
+    \centering
+    \begin{tabular}{c|C{1cm}|C{1cm}|C{1cm}|C{1cm}|C{1cm}|C{1cm}}\toprule
+        \multirow{2}{*}{Coil nr.} & \multicolumn{2}{c}{Phase a} & \multicolumn{2}{c}{Phase b} & \multicolumn{2}{c}{Phase c} \\
+          & In  & Out   & In & Out & In & Out \\
+        \midrule
+        1  & 1  & 2  & & & & \\
+        2  & 1  & 12  & & & & \\
+        3  & 7  & 6  & & & & \\
+        4  & 7  & 8  & & & & \\
+        \bottomrule
+    \end{tabular}
+    \label{tab:concentrated_winding}
 \end{table}
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subtask{Determine the amplitude of the complex AC voltage $\hat{U}$ and current phasor $\hat{I}$.}
-
 \begin{solutionblock}
-    The amplitude of the line-to-line voltage is given with
+    In the task only phase a of the winding scheme is given. However, to complete the winding scheme, phase b must have an electrical phase shift of $\SI{120}{\degree}$ and phase c of $\SI{240}{\degree}$ respectively.
+    This leads to
     \begin{equation}
-    \hat{U} = \sqrt{2}\cdot \SI{380}{\volt}
-    = \SI{537.4}{\volt},
+        n_{\mathrm{b}} p \frac{\SI{360}{\degree}}{Q} = \SI{120}{\degree} \ \mathrm{mod} \ \SI{360}{\degree},
     \end{equation}
-    and, therefore, the amplitude of the phase-to-star-point voltage is defined as:
+    where $n_{\mathrm{b}}$ is the displacement in slots. This expression is rewritten into
     \begin{equation}
-    \hat{U}_{\mathrm{star}} = \frac{\SI{380}{\volt}}{\sqrt{3}}\cdot \sqrt{2} = \SI{310.9}{\volt}.
+        n_{\mathrm{b}} p \frac{\SI{360}{\degree}}{Q} = \SI{120}{\degree} + k \SI{360}{\degree},
+        \label{eq:nb_concentrated}
     \end{equation}
-
-    Furthermore, the current amplitude is defined by:
+    and also for phase c:
     \begin{equation}
-        \hat{I} = \sqrt{2} I = \sqrt{2} \cdot \SI{54}{\ampere} = \SI{76.4}{\ampere}.
-    \end{equation}
-\end{solutionblock}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subtask{Determine the number of pole pairs $p$.}
-
-\begin{solutionblock}
-    The stator frequency is given with $f_{\mathrm{s}}$ = 50 Hz, which leads to the synchronous rotational speed of the electrical frequency as follows:
-    \begin{equation}
-        n_{\mathrm{syn,el}} = \SI{50}{\hertz} \cdot \SI{60}{\second\per\minute}
-        = \SI{3000}{\per\minute}.
+        n_{\mathrm{c}} p \frac{\SI{360}{\degree}}{Q} = \SI{240}{\degree} + k \SI{360}{\degree}.
+        \label{eq:nc_concentrated}
     \end{equation}
     
-    The nominal speed is given with $n_{\mathrm{n}} = \SI{1465}{\per\minute}$, which is associated with a synchronous speed of $n_{\mathrm{syn,mech}} = \SI{1500}{\per\minute}$.
-    
-    Therefore, the number of pole pairs is defined with:
-    \begin{equation}
-        p = \frac{n_{\mathrm{syn,el}}}{n_{\mathrm{syn,mech}}}
-        = \frac{\SI{3000}{\per\minute}}{\SI{1500}{\per\minute}}
-        = 2.
-    \end{equation}
-
-\end{solutionblock}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subtask{Calculate the rated slip $s_{\mathrm{n}}$. Which slip occurs at an ideal no-load operation (no firction)?}
-
-\begin{solutionblock}
-    The slip is calculated by:
-    \begin{equation}
-        s_{\mathrm{n}} = \frac{\omega_{\mathrm{slip,n}}}{\omega_{\mathrm{s}}}
-        = \frac{\omega_{\mathrm{s}}-p \omega_{\mathrm{r}}}{\omega_{\mathrm{s}}}
-        = \frac{\SI{2\pi\cdot \frac{3000}{60}}{\per\second}- 2 \cdot \SI{2\pi \cdot \frac{1465}{60}}{\per\second}}{\SI{2\pi \cdot \frac{3000}{60}}{\per\second}}
-        = 0.023,
-    \end{equation}
-    where $\omega_{\mathrm{r}}$ is the rotor speed.
-    At an ideal no-load operation (also no friction), the rotor has the same speed as the stator field and, therefore, $s$ = 0.
-\end{solutionblock}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subtask{Calculate the apparent, the reactive and the electrical power. In addition, determine the efficiency $\eta_{\mathrm{n}}$ for the rated operating point.}
-
-\begin{solutionblock}
-    The apparent power is calculated with
-    \begin{equation}
-        S = \sqrt{3} U I
-        = \sqrt{3} \cdot \SI{380}{\volt} \cdot \SI{54}{\ampere}
-        = \SI{35.541}{\kilo\volt\ampere},
-    \end{equation}
-    
-    and, the electrical power is determined with the power factor in the task as follows:
-    \begin{equation}
-        P_{\mathrm{el,n}} = \sqrt{3} U I \cos(\varphi)
-        = \sqrt{3} \cdot \SI{380}{\volt} \cdot \SI{54}{\ampere} \cdot 0.77
-        = \SI{27.367}{\kilo\watt}.
-    \end{equation}
-
-    The angle of the phase shift is calculated by:
-    \begin{equation}
-        \varphi = \cos^{-1}(0.77) = \SI{39.6}{\degree}.
-    \end{equation}
-
-    Hence, the reactive power yields:
-    \begin{equation}
-        Q = \sqrt{3} U I \sin(\varphi)
-        = \sqrt{3} \cdot \SI{380}{\volt} \cdot \SI{54}{\ampere} \cdot \sin(\SI{39.6}{\degree})
-        = \SI{22.655}{\kilo\volt\ampere}.
-    \end{equation}
-
-
-    The efficiency results as:
-    \begin{equation}
-        \eta_{\mathrm{n}} = \frac{P_{\mathrm{mech,n}}}{P_{\mathrm{el,n}}} = \frac{\SI{25}{\kilo\watt}}{\SI{27.367}{\kilo\watt}}
-        = 0.914.
-    \end{equation}
-\end{solutionblock}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subtask{Determine the nominal torque generated by the induction machine.}
-
-\begin{solutionblock}
-    The torque is calculated as:
-    \begin{equation}
-        T_{\mathrm{n}} = \frac{P_{\mathrm{mech}}}{\omega_{\mathrm{mech}}}
-        = \frac{\SI{25}{\kilo\watt}}{\SI{2\pi\cdot \frac{1465}{60}}{\per \second}}
-        = \SI{163}{\newton \metre}.
-    \end{equation}
-\end{solutionblock}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subtask{Calculate the starting $T_{\mathrm{0}}$ and the maximum torque $T_{\mathrm{max}}$. For the latter determine first the slip $s_{\mathrm{max}}$ at the operating point with the maximum torque.}
-
-\begin{solutionblock}
-    The slip at the maximum torque operating point is defined by
-    \begin{equation}
-        s_{\mathrm{max}} = \frac{R_{\mathrm{r}}'}{\sigma \left(L_{\mathrm{\sigma,r}}' + M\right) \omega_{\mathrm{s}}}
-        = \frac{\SI{85}{\milli\Omega}}{0.038 \cdot (\SI{2}{\milli\henry}+\SI{100}{\milli\henry}) \cdot \SI{2\pi\cdot 50}{\per\second}}
-        = 0.068,
-    \end{equation}
-    with the leakage coefficient:
+    Now, an integral solution must be found for \eqref{eq:nb_concentrated} and \eqref{eq:nc_concentrated} to determine the winding scheme.
+    This is done with trial and error, the first assumption is $n_{\mathrm{b}} = 8, k = 3$, which results in
     \begin{align}
         \begin{split}
-            \sigma &= 1- \frac{M^2}{(M+L_{\mathrm{\sigma,s}})(M+L_{\mathrm{\sigma,r}}')}\\
-            &= 1 - \frac{\left(\SI{100}{\milli\henry}\right)^2}{\left(\SI{102}{\milli\henry}\right)\cdot\left(\SI{102}{\milli\henry}\right)}\\
-            &= 0.038.
+            8\cdot 5\cdot \frac{\SI{360}{\degree}}{12} &= \SI{120}{\degree}+3 \cdot \SI{360}{\degree}, \\
+            \SI{1200}{\degree} &= \SI{1200}{\degree},
         \end{split}
     \end{align}
-
-    Hence, the maximum torque is calculated with:
+    therefore, the requirement is fulfilled. For phase c the assumption is given with $n_{\mathrm{c}} = 4, k = 1$ into \eqref{eq:nc_concentrated} leads to
     \begin{align}
         \begin{split}
-            T_{\mathrm{max}} &= \frac{3}{2}p \frac{U_{\mathrm{s}}^2}{\omega_{\mathrm{s}}^2}\frac{M^2}{\sigma \left(L_{\mathrm{\sigma,s}}+M \right)^2\left(L_{\mathrm{\sigma,r}}'+M\right)} \\
-            &= \frac{3}{2}\cdot2\cdot\frac{\frac{\SI{380}{\volt}}{\sqrt{3}}}{\left(\SI{2\pi\cdot 50}{\per\second}\right)^2} \cdot \frac{\SI{100}{\milli\henry}}{0.038\cdot\left(\SI{102}{\milli\henry}\right)^2 \cdot \left(\SI{102}{\milli\henry}\right)}\\
-            &= \SI{355}{\newton\metre}.
+            4 \cdot 5 \cdot \frac{\SI{360}{\degree}}{12} &= \SI{240}{\degree} + k \SI{360}{\degree}, \\
+            \SI{600}{\degree} &= \SI{600}{\degree},
         \end{split}
     \end{align}
+    which fulfills the requirement too.
 
-    The starting torque is determined as follows:
-    \begin{equation}
-        T_{\mathrm{0}} = T_{\mathrm{max}} \frac{2 s_{\mathrm{max}}}{1 + s_{\mathrm{max}}^2}
-        = \SI{355}{\newton\metre}\cdot \frac{2 \cdot 0.068}{1 + 0.068^2} = \SI{48.3}{\newton\metre}.
-    \end{equation}
-\end{solutionblock}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subtask{Determine the stator currents $I_{\mathrm{s,dq}}$, and, in addition, the induced rotor currents $I_{\mathrm{r,dq}}$.}
-
-\begin{solutionblock}
-    Derived from the lecture notes, the stator currents are calculated as follows:
-    \begin{align}
-        \begin{split}
-        I_{\mathrm{s,d}} &= \frac{U_{\mathrm{s}}}{\omega_{\mathrm{s}}} \frac{\sigma^2\omega_{\mathrm{slip}}^2 \left(L_{\mathrm{\sigma,s}}+M\right)\left(L_{\mathrm{\sigma,r}}'+M\right)^3 + \left(L_{\mathrm{\sigma,r}}'+M\right)\left(L_{\mathrm{\sigma,s}}+M\right)\left(R_{\mathrm{r}}'\right)^2 - M^2 \left(R_{\mathrm{r}}'\right)^2}{\sigma \left(L_{\mathrm{\sigma,s}}+M\right)^2 \left(L_{\mathrm{\sigma,r}}'+M\right)\omega_{\mathrm{slip}}\left(\sigma^2 \omega_{\mathrm{slip}}^2 \left(L_{\mathrm{\sigma,r}}'+M\right)^2 + \left(R_{\mathrm{r}}'\right)^2\right)}\\
-        &= \SI{3.3}{\ampere},
-        \end{split}
-    \end{align}
-    
-    \begin{equation}
-        I_{\mathrm{s,q}} = \frac{U_{\mathrm{s}}}{\omega_{\mathrm{s}}} \frac{M^2}{\sigma\left(L_{\mathrm{\sigma,s}}+M\right)^2 \left(L_{\mathrm{\sigma,r}}'+M\right)} \frac{1}{\frac{\omega_{\mathrm{slip}}}{\omega_{\mathrm{max}}} + \frac{\omega_{\mathrm{max}}}{\omega_{\mathrm{slip}}}}
-        = \SI{51.8}{\ampere}.
-    \end{equation}
-    
-    
-    The rotor currents are calculated as follows:
-    \begin{equation}
-        I_{\mathrm{r,d}} = -U_{\mathrm{s}} \frac{M s}{\left(L_{\mathrm{\sigma,s}}+M\right) R_{\mathrm{r}}'}\frac{1}{\frac{\omega_{\mathrm{slip}}}{\omega_{\mathrm{max}}} + \frac{\omega_{\mathrm{max}}}{\omega_{\mathrm{slip}}}}
-        = \SI{-18.06}{\ampere},
-    \end{equation}
-
-    \begin{equation}
-        I_{\mathrm{r,q}} = -\frac{U_{\mathrm{s}}}{\omega_{\mathrm{s}}}\frac{M}{\sigma \left(L_{\mathrm{\sigma,s}}+M\right)\left(L_{\mathrm{\sigma,r}}'+M\right)}\frac{1}{\frac{\omega_{\mathrm{slip}}}{\omega_{\mathrm{max}}} + \frac{\omega_{\mathrm{max}}}{\omega_{\mathrm{slip}}}}
-        = \SI{-52.9}{\ampere}.
-    \end{equation}
-
-    
-
-\end{solutionblock}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subtask{Calculate the losses in the stator winding and in the rotor.}
-
-\begin{solutionblock}
-    The stator current is determined by
-    \begin{equation}
-        I_{\mathrm{s,dq}} = \sqrt{I_{\mathrm{s,d}}^2 + I_{\mathrm{s,q}}^2}
-        = \sqrt{\left(\SI{3.3}{\ampere}\right)^2 + \left(\SI{51.8}{\ampere}\right)^2}
-        = \SI{51.9}{\ampere},
-    \end{equation}
-    which results to the stator winding losses as follows:
-    \begin{equation}
-        P_{\mathrm{l,stator}} = \frac{3}{2} I_{\mathrm{s,dq}}^2 R_{\mathrm{s}}
-        = \frac{3}{2} \cdot \left(\SI{51.9}{\ampere} \right)^2 \cdot \SI{0.48}{\Omega}
-        = \SI{1939.4}{\watt}.
-    \end{equation}
-
-    The rotor current is calculated in the same way. This leads to
-    \begin{equation}
-        I_{\mathrm{r,dq}} = \sqrt{I_{\mathrm{r,d}}^2 + I_{\mathrm{r,q}}^2}
-        = \sqrt{\left(\SI{-18.1}{\ampere}\right)^2 + \left(\SI{-52.9}{\ampere}\right)^2}
-        = \SI{55.9}{\ampere},
-    \end{equation}
-    and the ohmic rotor losses are calculated with:
-    \begin{equation}
-        P_{\mathrm{l,rotor}} = \frac{3}{2} I_{\mathrm{r,dq}}^2 R_{\mathrm{r}}'
-        = \frac{3}{2} \cdot \left(\SI{55.9}{\ampere} \right)^2 \cdot \SI{85}{\milli\Omega}
-        = \SI{398.4}{\watt}.
-    \end{equation} 
-
-
-\end{solutionblock}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subtask{Draw the space vector diagram for the operation under rated conditions including the vectors $\underline{u}_{\mathrm{s}}$, $\underline{i}_{\mathrm{s}}$, $\underline{\psi}_{\mathrm{s}}$ and $\frac{\mathrm{d}}{\mathrm{d}t} \underline{\psi}_{\mathrm{s}}$. Assume that the current vector $\underline{i}_{\mathrm{s}}$ is oriented along the x-axis of the Cartesian coordinate system.}
-
-\begin{solutionblock}
-    The current is aligned with the x-axis of the Cartesian coordinate system. Therefore, the current is given with:
-    \begin{equation}
-        \underline{i}_{\mathrm{s}} = \sqrt{2} I e^{\mathrm{j}0^{\circ}}
-        = \SI{76.37}{\ampere} \cdot e^{\mathrm{j}0^{\circ}}.
-    \end{equation}
-
-    The angle shift between the voltage and current is calculated by
-    \begin{equation}
-        \varphi_{\mathrm{ui}} = \SI{39.65}{\degree},
-    \end{equation}
-
-    therefore, the voltage is defined as follows:
-    \begin{equation}
-        \underline{u}_{\mathrm{s}} = \sqrt{2} U e^{\mathrm{j} \varphi_{\mathrm{ui}}}
-        = \SI{310.27}{\volt} \cdot e^{\mathrm{j}39.65^{\circ}}
-        = \SI{238.89}{\volt} + \mathrm{j} \SI{197.98}{\volt}.
-    \end{equation}
-
-    The stator resistance $R_{\mathrm{s}}$ is given in the task. Hence, the voltage equation is defined as:
-    \begin{equation}
-        \underline{u}_{\mathrm{s}} = R_{\mathrm{s}} \underline{i}_{\mathrm{s}} + \frac{\mathrm{d}}{\mathrm{d}t}\psi_{\mathrm{s}}.
-    \end{equation}
-
-    Rearranging leads to:
-    \begin{align}
-        \begin{split}
-        \frac{\mathrm{d}}{\mathrm{d}t}\psi_{\mathrm{s}} &= \underline{u}_{\mathrm{s}} - R_{\mathrm{s}} \underline{i}_{\mathrm{s}} \\
-        &= \SI{238.89}{\volt} + \mathrm{j} \SI{197.98}{\volt} - \SI{0.48}{\Omega} \cdot \SI{76.37}{\ampere} \\
-        &= \SI{202.23}{\volt} + \mathrm{j} \SI{197.98}{\volt} \\
-        &= \SI{283}{\volt} \cdot e^{\mathrm{j}44.4^{\circ}}.
-        \end{split}
-    \end{align}
-
-    The stator flux vector is defined as
-    \begin{equation}
-        \underline{\psi}_{\mathrm{s}}(t) = \psi_{\mathrm{s}}(t) \cdot e^{\mathrm{j}\varphi_{\mathrm{s}}(t)},
-    \end{equation}
-
-    and the differentiation (under consideration of the product rule) results in:
-    \begin{equation}
-        \frac{\mathrm{d}}{\mathrm{d}t}\underline{\psi}_{\mathrm{s}}(t)
-        = \frac{\mathrm{d}}{\mathrm{d}t} \psi_{\mathrm{s}}(t) \cdot e^{\mathrm{j}\varphi_{\mathrm{s}}(t)} + \mathrm{j} \omega_{\mathrm{\varphi_s}} \cdot \underline{\psi}_{\mathrm{s}}(t).
-    \end{equation}
-
-    Due to the steady state, the change of the flux amplitude $\left(\frac{\mathrm{d}}{\mathrm{d}t}\psi(t)\right)$ is zero. The flux vector rotates with the speed $\omega$, therefore, the flux vector is determined as follows:
-    \begin{equation}
-        \underline{\psi}_{\mathrm{s}}(t)
-        = \frac{\SI{283}{\volt} \cdot e^{\mathrm{j}44.4^{\circ}}}{\SI{314.16}{\per\second}\cdot e^{\mathrm{j}90^{\circ}}}
-        = \SI{0.90}{\volt\second} \cdot e^{-\mathrm{j}\SI{45.6}{\degree}}.
-    \end{equation}
-
-
-    \begin{solutionfigure}
+    With the coil width of one slot, the resulting winding is determined. The solution of this winding scheme is shown in \autoref{tab:solution_concentratedWinding}.
+    \begin{solutiontable}[ht]
+        \caption{Solution of the winding scheme of a concentrated winding.}
         \centering
-        \includegraphics{ex05/vectorDiagram_IM.pdf}
-        \caption{Resulting vector diagram of the induction machine in steady state. The scala for the voltage is 1 cm $\widehat{=}~\SI{100}{\volt} $, for the flux linkage 1 cm $\widehat{=}~\SI{1}{\volt\second}$ and for the current 1 cm $\widehat{=}~\SI{10}{\ampere}$.}
-        \label{fig:vectorDiagram_IM}
+        \begin{tabular}{c|C{1cm}|C{1cm}|C{1cm}|C{1cm}|C{1cm}|C{1cm}}\toprule
+            \multirow{2}{*}{Coil nr.} & \multicolumn{2}{c}{Phase a} & \multicolumn{2}{c}{Phase b} & \multicolumn{2}{c}{Phase c} \\
+              & In  & Out   & In & Out & In & Out \\
+            \midrule
+            1  & 1  & 2  & 3 & 2 & 4 & 5 \\
+            2  & 1 & 12  & 3 & 4 & 6 & 5 \\
+            3  & 7  & 6  & 8 & 9 & 11 & 10 \\
+            4  & 7  & 8  & 10 & 9 & 11 & 12\\
+            \bottomrule
+        \end{tabular}
+        \label{tab:solution_concentratedWinding}
+    \end{solutiontable}
+    
+
+    The completed winding scheme is visualized in Fig.\ref{fig:solution_MMF_concentrated}.
+    \begin{solutionfigure}[ht]
+        \centering
+        \includegraphics{ex04/solution_MMF_concentrated.pdf}
+        \captionsetup{labelfont={color=blue},textfont={color=blue}}
+        \caption{Solution of the concentrated winding scheme.}
+        \label{fig:solution_MMF_concentrated}
     \end{solutionfigure}
+\end{solutionblock}
 
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subtask{How many layers are in this winding scheme?}
+
+\begin{solutionblock}
+    There are two layers per slot, therefore, it is a two layer winding scheme.
+\end{solutionblock}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subtask{Calculate the complex winding factors $\underline{\xi}_{\mathrm{a,}k}$ for the fundamental as well as for the $5\textsuperscript{th}$ and $7\textsuperscript{th}$ harmonic.}
+
+\begin{solutionblock}
+    The complex winding factor is defined by
+    \begin{equation}
+        \underline{\xi}_{\mathrm{a,}k} = \frac{1}{\mathrm{j}N_{\mathrm{a}}} \sum_{i=1}^{Q} N_{\mathrm{a,}i}e^{\mathrm{j}k\vartheta_{\mathrm{el,a,}i}},
+        \label{eq:complexWindingFactor_concentratedWinding}
+    \end{equation}
+    with
+    \begin{equation}
+        N_{\mathrm{a}} = \sum_{i=1}^{Q} |N_{\mathrm{a,}i} |,
+    \end{equation}
+    and the electrical angle:
+    \begin{equation}
+        \vartheta_{\mathrm{el,a,}i} = \vartheta_{\mathrm{a,}i} \cdot p.
+    \end{equation}
+    
+    Hence, the mechanical angles are calculated as follows
+    \begin{equation}
+        \vartheta_{\mathrm{a,}i} = \left(i-1 \right) \frac{\SI{360}{\degree}}{Q}
+        = \left(i-1 \right) \cdot \frac{\SI{360}{\degree}}{12}
+        = \left(i-1 \right)\cdot \SI{30}{\degree},
+    \end{equation}
+    where $i$ represents the number of the stator slot.
+    Therefore, the mechanical angles are given in \autoref{tab:mechanicalAngles_concentratedWinding}.
+    \begin{solutiontable}[ht]
+        \caption{Mechanical angles of the concentrated winding from \autoref{fig:MMF_concentrated}.}
+        \centering
+        \begin{tabular}{C{3cm}|C{3cm}}\toprule
+            $\vartheta_{\mathrm{a,}1} = \SI{0}{\degree}$     & $\vartheta_{\mathrm{a,}9} = \SI{180}{\degree}$ \\
+            $\vartheta_{\mathrm{a,}4} = \SI{30}{\degree}$    & $\vartheta_{\mathrm{a,}11} = \SI{210}{\degree}$ \\
+            $\vartheta_{\mathrm{a,}5} = \SI{150}{\degree}$    & $\vartheta_{\mathrm{a,}12} = \SI{330}{\degree}$ \\
+            \bottomrule
+        \end{tabular}
+        \label{tab:mechanicalAngles_concentratedWinding}
+    \end{solutiontable}
+
+    To calculate the winding factors, the total number of turns of the respective phase $N_{\mathrm{a}}$ is determined for each stator slot. A negative sign indicates, that the winding turn is oriented towards the negative $z$-axis. When no conductor is in a slot, $N_{\mathrm{a,}i}$ = 0. The result is shown in \autoref{tab:WindingTurns_concentratedWinding}.
+    \begin{solutiontable}[ht]
+        \caption{Winding turns of phase a of the concentrated winding rom \autoref{fig:MMF_concentrated}.}
+        \centering
+        \begin{tabular}{C{3cm}C{3cm}C{3cm}}\toprule
+            $N_{\mathrm{a1}}$ = 2     & $N_{\mathrm{a2}}$ = -1  & $N_{\mathrm{a6}}$ = 1 \\
+            $N_{\mathrm{a7}}$ = -2    & $N_{\mathrm{a8}}$ = 1   & $N_{\mathrm{a12}}$ = -1\\
+            \bottomrule
+        \end{tabular}
+        \label{tab:WindingTurns_concentratedWinding}
+    \end{solutiontable}
+    
+    For the fundamental wave, is $k$ = 1 and, therefore, with \eqref{eq:complexWindingFactor_concentratedWinding}, the winding factor of the fundamental wave calculates as follows:
+    \begin{equation}
+        \underline{\xi}_{\mathrm{a,}1} = \frac{1}{8j}\cdot \left[ \right. 2e^{j\cdot1\cdot5\cdot\SI{0}{\degree}}
+        -e^{j\cdot1\cdot5\cdot\SI{30}{\degree}}+e^{j\cdot1\cdot5\cdot\SI{150}{\degree}}-2e^{j\cdot1\cdot5\cdot\SI{180}{\degree}}+e^{j\cdot1\cdot5\cdot\SI{210}{\degree}}
+        -e^{j\cdot1\cdot5\cdot\SI{330}{\degree}}
+        \left. \right]
+        = -0.9330j,
+    \end{equation}
+    with the absolute value:
+    \begin{equation}
+        |\xi_{\mathrm{a,}1}| = 0.9330.
+    \end{equation}
+
+    For the $5\textsuperscript{th}$ harmonic is $k$ = 5, which results in
+    \begin{equation}
+        \underline{\xi}_{\mathrm{a,}5} = \frac{1}{8j}\cdot \left[ \right. 2e^{j\cdot5\cdot5\cdot\SI{0}{\degree}}
+        -e^{j\cdot5\cdot5\cdot\SI{30}{\degree}}+e^{j\cdot5\cdot5\cdot\SI{150}{\degree}}-2e^{j\cdot5\cdot5\cdot\SI{180}{\degree}}+e^{j\cdot5\cdot5\cdot\SI{210}{\degree}}
+        -e^{j\cdot5\cdot5\cdot\SI{330}{\degree}}
+        \left. \right]
+        = -0.067j,
+    \end{equation}
+    with the absolute value:
+    \begin{equation}
+        |\xi_{\mathrm{a,}5}| = 0.067.
+    \end{equation}
+
+    Finally, the complex winding factor for the $7\textsuperscript{th}$ harmonic is defined as
+    \begin{equation}
+        |\xi_{\mathrm{a,}7}| = \frac{1}{8j}\cdot \left[ \right. 2e^{j\cdot7\cdot5\cdot\SI{0}{\degree}}
+        -e^{j\cdot7\cdot5\cdot\SI{30}{\degree}}+e^{j\cdot7\cdot5\cdot\SI{150}{\degree}}-2e^{j\cdot7\cdot5\cdot\SI{180}{\degree}}+e^{j\cdot7\cdot5\cdot\SI{210}{\degree}}
+        -e^{j\cdot7\cdot5\cdot\SI{330}{\degree}}
+        \left. \right]
+        = -0.067j,
+    \end{equation}
+    and, therefore, the absolute value results in:
+    \begin{equation}
+        |\xi_{\mathrm{a,}7}| = 0.067.
+    \end{equation}
+
+\end{solutionblock}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subtask{Assume a block-shaped distribution of the flux density with a maximal value of $\hat{B} = \SI{1}{\tesla}$ and a number of winding turns $N'_{\mathrm{a}}$ = 137. The axial length of the machine is $l=\SI{0.70}{\metre}$ and the diameter is $d = \SI{0.45}{\metre}$. The machine rotates with a mechanical speed of $n=\SI{50}{\per \minute}$. Calculate the induced voltage of phase a for the fundamental wave. What are the $5\textsuperscript{th}$ and $7\textsuperscript{th}$ harmonics of the induced voltage in phase a?}
+
+\begin{solutionblock}
+    The Fourier coefficient of the flux density is given with
+    \begin{equation}
+        B(\vartheta_{\mathrm{el}},t) = \frac{6}{\pi p} \hat{B} \sum_{k}^{\infty} \frac{1}{k} \sin\left(\frac{k\pi}{2} \right) \cos(\omega t - k \vartheta_{\mathrm{el}}),
+    \end{equation}
+    and for the fundamental wave:
+    \begin{equation}
+        B^{(1)}(\vartheta_{\mathrm{el}},t) = \frac{6}{\pi p} \hat{B} \sin\left(\frac{\pi}{2}\right) \cos(\omega t - \vartheta_{\mathrm{el}}).
+    \end{equation}
+
+    The flux linkage of phase a is calculated as
+    \begin{equation}
+        \phi_{\mathrm{a,}k}(t) = l \frac{d_{\mathrm{s}}}{2} |\xi_{\mathrm{a},k}| \int_{-\frac{\pi}{2}}^{\frac{\pi}{2}} B(\vartheta_{\mathrm{el}},t) \mathrm{d}\vartheta_{\mathrm{el}},
+        \label{eq:phi_a_k_concentrated}
+    \end{equation}
+    with the complex winding factor to cover the winding distribution inside the stator.
+    Hence, the fundamental wave calculates as follows:
+    \begin{align}
+        \begin{split}
+            \phi_{\mathrm{a,}1}(t) &= l \frac{d_{\mathrm{s}}}{2} |\xi_{\mathrm{a},1}|
+            \frac{6}{\pi p} \hat{B} \sin\left(\frac{\pi}{2}\right) \int_{-\frac{\pi}{2}}^{\frac{\pi}{2}} \cos(\omega t - \vartheta_{\mathrm{el}}) \mathrm{d}\vartheta_{\mathrm{el}} \\
+            &= l d_{\mathrm{s}} |\xi_{\mathrm{a},1}|
+            \frac{3}{\pi p} \hat{B}
+            \int_{-\frac{\pi}{2}}^{\frac{\pi}{2}}\cos(\omega t) \cos(\vartheta_{\mathrm{el}}) + \sin(\omega t) \sin(\vartheta_{\mathrm{el}}) \mathrm{d}\vartheta_{\mathrm{el}} \\
+            &= l d_{\mathrm{s}} |\xi_{\mathrm{a},1}|
+            \frac{3}{\pi p} \hat{B}
+            \left[\cos(\omega t) \int_{-\frac{\pi}{2}}^{\frac{\pi}{2}} \cos(\vartheta_{\mathrm{el}}) \mathrm{d}\vartheta_{\mathrm{el}} + \sin(\omega t) \int_{-\frac{\pi}{2}}^{\frac{\pi}{2}} \sin(\vartheta_{\mathrm{el}}) \mathrm{d} \vartheta_{\mathrm{el}} \right] \\
+            &= l d_{\mathrm{s}} |\xi_{\mathrm{a},1}|
+            \frac{3}{\pi p} \hat{B}
+            \left[\cos(\omega t) \left[\sin(\vartheta_{\mathrm{el}}) \right]_{-\frac{\pi}{2}}^{\frac{\pi}{2}} + \sin(\omega t) \left[-\cos(\vartheta_{\mathrm{el}}) \right]_{-\frac{\pi}{2}}^{\frac{\pi}{2}} \right] \\
+            &= l d_{\mathrm{s}} |\xi_{\mathrm{a},1}|
+            \frac{3}{\pi p} \hat{B} \left[ 2 \cos(\omega t)\right] \\
+            &= l d_{\mathrm{s}} |\xi_{\mathrm{a},1}|
+            \frac{6}{\pi p} \hat{B} \cos(\omega t). \\
+        \end{split}
+    \end{align}
+
+   Taking into account also the number of winding turns $N_{\mathrm{a}}'$, the flux linkage of phase a is given with 
+    \begin{equation}
+        \psi_{\mathrm{a,}k}(t) = N_{\mathrm{a}}' \phi_{\mathrm{a,}k}(t),
+        \label{eq:psi_a_k_concentrated}
+    \end{equation}
+    which results for the fundamental wave into:
+    \begin{align}
+        \begin{split}
+            \psi_{\mathrm{a,}1}(t) &= N_{\mathrm{a}}' \phi_{\mathrm{a,}k}(t) 
+            = N_{\mathrm{a}}' l d_{\mathrm{s}} |\xi_{\mathrm{a},1}| \frac{6}{\pi p} \hat{B} \cos(\omega t) \\
+            &= 137 \cdot \SI{0.7}{\metre} \cdot \SI{0.45}{\metre} \cdot \frac{6}{5\pi} \cdot \SI{1}{\tesla} \cos(\omega t) \cdot 0.9330 \\
+            &= \SI{15.38}{\volt\second} \cdot \cos(\omega t).
+        \end{split}
+    \end{align}
+
+    The equation for the induced voltage of the fundamental wave is given with:
+    \begin{align}
+        \begin{split}
+            u_{\mathrm{ind,a,}1}(t) &= -\frac{\mathrm{d}}{\mathrm{d}t}\psi_{\mathrm{a,}1} \\
+            &= -\frac{\mathrm{d}}{\mathrm{d}t} \SI{15.38}{\volt\second} \cdot \cos(\omega t) \\
+            &= \SI{15.38}{\volt\second} \cdot \sin(\omega t) \omega \\
+            &= \SI{15.38}{\volt\second} \cdot \sin(\omega t) \cdot 2\pi \cdot 5 \cdot \SI{\frac{50}{60}}{\per\second} \\
+            &= \SI{402.6}{\volt} \cdot \sin(\omega t).
+        \end{split}
+    \end{align}
+
+    The flux linkage of the $5\textsuperscript{th}$ harmonic is determined with \eqref{eq:phi_a_k_concentrated}, which results into:
+    \begin{align}
+        \begin{split}
+            \phi_{\mathrm{a,}5}(t) &= l \frac{d_{\mathrm{s}}}{2} |\xi_{\mathrm{a},5}|
+            \frac{6}{\pi p} \hat{B}\frac{1}{5} \sin\left(\frac{5\pi}{2}\right) \int_{-\frac{\pi}{2}}^{\frac{\pi}{2}} \cos(\omega t - 5\vartheta_{\mathrm{el}}) \mathrm{d}\vartheta_{\mathrm{el}} \\
+            &  \vdots \\
+            &= l \frac{d_{\mathrm{s}}}{2} |\xi_{\mathrm{a},5}|
+            \frac{6}{\pi p} \hat{B} \frac{1}{5} \cos(\omega t).
+        \end{split}
+    \end{align}
+    The resulting flux linkage is calculated by taking into account the number of winding turns as
+    \begin{align}
+        \begin{split}
+            \psi_{\mathrm{a,}5} &= N_{\mathrm{a}}' \phi_{\mathrm{a,}5}(t) 
+            = N_{\mathrm{a}}' l \frac{d_{\mathrm{s}}}{2} |\xi_{\mathrm{a},5}| \frac{6}{\pi p} \hat{B} \frac{1}{5} \cos(\omega t) \\
+            &= 137 \cdot \SI{0.7}{\metre} \cdot \SI{\frac{0.45}{2}}{\metre} \cdot \frac{6}{5\pi} \cdot \SI{1}{\tesla} \cdot \frac{1}{5} \cdot \cos(\omega t) \cdot 0.0067 \\
+            &= \SI{0.2208}{\volt\second} \cdot \cos(\omega t),
+        \end{split}
+    \end{align}
+    therefore, the induced voltage is given with:
+    \begin{align}
+        \begin{split}
+            u_{\mathrm{ind,a,}5}(t) &= -\frac{\mathrm{d}}{\mathrm{d}t}\psi_{\mathrm{a,}5} \\
+            &= \SI{0.2208}{\volt\second} \cdot \sin(\omega t) \omega \\
+            &= \SI{0.2208}{\volt\second} \cdot \SI{2\pi\cdot 5\cdot \frac{50}{60}}{\per\second} \\
+            &= \SI{5.78}{\volt} \cdot \sin(\omega t).
+        \end{split}
+    \end{align}
+    
+
+    With \eqref{eq:phi_a_k} the flux linkage for the $7\textsuperscript{th}$ harmonic is calculated by:
+    \begin{align}
+        \begin{split}
+            \phi_{\mathrm{a,}7}(t) &= l \frac{d_{\mathrm{s}}}{2} |\xi_{\mathrm{a},7}|
+            \frac{6}{\pi p} \hat{B}\frac{1}{7} \sin\left(\frac{7\pi}{2}\right) \int_{-\frac{\pi}{2}}^{\frac{\pi}{2}} \cos(\omega t - 7\vartheta_{\mathrm{el}}) \mathrm{d}\vartheta_{\mathrm{el}} \\
+            &  \vdots \\
+            &= l \frac{d_{\mathrm{s}}}{2} |\xi_{\mathrm{a},7}|
+            \frac{6}{\pi p} \hat{B} \frac{1}{7} \cos(\omega t).
+        \end{split}
+    \end{align}
+
+    The resulting flux linkage is calculated by taking into account the number of winding turns as
+    \begin{align}
+        \begin{split}
+            \psi_{\mathrm{a,}7} &= N_{\mathrm{a}}' \phi_{\mathrm{a,}7}(t) 
+            = N_{\mathrm{a}}' l \frac{d_{\mathrm{s}}}{2} |\xi_{\mathrm{a},7}| \frac{6}{\pi p} \hat{B} \frac{1}{7} \cos(\omega t) \\
+            &= 137 \cdot \SI{0.7}{\metre} \cdot \SI{\frac{45}{2}}{\metre} \cdot \frac{6}{5\pi} \cdot \SI{1}{\tesla} \cdot \frac{1}{7} \cdot \cos(\omega t) \cdot 0.067 \\
+            &= \SI{0.0156}{\volt\second} \cdot \cos(\omega t),
+        \end{split}
+    \end{align}
+    therefore, the induced voltage is given with:
+    \begin{align}
+        \begin{split}
+            u_{\mathrm{ind,a,}7}(t) &= -\frac{\mathrm{d}}{\mathrm{d}t}\psi_{\mathrm{a,}7} \\
+            &= \SI{0.0156}{\volt\second} \cdot \sin(\omega t) \omega \\
+            &= \SI{0.0156}{\volt\second} \cdot \SI{2\pi\cdot 5\cdot \frac{50}{60}}{\per\second} \\
+            &= \SI{4.13}{\volt}.
+        \end{split}
+    \end{align}
+
+\end{solutionblock}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subtask{Calcualte with a Python script the complex winding factor $\underline{\xi}_{\mathrm{a,}k}$ up to various harmonics.}
+
+\begin{solutionblock}
+    The Python script is separately available, therefore, only the solution is presented in Tab~\ref{tab:complexWindingFactor_concentratedW_python}.
+    \begin{solutiontable}[ht]
+        \caption{Complex winding factors $\underline{\xi}_{\mathrm{a,}k}$ for the concentrated winding up to the $12\textsuperscript{th}$ harmonic order.}
+        \centering
+        \begin{tabular}{R{3cm}R{3cm}R{3cm}R{3cm}}\toprule
+            $\underline{\xi}_{\mathrm{a,}1}$ = -0.9330j    & $\underline{\xi}_{\mathrm{a,}2}$ = 0 &
+            $\underline{\xi}_{\mathrm{a,}3}$ = -0.5j       & $\underline{\xi}_{\mathrm{a,}4}$ = 0 \\
+            $\underline{\xi}_{\mathrm{a,}5}$ = -0.0670j    & $\underline{\xi}_{\mathrm{a,}6}$ = 0 &
+            $\underline{\xi}_{\mathrm{a,}7}$ = -0.0670j    & $\underline{\xi}_{\mathrm{a,}8}$ = 0 \\
+            $\underline{\xi}_{\mathrm{a,}9}$ = -0.5j       & $\underline{\xi}_{\mathrm{a,}10}$ = 0 &
+            $\underline{\xi}_{\mathrm{a,}11}$ = -0.9330j   & $\underline{\xi}_{\mathrm{a,}12}$ = 0 \\
+            \bottomrule
+        \end{tabular}
+        \label{tab:complexWindingFactor_concentratedW_python}
+    \end{solutiontable}
+
+    %It should be mentioned, that only harmonics of $k = 
 \end{solutionblock}
