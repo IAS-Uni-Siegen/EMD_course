@@ -111,3 +111,74 @@ Interpret the results.}
 
 \end{solutionblock}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Task 1 %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\task{Shunt DC machine drive of a hand-guided grinder}
+
+\subtask{Explain why a series machine is not suitable for a hand-guided grinder application.}
+\begin{solutionblock}
+  A series DC machine torque is given by
+  \begin{equation}
+    T = L_{\mathrm{f}}' \left(\frac{U}{R_\mathrm{a} + R_\mathrm{f} + \omega L'_\mathrm{f}}\right)^2.
+  \end{equation}
+  Assuming a constant terminal voltage $U$, the torque $T$ scales inversely to the rotor angular frequency $\omega$. If the grinder is unloaded ($T \rightarrow 0$), i.e., during non-grinding idle operation, the rotor speed (theoretically) increases to infinity.  In practice, the air drag and the friction of the bearings still generate some load torque and, therefore, limit the speed. However, the speed still can get very high, which may lead to mechanical failure of the rotor.
+\end{solutionblock}
+
+\subtask{Derive the steady-state torque-speed characteristic of a shunt DC machine and sketch it to highlight the usability of this DC machine configuration for a hand-guided grinder.}
+\begin{solutionblock}
+  The steady-state voltage equations of a shunt DC machine are given by
+  \begin{equation}
+    \begin{split}
+      U &= R_\mathrm{a} I_\mathrm{a} + \omega L'_\mathrm{f} I_\mathrm{f},\\
+      U &= R_\mathrm{f} I_\mathrm{f}.
+    \end{split}
+  \end{equation}
+  This results in the steady-state armature and field currents as
+  \begin{equation}
+    \begin{split}
+      I_\mathrm{a} &= \frac{U}{R_\mathrm{a}} - \frac{U L'_\mathrm{f} \omega}{R_\mathrm{a}R_\mathrm{f}},\\
+      I_\mathrm{f} &= \frac{U}{R_\mathrm{f}}.
+    \end{split}
+  \end{equation}
+  The torque is then given by
+  \begin{equation}
+    T = L_{\mathrm{f}}' I_\mathrm{a} I_\mathrm{f} = \underbrace{\frac{U^2 L_{\mathrm{f}}'}{R_\mathrm{f}R_\mathrm{a}}}_{T_0}  \left(1 - \frac{L'_\mathrm{f}}{R_\mathrm{f}}\omega\right)
+  \end{equation}
+  or conversely the rotor angular frequency as
+  \begin{equation}
+    \omega = \underbrace{\frac{R_\mathrm{f}}{L'_\mathrm{f}}}_{\omega_0} \left(1 - \frac{R_\mathrm{f} R_\mathrm{a}}{U^2 L_{\mathrm{f}}'} T\right)
+  \end{equation}
+  with $T_0$ being the breakaway torque and $\omega_0$ the no-load speed. 
+  \begin{solutionfigure}
+    \centering
+    \begin{tikzpicture}
+      \begin{axis}[
+           xlabel={$T$},
+            ylabel={$\omega$},
+            ymin=-0.1, ymax=1.1,
+            xmin=-0.1, xmax=1.1,
+            width = 0.4\textwidth,
+            height = 0.4\textwidth,
+            grid,
+            thick,
+            axis lines=middle,
+            xtick = {0, 0.2, 0.4, 0.6, 0.8, 1},
+            xticklabels = {, , , , , $T_0$},
+            ytick = {0, 0.2, 0.4, 0.6, 0.8, 1},
+            yticklabels = {, , , , , $\omega_0$},
+            xlabel style = {anchor=west},
+            ylabel style = {anchor=south},
+          ]
+          \addplot[signalblue, domain=-0.1:1.1, samples=50] {1-x};
+          \addplot[thin] coordinates {(0.45,0.55) (0.55,0.55) (0.55,0.45)};
+          \draw[very thin] (0.57,0.57) -- (0.63,0.63) node[anchor=south west, inner sep = 0pt, xshift=-2pt, yshift=-3pt] {$-\frac{R_\mathrm{a}}{\psi'^2_\mathrm{f}}$};
+      \end{axis}
+  \end{tikzpicture}
+  \caption{Torque-speed characteristic of a shunt DC machine (for a constant $U$)}
+  \label{fig:shuntDCmachine_torque_speed}
+\end{solutionfigure}
+As depicted in \autoref{fig:shuntDCmachine_torque_speed}, the no-load speed $\omega_0$ of the shunt DC machine is finite and adjustable via the machine design. Also, the linear torque-speed characteristic allows for a convenient operation of the grinder as the loading of the grinder results in a proportional decrease of the speed.   
+\end{solutionblock}
+
