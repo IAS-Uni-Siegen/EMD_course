@@ -11,13 +11,13 @@
 	\frametitle{Amp\`ere's circuital law: magnetic field strength}
 	\begin{columns}
 		\begin{column}{0.55\textwidth}
-			Relates the circulation of a magnetic field around a closed loop to the electric current passing through the loop:
+			Relates the circulation of a \hl{magnetic field} $\bm{H}$ around a closed loop to the electric current passing through the loop:
             \begin{align}
                 \mbox{Integral form:} \quad &\oint_{\partial S} \bm{H} \cdot \mathrm{d}\bm{s} = I_{\mathrm{f}},\\
                 \mbox{Differential form:} \quad &\nabla \times \bm{H} = \bm{J}_{\mathrm{f}}. 
                 \label{eq:ampere_law}
             \end{align}
-            Here, $\bm{H}$ is the magnetic field strength, $\bm{J}_{\mathrm{f}}$ is the free current density, and $I_{\mathrm{f}}$ is the free current enclosed by the loop $\partial S$. 
+            Here, $\bm{J}_{\mathrm{f}}$ is the \hl{free current density}, and $I_{\mathrm{f}}$ is the \hl{free current} enclosed by the loop $\partial S$. 
             \vspace{0.25cm}
             \begin{itemize}
                 \item<2-> Free current: current that is not bound to a material (i.e., without polarization and magnetization currents).
@@ -72,12 +72,12 @@
 	\frametitle{Amp\`ere's circuital law: simple solenoid example}
 	\begin{columns}
 		\begin{column}{0.575\textwidth}
-			Ampere's law for magnetic flux density $\bm{B}$ in vacuum:
+			Ampere's law for \hl{magnetic flux density} $\bm{B}$ in vacuum:
             \begin{align}
                 \mbox{Integral form:} \quad &\oint_{\partial S} \bm{B} \cdot \mathrm{d}\bm{s} = \mu_0 I,\\
                 \mbox{Differential form:} \quad &\nabla \times \bm{B} = \mu_0\bm{J}. 
             \end{align}
-            Here, $\mu_0$ is the permeability of free space, $\bm{J}$ is the total current density and $I$ is the total current enclosed by the loop $\partial S$. 
+            Here, $\mu_0$ is the \hl{permeability} of free space, $\bm{J}$ is the total current density and $I$ is the total current enclosed by the loop $\partial S$. 
             \vspace{0.25cm}
             \begin{itemize}
                 \item<2-> SI-unit: $[B] = \si{\tesla} = \si{\volt\second\per\metre\squared} = \si{\newton\per\ampere\per\metre}$
@@ -104,7 +104,7 @@
 	\frametitle{Shortcomings of the Amp\`ere's circuital law}
 	\begin{columns}
 		\begin{column}{0.55\textwidth}
-			Applying Amp\`ere's circuital law to a capacitor with a changing electric field $\bm{E}$ leads to a contradiction:
+			Applying Amp\`ere's circuital law to a capacitor with a changing \hl{electric field} $\bm{E}$ leads to a contradiction:
             \begin{itemize}
                 \item Applying \eqref{eq:ampere_law} to $S_1$ yields:
                 $$\oint_{\partial S_1} \bm{H} \cdot \mathrm{d}\bm{s} = I.$$
@@ -132,13 +132,13 @@
 	\frametitle{The Amp\`ere -- Maxwell equation}
 	\begin{columns}
 		\begin{column}{0.6\textwidth}
-			The charge of capacitor is:
+			The \hl{charge} $Q$ of capacitor is:
             $$Q = \oint_{S_2} \bm{D}\cdot \mathrm{d}\bm{S}.$$
-            \onslide<2->{If the electric field ($\bm{D} = \varepsilon_0\varepsilon_\mathrm{r} \bm{E}$) changes, a displacement current results:
+            \onslide<2->{If the \hl{electric flux density} $\bm{D} = \varepsilon_0\varepsilon_\mathrm{r} \bm{E}$ changes, a displacement current results:
             $$I_{\mathrm{d}} = \frac{\mathrm{d}}{\mathrm{d} t} \oint_{S_2} \bm{D}\cdot \mathrm{d}\bm{S}$$}
             \begin{itemize}
                 \item<3-> Is not a classical electric current (moving charges) but a term to describe the changing electric field.
-                \item<4-> Above, $\varepsilon_0$ is the vacuum permittivity and $\varepsilon_\mathrm{r}$ is the relative permittivity of a material.
+                \item<4-> Above, $\varepsilon_0$ is the \hl{vacuum permittivity} and $\varepsilon_\mathrm{r}$ is the \hl{relative permittivity} of a material.
             \end{itemize}
 		\end{column}
         \hfill
@@ -163,7 +163,6 @@
             \mbox{Differential form:} \quad &\nabla \times \bm{H} = \bm{J}_\mathrm{f} +  \frac{\partial\bm{D}}{\partial t}. 
             \label{eq:ampere_maxwell_law}
         \end{align}
-        Above, $\bm{D}$ is the electric displacement field.
         \vspace{0.5cm}
         \begin{itemize}
             \item SI-unit: $[D] = \si{\coulomb\per\metre\squared}$
@@ -183,7 +182,7 @@
 	\frametitle{Magnetic flux and flux linkage}
 	\begin{columns}
 		\begin{column}{0.575\textwidth}
-			The magnetic flux $\phi$ is the surface integral of the normal component of $\bm{B}$ over that surface:
+			The \hl{magnetic flux} $\phi$ is the surface integral of the normal component of $\bm{B}$ over that surface:
             \begin{align}
                 \phi = \iint_{S} \bm{B} \cdot \mathrm{d}\bm{S}. 
             \end{align}
@@ -191,7 +190,7 @@
             \begin{align}
                 \oint_{S} \bm{B} \cdot \mathrm{d}\bm{S} = 0.
             \end{align}}
-            \onslide<3->{The flux linkage $\psi$ is the product of the magnetic flux $\phi$ and the number of turns $N$ of a coil:
+            \onslide<3->{The \hl{flux linkage} $\psi$ is the product of the magnetic flux $\phi$ and the number of turns $N$ of a coil:
             \begin{align}
                 \psi = N  \phi.
             \end{align}}
@@ -220,10 +219,10 @@
 	\begin{columns}
 		\begin{column}{0.48\textwidth}
 			\begin{itemize}
-                \item In the scenarios with multiple coils, the magnetic flux generated by one coil will influence also the other coils.
-                \item Exception: two coils are perfectly perpendicular to each other.
-                \item However, the magnetic flux typically does not fully couple with the other coils
-                \item The difference is the leakage flux $\phi_\sigma$.
+                \item<2-> In the scenarios with multiple coils, the magnetic flux generated by one coil will influence also the other coils.
+                \item<2-> Exception: two coils are perfectly perpendicular to each other.
+                \item<2-> However, the magnetic flux typically does not fully couple with the other coils
+                \item<2-> The difference is the \hl{leakage flux} $\phi_\sigma$.
             \end{itemize}
 		\end{column}
         \hfill
@@ -243,7 +242,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
 	\frametitle{Inductance}
-	The inductance $L$ describes the ratio between the magnetic flux linkage $\psi(t)$ to the current $i(t)$:
+	The \hl{inductance} $L$ describes the ratio between the magnetic flux linkage $\psi(t)$ to the current $i(t)$:
     \begin{align}
         \psi(t) = L i(t).
     \end{align}
@@ -295,7 +294,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
 	\frametitle{Self and mutual inductance (cont.)}
-    Utilizing the permeance definition (``magnetic conductance'') 
+    Utilizing the \hl{permeance} definition (\enquote{magnetic conductance}) 
     \begin{equation}
         \Lambda = \frac{\phi}{N i},
     \end{equation}
@@ -313,7 +312,7 @@
         \end{alignedat}
         \label{eq:flux_linkage_transformer}
     \end{equation}
-    Above, $L_1$ and $L_2$ are the self-inductances, $M_{12}$ and $M_{21}$ are the mutual inductances.
+    Above, $L_1$ and $L_2$ are the \hl{self-inductances}, $M_{12}$ and $M_{21}$ are the \hl{mutual inductances}.
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -321,7 +320,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
 	\frametitle{Self and mutual inductance (cont.)}
-    Hence, we can define the flux linkages of both coils using the following inductance matrix:
+    Hence, we can define the flux linkages of both coils using the following \hl{inductance matrix}:
     \begin{equation}
         \bm{\psi} = \begin{bmatrix} \psi_1 \\ \psi_2 \end{bmatrix} = \begin{bmatrix} L_1 & M_{12} \\ M_{21} & L_2 \end{bmatrix} \begin{bmatrix} i_1 \\ i_2 \end{bmatrix} = \bm{L}\bm{i}.
         \label{eq:flux_linkage_matrix_transformer}
@@ -332,13 +331,13 @@
         M_{12} = M_{21} = M.
     \end{equation}
     \pause
-    Based on \eqref{eq:flux_linkage_transformer}, we can also split the self-inductance $L_i$ of the $i$-th coil into the sum of the leakage inductance $L_{i,\sigma}$ and the magnetizing inductance $L_{i,\mathrm{m}}$:
+    Based on \eqref{eq:flux_linkage_transformer}, we can also split the self-inductance $L_i$ of the $i$-th coil into the sum of the \hl{leakage inductance} $L_{i,\sigma}$ and the \hl{magnetizing inductance} $L_{i,\mathrm{m}}$:
     \begin{equation}
         L_i = L_{i,\sigma} + L_{i,\mathrm{m}} = \Lambda_{ii}N_i^2 + \Lambda_{ji}N_i^2 \quad \mbox{with} \quad i \neq j. 
         \label{eq:inductance_split}
     \end{equation}
     \pause
-    Finally, we can define the coupling coefficient $k$ as:
+    Finally, we can define the \hl{coupling coefficient} $k$ as:
     \begin{equation}
         k = \frac{M}{\sqrt{L_1 L_2}}, \qquad 0 \leq k \leq 1,
         \label{eq:coupling_coefficient}
@@ -362,7 +361,7 @@
             \begin{align}
                 \bm{B} = \mu_0 \bm{H} \quad \mbox{with} \quad \mu_0 \approx \SI{4 \pi e-7}{\newton\per\ampere\squared}.
             \end{align}
-            \onslide<2->{To boost $\bm{B}$ for a given $\bm{H}$, ferromagnetic materials are typically used. These materials have a high relative magnetic permeability $\mu_{\mathrm{r}}$:
+            \onslide<2->{To boost $\bm{B}$ for a given $\bm{H}$, ferromagnetic materials are typically used. These materials have a high \hl{relative magnetic permeability} $\mu_{\mathrm{r}}$:
             \begin{align}
                 \bm{B} = \mu \bm{H} = \mu_0 \mu_{\mathrm{r}} \bm{H}.
                 \label{eq:linear_permeability} 
@@ -430,7 +429,7 @@
     \begin{columns}
 	\begin{column}{0.48\textwidth}
     \begin{itemize}
-        \item Magnetic domains are regions within a material where the magnetic moments of atoms are aligned (``mini magnets'').
+        \item Magnetic domains are regions within a material where the magnetic moments of atoms are aligned (\csqoutes{mini magnets}).
         \item The magnetization within each domain points in a uniform direction, but the magnetization of different domains may point in different directions.
     \end{itemize}
     \end{column}
@@ -616,8 +615,8 @@
             \begin{itemize}
                 \item PM's magnetization is nearly  completely saturated and constant in common operation area.
                 \item<2-> The greater the coercivity $H_\mathrm{c}$, the greater the resistance of the PM to demagnetization by external fields.
-                \item<3-> Beyond the so-called knee point, PMs are (partially) demagnetized.
-                \item<4-> Important figure of merit is the so-called energy product:
+                \item<3-> Beyond the so-called \hl{knee point}, PMs are (partially) demagnetized.
+                \item<4-> Important figure of merit is the so-called \hl{energy product}:
                 \begin{align}
                     \onslide<4->{(BH)_{\max} = \max \left\{- B H \right\}.}
                 \end{align}
