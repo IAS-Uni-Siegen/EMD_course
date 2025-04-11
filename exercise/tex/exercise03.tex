@@ -112,7 +112,7 @@ Interpret the results.}
 \end{solutionblock}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Task 1 %%
+%% Task 2 %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \task{Shunt DC machine drive of a hand-guided grinder}
@@ -126,7 +126,7 @@ Interpret the results.}
   Assuming a constant terminal voltage $U$, the torque $T$ scales inversely to the rotor angular frequency $\omega$. If the grinder is unloaded ($T \rightarrow 0$), i.e., during non-grinding idle operation, the rotor speed (theoretically) increases to infinity.  In practice, the air drag and the friction of the bearings still generate some load torque and, therefore, limit the speed. However, the speed still can get very high, which may lead to mechanical failure of the rotor.
 \end{solutionblock}
 
-\subtask{Derive the steady-state torque-speed characteristic of a shunt DC machine and sketch it to highlight the usability of this DC machine configuration for a hand-guided grinder.}
+\subtask{Derive the steady-state torque-speed characteristic of a shunt DC machine and sketch it to highlight the usability of this DC machine configuration for a hand-guided grinder. Assume a constant voltage supply at the motor terminals.}
 \begin{solutionblock}
   The steady-state voltage equations of a shunt DC machine are given by
   \begin{equation}
@@ -145,10 +145,12 @@ Interpret the results.}
   The torque is then given by
   \begin{equation}
     T = L_{\mathrm{f}}' I_\mathrm{a} I_\mathrm{f} = \underbrace{\frac{U^2 L_{\mathrm{f}}'}{R_\mathrm{f}R_\mathrm{a}}}_{T_0}  \left(1 - \frac{L'_\mathrm{f}}{R_\mathrm{f}}\omega\right)
+    \label{eq:shuntDCmachine_torque_breakaway}
   \end{equation}
   or conversely the rotor angular frequency as
   \begin{equation}
     \omega = \underbrace{\frac{R_\mathrm{f}}{L'_\mathrm{f}}}_{\omega_0} \left(1 - \frac{R_\mathrm{f} R_\mathrm{a}}{U^2 L_{\mathrm{f}}'} T\right)
+    \label{eq:shuntDCmachine_speed_no_load}
   \end{equation}
   with $T_0$ being the breakaway torque and $\omega_0$ the no-load speed. 
   \begin{solutionfigure}
@@ -179,6 +181,178 @@ Interpret the results.}
   \caption{Torque-speed characteristic of a shunt DC machine (for a constant $U$)}
   \label{fig:shuntDCmachine_torque_speed}
 \end{solutionfigure}
-As depicted in \autoref{fig:shuntDCmachine_torque_speed}, the no-load speed $\omega_0$ of the shunt DC machine is finite and adjustable via the machine design. Also, the linear torque-speed characteristic allows for a convenient operation of the grinder as the loading of the grinder results in a proportional decrease of the speed.   
+As depicted in \autoref{fig:shuntDCmachine_torque_speed}, the no-load speed $\omega_0$ of the shunt DC machine is finite and adjustable via the machine design. Also, the linear torque-speed characteristic allows for a convenient operation of the grinder.
+\end{solutionblock}
+%
+\subtask{Considering the motor parameters from \autoref{tab:parameter_shuntDCmachine}, calculate the no-load speed $\omega_0$ and the breakaway torque $T_0$.}
+\begin{table}[h]
+  \caption{Parameters of an exemplary shunt DC machine.}
+  \centering
+  \begin{tabular}{lll}\toprule
+  Parameter  & Description       & Value \\
+  \midrule
+  $R_\mathrm{a}$    & Armature winding resistance            & $\SI{8}{\ohm}$ \\
+$R_\mathrm{f}$    & Field winding resistance    & $\SI{150}{\ohm}$ \\
+$L'_\mathrm{f}$    & Effective field inductance  & $\SI{150}{\milli\henry}$ \\
+  $U$    & Supply voltage             & $\SI{310}{\volt}$ \\
+  \bottomrule
+  \end{tabular}
+  \label{tab:parameter_shuntDCmachine}
+\end{table}
+
+\begin{solutionblock}
+  Inserting the values from \autoref{tab:parameter_shuntDCmachine} in \eqref{eq:shuntDCmachine_torque_breakaway} and \eqref{eq:shuntDCmachine_speed_no_load} results in
+  \begin{equation}
+    \begin{split}
+      T_0 &= \frac{(\SI{310}{\volt})^2 \cdot \SI{150}{\milli\henry}}{\SI{150}{\ohm} \cdot \SI{8}{\ohm}} = \SI{12.01}{\newton \metre},\\
+      \omega_0 &= \frac{\SI{150}{\ohm}}{\SI{150}{\milli\henry}} = \SI{1000}{\per\second}.
+    \end{split}
+  \end{equation}
 \end{solutionblock}
 
+\subtask{At which angular frequency does the grinder reaches its maximum mechanical output power? What is the maximum mechanical output power?}
+\begin{solutionblock}
+  To get the machine's mechnical output power, we multiply \eqref{eq:shuntDCmachine_torque_breakaway} with the angular frequency $\omega$:
+  \begin{equation}
+    P_\mathrm{me} = T \cdot \omega = \frac{U^2 L_{\mathrm{f}}'}{R_\mathrm{f} R_\mathrm{a}} \left(\omega - \frac{L'_\mathrm{f}}{R_\mathrm{f}} \omega^2\right).
+  \end{equation}
+  The maximum mechanical output power is reached at 
+  \begin{equation}
+    \omega^* = \mathrm{arg} \max_\omega P_\mathrm{me}
+  \end{equation}
+  which can be found via 
+  \begin{equation}
+    \frac{\partial P_\mathrm{me}}{\partial \omega} = 0 \quad \Rightarrow \quad \omega^* = \frac{R_\mathrm{f}}{2 L'_\mathrm{f}}=\frac{1}{2}\omega_0.
+  \end{equation}
+  The maximum mechanical output power is then given by
+  \begin{equation}
+    P_\mathrm{me}^* = \frac{U^2 L_{\mathrm{f}}'}{R_\mathrm{f} R_\mathrm{a}} \left(\frac{1}{2}\omega_0 - \frac{1}{4} \frac{1}{\omega_0}\omega_0^2\right) = \frac{1}{4}T_0\omega_0 .
+  \end{equation}
+  Inserting the values from \autoref{tab:parameter_shuntDCmachine} results in
+  \begin{equation}
+    \begin{split}
+      \omega^* &= \frac{\SI{150}{\ohm}}{2 \cdot \SI{150}{\milli\henry}} = \SI{500}{\per\second},\\
+      P_\mathrm{me}^* &= \frac{1}{4} \cdot \SI{12.01}{\newton \metre} \cdot \SI{1000}{\per\second} = \SI{3003}{\watt}.
+    \end{split}
+  \end{equation}
+  \end{solutionblock}
+
+\subtask{Calculate the efficiency of the shunt DC machine at the maximum mechanical output power.}
+\begin{solutionblock}
+  The efficiency of the shunt DC machine at its maximum output power is given by
+  \begin{equation}
+    \begin{split}
+      \eta^* &= \frac{P_\mathrm{me}^*}{P_\mathrm{el}} = \frac{P_\mathrm{me}^*}{U_\mathrm{a} I_\mathrm{a} +U_\mathrm{f} I_\mathrm{f}} = \frac{P_\mathrm{me}^*}{U I_\mathrm{a} + U I_\mathrm{f}} = \frac{\frac{1}{4}\omega_0 T_0}{U^2 \left(\frac{1}{R_\mathrm{a}}-\frac{1}{2 R_\mathrm{a}}+\frac{1}{R_\mathrm{f}}\right)} = \frac{\frac{1}{4}U^2\frac{1}{R_\mathrm{a}}}{U^2 \left(\frac{1}{2}\frac{1}{R_\mathrm{a}}+\frac{1}{R_\mathrm{f}}\right)} \\
+       &= \frac{1}{2+4\frac{R_\mathrm{a}}{R_\mathrm{f}}}= \frac{1}{2+4\frac{\SI{8}{\ohm}}{\SI{150}{\ohm}}} =\SI{45.18}{\percent}.
+  \end{split}
+\end{equation}
+\end{solutionblock}
+
+\subtask{How can the torque of a shunt DC machine be reversed for a given terminal voltage and speed?}
+\begin{solutionblock}
+  The torque sign can only be changed by changing the connection polarity of the field excitation and armature windings leading to $I_\mathrm{a} = -I_\mathrm{f}$. 
+\end{solutionblock}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Task 3 %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\task{Unknown permanent magnet DC machine}
+An old, unknown permanent magnet DC machine is found. The only available information is the speed-torque characteristic shown in \autoref{fig:externDCmachine_torque_speed} which was retrieved from a partial data sheet remnant. Additionally, you measure the armature winding resistance with a multimeter and find $R_\mathrm{a} = \SI{1.5}{\ohm}$.
+\begin{figure}[h]
+  \centering
+  \begin{tikzpicture}
+    \begin{axis}[
+         xlabel={$T$ in $\mathrm{Nm}$},
+          ylabel={$\omega$ in $1/\mathrm{s}$},
+          ymin=0, ymax=400,
+          xmin=0, xmax=50,
+          width = 0.5\textwidth,
+          height = 0.5\textwidth,
+          grid,
+          thick,
+          axis lines=middle,
+          xlabel style = {anchor=west},
+          ylabel style = {anchor=south},
+        ]
+        \addplot[signalblue, domain=0:20, samples=50] {300-300/20*x};
+        \addplot[signalblue, domain=0:50, samples=50, dashed] {300-300/50*x};
+        \node[draw, circle, inner sep=0pt, minimum size=2pt, fill=white] at (axis cs: 10, 50) {\Large 1};
+        \node[draw, circle, inner sep=0pt, minimum size=2pt, fill=white] at (axis cs: 30, 160) {\Large 2};
+    \end{axis}
+\end{tikzpicture}
+\caption{Torque-speed characteristic of the unknown permanent magnet DC machine (at nominal supply voltages)}
+\label{fig:externDCmachine_torque_speed}
+\end{figure}
+%
+
+\subtask{It is known that the two characteristic curves in \autoref{fig:externDCmachine_torque_speed} were measured at the same supply voltage, but one was measured with and one without a dropping resistor in the armature circuit. Which curve is which? Explain your reasoning.}
+\begin{solutionblock}
+  The curve with the higher slope (solid -- 1) is the one with the dropping resistor in the armature circuit. This is because the dropping resistor reduces the effective voltage across the armature winding, therefore reducing the armature current which leads to a lower torque for a given speed. 
+\end{solutionblock}
+
+\subtask{Determine the effective flux linkage $\psi'_\mathrm{f}$ and the nominal armature voltage.}
+\begin{solutionblock}
+  The slope of the torque-speed characteristic is given by
+  \begin{equation}
+    \frac{\partial \omega}{\partial T} = -\frac{R_\mathrm{a}}{\psi'^2_\mathrm{f}}.
+    \label{eq:externDCmachine_slope}
+  \end{equation}
+  The slope of the characteristic curve (2) in \autoref{fig:externDCmachine_torque_speed}, i.e., without the dropping resistor, is given by
+  \begin{equation*}
+    \frac{\partial \omega}{\partial T} = \SI{-\frac{300}{50}}{\per\newton\per\metre\per\second} =  \SI{-6}{\per\newton\per\metre\per\second}.
+  \end{equation*}
+  Inserting into \eqref{eq:externDCmachine_slope} and solving for the effective flux linkage $\psi'_\mathrm{f}$ gives
+  \begin{equation}
+    \psi'_\mathrm{f} = \sqrt{-\frac{R_\mathrm{a}}{\partial \omega/\partial T}} = \sqrt{\frac{\SI{1.5}{\ohm}}{\SI{6}{\per\newton\per\metre\per\second}}} = \SI{0.5}{\volt\second}.
+  \end{equation}
+  At no-load the entire armature voltage is due to the induced voltage leading to
+  \begin{equation}
+    U_\mathrm{a} = \psi'_\mathrm{f} \omega_0 = \SI{0.5}{\volt\second} \cdot \SI{300}{\per\second} = \SI{150}{\volt}.
+  \end{equation}
+\end{solutionblock}
+
+\subtask{Calculate the armature start-up current $I_\mathrm{a,0}$.}
+\begin{solutionblock}
+  During start up, the entire armature voltage drops at the armature resistance and, therefore, the armature start-up current is given by
+  \begin{equation}
+    I_\mathrm{a,0} = \frac{U_\mathrm{a}}{R_\mathrm{a}} = \frac{\SI{150}{\volt}}{\SI{1.5}{\ohm}} = \SI{100}{\ampere}.
+  \end{equation}
+\end{solutionblock}
+
+\subtask{You know that the start-up current with the active dropping resistor (slope 1) was limited to twice the nominal armature current. Calculate the nominal armature current $I_\mathrm{a}$ and the resistance of the dropping resistor $R_\mathrm{d}$.}
+\begin{solutionblock}
+  The start-up current at zero speed considering an active dropping resistor is given by
+  \begin{equation}
+    I_\mathrm{a}(\omega=0, R_\mathrm{d}\neq 0) =\tilde{I}_\mathrm{a}= \frac{T_0}{\psi'_\mathrm{f}} = \frac{\SI{20}{\newton\meter}}{\SI{0.5}{\volt\second}} = \SI{40}{\ampere}.
+  \end{equation}
+  The dropping resistor to limit the start-up current to twice the nominal armature current must have had the following resistance:
+  \begin{equation}
+    R_\mathrm{d} = \frac{U_\mathrm{a}}{\tilde{I}_\mathrm{a}} - R_\mathrm{a} = \frac{\SI{150}{\volt}}{\SI{40}{\ampere}} - \SI{1.5}{\ohm} = \SI{2.25}{\ohm}.
+  \end{equation}
+  The nominal armature current results in
+  \begin{equation}
+    I_\mathrm{a} = \frac{\tilde{I}_\mathrm{a}}{2} = \SI{20}{\ampere}.
+  \end{equation}
+\end{solutionblock}
+
+\subtask{What is the machine's nominal operating point in terms of torque and angular frequency?}
+\begin{solutionblock}
+  The nominal torque can be easily calculated from the nominal armature current and the effective flux linkage:
+  \begin{equation}
+    T = I_\mathrm{a} \psi'_\mathrm{f} = \SI{20}{\ampere} \cdot \SI{0.5}{\volt\second} = \SI{10}{\newton\meter}.
+  \end{equation}
+  The nominal angular frequency can be either graphically determined from \autoref{fig:externDCmachine_torque_speed} or calculated from the armature voltage equation:
+  \begin{equation}
+    U_\mathrm{a} = R_\mathrm{a} I_\mathrm{a} + \psi'_\mathrm{f} \omega \quad \Rightarrow \quad \omega = \frac{U_\mathrm{a}-R_\mathrm{a} I_\mathrm{a}}{\psi'_\mathrm{f}} = \frac{\SI{150}{\volt}-\SI{1.5}{\ohm}\cdot\SI{20}{\ampere}}{\SI{0.5}{\volt\second}} = \SI{240}{\per\second}.
+  \end{equation}
+\end{solutionblock}
+
+\subtask{What is the machine's efficiency at the nominal operating point?}
+
+\begin{solutionblock}
+  The efficiency of the machine at the nominal operating point is given by
+  \begin{equation}
+    \eta = \frac{P_\mathrm{me}}{P_\mathrm{el}} = \frac{T \omega}{U_\mathrm{a} I_\mathrm{a}} = \frac{\SI{10}{\newton\meter} \cdot \SI{240}{\per\second}}{\SI{150}{\volt} \cdot \SI{20}{\ampere}} = \SI{80}{\percent}.
+  \end{equation}
+\end{solutionblock}
