@@ -697,7 +697,7 @@
 		\begin{column}{0.6\textwidth}
             A changing magnetic field induces an electric field according to the Maxwell -- Faraday equation:
             \begin{align}
-                \mbox{Integral form:} \quad & \oint_{\partial S} \bm{E} \cdot \mathrm{d}\bm{s} = -\frac{\mathrm{d}}{\mathrm{d}t}\iint_{S}\bm{B}\cdot\mathrm{d}\bm{S},\\
+                \mbox{Integral form:} \quad & \oint_{\partial S} \bm{E} \cdot \mathrm{d}\bm{s} = -\frac{\mathrm{d}}{\mathrm{d}t}\iint_{S}\bm{B}\cdot\mathrm{d}\bm{S},\label{eq:induction_law_int}\\
                 \mbox{Differential form:} \quad &\nabla \times \bm{E} = -\frac{\partial \bm{B}}{\partial t}.
                 \label{eq:induction_law}
             \end{align}
@@ -855,14 +855,14 @@
             \textbf{Electric network} & & & \textbf{Magnetic network} & & \\
             \midrule
             Voltage & $u = \int \bm{E} \cdot \mathrm{d}\bm{s}$ & \si{\volt}&  Magnetomotive force & $\theta = \int \bm{H} \cdot \mathrm{d}\bm{s}$  & \si{\ampere}\\
-            Electric field & $\bm{E}$ & \si{\volt\per\metre} & Magnetic field  & $\bm{H}$ & \si{\ampere\per\metre}\\
-            Current & $i$ & \si{\ampere} & Magnetic flux & $\phi$  & \si{\volt\second}\\
-            Resistance & $R$ & \si{\ohm} & Reluctance & $R$  & \si{\per\henry}\\
-            Conductance & $G$ & \si{\siemens} & Permeance & $\Lambda$ &  \si{\henry}\\
-            Conductivity & $\sigma$ & \si{\siemens\per\metre} & Permeability & $\mu$ &\si{\henry\per\metre}\\
-            Ohm's law & $u = R i$ & & Hopkinson's law & $\theta = R \phi$ &\\
-            Kirchoff's first law & $\sum i_k = 0$ & & Equivalent first law & $\sum \phi_k = 0$ &\\
-            Kirchoff's second law & $\sum u_k = 0$ & & Equivalent second law & $\sum \theta_k - \theta_0 = 0$ &\\
+            \onslide<2->{Electric field & $\bm{E}$ & \si{\volt\per\metre} & Magnetic field  & $\bm{H}$ & \si{\ampere\per\metre}}\\
+            \onslide<3->{Current & $i$ & \si{\ampere} & Magnetic flux & $\phi$  & \si{\volt\second}}\\
+            \onslide<4->{Resistance & $R$ & \si{\ohm} & Reluctance & $R$  & \si{\per\henry}}\\
+            \onslide<5->{Conductance & $G$ & \si{\siemens} & Permeance & $\Lambda$ &  \si{\henry}}\\
+            \onslide<6->{Conductivity & $\sigma$ & \si{\siemens\per\metre} & Permeability & $\mu$ &\si{\henry\per\metre}}\\
+            \onslide<7->{Ohm's law & $u = R i$ & & Hopkinson's law & $\theta = R \phi$ &}\\
+            \onslide<8->{Kirchoff's first law & $\sum i_k = 0$ & & Equivalent first law & $\sum \phi_k = 0$ &}\\
+            \onslide<9->{Kirchoff's second law & $\sum u_k = 0$ & & Equivalent second law & $\sum \theta_k - \theta_0 = 0$ &}\\
             \bottomrule
         \end{tabular}
         \caption{Electric and magnetic network quantities and their analogies}
@@ -1038,7 +1038,7 @@
             \begin{itemize}
                 \item  A changing magnetic field induces a voltage.
                 \item In bulky conductive materials (e.g., electromagnetic steel) this voltage drives currents called eddy currents.
-                \item<2-> Eddy currents lead to energy losses and heat dissipation.
+                \item<2-> Eddy currents lead to losses and heat dissipation.
                 \item<3-> To reduce eddy currents, laminated cores are used as they decrease the effective current path width and, therefore, increase the effective resistance per sheet.
             \end{itemize}
 		\end{column}
@@ -1064,7 +1064,7 @@
             \begin{varblock}{Assumption}
                 Sheet's thickness $d$ is much smaller than the sheet's width $w$ and the magnetic flux density $\bm{B}$ is homogenous in the normal direction of $S$ and introduces a sinusoidal excitation $\bm{B}(x,y,t) = \hat{B}\sin(\omega t)$.
              \end{varblock}
-            \onslide<2->{From \eqref{eq:induction_law} integrating over $S$, we get
+            \onslide<2->{From \eqref{eq:induction_law_int} integrating over $S$, we get
             $$
                 2wE(x,t) = -\frac{\partial B}{\partial t}2xw
            $$
@@ -1098,7 +1098,7 @@
     $$
     p(x,t) = \frac{1}{\sigma} J^2(x,t) = x^2\sigma\omega^2\hat{B}^2\cos^2(\omega t).
     $$\pause
-    The average power loss per volume (considering the $x$-direction) is:
+    The average power loss per volume (considering the entire sheet thickness) is:
     $$
     p(t) = \frac{1}{d} \int_{-d/2}^{d/2} p(x,t) \mathrm{d}x = \frac{1}{12}\sigma\omega^2 d^2 \hat{B}^2\cos^2(\omega t).
     $$
