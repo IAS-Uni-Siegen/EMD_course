@@ -369,7 +369,7 @@
     \begin{columns}
 		\begin{column}{0.42\textwidth}
 			\begin{varblock}{Retrogressive winding}
-				\figref{fig:Lap_winding_distances_retrogressive} shows a Retrogressive winding layout with $y_\mathrm{b} < y_\mathrm{f}$, i.e., each coil crosses itself.
+				\figref{fig:Lap_winding_distances_retrogressive} shows a retrogressive winding layout with $y_\mathrm{b} < y_\mathrm{f}$, i.e., each coil crosses itself.
 			\end{varblock}
 			\begin{itemize}
 				\item<2-> Retrogressive windings require more conductor material due to the crossing of the coils and, therefore, are less common.
@@ -586,7 +586,7 @@
 	\frametitle{Air gap field (cont.)}
 	Based on \eqref{eq:Air_gap_flux_DC_machine_simple} together with \eqref{eq:DC_flux_reluctance_simpl} we can simplify the effective air gap flux to
 	\begin{equation}
-		\phi_\delta = \frac{N_\mathrm{f} I_\mathrm{f}}{2 R_\delta} = \frac{N_\mathrm{F} I_\mathrm{f}}{2 \frac{\delta}{\mu_0 A_\delta}} = \frac{\mu_0 N_\mathrm{f} A_\delta}{2 \delta} I_\mathrm{f}.
+		\phi_\delta \approx \frac{N_\mathrm{f} I_\mathrm{f}}{2 R_\delta} = \frac{N_\mathrm{F} I_\mathrm{f}}{2 \frac{\delta}{\mu_0 A_\delta}} = \frac{\mu_0 N_\mathrm{f} A_\delta}{2 \delta} I_\mathrm{f}.
 		\label{eq:Air_gap_flux_DC_machine}
 	\end{equation}\pause
 	Here, $\delta$ is the air gap width and $A_\delta$ the effective cross-sectional area of the air gap which is
@@ -665,7 +665,7 @@
 	\begin{equation}
 		T = \frac{\mu_0 \alpha N_\mathrm{f} N_\mathrm{a} l_z \tau_\mathrm{p}}{2 \pi  \delta a} I_\mathrm{f} I_\mathrm{a}.
 		\label{eq:Torque_DC_machine}
-	\end{equation}\pause
+	\end{equation}
 \end{frame}
 
 
@@ -710,23 +710,23 @@
 				\label{eq:Air_gap_flux_density_DC_machine_circumference}
 			\end{equation}
 			The flux linkage of a single armature coil starting at position $\varepsilon$ is then
-			\begin{equation}
+			\begin{equation*}
 				\begin{split}
 				\phi_\mathrm{c}(\varepsilon) &= \iint_{S} \bm{B} \cdot \mathrm{d}\bm{S}
 											 = l_\mathrm{z}d_\mathrm{a}\int_{\varepsilon}^{\varepsilon+\pi}B(\varepsilon) \mathrm{d}\varepsilon \\
 											 & = l_\mathrm{z}d_\mathrm{a}\overline{B}_\delta\begin{cases}
 												(\pi/2 - \varepsilon), &  0 \leq \varepsilon < \pi,\\
 												(\varepsilon - 3\pi/2), &  \pi \leq \varepsilon < 2\pi.
-											\end{cases}.
+											\end{cases}
 				\end{split}
 				\label{eq:Flux_linkage_single_coil}
-			\end{equation}
+			\end{equation*}
 		\end{column}
 	\hfill
-	\begin{column}{0.55\textwidth}
+	\begin{column}{0.50\textwidth}
 		\begin{figure}
 			\centering
-			\includegraphics[height=0.6\textheight]{fig/lec03/Flux_density_and_linkage.pdf}
+			\includegraphics[height=0.55\textheight]{fig/lec03/Flux_density_and_linkage.pdf}
 			\caption{Flux linkage $\psi_\mathrm{c}$ of a single armature coil based on the simplified, rectangular air gap flux density $B_\delta(\varepsilon)$  from \figref{fig:Magnetic_field_normal_component_DC_machine} -- light blue and yellow areas represent two exemplary armature coil positions.}
 			\label{fig:Flux_density_and_linkage}
 		\end{figure}
@@ -739,7 +739,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
 	\frametitle{Induced voltage}
-	Assuming that the armature is rotating with the (constant) speed $n$ (or angular velocity $\omega = 2 \pi n=\dot{\varepsilon}$), the induced voltage per armature conductor loop is
+	Assuming that the armature is rotating with the (constant) speed $n$ (or angular velocity $\omega = \dot{\varepsilon}$), the induced voltage per armature conductor loop is
 	\begin{equation}
 			u_\mathrm{i,c} = - \frac{\mathrm{d}}{\mathrm{d}t} \phi_\mathrm{c} = - \frac{\mathrm{d}}{\mathrm{d}\varepsilon} \phi_\mathrm{c} \frac{\mathrm{d}}{\mathrm{d}t}\varepsilon = - \omega l_\mathrm{z}d_\mathrm{a}\overline{B}_\delta \begin{cases}
 				-\omega, &  0 \leq \varepsilon < \pi,\\
@@ -753,7 +753,7 @@
 	   \item $N_\mathrm{a}$ total armature conductor loops, \pause
 	   \item $2 a$ parallel armature conductors per pole pair (depends on winding scheme, cf. \eqref{eq:Parallel_conductors}), \pause
 	\end{itemize}
-	resulting in: \pause
+	resulting in: 
 	\begin{equation}
 			u_\mathrm{i} = \frac{N_\mathrm{a}}{2 a} |u_\mathrm{i,c}| = \frac{N_\mathrm{a}}{2 a}\omega l_\mathrm{z}d_\mathrm{a}\overline{B}_\delta = \omega I_\mathrm{f}\frac{\mu_0 \alpha N_\mathrm{f} N_\mathrm{a} l_\mathrm{z} d_\mathrm{a}}{4 \delta p a} =  \omega I_\mathrm{f} \frac{\mu_0 \alpha N_\mathrm{f} N_\mathrm{a} l_z \tau_\mathrm{p}}{2 \pi  \delta a} =\omega I_\mathrm{f} L_\mathrm{f}' = \omega  \psi_\mathrm{f}'.
 	\end{equation}
@@ -786,7 +786,7 @@
 	\begin{equation*}
 		T =  L_\mathrm{f}' i_\mathrm{f} i_\mathrm{a}  = \psi_\mathrm{f}' i_\mathrm{a}
 	\end{equation*} \pause
-	\textbf{Note}: we represent the machine currents with small letters to indicate that they are time-dependent (e.g., if the external voltage supplied is varying).
+	\textbf{Note}: we represent the machine currents with small letters to indicate that they are time-dependent (e.g., if the external voltage supply is varying).
 \end{column} \pause
 \hfill
 \begin{column}{0.45\textwidth}
@@ -805,7 +805,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
 	\frametitle{Power balance and efficiency}
-		Based on \eqref{fig:ECD_DC_machine} (note the load convention), the electrical power of the DC machine is:
+		Based on \figref{fig:ECD_DC_machine} (note the load convention), the electrical power of the DC machine is:
 		\begin{equation}
 			P_\mathrm{el} = u_\mathrm{a} i_\mathrm{a} + u_\mathrm{f} i_\mathrm{f}.
 		\end{equation} \pause
