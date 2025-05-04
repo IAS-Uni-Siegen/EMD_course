@@ -877,7 +877,7 @@
 	\frametitle{Armature reaction}
 	\begin{itemize}
 		\item So far, we have neglected the impact of the armature current on the magnetic field.
-		\item If $i_\mathrm{a}\neq 0$, the magnetic field lines in the air gap are distorted leading to a so-called armature reaction (cf. \figref{fig:Armature_reaction}).
+		\item If $i_\mathrm{a}\neq 0$, the \hl{magnetic field in the air gap is distorted} (so-called armature reaction).
 	\end{itemize}
     \begin{figure}
         \centering
@@ -896,9 +896,9 @@
 		\begin{column}{0.55\textwidth}
 	Issues related to the armature reaction:
 	\begin{itemize}
-		\item The neutral zone (field-free commutation area) is shifted by $\beta$ degrees in the circumferential direction, that is, exacerbate the commutation process (increased risk of sparking).
-		\item<2-> High local field densities can lead to magnetic saturation which will increase the iron path reluctance and consequently decrease the machine's torque capability. Also, the iron losses will increase. 
-		\item<3-> The imbalanced magnetic field leads to an imbalanced Lorentz force distribution on the armature conductors which can cause mechanical distortions. 
+		\item The \hl{neutral zone} (field-free commutation area) is shifted by $\beta$ degrees in the circumferential direction, that is, exacerbate the commutation process (increased risk of sparking).
+		\item<2-> \hl{High local field densities} can lead to magnetic saturation which will increase the iron path reluctance and consequently decrease the machine's torque capability. Also, the iron losses will increase. 
+		\item<3-> The \hl{imbalanced magnetic field} leads to an imbalanced Lorentz force distribution on the armature conductors which can cause mechanical distortions. 
 	\end{itemize}
 \end{column}
 \hfill
@@ -1094,7 +1094,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
 	\frametitle{Steady-state behavior: separately excited DC machine}
-			Assuming a fixed excitation $\psi_\mathrm{f}'$ (e.g., by a permanent magnet or constant field current), the separately excited DC machine's voltage demand for a certain speed is:
+			Assuming a \hl{fixed excitation $\psi_\mathrm{f}'$} (e.g., by a permanent magnet or constant field current), the separately excited DC machine's voltage demand for a certain speed is:
 			\begin{equation}
 				U_\mathrm{a} = R_\mathrm{a} I_\mathrm{a} + \omega \psi_\mathrm{f}'.
 			\end{equation} \pause
@@ -1123,14 +1123,14 @@
 \begin{frame}
 	\frametitle{Steady-state behavior: separately excited DC machine (cont.)}
 	\begin{columns}
-		\begin{column}{0.55\textwidth}
-		For $U_\mathrm{a}=\mbox{const.}>0$, the starting torque (i.e., the torque at zero speed) and the corresponding armature current are:
+		\begin{column}{0.50\textwidth}
+		For $U_\mathrm{a}=\mbox{const.}>0$, the \hl{starting torque} (i.e., the torque at zero speed) and the corresponding armature current are:
 		\begin{equation}
 			\begin{split}
 				T(\omega=0) &= T_0 = U_\mathrm{a}\frac{\psi_\mathrm{f}'}{R_\mathrm{a}}, \\ I_\mathrm{a}(\omega=0) &= I_{\mathrm{a},0}=  \frac{U_\mathrm{a}}{R_\mathrm{a}}.
 			\end{split}
 		\end{equation} \pause
-		On the other hand for $T=0$, the no-load speed $\omega_0$ is:
+		On the other hand for $T=0$, the \hl{no-load speed} $\omega_0$ is:
 		\begin{equation}
 			\omega_0 = \frac{U_\mathrm{a}}{\psi_\mathrm{f}'}.
 		\end{equation} \pause
@@ -1152,7 +1152,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
 	\frametitle{Steady-state behavior: separately excited DC machine (cont.)}
-			As the start up of a DC machine with a fixed armature voltage $U_\mathrm{a}$ can lead to very high armature currents, which potentially cause damage, dropping resistors can be used to limit the armature current. While this approach was historically very common (e.g., in rail vehicles), its additional power losses and the necessity to carry bulky resistors are obvious drawbacks. 
+			As the start up of a DC machine with a fixed armature voltage $U_\mathrm{a}$ can lead to very high armature currents, which potentially cause damage, \hl{dropping resistors can be used to limit the armature current}. While this approach was historically very common (e.g., in rail vehicles), its additional power losses and the necessity to carry bulky resistors are obvious drawbacks. 
 		\begin{figure}
 				\centering
 				\includegraphics[scale=1.1]{fig/lec03/DC_machine_dropping_resistor.pdf}
@@ -1166,7 +1166,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
 	\frametitle{Operation constraints: separately excited DC machine}
-			Now we consider $U_\mathrm{a}$ being controllable (e.g., via buck converter), that is, we can also change $I_\mathrm{a}$. Nevertheless, the machine is still limited by the voltage and current constraint:
+			Now we \hl{consider $U_\mathrm{a}$ being controllable} (e.g., via buck converter), that is, we can also change $I_\mathrm{a}$. Nevertheless, the machine is still limited by the voltage and current constraint:
 			\begin{equation}
 				U_\mathrm{max} \leq U_\mathrm{a} = \frac{R_\mathrm{a}}{\psi_\mathrm{f}'} T + \omega \psi_\mathrm{f}', \qquad I_\mathrm{max} \leq I_\mathrm{a}.
 				\label{eq:Operation_constraints_sep_DC_machine}
@@ -1199,7 +1199,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
 	\frametitle{Field weakening of the separately excited DC machine}
-			In the previous scenario, the no-load speed $\omega_0$ is limited by the maximum armature voltage $U_\mathrm{max}$. However, if the field winding current $I_\mathrm{f}$ is also controllable, the no-load speed can be increased by decreasing the excitation $\psi_\mathrm{f}'$ (so-called field weakening). \pause Consider an armature operation both at the voltage and current constraint:
+			In the previous scenario, the no-load speed $\omega_0$ is limited by the maximum armature voltage $U_\mathrm{max}$. However, if the field winding current $I_\mathrm{f}$ is also controllable, the no-load speed can be increased by \hl{decreasing the excitation $\psi_\mathrm{f}'$} (so-called field weakening). \pause Consider an armature operation both at the voltage and current constraint:
 			\begin{equation}
 				U_\mathrm{max}  = R_\mathrm{a} I_\mathrm{max} + \omega \psi_\mathrm{f}'= R_\mathrm{a} I_\mathrm{max} + \omega L_\mathrm{f}' i_\mathrm{f}.
 			\end{equation} \pause
@@ -1233,10 +1233,12 @@
 	\frametitle{Steady-state behavior: shunt DC machine}
 	\begin{columns}
 		\begin{column}{0.55\textwidth}
+		\vspace{0.1cm}%
 		The shunt DC machine is characterized by:
 	   \begin{equation}
 		U = U_\mathrm{a}= U_\mathrm{f}, \qquad I = I_\mathrm{a} + I_\mathrm{f}.
 	   \end{equation}
+	   \onslide<2->{
 	   The steady-state currents are:
 	   \begin{equation}
 		\begin{split}
@@ -1244,11 +1246,12 @@
 			I_\mathrm{a} &= \frac{U_\mathrm{a} - \omega L_\mathrm{f}'I_\mathrm{f}}{R_\mathrm{a}} = \frac{1- L_\mathrm{f}'/R_\mathrm{f}\omega }{R_\mathrm{a}} U,\\
 			I &= I_\mathrm{a} + I_\mathrm{f} = \left(\frac{1}{R_\mathrm{a}} + \frac{1}{R_\mathrm{f}} - \frac{L_\mathrm{f}'\omega}{R_\mathrm{a}R_\mathrm{f}}\right)U.
 		\end{split}
-		\end{equation}
+		\end{equation}}
+		\onslide<3->{
 		The resulting steady-state torque is:
 		\begin{equation}
 			T = L_\mathrm{f}' I_\mathrm{f} I_\mathrm{a} = L_\mathrm{f}'\frac{1- L_\mathrm{f}'/R_\mathrm{f}\omega }{R_\mathrm{a}R_\mathrm{f}}U^2.
-		\end{equation}
+		\end{equation}}
 \end{column}
 \hfill
 \begin{column}{0.45\textwidth}
@@ -1272,19 +1275,19 @@
 		U = U_\mathrm{a} + U_\mathrm{f}, \qquad I = I_\mathrm{a} = I_\mathrm{f}.
 		\label{eq:DC_series_machine_char}
 	   \end{equation}
-	   We can rewrite the terminal voltage as
+	   \onslide<2->{We can rewrite the terminal voltage as
 	   \begin{equation}
 		U = \left(R_\mathrm{a} + R_\mathrm{f}\right) I + \omega L_\mathrm{f}' I = R'(\omega) I 
 	   \end{equation}
 	   with the effective speed-dependent resistance
 	   \begin{equation}
 		R'(\omega) = R_\mathrm{a} + R_\mathrm{f} + \omega L_\mathrm{f}'.
-	   \end{equation}
-	   The steady-state torque is then
+	   \end{equation}}
+	   \onslide<3->{The steady-state torque is then
 	   \begin{equation}
 		T = L_\mathrm{f}' I^2 = L_\mathrm{f}'\left(\frac{U}{R'(\omega)}\right)^2.
 		\label{eq:Torque_series_DC_machine}
-	   \end{equation}
+	   \end{equation}}
 \end{column}
 \hfill
 \begin{column}{0.45\textwidth}
@@ -1309,11 +1312,11 @@
 	   \end{equation}
 	   the current and the torque get (theoretically) infinite. This is due to the fact that the back EMF is exactly compensating the resistive voltage drop.
 
-	   Moreover, for from \eqref{eq:Torque_series_DC_machine} we can observe that
+	   \onslide<2->{Moreover, for from \eqref{eq:Torque_series_DC_machine} we can observe that
 	   \begin{equation}
 		 T \rightarrow 0 \quad \Rightarrow \quad \omega \rightarrow \infty
 	   \end{equation}
-	   holds for any DC voltage $U \neq 0$. This is due to inherent, load-dependent flux weakening effect of the series DC machine.
+	   holds for any DC voltage $U \neq 0$. This is due to inherent, load-dependent flux weakening effect of the series DC machine.}
 \end{column}
 \hfill
 \begin{column}{0.45\textwidth}
@@ -1334,7 +1337,7 @@
 	\frametitle{Universal machine: series DC machine with sinusoidal excitation}
 	\begin{columns}
 		\begin{column}{0.55\textwidth}
-		From \eqref{eq:Torque_series_DC_machine} it becomes clear that $T\sim I^2$ holds and, hence, the torque is independent of the sign of the current. Hence, the series DC machine can be also operated with an AC voltage supply (so-called universal machine).
+		From \eqref{eq:Torque_series_DC_machine} it becomes clear that $T\sim I^2$ holds and, hence, the torque is independent of the sign of the current. Hence, the \hl{series DC machine can be also operated with an AC voltage} supply (so-called universal machine).
 		\\[1em] \pause 
 		Consider the sinusoidal excitation 
 		\begin{align*}
@@ -1418,12 +1421,10 @@
 	\frametitle{Universal machine: series DC machine with sinusoidal excitation (cont.)}
 	\begin{columns}
 		\begin{column}{0.55\textwidth}
-		\onslide<2->{
-		Some remarks on the universal machine:}
 		\begin{itemize}
-			\item<2-> Only if the reactance $\omega_\mathrm{el}L$ impact on the voltage demand is negligible, the universal machine average torque at AC mode is identical to the series DC machine torque in DC mode applying the same effective voltage.
-			\item<3-> Due to the AC field current, both the armature and stator should be based on a laminated iron core design to reduce iron losses.
-			\item<4-> The peak armature and field currents are $\sqrt{2}$ times higher in the AC case than in DC operation. To prevent magnetic saturation, the iron paths must be designed larger than for an equivalent DC machine (i.e., leading to more volume and weight).
+			\item Only if the reactance $\omega_\mathrm{el}L$ impact on the voltage demand is negligible, the universal machine average torque at AC mode is identical to the series DC machine torque in DC mode applying the same effective voltage.
+			\item<2-> Due to the AC field current, both the armature and stator should be based on a laminated iron core design to reduce iron losses.
+			\item<3-> The peak armature and field currents are $\sqrt{2}$ times higher in the AC case than in DC operation. To prevent magnetic saturation, the iron paths must be designed larger than for an equivalent DC machine (i.e., leading to more volume and weight).
 		\end{itemize}
 \end{column}
 \hfill
@@ -1483,11 +1484,11 @@
 			i_\mathrm{sp} = -\frac{N_\mathrm{c} }{L_\mathrm{c} } \frac{p}{a} \hat{\phi}_\delta \cos(\omega_\mathrm{el} t).
 		\end{equation}
 		\pause
-		This additional current will cause commutator sparking and, hence, the universal machine commutation process is more challenging than for a pure DC machine. 
+		This additional current will promote commutator sparking and, hence, the universal machine commutation process is more challenging than for a pure DC machine. 
 		\pause
-		\vspace{-0.25cm}
+		\vspace{-0.2cm}
 		\begin{varblock}{Conlusion on the universal machine}
-			The drawbacks of the universal machine in terms of sizing and commutation sparking (leading to higher wear) are the reasons why this machine type is typical limited to low-cost applications (e.g., household appliances) nowadays. 
+			The drawbacks of the universal machine in terms of sizing and commutation sparking (leading to higher wear) are the reasons why this machine type is typical limited to low-cost applications (e.g., household appliances). 
 		\end{varblock}
 \end{column}
 \hfill
