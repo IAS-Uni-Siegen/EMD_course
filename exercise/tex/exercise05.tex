@@ -339,7 +339,7 @@ Consider a 4-pole three-phase motor with 15 stator slots. A simplified sketch of
     \begin{align}
         \begin{split}
             \underline{\xi}_{\mathrm{a,}1} = \frac{1}{10j}\cdot \left[ \right. -e^{j\cdot1\cdot2\cdot\SI{0}{\degree}}
-             & +e^{j\cdot1\cdot2\cdot\SI{72}{\degree}}+e^{j\cdot1\cdot2\cdot\SI{92}{\degree}}-2e^{j\cdot1\cdot2\cdot\SI{168}{\degree}}-e^{j\cdot1\cdot2\cdot\SI{192}{\degree}}
+             & +e^{j\cdot1\cdot2\cdot\SI{72}{\degree}}+e^{j\cdot1\cdot2\cdot\SI{96}{\degree}}-2e^{j\cdot1\cdot2\cdot\SI{168}{\degree}}-e^{j\cdot1\cdot2\cdot\SI{192}{\degree}}
             +e^{j\cdot1\cdot2\cdot\SI{240}{\degree}}                                                                                                                           \\
              & +2e^{j\cdot1\cdot2\cdot\SI{264}{\degree}}-e^{j\cdot1\cdot2\cdot\SI{336}{\degree}}
             \left. \right]
@@ -355,7 +355,7 @@ Consider a 4-pole three-phase motor with 15 stator slots. A simplified sketch of
     \begin{align}
         \begin{split}
             \underline{\xi}_{\mathrm{a,}5} = \frac{1}{10j}\cdot \left[ \right. -e^{j\cdot5\cdot2\cdot\SI{0}{\degree}}
-             & +e^{j\cdot5\cdot2\cdot\SI{72}{\degree}}+e^{j\cdot5\cdot2\cdot\SI{92}{\degree}}-2e^{j\cdot5\cdot2\cdot\SI{168}{\degree}}-e^{j\cdot5\cdot2\cdot\SI{192}{\degree}}
+             & +e^{j\cdot5\cdot2\cdot\SI{72}{\degree}}+e^{j\cdot5\cdot2\cdot\SI{96}{\degree}}-2e^{j\cdot5\cdot2\cdot\SI{168}{\degree}}-e^{j\cdot5\cdot2\cdot\SI{192}{\degree}}
             +e^{j\cdot5\cdot2\cdot\SI{240}{\degree}}                                                                                                                           \\
              & +2e^{j\cdot5\cdot2\cdot\SI{264}{\degree}}-e^{j\cdot5\cdot2\cdot\SI{336}{\degree}}
             \left. \right]
@@ -371,7 +371,7 @@ Consider a 4-pole three-phase motor with 15 stator slots. A simplified sketch of
     \begin{align}
         \begin{split}
             \underline{\xi}_{\mathrm{a,}7} = \frac{1}{10j}\cdot \left[ \right. -e^{j\cdot7\cdot2\cdot\SI{0}{\degree}}
-             & +e^{j\cdot7\cdot2\cdot\SI{72}{\degree}}+e^{j\cdot7\cdot2\cdot\SI{92}{\degree}}-2e^{j\cdot7\cdot2\cdot\SI{168}{\degree}}-e^{j\cdot7\cdot2\cdot\SI{192}{\degree}}
+             & +e^{j\cdot7\cdot2\cdot\SI{72}{\degree}}+e^{j\cdot7\cdot2\cdot\SI{96}{\degree}}-2e^{j\cdot7\cdot2\cdot\SI{168}{\degree}}-e^{j\cdot7\cdot2\cdot\SI{192}{\degree}}
             +e^{j\cdot7\cdot2\cdot\SI{240}{\degree}}                                                                                                                           \\
              & +2e^{j\cdot7\cdot2\cdot\SI{264}{\degree}}-e^{j\cdot7\cdot2\cdot\SI{336}{\degree}}
             \left. \right]
@@ -586,8 +586,8 @@ Consider the shown 10-pole 3-phase motor with 12 stator slots in \autoref{fig:MM
         \multirow{2}{*}{Coil nr.} & \multicolumn{2}{c}{Phase a} & \multicolumn{2}{c}{Phase b} & \multicolumn{2}{c}{Phase c}                  \\
                                   & In                          & Out                         & In                          & Out & In & Out \\
         \midrule
-        1                         & 1                           & 2                           &                             &     &    &     \\
-        2                         & 1                           & 12                          &                             &     &    &     \\
+        1                         & 2                           & 1                           &                             &     &    &     \\
+        2                         & 12                          & 1                           &                             &     &    &     \\
         3                         & 7                           & 6                           &                             &     &    &     \\
         4                         & 7                           & 8                           &                             &     &    &     \\
         \bottomrule
@@ -638,10 +638,10 @@ Consider the shown 10-pole 3-phase motor with 12 stator slots in \autoref{fig:MM
             \multirow{2}{*}{Coil nr.} & \multicolumn{2}{c}{Phase a} & \multicolumn{2}{c}{Phase b} & \multicolumn{2}{c}{Phase c}                  \\
                                       & In                          & Out                         & In                          & Out & In & Out \\
             \midrule
-            1                         & 1                           & 2                           & 3                           & 2   & 4  & 5   \\
-            2                         & 1                           & 12                          & 3                           & 4   & 6  & 5   \\
-            3                         & 7                           & 6                           & 8                           & 9   & 11 & 10  \\
-            4                         & 7                           & 8                           & 10                          & 9   & 11 & 12  \\
+            1                         & 2                           & 1                           & 10                          & 9   & 6  & 5   \\
+            2                         & 12                          & 1                           & 8                           & 9   & 4  & 5   \\
+            3                         & 7                           & 6                           & 3                           & 2   & 11 & 10  \\
+            4                         & 7                           & 8                           & 3                           & 4   & 11 & 12  \\
             \bottomrule
         \end{tabular}
         \label{tab:solution_concentratedWinding}
