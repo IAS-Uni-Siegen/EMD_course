@@ -1,0 +1,17 @@
+# latexmkrc to match build.py behavior and force continuation
+
+# Compile with pdflatex
+$pdf_mode = 1;
+
+# Use pdflatex with flags, and simulate -f behavior
+$pdflatex = 'pdflatex -interaction=nonstopmode -synctex=1 -file-line-error %O %S';
+
+# Force latexmk to continue even after encountering errors
+$force_mode = 1;
+
+# Clean up auxiliary files with -c
+@generated_exts = qw(aux bbl blg fdb_latexmk fls log out toc lof lot nav snm synctex.gz vrb);
+
+# Optional: specify the default target file
+$default_target = 'main.tex';
+
