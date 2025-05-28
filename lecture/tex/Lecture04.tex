@@ -12,7 +12,7 @@
                 A transformer is a static device that transfers electrical energy between two or more circuits through electromagnetic induction. It converts the AC voltage levels between inputs and outputs.   
             \end{varblock}
             \begin{itemize}
-                \item<2-> While a transformer is sometimes called a ``static~machine'', it does not meet the formal definition of an electrical machine (compare first chapter).
+                \item<2-> While a transformer is sometimes called a \enquote{static~machine}, it does not meet the formal definition of an electrical machine (compare first chapter).
                 \item<3-> However, transformers share some working principles with electrical machines and are also often used as components of electrical power systems including drives.
             \end{itemize}
 		\end{column}
@@ -81,7 +81,7 @@
 			\end{equation*}
 			where $L_1$ and $L_2$ are the self-inductances of the primary and secondary winding, respectively, and $M$ is the mutual inductance.
 			\\[1em] \pause
-			Note: The above equation is an algebraic relation, that is, it is valid for any time instant $t$ and applies to both AC and DC excitation of the transformer. 
+			\textbf{Note}: The above equation is an algebraic relation, that is, it is valid for any time instant $t$ and applies to both AC and DC excitation of the transformer. 
 		\end{column}
         \hfill
 		\begin{column}{0.525\textwidth}
@@ -130,7 +130,7 @@
 	\frametitle{Dynamic modeling of the single-phase transformer (cont.)}
 		The model \eqref{eq:transformer_differential_equations_2} can be represented by the T-type ECD in \figref{fig:Transformer_T_ECD}. It may be noted that $L_1-M$ and $L_2-M$ can have negative values due to the model representation. 
 		\\[1em] \pause
-		By rearranging \eqref{eq:transformer_differential_equations_2}, we can also write the dynamic transformer model in vector-matrix form:
+		By rearranging \eqref{eq:transformer_differential_equations_2}, we can also write the \hl{dynamic transformer model} in vector-matrix form:
 		\begin{equation}
 			\begin{bmatrix}	u_1(t)\\u_2(t) \end{bmatrix} = \bm{u}(t) = \begin{bmatrix} R_1 & 0 \\ 0 & R_2 \end{bmatrix} \begin{bmatrix} i_1(t)\\i_2(t) \end{bmatrix} + \begin{bmatrix} L_1 & M \\ M & L_2 \end{bmatrix} \frac{\mathrm{d}}{\mathrm{d}t} \begin{bmatrix} i_1(t)\\i_2(t) \end{bmatrix} = \bm{R}\bm{i}(t) + \bm{L}\frac{\mathrm{d}}{\mathrm{d}t}\bm{i}(t).  
 			\label{eq:transformer_differential_equations_matrix_form}
@@ -155,7 +155,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
 	\frametitle{Dynamic modeling of the single-phase transformer (cont.)}
-		Rearranging \eqref{eq:transformer_differential_equations_matrix_form} gives the state-space representation of the transformer model
+		Rearranging \eqref{eq:transformer_differential_equations_matrix_form} gives the \hl{state-space representation} of the transformer model
 		\begin{equation}
 			\frac{\mathrm{d}}{\mathrm{d}t}\bm{i}(t) = \bm{L}^{-1}\left(\bm{u}(t)-\bm{R}\bm{i}(t) \right)
 			\label{eq:transformer_state_space_01}
@@ -163,7 +163,7 @@
 		with
 		$$ \renewcommand*{\arraystretch}{1.3} \bm{L}^{-1} = \frac{1}{L_1L_2 - M^2} \begin{bmatrix} L_2 & -M \\ -M & L_1 \end{bmatrix} = \frac{1}{\sigma} \begin{bmatrix} \frac{1}{L_1} &  \frac{-M}{L_1 L_2} \\ \frac{-M}{L_1 L_2} & \frac{1}{L_2} \end{bmatrix}.$$
 		\pause
-		Above, $\sigma$ is the leakage coefficient defined as (compare also \eqref{eq:coupling_coefficient})
+		Above, $\sigma$ is the \hl{leakage coefficient} defined as (compare also \eqref{eq:coupling_coefficient})
 		\begin{equation}
 			\sigma = \frac{L_1 L_2 -M^2}{L_1 L_2 } = 1 - \frac{M^2}{ L_1 L_2} = 1 - k^2 .
 			\label{eq:leakage_coefficient}
@@ -182,7 +182,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
 	\frametitle{Steady-state modeling of the single-phase transformer}
-		Assuming that the transformer operates in steady state and that all quantities are sinusoidal, the state-space model \eqref{eq:transformer_state_space_02} can be simplified and represented by complex phasors:
+		Assuming that the transformer operates in steady state and that all quantities are sinusoidal, the state-space model \eqref{eq:transformer_state_space_02} can be simplified and represented by \hl{complex phasors}:
 			$$x(t) = \hat{x} \cos(\omega_\mathrm{el} t+ \varphi_{\mathrm{x}}) = \mathrm{Re}\left\{\hat{x} e^{\iu (\omega_\mathrm{el} t + \varphi_{\mathrm{x}})}\right\}= \mathrm{Re}\left\{\underline{X} e^{\iu \omega_\mathrm{el} t}\right\}.$$
 			\pause
 		From \eqref{eq:transformer_differential_equations_matrix_form} we receive
@@ -215,21 +215,26 @@
 			\frac{U_1}{U_2} = \frac{\iu \omega_{\mathrm{el}} L_1 I_1}{\iu \omega_{\mathrm{el}} M I_1}  = \frac{L_1}{M}.
 		\end{equation}
 		\pause
-		Assuming further that the transformer is leakage-free ($L_{1,\sigma}=0$), the voltage transformation ratio simplifies to (compare also \eqref{eq:inductance_split})
+		Assuming further that the transformer is leakage-free ($L_{1,\sigma}=0$), the \hl{voltage transformation ratio} simplifies to (compare also \eqref{eq:inductance_split})
 		\begin{equation}
 			\frac{U_1}{U_2} = \frac{L_1}{M} = \frac{\Lambda_{21}N_1^2}{\Lambda_{21}N_1 N_2}  = \frac{N_1}{N_2} = \ddot{u}.
 			\label{eq:voltage_transformation_ratio}
 		\end{equation}
 		\pause
-		Hence, this famous result is only valid for the abstract case of a lossless, leakage-free, and, unloaded transformer -- i.e., not applicable to real-world transformers 
+		Hence, this famous result is only valid for the abstract case of a lossless, leakage-free, and, unloaded transformer -- i.e., not (exactly) applicable to real-world transformers. 
 \end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Mathematical primary-secondary side transformations}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Transformation of the secondary side variables %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
 	\frametitle{Transformation of the secondary side variables}
-		Sometimes it can be helpful to (mathematically) transform the secondary side variables to ease the mathematical analysis. This can be done by introducing the transformation factor $\alpha$:
+		Sometimes it can be helpful to (mathematically) transform the secondary side variables to ease the mathematical analysis. This can be done by introducing the \hl{transformation factor} $\alpha$:
 		\begin{equation}
 			u_2' = \alpha u_2, \qquad i_2' = \frac{1}{\alpha} i_2.
 		\end{equation}
@@ -242,10 +247,6 @@
 		\end{equation}
 		with the transformed mutual inductance $M' = \alpha M$. 
 \end{frame}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Mathematical primary-secondary side transformations}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -392,7 +393,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
 	\frametitle{Core loss model (hysteresis and eddy current losses)}
-	To also consider the iron losses inside the transformer core, a first-order model with the additional core loss resistance $R_{\mathrm{c}}$ can be introduced:
+	To also consider the iron losses inside the transformer core, a first-order model with the additional \hl{core loss resistance} $R_{\mathrm{c}}$ can be introduced:
 	\begin{equation}
 		P_{\mathrm{l,c}} \approx R_{\mathrm{c}} I_{\mathrm{c}}^2 \approx \frac{U_1^2}{R_{\mathrm{c}}}. 
 	\end{equation}
