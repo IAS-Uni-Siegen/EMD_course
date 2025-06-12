@@ -46,13 +46,13 @@ The machine has a interpole winding connected in series with the armature windin
 
     The induced voltage per armature conductor calculates as
     \begin{equation}
-        U_{\mathrm{i,c}} = \frac{\mu_{\mathrm{0}} N_{\mathrm{f}} \lz d_{\mathrm{a}}}{2 \delta p} I_{\mathrm{f}} \omega,
+        U_{\mathrm{i,c}} = \frac{\alpha\mu_{\mathrm{0}} N_{\mathrm{f}} \lz d_{\mathrm{a}}}{2 \delta p} I_{\mathrm{f}} \omega,
     \end{equation}
     with $N_{\mathrm{f}}$ field conductor loops and the air gap length $\delta$.
 
     The total induced voltage is defined with
     \begin{equation}
-        U_{\mathrm{i}} = \frac{N_{\mathrm{a}} \alpha}{2a} U_{\mathrm{i,c}},
+        U_{\mathrm{i}} = \frac{N_{\mathrm{a}}}{2a} U_{\mathrm{i,c}},
     \end{equation}
     with $N_{\mathrm{a}}$ armature conductor loops and the pole coverage $\alpha$.
     For the lap winding, the number of parallel winding branches $2a$ is equal to the number of the magnetic poles $2p$, that leads to $a$ = 3.
@@ -600,7 +600,7 @@ A four-pole DC machine on the board of a submarine with $U_{\mathrm{a,n}}$ = 440
     \begin{equation}
         \Pl = \left(\frac{1}{\eta_{n}} - 1 \right) \Pn
         = \left(\frac{1}{0.9}-1 \right) \cdot 65\ \si{kW}
-        = 7222 \ \si{W}.
+        = 5416.7 \ \si{W}.
     \end{equation}
 
     As described in the task, the cupper losses are defined by
