@@ -290,7 +290,7 @@
 	\end{equation}
 		with $L_{1,\mathrm{m}}$ being the primary magnetizing inductance, cf. \eqref{eq:inductance_split}. \pause Moreover, we have
 	\begin{equation}
-		L_1 - M' = L_{1,\sigma}, \qquad L_2' - M'2 =  (N_1^2/N_2^2) L_{2,\sigma} = L'_{2,
+		L_1 - M' = L_{1,\sigma}, \qquad L_2' - M' =  (N_1^2/N_2^2) L_{2,\sigma} = L'_{2,
 		\sigma}
 	\end{equation}
 	with $L_{1,\sigma}$ and $L_{2,\sigma}$ being the leakage inductances of the primary and secondary winding. \pause
@@ -506,7 +506,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
 	\frametitle{Voltage transformer application: measuring high AC voltages}
-	If the voltage to be measured is too high for direct measurement, a voltage transformer can be used to step down the voltage to a suitable level:
+	If the voltage to be measured is too high for direct measurement, a \hl{voltage transformer} can be used to step down the voltage to a suitable level:
 	$$u_2(t) = \frac{1}{\ddot{u}} u_1(t).$$
 	\pause
 	Hence, we choose $\ddot{u} > 1$. \pause Moreover, the voltage sensor on the secondary side comes with a high internal resistance $R_\mathrm{i}$ to avoid a significant current and, therefore, power flow. Neglecting the leakage inductance, we can model the voltage transformer as shown in \figref{fig:Voltage_transformer_meas_ECD} with
@@ -533,7 +533,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
 	\frametitle{Current transformer application: measuring high AC currents}
-	If the current to be measured is too high for direct measurement, a current transformer can be used to step down the current to a suitable level:
+	If the current to be measured is too high for direct measurement, a \hl{current transformer} can be used to step down the current to a suitable level:
 	$$i_2(t) = \ddot{u} i_1(t).$$ \pause
 	Hence, we choose $\ddot{u} < 1$. \pause Moreover, the current sensor on the secondary side comes with a minimal internal resistance $R_\mathrm{i}$ to avoid a significant ohmic power losses. Likewise, the transformer should be designed for low $R_1$ and $R_2$ (e.g., $N_1=1$ on the primary and sufficiently large cable cross-sections).\\ \pause
 	\vspace{1em}
@@ -642,7 +642,7 @@
 	\begin{equation}
 		\frac{S_\mathrm{at}}{S} = 1+\frac{1}{\ddot{u}} = 1 + \frac{N_2}{N_1}.
 	\end{equation} \pause
-	Since $N_2 / N_1 > 0$ the autotransformer can transfer more apparent power than the standard transformer since the autotransformer combines two power transfer mechanisms: \pause
+	For $N_2 / N_1 > 0$ the autotransformer can transfer more apparent power than the standard transformer since the \hl{autotransformer combines two power transfer mechanisms}: \pause
 	\begin{itemize}
 		\item the apparent power $U_1 I_1$ is transferred via the magnetic coupling (induction) and \pause
 		\item the apparent power $U_2 I_1$ is transferred via the electrical conduction between primary and secondary (not available in the galvanically-isolated standard transformer).
@@ -702,7 +702,7 @@
 	\pause
 	Dividing both sides by $U_1$ delivers
 	\begin{equation}
-		I_{1,\mathrm{at}} = I_{1}(1+\frac{N_1}{N_2})
+		I_{1,\mathrm{at}} = I_{1}(1+\frac{N_1}{N_2}).
 	\end{equation}
 	\pause
 	Hence, in case of a short circuit the steady-state current of the autotransformer is $1+N_1/N_2$ times higher than the standard transformer:

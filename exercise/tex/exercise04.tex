@@ -35,14 +35,14 @@ Given is an ideal (no losses, no flux leakage) single-phase transformer with an 
   The current through the primary winding is calculated as
   \begin{equation}
     I_{\mathrm{1,n}} = \frac{S}{U_{\mathrm{1}}}
-    = \frac{\SI{5}{\kilo \watt}}{\SI{230}{\volt}}
+    = \frac{\SI{5}{\kilo \volt\ampere}}{\SI{230}{\volt}}
     = \SI{21.4}{\ampere},
   \end{equation}
   with the apparent power $S$ given in the task.
   Due to the ideal transformer, the current through the secondary winding is determined in the same way as follows: 
   \begin{equation}
     I_{\mathrm{2,n}} = \frac{S}{U_{\mathrm{2}}}
-    = \frac{\SI{5}{\kilo \watt}}{\SI{110}{\volt}}
+    = \frac{\SI{5}{\kilo \volt\ampere}}{\SI{110}{\volt}}
     = \SI{45.5}{\ampere}.
   \end{equation}
 
@@ -138,7 +138,7 @@ Draw the T-equivalent circuit diagram for the given assumptions.}
 
   Hence, the number of turns is calculated with:
   \begin{equation}
-    N_{\mathrm{1}} = \frac{\hat{\psi}}{\phi}
+    N_{\mathrm{1}} = \frac{\hat{\psi}}{\phi_{\mathrm{1}}}
     = \frac{\frac{\sqrt{2}U_{\mathrm{1}}}{\omega}}{\hat{B} S_{\mathrm{Fe}}}
     =\frac{\frac{\sqrt{2} \cdot \SI{230}{V}}{2\pi \cdot \SI{50}{\hertz}}}{\SI{0.8}{T} \cdot \SI{6\cdot 10^{-4}}{m}}
     = 2157.
@@ -169,7 +169,7 @@ Draw the T-equivalent circuit diagram for the given assumptions.}
   
   At no-load operation, the current through the secondary winding is assumed to zero ($i_{\mathrm{2}} = \SI{0}{\ampere}$).
   
-  Therefore, the electromotive force simplifies to:
+  Therefore, the magnetomotive force simplifies to:
   \begin{equation}
     \theta = H_{\mathrm{Fe}} l_{\mathrm{Fe}}
     = N_{\mathrm{1}} i_{\mathrm{1}}.
@@ -407,7 +407,7 @@ The self-inductance $L_{\mathrm{1}}$, resistance $R_{\mathrm{1}}$ and the number
   \end{equation}
   which is rearranged as follows:
   \begin{equation}
-    C e^{-\frac{t}{\tau}} \left(\frac{R_{\mathrm{1}}}{L_{\mathrm{1}}}-\frac{t}{\tau} \right)=0.
+    C e^{-\frac{t}{\tau}} \left(\frac{R_{\mathrm{1}}}{L_{\mathrm{1}}}-\frac{1}{\tau} \right)=0.
   \end{equation}
 
 

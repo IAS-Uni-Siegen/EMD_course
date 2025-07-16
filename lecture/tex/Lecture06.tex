@@ -12,12 +12,12 @@
     \begin{columns}
 		\begin{column}{0.55\textwidth}
 	       \begin{itemize}
-            \item Three-phase stator + three-phase rotor: ``rotating three-phase transformer''\newline (plus air gap)
-            \item Rotor angular speed: $\omega_\mathrm{r}$
-            \item Rotor angular displacement: $\varepsilon_\mathrm{r}$
-            \item Index ``s'' for stator, ``r'' for rotor quantities
+            \item Three-phase stator + three-phase rotor: \enquote{rotating three-phase transformer}\newline (plus air gap)
+            \item<2-> Rotor angular speed: $\omega_\mathrm{r}$
+            \item<3-> Rotor angular displacement: $\varepsilon_\mathrm{r}$
+            \item<4-> Index \enquote{s} for stator, \enquote{r} for rotor quantities
            \end{itemize}
-           \onslide<2->{
+           \onslide<5->{
            \begin{varblock}{Fundamental wave model}
               While the previous chapter has revealed that the magnetic flux distribution in the air gap is subject to plentiful harmonics, the following model limits itself to the fundamental wave.
            \end{varblock}}
@@ -75,7 +75,7 @@
             \bm{u}^\mathrm{s}_\mathrm{s,abc}(t) = R_\mathrm{s}\bm{i}^\mathrm{s}_\mathrm{s,abc}(t)+\frac{\mathrm{d}}{\mathrm{d}t}\bm{\psi}^\mathrm{s}_\mathrm{s,abc}(t) \hspace{0.2cm} \Leftrightarrow \hspace{0.2cm} \begin{bmatrix}
                 u_{\mathrm{s,a}}^\mathrm{s}(t)\\
                 u_{\mathrm{s,b}}^\mathrm{s}(t)\\
-                u_{\mathrm{s,c}}(t)\\
+                u_{\mathrm{s,c}}^\mathrm{s}(t)\\
             \end{bmatrix} = R_\mathrm{s} \begin{bmatrix}
                 i_{\mathrm{s,a}}^\mathrm{s}(t)\\
                 i_{\mathrm{s,b}}^\mathrm{s}(t)\\
@@ -105,7 +105,7 @@
             \end{bmatrix}
             \label{eq:IM_rotor_three_phase_voltage_equation}
     \end{equation}
-which are generally applicable as only identical resistances per phase on the stator and rotor are assumed. \pause Above, the lower index denotes the physical location of the quantities, while the upper index indicates the coordinate system orientation.
+which are generally applicable as only identical resistances per phase on the stator and rotor are assumed. \pause Above, the \hl{lower index denotes the physical location} of the quantities, while the \hl{upper index indicates the coordinate system} representation.
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -157,12 +157,12 @@ which are generally applicable as only identical resistances per phase on the st
                 L_\mathrm{r} & -\frac{M_\mathrm{r}}{2} & -\frac{M_\mathrm{r}}{2}\\
                 -\frac{M_\mathrm{r}}{2} & L_\mathrm{r} & -\frac{M_\mathrm{r}}{2}\\
                 -\frac{M_\mathrm{r}}{2} & -\frac{M_\mathrm{r}}{2} & L_\mathrm{r}
-            \end{bmatrix} \bm{i}^\mathrm{r}_\mathrm{r,abc}(t) +  M_{\mathrm{s}}\frac{N_\mathrm{r}}{N_\mathrm{s}} \bm{\mathcal{R}}_\mathrm{abc}(\varepsilon_\mathrm{r,el}(t))\T\bm{i}^\mathrm{s}_\mathrm{s,abc}(t)}
+            \end{bmatrix} \bm{i}^\mathrm{r}_\mathrm{r,abc}(t) +  M_{\mathrm{s}}\frac{N_\mathrm{r}}{N_\mathrm{s}} \bm{\mathcal{R}}\T_\mathrm{abc}(\varepsilon_\mathrm{r,el}(t))\bm{i}^\mathrm{s}_\mathrm{s,abc}(t)}
         \end{split}
         \label{eq:Flux_linkage_model_IM_abc}
     \end{equation}
     \onslide<+->
-    with $\varepsilon_\mathrm{r,el}(t)=p\varepsilon_\mathrm{r}(t)$ and the transformation matrix
+    with $\varepsilon_\mathrm{r,el}(t)=p\varepsilon_\mathrm{r}(t)$ and the rotation matrix
     \begin{equation}
         \renewcommand*{\arraystretch}{1.15}
         \bm{\mathcal{R}}_\mathrm{abc}(\varepsilon_\mathrm{r,el}(t)) =\begin{bmatrix}
@@ -217,7 +217,7 @@ which are generally applicable as only identical resistances per phase on the st
            \vspace{-0.4cm}
            \onslide<4->
            \begin{varblock}{Coordinate transformations}
-              The following transformations of the IM model into different coordinate systems are pure mathematical ``tricks'' to simplify the analysis. The IM remains a three-phase machine. 
+              The following transformations of the IM model into different coordinate systems are pure mathematical \enquote{tricks} to simplify the analysis. The IM remains a three-phase machine. 
            \end{varblock}
         \end{column}
         \begin{column}{0.45\textwidth}
@@ -348,6 +348,72 @@ and
 \onslide<+->
 Here, it must be noted that the two voltage equations are still represented in their own stator or rotor coordinate system. In particular, the rotor's $\alpha\beta$ axes are rotating (compare \figref{fig:Induction_machine_alpha_beta}). 
 \end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Park transformation %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Park transformation}
+    The Park transform rotates a vector $\bm{x}_{\alpha \beta}\in\mathbb{R}^2$ by a certain angle $\varepsilon$ to obtain $\bm{x}_\mathrm{dq}\in\mathbb{R}^2$, that is, 
+    \begin{equation}
+        \renewcommand{\arraystretch}{1.2}
+        \bm{x}_{\mathrm{dq}} = \begin{bmatrix} x_\mathrm{d} \\ x_\mathrm{q} \end{bmatrix} = \begin{bmatrix}
+            \cos(\varepsilon) & \sin(\varepsilon)\\
+            -\sin(\varepsilon) & \cos(\varepsilon)
+        \end{bmatrix} \begin{bmatrix} x_\alpha \\ x_\beta \end{bmatrix} = \bm{T}_\mathrm{p}^{-1}(\varepsilon) \bm{x}_\mathrm{\alpha \beta} 
+        \label{eq:Park_transformation}
+    \end{equation}
+    \pause
+    with the counter rotation
+    \begin{equation}
+        \renewcommand{\arraystretch}{1.2}
+        \bm{x}_{\alpha \beta} = \begin{bmatrix}
+            \cos(\varepsilon) & -\sin(\varepsilon)\\
+            \sin(\varepsilon) & \cos(\varepsilon)
+        \end{bmatrix} \begin{bmatrix} x_\mathrm{d} \\ x_\mathrm{q} \end{bmatrix} = \bm{T}_\mathrm{p}(\varepsilon) \bm{x}_{\mathrm{dq}}.
+    \end{equation}
+    \pause
+    Above, $\bm{T}_\mathrm{p}\in\mathbb{R}^{2\times 2}$ is the Park transformation matrix. It might be noted that is a (historical) convention to define that $\bm{T}_\mathrm{p}$ rotates into the mathematically positive direction. Depending on the application background and choice of $\varepsilon$, the interpretation of $\bm{x}_\mathrm{dq}$ can vary.
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Park transformation: some properties %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Park transformation: some properties}
+    \onslide<+->
+    Performing the Park and inverse Park transformation sequentially, does not change the vector:
+    \begin{equation}
+        \bm{x}_{\alpha \beta} = \bm{T}_\mathrm{p} \bm{T}_\mathrm{p}^{-1} \bm{x}_{\alpha \beta} = \bm{T}_\mathrm{p}^{-1} \bm{T}_\mathrm{p} \bm{x}_{\alpha \beta}.
+    \end{equation}
+    \onslide<+->
+    A frequent rotation within the electric machines and drives context is
+    \begin{equation}
+        \renewcommand{\arraystretch}{1.1}
+         \bm{T}_\mathrm{p}(\varepsilon = \nicefrac{\pi}{2}) = \begin{bmatrix}
+            \cos(\nicefrac{\pi}{2}) & -\sin(\nicefrac{\pi}{2})\\
+            \sin(\nicefrac{\pi}{2}) & \cos(\nicefrac{\pi}{2})
+        \end{bmatrix} = \begin{bmatrix}
+            0 & -1\\
+            1 & 0
+        \end{bmatrix} = \bm{J}
+    \end{equation}
+    leading to the definition of $\bm{J}\in\mathbb{R}^{2 \times 2}$ which will be used for brevity in the following.  \onslide<+-> Moreover, if $\varepsilon$ results from some rotation, i.e., $\nicefrac{\mathrm{d}}{\mathrm{d}t}\,\varepsilon(t)=\omega(t)$, we have:
+    \begin{align}
+        \renewcommand{\arraystretch}{1.1}
+        \uncover<+->{\frac{\mathrm{d}}{\mathrm{d}t}\bm{T}_\mathrm{p}(\varepsilon(t)) &= \begin{bmatrix}
+            -\sin(\varepsilon(t)) & -\cos(\varepsilon(t))\\
+            \cos(\varepsilon(t)) & -\sin(\varepsilon(t))
+        \end{bmatrix} \frac{\mathrm{d}}{\mathrm{d}t}\varepsilon(t)}  \uncover<+->{= \bm{T}_\mathrm{p}(\varepsilon(t)) \bm{J}\omega(t),}\\
+        \uncover<+->{\frac{\mathrm{d}}{\mathrm{d}t}\bm{T}_\mathrm{p}^{-1}(\varepsilon(t)) &= \begin{bmatrix}
+            -\sin(\varepsilon(t)) & \cos(\varepsilon(t))\\
+            -\cos(\varepsilon(t)) & -\sin(\varepsilon(t))
+        \end{bmatrix} \frac{\mathrm{d}}{\mathrm{d}t}\varepsilon(t)  = -\bm{T}_\mathrm{p}^{-1}(\varepsilon(t)) \bm{J}\omega(t).}
+        \label{eq:Park_transformation_derivative}
+    \end{align}
+\end{frame}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% IM model $\alpha\beta-\gamma\delta$ coordinates %%
@@ -546,9 +612,9 @@ Considering \figref{fig:power_balance_machine} and the Clarke transf. power mapp
     \begin{itemize}
         \item<1-> The previous model depends on the physical parameters of the rotor:  $R_\mathrm{r}$, $L_\mathrm{r}$, and $M_\mathrm{r}$.
         \item<2-> Those parameters might not be accessible or known in practice (in particular when direct rotor measurements are not possible). \pause
-        \item<3-> Remedy: Transform the rotor quantities into the stator side based on the turn ratio $\nicefrac{N_\mathrm{s}}{N_\mathrm{r}}$.
+        \item<3-> Remedy: transform the rotor quantities into the stator side based on the turn ratio $\nicefrac{N_\mathrm{s}}{N_\mathrm{r}}$.
         \item<3-> Identical procedure to the transformer approach as from \figref{fig:Transformer_T_ECD_turn_transf}. 
-        \item<4-> Hence, stator-based measurements can be used to infer the rotor quantities (compare open-circuit test \figref{fig:Transformer_open_circuit_test} and short-circuit test \figref{fig:Transformer_short_circuit_test}).
+        \item<4-> Hence, stator-based measurements can be used to infer the rotor parameters (compare open-circuit test \figref{fig:Transformer_open_circuit_test} and short-circuit test \figref{fig:Transformer_short_circuit_test}).
     \end{itemize}
     \onslide<3->
     \begin{figure}
@@ -625,7 +691,7 @@ Considering \figref{fig:power_balance_machine} and the Clarke transf. power mapp
 %% ECD of transformed IM model in general $\alpha\beta$ coordinates      %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
-	\frametitle{ECD of transformed IM model in general $\alpha\beta$ coordinates}
+	\frametitle{ECD of transformed IM model in stator-oriented $\alpha\beta$ coordinates}
     \begin{figure}
         \centering
 		\includegraphics[width=0.75\textwidth]{fig/lec06/IM_T_ECD_alpha_beta.pdf}
@@ -659,37 +725,10 @@ Considering \figref{fig:power_balance_machine} and the Clarke transf. power mapp
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Park transformation %%
+%% Park transformation alignment with rotary d-q coordinates %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
-	\frametitle{Park transformation}
-    The Park transform rotates a vector $\bm{x}_{\alpha \beta}\in\mathbb{R}^2$ by a certain angle $\varepsilon$ to obtain $\bm{x}_\mathrm{dq}\in\mathbb{R}^2$, that is, 
-    \begin{equation}
-        \renewcommand{\arraystretch}{1.2}
-        \bm{x}_{\mathrm{dq}} = \begin{bmatrix} x_\mathrm{d} \\ x_\mathrm{q} \end{bmatrix} = \begin{bmatrix}
-            \cos(\varepsilon) & \sin(\varepsilon)\\
-            -\sin(\varepsilon) & \cos(\varepsilon)
-        \end{bmatrix} \begin{bmatrix} x_\alpha \\ x_\beta \end{bmatrix} = \bm{T}_\mathrm{p}^{-1}(\varepsilon) \bm{x}_\mathrm{\alpha \beta} 
-        \label{eq:Park_transformation}
-    \end{equation}
-    \pause
-    with the counter rotation
-    \begin{equation}
-        \renewcommand{\arraystretch}{1.2}
-        \bm{x}_{\alpha \beta} = \begin{bmatrix}
-            \cos(\varepsilon) & -\sin(\varepsilon)\\
-            \sin(\varepsilon) & \cos(\varepsilon)
-        \end{bmatrix} \begin{bmatrix} x_\mathrm{d} \\ x_\mathrm{q} \end{bmatrix} = \bm{T}_\mathrm{p}(\varepsilon) \bm{x}_{\mathrm{dq}}.
-    \end{equation}
-    \pause
-    Above, $\bm{T}_\mathrm{p}\in\mathbb{R}^{2\times 2}$ is the Park transformation matrix. It might be noted that is a (historical) convention to define that $\bm{T}_\mathrm{p}$ rotates into the mathematically positive direction. Depending on the application background and choice of $\varepsilon$, the interpretation of $\bm{x}_\mathrm{dq}$ can vary.
-\end{frame}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Park transformation (cont.) %%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}
-	\frametitle{Park transformation (cont.)}
+	\frametitle{Park transformation alignment with rotary d-q coordinates}
     \begin{figure}
         \centering
         \includegraphics[width=0.4\textwidth]{fig/lec06/Alphabeta_dq_vectors.pdf}
@@ -699,42 +738,6 @@ Considering \figref{fig:power_balance_machine} and the Clarke transf. power mapp
     \end{figure}    
 \end{frame}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Park transformation: some properties %%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}
-	\frametitle{Park transformation: some properties}
-    \onslide<+->
-    Performing the Park and inverse Park transformation sequentially, does not change the vector:
-    \begin{equation}
-        \bm{x}_{\alpha \beta} = \bm{T}_\mathrm{p} \bm{T}_\mathrm{p}^{-1} \bm{x}_{\alpha \beta} = \bm{T}_\mathrm{p}^{-1} \bm{T}_\mathrm{p} \bm{x}_{\alpha \beta}.
-    \end{equation}
-    \onslide<+->
-    A frequent rotation within the electric machines and drives context is
-    \begin{equation}
-        \renewcommand{\arraystretch}{1.1}
-         \bm{T}_\mathrm{p}(\varepsilon = \nicefrac{\pi}{2}) = \begin{bmatrix}
-            \cos(\nicefrac{\pi}{2}) & -\sin(\nicefrac{\pi}{2})\\
-            \sin(\nicefrac{\pi}{2}) & \cos(\nicefrac{\pi}{2})
-        \end{bmatrix} = \begin{bmatrix}
-            0 & -1\\
-            1 & 0
-        \end{bmatrix} = \bm{J}
-    \end{equation}
-    leading to the definition of $\bm{J}\in\mathbb{R}^{2 \times 2}$ which will be used for brevity in the following.  \onslide<+-> Moreover, if $\varepsilon$ results from some rotation, i.e., $\nicefrac{\mathrm{d}}{\mathrm{d}t}\,\varepsilon(t)=\omega(t)$, we have:
-    \begin{align}
-        \renewcommand{\arraystretch}{1.1}
-        \uncover<+->{\frac{\mathrm{d}}{\mathrm{d}t}\bm{T}_\mathrm{p}(\varepsilon(t)) &= \begin{bmatrix}
-            -\sin(\varepsilon(t)) & -\cos(\varepsilon(t))\\
-            \cos(\varepsilon(t)) & -\sin(\varepsilon(t))
-        \end{bmatrix} \frac{\mathrm{d}}{\mathrm{d}t}\varepsilon(t)}  \uncover<+->{= \bm{T}_\mathrm{p}(\varepsilon(t)) \bm{J}\omega(t),}\\
-        \uncover<+->{\frac{\mathrm{d}}{\mathrm{d}t}\bm{T}_\mathrm{p}^{-1}(\varepsilon(t)) &= \begin{bmatrix}
-            -\sin(\varepsilon(t)) & \cos(\varepsilon(t))\\
-            -\cos(\varepsilon(t)) & -\sin(\varepsilon(t))
-        \end{bmatrix} \frac{\mathrm{d}}{\mathrm{d}t}\varepsilon(t)  = -\bm{T}_\mathrm{p}^{-1}(\varepsilon(t)) \bm{J}\omega(t).}
-        \label{eq:Park_transformation_derivative}
-    \end{align}
-\end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Visualization of different coordinate systems %%
@@ -980,7 +983,7 @@ Considering \figref{fig:power_balance_machine} and the Clarke transf. power mapp
         \end{alignedat}
     \end{equation}
     \pause
-    During steady state the stator is excited by a constant three-phase voltage with the stator frequency $\omega_\mathrm{s}$ while the rotor is excited with the rotor  or slip frequency $\omega_\mathrm{slip}$:
+    During steady state the stator is excited by a constant three-phase voltage with the \hl{stator frequency} $\omega_\mathrm{s}$ while the rotor is excited with the rotor  or \hl{slip frequency} $\omega_\mathrm{slip}$:
     \begin{equation}
         \omega_\mathrm{k,el} \rightarrow \omega_\mathrm{s}, \qquad \omega_\mathrm{k,el}-\omega_\mathrm{r,el} \rightarrow \omega_\mathrm{slip}.
     \end{equation}
@@ -990,7 +993,7 @@ Considering \figref{fig:power_balance_machine} and the Clarke transf. power mapp
             \bm{u}'_\mathrm{r} = R'_\mathrm{r} \bm{i}'_\mathrm{r} +\omega_\mathrm{slip}\bm{J}\bm{\psi}'_\mathrm{r}.
     \end{equation}
     \pause
-    Rewriting the vectorial quantities as complex phasors $\underline{X}_\mathrm{dq} = X e^{\mathrm{j}\phi}=X_\mathrm{d} + \mathrm{j} X_\mathrm{q}$, we obtain
+    Rewriting the vectorial quantities as \hl{complex phasors} $\underline{X}_\mathrm{dq} = X e^{\mathrm{j}\phi}=X_\mathrm{d} + \mathrm{j} X_\mathrm{q}$, we obtain
     \begin{equation}
             \underline{U}_\mathrm{s} = R_\mathrm{s} \underline{I}_\mathrm{s} + \mathrm{j}\omega_\mathrm{s}\underline{\Psi}_\mathrm{s},\qquad
             \underline{U}'_\mathrm{r} = R'_\mathrm{r} \underline{I}'_\mathrm{r} +\mathrm{j}\omega_\mathrm{slip}\underline{\Psi}'_\mathrm{r}.
@@ -1003,7 +1006,7 @@ Considering \figref{fig:power_balance_machine} and the Clarke transf. power mapp
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
 	\frametitle{Steady-state behavior (cont.)}
-    In \eqref{eq:IM_model_voltage_equations_steady_state} the complex rotor and stator fluxes rotate with different frequencies. To simplify the analysis, we introduce the slip ratio
+    In \eqref{eq:IM_model_voltage_equations_steady_state} the complex rotor and stator fluxes rotate with different frequencies. To simplify the analysis, we introduce the \hl{slip ratio}
     \begin{equation}
         s = \frac{\omega_\mathrm{slip}}{\omega_\mathrm{s}} .
     \end{equation} 
@@ -1078,7 +1081,7 @@ Considering \figref{fig:power_balance_machine} and the Clarke transf. power mapp
     \pause
     Assuming that the stator ohmic voltage drop is negligible ($R_\mathrm{s}=0$), we get from \eqref{eq:IM_model_voltage_equations_steady_state_slip_ratio} 
     \begin{equation}
-        \underline{U}_\mathrm{s} = U_\mathrm{s,d} + \mathrm{j} U_\mathrm{s,q} = \mathrm{j}\omega_\mathrm{s}\underline{\Psi}_\mathrm{s} = \mathrm{j}\omega_\mathrm{s}\Psi_\mathrm{d}
+        \underline{U}_\mathrm{s} = U_\mathrm{s,d} + \mathrm{j} U_\mathrm{s,q} = \mathrm{j}\omega_\mathrm{s}\underline{\Psi}_\mathrm{s} = \mathrm{j}\omega_\mathrm{s}\Psi_\mathrm{s}
     \end{equation} 
     \pause
     and, therefore,
@@ -1166,7 +1169,7 @@ Considering \figref{fig:power_balance_machine} and the Clarke transf. power mapp
             T = \frac{3}{2} p \sqrt{2}\Psi_\mathrm{s} \sqrt{2}I_\mathrm{s,q} = \frac{3}{2} p \frac{U_\mathrm{s}^2}{\omega_\mathrm{s}^2}\frac{M^2}{\sigma (L_{\sigma,\mathrm{s}} +M)^2(L'_{\sigma,\mathrm{r}} +M)}\frac{2}{\frac{\omega_\mathrm{slip}}{\omega_\mathrm{max}} + \frac{\omega_\mathrm{max}}{\omega_\mathrm{slip}}}.
     \end{equation}
     \pause
-    Hence, the maximum achievable torque for a constant stator excitation is
+    Hence, the \hl{maximum achievable torque} for a constant stator excitation is
     \begin{equation}
         T_\mathrm{max} = \frac{3}{2} p \frac{U_\mathrm{s}^2}{\omega_\mathrm{s}^2}\frac{M^2}{\sigma (L_{\sigma,\mathrm{s}} +M)^2(L'_{\sigma,\mathrm{r}} +M)}
     \end{equation}
@@ -1195,7 +1198,7 @@ Considering \figref{fig:power_balance_machine} and the Clarke transf. power mapp
         T = T_\mathrm{max} \frac{2}{\frac{s}{s_\mathrm{max}} + \frac{s_\mathrm{max}}{s}}.
     \end{equation}
     \pause
-    The torque-speed characteristic of a squirrel cage IM is also known as Kloss's formula. \pause It should be noted that $\omega_\mathrm{max}$ and $s_\mathrm{max}$ are machine-dependent parameters (for a constant stator excitation), i.e., constants. Contrary, the slip ratio $s$ and slip frequency $\omega_\mathrm{slip}$ depend on the IM's shaft speed and vary during operation.
+    The torque-speed characteristic of a squirrel cage IM is also known as \hl{Kloss's formula}. \pause It should be noted that $\omega_\mathrm{max}$ and $s_\mathrm{max}$ are machine-dependent parameters (for a constant stator excitation), i.e., constants. Contrary, the slip ratio $s$ and slip frequency $\omega_\mathrm{slip}$ depend on the IM's shaft speed and vary during operation.
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1226,13 +1229,13 @@ Considering \figref{fig:power_balance_machine} and the Clarke transf. power mapp
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
 	\frametitle{Squirrel cage IM torque-speed characteristic: rotor resistance} 
-    The starting torque, i.e., the torque at motor standstill ($\omega_\mathrm{r}=0$), is given by
+    The \hl{starting torque}, i.e., the torque at motor standstill ($\omega_\mathrm{r}=0$), is given by
     \begin{equation}
         T_0 = T_\mathrm{max}  \frac{2s_\mathrm{max}}{1+s^2_\mathrm{max}} = T_\mathrm{max}  \frac{2\omega_\mathrm{max}}{1+\omega^2_\mathrm{max}}
     \end{equation}
     since 
     $$\omega_\mathrm{slip} = \omega_{\mathrm{s}} - p \omega_{\mathrm{r}} = \omega_{\mathrm{s}} - 0 = \omega_{\mathrm{s}} $$
-    holds. \pause Depending on the machine design $T_0$ can be significantly lower than $T_\mathrm{max}$, which might be a disadvantage for certain applications. \pause Since
+    holds. \pause Depending on the machine design, $T_0$ can be significantly lower than $T_\mathrm{max}$, which might be a disadvantage for certain applications. \pause However,
     $$\omega_\mathrm{max}=\frac{R'_\mathrm{r}}{\sigma (L'_{\sigma,\mathrm{r}} +M)}, \qquad s_\mathrm{max} = \frac{R'_\mathrm{r}}{\sigma (L'_{\sigma,\mathrm{r}} +M)\omega_\mathrm{s}} $$
     depend on the rotor resistance $R'_\mathrm{r}$, the starting torque can be modified by changing the rotor resistance, e.g., via a dropping resistor or potentiometer (which would require a slip ring rotor).
 \end{frame}
@@ -1327,7 +1330,7 @@ Considering \figref{fig:power_balance_machine} and the Clarke transf. power mapp
 		\begin{column}{0.5\textwidth}
 	      \begin{itemize}
             \item<1-> The previous consideration from \figref{fig:Kloss_formula_different_excitation_frequencies} assumed that $U_\mathrm{s}/\omega_\mathrm{s}=\mathrm{const.}$ applies, that is, the stator voltage amplitude is adjusted according to the frequency.
-            \item<2-> Obviously, this is only possible to a certain extent due to the voltage source limitations.
+            \item<2-> Obviously, this is only possible to a certain extent due to the \hl{voltage source limitations}.
             \item<3-> Hence, at some point, the torque-speed characteristic is limited by the available voltage leading to a flux weakening operation mode (cf. right figure).
           \end{itemize}
         \end{column}
@@ -1361,7 +1364,7 @@ Considering \figref{fig:power_balance_machine} and the Clarke transf. power mapp
           \begin{itemize}
             \item This induces rotor currents with the harmonic slip frequency $\omega^{(k)}_\mathrm{slip}$.
             \onslide<3->
-            \item Likewise the IM fundamental torque, these air gap field and rotor current harmonics lead to constant, i.e., non-harmonic, torque contributions distorting the torque-speed characteristic.
+            \item Likewise the IM fundamental torque, these air gap field and rotor current harmonics lead to constant, i.e., non-harmonic, torque contributions impacting the torque-speed characteristic.
           \end{itemize}
         \end{column}
         \begin{column}{0.555\textwidth}
