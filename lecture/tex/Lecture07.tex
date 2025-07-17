@@ -191,7 +191,7 @@ which are generally applicable as only identical resistances per phase on the st
         \label{eq:Flux_linkage_model_SM_abc}
     \end{equation}
 	\onslide<+-> 
-    with $\varepsilon_\mathrm{r,el}(t)=p\varepsilon_\mathrm{r}(t)$. \onslide<+-> Consequently, \eqref{eq:Flux_linkage_model_SM_abc} is a reduced representation of the IM's flux linkage model \eqref{eq:Flux_linkage_model_IM_abc}.
+    with $\varepsilon_\mathrm{r,el}(t)=p\varepsilon_\mathrm{r}(t)$. \onslide<+-> Consequently, \eqref{eq:Flux_linkage_model_SM_abc} can be interpreted as a reduced representation of the IM's flux linkage model \eqref{eq:Flux_linkage_model_IM_abc}.
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -484,7 +484,7 @@ which are generally applicable as only identical resistances per phase on the st
 		\begin{column}{0.5\textwidth}
 			\begin{itemize}
 				\item<1-> The cylindrical rotor SM model \eqref{eq:SM_stator_dq_flux_linkage} considered an identical stator inductance $L'_\mathrm{s}$ for the d and q axis.  
-				\item<1-> In the cylindrical SM case this is a valid assumption, as the rotor is symmetrical. 
+				\item<2-> In the cylindrical SM case this is a valid assumption, as the rotor is symmetrical. 
 				\item<3-> However, in the case of a salient pole SM, the rotor is not symmetrical and the flux path per axis is different (cf. \figref{fig:SM_salient_pole_dq_reluctance}).
 				\item<4-> The q-axis reluctance is larger than the d-axis reluctance due to the larger air gap in the q-axis direction. 
 				\item<4-> Consequently, the inductance per axis is different.
@@ -541,7 +541,7 @@ which are generally applicable as only identical resistances per phase on the st
 			&&\mbox{Stator voltage:}&& \quad\bm{u}_\mathrm{s,dq}(&t) &&= R_\mathrm{s} \bm{i}_\mathrm{s,dq}(t)+ \omega_\mathrm{r,el}(t)\bm{J}\bm{\psi}_\mathrm{s,dq}(t) + \frac{\mathrm{d}}{\mathrm{d}t}\bm{\psi}_\mathrm{s,dq}(t),\\
 			&&\mbox{Rotor / field winding  voltage:}&& \quad u_\mathrm{f}(&t) &&= R_\mathrm{f}i_\mathrm{f}(t)+\frac{\mathrm{d}}{\mathrm{d}t}\psi_\mathrm{f}(t),\\
 			&&\mbox{Stator flux linkage:}&& \quad \bm{\psi}_\mathrm{s,dq}(&t) &&= \bm{L}_\mathrm{s,dq}\bm{i}_{\mathrm{s,dq}}(t) + \bm{M}_\mathrm{fs} i_{\mathrm{f}}(t), \vphantom{\frac{\mathrm{d}}{\mathrm{d}t}}\\
-			&&\mbox{Rotor / field winding flux linkage:}&& \psi_\mathrm{f}(&t) &&= L_\mathrm{f} i^\mathrm{r}_\mathrm{f}(t) + \bm{M}\T_\mathrm{fs} \bm{i}_\mathrm{s,dq}(t),\vphantom{\frac{\mathrm{d}}{\mathrm{d}t}}\\
+			&&\mbox{Rotor / field winding flux linkage:}&& \psi_\mathrm{f}(&t) &&= L_\mathrm{f} i_\mathrm{f}(t) + \bm{M}\T_\mathrm{fs} \bm{i}_\mathrm{s,dq}(t),\vphantom{\frac{\mathrm{d}}{\mathrm{d}t}}\\
 			&&\mbox{Torque:}&& \quad T(&t) &&= \frac{3}{2} p (\bm{i}_\mathrm{s,dq})\T\bm{J}\bm{\psi}_\mathrm{s,dq}\\
 			&&&&&&&=\frac{3}{2} p i_\mathrm{s,q}\left[ M_\mathrm{fs} i_{\mathrm{f}} + \left(L'_\mathrm{s,d}-L'_\mathrm{s,q}\right)i_\mathrm{s,d}\right].
 		\end{alignedat}
@@ -590,7 +590,7 @@ which are generally applicable as only identical resistances per phase on the st
 			\onslide<4->
 			\begin{varblock}
 				{Damper winding model}
-					The SM damper winding can be interpreted as the IM squirrel cage, i.e., the rotor model can be extended accordingly (superposition). 
+					The SM damper winding can be interpreted as the IM squirrel cage, i.e., the rotor model can be extended accordingly (superposition principle). 
 			\end{varblock}
 		\end{column}
         \begin{column}{0.5\textwidth}
@@ -626,12 +626,12 @@ which are generally applicable as only identical resistances per phase on the st
 	\onslide<+->
 	Here, the following applies:
 	\begin{itemize}
-		\item<+-> Capital indices represent the damper winding.
+		\item<+-> Capital indices 'DQ' represent the damper winding.
 		\item<+-> $\bm{i}_{\mathrm{r,DQ}}(t)$ and $\bm{\psi}_{\mathrm{r,DQ}}(t)$ are the current as well as flux linkage in the damper winding.
 		\item<+-> $\bm{R}_{\mathrm{r,DQ}}$ represents the resistance matrix: Since the damper winding eventually does not cover the entire rotor circumference, $R_\mathrm{r,D}\neq R_\mathrm{r,Q}$ can apply (compare \figref{fig:SM_damper_winding}). 
 	\end{itemize} 
 	\onslide<+->
-	The stator and field winding voltage equations remain unchanged:
+	The stator and field winding voltage equations remain structurally unchanged:
 	$$\bm{u}_\mathrm{s,dq}(t) = R_\mathrm{s} \bm{i}_\mathrm{s,dq}(t)+ \omega_\mathrm{r,el}(t)\bm{J}\bm{\psi}_\mathrm{s,dq}(t) + \frac{\mathrm{d}}{\mathrm{d}t}\bm{\psi}_\mathrm{s,dq}(t), \quad u_\mathrm{f}(t) = R_\mathrm{f}i_\mathrm{f}(t)+\frac{\mathrm{d}}{\mathrm{d}t}\psi_\mathrm{f}(t).$$
 \end{frame}
 
@@ -743,7 +743,7 @@ which are generally applicable as only identical resistances per phase on the st
 			\vspace{-0.25cm}
 			\begin{varblock}
 				{PMSM applications}
-					Due to weight and size advantages, PMSMs are often used in automotive applications (e.g., electric vehicles) and in highly dynamic industrial applications (e.g., servo drives).
+					Due to weight and size advantages, PMSMs are often used in automotive applications (e.g., electric vehicles) and in highly dynamic industrial applications (e.g., CNC servo drives).
 			\end{varblock}
 		\end{column}
         \begin{column}{0.5\textwidth}
@@ -763,7 +763,7 @@ which are generally applicable as only identical resistances per phase on the st
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
 	\frametitle{PMSM model}
-	Due to the absence of a field winding, the PMSM model simplifies: The general stator voltage equation in the dq coordinate system remains identical to the SM model
+	Due to the absence of a field winding, the PMSM model simplifies: The general stator voltage equation in the dq coordinate system remains structurally identical to the SM model
 	$$\bm{u}_\mathrm{s,dq}(t) = R_\mathrm{s} \bm{i}_\mathrm{s,dq}(t)+ \omega_\mathrm{r,el}(t)\bm{J}\bm{\psi}_\mathrm{s,dq}(t) + \frac{\mathrm{d}}{\mathrm{d}t}\bm{\psi}_\mathrm{s,dq}(t)$$
 	while the field winding voltage equation is omitted. \pause The stator flux linkage model becomes
 	\begin{equation}
@@ -778,7 +778,7 @@ which are generally applicable as only identical resistances per phase on the st
 	\end{equation}
 	Here, $\bm{\psi}_\mathrm{pm}$ represents the (constant) permanent magnet flux linkage. \pause By definition of the dq coordinate system, the permanent magnet flux linkage is directed exclusively along the d-axis (cf. \figref{fig:PMSMs}). The rotor flux linkage model is omitted, since no field winding is present. Also, a damper winding is very uncommon for PMSMs. \pause Hence, torque equation results in
 	\begin{equation}
-		T(t) = \frac{3}{2} p (\bm{i}_\mathrm{s,dq})\T\bm{J}\bm{\psi}_\mathrm{s,dq} = \frac{3}{2} p i_\mathrm{s,q}\left[ \bm{\psi}_\mathrm{pm} + \left(L'_\mathrm{s,d}-L'_\mathrm{s,q}\right)i_\mathrm{s,d}\right].
+		T(t) = \frac{3}{2} p (\bm{i}_\mathrm{s,dq})\T\bm{J}\bm{\psi}_\mathrm{s,dq} = \frac{3}{2} p i_\mathrm{s,q}\left[ \psi_\mathrm{pm} + \left(L'_\mathrm{s,d}-L'_\mathrm{s,q}\right)i_\mathrm{s,d}\right].
 	\end{equation}
 \end{frame}
 
@@ -793,14 +793,14 @@ which are generally applicable as only identical resistances per phase on the st
 	\begin{itemize}
 		\item<+-> SPMSM: The PMs are distributed over the entire rotor circumference. 
 		\begin{itemize}
-			\item<+-> The PM flux path is isotropic, i.e., the same in all directions.
-			\item<+-> Consequently, the relucance paths in the d and q axis are identical.
+			\item<+-> The PM flux path is \hl{isotropic}, i.e., the same in all directions.
+			\item<+-> Consequently, the reluctance paths in the d and q axis are identical.
 			\item<+-> $L'_\mathrm{s,d} =  L'_\mathrm{s,q} =L'_\mathrm{s}$ applies.
 		\end{itemize}
 		\vspace{0.5em}
 		\item<+-> IPMSM: The PMs are concentrated inside the rotor core.
 		\begin{itemize}
-			\item<+-> The PM flux path is anisotropic, i.e., different in the d and q axis.
+			\item<+-> The PM flux path is \hl{anisotropic}, i.e., different in the d and q axis.
 			\item<+-> Consequently, the effective reluctance along the d axis is much higher than along the q axis.
 			\item<+-> $L'_\mathrm{s,d} <  L'_\mathrm{s,q}$ applies.
 		\end{itemize}
@@ -936,7 +936,7 @@ which are generally applicable as only identical resistances per phase on the st
 		\label{eq:SM_voltage_steady_state}
 	\end{equation}
 	\onslide<+->
-	with $\underline{U}_\mathrm{i}$ being the internal voltage, i.e., the induced voltage due to the field winding excitation and $X_\mathrm{s}$ being the synchronous reactance (which can be empirically identified using open-circuit and short-circuit tests, cf. after next slide).
+	with $\underline{U}_\mathrm{i}$ being the \hl{internal voltage}, i.e., the induced voltage due to the field winding excitation and $X_\mathrm{s}$ being the \hl{synchronous reactance} (which can be empirically identified using open-circuit and short-circuit tests, cf. next slides).
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1021,7 +1021,7 @@ which are generally applicable as only identical resistances per phase on the st
 			I_\mathrm{s,q} = \frac{\left|\underline{U}_\mathrm{s}\right|}{\omega_\mathrm{s} \left(L_{\sigma,\mathrm{s}} + M\right)} \sin(\theta).
 		\end{equation}
 		\onslide<+->
-		Here, $\theta$ is the load angle counted from $\underline{U}_\mathrm{i}$ to $\underline{U}_\mathrm{s}$.
+		Here, $\theta$ is the \hl{load angle} counted from $\underline{U}_\mathrm{i}$ to $\underline{U}_\mathrm{s}$.
         \end{column}
         \begin{column}{0.45\textwidth}
 			\onslide<2->
@@ -1046,7 +1046,7 @@ which are generally applicable as only identical resistances per phase on the st
 		I_\mathrm{f} = \sqrt{2}\frac{\left|\underline{U}_\mathrm{i}\right|}{\omega_\mathrm{s}M}.
 	\end{equation}
 	\onslide<+->
-	Inserting the expressions for $I_\mathrm{s,q}$ and $I_\mathrm{f}$ into the torque equation yields
+	Inserting the expressions for $I_\mathrm{s,q}$ and $I_\mathrm{f}$ into the \hl{steady-state torque} equation yields
 	\begin{equation}
 		T = 3 p \frac{\left|\underline{U}_\mathrm{s}\right| \left|\underline{U}_\mathrm{i}\right|}{\omega_\mathrm{s}^2 \left(L_{\sigma,\mathrm{s}} + M\right)}  \sin(\theta)  = 3 p \frac{U_\mathrm{s} U_\mathrm{i}}{\omega_\mathrm{s}^2 \left(L_{\sigma,\mathrm{s}} + M\right)}  \sin(\theta). 
 		\label{eq:SM_torque_steady_state}
