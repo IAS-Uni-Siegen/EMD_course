@@ -26,7 +26,7 @@
     \begin{figure}
             \centering
             \includegraphics[width=0.8\textwidth]{fig/lec05/MMF_single_phase.pdf}
-            \caption{MMF of a lumped single-phase coil with $N$ turns for some current $i_\mathrm{a} \neq 0$ with the rotating integration path $\partial S$  along the circumference coordinate $\vartheta$. The rotor is considered an unspecific solid iron dummy. Both stator and iron have infinite magnetic permeability.}
+            \caption{MMF of a lumped single-phase coil with $N$ turns for some current $i_\mathrm{a} \neq 0$ with the rotating integration path $\partial S$  along the \hl{circumference coordinate} $\vartheta$. The rotor is considered an unspecific solid iron dummy. Both stator and iron have infinite magnetic permeability.}
             \label{fig: MMF_single_phase}
     \end{figure}
 \end{frame}
@@ -58,7 +58,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
 	\frametitle{Air gap flux density distribution of a single-phase coil}
-    With $B=\mu_0 H$ in the air gap and an alternating current $i_\mathrm{a} = i_\mathrm{a}(t)$, we have
+    With $B=\mu_0 H$ in the air gap and an \hl{alternating current} $i_\mathrm{a} = i_\mathrm{a}(t)$, we have
     \begin{equation}
         B_\mathrm{a}(\vartheta, t) = \frac{\mu_0}{2\delta} \begin{cases}
             N i_\mathrm{a}(t) & \text{for } -\pi/2 \leq \vartheta < \pi/2, \\
@@ -68,23 +68,24 @@
     \pause
     \begin{figure}
         \begin{columns}
-            \begin{column}{0.7\textwidth}
+            \begin{column}{0.65\textwidth}
                 \centering
-		\begin{subfigure}[b]{0.45\textwidth}
+		\begin{subfigure}[b]{0.475\textwidth}
 			\centering
 			\includegraphics[width=\textwidth]{fig/lec05/B_single_phase_full_current.pdf}
 			\caption{$i_\mathrm{a}(t) = \hat{i}$}
 		\end{subfigure}
 		\hfill
         \pause
-		\begin{subfigure}[b]{0.45\textwidth}
+		\begin{subfigure}[b]{0.475\textwidth}
 			\centering
 			\includegraphics[width=\textwidth]{fig/lec05/B_single_phase_half_current.pdf}
 			\caption{$i_\mathrm{a}(t) = \hat{i}/2$}
 		\end{subfigure}
             \end{column}
+            \hspace{0.15cm}
             \begin{column}{0.3\textwidth}
-                \caption{\raggedright Air gap flux density distribution of a lumped single-phase coil representing a spatiotemperal function together with its fundamental component $B^{(1)}$} 
+                \caption{\raggedright Air gap flux density distribution of a lumped single-phase coil representing a spatiotemperal function together with its \hl{fundamental component} $B^{(1)}$} 
         \label{fig:Air_gap_flux_density_single_phase_coil}
             \end{column}
         \end{columns}
@@ -105,7 +106,7 @@
             \label{eq:B_single_phase_coil}
         \end{equation}
         \pause
-        The flux density distribution therefore is periodic and has a sinusoidal shape over $t$ as well as a rectangular shape over $\vartheta$. \pause To analyze the latter in terms of its fundamental and harmonic components, we utilize the Fourier series expansion for some arbitrary $t\in\mathbb{R}$:
+        The flux density distribution therefore is periodic and has a sinusoidal shape over $t$ as well as a rectangular shape over $\vartheta$. \pause To analyze the latter in terms of its fundamental and harmonic components, we utilize the \hl{Fourier series} expansion for some arbitrary $t\in\mathbb{R}$:
         \begin{equation}
             B_\mathrm{a}(\vartheta, t) =B_\mathrm{a}(\vartheta) = \hat{B}^{(0)} + \sum_{k=1}^{\infty} \hat{B}_{\mathrm{c}}^{(k)} \cos(k \vartheta) + \hat{B}_{\mathrm{s}}^{(k)} \sin(k \vartheta),
             \label{eq:fourier_series_B_single_phase_coil}
@@ -118,7 +119,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
 	\frametitle{Fourier analysis of the air gap flux density distribution (cont.)}
-        The coefficients of \eqref{eq:fourier_series_B_single_phase_coil} are
+        The \hl{Fourier coefficients} of \eqref{eq:fourier_series_B_single_phase_coil} are
         \begin{equation}
             \begin{split}
                 \hat{B}^{(0)} &= \frac{1}{2\pi} \int_{0}^{2\pi} B(\vartheta) \mathrm{d}\vartheta, \\
@@ -165,7 +166,7 @@
         \end{split}
     \end{equation}
     \onslide<+->
-    One might note that $$\sin(\frac{k \pi}{2}) = 1 \quad \mbox{for } k=1,5,9,\ldots, \qquad \sin(\frac{k \pi}{2}) = -1 \quad \mbox{for } k=3,7,11,\ldots$$ applies above. \onslide<+-> Also, the fundamental component $\hat{B}^{(1)}$ of the air gap flux density distribution is $4/\pi$ times higher than the amplitude $\hat{B}$ of the original square wave function from \eqref{eq:B_single_phase_coil} while the harmonic amplitudes decrease with $1/k$. 
+    This series can be further decomposed into $$\sin(\frac{k \pi}{2}) = 1 \quad \mbox{for } k=1,5,9,\ldots, \qquad \sin(\frac{k \pi}{2}) = -1 \quad \mbox{for } k=3,7,11,\ldots .$$ \onslide<+-> Also, the fundamental component $\hat{B}^{(1)}$ of the air gap flux density distribution is $4/\pi$ times higher than the amplitude $\hat{B}$ of the original square wave function from \eqref{eq:B_single_phase_coil} while the harmonic amplitudes decrease with $1/k$. 
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -185,7 +186,7 @@
         \pause
         \begin{column}{0.4\textwidth}
             \begin{varblock}{Flux density harmonics}
-                The existence of harmonics is to be attributed to the spatial layout of the winding. The phase current was assumed to be of pure sinusoidal form, i.e., is not causing the flux density harmonics (in our investigation).
+                The existence of harmonics is to be attributed to the spatial layout of the winding. The phase current was assumed to be of pure sinusoidal form, i.e., is not causing the flux density harmonics (in our simplified investigation).
             \end{varblock}
         \end{column}
     \end{columns}
@@ -203,7 +204,7 @@
         \begin{figure}
                 \centering
                 \includegraphics[width=0.8\textwidth]{fig/lec05/MMF_single_phase_two_pole_pairs.pdf}
-                \caption{MMF of a lumped single-phase coil with two pole pairs $p$ and $N/p$ turns per pole pair for some current $i_\mathrm{a} \neq 0$ with the rotating integration path $\partial S$  along the circumference coordinate $\vartheta$}
+                \caption{MMF of a lumped single-phase coil with \hl{two pole pairs} $p$ and $N/p$ turns per pole pair for some current $i_\mathrm{a} \neq 0$ with the rotating integration path $\partial S$  along the circumference coordinate $\vartheta$}
                 \label{fig: MMF_single_phase_two_pole_pairs}
         \end{figure}
 \end{frame}
@@ -241,7 +242,7 @@
         we can conclude that the field distribution for $p > 1$ is repeated $p$ times over the mechanical stator circumference, assuming that the  machine is ideally identical for each pole pair. 
         \pause
         \begin{varblock}{Electrical vs. mechanical angle}
-            To simplify the following analysis, we introduce the electrical angle 
+            To simplify the following analysis, we introduce the \hl{electrical angle}
             \begin{equation}
                 \vartheta_\mathrm{el} = p \vartheta,
             \end{equation}
@@ -261,7 +262,7 @@
     \begin{columns}
 		\begin{column}{0.55\textwidth}
             \onslide<1->
-	        We assume an ideal three-phase stator current:
+	        We assume an ideal \hl{three-phase stator current}:
             \begin{equation}
                 \begin{split}
                     i_\mathrm{s,a}(t) &= \hat{i}_{\mathrm{s}} \cos(\omega t), \\
@@ -361,8 +362,7 @@
     we analyze the positive and negative sequences separately. \onslide<+-> Utilizing $$\cos(x \pm y) = \cos(x)\cos(y) \mp \sin(x)\sin(y)$$ we obtain for the positive sequence: \onslide<+->
     \begin{equation*}
         \begin{alignedat}{2}
-        \uncover<+->{
-            &\cos(\omega t - k \vartheta_\mathrm{el}) &&+ \cos(\omega t - k \vartheta_\mathrm{el} - \frac{2\pi}{3}(1-k)) + \cos(\omega t - k \vartheta_\mathrm{el} + \frac{2\pi}{3}(1-k))\\}
+            &\cos(\omega t - k \vartheta_\mathrm{el}) &&+ \cos(\omega t - k \vartheta_\mathrm{el} - \frac{2\pi}{3}(1-k)) + \cos(\omega t - k \vartheta_\mathrm{el} + \frac{2\pi}{3}(1-k))\\
         \uncover<+->{
             = \quad &\cos(\omega t - k \vartheta_\mathrm{el}) &&+ \cos(\omega t - k \vartheta_\mathrm{el}) \cos(\frac{2\pi}{3}(1-k)) + \sin(\omega t - k \vartheta_\mathrm{el}) \sin(\frac{2\pi}{3}(1-k))\\
         }
@@ -647,7 +647,7 @@ Hence, the Fourier coefficient of every harmonic order $k$ is multiplied by the 
     \onslide<+->
     we can further rewrite
     \begin{equation}
-        \uncover<+->{\sum_{l=0}^{q-1} \left(e^{\mathrm{j} k  p\frac{2\pi}{Q}}\right)^l =\frac{1-e^{\mathrm{j} k q p\frac{2\pi}{Q}}}{1-e^{\mathrm{j} k p\frac{2\pi}{Q}}} = \frac{e^{\mathrm{j} k q p\frac{2\pi}{Q}\frac{1}{2}}(-2\mathrm{j})\sin(k q p\frac{2\pi}{Q}\frac{1}{2})}{e^{\mathrm{j} k p\frac{2\pi}{Q}\frac{1}{2}}(-2\mathrm{j})\sin(k p\frac{2\pi}{Q}\frac{1}{2})}}\uncover<+->{=e^{\mathrm{j}k\frac{2 \pi}{Q}\frac{q-1}{2}}\frac{\sin(k q p\frac{2\pi}{Q}\frac{1}{2})}{\sin(k p\frac{2\pi}{Q}\frac{1}{2})}.}
+        \sum_{l=0}^{q-1} \left(e^{\mathrm{j} k  p\frac{2\pi}{Q}}\right)^l =\frac{1-e^{\mathrm{j} k q p\frac{2\pi}{Q}}}{1-e^{\mathrm{j} k p\frac{2\pi}{Q}}} = \frac{e^{\mathrm{j} k q p\frac{2\pi}{Q}\frac{1}{2}}(-2\mathrm{j})\sin(k q p\frac{2\pi}{Q}\frac{1}{2})}{e^{\mathrm{j} k p\frac{2\pi}{Q}\frac{1}{2}}(-2\mathrm{j})\sin(k p\frac{2\pi}{Q}\frac{1}{2})}\uncover<+->{=e^{\mathrm{j}k\frac{2 \pi}{Q}\frac{q-1}{2}}\frac{\sin(k q p\frac{2\pi}{Q}\frac{1}{2})}{\sin(k p\frac{2\pi}{Q}\frac{1}{2})}.}
         \label{eq:sum_exp_distribution_factor_simplified}
     \end{equation}
 \end{frame}
@@ -681,7 +681,7 @@ Hence, the Fourier coefficient of every harmonic order $k$ is multiplied by the 
 		\begin{column}{0.6\textwidth}
 	        If windings are not implemented as diametral winding, i.e., the winding width $y$ is smaller than the pole pitch $\rho_\mathrm{p}$, 
             $$y < \rho_\mathrm{p}=\pi,$$
-            the winding is called chorded. \onslide<2->{Hence, the starting and end position of the coil are shifted towards $\pm(y/\rho_\mathrm{p})(\pi/2)$ along the circumference. Consequently, the Fourier coefficients of the chorded winding are:
+            the \hl{winding is called chorded}. \onslide<2->{Hence, the starting and end position of the coil are shifted towards $\pm(y/\rho_\mathrm{p})(\pi/2)$ along the circumference. Consequently, the Fourier coefficients of the chorded winding are:
             \begin{equation}
                 \hat{B}_{\mathrm{c}}^{(k)} = \frac{2}{\pi} \int_{-\frac{\pi}{2}\frac{y}{\rho_\mathrm{p}}}^{\frac{\pi}{2}\frac{y}{\rho_\mathrm{p}}} B(\vartheta_\mathrm{el}) \cos(k \vartheta_\mathrm{el}) \mathrm{d}\vartheta_\mathrm{el}.
                 \label{eq:Pitch_factor_fourier_coefficients}
