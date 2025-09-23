@@ -1,0 +1,40 @@
+%
+% \begin{figure}[htb]
+% \centering
+\begin{tikzpicture}[scale=1.0]
+
+    \def\Hscale{1/250}
+    \def\Bscale{2}
+
+
+    \draw[thick,->] (0,0) -- (4.5,0) node[anchor=north west] {$H$ in $\nicefrac{\text{A}}{\text{m}}$};
+    \draw[thick,->] (0,0) -- (0,3.) node[anchor=south west,rotate=0] {$B$ in T};
+
+    \foreach \x in {1,2,3,4}
+    \draw[color=gray!25] (\x cm,0) -- (\x cm,3);
+
+    \foreach \y in {1,2,3}
+    \draw[color=gray!25] (0,\y) -- (4.,\y);
+
+    \foreach \x in {0,1,2,3,4}{
+            \tikzmath{
+                integer \xx;
+                \xx = \x*250;
+            }
+            \draw (\x cm,1pt) -- (\x cm,-1pt) node[anchor=north] {$\xx$};
+        }
+    \foreach \y in {0,1,2,3}{
+            \tikzmath{
+                real \yy;
+                \yy = \y/2;
+            }
+            \draw (1pt,\y cm) -- (-1pt,\y cm) node[anchor=east] {$\yy$};
+        }
+
+    \draw[color=signalblue, thick] (0,0) -- ({125*\Hscale},{0.8*\Bscale}) -- ({250*\Hscale},{1*\Bscale}) -- ({500*\Hscale},{1.2*\Bscale}) -- ({1000*\Hscale},{1.4*\Bscale});
+
+
+\end{tikzpicture}
+% \caption{Magnetization curve of utilized electrical steel.}
+% \label{fig:magnetization_curve}
+% \end{figure}

@@ -39,6 +39,7 @@ The covered topics are:
 
 | Exam       | Only tasks                                  | Tasks with solutions                            |
 |------------|---------------------------------------------|-------------------------------------------------|
+| Summer 2025       | [Only tasks](https://ias-uni-siegen.github.io/EMD_course/summer2025.pdf)   | [Tasks with solutions](https://ias-uni-siegen.github.io/EMD_course/summer2025_with_solution.pdf)
 | Winter 2024       | [Only tasks](https://ias-uni-siegen.github.io/EMD_course/winter2024.pdf)   | [Tasks with solutions](https://ias-uni-siegen.github.io/EMD_course/winter2024_with_solution.pdf) |
 | Summer 2024       | [Only tasks](https://ias-uni-siegen.github.io/EMD_course/summer2024.pdf)   | [Tasks with solutions](https://ias-uni-siegen.github.io/EMD_course/summer2024_with_solution.pdf) |
 | Summer 2024 (mock-up)| [Only tasks](https://ias-uni-siegen.github.io/EMD_course/summer2024_mock-up.pdf)   | [Tasks with solutions](https://ias-uni-siegen.github.io/EMD_course/summer2024_mock-up_with_solution.pdf) |

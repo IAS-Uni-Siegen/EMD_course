@@ -1,0 +1,194 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Task 4 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\task{Synchronous machine} % Oliver
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\taskGerman{Synchronmaschine}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+A four-pole synchronous machine operates as a generator in a power plant and supplies \SI{17}{\mega\watt} of active power to the power grid. The grid frequency is \SI{50}{\hertz}. The stator ohmic winding resistance of the synchronous machine is negligible and the excitation current is set to a constant value of \SI{100}{\ampere}. \autoref{fig:phasor_SM_task} shows the phasor diagram of the synchronous machine at a given operating point.
+
+\begin{germanblock}
+    Eine vierpolige Synchronmaschine arbeitet in einem Kraftwerk als Generator und gibt eine Wirkleistung von \SI{17}{\mega\watt} in das Stromnetz ab. Die Netzfrequenz beträgt \SI{50}{\hertz}. Der ohmsche Wicklungswiderstand im Stator der Synchronmaschine sei vernachlässigbar und der Erregerstrom sei konstant auf \SI{100}{\ampere} eingestellt. In \autoref{fig:phasor_SM_task} ist das Zeigerdiagramm der Synchronmaschine in einem gegebenen Arbeitspunkt dargestellt.
+\end{germanblock}
+
+\begin{figure}[h!]
+    \centering
+    \begin{tikzpicture}
+        \coordinate (b) at (0,0);
+        \coordinate (a) at (2,3.5);
+        \coordinate (c) at (0,3.5);
+        \draw[->] (0,-2) -- (0,4) node[above]{$\mathrm{Im}$};
+        \draw[->] (-4,0) -- (4,0) node[right]{$\mathrm{Re}$};
+        \draw[-{Latex[length=3mm]}, blue, thick] (0,0) -- (0,3) node[left, text=black]{$\underline{U}_\mathrm{i}$};
+        \draw[-{Latex[length=3mm]}, blue, thick] (0,0) -- (2,3.5) node[right, text=black]{$\underline{U}_\mathrm{s}$};
+        \draw[-{Latex[length=3mm]}, blue, thick] (0,3) --  node[above, text=black]{$\Delta \underline{U}$} ++ (2,0.5);
+        \pic[draw, <-, angle eccentricity=1.7, angle radius=1.25cm]{angle = a--b--c};
+        \node at (0.2,0.85) {$\theta$};
+    \end{tikzpicture}
+    \caption{Phasor diagram of a synchronous machine with scaling $\SI{1}{\kilo\volt} = \SI{1}{\centi\meter}$ and $\SI{1}{\kilo\ampere} = \SI{1}{\centi\meter}$.}
+    \label{fig:phasor_SM_task}
+\end{figure}
+
+
+\subtask{Determine the operating mode of the synchronous machine based on the phasor diagram.}{1}
+\subtaskGerman{In welcher Betriebsart befindet sich  die Synchronmaschine aus obigem Zeigerdiagramm?}
+
+\begin{solutionblock}
+    Since the load angle $\theta$ is negative, the synchronous machine operates as a generator (i.e., feeds active power into the grid). The induced voltage $U_\mathrm{i}$ amplitude is larger than the stator voltage amplitude $U_\mathrm{s}$, which is characteristic for an under excited generator which draws reactive power from the grid.
+\end{solutionblock}
+
+
+\subtask{Determine the short-circuit current $I_{\mathrm{sc}}$ and add its phasor $\underline{I}_{\mathrm{sc}}$ to \autoref{fig:phasor_SM_task}.}{2}
+\begin{hintblock}
+if and if only you are not able to solve this task, assume $I_\mathrm{sc} = \SI{3}{\kilo\ampere}$ as a substitute result.
+\end{hintblock}
+\subtaskGerman{Bestimmen Sie den Kurzschlussstrom $I_{\mathrm{sc}}$ und ergänzen Sie dessen Zeiger $\underline{I}_{\mathrm{sc}}$ in \autoref{fig:phasor_SM_task}.}
+\begin{germanhintblock}
+nur für den Fall, dass Sie kein Ergebnis ermitteln können, verwenden Sie $I_\mathrm{sc} = \SI{3}{\kilo\ampere}$ als Alternativergebnis.
+\end{germanhintblock}
+
+\begin{solutionblock}
+    The active power is calculated by
+    $$ P = 3 U_\mathrm{s} I_\mathrm{s} \cos(\varphi)$$
+
+    with $\varphi$ being the phase angle between the stator voltage and stator current phasors. Hence, $I_\mathrm{s} \cos(\varphi)$ determines the active current component which is in line with the stator voltage phasor. The stator current phasor is (neglecting the ohmic stator resistance):
+    $$
+     \underline{I}_\mathrm{s} = \frac{\underline{U}_\mathrm{s}}{\mathrm{j}X_\mathrm{s}} - \frac{\underline{U}_\mathrm{i}}{\mathrm{j}X_\mathrm{s}}= -\mathrm{j}\frac{\underline{U}_\mathrm{s}}{X_\mathrm{s}} + \mathrm{j}\frac{\underline{U}_\mathrm{i}}{X_\mathrm{s}}.
+    $$
+    The first component of $\underline{I}_\mathrm{s}$ is orthogonal to the stator voltage phasor and, therefore, does not contribute to the active power. The second component is relevant for the active power and can be rewritten as
+    $$ \mathrm{j}\frac{\underline{U}_\mathrm{i}}{X_\mathrm{s}} = -\underline{I}_\mathrm{sc},
+    $$
+    i.e., is the negative short-circuit current phasor. Hence, the short-circuit current is lagging by $\pi/2$ to the inner voltage phasor and needs to be aligned with the real axis given the inner voltage phasor orientation with the imaginary axis. Applying some trigonmetric identies to \autoref{fig:phasor_SM_solution} it can be found that the fraction of the short-circuit current aligned with the stator voltage phasor is given by
+    $$I_\mathrm{sc}\sin(\theta)\stackrel{!}{=}I_\mathrm{s} \cos(\varphi).$$
+    Hence, we can find the short-circuit current phasor length from the active power and the stator voltage:
+    $$
+    I_\mathrm{sc} = \frac{P}{3 U_\mathrm{s} \sin(\theta)} = \frac{\SI{17}{\mega\watt}}{3\cdot \SI{4}{\kilo\volt} \cdot0.496} = \SI{2.86}{\kilo\ampere}.
+    $$
+
+    \begin{solutionfigure}[ht]
+    \centering
+    \begin{tikzpicture}
+        \coordinate (b) at (0,0);
+        \coordinate (a) at (2,3.5);
+        \coordinate (c) at (0,3.5);
+        \draw[->] (0,-2) -- (0,4) node[above]{$\mathrm{Im}$};
+        \draw[->] (-4,0) -- (4,0) node[right]{$\mathrm{Re}$};
+        \draw[-{Latex[length=3mm]}, blue, thick] (0,0) -- (0,3) node[left, text=black]{$\underline{U}_\mathrm{i}$};
+        \draw[-{Latex[length=3mm]}, blue, thick] (0,0) -- (2,3.5) node[right, text=black]{$\underline{U}_\mathrm{s}$};
+        \draw[-{Latex[length=3mm]}, red, thick] (0,0) -- (2.86,0) coordinate (d) node[below, text=black]{$\underline{I}_\mathrm{sc}$};
+        \draw[-{Latex[length=3mm]}, red, thick] (0,0) -- ({1.96*sin(166)},{1.96*cos(166)}) coordinate (f) node[right, text=black]{$\underline{I}_\mathrm{s}$};
+        \pic[draw, ->, angle eccentricity=1.7, angle radius=0.7cm, red]{angle = f--b--a};
+        \node[red]  at (0.5,-0.85) {$\varphi$};
+        \draw[red, dashed] (0.706,1.236) coordinate (e) -- (2.86,0);
+        \pic[draw, -, angle eccentricity=1.7, angle radius=0.5cm, red]{angle = b--e--d};
+        \node[red, below, thick] at (e) {$\boldsymbol{\cdot}$};
+        \draw[-{Latex[length=3mm]}, blue, thick] (0,3) --  node[above, text=black]{$\Delta \underline{U}$} ++ (2,0.5);
+        \pic[draw, <-, angle eccentricity=1.7, angle radius=1.25cm]{angle = a--b--c};
+        \node  at (0.2,0.85) {$\theta$};
+    \end{tikzpicture}
+    \caption{Phasor diagram of a synchronous machine with solution phasors}
+    \label{fig:phasor_SM_solution}
+\end{solutionfigure}
+
+
+\end{solutionblock}
+
+\subtask{Determine the synchronous reactance $X_\mathrm{s}$.}{1}
+\begin{hintblock}
+if and if only you are not able to solve this task, assume $X_\mathrm{s} = \SI{1}{\ohm}$ as a substitute result.
+\end{hintblock}
+\subtaskGerman{Bestimmen Sie die synchrone Reaktanz $X_\mathrm{s}$.}
+\begin{germanhintblock}
+nur für den Fall, dass Sie kein Ergebnis ermitteln können, verwenden Sie $X_\mathrm{s} = \SI{1}{\ohm}$ als Alternativergebnis.
+\end{germanhintblock}
+
+\begin{solutionblock}
+    The synchronous reactance is the fraction of the inner voltage and the short-circuit current:
+    $$
+    X_\mathrm{s} = \frac{U_\mathrm{i}}{I_\mathrm{sc}} = \frac{\SI{3}{\kilo\volt}}{\SI{2.86}{\kilo\ampere}} = \SI{1.05}{\ohm}.
+    $$
+\end{solutionblock}
+
+\subtask{Determine the stator current $I_\mathrm{s}$, the phase shift angle $\varphi$ between stator current and voltage, and add the phasor $\underline{I}_\mathrm{s}$ to \autoref{fig:phasor_SM_task}.}{3}
+\begin{hintblock}
+if and if only you are not able to solve this task, assume $I_\mathrm{s} = \SI{3}{\kilo\ampere}$ and $\varphi = 150^\circ$ as substitute results.
+\end{hintblock}
+\subtaskGerman{Ermitteln Sie ferner den Statorstrom $I_\mathrm{s}$, den Phasenverschiebungswinkel $\varphi$ zwischen Statorstrom und -spannung und zeichnen Sie den Zeiger $\underline{I}_\mathrm{s}$ in \autoref{fig:phasor_SM_task} ein.}
+\begin{germanhintblock}
+nur für den Fall, dass Sie kein Ergebnis ermitteln können, verwenden Sie $I_\mathrm{s} = \SI{3}{\kilo\ampere}$ und $\varphi = 150^\circ$ als Alternativergebnisse.
+\end{germanhintblock}
+
+\begin{solutionblock}
+    The stator current can be derived from the voltage difference between the inner voltage and the stator voltage:
+    $$
+    I_\mathrm{s} = \frac{\Delta U}{X_\mathrm{s}} = \frac{\SI{2.06}{\kilo\volt}}{\SI{1.05}{\ohm}} = \SI{1.96}{\kilo\ampere}.
+    $$
+    The phase shift angle $\varphi$ is given by
+    $$
+    \varphi = \arccos\left(\frac{P}{3U_\mathrm{s}I_\mathrm{s}}\right) = \arccos\left(\frac{\SI{-17}{\mega\watt}}{3\cdot\SI{4}{\kilo\volt}\cdot\SI{1.96}{\kilo\ampere}}\right) = \arccos(-0.723) = 136.29^\circ.
+    $$
+    With this information the stator current phasor can be added to \autoref{fig:phasor_SM_solution}. The stator current phasor is advancing the stator voltage phasor by the angle $\varphi$.
+\end{solutionblock}
+
+\subtask{Determine the power factor $\cos(\varphi)$, the reactive power $Q$ and the apparent power $S$.}{3}
+
+\subtaskGerman{Bestimmen Sie den Leistungsfaktor $\cos(\varphi)$, die Blindleistung $Q$ und die Scheinleistung $S$.}
+
+\begin{solutionblock}
+    Based on the previous result regarding $\varphi$ the power factor is given by
+    $$
+        \cos(\varphi) = \cos(136.29^\circ) = -0.723.
+    $$
+    The reactive power is given by
+    $$
+        Q = 3U_\mathrm{s}I_\mathrm{s}\sin(\varphi) = 3\cdot\SI{4}{\kilo\volt}\cdot\SI{1.96}{\kilo\ampere}\cdot\sin(136.29^\circ) = \SI{16.25}{\mega\volt\ampere}.
+    $$
+    Consequently, the apparent power results in
+    $$
+        S = \sqrt{P^2 + Q^2} = \sqrt{(\SI{17}{\mega\watt})^2 + (\SI{16.25}{\mega\volt\ampere})^2} = \SI{23.52}{\mega\volt\ampere}.
+    $$
+\end{solutionblock}
+
+
+\subtask{What is the generator's torque $T$ at the given operating point and what is its theoretical maximum stable torque for the given excitation?}{2}
+\subtaskGerman{Wie hoch ist das Drehmoment $T$ der Synchronmaschine im gegebenen Arbeitspunkt und wie hoch ist das theoretische maximale stabile Drehmoment für die gegebene Erregung?}
+
+\begin{solutionblock}
+    The generator's torque at the given operating point can be calculated using
+    $$
+        T = \frac{P_{\mathrm{me}}}{\omega_{\mathrm{r}}} = \frac{P}{\frac{1}{p}f_\mathrm{s}\cdot 2\pi} = \frac{\SI{17}{\mega\watt}}{\frac{1}{2}\SI{50}{\hertz}\cdot 2\pi} = \SI{108.23}{\kilo\newton\meter}.
+    $$
+    Here, $p$ is the pole pair number of the generator and $f_\mathrm{s}$ is the grid frequency. Since (ohmic) losses are neglected, above the active grid power is equal to the mechanical power $P_{\mathrm{me}}$. The theoretical maximum stable torque is produced at the tipping point ($\theta = 90^\circ$) leading to
+    $$
+        T_{\mathrm{max}} = \frac{T}{\sin(\theta)} = \frac{\SI{108.23}{\kilo\newton\meter}}{\sin(29.75^\circ)} = \SI{218.21}{\kilo\newton\meter}.
+    $$
+\end{solutionblock}
+
+\subtask{Now, the generator should only supply the active power specified above to the grid, but no reactive power. To what value must the excitation current $I_\mathrm{f}$ be changed to achieve this?}{2}
+\subtaskGerman{Nun soll der Synchrongenerator nur die oben angegebene Wirkleistung, aber keine Blindleistung in das Netz abgeben. Auf welchen Wert muss der Erregerstrom $I_\mathrm{f}$ geändert werden?}
+
+\begin{solutionblock}
+    The described operation point is characterized by $\cos(\varphi)=1$, i.e.,
+    $$
+        |P|=|S|=3U_\mathrm{s}I_\mathrm{s}.
+    $$
+    Hence, the new stator current is given by
+    $$
+        I_\mathrm{s} = \frac{|P|}{3U_\mathrm{s}} = \frac{\SI{17}{\mega\watt}}{3\cdot\SI{4}{\kilo\volt}} = \SI{1.42}{\kilo\ampere}.
+    $$
+    This leads to the new delta voltage
+    $$
+        \Delta U = I_\mathrm{s} X_\mathrm{s} = \SI{1.42}{\kilo\ampere}\cdot\SI{1.05}{\ohm} = \SI{1.49}{\kilo\volt}.
+    $$
+    The new inner voltage is given by
+    $$
+        U_\mathrm{i} = \sqrt{U^2_\mathrm{s} + (\Delta U)^2} = \sqrt{(\SI{4}{\kilo\volt})^2 + (\SI{1.49}{\kilo\volt})^2} = \SI{4.27}{\kilo\volt}.
+    $$
+    As the inner voltage is directly proportional to the excitation current, the new excitation current can be calculated via the ratio of the new inner voltage and the old inner voltage:
+    $$
+        I_\mathrm{f} = \frac{U_\mathrm{i}}{U_\mathrm{i,old}} I_\mathrm{f,old} = \frac{\SI{4.27}{\kilo\volt}}{\SI{3.0}{\kilo\volt}} \cdot \SI{100}{\ampere} = \SI{142.33}{\ampere}.
+    $$
+    Hence, the excitation current must be increased compared to the previous operating point.
+\end{solutionblock}
