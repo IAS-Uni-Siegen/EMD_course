@@ -55,3 +55,8 @@ See "Cite this repository" info box on the top-right or use the following BibTeX
     year = {2024}
 }
 ```
+
+### Contributing
+
+- We recommend using [VSCode](https://code.visualstudio.com/) as code editor.
+- It is expected that [LaTeX Workshop extension](https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop) and [Black Formatter](https://marketplace.visualstudio.com/items?itemName=ms-python.black-formatter) is installed so that formatting of the code is achieved properly.
