@@ -1,0 +1,22 @@
+{
+    "latex-workshop.formatting.latexindent.path": "latexindent.pl",
+    "latex-workshop.formatting.latexindent.args": [
+        "--local=%WORKSPACE_FOLDER%/course_template/.latexindent.yml",
+        "-w"
+    ],
+    "[latex]": {
+        "editor.formatOnSave": true
+    },
+    "black-formatter.args": [
+        "--config",
+        "./course_template/pyproject.toml"
+    ],
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter",
+        "editor.formatOnSave": true,
+    },
+    "[jupyter]": {
+        "editor.defaultFormatter": "ms-python.black-formatter",
+        "editor.formatOnSave": true
+    }
+}
