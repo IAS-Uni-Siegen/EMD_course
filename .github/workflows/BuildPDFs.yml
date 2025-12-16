@@ -32,7 +32,7 @@ jobs:
           set -e
           for ext in tex sty cls; do
             for file in $(find . -name "*.${ext}" || true); do
-              formatted=$(./course_tempalte/latexindent.pl -o=- "$file")
+              formatted=$(./course_template/latexindent.pl -o=- "$file")
               original=$(cat "$file")
               if [ "$formatted" != "$original" ]; then
                 echo "::error file=$file::File is not properly formatted. Please run latexindent locally."

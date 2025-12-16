@@ -1,8 +1,8 @@
 {
-    "latex-workshop.formatting.latexindent.path": "latexindent.pl",
+    "latex-workshop.formatting.latexindent.path": "latexindent",
     "latex-workshop.formatting.latexindent.args": [
-        "--local=%WORKSPACE_FOLDER%/course_template/.latexindent.yml",
-        "-w"
+        "-l=%WORKSPACE_FOLDER%/course_template/.latexindent.yml",
+        "%TMPFILE%"
     ],
     "[latex]": {
         "editor.formatOnSave": true
