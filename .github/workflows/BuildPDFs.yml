@@ -44,29 +44,18 @@ jobs:
       - name: Install Python format tools
         run: |
           python -m pip install --upgrade pip
-          pip install black nbqa
-      
-      - name: Check Python formatting with black (dry-run, explicit config)
+          pip install ruff
+
+      - name: Check Python + Notebook formatting with Ruff (dry-run)
         run: |
           set -e
-          PY_FILES=$(find . -name "*.py" || true)
-          if [ -n "$PY_FILES" ]; then
-            echo "Python files detected; running black --check with pyproject.toml ..."
-            black --config "./course_template/pyproject.toml" --check .
-          else
-            echo "No Python files found; skipping black check."
-          fi
-      
-      - name: Check notebook formatting with nbqa+black (dry-run, explicit config)
-        run: |
-          set -e
-          NB_FILES=$(find . -name "*.ipynb" || true)
-          if [ -n "$NB_FILES" ]; then
-            echo "Jupyter notebooks detected; running nbqa black --check with pyproject.toml ..."
-            nbqa black --config "./course_template/pyproject.toml" --check .
-          else
-            echo "No notebooks found; skipping nbqa black check."
-          fi
+          for file in $(find . \( -name "*.py" -o -name "*.ipynb" \) ); do
+            if ! ruff format --diff --config=./course_template/pyproject.toml "$file"; then
+              echo "::error file=$file::File is not properly formatted."
+              exit 1
+            fi
+          done
+          echo "All Python (.py, .ipynb) files are properly formatted!"
 
   build_latex:
     needs: format-check
