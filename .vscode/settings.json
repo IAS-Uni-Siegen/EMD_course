@@ -4,6 +4,7 @@
         "-l=%WORKSPACE_FOLDER%/course_template/.latexindent.yml",
         "%TMPFILE%"
     ],
+    "latex-workshop.formatting.latex": "latexindent",
     "[latex]": {
         "editor.formatOnSave": true
     },
