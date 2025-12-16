@@ -8,16 +8,16 @@
     "[latex]": {
         "editor.formatOnSave": true
     },
-    "black-formatter.args": [
-        "--config",
-        "./course_template/pyproject.toml"
-    ],
+    "ruff.configuration": "./course_template/pyproject.toml",
     "[python]": {
-        "editor.defaultFormatter": "ms-python.black-formatter",
         "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": "explicit"
+        },
+        "editor.defaultFormatter": "charliermarsh.ruff"
     },
-    "[jupyter]": {
-        "editor.defaultFormatter": "ms-python.black-formatter",
-        "editor.formatOnSave": true
+    "notebook.formatOnSave.enabled": true,
+    "notebook.codeActionsOnSave": {
+        "notebook.source.organizeImports": "explicit"
     }
 }

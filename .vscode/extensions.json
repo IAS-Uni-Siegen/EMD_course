@@ -1,6 +1,6 @@
 {
     "recommendations": [
         "James-Yu.latex-workshop",
-        "ms-python.black-formatter"
+        "charliermarsh.ruff"
     ]
 }
