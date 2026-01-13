@@ -1,13 +1,13 @@
 {
     "latex-workshop.formatting.latexindent.path": "latexindent",
     "latex-workshop.formatting.latexindent.args": [
+        "-m",
         "-l=%WORKSPACE_FOLDER%/course_template/.latexindent.yml",
-        "%TMPFILE%"
+        "%TMPFILE%",
+        "-o=%TMPFILE%"
     ],
+    "editor.formatOnSave": true,
     "latex-workshop.formatting.latex": "latexindent",
-    "[latex]": {
-        "editor.formatOnSave": true
-    },
     "ruff.configuration": "./course_template/pyproject.toml",
     "[python]": {
         "editor.formatOnSave": true,
