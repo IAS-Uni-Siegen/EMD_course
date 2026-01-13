@@ -310,5 +310,4 @@ TSWLatexianTemp*
 #*Notes.bib
 
 #vscode
-.vscode/
-
+.ruff_cache/
