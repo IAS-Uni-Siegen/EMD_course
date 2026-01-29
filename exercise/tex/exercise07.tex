@@ -226,7 +226,7 @@ Given is a salient pole synchronous machine with the parameters in Tab.~\ref{tab
 	\begin{align}
 		\begin{split}
 			\bm{\Phi}(t,t_{\mathrm{0}}) =
-			 &
+			    &
 			\begin{bmatrix}
 				\frac{-M_{\mathrm{fs}}}{L_{\mathrm{s,d}}} & \frac{-L_{\mathrm{f}}}{M_{\mathrm{fs}}}                      & \frac{-L_{\mathrm{f}}}{M_{\mathrm{fs}}}                     \\
 				0                                         & \frac{-\mathrm{j}\gamma }{(L_{\mathrm{s,d}}M_{\mathrm{fs}})} & \frac{\mathrm{j}\gamma }{(L_{\mathrm{s,q}}M_{\mathrm{fs}})} \\
@@ -238,17 +238,32 @@ Given is a salient pole synchronous machine with the parameters in Tab.~\ref{tab
 				0                       & 0                                                       & e^{\mathrm{j}\omega_{\mathrm{r,el}}(t-t_{\mathrm{0}})}
 			\end{bmatrix}
 			\\
-			 &
+			    &
 			\begin{bmatrix}
 				\frac{-M_{\mathrm{fs}}L_{\mathrm{s,d}}}{\gamma} & 0                                                          & \frac{-L_{\mathrm{f}}L_{\mathrm{s,d}}}{\gamma} \\
 				\frac{M_{\mathrm{fs}}L_{\mathrm{s,d}}}{2\gamma} & \frac{\mathrm{j}L_{\mathrm{s,q}}M_{\mathrm{fs}}}{2\gamma}  & \frac{M_{\mathrm{fs}}^2}{2\gamma}              \\
 				\frac{M_{\mathrm{fs}}L_{\mathrm{s,d}}}{2\gamma} & \frac{-\mathrm{j}L_{\mathrm{s,q}}M_{\mathrm{fs}}}{2\gamma} & \frac{M_{\mathrm{fs}}^2}{2\gamma}
 			\end{bmatrix}
-			\\ = &
-			   \begin{bmatrix}
-				\frac{M_{\mathrm{fs}}^2 - L_{\mathrm{s,d}}L_{\mathrm{f}}\cos((t-t_{\mathrm{0}})\omega_{\mathrm{r,el}}}{\gamma} & \frac{-L_{\mathrm{s,q}}L_{\mathrm{f}}\sin((t-t_{\mathrm{0}})\omega_{\mathrm{r,el}})}{\gamma} & \frac{-L_{\mathrm{f}}M_{\mathrm{fs}}(\cos((t-t_{\mathrm{0}})\omega_{\mathrm{r,el}})-1)}{\gamma}               \\
-				\frac{-L_{\mathrm{s,d}}\sin((t-t_{\mathrm{0}})\omega_{\mathrm{r,el}})}{L_{\mathrm{s,q}}}                       & \cos((t-t_{\mathrm{0}})\omega_{\mathrm{r,el}})                                               & \frac{-M_{\mathrm{fs}}\sin((t-t_{\mathrm{0}})\omega_{\mathrm{r,el}})}{L_{\mathrm{s,q}}}                       \\
-				\frac{L_{\mathrm{s,d}}M_{\mathrm{fs}}(\cos((t-t_{\mathrm{0}})\omega_{\mathrm{r,el}})-1)}{\gamma}               & \frac{L_{\mathrm{s,q}}M_{\mathrm{fs}}\cos((t-t_{\mathrm{0}})\omega_{\mathrm{r,el}})}{\gamma} & \frac{M_{\mathrm{fs}}^2\cos((t-t_{\mathrm{0}})\omega_{\mathrm{r,el}})-L_{\mathrm{s,d}}L_{\mathrm{f}}}{\gamma}
+			\\
+			=\  &
+			\begin{bmatrix}
+				\frac{M_{\mathrm{fs}}^2 - L_{\mathrm{s,d}}L_{\mathrm{f}}\cos((t-t_{\mathrm{0}})\omega_{\mathrm{r,el}})}{\gamma}
+				 &
+				\frac{-L_{\mathrm{s,q}}L_{\mathrm{f}}\sin((t-t_{\mathrm{0}})\omega_{\mathrm{r,el}})}{\gamma}
+				 &
+				\frac{-L_{\mathrm{f}}M_{\mathrm{fs}}(\cos((t-t_{\mathrm{0}})\omega_{\mathrm{r,el}})-1)}{\gamma}
+				\\
+				\frac{-L_{\mathrm{s,d}}\sin((t-t_{\mathrm{0}})\omega_{\mathrm{r,el}})}{L_{\mathrm{s,q}}}
+				 &
+				\cos((t-t_{\mathrm{0}})\omega_{\mathrm{r,el}})
+				 &
+				\frac{-M_{\mathrm{fs}}\sin((t-t_{\mathrm{0}})\omega_{\mathrm{r,el}})}{L_{\mathrm{s,q}}}
+				\\
+				\frac{L_{\mathrm{s,d}}M_{\mathrm{fs}}(\cos((t-t_{\mathrm{0}})\omega_{\mathrm{r,el}})-1)}{\gamma}
+				 &
+				\frac{L_{\mathrm{s,q}}M_{\mathrm{fs}}\cos((t-t_{\mathrm{0}})\omega_{\mathrm{r,el}})}{\gamma}
+				 &
+				\frac{M_{\mathrm{fs}}^2\cos((t-t_{\mathrm{0}})\omega_{\mathrm{r,el}})-L_{\mathrm{s,d}}L_{\mathrm{f}}}{\gamma}
 			\end{bmatrix}.
 		\end{split}
 	\end{align}
