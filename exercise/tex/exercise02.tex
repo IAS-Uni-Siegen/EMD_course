@@ -3,10 +3,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \ex{DC machines -- design and conversion losses}
 
-
 \normalsize{\textbf{Acknowledgement}: The following exercise is adapted from ``Elektrische Maschinen und Antriebe Übungsbuch: Aufgaben mit Lösungsweg'' by A. Binder, Springer, 2017}\\
-
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Task 1 %%
@@ -16,190 +13,170 @@
 A six-pole DC machine with an axial laminated core length $l_{\mathrm{z}}$ = 120 mm and a internal stator diameter $d_{\mathrm{s}}$ = 190 mm has an ideal pole coverage $\alpha$ = 0.7 and a maximum radial magnetic air gap flux density $\hat{B}_{\updelta}$ = 0.85 T at no-load. The armature of the machine is equipped with a two-layer lap winding with a coil winding number $N_{\mathrm{c}}$ = 20 and $K$ = 31 commutator segments.
 The machine has a interpole winding connected in series with the armature winding to improve commutation. The total resistance of the armature and interpole winding is $\Ra$ = 0.14 $\Omega$.
 
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subtask{What is the total number $z_{\mathrm{a}}$ of armature conductors?}
 
 \begin{solutionblock}
-    The total number is calculated as follows
-    \begin{equation}
-        z_{\mathrm{a}} = 2 K N_{\mathrm{c}}
-        = 2 \cdot 31 \cdot 20
-        = 1240,
-    \end{equation}
-    with $K$ number of commutator elements and $N_{\mathrm{c}}$ number of conductor turns per coil.
+	The total number is calculated as follows
+	\begin{equation}
+		z_{\mathrm{a}} = 2 K N_{\mathrm{c}}
+		= 2 \cdot 31 \cdot 20
+		= 1240,
+	\end{equation}
+	with $K$ number of commutator elements and $N_{\mathrm{c}}$ number of conductor turns per coil.
 
 \end{solutionblock}
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subtask{Calculate the induced voltage $\Ui$ at a rotational speed of $n$ = 4000 1/min.}
 
 \begin{solutionblock}
-    First, the pole pitch is calculated with
-    \begin{equation}
-        \taup = \frac{d_{\mathrm{s}} \pi}{2 p}
-        = \frac{190 \ \si{mm} \cdot \pi}{6}
-        = 99.5 \ \si{mm},
-    \end{equation}
-    where $d_{\mathrm{s}}$ is the inner stator diameter and $p$ the pole pair number.
+	First, the pole pitch is calculated with
+	\begin{equation}
+		\taup = \frac{d_{\mathrm{s}} \pi}{2 p}
+		= \frac{190 \ \si{mm} \cdot \pi}{6}
+		= 99.5 \ \si{mm},
+	\end{equation}
+	where $d_{\mathrm{s}}$ is the inner stator diameter and $p$ the pole pair number.
 
-    The induced voltage per armature conductor calculates as
-    \begin{equation}
-        U_{\mathrm{i,c}} = \frac{\alpha\mu_{\mathrm{0}} N_{\mathrm{f}} \lz d_{\mathrm{a}}}{2 \delta p} I_{\mathrm{f}} \omega,
-    \end{equation}
-    with $N_{\mathrm{f}}$ field conductor loops and the air gap length $\delta$.
+	The induced voltage per armature conductor calculates as
+	\begin{equation}
+		U_{\mathrm{i,c}} = \frac{\alpha\mu_{\mathrm{0}} N_{\mathrm{f}} \lz d_{\mathrm{a}}}{2 \delta p} I_{\mathrm{f}} \omega,
+	\end{equation}
+	with $N_{\mathrm{f}}$ field conductor loops and the air gap length $\delta$.
 
-    The total induced voltage is defined with
-    \begin{equation}
-        U_{\mathrm{i}} = \frac{N_{\mathrm{a}}}{2a} U_{\mathrm{i,c}},
-    \end{equation}
-    with $N_{\mathrm{a}}$ armature conductor loops and the pole coverage $\alpha$.
-    For the lap winding, the number of parallel winding branches $2a$ is equal to the number of the magnetic poles $2p$, that leads to $a$ = 3.
-    
-    Hence, the total induced voltage is calculated by
-    \begin{equation}
-        U_{\mathrm{i}} = \omega I_{\mathrm{f}} \frac{\mu_{\mathrm{0}} \alpha N_{\mathrm{f}} N_{\mathrm{a}} \lz \taup}{2 \pi \delta a},
-    \end{equation}
-    with
-    \begin{equation}
-        \hat{B_{\updelta}} = \frac{\mu_{\mathrm{0}} N_{\mathrm{f}}}{2 \delta p} I_{\mathrm{f}},
-        \label{eq:B_hat_task1}
-    \end{equation}
-    resulting in
-    \begin{align}
-        \begin{split}
-            U_{\mathrm{i}} &= \hat{B_{\updelta}} \omega \frac{\alpha N_{\mathrm{a}} \lz \taup p}{\pi a}\\
-            &= 0.85 \ \si{T} \cdot 2\pi \frac{4000}{60} \ \si{\frac{1}{s}} \cdot \frac{0.7 \cdot \frac{1240}{2} \cdot 0.12 \ \si{m} \cdot 0.0995 \ \si{m} \cdot 3}{\pi \cdot 3}
-            = 587.3 \ \si{V},
-        \end{split}
-    \end{align}
-    where $l_{\mathrm{z}}$ is the length of the machine and $\hat{B}_{\updelta}$ the maximum flux density in the air gap.
-    
+	The total induced voltage is defined with
+	\begin{equation}
+		U_{\mathrm{i}} = \frac{N_{\mathrm{a}}}{2a} U_{\mathrm{i,c}},
+	\end{equation}
+	with $N_{\mathrm{a}}$ armature conductor loops and the pole coverage $\alpha$.
+	For the lap winding, the number of parallel winding branches $2a$ is equal to the number of the magnetic poles $2p$, that leads to $a$ = 3.
+
+	Hence, the total induced voltage is calculated by
+	\begin{equation}
+		U_{\mathrm{i}} = \omega I_{\mathrm{f}} \frac{\mu_{\mathrm{0}} \alpha N_{\mathrm{f}} N_{\mathrm{a}} \lz \taup}{2 \pi \delta a},
+	\end{equation}
+	with
+	\begin{equation}
+		\hat{B_{\updelta}} = \frac{\mu_{\mathrm{0}} N_{\mathrm{f}}}{2 \delta p} I_{\mathrm{f}},
+		\label{eq:B_hat_task1}
+	\end{equation}
+	resulting in
+	\begin{align}
+		\begin{split}
+			U_{\mathrm{i}} & = \hat{B_{\updelta}} \omega \frac{\alpha N_{\mathrm{a}} \lz \taup p}{\pi a}                                                                                        \\
+			               & = 0.85 \ \si{T} \cdot 2\pi \frac{4000}{60} \ \si{\frac{1}{s}} \cdot \frac{0.7 \cdot \frac{1240}{2} \cdot 0.12 \ \si{m} \cdot 0.0995 \ \si{m} \cdot 3}{\pi \cdot 3}
+			= 587.3 \ \si{V},
+		\end{split}
+	\end{align}
+	where $l_{\mathrm{z}}$ is the length of the machine and $\hat{B}_{\updelta}$ the maximum flux density in the air gap.
 
 \end{solutionblock}
-
-
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subtask{The machine operates as a motor. For this purpose, a voltage of $\Ua$ = 600 V is applied. How large is the armature current $\Ia$?}
 
-
 \begin{solutionblock}
-    Derived from the equivalent circuit diagram, the voltage equation is given with:
-    \begin{equation}
-        \Ua = \Ui + \Ia \Ra.
-    \end{equation}
+	Derived from the equivalent circuit diagram, the voltage equation is given with:
+	\begin{equation}
+		\Ua = \Ui + \Ia \Ra.
+	\end{equation}
 
-    The above equation is resorted and solved for the armature current as follows:
-    \begin{equation}
-        \Ia = \frac{\Ua - \Ui}{\Ra}
-        = \frac{\left(600 - 587.3\right) \si{V}}{0.14 \ \si{\Omega}}
-        = 90.8 \ \si{A}.
-    \end{equation}
+	The above equation is resorted and solved for the armature current as follows:
+	\begin{equation}
+		\Ia = \frac{\Ua - \Ui}{\Ra}
+		= \frac{\left(600 - 587.3\right) \si{V}}{0.14 \ \si{\Omega}}
+		= 90.8 \ \si{A}.
+	\end{equation}
 
 \end{solutionblock}
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subtask{Calculate the Lorentz force per conductor $F_{\mathrm{c}}$ and per pole $F_{\mathrm{pole}}$. Calculate in addition the resulting average electromagnetic torque $T$. An air gap of $\delta$~=~1 mm is assumed.}
 
 \begin{solutionblock}
-    The current per armature conductor is calculated with:
-    \begin{equation}
-        I_{\mathrm{c}} = \frac{\Ia}{2a}
-        = \frac{90.8 \ \si{A}}{6}
-        = 15.13 \ \si{A}.
-    \end{equation}
+	The current per armature conductor is calculated with:
+	\begin{equation}
+		I_{\mathrm{c}} = \frac{\Ia}{2a}
+		= \frac{90.8 \ \si{A}}{6}
+		= 15.13 \ \si{A}.
+	\end{equation}
 
-    The Lorentz force per armature conductor is determined as:
-    \begin{equation}
-        F_{\mathrm{c}} = \hat{B}_{\updelta} \lz I_{\mathrm{c}}
-        = 0.85 \ \si{T} \cdot 0.12 \ \si{m} \cdot 15.13 \ \si{A}
-        = 1.54 \ \si{N}.
-    \end{equation}
+	The Lorentz force per armature conductor is determined as:
+	\begin{equation}
+		F_{\mathrm{c}} = \hat{B}_{\updelta} \lz I_{\mathrm{c}}
+		= 0.85 \ \si{T} \cdot 0.12 \ \si{m} \cdot 15.13 \ \si{A}
+		= 1.54 \ \si{N}.
+	\end{equation}
 
-    With $F_{\mathrm{c}}$ the Lorentz force per pol is calculated with:
-    \begin{equation}
-        F_{\mathrm{pole}} = \alpha \frac{\za}{2p} F_{\mathrm{c}}
-        = 0.7 \cdot \frac{1240}{6} \cdot 1.54 \ \si{N}
-        = 222.8 \ \si{N}.
-    \end{equation}
+	With $F_{\mathrm{c}}$ the Lorentz force per pol is calculated with:
+	\begin{equation}
+		F_{\mathrm{pole}} = \alpha \frac{\za}{2p} F_{\mathrm{c}}
+		= 0.7 \cdot \frac{1240}{6} \cdot 1.54 \ \si{N}
+		= 222.8 \ \si{N}.
+	\end{equation}
 
+	The torque per conductor is defined as follows
+	\begin{equation}
+		T_{\mathrm{c}} = F_{\mathrm{c}} \frac{d_{\mathrm{a}}}{2}
+		= \frac{\mu_{\mathrm{0}} N_{\mathrm{f}} \lz d_{\mathrm{a}}}{8\delta p a} I_{\mathrm{f}}I_{\mathrm{a}},
+	\end{equation}
+	with the outer armature diameter $d_{\mathrm{a}} = d_{\mathrm{s}} - 2\delta$.
 
-    The torque per conductor is defined as follows 
-    \begin{equation}
-        T_{\mathrm{c}} = F_{\mathrm{c}} \frac{d_{\mathrm{a}}}{2}
-        = \frac{\mu_{\mathrm{0}} N_{\mathrm{f}} \lz d_{\mathrm{a}}}{8\delta p a} I_{\mathrm{f}}I_{\mathrm{a}},
-    \end{equation}
-    with the outer armature diameter $d_{\mathrm{a}} = d_{\mathrm{s}} - 2\delta$.
-
-    Hence, the resulting average torque is given as
-    \begin{equation}
-        T = 2 \alpha N_{\mathrm{a}} T_{\mathrm{c}}
-        = \frac{\mu_{\mathrm{0}} \alpha N_{\mathrm{f}} N_{\mathrm{a}} \lz d_{\mathrm{a}}}{4 \delta p a} I_{\mathrm{f}} I_{\mathrm{a}},
-    \end{equation}
-    with \eqref{eq:B_hat_task1} resulting in the following equation
-    \begin{align}
-        \begin{split}
-            T &= \hat{B_{\updelta}} \frac{\alpha N_{\mathrm{a}} \lz d_{\mathrm{a}}}{2a} \Ia\\
-            &= 0.85 \ \si{T} \cdot \frac{0.7 \cdot \frac{1240}{2} \cdot 0.12 \ \si{m} \cdot 0.188 \ \si{m}}{2 \cdot 3} \cdot 90.8 \ \si{A}
-            = 125.9 \ \si{Nm}.
-        \end{split}
-    \end{align}
-
-   
+	Hence, the resulting average torque is given as
+	\begin{equation}
+		T = 2 \alpha N_{\mathrm{a}} T_{\mathrm{c}}
+		= \frac{\mu_{\mathrm{0}} \alpha N_{\mathrm{f}} N_{\mathrm{a}} \lz d_{\mathrm{a}}}{4 \delta p a} I_{\mathrm{f}} I_{\mathrm{a}},
+	\end{equation}
+	with \eqref{eq:B_hat_task1} resulting in the following equation
+	\begin{align}
+		\begin{split}
+			T & = \hat{B_{\updelta}} \frac{\alpha N_{\mathrm{a}} \lz d_{\mathrm{a}}}{2a} \Ia                                                  \\
+			  & = 0.85 \ \si{T} \cdot \frac{0.7 \cdot \frac{1240}{2} \cdot 0.12 \ \si{m} \cdot 0.188 \ \si{m}}{2 \cdot 3} \cdot 90.8 \ \si{A}
+			= 125.9 \ \si{Nm}.
+		\end{split}
+	\end{align}
 
 \end{solutionblock}
-
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subtask{Calculate the motor losses. Assume that the iron losses and friction losses can be neglected as well as that the field excitation is produced via permanent magnets.}
 
-
 \begin{solutionblock}
-    Based on the assumptions, only the ohmic losses occur in the machine:
-    \begin{equation}
-        \Pl = \Pcu = \Ra I_{\mathrm{a}}^2
-        = 0.14 \ \si{\Omega} \cdot \left(90.8 \ \si{A} \right)^2
-        = 1154.2 \ \si{W}.
-    \end{equation}
-   
+	Based on the assumptions, only the ohmic losses occur in the machine:
+	\begin{equation}
+		\Pl = \Pcu = \Ra I_{\mathrm{a}}^2
+		= 0.14 \ \si{\Omega} \cdot \left(90.8 \ \si{A} \right)^2
+		= 1154.2 \ \si{W}.
+	\end{equation}
 
 \end{solutionblock}
-
-
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subtask{Calculate the efficiency $\eta$ for the given operating point.}
 
 \begin{solutionblock}
 
-    The electric power is defined with
-    \begin{equation}
-        P_{\mathrm{el}} = \Ua \Ia
-        = 600 \ \si{V} \cdot 90.8 \ \si{A}
-        = 54480 \ \si{W},
-    \end{equation}
-    and the mechanical output power as:
-    \begin{equation}
-        P_{\mathrm{mech}} = T \omega 
-        = 125.9 \ \si{Nm} \cdot 2 \pi \cdot \frac{4000}{60} \ \si{\frac{1}{s}}
-        = 52753\ \si{W}.
-    \end{equation}
+	The electric power is defined with
+	\begin{equation}
+		P_{\mathrm{el}} = \Ua \Ia
+		= 600 \ \si{V} \cdot 90.8 \ \si{A}
+		= 54480 \ \si{W},
+	\end{equation}
+	and the mechanical output power as:
+	\begin{equation}
+		P_{\mathrm{mech}} = T \omega
+		= 125.9 \ \si{Nm} \cdot 2 \pi \cdot \frac{4000}{60} \ \si{\frac{1}{s}}
+		= 52753\ \si{W}.
+	\end{equation}
 
-    The efficiency results in:
-    \begin{equation}
-        \eta = \frac{P_{\mathrm{mech}}}{P_{\mathrm{el}}}
-        = \frac{52753 \ \si{W}}{54480 \ \si{W}}
-        = 96.8 \ \%.
-    \end{equation}
+	The efficiency results in:
+	\begin{equation}
+		\eta = \frac{P_{\mathrm{mech}}}{P_{\mathrm{el}}}
+		= \frac{52753 \ \si{W}}{54480 \ \si{W}}
+		= 96.8 \ \%.
+	\end{equation}
 \end{solutionblock}
-
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Task 2 %%
@@ -211,152 +188,145 @@ The armature has $Q$ = 30 slots, $u$ = 3 commutators per slot and layer as well 
 The maximum air gap flux density is $\hat{B}_{\updelta}$~=~0.9 T, the ideal pole coverage is $\alpha$ = 0.7, and, the air gap width is $\delta$~=~1.5~mm.
 The nominal speed of the machine is $\nN$ = 1440 $\mathrm{min}^{-1}$, with an armature current of $I_{\mathrm{a,n}}$~=~22 A. The excitation values are given with $I_{\mathrm{f}}$ = 0.5 A and $U_{\mathrm{f}}$ = 230 V.
 
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subtask{What is the pole pitch $\tau_{\mathrm{p}}$ and the flux per pole $\phi_{\mathrm{\updelta}}$?}
 
 \begin{solutionblock}
-    The pole pitch calculates as follows
-    \begin{equation}
-        \tau_{\mathrm{p}} = \frac{d_{\mathrm{s}} \pi}{2 p}
-        = \frac{133 \ \si{mm} \cdot \pi}{4}
-        = 104.5 \ \si{mm},
-    \end{equation}
-    with the inner stator diameter $d_{\mathrm{s}}$ and the pole pair number $p$ = 2.
-    The flux per pole is calculated as
-    \begin{equation}
-        \phiDelta = \alpha \tau_{\mathrm{p}} \lz \hat{B}_{\updelta}
-        = 0.7 \cdot 0.1045 \ \si{m} \cdot 0.08 \ \si{m} \cdot 0.9 \ \si{T}
-        = 5.265 \ \si{mWb},
-    \end{equation}
-    where $\alpha$ represents the pole coverage, $l_{\mathrm{z}}$ is the axial length of the machine and the maximum flux density $\hat{B_{\updelta}}$ in the air gap.
+	The pole pitch calculates as follows
+	\begin{equation}
+		\tau_{\mathrm{p}} = \frac{d_{\mathrm{s}} \pi}{2 p}
+		= \frac{133 \ \si{mm} \cdot \pi}{4}
+		= 104.5 \ \si{mm},
+	\end{equation}
+	with the inner stator diameter $d_{\mathrm{s}}$ and the pole pair number $p$ = 2.
+	The flux per pole is calculated as
+	\begin{equation}
+		\phiDelta = \alpha \tau_{\mathrm{p}} \lz \hat{B}_{\updelta}
+		= 0.7 \cdot 0.1045 \ \si{m} \cdot 0.08 \ \si{m} \cdot 0.9 \ \si{T}
+		= 5.265 \ \si{mWb},
+	\end{equation}
+	where $\alpha$ represents the pole coverage, $l_{\mathrm{z}}$ is the axial length of the machine and the maximum flux density $\hat{B_{\updelta}}$ in the air gap.
 
 \end{solutionblock}
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subtask{What is the number of commutator elements $K$, the total number of armature conductors $\za$ and the number of parallel armature branches $2a$.}
 
 \begin{solutionblock}
-    The number of commutator elements is calculated as
-    \begin{equation}
-        K = Q u
-        = 30 \cdot 3
-        = 90,
-    \end{equation}
-    with $Q$ slots and the slot to commutator ration $u$. 
-    The total number of armature conductors is defined by
-    \begin{equation}
-        \za = 2 K N_{\mathrm{c}}
-        = 2 \cdot 90 \cdot 9
-        = 1620,
-    \end{equation}
-    with $K$ number of commutator elements and $N_{\mathrm{c}}$ number of conductor turns per coil.
+	The number of commutator elements is calculated as
+	\begin{equation}
+		K = Q u
+		= 30 \cdot 3
+		= 90,
+	\end{equation}
+	with $Q$ slots and the slot to commutator ration $u$.
+	The total number of armature conductors is defined by
+	\begin{equation}
+		\za = 2 K N_{\mathrm{c}}
+		= 2 \cdot 90 \cdot 9
+		= 1620,
+	\end{equation}
+	with $K$ number of commutator elements and $N_{\mathrm{c}}$ number of conductor turns per coil.
 
-    For a lap winding, the number of poles are directly connected with the number of parallel branches, which results in:
-    \begin{equation}
-        2a = 2p = 4.
-    \end{equation}
+	For a lap winding, the number of poles are directly connected with the number of parallel branches, which results in:
+	\begin{equation}
+		2a = 2p = 4.
+	\end{equation}
 \end{solutionblock}
-
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subtask{Determine the induced voltage $\Ui$ at nominal speed $\nN$ and the electromagnetic torque $\Tn$. What is the necessary armature voltage $\Uan$ during motor operation mode, when $\Ra$ = 1 $\Omega$? How large is the motor output power, neglecting the friction and the soft magnetic material losses (hysteresis + eddy current)? Determine the no-load rotational speed $\nO$ at the fixed flux $\phiDelta$.}
 
 \begin{solutionblock}
-    The induced voltage is calculated by
-    \begin{equation}
-        U_{\mathrm{i}} = \omega I_{\mathrm{f}} \frac{\mu_{\mathrm{0}} \alpha N_{\mathrm{f}} N_{\mathrm{a}} \lz \taup}{2 \pi \delta a},
-    \end{equation}
-    with
-    \begin{equation}
-        \hat{B_{\updelta}} = \frac{\mu_{\mathrm{0}} N_{\mathrm{f}}}{2 \delta p} I_{\mathrm{f}},
-        \label{eq:B_hat_task2}
-    \end{equation}
-    resulting in
-    \begin{align}
-        \begin{split}
-            U_{\mathrm{i}} &= \hat{B_{\updelta}} \omega \frac{\alpha N_{\mathrm{a}} \lz \taup p}{\pi a}\\
-            &= 0.9 \ \si{T} \cdot 2\pi \frac{1440}{60} \ \si{\frac{1}{s}} \cdot \frac{0.7 \cdot \frac{1620}{2} \cdot 0.08 \ \si{m} \cdot 0.1045 \ \si{m} \cdot 2}{\pi \cdot 2}
-            = 204.8 \ \si{V}.
-        \end{split}
-    \end{align}
+	The induced voltage is calculated by
+	\begin{equation}
+		U_{\mathrm{i}} = \omega I_{\mathrm{f}} \frac{\mu_{\mathrm{0}} \alpha N_{\mathrm{f}} N_{\mathrm{a}} \lz \taup}{2 \pi \delta a},
+	\end{equation}
+	with
+	\begin{equation}
+		\hat{B_{\updelta}} = \frac{\mu_{\mathrm{0}} N_{\mathrm{f}}}{2 \delta p} I_{\mathrm{f}},
+		\label{eq:B_hat_task2}
+	\end{equation}
+	resulting in
+	\begin{align}
+		\begin{split}
+			U_{\mathrm{i}} & = \hat{B_{\updelta}} \omega \frac{\alpha N_{\mathrm{a}} \lz \taup p}{\pi a}                                                                                       \\
+			               & = 0.9 \ \si{T} \cdot 2\pi \frac{1440}{60} \ \si{\frac{1}{s}} \cdot \frac{0.7 \cdot \frac{1620}{2} \cdot 0.08 \ \si{m} \cdot 0.1045 \ \si{m} \cdot 2}{\pi \cdot 2}
+			= 204.8 \ \si{V}.
+		\end{split}
+	\end{align}
 
-    The average torque is given as
-    \begin{equation}
-        \Tn
-        = \frac{\mu_{\mathrm{0}} \alpha N_{\mathrm{f}} N_{\mathrm{a}} \lz d_{\mathrm{a}}}{4 \delta p a} I_{\mathrm{f}} I_{\mathrm{a}},
-    \end{equation}
-    with \eqref{eq:B_hat_task2} resulting in the following equation
-    \begin{align}
-        \begin{split}
-            T &= \hat{B_{\updelta}} \frac{\alpha N_{\mathrm{a}} \lz d_{\mathrm{a}}}{2a} \Ia\\
-            &= 0.9 \ \si{T} \cdot \frac{0.7 \cdot \frac{1620}{2} \cdot 0.08 \ \si{m} \cdot 0.130 \ \si{m}}{2 \cdot 2} \cdot 22 \ \si{A}
-            = 29.2 \ \si{Nm}.
-        \end{split}
-    \end{align}
+	The average torque is given as
+	\begin{equation}
+		\Tn
+		= \frac{\mu_{\mathrm{0}} \alpha N_{\mathrm{f}} N_{\mathrm{a}} \lz d_{\mathrm{a}}}{4 \delta p a} I_{\mathrm{f}} I_{\mathrm{a}},
+	\end{equation}
+	with \eqref{eq:B_hat_task2} resulting in the following equation
+	\begin{align}
+		\begin{split}
+			T & = \hat{B_{\updelta}} \frac{\alpha N_{\mathrm{a}} \lz d_{\mathrm{a}}}{2a} \Ia                                               \\
+			  & = 0.9 \ \si{T} \cdot \frac{0.7 \cdot \frac{1620}{2} \cdot 0.08 \ \si{m} \cdot 0.130 \ \si{m}}{2 \cdot 2} \cdot 22 \ \si{A}
+			= 29.2 \ \si{Nm}.
+		\end{split}
+	\end{align}
 
-    The armature voltage $\Uan$ at nominal speed is derived from the equivalent circuit diagram and therefore given with:
-    \begin{equation}
-        \Uan = \Ui + \Ra \In
-        = 204.8 \ \si{V} + 1 \ \si{\Omega} \cdot 22 \ \si{A}
-        = 226.8 \ \si{V}.
-    \end{equation}
+	The armature voltage $\Uan$ at nominal speed is derived from the equivalent circuit diagram and therefore given with:
+	\begin{equation}
+		\Uan = \Ui + \Ra \In
+		= 204.8 \ \si{V} + 1 \ \si{\Omega} \cdot 22 \ \si{A}
+		= 226.8 \ \si{V}.
+	\end{equation}
 
-    The mechanical output power is defined with:
-    \begin{equation}
-        P_{\mathrm{mech}} = \Tn \omega
-        = 29.2 \ \si{Nm} \cdot 2\pi \cdot \frac{1440}{60} \ \si{\frac{1}{s}}
-        = 4403 \ \si{W}.
-    \end{equation}
+	The mechanical output power is defined with:
+	\begin{equation}
+		P_{\mathrm{mech}} = \Tn \omega
+		= 29.2 \ \si{Nm} \cdot 2\pi \cdot \frac{1440}{60} \ \si{\frac{1}{s}}
+		= 4403 \ \si{W}.
+	\end{equation}
 
-    To calculate the maximum speed at no-load, the friction and soft magnetic losses are neglected. Therefore, the armature current is assumed to zero ($\Ia$ = 0) resulting in $U_{\mathrm{i}} = \Ua$.
-    Hence, the voltage equation is given with:
-    \begin{equation}
-        \Ui = \Ua = \hat{B_{\updelta}} \omega \frac{\alpha N_{\mathrm{a}} \lz \taup p}{\pi a}.
-    \end{equation}
+	To calculate the maximum speed at no-load, the friction and soft magnetic losses are neglected. Therefore, the armature current is assumed to zero ($\Ia$ = 0) resulting in $U_{\mathrm{i}} = \Ua$.
+	Hence, the voltage equation is given with:
+	\begin{equation}
+		\Ui = \Ua = \hat{B_{\updelta}} \omega \frac{\alpha N_{\mathrm{a}} \lz \taup p}{\pi a}.
+	\end{equation}
 
-    By rearranging the equation from above, the no-load speed is calculated as follows:
-    \begin{equation}
-        n = \frac{\Ua \pi a}{\hat{B_{\updelta}} \alpha N_{\mathrm{a}} \lz \taup p 2\pi}
-        = \frac{226.8 \ \si{V} \cdot \pi \cdot 2}{0.9 \ \si{T} \cdot 0.7 \cdot \frac{1620}{2} \cdot 0.08 \ \si{m} \cdot 0.1045 \ \si{m} \cdot 2 \cdot 2\pi}
-        = 26.8 \ \si{\frac{1}{s}} = 1607 \ \si{\frac{1}{min}}.
-    \end{equation}
+	By rearranging the equation from above, the no-load speed is calculated as follows:
+	\begin{equation}
+		n = \frac{\Ua \pi a}{\hat{B_{\updelta}} \alpha N_{\mathrm{a}} \lz \taup p 2\pi}
+		= \frac{226.8 \ \si{V} \cdot \pi \cdot 2}{0.9 \ \si{T} \cdot 0.7 \cdot \frac{1620}{2} \cdot 0.08 \ \si{m} \cdot 0.1045 \ \si{m} \cdot 2 \cdot 2\pi}
+		= 26.8 \ \si{\frac{1}{s}} = 1607 \ \si{\frac{1}{min}}.
+	\end{equation}
 
 \end{solutionblock}
-
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subtask{How many brush pairs does the machine have? How big is the current per  brush? What is the circumferential speed of the armature under consideration of $\delta$?}
 
 \begin{solutionblock}
-    The machine has two brush pairs to meet the pole pair number, which are electrical parallel connected.
-    
-    At the nominal operation point, the current per brush is calculated as follows
-    \begin{equation}
-        I_{\mathrm{b}} = \frac{I_{\mathrm{a,n}}}{a}
-        = \frac{22 \ \si{A}}{2}
-        = 11 \ \si{A},
-    \end{equation}
-    with $a = p = 2$ due to the lap winding.
+	The machine has two brush pairs to meet the pole pair number, which are electrical parallel connected.
 
-    The outer diameter of the armature is determined with
-    \begin{equation}
-        d_{\mathrm{a}} = d_{\mathrm{s}} - 2 \delta
-        = 133 \ \si{mm} - 2 \cdot 1.5 \ \si{mm}
-        = 130 \ \si{mm},
-    \end{equation}
+	At the nominal operation point, the current per brush is calculated as follows
+	\begin{equation}
+		I_{\mathrm{b}} = \frac{I_{\mathrm{a,n}}}{a}
+		= \frac{22 \ \si{A}}{2}
+		= 11 \ \si{A},
+	\end{equation}
+	with $a = p = 2$ due to the lap winding.
 
-    and therefore, the circumferential speed of the armature calculates with:
-    \begin{equation}
-        v_{\mathrm{a}} = d_{\mathrm{a}} \pi \nN
-        = 0.13 \ \si{m} \cdot \pi \cdot \frac{1440}{60} \ \si{\frac{1}{s}}
-        = 9.8 \ \si{\frac{m}{s}}
-        = 35.3 \ \si{\frac{km}{h}}.
-    \end{equation}
+	The outer diameter of the armature is determined with
+	\begin{equation}
+		d_{\mathrm{a}} = d_{\mathrm{s}} - 2 \delta
+		= 133 \ \si{mm} - 2 \cdot 1.5 \ \si{mm}
+		= 130 \ \si{mm},
+	\end{equation}
+
+	and therefore, the circumferential speed of the armature calculates with:
+	\begin{equation}
+		v_{\mathrm{a}} = d_{\mathrm{a}} \pi \nN
+		= 0.13 \ \si{m} \cdot \pi \cdot \frac{1440}{60} \ \si{\frac{1}{s}}
+		= 9.8 \ \si{\frac{m}{s}}
+		= 35.3 \ \si{\frac{km}{h}}.
+	\end{equation}
 
 \end{solutionblock}
 
@@ -364,205 +334,197 @@ The nominal speed of the machine is $\nN$ = 1440 $\mathrm{min}^{-1}$, with an ar
 \subtask{Determine the necessary excitation with ideal iron path ($\mu_{\mathrm{r}}\rightarrow \infty$) per pole. What is the number of necessary windings for each of the four coils of the excitation of the stator. Considering a real motor, is the excitation larger or smaller?}
 
 \begin{solutionblock}
-    The total field is calculated as follows
-    \begin{equation}
-        \theta_{\mathrm{f}} = \hat{H}_{\updelta} \delta
-        = \frac{\hat{B_{\updelta}}}{\mu_{\mathrm{0}}} \delta
-        = \frac{0.9 \ \si{T}}{4\pi \cdot 10^{-7} \ \si{\frac{Vs}{Am}}} \cdot 0.0015 \ \si{m}
-        = 1074.3 \ \si{A},
-    \end{equation}
-    with the magnetic field strength $H_{\updelta}$ in the air gap. The relationship between the total excitation and the excitation per pole is
-    \begin{equation}
-        \theta_{\mathrm{f}} = N_{\mathrm{f,pole}} I_{\mathrm{f}},
-    \end{equation}
-    which results in the necessary windings per pole
-    \begin{equation}
-        N_{\mathrm{f,pole}} = \frac{\theta_{\mathrm{f}}}{I_{\mathrm{f}}}
-        = \frac{1074.3 \ \si{A}}{0.5 \ \si{A}}
-        = 2148.6,
-    \end{equation}
-    with the field current $I_{\mathrm{f}}$. This results in 2149 necessary turns.
+	The total field is calculated as follows
+	\begin{equation}
+		\theta_{\mathrm{f}} = \hat{H}_{\updelta} \delta
+		= \frac{\hat{B_{\updelta}}}{\mu_{\mathrm{0}}} \delta
+		= \frac{0.9 \ \si{T}}{4\pi \cdot 10^{-7} \ \si{\frac{Vs}{Am}}} \cdot 0.0015 \ \si{m}
+		= 1074.3 \ \si{A},
+	\end{equation}
+	with the magnetic field strength $H_{\updelta}$ in the air gap. The relationship between the total excitation and the excitation per pole is
+	\begin{equation}
+		\theta_{\mathrm{f}} = N_{\mathrm{f,pole}} I_{\mathrm{f}},
+	\end{equation}
+	which results in the necessary windings per pole
+	\begin{equation}
+		N_{\mathrm{f,pole}} = \frac{\theta_{\mathrm{f}}}{I_{\mathrm{f}}}
+		= \frac{1074.3 \ \si{A}}{0.5 \ \si{A}}
+		= 2148.6,
+	\end{equation}
+	with the field current $I_{\mathrm{f}}$. This results in 2149 necessary turns.
 
-    By considering iron saturation $\mu_{\mathrm{r}}$ is not constant anymore, see therefore the magnetization curves from the lecture.
-    This results in lower value of $\mu_{\mathrm{r}}$ compared to the previous assumption in this task ($\mu_{\mathrm{r}}\rightarrow \infty$) and therefore the effective magnetic reluctance along the field excitation path increases. To overcome this and to provide the same effective excitation field, the field winding's MMF need to be increased by additional winding turns compared to the previous calculation.
+	By considering iron saturation $\mu_{\mathrm{r}}$ is not constant anymore, see therefore the magnetization curves from the lecture.
+	This results in lower value of $\mu_{\mathrm{r}}$ compared to the previous assumption in this task ($\mu_{\mathrm{r}}\rightarrow \infty$) and therefore the effective magnetic reluctance along the field excitation path increases. To overcome this and to provide the same effective excitation field, the field winding's MMF need to be increased by additional winding turns compared to the previous calculation.
 
 \end{solutionblock}
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subtask{Determine the efficiency $\eta_{\mathrm{a}}$ of the armature and the resulting total efficiency $\eta$. Are these losses larger or smaller for real motors? Why? Give an explanation.} 
+\subtask{Determine the efficiency $\eta_{\mathrm{a}}$ of the armature and the resulting total efficiency $\eta$. Are these losses larger or smaller for real motors? Why? Give an explanation.}
 
 \begin{solutionblock}
-    The electrical input power is calculated as follows:
-    \begin{equation}
-        P_{\mathrm{el,a}} = \Ua I_{\mathrm{a,n}}
-        = 226.8 \ \si{V} \cdot 22 \ \si{A}
-        = 4990 \ \si{W}.
-    \end{equation}
-    Hence, the armature efficiency is determined with:
-    \begin{equation}
-        \eta_{\mathrm{a}} = \frac{P_{\mathrm{mech}}}{P_{\mathrm{el,a}}}
-        = \frac{4503 \ \si{W}}{5031.4 \ \si{W}}
-        = 0.895
-        = 89.5 \ \%.
-    \end{equation}
+	The electrical input power is calculated as follows:
+	\begin{equation}
+		P_{\mathrm{el,a}} = \Ua I_{\mathrm{a,n}}
+		= 226.8 \ \si{V} \cdot 22 \ \si{A}
+		= 4990 \ \si{W}.
+	\end{equation}
+	Hence, the armature efficiency is determined with:
+	\begin{equation}
+		\eta_{\mathrm{a}} = \frac{P_{\mathrm{mech}}}{P_{\mathrm{el,a}}}
+		= \frac{4503 \ \si{W}}{5031.4 \ \si{W}}
+		= 0.895
+		= 89.5 \ \%.
+	\end{equation}
 
-    The field losses are calculated as
-    \begin{equation}
-        P_{\mathrm{el,f}} = U_{\mathrm{f}} I_{\mathrm{f}}
-        = 230 \ \si{V} \cdot 0.5 \ \si{A}
-        = 115 \ \si{W},
-    \end{equation}
-    which leads to the total efficiency:
-    \begin{equation}
-        \eta = \frac{P_{\mathrm{mech}}}{P_{\mathrm{el,a}}+P_{\mathrm{el,f}}}
-        = \frac{4403 \ \si{W}}{4990 \si{W} + 115 \ \si{W}}
-        = 0.862
-        = 86.2 \ \%.
-    \end{equation}
+	The field losses are calculated as
+	\begin{equation}
+		P_{\mathrm{el,f}} = U_{\mathrm{f}} I_{\mathrm{f}}
+		= 230 \ \si{V} \cdot 0.5 \ \si{A}
+		= 115 \ \si{W},
+	\end{equation}
+	which leads to the total efficiency:
+	\begin{equation}
+		\eta = \frac{P_{\mathrm{mech}}}{P_{\mathrm{el,a}}+P_{\mathrm{el,f}}}
+		= \frac{4403 \ \si{W}}{4990 \si{W} + 115 \ \si{W}}
+		= 0.862
+		= 86.2 \ \%.
+	\end{equation}
 
-    The real losses are higher due to the air and bearing friction as well as the soft magnetic material losses (hysteresis + eddy current) which have been neglected in the above model calculation but which are present in a real machine.
+	The real losses are higher due to the air and bearing friction as well as the soft magnetic material losses (hysteresis + eddy current) which have been neglected in the above model calculation but which are present in a real machine.
 \end{solutionblock}
-
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subtask{The motor should be operated with a constant armature voltage of $\Uan$ = 230 V in the flux-weakening range with $T$ = 15 Nm. What is the flux per pole $\phi_{\mathrm{pole}}$ and the armature current $\Ia$? How large is the resulting efficiency $\eta$, if the utilized iron shows no saturation and required field weakening is reached through reducing the field voltage $U_{\mathrm{f}}$.}
 
-
 \begin{solutionblock}
-    The armature voltage is calculated as
-    \begin{equation}
-        \Ua = \Ui + \Ra \Ia
-        = \omega \psi_{\mathrm{f}}' + \Ra I_{\mathrm{a}},
-    \end{equation}
-    with $\Ia = \frac{T}{\psi_{\mathrm{f}}'}$ resulting in:
-    \begin{equation}
-        \Ua = \omega \psi_{\mathrm{f}}' + \frac{\Ra T}{\psi_{\mathrm{f}}'}.
-    \end{equation}
-    This equation is reformed to the following
-    \begin{equation}
-        \left(\psi_{\mathrm{f}}' \right)^2 - \frac{U_{\mathrm{a}}}{\omega} \psi_{\mathrm{f}}' + \frac{\Ra Tn}{\omega} = 0,
-    \end{equation}
-    which represents a quadratic equation, that is solved in the following form:
-    \begin{equation}
-        x^2 + P x + Q = 0.
-    \end{equation}
+	The armature voltage is calculated as
+	\begin{equation}
+		\Ua = \Ui + \Ra \Ia
+		= \omega \psi_{\mathrm{f}}' + \Ra I_{\mathrm{a}},
+	\end{equation}
+	with $\Ia = \frac{T}{\psi_{\mathrm{f}}'}$ resulting in:
+	\begin{equation}
+		\Ua = \omega \psi_{\mathrm{f}}' + \frac{\Ra T}{\psi_{\mathrm{f}}'}.
+	\end{equation}
+	This equation is reformed to the following
+	\begin{equation}
+		\left(\psi_{\mathrm{f}}' \right)^2 - \frac{U_{\mathrm{a}}}{\omega} \psi_{\mathrm{f}}' + \frac{\Ra Tn}{\omega} = 0,
+	\end{equation}
+	which represents a quadratic equation, that is solved in the following form:
+	\begin{equation}
+		x^2 + P x + Q = 0.
+	\end{equation}
 
-    The solution is given as follows
-    \begin{equation}
-        x_{\mathrm{1,2}} = -\frac{P}{2} \pm \sqrt{\left(\frac{P}{2}\right)^2 - Q},
-    \end{equation}
-    with 
-    \begin{equation}
-        P = -\frac{U_{\mathrm{a}}}{\omega},
-    \end{equation}
-    which is applied according to the equation:
-    \begin{equation}
-        \frac{P}{2} = - \frac{230 \ \si{V}}{4 \pi \cdot \frac{1900}{60} \ \si{\frac{1}{s}}}
-        = 0.578 \ \si{Vs}.
-    \end{equation}
+	The solution is given as follows
+	\begin{equation}
+		x_{\mathrm{1,2}} = -\frac{P}{2} \pm \sqrt{\left(\frac{P}{2}\right)^2 - Q},
+	\end{equation}
+	with
+	\begin{equation}
+		P = -\frac{U_{\mathrm{a}}}{\omega},
+	\end{equation}
+	which is applied according to the equation:
+	\begin{equation}
+		\frac{P}{2} = - \frac{230 \ \si{V}}{4 \pi \cdot \frac{1900}{60} \ \si{\frac{1}{s}}}
+		= 0.578 \ \si{Vs}.
+	\end{equation}
 
-    The parameter $Q$ is defined by:
-    \begin{equation}
-        Q = \frac{\Ra \Tn}{\omega}
-        = \frac{1 \ \si{\Omega} \cdot 15 \ \si{Nm}}{2 \pi \cdot \frac{1900}{60} \ \si{\frac{1}{s}}}
-        = 0.0754 \ \si{(Vs)^2}.
-    \end{equation}
+	The parameter $Q$ is defined by:
+	\begin{equation}
+		Q = \frac{\Ra \Tn}{\omega}
+		= \frac{1 \ \si{\Omega} \cdot 15 \ \si{Nm}}{2 \pi \cdot \frac{1900}{60} \ \si{\frac{1}{s}}}
+		= 0.0754 \ \si{(Vs)^2}.
+	\end{equation}
 
+	Hence, the solution is calculated as follows
+	\begin{align}
+		\begin{split}
+			\left(\psi_{\mathrm{f}}' \right)_{\mathrm{1,2}}
+			 & = \frac{U_{\mathrm{a}}}{2 \omega} \pm \sqrt{\left( \frac{U_{\mathrm{a}}}{2 \omega}\right) - \frac{\Ra \Tn}{\omega}}, \\
+			\left(\psi_{\mathrm{f}}' \right)_{\mathrm{1,2}}
+			 & = 0.578 \pm \sqrt{\left(0.578 \si{Vs} \right)^2 - 0.0754 \ \si{Vs}},
+		\end{split}
+	\end{align}
 
-    Hence, the solution is calculated as follows
-    \begin{align}
-        \begin{split}
-            \left(\psi_{\mathrm{f}}' \right)_{\mathrm{1,2}}
-            &= \frac{U_{\mathrm{a}}}{2 \omega} \pm \sqrt{\left( \frac{U_{\mathrm{a}}}{2 \omega}\right) - \frac{\Ra \Tn}{\omega}}, \\
-            \left(\psi_{\mathrm{f}}' \right)_{\mathrm{1,2}}
-            &= 0.578 \pm \sqrt{\left(0.578 \si{Vs} \right)^2 - 0.0754 \ \si{Vs}},
-        \end{split}
-    \end{align}
+	with two possible solution due to the quadratic equation. Therefore, both solutions must be evaluated, starting with $\left(\psi_{\mathrm{f}}' \right)_{\mathrm{1}}$ = 0.07 Vs. The corresponding current is calculated by:
+	\begin{equation}
+		I_{\mathrm{a}} = \frac{\Tn}{\left(\psi_{\mathrm{f}}' \right)_{\mathrm{1}}}
+		= \frac{15 \ \si{Nm}}{0.07 \ \si{Vs}}
+		= 214.3 \ \si{A}.
+	\end{equation}
 
-    with two possible solution due to the quadratic equation. Therefore, both solutions must be evaluated, starting with $\left(\psi_{\mathrm{f}}' \right)_{\mathrm{1}}$ = 0.07 Vs. The corresponding current is calculated by:
-    \begin{equation}
-        I_{\mathrm{a}} = \frac{\Tn}{\left(\psi_{\mathrm{f}}' \right)_{\mathrm{1}}}
-        = \frac{15 \ \si{Nm}}{0.07 \ \si{Vs}}
-        = 214.3 \ \si{A}.
-    \end{equation}
+	Testing the second solution $\left(\psi_{\mathrm{f}}' \right)_{\mathrm{2}}$ = 1.09 Vs results in
+	\begin{equation}
+		I_{\mathrm{a}} = \frac{\Tn}{\left(\psi_{\mathrm{f}}' \right)_{\mathrm{2}}}
+		= \frac{15 \ \si{Nm}}{1.09 \ \si{Vs}}
+		= 13.76 \ \si{A},
+	\end{equation}
+	which is the right solution due to the lower current.
 
-    Testing the second solution $\left(\psi_{\mathrm{f}}' \right)_{\mathrm{2}}$ = 1.09 Vs results in
-    \begin{equation}
-        I_{\mathrm{a}} = \frac{\Tn}{\left(\psi_{\mathrm{f}}' \right)_{\mathrm{2}}}
-        = \frac{15 \ \si{Nm}}{1.09 \ \si{Vs}}
-        = 13.76 \ \si{A},
-    \end{equation}
-    which is the right solution due to the lower current.
+	The corresponding flux per pole is calculated with:
+	\begin{equation}
+		\phi_{\mathrm{pole}} = \frac{\left(\psi_{\mathrm{f}}' \right)_2 }{\frac{z_{\mathrm{a}}}{2\pi}}
+		= \frac{1.09 \ \si{Vs}}{\frac{1620}{2 \pi}}
+		= 4.23 \ \si{mVs}.
+	\end{equation}
+	The relationship to the previously calculated flux per pole $\phi_{\updelta}$ is defined as follows
+	\begin{equation}
+		\frac{\phi_{\mathrm{pole}}}{\phiDelta}
+		= \frac{4.23 \ \si{mVs}}{5.265 \ \si{mVs}}
+		= 0.803
+		= 80.3 \ \%.
+	\end{equation}
 
-    The corresponding flux per pole is calculated with:
-    \begin{equation}
-        \phi_{\mathrm{pole}} = \frac{\left(\psi_{\mathrm{f}}' \right)_2 }{\frac{z_{\mathrm{a}}}{2\pi}}
-        = \frac{1.09 \ \si{Vs}}{\frac{1620}{2 \pi}}
-        = 4.23 \ \si{mVs}.
-    \end{equation}
-    The relationship to the previously calculated flux per pole $\phi_{\updelta}$ is defined as follows
-    \begin{equation}
-        \frac{\phi_{\mathrm{pole}}}{\phiDelta}
-        = \frac{4.23 \ \si{mVs}}{5.265 \ \si{mVs}}
-        = 0.803
-        = 80.3 \ \%.
-    \end{equation}
+	In the following, the armature current is set in relation to the nominal current as:
+	\begin{equation}
+		\frac{I_{\mathrm{a}}}{I_{\mathrm{a,n}}}
+		= \frac{13.76 \ \si{A}}{22 \ \si{A}}
+		= 0.63
+		= 63 \ \%.
+	\end{equation}
 
-    In the following, the armature current is set in relation to the nominal current as:
-    \begin{equation}
-        \frac{I_{\mathrm{a}}}{I_{\mathrm{a,n}}}
-        = \frac{13.76 \ \si{A}}{22 \ \si{A}}
-        = 0.63
-        = 63 \ \%.
-    \end{equation}
+	Hence, the electrical input power is calculated with
+	\begin{equation}
+		P_{\mathrm{el,a}} = U_{\mathrm{a}} \Ia
+		= 230 \ \si{V} \cdot 13.76 \ \si{A}
+		= 3164.8 \ \si{W},
+	\end{equation}
+	and the mechanical power with the given values in the task description by:
+	\begin{equation}
+		P_{\mathrm{mech}} = T \omega
+		= 15 \ \si{Nm} \cdot 2 \pi \cdot \frac{1900}{60} \ \si{\frac{1}{s}}
+		= 2984.5 \ \si{W}.
+	\end{equation}
 
-    Hence, the electrical input power is calculated with
-    \begin{equation}
-        P_{\mathrm{el,a}} = U_{\mathrm{a}} \Ia
-        = 230 \ \si{V} \cdot 13.76 \ \si{A}
-        = 3164.8 \ \si{W},
-    \end{equation}
-    and the mechanical power with the given values in the task description by:
-    \begin{equation}
-        P_{\mathrm{mech}} = T \omega
-        = 15 \ \si{Nm} \cdot 2 \pi \cdot \frac{1900}{60} \ \si{\frac{1}{s}}
-        = 2984.5 \ \si{W}.
-    \end{equation}
+	The given operating point is located in the flux-weakening range and, therefore, the excitation values and the corresponding losses are changed.
+	This leads to lower excitation losses as follows
+	\begin{equation}
+		\frac{P_{\mathrm{el,f}}}{P_{\mathrm{el,f,n}}}
+		= \frac{R_{\mathrm{f}} I^2_{\mathrm{f}}}{R_{\mathrm{f}} I^2_{\mathrm{f,n}}}
+		= \frac{I^2_{\mathrm{f}}}{I^2_{\mathrm{f,n}}},
+	\end{equation}
+	with
+	\begin{equation}
+		\frac{\phi_{\mathrm{pole}}}{\phi_{\updelta}}
+		= \frac{I^2_{\mathrm{f}}}{I^2_{\mathrm{f,n}}}
+		= 0.803^2.
+	\end{equation}
 
-    The given operating point is located in the flux-weakening range and, therefore, the excitation values and the corresponding losses are changed.
-    This leads to lower excitation losses as follows
-    \begin{equation}
-        \frac{P_{\mathrm{el,f}}}{P_{\mathrm{el,f,n}}}
-        = \frac{R_{\mathrm{f}} I^2_{\mathrm{f}}}{R_{\mathrm{f}} I^2_{\mathrm{f,n}}}
-        = \frac{I^2_{\mathrm{f}}}{I^2_{\mathrm{f,n}}},
-    \end{equation}
-    with
-    \begin{equation}
-        \frac{\phi_{\mathrm{pole}}}{\phi_{\updelta}}
-        = \frac{I^2_{\mathrm{f}}}{I^2_{\mathrm{f,n}}}
-        = 0.803^2.
-    \end{equation}
+	This results in:
+	\begin{equation}
+		P_{\mathrm{el,f}} = P_{\mathrm{el,f,n}} \left( \frac{I_{\mathrm{f}}}{I_{\mathrm{f,n}}} \right)^2
+		= 115 \ \si{W} \cdot \left(0.803 \right)^2
+		= 74.2 \ \si{W}.
+	\end{equation}
 
-    This results in:
-    \begin{equation}
-        P_{\mathrm{el,f}} = P_{\mathrm{el,f,n}} \left( \frac{I_{\mathrm{f}}}{I_{\mathrm{f,n}}} \right)^2
-        = 115 \ \si{W} \cdot \left(0.803 \right)^2
-        = 74.2 \ \si{W}.
-    \end{equation}
-
-    The efficiency is given by:
-    \begin{equation}
-        \eta = \frac{P_{\mathrm{mech}}}{P_{\mathrm{el,a}} + P_{\mathrm{el,f}}}
-        = \frac{2984.5 \ \si{W}}{3164.8 \ \si{W} + 74.2 \ \si{W}}
-        = 0.921 = 92.1 \ \%.
-    \end{equation}
+	The efficiency is given by:
+	\begin{equation}
+		\eta = \frac{P_{\mathrm{mech}}}{P_{\mathrm{el,a}} + P_{\mathrm{el,f}}}
+		= \frac{2984.5 \ \si{W}}{3164.8 \ \si{W} + 74.2 \ \si{W}}
+		= 0.921 = 92.1 \ \%.
+	\end{equation}
 
 \end{solutionblock}
-
-
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Task 3 %%
@@ -571,207 +533,196 @@ The nominal speed of the machine is $\nN$ = 1440 $\mathrm{min}^{-1}$, with an ar
 \task{Submarine with DC machine}
 A four-pole DC machine on the board of a submarine with $U_{\mathrm{a,n}}$ = 440 V, $\Pn$ = 65 kW, $\nN$~=~1300~$\mathrm{min^{-1}}$ has an efficiency of $\eta_{\mathrm{n}}$ = 0.9. The total losses $\Pl$ are separated in the ohmic losses $\Pcu$ in the armature with 75 \% and the soft magnetic material, friction, and additional losses ($\Pfe$ + $P_{\mathrm{fr+add}}$) with 25 \% of the total losses $\Pl$. The field excitation losses are neglected in the following.
 
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subtask{Calculate the armature current $I_{\mathrm{a,n}}$, the torque $\Tn$, the losses $P_{\mathrm{Cu,a}}$ and $P_{\mathrm{fr+add}}$, the armature winding resistance $R_{\mathrm{a}}$ and the no-load speed $n_{\mathrm{0}}$.}
 
-
 \begin{solutionblock}
-    The armature current calculates as follows
-    \begin{equation}
-        I_{\mathrm{a,n}} = \frac{\Pn / \eta_{\mathrm{n}}}{\Uan}
-        = \frac{65 \ \si{kW} / 0.9}{440 \ \si{V}}
-        = 164.1 \ \si{A},
-    \end{equation}
-    with a nominal mechanical power of $\Pn$, the efficiency $\eta_{\mathrm{n}}$ and the voltage $\Uan$.
-    Hence, the torque is determined with:
-    \begin{equation}
-        \Tn = \frac{\Pn}{\omega_{\mathrm{n}}} 
-        = \frac{65 \ \si{kW}}{2 \pi \cdot \frac{1300}{60} \ \si{\frac{1}{s}}}
-        = 477.5 \ \si{Nm}.
-    \end{equation}
+	The armature current calculates as follows
+	\begin{equation}
+		I_{\mathrm{a,n}} = \frac{\Pn / \eta_{\mathrm{n}}}{\Uan}
+		= \frac{65 \ \si{kW} / 0.9}{440 \ \si{V}}
+		= 164.1 \ \si{A},
+	\end{equation}
+	with a nominal mechanical power of $\Pn$, the efficiency $\eta_{\mathrm{n}}$ and the voltage $\Uan$.
+	Hence, the torque is determined with:
+	\begin{equation}
+		\Tn = \frac{\Pn}{\omega_{\mathrm{n}}}
+		= \frac{65 \ \si{kW}}{2 \pi \cdot \frac{1300}{60} \ \si{\frac{1}{s}}}
+		= 477.5 \ \si{Nm}.
+	\end{equation}
 
-    The efficiency is given with
-    \begin{equation}
-        \eta_{\mathrm{n}} = \frac{\Pn}{\Pn + \Pl},
-    \end{equation}
-    where $\Pl$ are the losses of the machine. To calculate them, the equation is rearranged as follows:
-    \begin{equation}
-        \Pl = \left(\frac{1}{\eta_{n}} - 1 \right) \Pn
-        = \left(\frac{1}{0.9}-1 \right) \cdot 65\ \si{kW}
-        = 5416.7 \ \si{W}.
-    \end{equation}
+	The efficiency is given with
+	\begin{equation}
+		\eta_{\mathrm{n}} = \frac{\Pn}{\Pn + \Pl},
+	\end{equation}
+	where $\Pl$ are the losses of the machine. To calculate them, the equation is rearranged as follows:
+	\begin{equation}
+		\Pl = \left(\frac{1}{\eta_{n}} - 1 \right) \Pn
+		= \left(\frac{1}{0.9}-1 \right) \cdot 65\ \si{kW}
+		= 5416.7 \ \si{W}.
+	\end{equation}
 
-    As described in the task, the cupper losses are defined by
-    \begin{equation}
-        P_{\mathrm{Cu,a}} = 0.75 \Pl
-        = 0.75 \cdot 7222 \ \si{W} 
-        = 477.5 \ \si{W},
-    \end{equation}
-    and, therefore, the other losses yield as follows:
-    \begin{equation}
-        P_{\mathrm{Fe}} + P_{\mathrm{fr + add}} = 0.25 \Pl 
-        = 0.25 \cdot 7222 \ \si{W}
-        = 1805.5 \ \si{W}.
-    \end{equation}
+	As described in the task, the cupper losses are defined by
+	\begin{equation}
+		P_{\mathrm{Cu,a}} = 0.75 \Pl
+		= 0.75 \cdot 7222 \ \si{W}
+		= 477.5 \ \si{W},
+	\end{equation}
+	and, therefore, the other losses yield as follows:
+	\begin{equation}
+		P_{\mathrm{Fe}} + P_{\mathrm{fr + add}} = 0.25 \Pl
+		= 0.25 \cdot 7222 \ \si{W}
+		= 1805.5 \ \si{W}.
+	\end{equation}
 
-    The resistance of the armature calculates with
-    \begin{equation}
-        P_{\mathrm{Cu,a}} = \Ra I_{\mathrm{a,n}}^{2},
-    \end{equation}
-    which is resorted to the following:
-    \begin{equation}
-        \Ra = \frac{P_{\mathrm{Cu,a}}}{I_{\mathrm{a,n}}^{2}}
-        = \frac{5416.7 \ \si{W}}{\left(164.1 \ \si{A}\right)^2}
-        = 0.201 \ \si{\Omega}.
-    \end{equation}
+	The resistance of the armature calculates with
+	\begin{equation}
+		P_{\mathrm{Cu,a}} = \Ra I_{\mathrm{a,n}}^{2},
+	\end{equation}
+	which is resorted to the following:
+	\begin{equation}
+		\Ra = \frac{P_{\mathrm{Cu,a}}}{I_{\mathrm{a,n}}^{2}}
+		= \frac{5416.7 \ \si{W}}{\left(164.1 \ \si{A}\right)^2}
+		= 0.201 \ \si{\Omega}.
+	\end{equation}
 
-    The voltage is determined according to the equivalent circuit diagram by
-    \begin{equation}
-        \Ua = \Ui + \Ra I_{\mathrm{a,n}},
-    \end{equation}
+	The voltage is determined according to the equivalent circuit diagram by
+	\begin{equation}
+		\Ua = \Ui + \Ra I_{\mathrm{a,n}},
+	\end{equation}
 
-    and, therefore, the induced voltage is calculated with
-    \begin{equation}
-        \Ui = \Ua - \Ra I_{\mathrm{a,n}}
-        = 440 \ \si{V} - 0.201 \ \si{\Omega} \cdot 164.1 \ \si{A}
-        = 407 \ \si{V}.
-    \end{equation}
+	and, therefore, the induced voltage is calculated with
+	\begin{equation}
+		\Ui = \Ua - \Ra I_{\mathrm{a,n}}
+		= 440 \ \si{V} - 0.201 \ \si{\Omega} \cdot 164.1 \ \si{A}
+		= 407 \ \si{V}.
+	\end{equation}
 
-    In addition, the induced voltage is defined as
-    \begin{equation}
-        \Ui = \omega \psi_\mathrm{f}',
-    \end{equation}
-    which is used to calculate the flux linkage as follows:
-    \begin{equation}
-        \psi_{\mathrm{f}}' = \frac{\Ui}{\omega}
-        = \frac{407 \ \si{V}}{2\pi \cdot \frac{1300}{60} \ \si{\frac{1}{s}}}
-        = 2.99 \ \si{Vs}. 
-    \end{equation}
+	In addition, the induced voltage is defined as
+	\begin{equation}
+		\Ui = \omega \psi_\mathrm{f}',
+	\end{equation}
+	which is used to calculate the flux linkage as follows:
+	\begin{equation}
+		\psi_{\mathrm{f}}' = \frac{\Ui}{\omega}
+		= \frac{407 \ \si{V}}{2\pi \cdot \frac{1300}{60} \ \si{\frac{1}{s}}}
+		= 2.99 \ \si{Vs}.
+	\end{equation}
 
-    To calculate the maximum speed at no-load, the friction and soft magnetic losses are neglected. Therefore, the armature current is assumed to zero ($\Ia$ = 0) resulting in $U_{\mathrm{i}} = \Uan$, which leads to
-    \begin{equation}
-        \omega = \frac{\Uan}{\psi_{\mathrm{f}}'},
-    \end{equation}
-    resulting in
-    \begin{equation}
-        \nO = \frac{\Uan}{\psi_{\mathrm{f}}' 2 \pi} = \frac{440 \ \si{V}}{2.99 \ \si{Vs} \cdot 2 \pi}
-        = 23.42 \ \si{\frac{1}{s}},
-    \end{equation}
-    which is a no-load speed of $\nO$ = 1405 $\mathrm{min^{-1}}$.
+	To calculate the maximum speed at no-load, the friction and soft magnetic losses are neglected. Therefore, the armature current is assumed to zero ($\Ia$ = 0) resulting in $U_{\mathrm{i}} = \Uan$, which leads to
+	\begin{equation}
+		\omega = \frac{\Uan}{\psi_{\mathrm{f}}'},
+	\end{equation}
+	resulting in
+	\begin{equation}
+		\nO = \frac{\Uan}{\psi_{\mathrm{f}}' 2 \pi} = \frac{440 \ \si{V}}{2.99 \ \si{Vs} \cdot 2 \pi}
+		= 23.42 \ \si{\frac{1}{s}},
+	\end{equation}
+	which is a no-load speed of $\nO$ = 1405 $\mathrm{min^{-1}}$.
 
-       
 \end{solutionblock}
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subtask{Determine the value of the additional starter resistor $R_{\mathrm{d}}$, such that the start-up torque $T_{\mathrm{1}}$ at $U_{\mathrm{a}}=U_{\mathrm{a,n}}$ is limited to 150~\% of the nominal torque.}
 
 \begin{solutionblock}
-    As described in the task, the torque is set by
-    \begin{equation}
-        T_{\mathrm{1}} = 1.5 \Tn = \psi_{\mathrm{f}}' I_{\mathrm{a,1}},
-    \end{equation}
-    and at machine standstill, the voltage is defined as:
-    \begin{equation}
-        U_{\mathrm{a,n}} = \left(\Ra + R_{\mathrm{d}} \right) I_{\mathrm{a,1}}.
-    \end{equation}
+	As described in the task, the torque is set by
+	\begin{equation}
+		T_{\mathrm{1}} = 1.5 \Tn = \psi_{\mathrm{f}}' I_{\mathrm{a,1}},
+	\end{equation}
+	and at machine standstill, the voltage is defined as:
+	\begin{equation}
+		U_{\mathrm{a,n}} = \left(\Ra + R_{\mathrm{d}} \right) I_{\mathrm{a,1}}.
+	\end{equation}
 
-    Therefore, the starter resistor is calculated with
-    \begin{equation}
-        R_{\mathrm{d}} = \frac{U_{\mathrm{a,n}}}{I_{\mathrm{a,1}}} - \Ra
-        = \frac{U_{\mathrm{a,n}} \psi_{\mathrm{f}}'}{1.5 \Tn}-\Ra
-        = \frac{440 \ \si{V} \cdot 2.99 \ \si{Vs}}{1.5 \cdot 477.5 \ \si{Nm}}-0.201 \ \si{\Omega}
-        = 1.635 \ \si{\Omega}.
-    \end{equation}
+	Therefore, the starter resistor is calculated with
+	\begin{equation}
+		R_{\mathrm{d}} = \frac{U_{\mathrm{a,n}}}{I_{\mathrm{a,1}}} - \Ra
+		= \frac{U_{\mathrm{a,n}} \psi_{\mathrm{f}}'}{1.5 \Tn}-\Ra
+		= \frac{440 \ \si{V} \cdot 2.99 \ \si{Vs}}{1.5 \cdot 477.5 \ \si{Nm}}-0.201 \ \si{\Omega}
+		= 1.635 \ \si{\Omega}.
+	\end{equation}
 
-    Hence, the starter current is determined with:
-    \begin{equation}
-        I_{\mathrm{a,1}} = \frac{1.5 \Tn}{\psi_{\mathrm{f}}'}
-        = \frac{1.5 \cdot 477.5 \ \si{Nm}}{2.99 \ \si{Vs}}
-        = 239.7 \ \si{A}.
-    \end{equation}
-
+	Hence, the starter current is determined with:
+	\begin{equation}
+		I_{\mathrm{a,1}} = \frac{1.5 \Tn}{\psi_{\mathrm{f}}'}
+		= \frac{1.5 \cdot 477.5 \ \si{Nm}}{2.99 \ \si{Vs}}
+		= 239.7 \ \si{A}.
+	\end{equation}
 
 \end{solutionblock}
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subtask{With a power electronic converter, the armature voltage $\Ua$ is reduced to 0.8 $\Uan$. How large is the rotational speed $n$ with the fixed flux $\phiDelta$ at the torque $T$ = 0.5 $\Tn$?}
 
 \begin{solutionblock}
-    The equation for the reduced armature voltage is given as follows
-    \begin{equation}
-        U_{\mathrm{a}} = 0.8 U_{\mathrm{a,n}}
-        = \omega \psi_{\mathrm{f}}' + \Ra I_{\mathrm{a}},
-    \end{equation}
-    and the reduced torque results in a lower armature current, which is calculated with:
-    \begin{equation}
-        I_{\mathrm{a}} = \frac{0.5 \Tn}{\psi_{\mathrm{f}}'}.
-    \end{equation}
+	The equation for the reduced armature voltage is given as follows
+	\begin{equation}
+		U_{\mathrm{a}} = 0.8 U_{\mathrm{a,n}}
+		= \omega \psi_{\mathrm{f}}' + \Ra I_{\mathrm{a}},
+	\end{equation}
+	and the reduced torque results in a lower armature current, which is calculated with:
+	\begin{equation}
+		I_{\mathrm{a}} = \frac{0.5 \Tn}{\psi_{\mathrm{f}}'}.
+	\end{equation}
 
-    With this two equations from above, the speed is calculated below:
-    \begin{align}
-        \begin{split}
-            n &= \frac{0.8 U_{\mathrm{a,n}} - \frac{\Ra 0.5 \Tn}{\psi_{\mathrm{f}}'}}{2 \pi \psi_{\mathrm{f}}'}
-            = \frac{0.8 \cdot 440 \ \si{V} - \frac{0.201 \ \si{\Omega} \cdot 0.5 \cdot 477.5 \ \si{Nm}}{2.99 \ \si{Vs}}}{2 \pi \cdot 2.99 \ \si{Vs}}\\
-            &= 17.89 \ \si{\frac{1}{s}}
-            = 1073.6 \ \si{\frac{1}{min}}.
-            \end{split}
-    \end{align}
-
+	With this two equations from above, the speed is calculated below:
+	\begin{align}
+		\begin{split}
+			n & = \frac{0.8 U_{\mathrm{a,n}} - \frac{\Ra 0.5 \Tn}{\psi_{\mathrm{f}}'}}{2 \pi \psi_{\mathrm{f}}'}
+			= \frac{0.8 \cdot 440 \ \si{V} - \frac{0.201 \ \si{\Omega} \cdot 0.5 \cdot 477.5 \ \si{Nm}}{2.99 \ \si{Vs}}}{2 \pi \cdot 2.99 \ \si{Vs}} \\
+			  & = 17.89 \ \si{\frac{1}{s}}
+			= 1073.6 \ \si{\frac{1}{min}}.
+		\end{split}
+	\end{align}
 
 \end{solutionblock}
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subtask{After the submarine surfaced, the machine is now used as a generator to charge the batteries powering with marine diesel at the speed $\nN$ = 1530 $\mathrm{min^{-1}}$. What is the no-load induced voltage? How big is the armature voltage $\Ua$ at $\Ia$ = $I_{\mathrm{a,n}}$ ($\phi$ = $\phiDelta$)?}
-    
+
 \begin{solutionblock}
-    The induced voltage is calculated with:
-    \begin{equation}
-        \Ui = U_{\mathrm{0}}
-        = \omega \psi_{\mathrm{f}}'
-        = 2 \pi \cdot \frac{1530}{60} \si{\frac{1}{s}} \cdot 2.99 \ \si{Vs}
-        = 478.7 \ \si{V}.
-    \end{equation}
+	The induced voltage is calculated with:
+	\begin{equation}
+		\Ui = U_{\mathrm{0}}
+		= \omega \psi_{\mathrm{f}}'
+		= 2 \pi \cdot \frac{1530}{60} \si{\frac{1}{s}} \cdot 2.99 \ \si{Vs}
+		= 478.7 \ \si{V}.
+	\end{equation}
 
-    To determine the armature voltage, the ohmic voltage drop is taken into account as given below: 
-    \begin{equation}
-        U_{\mathrm{a}} = U_{\mathrm{0}} - I_{\mathrm{a,n}} \Ra
-        = 478.7 \ \si{V} - 164.1 \ \si{A} \cdot 0.201 \ \si{\Omega}
-        = 445.8 \ \si{V}.
-    \end{equation}
+	To determine the armature voltage, the ohmic voltage drop is taken into account as given below:
+	\begin{equation}
+		U_{\mathrm{a}} = U_{\mathrm{0}} - I_{\mathrm{a,n}} \Ra
+		= 478.7 \ \si{V} - 164.1 \ \si{A} \cdot 0.201 \ \si{\Omega}
+		= 445.8 \ \si{V}.
+	\end{equation}
 \end{solutionblock}
-
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subtask{How large is the voltage $\Ua$ at $\phi$ = 0.7 $\phiDelta$ and $\Ia = I_{\mathrm{a,n}}/2$?}
 
 \begin{solutionblock}
-    The armature voltage is calculated in the following with:
-    \begin{equation}
-        U_{\mathrm{a}} = U_{\mathrm{0}} \frac{\phi}{\phiDelta} - \frac{1}{2} I_{\mathrm{a,n}} \Ra
-        = 478.7 \ \si{V} \cdot 0.7 - 0.5 \cdot 164.1 \ \si{A} \cdot 0.201 \ \si{\Omega}
-        = 318.6 \ \si{V}.
-    \end{equation}
+	The armature voltage is calculated in the following with:
+	\begin{equation}
+		U_{\mathrm{a}} = U_{\mathrm{0}} \frac{\phi}{\phiDelta} - \frac{1}{2} I_{\mathrm{a,n}} \Ra
+		= 478.7 \ \si{V} \cdot 0.7 - 0.5 \cdot 164.1 \ \si{A} \cdot 0.201 \ \si{\Omega}
+		= 318.6 \ \si{V}.
+	\end{equation}
 \end{solutionblock}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subtask{What is the rotational speed $n$ such that the generator with the nominal flux $\phiDelta$ and the nominal current $I_{\mathrm{a,n}}$ induces an armature voltage of $U_{\mathrm{0}}$?}
 
 \begin{solutionblock}
-    The basic equation is the same as in the previous subtasks and is defined as:
-    \begin{equation}
-        \Ua = U_{\mathrm{0}} = \omega \psi_{\mathrm{f}}' - \Ra I_{\mathrm{a,n}}.
-    \end{equation}
-    After reformulation the speed is calculated as shown below:
-    \begin{equation}
-        n = \frac{U_{\mathrm{0}} + \Ra \In}{2 \pi \psi_{\mathrm{f}}'}
-        = \frac{478.7 \ \si{V} + 0.201 \ \si{\Omega} \cdot 164.1 \ \si{A}}{2 \pi \cdot 2.99 \ \si{Vs}}
-        = 27.25 \ \si{\frac{1}{s}}
-        = 1635 \ \si{\frac{1}{min}}.
-    \end{equation}
+	The basic equation is the same as in the previous subtasks and is defined as:
+	\begin{equation}
+		\Ua = U_{\mathrm{0}} = \omega \psi_{\mathrm{f}}' - \Ra I_{\mathrm{a,n}}.
+	\end{equation}
+	After reformulation the speed is calculated as shown below:
+	\begin{equation}
+		n = \frac{U_{\mathrm{0}} + \Ra \In}{2 \pi \psi_{\mathrm{f}}'}
+		= \frac{478.7 \ \si{V} + 0.201 \ \si{\Omega} \cdot 164.1 \ \si{A}}{2 \pi \cdot 2.99 \ \si{Vs}}
+		= 27.25 \ \si{\frac{1}{s}}
+		= 1635 \ \si{\frac{1}{min}}.
+	\end{equation}
 \end{solutionblock}
