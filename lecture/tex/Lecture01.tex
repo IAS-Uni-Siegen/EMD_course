@@ -28,7 +28,7 @@
 				\caption{Example of an electrical machine (source: derived from \href{https://commons.wikimedia.org/wiki/File:TMW_50906_Schnittmodell_einer_Drehstrommaschine_(Asynchronmaschine).jpg}{Wikimedia Commons}, public domain)}
 			\end{figure}
 		\end{column}
-		\end{columns}
+	\end{columns}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -64,11 +64,10 @@
 			\includegraphics[width=0.5\textwidth]{fig/lec01/Linear_motor.jpg}
 			\caption{Linear permanent magnet machine (source: \href{https://commons.wikimedia.org/wiki/File:Linear_motor_by_Zureks.jpg}{Wikimedia Commons}, Zureks, \href{https://creativecommons.org/licenses/by-sa/4.0/n}{CC BY-SA 4.0})}
 		\end{subfigure}
-		\caption*{Some exemplary electrical machines} 
-        \label{fig:examples_machine_drives_00}
+		\caption*{Some exemplary electrical machines}
+		\label{fig:examples_machine_drives_00}
 	\end{figure}
 \end{frame}
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% The machine as an electrical-mechanical converter %%
@@ -88,8 +87,8 @@
 			\includegraphics[width=0.9\textwidth]{fig/lec01/Block_diagram_translational_converter.pdf}
 			\caption{Translational converter}
 		\end{subfigure}
-		\caption{Electrically and mechanically free body diagrams of motors as energy converters  with variable notation: time $t$, voltage $u$, current $i$, force $F$, displacement $x$, torque $T$ and rational speed $\omega$ (adapted from J.~B\"ocker, \textit{Elektrische Antriebstechnik}, Paderborn University, 2020)} 
-        \label{fig:free_body_diagrams_motor}
+		\caption{Electrically and mechanically free body diagrams of motors as energy converters  with variable notation: time $t$, voltage $u$, current $i$, force $F$, displacement $x$, torque $T$ and rational speed $\omega$ (adapted from J.~B\"ocker, \textit{Elektrische Antriebstechnik}, Paderborn University, 2020)}
+		\label{fig:free_body_diagrams_motor}
 	\end{figure}
 \end{frame}
 
@@ -102,22 +101,22 @@
 	\begin{table}
 		\centering
 		\begin{tabular}{lll}
-			& Translational converter & Rotational converter \\
+			                               & Translational converter                                     & Rotational converter                                                     \\
 			\toprule
-			Kinematic quantities & & \\
-			Displacement / angle & $x$ & $\varepsilon$ \\
-			Velocity & $v=\dot{x}$ & $\omega=\dot{\varepsilon}$ \\
-			Acceleration & $a=\dot{v}=\ddot{x}$ & $\alpha=\dot{\omega}=\ddot{\varepsilon}$ \\
-			Jerk & $j=\dot{a}=\ddot{v}=\dddot{x}$ & $\rho=\dot{\alpha}=\ddot{\omega}=\dddot{\varepsilon}$ \onslide<2-> \\
+			Kinematic quantities           &                                                             &                                                                          \\
+			Displacement / angle           & $x$                                                         & $\varepsilon$                                                            \\
+			Velocity                       & $v=\dot{x}$                                                 & $\omega=\dot{\varepsilon}$                                               \\
+			Acceleration                   & $a=\dot{v}=\ddot{x}$                                        & $\alpha=\dot{\omega}=\ddot{\varepsilon}$                                 \\
+			Jerk                           & $j=\dot{a}=\ddot{v}=\dddot{x}$                              & $\rho=\dot{\alpha}=\ddot{\omega}=\dddot{\varepsilon}$ \onslide<2->       \\
 			\midrule
-			Dynamical quantities & & \\
-			Force / torque & $F$ & $T$ \\
-			Mass / inertia & $m$ & $J$ \onslide<3-> \\
+			Dynamical quantities           &                                                             &                                                                          \\
+			Force / torque                 & $F$                                                         & $T$                                                                      \\
+			Mass / inertia                 & $m$                                                         & $J$ \onslide<3->                                                         \\
 			\midrule
-			Mechanical power & $P_\mathrm{me}=F v$ & $P_\mathrm{me}=T \omega$ \onslide<4-> \\
-			Work & $W[t_0,t]=\int_{t_0}^t P_\mathrm{me}(\tau)\,\mathrm{d}\tau$ & $W[t_0,t]=\int_{t_0}^t P_\mathrm{me}(\tau)\,\mathrm{d}\tau$ \onslide<5-> \\
-			Momentum / rotational momentum & $p = m v$ & $L = \omega J$ \onslide<6-> \\
-			Kinetic energy & $E_\mathrm{kin} = \frac{1}{2} m v^2$ & $E_\mathrm{kin} = \frac{1}{2} J \omega^2$\\
+			Mechanical power               & $P_\mathrm{me}=F v$                                         & $P_\mathrm{me}=T \omega$ \onslide<4->                                    \\
+			Work                           & $W[t_0,t]=\int_{t_0}^t P_\mathrm{me}(\tau)\,\mathrm{d}\tau$ & $W[t_0,t]=\int_{t_0}^t P_\mathrm{me}(\tau)\,\mathrm{d}\tau$ \onslide<5-> \\
+			Momentum / rotational momentum & $p = m v$                                                   & $L = \omega J$ \onslide<6->                                              \\
+			Kinetic energy                 & $E_\mathrm{kin} = \frac{1}{2} m v^2$                        & $E_\mathrm{kin} = \frac{1}{2} J \omega^2$                                \\
 			\bottomrule
 		\end{tabular}
 		\caption{Basic mechanical terms for translational and rotational converters}
@@ -139,18 +138,18 @@
 		\end{column}
 		\begin{column}{0.5\textwidth}
 			\begin{varblock}{Energy}
-				Energy is the capacity to do work, that is, a quantity depending on the state of a system at a given point of time.				
+				Energy is the capacity to do work, that is, a quantity depending on the state of a system at a given point of time.
 			\end{varblock}
 			\pause
 		\end{column}
-		\end{columns}
-		\vspace{0.5cm}
-		\begin{figure}
-			\centering
-			\includegraphics[width=0.6\textwidth]{fig/lec01/Work_Energy.pdf}
-			\caption{Illustration addressing the work vs. energy terminology (simplified Sankey diagram)}
-			\label{fig:work_vs_energy}
-		\end{figure}
+	\end{columns}
+	\vspace{0.5cm}
+	\begin{figure}
+		\centering
+		\includegraphics[width=0.6\textwidth]{fig/lec01/Work_Energy.pdf}
+		\caption{Illustration addressing the work vs. energy terminology (simplified Sankey diagram)}
+		\label{fig:work_vs_energy}
+	\end{figure}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -181,8 +180,8 @@
 		\begin{column}{0.5\textwidth}
 			For the steady state ($\dot{E}_{\mathrm{i}}(t)=0$), we define the \hl{machine efficiency} as the ratio of the converted energy to the input energy:
 			\begin{align}
-				\eta_\mathrm{mot} &= \frac{P_{\mathrm{me}}}{P_{\mathrm{el}}} = 1- \frac{P_{\mathrm{l}}}{P_{\mathrm{el}}},  \\[0.5em] 
-				\onslide<2->{\eta_\mathrm{gen} &= \frac{P_{\mathrm{el}}}{P_{\mathrm{me}}} = 1- \frac{P_{\mathrm{l}}}{P_{\mathrm{me}}}.}
+				\eta_\mathrm{mot}              & = \frac{P_{\mathrm{me}}}{P_{\mathrm{el}}} = 1- \frac{P_{\mathrm{l}}}{P_{\mathrm{el}}},  \\[0.5em]
+				\onslide<2->{\eta_\mathrm{gen} & = \frac{P_{\mathrm{el}}}{P_{\mathrm{me}}} = 1- \frac{P_{\mathrm{l}}}{P_{\mathrm{me}}}.}
 			\end{align}
 			\onslide<3->{Hence, we need to consider in which \hl{quadrant} the machine operates as this will influence the power flow direction.}
 		\end{column}
@@ -194,9 +193,8 @@
 				\label{fig:machine_quadrants}
 			\end{figure}
 		\end{column}
-		\end{columns}
+	\end{columns}
 \end{frame}
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% What is an electrical drive ? %%
@@ -206,7 +204,7 @@
 	\begin{columns}
 		\begin{column}{0.4\textwidth}
 			\begin{varblock}{Electrical drive}
-			   An electrical drive is a system that controls the torque, speed or position of an electrical machine connected to some mechanical process.
+				An electrical drive is a system that controls the torque, speed or position of an electrical machine connected to some mechanical process.
 			\end{varblock}
 			\vspace{0.25cm}
 			\begin{itemize}
@@ -223,7 +221,6 @@
 		\end{column}
 	\end{columns}
 \end{frame}
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Application examples}
@@ -262,11 +259,10 @@
 			\includegraphics[width=0.5\textwidth]{fig/lec01/electric_drill.jpg}
 			\caption{Electric tools (source: \href{https://www.flickr.com/photos/30478819@N08/49940384798}{flickr.com},  M.~Verch, \href{https://creativecommons.org/licenses/by/2.0/}{CC BY 2.0})}
 		\end{subfigure}
-		\caption*{Examples of electrical machine and drive applications} 
-        \label{fig:examples_machine_drives_01}
+		\caption*{Examples of electrical machine and drive applications}
+		\label{fig:examples_machine_drives_01}
 	\end{figure}
 \end{frame}
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Examples of electrical machine and drive applications (2) %%
@@ -303,8 +299,8 @@
 			\includegraphics[width=0.5\textwidth]{fig/lec01/crane.jpg}
 			\caption{Cranes (source: \href{https://commons.wikimedia.org/wiki/File:Hammelmann_Stationary_unit_with_electric_motor.jpg}{Wikimedia Commons}, Belfast Dissenter, \href{https://creativecommons.org/licenses/by-sa/4.0/deed.en}{CC BY-SA 4.0})}
 		\end{subfigure}
-		\caption*{Examples of electrical machine and drive applications} 
-        \label{fig:examples_machine_drives_02}
+		\caption*{Examples of electrical machine and drive applications}
+		\label{fig:examples_machine_drives_02}
 	\end{figure}
 \end{frame}
 
@@ -327,7 +323,7 @@
 \begin{frame}
 	\frametitle{Why is knowledge about electric machines and drives important?}
 	\begin{varblock}{Electric machines and drives are an essential pillar of the modern society}
-		Without electric machines and drives, our todays society would not be possible. Starting from providing electricity via electrical generators to powering electric vehicles, tools and entire factory production lines, electric machines and drives are everywhere, that is, they enable our today's living standard. 
+		Without electric machines and drives, our todays society would not be possible. Starting from providing electricity via electrical generators to powering electric vehicles, tools and entire factory production lines, electric machines and drives are everywhere, that is, they enable our today's living standard.
 	\end{varblock}
 	\begin{varblock}{Energy efficiency and sustainability is key}<2->
 		Electric machines and drives utilize  approx. 50\,\% of the global electricity with about 8 billion electric motors in use in the EU (source: \href{https://commission.europa.eu/energy-climate-change-environment/standards-tools-and-labels/products-labelling-rules-and-requirements/energy-label-and-ecodesign/energy-efficient-products/electric-motors-and-variable-speed-drives_en}{European Commission} and \href{https://iea.blob.core.windows.net/assets/d69b2a76-feb9-4a74-a921-2490a8fefcdf/EE_for_ElectricSystems.pdf}{International Energy Agency}). Therefore, improving their efficiency is an essential factor to reduce the global energy consumption and the associated CO$_2$ emissions.
@@ -346,22 +342,21 @@
 	\begin{itemize}
 		\item Understand the generation of magnetic fields, force formation and voltage induction in electrical machines.
 		\item<2-> Differentiate the main types of electrical machines and drives:
-		\begin{itemize}
-			\item DC machines,
-			\item Induction machines,
-			\item Synchronous machines,
-			\item And their plentiful variants \ldots
-		\end{itemize}
+		      \begin{itemize}
+			      \item DC machines,
+			      \item Induction machines,
+			      \item Synchronous machines,
+			      \item And their plentiful variants \ldots
+		      \end{itemize}
 		\item<3-> Understand their basic design and operation principles.
 		\item<4-> Analyze the operation of electrical machines and drives:
-		\begin{itemize}
-			\item in steady state and
-			\item in transient conditions.
-		\end{itemize} 
+		      \begin{itemize}
+			      \item in steady state and
+			      \item in transient conditions.
+		      \end{itemize}
 		\item<5-> Have fun learning about electrical machines and drives.
 	\end{itemize}
 \end{frame}
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Necessary prior knowledge %%
