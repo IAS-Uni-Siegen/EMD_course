@@ -1,301 +1,279 @@
 % 
 \begin{figure}[htb]
-    \centering
+	\centering
 
-    \pgfdeclarelayer{background}
-    \pgfsetlayers{background,main}
+	\pgfdeclarelayer{background}
+	\pgfsetlayers{background,main}
 
-    \begin{tikzpicture}
+	\begin{tikzpicture}
 
-        % Parameters
-        \def\Rstator{2.3}         % Outer stator radius
-        \def\RslotOut{1.9}         % Outer stator radius
-        \def\Rslot{1.1}         % Slot radius
-        \def\Rrotor{1}        % Rotor outer radius
-        \def\Rmagnet{0.5}       % For showing poles
-        \def\nslots{24}         % Number of stator slots
-        \def\polepairs{2}       % Number of pole pairs (4 poles)
+		% Parameters
+		\def\Rstator{2.3}         % Outer stator radius
+		\def\RslotOut{1.9}         % Outer stator radius
+		\def\Rslot{1.1}         % Slot radius
+		\def\Rrotor{1}        % Rotor outer radius
+		\def\Rmagnet{0.5}       % For showing poles
+		\def\nslots{24}         % Number of stator slots
+		\def\polepairs{2}       % Number of pole pairs (4 poles)
 
+		% % Draw stator outer circle
+		\begin{pgfonlayer}{background}
+			\draw[thick,fill=gray!25] (0,0) circle (\Rstator);
+		\end{pgfonlayer}
 
-        % % Draw stator outer circle
-        \begin{pgfonlayer}{background}
-            \draw[thick,fill=gray!25] (0,0) circle (\Rstator);
-        \end{pgfonlayer}
+		\path[fill=white] (0,0) circle (\Rslot);
 
-        \path[fill=white] (0,0) circle (\Rslot);
+		% Draw stator slots and windings
+		\foreach \i in {0,...,23} {
+				\def\angle{360/\nslots*\i}
+				\path[draw,thick]
+				({\Rslot*cos(\angle)}, {\Rslot*sin(\angle)}) --
+				({\RslotOut*cos(\angle)}, {\RslotOut*sin(\angle)});
 
+			}
 
+		\foreach \i in {0,2,4,6,8,10,12,14,16,18,20,22} {
+				\def\angle{15*\i-.4}
+				\path[thick,draw,rotate around={\angle:(0,0)}] ({\RslotOut},0) arc(0:15.8:\RslotOut);
+				%         \def\angle{360/\nslots*\i}
+				%         \def\angleN{360/\nslots*(\i+1)}
+				%         \path[draw,thick]
+				%         ({\RslotOut*cos(\angle)}, {\RslotOut*sin(\angle)}) --
+				%         ({\RslotOut*cos(\angleN)}, {\RslotOut*sin(\angleN)});
+			}
 
-        % Draw stator slots and windings
-        \foreach \i in {0,...,23} {
-                \def\angle{360/\nslots*\i}
-                \path[draw,thick]
-                ({\Rslot*cos(\angle)}, {\Rslot*sin(\angle)}) --
-                ({\RslotOut*cos(\angle)}, {\RslotOut*sin(\angle)});
+		\foreach \i in {1,3,5,7,9,11,13,15,17,19,21,23} {
+				\def\angle{15*\i-.4}
+				\path[thick,draw,rotate around={\angle:(0,0)}] ({\Rslot},0) arc(0:15.8:\Rslot);
+				% \draw[thick,rotate around={45:(0,0)}] ({\Rslot},0) arc(0:15:\Rslot);
+			}
 
-            }
+		\foreach \i in {0,2,4,6,8,10,12,14,16,18,20,22}{
+				% Test slot
+				\def\thetaStart{\i*15+0.4}  % Start angle of magnet (degrees)
+				\def\thetaEnd{(\i+1)*15-0.4}    % End angle of magnet (degrees)
+				% Draw filled magnet shape
+				\path[fill=white]
+				({(\Rslot-.01)*cos(\thetaStart)}, {(\Rslot-.01)*sin(\thetaStart)}) --  % inner arc start
+				({(\RslotOut-.01)*cos(\thetaStart)}, {(\RslotOut-.01)*sin(\thetaStart)}) arc
+				(\thetaStart:\thetaEnd:{\RslotOut-.01}) --
+				({(\Rslot-.01)*cos(\thetaEnd)}, {(\Rslot-.01)*sin(\thetaEnd)}) arc
+				(\thetaEnd:\thetaStart:\Rslot) -- cycle;
 
+			}
 
-        \foreach \i in {0,2,4,6,8,10,12,14,16,18,20,22} {
-                \def\angle{15*\i-.4}
-                \path[thick,draw,rotate around={\angle:(0,0)}] ({\RslotOut},0) arc(0:15.8:\RslotOut);
-                %         \def\angle{360/\nslots*\i}
-                %         \def\angleN{360/\nslots*(\i+1)}
-                %         \path[draw,thick]
-                %         ({\RslotOut*cos(\angle)}, {\RslotOut*sin(\angle)}) --
-                %         ({\RslotOut*cos(\angleN)}, {\RslotOut*sin(\angleN)});
-            }
+		% Rotor core
+		\draw[thick, fill=gray!40] (0,0) circle (\Rrotor);
 
+		% 0-60
+		\def\thetaStart{0}  % Start angle of magnet (degrees)
+		\def\thetaEnd{60}    % End angle of magnet (degrees)
+		% Draw filled magnet shape
+		\path[fill=signalred, draw=signalred, line width=1pt]
+		({\Rmagnet*cos(\thetaStart)}, {\Rmagnet*sin(\thetaStart)}) --  % inner arc start
+		({\Rrotor*cos(\thetaStart)}, {\Rrotor*sin(\thetaStart)}) arc
+		(\thetaStart:\thetaEnd:\Rrotor) --
+		({\Rmagnet*cos(\thetaEnd)}, {\Rmagnet*sin(\thetaEnd)}) arc
+		(\thetaEnd:\thetaStart:\Rmagnet) -- cycle;
 
-        \foreach \i in {1,3,5,7,9,11,13,15,17,19,21,23} {
-                \def\angle{15*\i-.4}
-                \path[thick,draw,rotate around={\angle:(0,0)}] ({\Rslot},0) arc(0:15.8:\Rslot);
-                % \draw[thick,rotate around={45:(0,0)}] ({\Rslot},0) arc(0:15:\Rslot);
-            }
+		% Compute angle and radius for label placement
+		\pgfmathsetmacro{\thetaText}{(\thetaStart+\thetaEnd)/2}
+		\pgfmathsetmacro{\rText}{(\Rmagnet+\Rrotor)/2}
+		% Place text inside the shape
+		\node at ({\rText*cos(\thetaText)}, {\rText*sin(\thetaText)}) {N};
 
+		% 90-150
+		\def\thetaStart{90}  % Start angle of magnet (degrees)
+		\def\thetaEnd{150}    % End angle of magnet (degrees)
+		% Draw filled magnet shape
+		\path[fill=signalgreen, draw=signalgreen, line width=1pt]
+		({\Rmagnet*cos(\thetaStart)}, {\Rmagnet*sin(\thetaStart)}) --  % inner arc start
+		({\Rrotor*cos(\thetaStart)}, {\Rrotor*sin(\thetaStart)}) arc
+		(\thetaStart:\thetaEnd:\Rrotor) --
+		({\Rmagnet*cos(\thetaEnd)}, {\Rmagnet*sin(\thetaEnd)}) arc
+		(\thetaEnd:\thetaStart:\Rmagnet) -- cycle;
 
-        \foreach \i in {0,2,4,6,8,10,12,14,16,18,20,22}{
-                % Test slot
-                \def\thetaStart{\i*15+0.4}  % Start angle of magnet (degrees)
-                \def\thetaEnd{(\i+1)*15-0.4}    % End angle of magnet (degrees)
-                % Draw filled magnet shape
-                \path[fill=white]
-                ({(\Rslot-.01)*cos(\thetaStart)}, {(\Rslot-.01)*sin(\thetaStart)}) --  % inner arc start
-                ({(\RslotOut-.01)*cos(\thetaStart)}, {(\RslotOut-.01)*sin(\thetaStart)}) arc
-                (\thetaStart:\thetaEnd:{\RslotOut-.01}) --
-                ({(\Rslot-.01)*cos(\thetaEnd)}, {(\Rslot-.01)*sin(\thetaEnd)}) arc
-                (\thetaEnd:\thetaStart:\Rslot) -- cycle;
+		% Compute angle and radius for label placement
+		\pgfmathsetmacro{\thetaText}{(\thetaStart+\thetaEnd)/2}
+		\pgfmathsetmacro{\rText}{(\Rmagnet+\Rrotor)/2}
+		% Place text inside the shape
+		\node at ({\rText*cos(\thetaText)}, {\rText*sin(\thetaText)}) {S};
 
-            }
+		% 180-240
+		\def\thetaStart{180}  % Start angle of magnet (degrees)
+		\def\thetaEnd{240}    % End angle of magnet (degrees)
+		% Draw filled magnet shape
+		\path[fill=signalred, draw=signalred, line width=1pt]
+		({\Rmagnet*cos(\thetaStart)}, {\Rmagnet*sin(\thetaStart)}) --  % inner arc start
+		({\Rrotor*cos(\thetaStart)}, {\Rrotor*sin(\thetaStart)}) arc
+		(\thetaStart:\thetaEnd:\Rrotor) --
+		({\Rmagnet*cos(\thetaEnd)}, {\Rmagnet*sin(\thetaEnd)}) arc
+		(\thetaEnd:\thetaStart:\Rmagnet) -- cycle;
 
+		% Compute angle and radius for label placement
+		\pgfmathsetmacro{\thetaText}{(\thetaStart+\thetaEnd)/2}
+		\pgfmathsetmacro{\rText}{(\Rmagnet+\Rrotor)/2}
+		% Place text inside the shape
+		\node at ({\rText*cos(\thetaText)}, {\rText*sin(\thetaText)}) {N};
 
+		% 270-330
+		\def\thetaStart{270}  % Start angle of magnet (degrees)
+		\def\thetaEnd{330}    % End angle of magnet (degrees)
+		% Draw filled magnet shape
+		\path[fill=signalgreen, draw=signalgreen, line width=1pt]
+		({\Rmagnet*cos(\thetaStart)}, {\Rmagnet*sin(\thetaStart)}) --  % inner arc start
+		({\Rrotor*cos(\thetaStart)}, {\Rrotor*sin(\thetaStart)}) arc
+		(\thetaStart:\thetaEnd:\Rrotor) --
+		({\Rmagnet*cos(\thetaEnd)}, {\Rmagnet*sin(\thetaEnd)}) arc
+		(\thetaEnd:\thetaStart:\Rmagnet) -- cycle;
 
+		% Compute angle and radius for label placement
+		\pgfmathsetmacro{\thetaText}{(\thetaStart+\thetaEnd)/2}
+		\pgfmathsetmacro{\rText}{(\Rmagnet+\Rrotor)/2}
+		% Place text inside the shape
+		\node at ({\rText*cos(\thetaText)}, {\rText*sin(\thetaText)}) {S};
 
-        % Rotor core
-        \draw[thick, fill=gray!40] (0,0) circle (\Rrotor);
+		% Shaft
+		\draw[fill=black] (0,0) circle (0.2);
 
+		% winding
+		% 0-15
+		\def\thetaStartWinding{0}  % Start angle of magnet (degrees)
+		\def\thetaEndWinding{15}    % End angle of magnet (degrees)
+		\path[draw=signalred, line width=1pt]
+		({(\Rslot+(\RslotOut-\Rslot)/2)*cos(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)},{(\Rslot+(\RslotOut-\Rslot)/2)*sin(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)}) circle (0.1);
+		\path[draw=signalred,fill=signalred, line width=1pt]
+		({(\Rslot+(\RslotOut-\Rslot)/2)*cos(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)},{(\Rslot+(\RslotOut-\Rslot)/2)*sin(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)}) circle (0.02);
 
-        % 0-60
-        \def\thetaStart{0}  % Start angle of magnet (degrees)
-        \def\thetaEnd{60}    % End angle of magnet (degrees)
-        % Draw filled magnet shape
-        \path[fill=signalred, draw=signalred, line width=1pt]
-        ({\Rmagnet*cos(\thetaStart)}, {\Rmagnet*sin(\thetaStart)}) --  % inner arc start
-        ({\Rrotor*cos(\thetaStart)}, {\Rrotor*sin(\thetaStart)}) arc
-        (\thetaStart:\thetaEnd:\Rrotor) --
-        ({\Rmagnet*cos(\thetaEnd)}, {\Rmagnet*sin(\thetaEnd)}) arc
-        (\thetaEnd:\thetaStart:\Rmagnet) -- cycle;
+		% 30-45
+		\def\thetaStartWinding{30}  % Start angle of magnet (degrees)
+		\def\thetaEndWinding{45}    % End angle of magnet (degrees)
+		\path[draw=signalgreen, line width=1pt]
+		({(\Rslot+(\RslotOut-\Rslot)/2)*cos(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)},{(\Rslot+(\RslotOut-\Rslot)/2)*sin(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)}) circle (0.1);
+		\path[draw=signalgreen, line width=1pt]
+		({(\Rslot+(\RslotOut-\Rslot)/2)*cos(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)},{(\Rslot+(\RslotOut-\Rslot)/2)*sin(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)}) -- ++ (0.1cm,-0.05);
+		\path[draw=signalgreen, line width=1pt]
+		({(\Rslot+(\RslotOut-\Rslot)/2)*cos(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)},{(\Rslot+(\RslotOut-\Rslot)/2)*sin(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)}) -- ++ (-0.05,-0.1cm);
+		\path[draw=signalgreen, line width=1pt]
+		({(\Rslot+(\RslotOut-\Rslot)/2)*cos(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)},{(\Rslot+(\RslotOut-\Rslot)/2)*sin(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)})-- ++ (0.05,0.1cm);
+		\path[draw=signalgreen, line width=1pt]
+		({(\Rslot+(\RslotOut-\Rslot)/2)*cos(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)},{(\Rslot+(\RslotOut-\Rslot)/2)*sin(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)})-- ++ (-0.1cm,0.05);
 
-        % Compute angle and radius for label placement
-        \pgfmathsetmacro{\thetaText}{(\thetaStart+\thetaEnd)/2}
-        \pgfmathsetmacro{\rText}{(\Rmagnet+\Rrotor)/2}
-        % Place text inside the shape
-        \node at ({\rText*cos(\thetaText)}, {\rText*sin(\thetaText)}) {N};
+		% 60-75
+		\def\thetaStartWinding{60}  % Start angle of magnet (degrees)
+		\def\thetaEndWinding{75}    % End angle of magnet (degrees)
+		\path[draw=signalblue, line width=1pt]
+		({(\Rslot+(\RslotOut-\Rslot)/2)*cos(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)},{(\Rslot+(\RslotOut-\Rslot)/2)*sin(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)}) circle (0.1);
+		\path[draw=signalblue,fill=signalblue, line width=1pt]
+		({(\Rslot+(\RslotOut-\Rslot)/2)*cos(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)},{(\Rslot+(\RslotOut-\Rslot)/2)*sin(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)}) circle (0.02);
 
+		% 90-105
+		\def\thetaStartWinding{90}  % Start angle of magnet (degrees)
+		\def\thetaEndWinding{105}    % End angle of magnet (degrees)
+		\path[draw=signalred, line width=1pt]
+		({(\Rslot+(\RslotOut-\Rslot)/2)*cos(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)},{(\Rslot+(\RslotOut-\Rslot)/2)*sin(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)}) circle (0.1);
 
-        % 90-150
-        \def\thetaStart{90}  % Start angle of magnet (degrees)
-        \def\thetaEnd{150}    % End angle of magnet (degrees)
-        % Draw filled magnet shape
-        \path[fill=signalgreen, draw=signalgreen, line width=1pt]
-        ({\Rmagnet*cos(\thetaStart)}, {\Rmagnet*sin(\thetaStart)}) --  % inner arc start
-        ({\Rrotor*cos(\thetaStart)}, {\Rrotor*sin(\thetaStart)}) arc
-        (\thetaStart:\thetaEnd:\Rrotor) --
-        ({\Rmagnet*cos(\thetaEnd)}, {\Rmagnet*sin(\thetaEnd)}) arc
-        (\thetaEnd:\thetaStart:\Rmagnet) -- cycle;
+		\path[draw=signalred, line width=1pt]
+		({(\Rslot+(\RslotOut-\Rslot)/2)*cos(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)},{(\Rslot+(\RslotOut-\Rslot)/2)*sin(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)}) -- ++ (0.1cm,-0.05);
+		\path[draw=signalred, line width=1pt]
+		({(\Rslot+(\RslotOut-\Rslot)/2)*cos(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)},{(\Rslot+(\RslotOut-\Rslot)/2)*sin(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)}) -- ++ (-0.05,-0.1cm);
+		\path[draw=signalred, line width=1pt]
+		({(\Rslot+(\RslotOut-\Rslot)/2)*cos(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)},{(\Rslot+(\RslotOut-\Rslot)/2)*sin(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)})-- ++ (0.05,0.1cm);
+		\path[draw=signalred, line width=1pt]
+		({(\Rslot+(\RslotOut-\Rslot)/2)*cos(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)},{(\Rslot+(\RslotOut-\Rslot)/2)*sin(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)})-- ++ (-0.1cm,0.05);
 
-        % Compute angle and radius for label placement
-        \pgfmathsetmacro{\thetaText}{(\thetaStart+\thetaEnd)/2}
-        \pgfmathsetmacro{\rText}{(\Rmagnet+\Rrotor)/2}
-        % Place text inside the shape
-        \node at ({\rText*cos(\thetaText)}, {\rText*sin(\thetaText)}) {S};
+		% 120 - 135
+		\def\thetaStartWinding{120}  % Start angle of magnet (degrees)
+		\def\thetaEndWinding{135}    % End angle of magnet (degrees)
+		\path[draw=signalgreen, line width=1pt]
+		({(\Rslot+(\RslotOut-\Rslot)/2)*cos(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)},{(\Rslot+(\RslotOut-\Rslot)/2)*sin(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)}) circle (0.1);
+		\path[draw=signalgreen,fill=signalgreen, line width=1pt]
+		({(\Rslot+(\RslotOut-\Rslot)/2)*cos(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)},{(\Rslot+(\RslotOut-\Rslot)/2)*sin(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)}) circle (0.02);
 
+		% 150-165
+		\def\thetaStartWinding{150}  % Start angle of magnet (degrees)
+		\def\thetaEndWinding{165}    % End angle of magnet (degrees)
+		\path[draw=signalblue, line width=1pt]
+		({(\Rslot+(\RslotOut-\Rslot)/2)*cos(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)},{(\Rslot+(\RslotOut-\Rslot)/2)*sin(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)}) circle (0.1);
 
-        % 180-240
-        \def\thetaStart{180}  % Start angle of magnet (degrees)
-        \def\thetaEnd{240}    % End angle of magnet (degrees)
-        % Draw filled magnet shape
-        \path[fill=signalred, draw=signalred, line width=1pt]
-        ({\Rmagnet*cos(\thetaStart)}, {\Rmagnet*sin(\thetaStart)}) --  % inner arc start
-        ({\Rrotor*cos(\thetaStart)}, {\Rrotor*sin(\thetaStart)}) arc
-        (\thetaStart:\thetaEnd:\Rrotor) --
-        ({\Rmagnet*cos(\thetaEnd)}, {\Rmagnet*sin(\thetaEnd)}) arc
-        (\thetaEnd:\thetaStart:\Rmagnet) -- cycle;
+		\path[draw=signalblue, line width=1pt]
+		({(\Rslot+(\RslotOut-\Rslot)/2)*cos(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)},{(\Rslot+(\RslotOut-\Rslot)/2)*sin(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)}) -- ++ (0.1cm,-0.05);
+		\path[draw=signalblue, line width=1pt]
+		({(\Rslot+(\RslotOut-\Rslot)/2)*cos(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)},{(\Rslot+(\RslotOut-\Rslot)/2)*sin(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)}) -- ++ (-0.05,-0.1cm);
+		\path[draw=signalblue, line width=1pt]
+		({(\Rslot+(\RslotOut-\Rslot)/2)*cos(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)},{(\Rslot+(\RslotOut-\Rslot)/2)*sin(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)})-- ++ (0.05,0.1cm);
+		\path[draw=signalblue, line width=1pt]
+		({(\Rslot+(\RslotOut-\Rslot)/2)*cos(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)},{(\Rslot+(\RslotOut-\Rslot)/2)*sin(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)})-- ++ (-0.1cm,0.05);
 
-        % Compute angle and radius for label placement
-        \pgfmathsetmacro{\thetaText}{(\thetaStart+\thetaEnd)/2}
-        \pgfmathsetmacro{\rText}{(\Rmagnet+\Rrotor)/2}
-        % Place text inside the shape
-        \node at ({\rText*cos(\thetaText)}, {\rText*sin(\thetaText)}) {N};
+		% 180-195
+		\def\thetaStartWinding{180}  % Start angle of magnet (degrees)
+		\def\thetaEndWinding{195}    % End angle of magnet (degrees)
+		\path[draw=signalred, line width=1pt]
+		({(\Rslot+(\RslotOut-\Rslot)/2)*cos(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)},{(\Rslot+(\RslotOut-\Rslot)/2)*sin(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)}) circle (0.1);
+		\path[draw=signalred,fill=signalred, line width=1pt]
+		({(\Rslot+(\RslotOut-\Rslot)/2)*cos(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)},{(\Rslot+(\RslotOut-\Rslot)/2)*sin(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)}) circle (0.02);
 
-        % 270-330
-        \def\thetaStart{270}  % Start angle of magnet (degrees)
-        \def\thetaEnd{330}    % End angle of magnet (degrees)
-        % Draw filled magnet shape
-        \path[fill=signalgreen, draw=signalgreen, line width=1pt]
-        ({\Rmagnet*cos(\thetaStart)}, {\Rmagnet*sin(\thetaStart)}) --  % inner arc start
-        ({\Rrotor*cos(\thetaStart)}, {\Rrotor*sin(\thetaStart)}) arc
-        (\thetaStart:\thetaEnd:\Rrotor) --
-        ({\Rmagnet*cos(\thetaEnd)}, {\Rmagnet*sin(\thetaEnd)}) arc
-        (\thetaEnd:\thetaStart:\Rmagnet) -- cycle;
+		% 210-225
+		\def\thetaStartWinding{210}  % Start angle of magnet (degrees)
+		\def\thetaEndWinding{225}    % End angle of magnet (degrees)
+		\path[draw=signalgreen, line width=1pt]
+		({(\Rslot+(\RslotOut-\Rslot)/2)*cos(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)},{(\Rslot+(\RslotOut-\Rslot)/2)*sin(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)}) circle (0.1);
+		\path[draw=signalgreen, line width=1pt]
+		({(\Rslot+(\RslotOut-\Rslot)/2)*cos(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)},{(\Rslot+(\RslotOut-\Rslot)/2)*sin(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)}) -- ++ (0.1cm,-0.05);
+		\path[draw=signalgreen, line width=1pt]
+		({(\Rslot+(\RslotOut-\Rslot)/2)*cos(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)},{(\Rslot+(\RslotOut-\Rslot)/2)*sin(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)}) -- ++ (-0.05,-0.1cm);
+		\path[draw=signalgreen, line width=1pt]
+		({(\Rslot+(\RslotOut-\Rslot)/2)*cos(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)},{(\Rslot+(\RslotOut-\Rslot)/2)*sin(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)})-- ++ (0.05,0.1cm);
+		\path[draw=signalgreen, line width=1pt]
+		({(\Rslot+(\RslotOut-\Rslot)/2)*cos(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)},{(\Rslot+(\RslotOut-\Rslot)/2)*sin(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)})-- ++ (-0.1cm,0.05);
 
-        % Compute angle and radius for label placement
-        \pgfmathsetmacro{\thetaText}{(\thetaStart+\thetaEnd)/2}
-        \pgfmathsetmacro{\rText}{(\Rmagnet+\Rrotor)/2}
-        % Place text inside the shape
-        \node at ({\rText*cos(\thetaText)}, {\rText*sin(\thetaText)}) {S};
+		% 240-255
+		\def\thetaStartWinding{240}  % Start angle of magnet (degrees)
+		\def\thetaEndWinding{255}    % End angle of magnet (degrees)
+		\path[draw=signalblue, line width=1pt]
+		({(\Rslot+(\RslotOut-\Rslot)/2)*cos(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)},{(\Rslot+(\RslotOut-\Rslot)/2)*sin(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)}) circle (0.1);
+		\path[draw=signalblue,fill=signalblue, line width=1pt]
+		({(\Rslot+(\RslotOut-\Rslot)/2)*cos(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)},{(\Rslot+(\RslotOut-\Rslot)/2)*sin(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)}) circle (0.02);
 
+		% 270-285
+		\def\thetaStartWinding{270}  % Start angle of magnet (degrees)
+		\def\thetaEndWinding{285}    % End angle of magnet (degrees)
+		\path[draw=signalred, line width=1pt]
+		({(\Rslot+(\RslotOut-\Rslot)/2)*cos(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)},{(\Rslot+(\RslotOut-\Rslot)/2)*sin(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)}) circle (0.1);
 
-        % Shaft
-        \draw[fill=black] (0,0) circle (0.2);
+		\path[draw=signalred, line width=1pt]
+		({(\Rslot+(\RslotOut-\Rslot)/2)*cos(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)},{(\Rslot+(\RslotOut-\Rslot)/2)*sin(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)}) -- ++ (0.1cm,-0.05);
+		\path[draw=signalred, line width=1pt]
+		({(\Rslot+(\RslotOut-\Rslot)/2)*cos(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)},{(\Rslot+(\RslotOut-\Rslot)/2)*sin(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)}) -- ++ (-0.05,-0.1cm);
+		\path[draw=signalred, line width=1pt]
+		({(\Rslot+(\RslotOut-\Rslot)/2)*cos(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)},{(\Rslot+(\RslotOut-\Rslot)/2)*sin(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)})-- ++ (0.05,0.1cm);
+		\path[draw=signalred, line width=1pt]
+		({(\Rslot+(\RslotOut-\Rslot)/2)*cos(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)},{(\Rslot+(\RslotOut-\Rslot)/2)*sin(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)})-- ++ (-0.1cm,0.05);
 
+		% 300-315
+		\def\thetaStartWinding{300}  % Start angle of magnet (degrees)
+		\def\thetaEndWinding{315}    % End angle of magnet (degrees)
+		\path[draw=signalgreen, line width=1pt]
+		({(\Rslot+(\RslotOut-\Rslot)/2)*cos(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)},{(\Rslot+(\RslotOut-\Rslot)/2)*sin(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)}) circle (0.1);
+		\path[draw=signalgreen,fill=signalgreen, line width=1pt]
+		({(\Rslot+(\RslotOut-\Rslot)/2)*cos(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)},{(\Rslot+(\RslotOut-\Rslot)/2)*sin(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)}) circle (0.02);
 
-        % winding
-        % 0-15
-        \def\thetaStartWinding{0}  % Start angle of magnet (degrees)
-        \def\thetaEndWinding{15}    % End angle of magnet (degrees)
-        \path[draw=signalred, line width=1pt]
-        ({(\Rslot+(\RslotOut-\Rslot)/2)*cos(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)},{(\Rslot+(\RslotOut-\Rslot)/2)*sin(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)}) circle (0.1);
-        \path[draw=signalred,fill=signalred, line width=1pt]
-        ({(\Rslot+(\RslotOut-\Rslot)/2)*cos(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)},{(\Rslot+(\RslotOut-\Rslot)/2)*sin(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)}) circle (0.02);
+		% 330-360
+		\def\thetaStartWinding{330}  % Start angle of magnet (degrees)
+		\def\thetaEndWinding{345}    % End angle of magnet (degrees)
+		\path[draw=signalblue, line width=1pt]
+		({(\Rslot+(\RslotOut-\Rslot)/2)*cos(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)},{(\Rslot+(\RslotOut-\Rslot)/2)*sin(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)}) circle (0.1);
 
+		\path[draw=signalblue, line width=1pt]
+		({(\Rslot+(\RslotOut-\Rslot)/2)*cos(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)},{(\Rslot+(\RslotOut-\Rslot)/2)*sin(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)}) -- ++ (0.1cm,-0.05);
+		\path[draw=signalblue, line width=1pt]
+		({(\Rslot+(\RslotOut-\Rslot)/2)*cos(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)},{(\Rslot+(\RslotOut-\Rslot)/2)*sin(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)}) -- ++ (-0.05,-0.1cm);
+		\path[draw=signalblue, line width=1pt]
+		({(\Rslot+(\RslotOut-\Rslot)/2)*cos(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)},{(\Rslot+(\RslotOut-\Rslot)/2)*sin(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)})-- ++ (0.05,0.1cm);
+		\path[draw=signalblue, line width=1pt]
+		({(\Rslot+(\RslotOut-\Rslot)/2)*cos(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)},{(\Rslot+(\RslotOut-\Rslot)/2)*sin(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)})-- ++ (-0.1cm,0.05);
 
-        % 30-45
-        \def\thetaStartWinding{30}  % Start angle of magnet (degrees)
-        \def\thetaEndWinding{45}    % End angle of magnet (degrees)
-        \path[draw=signalgreen, line width=1pt]
-        ({(\Rslot+(\RslotOut-\Rslot)/2)*cos(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)},{(\Rslot+(\RslotOut-\Rslot)/2)*sin(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)}) circle (0.1);
-        \path[draw=signalgreen, line width=1pt]
-        ({(\Rslot+(\RslotOut-\Rslot)/2)*cos(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)},{(\Rslot+(\RslotOut-\Rslot)/2)*sin(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)}) -- ++ (0.1cm,-0.05);
-        \path[draw=signalgreen, line width=1pt]
-        ({(\Rslot+(\RslotOut-\Rslot)/2)*cos(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)},{(\Rslot+(\RslotOut-\Rslot)/2)*sin(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)}) -- ++ (-0.05,-0.1cm);
-        \path[draw=signalgreen, line width=1pt]
-        ({(\Rslot+(\RslotOut-\Rslot)/2)*cos(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)},{(\Rslot+(\RslotOut-\Rslot)/2)*sin(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)})-- ++ (0.05,0.1cm);
-        \path[draw=signalgreen, line width=1pt]
-        ({(\Rslot+(\RslotOut-\Rslot)/2)*cos(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)},{(\Rslot+(\RslotOut-\Rslot)/2)*sin(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)})-- ++ (-0.1cm,0.05);
-
-
-        % 60-75
-        \def\thetaStartWinding{60}  % Start angle of magnet (degrees)
-        \def\thetaEndWinding{75}    % End angle of magnet (degrees)
-        \path[draw=signalblue, line width=1pt]
-        ({(\Rslot+(\RslotOut-\Rslot)/2)*cos(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)},{(\Rslot+(\RslotOut-\Rslot)/2)*sin(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)}) circle (0.1);
-        \path[draw=signalblue,fill=signalblue, line width=1pt]
-        ({(\Rslot+(\RslotOut-\Rslot)/2)*cos(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)},{(\Rslot+(\RslotOut-\Rslot)/2)*sin(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)}) circle (0.02);
-
-        % 90-105
-        \def\thetaStartWinding{90}  % Start angle of magnet (degrees)
-        \def\thetaEndWinding{105}    % End angle of magnet (degrees)
-        \path[draw=signalred, line width=1pt]
-        ({(\Rslot+(\RslotOut-\Rslot)/2)*cos(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)},{(\Rslot+(\RslotOut-\Rslot)/2)*sin(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)}) circle (0.1);
-
-        \path[draw=signalred, line width=1pt]
-        ({(\Rslot+(\RslotOut-\Rslot)/2)*cos(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)},{(\Rslot+(\RslotOut-\Rslot)/2)*sin(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)}) -- ++ (0.1cm,-0.05);
-        \path[draw=signalred, line width=1pt]
-        ({(\Rslot+(\RslotOut-\Rslot)/2)*cos(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)},{(\Rslot+(\RslotOut-\Rslot)/2)*sin(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)}) -- ++ (-0.05,-0.1cm);
-        \path[draw=signalred, line width=1pt]
-        ({(\Rslot+(\RslotOut-\Rslot)/2)*cos(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)},{(\Rslot+(\RslotOut-\Rslot)/2)*sin(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)})-- ++ (0.05,0.1cm);
-        \path[draw=signalred, line width=1pt]
-        ({(\Rslot+(\RslotOut-\Rslot)/2)*cos(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)},{(\Rslot+(\RslotOut-\Rslot)/2)*sin(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)})-- ++ (-0.1cm,0.05);
-
-        % 120 - 135
-        \def\thetaStartWinding{120}  % Start angle of magnet (degrees)
-        \def\thetaEndWinding{135}    % End angle of magnet (degrees)
-        \path[draw=signalgreen, line width=1pt]
-        ({(\Rslot+(\RslotOut-\Rslot)/2)*cos(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)},{(\Rslot+(\RslotOut-\Rslot)/2)*sin(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)}) circle (0.1);
-        \path[draw=signalgreen,fill=signalgreen, line width=1pt]
-        ({(\Rslot+(\RslotOut-\Rslot)/2)*cos(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)},{(\Rslot+(\RslotOut-\Rslot)/2)*sin(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)}) circle (0.02);
-
-        % 150-165
-        \def\thetaStartWinding{150}  % Start angle of magnet (degrees)
-        \def\thetaEndWinding{165}    % End angle of magnet (degrees)
-        \path[draw=signalblue, line width=1pt]
-        ({(\Rslot+(\RslotOut-\Rslot)/2)*cos(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)},{(\Rslot+(\RslotOut-\Rslot)/2)*sin(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)}) circle (0.1);
-
-        \path[draw=signalblue, line width=1pt]
-        ({(\Rslot+(\RslotOut-\Rslot)/2)*cos(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)},{(\Rslot+(\RslotOut-\Rslot)/2)*sin(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)}) -- ++ (0.1cm,-0.05);
-        \path[draw=signalblue, line width=1pt]
-        ({(\Rslot+(\RslotOut-\Rslot)/2)*cos(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)},{(\Rslot+(\RslotOut-\Rslot)/2)*sin(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)}) -- ++ (-0.05,-0.1cm);
-        \path[draw=signalblue, line width=1pt]
-        ({(\Rslot+(\RslotOut-\Rslot)/2)*cos(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)},{(\Rslot+(\RslotOut-\Rslot)/2)*sin(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)})-- ++ (0.05,0.1cm);
-        \path[draw=signalblue, line width=1pt]
-        ({(\Rslot+(\RslotOut-\Rslot)/2)*cos(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)},{(\Rslot+(\RslotOut-\Rslot)/2)*sin(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)})-- ++ (-0.1cm,0.05);
-
-        % 180-195
-        \def\thetaStartWinding{180}  % Start angle of magnet (degrees)
-        \def\thetaEndWinding{195}    % End angle of magnet (degrees)
-        \path[draw=signalred, line width=1pt]
-        ({(\Rslot+(\RslotOut-\Rslot)/2)*cos(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)},{(\Rslot+(\RslotOut-\Rslot)/2)*sin(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)}) circle (0.1);
-        \path[draw=signalred,fill=signalred, line width=1pt]
-        ({(\Rslot+(\RslotOut-\Rslot)/2)*cos(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)},{(\Rslot+(\RslotOut-\Rslot)/2)*sin(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)}) circle (0.02);
-
-
-        % 210-225
-        \def\thetaStartWinding{210}  % Start angle of magnet (degrees)
-        \def\thetaEndWinding{225}    % End angle of magnet (degrees)
-        \path[draw=signalgreen, line width=1pt]
-        ({(\Rslot+(\RslotOut-\Rslot)/2)*cos(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)},{(\Rslot+(\RslotOut-\Rslot)/2)*sin(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)}) circle (0.1);
-        \path[draw=signalgreen, line width=1pt]
-        ({(\Rslot+(\RslotOut-\Rslot)/2)*cos(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)},{(\Rslot+(\RslotOut-\Rslot)/2)*sin(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)}) -- ++ (0.1cm,-0.05);
-        \path[draw=signalgreen, line width=1pt]
-        ({(\Rslot+(\RslotOut-\Rslot)/2)*cos(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)},{(\Rslot+(\RslotOut-\Rslot)/2)*sin(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)}) -- ++ (-0.05,-0.1cm);
-        \path[draw=signalgreen, line width=1pt]
-        ({(\Rslot+(\RslotOut-\Rslot)/2)*cos(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)},{(\Rslot+(\RslotOut-\Rslot)/2)*sin(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)})-- ++ (0.05,0.1cm);
-        \path[draw=signalgreen, line width=1pt]
-        ({(\Rslot+(\RslotOut-\Rslot)/2)*cos(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)},{(\Rslot+(\RslotOut-\Rslot)/2)*sin(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)})-- ++ (-0.1cm,0.05);
-
-        % 240-255
-        \def\thetaStartWinding{240}  % Start angle of magnet (degrees)
-        \def\thetaEndWinding{255}    % End angle of magnet (degrees)
-        \path[draw=signalblue, line width=1pt]
-        ({(\Rslot+(\RslotOut-\Rslot)/2)*cos(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)},{(\Rslot+(\RslotOut-\Rslot)/2)*sin(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)}) circle (0.1);
-        \path[draw=signalblue,fill=signalblue, line width=1pt]
-        ({(\Rslot+(\RslotOut-\Rslot)/2)*cos(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)},{(\Rslot+(\RslotOut-\Rslot)/2)*sin(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)}) circle (0.02);
-
-
-        % 270-285
-        \def\thetaStartWinding{270}  % Start angle of magnet (degrees)
-        \def\thetaEndWinding{285}    % End angle of magnet (degrees)
-        \path[draw=signalred, line width=1pt]
-        ({(\Rslot+(\RslotOut-\Rslot)/2)*cos(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)},{(\Rslot+(\RslotOut-\Rslot)/2)*sin(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)}) circle (0.1);
-
-        \path[draw=signalred, line width=1pt]
-        ({(\Rslot+(\RslotOut-\Rslot)/2)*cos(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)},{(\Rslot+(\RslotOut-\Rslot)/2)*sin(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)}) -- ++ (0.1cm,-0.05);
-        \path[draw=signalred, line width=1pt]
-        ({(\Rslot+(\RslotOut-\Rslot)/2)*cos(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)},{(\Rslot+(\RslotOut-\Rslot)/2)*sin(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)}) -- ++ (-0.05,-0.1cm);
-        \path[draw=signalred, line width=1pt]
-        ({(\Rslot+(\RslotOut-\Rslot)/2)*cos(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)},{(\Rslot+(\RslotOut-\Rslot)/2)*sin(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)})-- ++ (0.05,0.1cm);
-        \path[draw=signalred, line width=1pt]
-        ({(\Rslot+(\RslotOut-\Rslot)/2)*cos(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)},{(\Rslot+(\RslotOut-\Rslot)/2)*sin(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)})-- ++ (-0.1cm,0.05);
-
-
-
-        % 300-315
-        \def\thetaStartWinding{300}  % Start angle of magnet (degrees)
-        \def\thetaEndWinding{315}    % End angle of magnet (degrees)
-        \path[draw=signalgreen, line width=1pt]
-        ({(\Rslot+(\RslotOut-\Rslot)/2)*cos(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)},{(\Rslot+(\RslotOut-\Rslot)/2)*sin(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)}) circle (0.1);
-        \path[draw=signalgreen,fill=signalgreen, line width=1pt]
-        ({(\Rslot+(\RslotOut-\Rslot)/2)*cos(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)},{(\Rslot+(\RslotOut-\Rslot)/2)*sin(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)}) circle (0.02);
-
-
-
-        % 330-360
-        \def\thetaStartWinding{330}  % Start angle of magnet (degrees)
-        \def\thetaEndWinding{345}    % End angle of magnet (degrees)
-        \path[draw=signalblue, line width=1pt]
-        ({(\Rslot+(\RslotOut-\Rslot)/2)*cos(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)},{(\Rslot+(\RslotOut-\Rslot)/2)*sin(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)}) circle (0.1);
-
-        \path[draw=signalblue, line width=1pt]
-        ({(\Rslot+(\RslotOut-\Rslot)/2)*cos(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)},{(\Rslot+(\RslotOut-\Rslot)/2)*sin(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)}) -- ++ (0.1cm,-0.05);
-        \path[draw=signalblue, line width=1pt]
-        ({(\Rslot+(\RslotOut-\Rslot)/2)*cos(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)},{(\Rslot+(\RslotOut-\Rslot)/2)*sin(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)}) -- ++ (-0.05,-0.1cm);
-        \path[draw=signalblue, line width=1pt]
-        ({(\Rslot+(\RslotOut-\Rslot)/2)*cos(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)},{(\Rslot+(\RslotOut-\Rslot)/2)*sin(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)})-- ++ (0.05,0.1cm);
-        \path[draw=signalblue, line width=1pt]
-        ({(\Rslot+(\RslotOut-\Rslot)/2)*cos(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)},{(\Rslot+(\RslotOut-\Rslot)/2)*sin(\thetaStartWinding+(\thetaEndWinding-\thetaStartWinding)/2)})-- ++ (-0.1cm,0.05);
-
-    \end{tikzpicture}
-    \caption{Sketch of the utilized PMSM.}
-    \label{fig:PMSM}
+	\end{tikzpicture}
+	\caption{Sketch of the utilized PMSM.}
+	\label{fig:PMSM}
 \end{figure}

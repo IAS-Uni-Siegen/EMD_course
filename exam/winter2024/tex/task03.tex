@@ -9,52 +9,51 @@
 A single-phase \SI{50}{\hertz} transformer with a rated apparent power of \SI{3}{\kilo\volt\ampere} for a welding application was delivered without further information regarding its operation characteristics. Hence, experimental tests need to be conducted to identify its T-type equivalent circuit diagram parameters.
 
 \begin{germanblock}
-    Ein einphasiger \SI{50}{\hertz} Transformator mit einer Nennscheinleistung von \SI{3}{\kilo\volt\ampere} für eine Schweißanwendung wurde ohne weitere Informationen über seine Betriebseigenschaften geliefert. Daher müssen experimentelle Tests durchgeführt werden, um die Parameter des T-Ersatzschaltbildes zu ermitteln.
+	Ein einphasiger \SI{50}{\hertz} Transformator mit einer Nennscheinleistung von \SI{3}{\kilo\volt\ampere} für eine Schweißanwendung wurde ohne weitere Informationen über seine Betriebseigenschaften geliefert. Daher müssen experimentelle Tests durchgeführt werden, um die Parameter des T-Ersatzschaltbildes zu ermitteln.
 \end{germanblock}
-
 
 \subtask{During an open-circuit test with $U_{1,\mathrm{o}} =\SI{230}{\volt}$, a secondary voltage of $U_{2,\mathrm{o}} =\SI{5.476}{\volt}$ is measured. Estimate the transformation ratio as well as the nominal primary and secondary current.}{2}
 \subtaskGerman{Bei einer Leerlaufprüfung mit $U_{1,\mathrm{o}} =\SI{230}{\volt}$ wird eine Sekundärspannung von $U_{2,\mathrm{o}} =\SI{5,476}{\volt}$ gemessen. Schätzen Sie das Übersetzungsverhältnis sowie den nominellen Primär- und Sekundärstrom.}
 
 \begin{solutionblock}
-    Assuming that the no-load losses can be neglected, the transformation ratio is
-    $$
-    \ddot{u} \approx \frac{U_{1,\mathrm{o}}}{U_{2,\mathrm{o}}} = 42.
-    $$
-    The primary and secondary nominal currents can be estimated as
-    $$
-    I_{1,\mathrm{n}} \approx \frac{S}{U_{1,\mathrm{o}}} = \SI{13.04}{\ampere}, \quad I_{2,\mathrm{n}} \approx \frac{S}{U_{2,\mathrm{o}}} = \SI{547.85}{\ampere}.
-    $$
+	Assuming that the no-load losses can be neglected, the transformation ratio is
+	$$
+		\ddot{u} \approx \frac{U_{1,\mathrm{o}}}{U_{2,\mathrm{o}}} = 42.
+	$$
+	The primary and secondary nominal currents can be estimated as
+	$$
+		I_{1,\mathrm{n}} \approx \frac{S}{U_{1,\mathrm{o}}} = \SI{13.04}{\ampere}, \quad I_{2,\mathrm{n}} \approx \frac{S}{U_{2,\mathrm{o}}} = \SI{547.85}{\ampere}.
+	$$
 \end{solutionblock}
 
 \subtask{During the same open-circuit test, an active input power of $P_{1,\mathrm{o}}=\SI{60}{\watt}$ and apparent power of  $S_{1,\mathrm{o}}=\SI{90}{\volt\ampere}$ were measured. Neglecting ohmic power losses and stray inductances, determine the iron loss resistance $R_\mathrm{c}$ as well as the mutual inductance $M'$ and $M$ (transformed to primary side and untransformed value).}{3}
 \subtaskGerman{Bei der gleichen Leerlaufprüfung wurden eingansseitig eine Wirkleistung von $P_{1,\mathrm{o}}=\SI{60}{\watt}$ sowie Scheinleistung von $S_{1,\mathrm{o}}=\SI{90}{\volt\ampere}$ gemessen. Unter Vernachlässigung der ohmschen Verluste sowie der Einflüsse der Streuinduktivitäten sind der Eisenverlustwiderstand $R_\mathrm{c}$ sowie die Gegeninduktivität $M'$ und $M$ (transformiert auf die Primärseite und untransformiert) zu bestimmen.}
 
 \begin{solutionblock}
-    Based on the made assumptions, the measured active input power is dissipated as iron losses yielding
-    $$
-    R_\mathrm{c} = \frac{U^2_{1,\mathrm{o}}}{P_{1,\mathrm{o}}} = \SI{881.6}{\ohm}.
-    $$
-    Based on the measured input powers, the power factor for the open-circuit test is
-    $$
-    \cos(\varphi_\mathrm{o}) = \frac{P_{1,\mathrm{o}}}{S_{1,\mathrm{o}}} = \frac{2}{3} \quad \Leftrightarrow \quad \varphi_\mathrm{o} = \SI{48.19}{\degree}.
-    $$
-    The input current during the open-circuit test must have been
-    $$
-    I_{1,\mathrm{o}} = \frac{S_{1,\mathrm{o}}}{U_{1,\mathrm{o}}} = \SI{0.39}{\ampere}. 
-    $$
-    The reactance of the open-circuit transformer is
-    $$
-    X_\mathrm{o} = \frac{U_{1,\mathrm{o}}}{I_{1,\mathrm{o}}}\frac{1}{\sin(\varphi_\mathrm{o})} = Z_\mathrm{0} \frac{1}{\sin(\varphi_\mathrm{o})} = \SI{793.58}{\ohm}.
-    $$
-    This reactance must be identical to the reactance provided by the transformed mutual inductance as the stray inductance impact is neglected:
-    $$
-    \omega M' = X_\mathrm{o} \quad \Leftrightarrow \quad M' =\frac{X_\mathrm{o}}{\omega} = \SI{2.53}{\henry}.
-    $$
-    Based on the estimated transformation ratio, the original mutual inductance yields
-    $$
-    M = \frac{1}{\ddot{u}}M' = \SI{0.06}{\henry}.
-    $$
+	Based on the made assumptions, the measured active input power is dissipated as iron losses yielding
+	$$
+		R_\mathrm{c} = \frac{U^2_{1,\mathrm{o}}}{P_{1,\mathrm{o}}} = \SI{881.6}{\ohm}.
+	$$
+	Based on the measured input powers, the power factor for the open-circuit test is
+	$$
+		\cos(\varphi_\mathrm{o}) = \frac{P_{1,\mathrm{o}}}{S_{1,\mathrm{o}}} = \frac{2}{3} \quad \Leftrightarrow \quad \varphi_\mathrm{o} = \SI{48.19}{\degree}.
+	$$
+	The input current during the open-circuit test must have been
+	$$
+		I_{1,\mathrm{o}} = \frac{S_{1,\mathrm{o}}}{U_{1,\mathrm{o}}} = \SI{0.39}{\ampere}.
+	$$
+	The reactance of the open-circuit transformer is
+	$$
+		X_\mathrm{o} = \frac{U_{1,\mathrm{o}}}{I_{1,\mathrm{o}}}\frac{1}{\sin(\varphi_\mathrm{o})} = Z_\mathrm{0} \frac{1}{\sin(\varphi_\mathrm{o})} = \SI{793.58}{\ohm}.
+	$$
+	This reactance must be identical to the reactance provided by the transformed mutual inductance as the stray inductance impact is neglected:
+	$$
+		\omega M' = X_\mathrm{o} \quad \Leftrightarrow \quad M' =\frac{X_\mathrm{o}}{\omega} = \SI{2.53}{\henry}.
+	$$
+	Based on the estimated transformation ratio, the original mutual inductance yields
+	$$
+		M = \frac{1}{\ddot{u}}M' = \SI{0.06}{\henry}.
+	$$
 \end{solutionblock}
 
 \subtask{During a subsequent short-circuit test with $U_{\mathrm{1,s}}=\SI{20}{\volt}$, the following measurements have been obtained: $I_{\mathrm{1,s}}=\SI{13}{\ampere}$, $P_{\mathrm{1,s}}=\SI{100}{\watt}$. Determine $R_1 = R'_2$ as well as the untransformed $R_2$. Likewise, find $L_{1,\sigma}=L'_{2,\sigma}$ as well as the untransformed $L_{2,\sigma}$. Neglect the mutual inductance's impact.}{3}
@@ -62,24 +61,24 @@ A single-phase \SI{50}{\hertz} transformer with a rated apparent power of \SI{3}
 \subtaskGerman{Bei einer anschließenden Kurzschlussprüfung mit $U_{\mathrm{1,s}}=\SI{20}{\volt}$ wurden folgende Messwerte ermittelt: $I_{\mathrm{1,s}}=\SI{13}{\ampere}$, $P_{\mathrm{1,s}}=\SI{100}{\watt}$. Bestimmen Sie $R_1 = R'_2$ sowie das untransformierte $R_2$. Bestimmen Sie ebenfalls $L_{1,\sigma}=L'_{2,\sigma}$ sowie das untransformierte $L_{2,\sigma}$. Vernachlässigen Sie hierbei den Einfluss der Gegeninduktivität.}
 
 \begin{solutionblock}
-    The short-circuit impedance is
-    $$
-    Z_\mathrm{s} = \frac{U_{\mathrm{1,s}}}{I_{\mathrm{1,s}}} = \SI{1.54}{\ohm},
-    $$
-    while the corresponding power factor is
-    $$
-    \cos(\varphi_\mathrm{s}) = \frac{P_{\mathrm{1,s}}}{U_{\mathrm{1,s}}I_{\mathrm{1,s}}} = 0.385 \quad \Leftrightarrow \quad \varphi_\mathrm{s} = \SI{67.38}{\degree}.
-    $$
-    Separating the real and imaginary part of the impedance, one receives
-    $$
-    R_1 + R'_2 = Z_\mathrm{s}\cos(\varphi_\mathrm{s}) = \SI{0.593}{\ohm} \quad \Longrightarrow \quad R_1 = R'_2 =  \SI{0.297}{\ohm}
-    $$
-    and
-    $$
-    (L_{1,\sigma} + L'_{2,\sigma})\omega = Z_\mathrm{s}\sin(\varphi_\mathrm{s}) = \SI{1.422}{\ohm} \quad \Longrightarrow \quad L_{1,\sigma} = L'_{2,\sigma} =  \SI{2.26}{\milli\henry}.
-    $$
-    The untransformed secondary values result in
-    $$
-    R_2 = \frac{1}{\ddot{u}^2} R'_2 = \SI{0.17}{\milli\ohm}, \quad L_{2,\sigma} = \frac{1}{\ddot{u}^2} L'_{2,\sigma} = \SI{1.28}{\micro\henry}.
-    $$
+	The short-circuit impedance is
+	$$
+		Z_\mathrm{s} = \frac{U_{\mathrm{1,s}}}{I_{\mathrm{1,s}}} = \SI{1.54}{\ohm},
+	$$
+	while the corresponding power factor is
+	$$
+		\cos(\varphi_\mathrm{s}) = \frac{P_{\mathrm{1,s}}}{U_{\mathrm{1,s}}I_{\mathrm{1,s}}} = 0.385 \quad \Leftrightarrow \quad \varphi_\mathrm{s} = \SI{67.38}{\degree}.
+	$$
+	Separating the real and imaginary part of the impedance, one receives
+	$$
+		R_1 + R'_2 = Z_\mathrm{s}\cos(\varphi_\mathrm{s}) = \SI{0.593}{\ohm} \quad \Longrightarrow \quad R_1 = R'_2 =  \SI{0.297}{\ohm}
+	$$
+	and
+	$$
+		(L_{1,\sigma} + L'_{2,\sigma})\omega = Z_\mathrm{s}\sin(\varphi_\mathrm{s}) = \SI{1.422}{\ohm} \quad \Longrightarrow \quad L_{1,\sigma} = L'_{2,\sigma} =  \SI{2.26}{\milli\henry}.
+	$$
+	The untransformed secondary values result in
+	$$
+		R_2 = \frac{1}{\ddot{u}^2} R'_2 = \SI{0.17}{\milli\ohm}, \quad L_{2,\sigma} = \frac{1}{\ddot{u}^2} L'_{2,\sigma} = \SI{1.28}{\micro\henry}.
+	$$
 \end{solutionblock}

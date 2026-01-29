@@ -8,42 +8,38 @@
 
 The cross-section of a permanent magnet synchronous machine (PMSM) is given in \autoref{fig:PMSM} with the parameters from \autoref{tab:para_SynchonousMachine}. All windings per phase are connected in parallel ($a = 2$).
 
-
 \begin{germanblock}
-    Der Querschnitt einer permanenterregten Synchronmaschine (PMSM) ist in~\autoref{fig:PMSM} mit den Parametern in~\autoref{tab:para_SynchonousMachine} gegeben. Alle Wicklungen einer Phase sind parallel geschaltet ($a = 2$).
+	Der Querschnitt einer permanenterregten Synchronmaschine (PMSM) ist in~\autoref{fig:PMSM} mit den Parametern in~\autoref{tab:para_SynchonousMachine} gegeben. Alle Wicklungen einer Phase sind parallel geschaltet ($a = 2$).
 \end{germanblock}
 
 \input{./fig/winding.tex}
 
 \begin{table}[htb]
-    \caption{Parameters of the PMSM.}
-    \centering
-    \begin{tabular}{llll}\toprule
-        Symbol           & Value                             & Symbol            & Value               \\
-        \midrule
-        $l_{\mathrm{z}}$ & $\SI{0.45}{\metre}$               & $d_{\mathrm{si}}$ & $\SI{0.3}{\metre}$  \\
-        $n_{\mathrm{n}}$ & $2500~\nicefrac{1}{\mathrm{min}}$ & $N_{\mathrm{c}}$  & 5 windings per coil \\
-        \bottomrule
-    \end{tabular}
-    \label{tab:para_SynchonousMachine}
+	\caption{Parameters of the PMSM.}
+	\centering
+	\begin{tabular}{llll}\toprule
+		Symbol           & Value                             & Symbol            & Value               \\
+		\midrule
+		$l_{\mathrm{z}}$ & $\SI{0.45}{\metre}$               & $d_{\mathrm{si}}$ & $\SI{0.3}{\metre}$  \\
+		$n_{\mathrm{n}}$ & $2500~\nicefrac{1}{\mathrm{min}}$ & $N_{\mathrm{c}}$  & 5 windings per coil \\
+		\bottomrule
+	\end{tabular}
+	\label{tab:para_SynchonousMachine}
 \end{table}
-
-
 
 \subtask{What is the number of slots $Q$, the number of phases $m$ and the number of notches $q$? In addition, calculate the pole pitch $\rho_\mathrm{p}$.}{2}
 \subtaskGerman{Was ist die Anzahl der Nuten $Q$, die Anzahl der Phasen $m$ und die Lochzahl $q$? Berechnen Sie zusätzlich die Polteilung $\rho_{\mathrm{p}}$.}
 
 \begin{solutionblock}
-    The number of slots can be counted and is $Q$ = 12. The number of phases can be seen at the different colors and distribution of the stator winding, thus $m$ = 3. The number of notches results in:
-    $$
-        q = \frac{Q}{2pm} = \frac{12}{2\cdot 2\cdot 3} = 1.
-    $$
+	The number of slots can be counted and is $Q$ = 12. The number of phases can be seen at the different colors and distribution of the stator winding, thus $m$ = 3. The number of notches results in:
+	$$
+		q = \frac{Q}{2pm} = \frac{12}{2\cdot 2\cdot 3} = 1.
+	$$
 
-    In addition, the pole pitch is calculated by:
-    $$
-        \rho_{\mathrm{p}} = \frac{\pi}{p} = \frac{\pi}{2}.
-    $$
-
+	In addition, the pole pitch is calculated by:
+	$$
+		\rho_{\mathrm{p}} = \frac{\pi}{p} = \frac{\pi}{2}.
+	$$
 
 \end{solutionblock}
 
@@ -51,63 +47,58 @@ The cross-section of a permanent magnet synchronous machine (PMSM) is given in \
 \subtaskGerman{Berechnen Sie den Wicklungsfaktor $\xi_{\mathrm{w},k}$ für die Grundwelle ($k$ = 1).}
 
 \begin{solutionblock}
-    The winding factor is defined as
-    $$
-        \xi_{\mathrm{w},k} = \xi_{\mathrm{d},k} \xi_{\mathrm{p},k},
-    $$
-    with $k$ = 1 for the fundamental wave. The distribution factor is calculated by
-    $$
-        \xi_{\mathrm{d},1} = \frac{\sin\left(\frac{\pi}{2m}\right)}{q \sin\left(\frac{\pi}{2mq}\right)} = \frac{\sin\left(\frac{\pi}{2\cdot 3}\right)}{1\cdot \sin\left(\frac{\pi}{2\cdot 3\cdot 1}\right)} = 1
-    $$
-    and, the pitch factor is
-    $$
-        \xi_{\mathrm{p},1} = \sin\left(\frac{\pi}{2}\frac{y}{\rho_{\mathrm{p}}}\right) = \sin\left(\frac{\pi}{2} \cdot \frac{3}{\pi/2}\right) = 0.14,
-    $$
-    resulting in:
-    $$
-        \xi_{\mathrm{w},1} = 1 \cdot 0.14 = 0.14 .
-    $$
+	The winding factor is defined as
+	$$
+		\xi_{\mathrm{w},k} = \xi_{\mathrm{d},k} \xi_{\mathrm{p},k},
+	$$
+	with $k$ = 1 for the fundamental wave. The distribution factor is calculated by
+	$$
+		\xi_{\mathrm{d},1} = \frac{\sin\left(\frac{\pi}{2m}\right)}{q \sin\left(\frac{\pi}{2mq}\right)} = \frac{\sin\left(\frac{\pi}{2\cdot 3}\right)}{1\cdot \sin\left(\frac{\pi}{2\cdot 3\cdot 1}\right)} = 1
+	$$
+	and, the pitch factor is
+	$$
+		\xi_{\mathrm{p},1} = \sin\left(\frac{\pi}{2}\frac{y}{\rho_{\mathrm{p}}}\right) = \sin\left(\frac{\pi}{2} \cdot \frac{3}{\pi/2}\right) = 0.14,
+	$$
+	resulting in:
+	$$
+		\xi_{\mathrm{w},1} = 1 \cdot 0.14 = 0.14 .
+	$$
 \end{solutionblock}
-
-
 
 \subtask{The air gap flux density is given with $\hat{B}_\updelta^{(1)} = \SI{1.2}{\tesla}$. Calculate the flux per pole $\phi_\updelta$ and the flux linkage $\psi_{\mathrm{phase}}$.}{4}
 
 \begin{hintblock}
-    if and only if you are not able to solve this task, use $\psi_{\mathrm{phase}} = \SI{0.5}{\volt\second}$ as a substitute result for the following questions.
+	if and only if you are not able to solve this task, use $\psi_{\mathrm{phase}} = \SI{0.5}{\volt\second}$ as a substitute result for the following questions.
 \end{hintblock}
 
 \subtaskGerman{Die Luftspaltflussdichte ist gegeben mit $\hat{B}_\updelta^{(1)} = \SI{1.2}{\tesla}$. Berechnen Sie den Fluss pro Pol $\phi_\updelta$ und die Flussverkettung $\psi_{\mathrm{phase}}$.}
 
 \begin{germanhintblock}
-    nur für den Fall, dass Sie kein Ergebnis ermitteln können, verwenden Sie $\psi_{\mathrm{phase}} = \SI{0.5}{\volt\second}$ für die nachfolgenden Aufgaben.
+	nur für den Fall, dass Sie kein Ergebnis ermitteln können, verwenden Sie $\psi_{\mathrm{phase}} = \SI{0.5}{\volt\second}$ für die nachfolgenden Aufgaben.
 \end{germanhintblock}
 
-
-
-
 \begin{solutionblock}
-    The pole pitch as a distance in meter is calculated by
-    $$
-        \tau_{\mathrm{p}} = \frac{d_{\mathrm{s,i}}\pi}{2p} = \frac{\SI{0.3}{\metre}\cdot \pi}{2\cdot 2} = \SI{0.236}{\metre},
-    $$
-    and the effective cross-sectional area of the machine per pole is determined with
-    $$
-        A_\updelta = \tau_{\mathrm{p}} l_{\mathrm{z}} = \SI{0.236}{\metre} \cdot \SI{0.45}{\metre} = \SI{0.106}{\metre^2}.
-    $$
+	The pole pitch as a distance in meter is calculated by
+	$$
+		\tau_{\mathrm{p}} = \frac{d_{\mathrm{s,i}}\pi}{2p} = \frac{\SI{0.3}{\metre}\cdot \pi}{2\cdot 2} = \SI{0.236}{\metre},
+	$$
+	and the effective cross-sectional area of the machine per pole is determined with
+	$$
+		A_\updelta = \tau_{\mathrm{p}} l_{\mathrm{z}} = \SI{0.236}{\metre} \cdot \SI{0.45}{\metre} = \SI{0.106}{\metre^2}.
+	$$
 
-    Hence, air gap flux is given with
-    $$
-        \phi_\updelta = A_\updelta \hat{B}_\updelta^{(1)} = \SI{0.106}{\metre^2} \cdot \SI{1.2}{\tesla} = \SI{0.127}{\volt\second},
-    $$
-    and the number of windings per phase is defined by
-    $$
-        N_{\mathrm{phase}} = \frac{2pq N_{\mathrm{c}}}{a} = \frac{2\cdot 2\cdot 1\cdot 5}{2} = 10,
-    $$
-    resulting in the flux linkage
-    $$
-        \psi_{\mathrm{phase}} = \phi_\updelta N_{\mathrm{phase}} \xi_{\mathrm{w},1} = \SI{0.127}{\volt\second} \cdot 10 \cdot 0.14 = \SI{0.18}{\volt\second}.
-    $$
+	Hence, air gap flux is given with
+	$$
+		\phi_\updelta = A_\updelta \hat{B}_\updelta^{(1)} = \SI{0.106}{\metre^2} \cdot \SI{1.2}{\tesla} = \SI{0.127}{\volt\second},
+	$$
+	and the number of windings per phase is defined by
+	$$
+		N_{\mathrm{phase}} = \frac{2pq N_{\mathrm{c}}}{a} = \frac{2\cdot 2\cdot 1\cdot 5}{2} = 10,
+	$$
+	resulting in the flux linkage
+	$$
+		\psi_{\mathrm{phase}} = \phi_\updelta N_{\mathrm{phase}} \xi_{\mathrm{w},1} = \SI{0.127}{\volt\second} \cdot 10 \cdot 0.14 = \SI{0.18}{\volt\second}.
+	$$
 
 \end{solutionblock}
 
@@ -115,14 +106,14 @@ The cross-section of a permanent magnet synchronous machine (PMSM) is given in \
 \subtaskGerman{Berechnen Sie die Grundwellenkomponente der induzierten Spannung $U_{\mathrm{i,phase}}$ für eine Phase.}
 
 \begin{solutionblock}
-    The electrical angular frequency is defined by
-    $$
-        \omega_{\mathrm{el}} = 2 \pi f_{\mathrm{mech}} p = 2 \pi \cdot \SI{\frac{2500}{60}}{\per\second} \cdot 2 = \SI{523.6}{\per\second},
-    $$
-    and therefore, the induced voltage is:
-    $$
-        U_{\mathrm{i,phase}} = \omega_{\mathrm{el}} \psi_{\mathrm{phase}} = \SI{523.6}{\per\second} \cdot \SI{0.18}{\volt\second} = \SI{94.2}{\volt}.
-    $$
+	The electrical angular frequency is defined by
+	$$
+		\omega_{\mathrm{el}} = 2 \pi f_{\mathrm{mech}} p = 2 \pi \cdot \SI{\frac{2500}{60}}{\per\second} \cdot 2 = \SI{523.6}{\per\second},
+	$$
+	and therefore, the induced voltage is:
+	$$
+		U_{\mathrm{i,phase}} = \omega_{\mathrm{el}} \psi_{\mathrm{phase}} = \SI{523.6}{\per\second} \cdot \SI{0.18}{\volt\second} = \SI{94.2}{\volt}.
+	$$
 \end{solutionblock}
 
 % \subtask{Calculate .}{1}
