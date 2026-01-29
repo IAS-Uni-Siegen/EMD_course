@@ -34,16 +34,17 @@ jobs:
       - name: Check LaTeX formatting with latexindent (dry-run)
         run: |
           set -e
-
+          tmp_file="tmp_check_file"
           for ext in tex sty cls; do
-            for file in $(find . -name "*.${ext}" || true); do
-              formatted=$(latexindent -l=./course_template/.latexindent.yml -o=- "$file")
-              original=$(cat "$file")
-              if [ "$formatted" != "$original" ]; then
+            find . -name "*.${ext}" -type f -not -name "$tmp_file" | while read -r file; do
+              latexindent -m -l=./course_template/.latexindent.yml -o="$tmp_file" "$file"
+              if ! diff -qZb "$file" "$tmp_file.${ext}" > /dev/null; then
                 echo "::error file=$file::File is not properly formatted. Please run latexindent locally."
+                rm -f "$tmp_file.${ext}"
                 exit 1
               fi
-            done
+              rm -f "$tmp_file.${ext}"
+            done || exit 1
           done
           echo "All LaTeX files are properly formatted!"
       
