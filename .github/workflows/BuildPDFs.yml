@@ -10,6 +10,16 @@ on:
       - '**.py'
       - '**.ipynb'
       - '**.yml'
+  push:
+    branches:
+      - main
+    paths:
+      - '**.tex'
+      - '**.sty'
+      - '**.cls'
+      - '**.py'
+      - '**.ipynb'
+      - '**.yml'
   workflow_dispatch:
   
 jobs:
@@ -131,6 +141,7 @@ jobs:
 
   deploy:
     needs: build_latex
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     permissions:
       pages: write
       id-token: write
