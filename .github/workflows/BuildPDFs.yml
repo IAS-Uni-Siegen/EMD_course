@@ -1,25 +1,124 @@
 name: Build LaTeX PDFs
 on: 
-  push: 
+  pull_request:
+    branches:
+      - main
     paths:
-        - '**.tex'
+      - '**.tex'
+      - '**.sty'
+      - '**.cls'
+      - '**.py'
+      - '**.ipynb'
+      - '**.yml'
+  push:
+    branches:
+      - main
+    paths:
+      - '**.tex'
+      - '**.sty'
+      - '**.cls'
+      - '**.py'
+      - '**.ipynb'
+      - '**.yml'
   workflow_dispatch:
   
 jobs:
-  build_latex:
+  format-check:
     runs-on: ubuntu-latest
     steps:
       - name: Set up Git repository
         uses: actions/checkout@v4
-      - name: Initialize and update submodules  #initialize and update submodules
+      
+      - name: Initialize and update submodules
         run: |
           git submodule init
           git submodule update
+      
+      - name: Install latexindent binary
+        run: |
+          set -e
+
+          curl -L -o latexindent-linux \
+            https://github.com/cmhughes/latexindent.pl/releases/latest/download/latexindent-linux
+          chmod +x latexindent-linux
+          sudo mv latexindent-linux /usr/local/bin/latexindent
+          echo "latexindent installed at:"
+          which latexindent || echo "latexindent not found on PATH"
+
+          echo "latexindent verbose version info:"
+          latexindent -vv
+
+      - name: Check LaTeX formatting with latexindent (dry-run)
+        run: |
+          set -e
+          tmp_file="tmp_check_file"
+          for ext in tex sty cls; do
+            find . -name "*.${ext}" -type f -not -name "$tmp_file" | while read -r file; do
+              latexindent -m -l=./course_template/.latexindent.yml -o="$tmp_file" "$file"
+              if ! diff -qZb "$file" "$tmp_file.${ext}" > /dev/null; then
+                echo "::error file=$file::File is not properly formatted. Please run latexindent locally."
+                rm -f "$tmp_file.${ext}"
+                exit 1
+              fi
+              rm -f "$tmp_file.${ext}"
+            done || exit 1
+          done
+          echo "All LaTeX files are properly formatted!"
+      
+      - name: Install Python format tools
+        run: |
+          set -e
+          python -m pip install --upgrade pip
+          pip install ruff
+
+      - name: Check Python + Notebook formatting (Ruff)
+        run: |
+          set -e
+
+          echo "Checking .py files formatting..."
+          PY_FAILED=0
+          for file in $(find . -name "*.py" -not -path "*/.*"); do
+            if ! ruff format --check --config ./course_template/pyproject.toml "$file"; then
+              echo "::error file=$file::Formatting check failed for $file."
+              PY_FAILED=1
+            fi
+          done
+
+          echo "Checking .ipynb files formatting..."
+          NB_FAILED=0
+          for file in $(find . -name "*.ipynb" -not -path "*/.*"); do
+            if ! ruff format --check --config ./course_template/pyproject.toml "$file"; then
+              echo "::error file=$file::Formatting check failed for $file."
+              echo "TIP: There is likely a trailing newline at the end of a code cell."
+              ruff format --diff --config ./course_template/pyproject.toml "$file"
+              NB_FAILED=1
+            fi
+          done
+
+          if [ $PY_FAILED -ne 0 ] || [ $NB_FAILED -ne 0 ]; then
+            echo "Formatting check failed. You can check by running 'ruff format .' locally."
+            exit 1
+          fi
+          
+          echo "All files passed formatting!"
+
+  build_latex:
+    needs: format-check
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Git repository
+        uses: actions/checkout@v4
+      
+      - name: Initialize and update submodules
+        run: |
+          git submodule init
+          git submodule update
+      
       - name: Compile LaTeX document    
         uses: xu-cheng/texlive-action@v2
         with:
           scheme: full
-          run: |            #runs build.py with submodule location and loopthrough examfolders and build pdf
+          run: |            
             cd exercise
             cp ../course_template/exerciseClass.cls ./
             python3 build.py
@@ -34,31 +133,23 @@ jobs:
             cp ../course_template/examClass.cls ./
             python3 build.py
             
-
-            
       - name: Upload PDF file
-        uses: actions/upload-pages-artifact@v3 #actions/upload-artifact@v4
+        uses: actions/upload-pages-artifact@v3
         with:
           name: github-pages
           path: built/
 
-
   deploy:
     needs: build_latex
-
-    # Grant GITHUB_TOKEN the permissions required to make a Pages deployment
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     permissions:
-      pages: write      # to deploy to Pages
-      id-token: write   # to verify the deployment originates from an appropriate source
-
-    # Deploy to the github-pages environment
+      pages: write
+      id-token: write
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-
-    # Specify runner + deployment step
     runs-on: ubuntu-latest
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4 # or specific "vX.X.X" version tag for this action
+        uses: actions/deploy-pages@v4

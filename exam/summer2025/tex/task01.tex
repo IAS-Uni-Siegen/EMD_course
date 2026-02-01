@@ -8,69 +8,62 @@
 
 A standardized EI-150 core made of electrical steel sheet with the geometry from \autoref{fig:EI_core} is to be analyzed. Its air gap length is $\delta = \SI{0.8}{\milli\metre}$ and all parts have a depth of $\SI{50}{\milli\metre}$. A coil with $N = 500$ turns around the middle yoke of the core leads to a magnetic flux density of $B_{\mathrm{Fe}} = \SI{1.2}{\tesla}$ in this yoke (at rated current). The magnetization curve of electrical steel is also depicted in \autoref{fig:EI_core}.
 
-
 \begin{germanblock}
-    Ein genormter EI-150 Kern aus Elektroblech mit den Abmessungen aus \autoref{fig:EI_core} ist zu analysieren. Dieser besitzt eine Luftspaltlänge von $\delta = \SI{0.8}{\milli\metre}$ und alle Komponenten weisen eine Tiefe von $\SI{50}{\milli\metre}$ auf. Eine Spule mit $N = 500$ Windungen ist auf dem Mittelschenkel angebracht, welche bei Nennstrom eine magnetische Flussdichte von $B_{\mathrm{Fe}} = \SI{1.2}{\tesla}$ in diesem Schenkel hervorruft. Die Magnetisierungskurve des Elektroblechs ist ebenfalls in \autoref{fig:EI_core} abgebildet.
+	Ein genormter EI-150 Kern aus Elektroblech mit den Abmessungen aus \autoref{fig:EI_core} ist zu analysieren. Dieser besitzt eine Luftspaltlänge von $\delta = \SI{0.8}{\milli\metre}$ und alle Komponenten weisen eine Tiefe von $\SI{50}{\milli\metre}$ auf. Eine Spule mit $N = 500$ Windungen ist auf dem Mittelschenkel angebracht, welche bei Nennstrom eine magnetische Flussdichte von $B_{\mathrm{Fe}} = \SI{1.2}{\tesla}$ in diesem Schenkel hervorruft. Die Magnetisierungskurve des Elektroblechs ist ebenfalls in \autoref{fig:EI_core} abgebildet.
 \end{germanblock}
 
 \begin{figure}[htb]
-    \begin{subfigure}{.49\textwidth}
-        \centering
-        \input{./fig/EI_core.tex}
-        \caption{EI-150 core geometry.}
-        \label{fig:EI_core_sketch}
-    \end{subfigure}
-    \begin{subfigure}{.49\textwidth}
-        \centering
-        \input{./fig/magnetization.tex}
-        \caption{Magnetization curve.}
-        \label{fig:magnetization_curve}
-    \end{subfigure}
-    \caption{EI-150 core and electrical steel magnetization curve.}
-    \label{fig:EI_core}
+	\begin{subfigure}{.49\textwidth}
+		\centering
+		\input{./fig/EI_core.tex}
+		\caption{EI-150 core geometry.}
+		\label{fig:EI_core_sketch}
+	\end{subfigure}
+	\begin{subfigure}{.49\textwidth}
+		\centering
+		\input{./fig/magnetization.tex}
+		\caption{Magnetization curve.}
+		\label{fig:magnetization_curve}
+	\end{subfigure}
+	\caption{EI-150 core and electrical steel magnetization curve.}
+	\label{fig:EI_core}
 \end{figure}
-
-
-
 
 \subtask{Calculate the magnetic flux $\phi_{\mathrm{Fe}}$ in the middle yoke.}{2}
 \subtaskGerman{Berechnen Sie den magnetischen Fluss $\phi_{\mathrm{Fe}}$ in dem Mittelschenkel.}
 
 \begin{solutionblock}
-    The area of the middle yoke according to the figure and text description is given by
-    $$
-        A_{\mathrm{Fe}} = (50\cdot 50)\SI{}{\milli\metre^2} = \SI{2500}{\milli\metre^2},
-    $$
-    and, thus the flux results in:
-    $$
-        \phi_{\mathrm{Fe}} = B_{\mathrm{Fe}} A_{\mathrm{Fe}} = \SI{1.2}{\tesla} \cdot \SI{2500}{\milli\metre^2} = \SI{3.0}{\milli\weber}.
-    $$
+	The area of the middle yoke according to the figure and text description is given by
+	$$
+		A_{\mathrm{Fe}} = (50\cdot 50)\SI{}{\milli\metre^2} = \SI{2500}{\milli\metre^2},
+	$$
+	and, thus the flux results in:
+	$$
+		\phi_{\mathrm{Fe}} = B_{\mathrm{Fe}} A_{\mathrm{Fe}} = \SI{1.2}{\tesla} \cdot \SI{2500}{\milli\metre^2} = \SI{3.0}{\milli\weber}.
+	$$
 \end{solutionblock}
-
 
 \subtask{How large is the magnetic flux density $B_{\updelta}$ in the middle yoke's air gap, when all leakage fluxes are neglected and there is no expansion of the magnetic field lines in the air gap?}{2}
 
 \begin{hintblock}
-    if and only if you are not able to solve this subtask, use $B_{\updelta} = \SI{1.0}{\tesla}$ as a substitute result for the following questions.
+	if and only if you are not able to solve this subtask, use $B_{\updelta} = \SI{1.0}{\tesla}$ as a substitute result for the following questions.
 \end{hintblock}
-
 
 \subtaskGerman{Wie groß ist die magnetische Flussdichte $B_{\updelta}$ im Luftspalt des Mittelschenkels, wenn alle Streuflüsse vernachlässigt werden und keine Ausdehnung der Magnetfeldlinien im Luftspalt stattfindet?}
 
 \begin{germanhintblock}
-    nur für den Fall, dass Sie kein Ergebnis ermitteln können, verwenden Sie $B_{\updelta} = \SI{1.0}{\tesla}$ für die nachfolgenden Aufgaben.
+	nur für den Fall, dass Sie kein Ergebnis ermitteln können, verwenden Sie $B_{\updelta} = \SI{1.0}{\tesla}$ für die nachfolgenden Aufgaben.
 \end{germanhintblock}
 
-
 \begin{solutionblock}
-    Without leakage fluxes, the magnetic flux in the core is identical to the magnetic flux in the air gap. Therefore,
-    $$
-        \phi_{\mathrm{Fe}} = \phi_{\updelta} = B_{\mathrm{Fe}} A_{\mathrm{Fe}} = B_{\updelta} A_{\updelta},
-    $$
-    and without the expansion of the magnetic field lines in the air gap both areas are identical, which results in:
-    $$
-        B_{\updelta} = B_{\mathrm{Fe}} \frac{A_{\mathrm{Fe}}}{A_{\updelta}} = \SI{1.2}{\tesla} \cdot \SI{1}{} = \SI{1.2}{\tesla}.
-    $$
+	Without leakage fluxes, the magnetic flux in the core is identical to the magnetic flux in the air gap. Therefore,
+	$$
+		\phi_{\mathrm{Fe}} = \phi_{\updelta} = B_{\mathrm{Fe}} A_{\mathrm{Fe}} = B_{\updelta} A_{\updelta},
+	$$
+	and without the expansion of the magnetic field lines in the air gap both areas are identical, which results in:
+	$$
+		B_{\updelta} = B_{\mathrm{Fe}} \frac{A_{\mathrm{Fe}}}{A_{\updelta}} = \SI{1.2}{\tesla} \cdot \SI{1}{} = \SI{1.2}{\tesla}.
+	$$
 
 \end{solutionblock}
 
@@ -78,74 +71,67 @@ A standardized EI-150 core made of electrical steel sheet with the geometry from
 
 \subtaskGerman{Bestimmen Sie die Permeabilität $\mu_{\mathrm{Fe}}$ im Elektroblech sowie die magnetische Feldstärke im Luftspalt $H_\updelta$ und im Elektroblech $H_\mathrm{Fe}$. Verwenden Sie $\mu_{\mathrm{0}} = \SI{4\pi10^{-7}}{\volt\second\per\ampere\per\metre}$ für die magnetische Feldkonstante.}
 \begin{solutionblock}
-    The magnetic field strength in the air gap is given with
-    $$
-        H_{\updelta} = \frac{B_{\updelta}}{\mu_{\mathrm{0}}} = \frac{\SI{1.2}{\tesla}}{\SI{4\pi 10^{-7}}{\volt\second\per\metre}} = \SI{954930}{\ampere\per\metre}.
-    $$
+	The magnetic field strength in the air gap is given with
+	$$
+		H_{\updelta} = \frac{B_{\updelta}}{\mu_{\mathrm{0}}} = \frac{\SI{1.2}{\tesla}}{\SI{4\pi 10^{-7}}{\volt\second\per\metre}} = \SI{954930}{\ampere\per\metre}.
+	$$
 
-    The magnetic field strength $H_{\mathrm{Fe}}$ in the electrical steel sheet is determined with the magnetization curve in~\autoref{fig:EI_core}. Thus,
-    $$
-        \mu_{\mathrm{Fe}} = \frac{B_{\mathrm{Fe}}}{H_{\mathrm{Fe}}} = \frac{\SI{1.2}{\tesla}}{\SI{500}{\ampere\per\metre}} = \SI{0.0024}{\volt\second\per\ampere\per\metre}
-    $$
-    results.
+	The magnetic field strength $H_{\mathrm{Fe}}$ in the electrical steel sheet is determined with the magnetization curve in~\autoref{fig:EI_core}. Thus,
+	$$
+		\mu_{\mathrm{Fe}} = \frac{B_{\mathrm{Fe}}}{H_{\mathrm{Fe}}} = \frac{\SI{1.2}{\tesla}}{\SI{500}{\ampere\per\metre}} = \SI{0.0024}{\volt\second\per\ampere\per\metre}
+	$$
+	results.
 \end{solutionblock}
-
-
 
 \subtask{Calculate the magnetomotive force $\theta$ along an idealized, closed field line through the middle and one outer yoke (cf. the field line contour $l$ in \autoref{fig:EI_core_sketch}).}{2}
 
 \subtaskGerman{Berechnen Sie die magnetische Spannung $\theta$ entlang einer idealisierten, geschlossenen Feldlinie durch den Mittel- und einen äußeren Schenkel (vgl. den Feldlinienverlauf $l$ in \autoref{fig:EI_core_sketch}).}
 
-
 \begin{solutionblock}
-    The split magnetic circuit is symmetrical, therefore, it can be treated like an unsplit magnetic circuit and only one half needs to be taken into account. The magnetomotive force is given by
-    $$
-        \theta = H_{\mathrm{Fe}} l_{\mathrm{Fe}} + H_{\updelta} l_{\updelta} = H_{\mathrm{Fe}} \left(l_{\mathrm{I}} + l_{\mathrm{E}}\right) + H_{\updelta} l_{\updelta},
-    $$
-    with
-    $$
-        l_{\mathrm{E}} = 2e+g+2c = 2\cdot \SI{75}{\milli\metre} + \SI{25}{\milli\metre} + 2\cdot \SI{25}{\milli\metre} = \SI{225}{\milli\metre},
-    $$
-    and
-    $$
-        l_{\mathrm{I}} = g + 2c = \SI{25}{\milli\metre} + 2\cdot \SI{25}{\milli\metre} = \SI{75}{\milli\metre},
-    $$
-    and $l_{\updelta} = \SI{1.6}{\milli\metre}$. This results in:
-    $$
-        \theta = \SI{500}{\ampere\per\metre} \cdot \SI{0.3}{\metre} + \SI{954930}{\ampere\per\metre} \cdot \SI{0.0016}{\metre} = \SI{1677.9}{A}.
-    $$
-
-
+	The split magnetic circuit is symmetrical, therefore, it can be treated like an unsplit magnetic circuit and only one half needs to be taken into account. The magnetomotive force is given by
+	$$
+		\theta = H_{\mathrm{Fe}} l_{\mathrm{Fe}} + H_{\updelta} l_{\updelta} = H_{\mathrm{Fe}} \left(l_{\mathrm{I}} + l_{\mathrm{E}}\right) + H_{\updelta} l_{\updelta},
+	$$
+	with
+	$$
+		l_{\mathrm{E}} = 2e+g+2c = 2\cdot \SI{75}{\milli\metre} + \SI{25}{\milli\metre} + 2\cdot \SI{25}{\milli\metre} = \SI{225}{\milli\metre},
+	$$
+	and
+	$$
+		l_{\mathrm{I}} = g + 2c = \SI{25}{\milli\metre} + 2\cdot \SI{25}{\milli\metre} = \SI{75}{\milli\metre},
+	$$
+	and $l_{\updelta} = \SI{1.6}{\milli\metre}$. This results in:
+	$$
+		\theta = \SI{500}{\ampere\per\metre} \cdot \SI{0.3}{\metre} + \SI{954930}{\ampere\per\metre} \cdot \SI{0.0016}{\metre} = \SI{1677.9}{A}.
+	$$
 
 \end{solutionblock}
-
 
 \subtask{After the I core has been connected to the E core, only a parasitic air gap of $\delta= \SI{0.1}{\milli\metre}$  remains. What is the necessary current $I'_\mathrm{n}$ to produce the same magnetic field density in the middle yoke compared to the previous configuration?}{2}
 \subtaskGerman{Nachdem der I Kern mit dem E Kern verbunden ist, bleibt nur noch ein parasitärer Luftspalt von $\delta= \SI{0.1}{\milli\metre}$ übrig. Welcher Strom $I'_\mathrm{n}$ durch die Spule ist notwendig, um die gleiche magnetische Flussdichte im Mittelschenkel wie in der vorherigen Konfiguration zu erzeugen?}
 
 \begin{solutionblock}
-    With the magnetomotive force from the previous task
-    $$
-        \theta = H_{\mathrm{Fe}} l_{\mathrm{Fe}} + H_{\updelta} l_{\updelta}
-    $$
-    and
-    $$
-        \theta = N I
-    $$
-    the necessary current (for the initial air gap length) results in:
-    $$
-        I_{\mathrm{n}} = \frac{\theta}{N} = \frac{\SI{1677.9}{A}}{500} = \SI{3.4}{\ampere}.
-    $$
+	With the magnetomotive force from the previous task
+	$$
+		\theta = H_{\mathrm{Fe}} l_{\mathrm{Fe}} + H_{\updelta} l_{\updelta}
+	$$
+	and
+	$$
+		\theta = N I
+	$$
+	the necessary current (for the initial air gap length) results in:
+	$$
+		I_{\mathrm{n}} = \frac{\theta}{N} = \frac{\SI{1677.9}{A}}{500} = \SI{3.4}{\ampere}.
+	$$
 
-    With the reduced air gap the magnetomotive force changed to
-    $$
-        \theta' = \SI{500}{\ampere\per\metre} \cdot \SI{0.3}{\metre} + \SI{954930}{\ampere\per\metre} \cdot 2\cdot \SI{0.0001}{\metre} = \SI{341}{A},
-    $$
-    which results in a necessary current of
-    $$
-        I'_{\mathrm{n}} = \frac{\theta'}{N} = \frac{\SI{341}{A}}{500} = \SI{0.68}{\ampere},
-    $$
-    thus, less current is needed.
+	With the reduced air gap the magnetomotive force changed to
+	$$
+		\theta' = \SI{500}{\ampere\per\metre} \cdot \SI{0.3}{\metre} + \SI{954930}{\ampere\per\metre} \cdot 2\cdot \SI{0.0001}{\metre} = \SI{341}{A},
+	$$
+	which results in a necessary current of
+	$$
+		I'_{\mathrm{n}} = \frac{\theta'}{N} = \frac{\SI{341}{A}}{500} = \SI{0.68}{\ampere},
+	$$
+	thus, less current is needed.
 \end{solutionblock}
-
 

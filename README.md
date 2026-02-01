@@ -55,3 +55,13 @@ See "Cite this repository" info box on the top-right or use the following BibTeX
     year = {2024}
 }
 ```
+
+### Contributing
+
+- We recommend using [VSCode](https://code.visualstudio.com/) as code editor.
+- [Ruff](https://github.com/astral-sh/ruff) should be installed.
+
+    ```python
+    pip install ruff
+    ```
+- It is expected that [LaTeX Workshop](https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop) extension and [Ruff](https://marketplace.visualstudio.com/items?itemName=charliermarsh.ruff) extension is installed so that formatting of the code is achieved automatically.

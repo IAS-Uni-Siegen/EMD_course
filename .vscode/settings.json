@@ -1,0 +1,23 @@
+{
+    "latex-workshop.formatting.latexindent.path": "latexindent",
+    "latex-workshop.formatting.latexindent.args": [
+        "-m",
+        "-l=%WORKSPACE_FOLDER%/course_template/.latexindent.yml",
+        "%TMPFILE%",
+        "-o=%TMPFILE%"
+    ],
+    "editor.formatOnSave": true,
+    "latex-workshop.formatting.latex": "latexindent",
+    "ruff.configuration": "./course_template/pyproject.toml",
+    "[python]": {
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": "explicit"
+        },
+        "editor.defaultFormatter": "charliermarsh.ruff"
+    },
+    "notebook.formatOnSave.enabled": true,
+    "notebook.codeActionsOnSave": {
+        "notebook.source.organizeImports": "explicit"
+    }
+}
