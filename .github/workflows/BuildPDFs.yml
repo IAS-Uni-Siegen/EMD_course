@@ -34,18 +34,15 @@ jobs:
           git submodule init
           git submodule update
       
-      - name: Install latexindent binary
+      - name: Install latexindent binary (v3.24.7)
         run: |
           set -e
-
           curl -L -o latexindent-linux \
-            https://github.com/cmhughes/latexindent.pl/releases/latest/download/latexindent-linux
+            https://github.com/cmhughes/latexindent.pl/releases/download/V3.24.7/latexindent-linux
+          
           chmod +x latexindent-linux
           sudo mv latexindent-linux /usr/local/bin/latexindent
-          echo "latexindent installed at:"
-          which latexindent || echo "latexindent not found on PATH"
-
-          echo "latexindent verbose version info:"
+          echo "latexindent installed at: $(which latexindent)"
           latexindent -vv
 
       - name: Check LaTeX formatting with latexindent (dry-run)
