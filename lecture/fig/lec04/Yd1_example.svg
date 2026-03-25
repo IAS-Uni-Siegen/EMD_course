@@ -24,8 +24,8 @@
     </filter>
     <linearGradient inkscape:collect="always" xlink:href="#linearGradient79" id="linearGradient80" x1="11.116694" y1="54.257" x2="68.501999" y2="54.257" gradientUnits="userSpaceOnUse"/>
     <linearGradient id="linearGradient79" inkscape:collect="always">
-      <stop style="stop-color:#D55E00;stop-opacity:1;" offset="0" id="stop79"/>
-      <stop style="stop-color:#D55E00;stop-opacity:0;" offset="1" id="stop80"/>
+      <stop style="stop-color:#CC3311;stop-opacity:1;" offset="0" id="stop79"/>
+      <stop style="stop-color:#CC3311;stop-opacity:0;" offset="1" id="stop80"/>
     </linearGradient>
     <filter id="filter3" filterUnits="userSpaceOnUse">
       <feOffset result="offset" dx="1.678" dy="2.487" in="SourceAlpha" id="feOffset3"/>
@@ -125,9 +125,9 @@
     <ellipse ry="0.39901915" rx="0.40116644" cy="90.927429" cx="24.595478" id="path5953-22-6-3" style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.256;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"/>
     <ellipse ry="0.39901915" rx="0.40116644" cy="67.323776" cx="-86.774635" id="path5953-2" style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.256;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal" transform="scale(-1,1)"/>
     <ellipse ry="0.39901915" rx="0.40116644" cy="91.059921" cx="-86.814819" id="path5953-2-7" style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.256;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal" transform="scale(-1,1)"/>
-    <path inkscape:connector-curvature="0" id="path5718-7-5" d="m 149.51285,71.112748 -9.98536,17.29516" style="fill:none;stroke:#009E73;stroke-width:0.265;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#TriangleInM)"/>
+    <path inkscape:connector-curvature="0" id="path5718-7-5" d="m 149.51285,71.112748 -9.98536,17.29516" style="fill:none;stroke:#009988;stroke-width:0.265;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#TriangleInM)"/>
     <path inkscape:connector-curvature="0" id="path5718-7-5-1" d="m 119.14276,67.937091 -6.61352,11.454952" style="fill:none;stroke:#000000;stroke-width:0.265;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#TriangleInM-6)"/>
-    <path inkscape:connector-curvature="0" id="path5718-7-5-1-2" d="m 118.85613,68.433546 -6.32689,10.958497" style="fill:none;stroke:#009E73;stroke-width:0.263963;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:0.263963, 0.791889;stroke-dashoffset:0;stroke-opacity:1"/>
+    <path inkscape:connector-curvature="0" id="path5718-7-5-1-2" d="m 118.85613,68.433546 -6.32689,10.958497" style="fill:none;stroke:#009988;stroke-width:0.263963;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:0.263963, 0.791889;stroke-dashoffset:0;stroke-opacity:1"/>
     <path inkscape:connector-curvature="0" id="path5718-7-5-0" d="m 140.12931,88.413976 19.96409,0.0038" style="fill:none;stroke:#000000;stroke-width:0.265;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#TriangleInM-1)"/>
     <path inkscape:connector-curvature="0" id="path5718-7-5-0-4" d="m 99.280557,79.379558 13.248683,0.01248" style="fill:none;stroke:#000000;stroke-width:0.265;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#TriangleInM-1-0)"/>
     <path inkscape:connector-curvature="0" id="path5718-7-5-0-1" d="m 159.8984,87.721632 -9.97875,-17.29134" style="fill:none;stroke:#000000;stroke-width:0.265;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#TriangleInM-1-4)"/>
@@ -186,7 +186,7 @@
         </g>
       </g>
     </g>
-    <text xml:space="preserve" style="font-size:2.46944px;line-height:1.05;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#009E73;stroke-width:0.125;stroke-linecap:square;stroke-miterlimit:3.9;stroke-dasharray:0.264999, 0.794999;stroke-dashoffset:0;stroke-opacity:1" x="131.72966" y="78.813782" id="text68"><tspan sodipodi:role="line" style="font-size:2.46944px;stroke:none;stroke-width:0.125" x="131.72966" y="78.813782" id="tspan69">U coils: in </tspan><tspan sodipodi:role="line" style="font-size:2.46944px;stroke:none;stroke-width:0.125" x="131.72966" y="81.406693" id="tspan91">phase on primary</tspan><tspan sodipodi:role="line" style="font-size:2.46944px;stroke:none;stroke-width:0.125" x="131.72966" y="83.999603" id="tspan92"> &amp; secondary</tspan></text>
+    <text xml:space="preserve" style="font-size:2.46944px;line-height:1.05;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#009988;stroke-width:0.125;stroke-linecap:square;stroke-miterlimit:3.9;stroke-dasharray:0.264999, 0.794999;stroke-dashoffset:0;stroke-opacity:1" x="131.72966" y="78.813782" id="text68"><tspan sodipodi:role="line" style="font-size:2.46944px;stroke:none;stroke-width:0.125" x="131.72966" y="78.813782" id="tspan69">U coils: in </tspan><tspan sodipodi:role="line" style="font-size:2.46944px;stroke:none;stroke-width:0.125" x="131.72966" y="81.406693" id="tspan91">phase on primary</tspan><tspan sodipodi:role="line" style="font-size:2.46944px;stroke:none;stroke-width:0.125" x="131.72966" y="83.999603" id="tspan92"> &amp; secondary</tspan></text>
     <path style="fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.1;stroke-linecap:square;stroke-miterlimit:3.9;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" d="m 116.95255,75.771292 6.16995,2.212009 m -0.68809,-2.004651" id="path70" sodipodi:nodetypes="cc"/>
     <path style="fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.1;stroke-linecap:square;stroke-miterlimit:3.9;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" d="m 139.78234,77.752626 4.86012,-1.581414" id="path70-0" sodipodi:nodetypes="cc"/>
     <path style="fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.1;stroke-linecap:square;stroke-miterlimit:3.9;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" d="m 148.2554,77.911656 0.29283,-2.048304" id="path70-3-4" sodipodi:nodetypes="cc"/>
@@ -291,8 +291,8 @@
       </g>
       <use xlink:href="#_1-12_shape" style="fill:none;stroke:#ffffff" id="use1" transform="translate(-167.20602)"/>
     </g>
-    <path inkscape:connector-curvature="0" id="path5718-7-5-0-11-8" d="m 183.10067,73.538773 -3.26919,5.787616" style="fill:none;stroke:#009E73;stroke-width:0.465;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#TriangleInM-1-5-7)" sodipodi:nodetypes="cc"/>
-    <path inkscape:connector-curvature="0" id="path5718-7-5-0-11-8-7" d="m 179.76819,71.003069 0.0633,8.32332" style="fill:none;stroke:#D55E00;stroke-width:0.465;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#TriangleInM-1-5-7-9)" sodipodi:nodetypes="cc"/>
+    <path inkscape:connector-curvature="0" id="path5718-7-5-0-11-8" d="m 183.10067,73.538773 -3.26919,5.787616" style="fill:none;stroke:#009988;stroke-width:0.465;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#TriangleInM-1-5-7)" sodipodi:nodetypes="cc"/>
+    <path inkscape:connector-curvature="0" id="path5718-7-5-0-11-8-7" d="m 179.76819,71.003069 0.0633,8.32332" style="fill:none;stroke:#CC3311;stroke-width:0.465;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#TriangleInM-1-5-7-9)" sodipodi:nodetypes="cc"/>
     <g inkscape:label="" transform="translate(112.39674,88.954891)" id="g50">
       <g fill="#000000" fill-opacity="1" id="g15" transform="matrix(0.352778,0,0,0.352778,-0.923572,-0.703439)">
         <g id="g14" transform="translate(1.993,8.1190004)">
@@ -374,6 +374,6 @@
         </g>
       </g>
     </g>
-    <path inkscape:connector-curvature="0" id="path5718-7-5-1-8" d="m 119.51661,68.048645 0.0239,23.464119" style="fill:none;stroke:#D55E00;stroke-width:0.265;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#TriangleInM-6-4)" sodipodi:nodetypes="cc"/>
+    <path inkscape:connector-curvature="0" id="path5718-7-5-1-8" d="m 119.51661,68.048645 0.0239,23.464119" style="fill:none;stroke:#CC3311;stroke-width:0.265;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#TriangleInM-6-4)" sodipodi:nodetypes="cc"/>
   </g>
 </svg>

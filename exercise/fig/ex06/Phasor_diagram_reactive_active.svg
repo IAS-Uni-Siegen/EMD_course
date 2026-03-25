@@ -56,7 +56,7 @@
         </g>
       </g>
     </g>
-    <path style="opacity:1;fill:#0072B2;fill-opacity:1;stroke:#0072B2;stroke-width:0.249999;stroke-opacity:1;marker-start:url(#Triangle)" d="M 65.000002,14.888514 V 49.999998" id="path7"/>
+    <path style="opacity:1;fill:#4477AA;fill-opacity:1;stroke:#4477AA;stroke-width:0.249999;stroke-opacity:1;marker-start:url(#Triangle)" d="M 65.000002,14.888514 V 49.999998" id="path7"/>
     <g inkscape:label="" transform="translate(111.32869,42.474255)" id="g17">
       <g fill="#000000" fill-opacity="1" id="g14" transform="matrix(0.352778,0,0,0.352778,-0.702799,-0.707231)">
         <g id="g13" transform="translate(1.993,10.161)">
@@ -98,8 +98,8 @@
       </g>
     </g>
     <path style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.204;stroke-linecap:round;stroke-miterlimit:3.9;stroke-dasharray:0.612, 0.612;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#Triangle-8)" id="path63-8" sodipodi:type="arc" sodipodi:cx="42.253288" sodipodi:cy="-70.451363" sodipodi:rx="9.4296246" sodipodi:ry="8.4841709" sodipodi:start="3.0320928" sodipodi:end="4.290317" sodipodi:open="true" sodipodi:arc-type="arc" d="m 32.880139,-69.524203 a 9.4296246,8.4841709 0 0 1 5.51029,-8.666778" transform="rotate(97)"/>
-    <path style="fill:#0072B2;fill-opacity:1;stroke:#0072B2;stroke-width:0.249998;stroke-opacity:1;marker-start:url(#Triangle-9)" d="M 120.18165,39.872275 65.000001,50" id="path7-1"/>
-    <path style="fill:#0072B2;fill-rule:evenodd;stroke:#0072B2;stroke-width:0.25;stroke-opacity:1;marker-end:url(#Triangle-2)" d="M 65.000001,14.217282 120.27952,39.343298" id="path32" sodipodi:nodetypes="cc"/>
+    <path style="fill:#4477AA;fill-opacity:1;stroke:#4477AA;stroke-width:0.249998;stroke-opacity:1;marker-start:url(#Triangle-9)" d="M 120.18165,39.872275 65.000001,50" id="path7-1"/>
+    <path style="fill:#4477AA;fill-rule:evenodd;stroke:#4477AA;stroke-width:0.25;stroke-opacity:1;marker-end:url(#Triangle-2)" d="M 65.000001,14.217282 120.27952,39.343298" id="path32" sodipodi:nodetypes="cc"/>
     <g inkscape:label="" transform="translate(97.235733,24.823611)" id="g42">
       <g fill="#000000" fill-opacity="1" id="g39" transform="matrix(0.352778,0,0,0.352778,-0.896011,-0.575292)">
         <g id="g38" transform="translate(1.993,10.162)">
@@ -114,6 +114,6 @@
       <path fill="none" stroke-width="0.478" stroke-linecap="butt" stroke-linejoin="miter" stroke="#000000" stroke-opacity="1" stroke-miterlimit="10" d="M 9.2062187,10.205188 H 18.405438" id="path41" transform="scale(0.352778)"/>
     </g>
     <path style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.204;stroke-linecap:round;stroke-miterlimit:3.9;stroke-dasharray:0.612, 0.612;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#Triangle-8-0)" id="path63-8-2" sodipodi:type="arc" sodipodi:cx="-57.548817" sodipodi:cy="-58.422031" sodipodi:rx="12.032421" sodipodi:ry="12.154293" sodipodi:start="2.6413975" sodipodi:end="4.6995506" sodipodi:arc-type="arc" d="m -68.107134,-52.592871 a 12.032421,12.154293 0 0 1 0.169862,-11.961826 12.032421,12.154293 0 0 1 10.233983,-6.020626" transform="matrix(-0.12186934,-0.99254615,-0.99254615,0.12186934,0,0)" sodipodi:open="true"/>
-    <path style="fill:#0072B2;fill-rule:evenodd;stroke:#D55E00;stroke-width:0.25;stroke-opacity:1;marker-end:url(#Triangle)" d="M 65.000002,49.999998 48.845472,87.402525" id="path11"/>
+    <path style="fill:#4477AA;fill-rule:evenodd;stroke:#CC3311;stroke-width:0.25;stroke-opacity:1;marker-end:url(#Triangle)" d="M 65.000002,49.999998 48.845472,87.402525" id="path11"/>
   </g>
 </svg>

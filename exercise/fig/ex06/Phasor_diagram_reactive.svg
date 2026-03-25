@@ -23,7 +23,7 @@
   <g inkscape:label="Ebene 1" inkscape:groupmode="layer" id="layer1" transform="translate(-29.999995,-2.16785)">
     <path style="opacity:1;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.25;stroke-opacity:1;marker-start:url(#Triangle)" d="M 64.999997,3.0556187 V 90.000001" id="path1"/>
     <path style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.25;stroke-opacity:1;marker-start:url(#Triangle-2)" d="M 114,65.000002 H 29.999995" id="path1-5"/>
-    <path style="fill:#0072B2;fill-opacity:1;stroke:#D55E00;stroke-width:0.249998;stroke-opacity:1;marker-end:url(#Triangle-2-9)" d="M 64.999999,65 H 102.93354" id="path17-7"/>
+    <path style="fill:#4477AA;fill-opacity:1;stroke:#CC3311;stroke-width:0.249998;stroke-opacity:1;marker-end:url(#Triangle-2-9)" d="M 64.999999,65 H 102.93354" id="path17-7"/>
     <g inkscape:label="" transform="translate(113.40152,67.089582)" id="g2">
       <g fill="#000000" fill-opacity="1" id="g3" transform="matrix(0.352778,0,0,0.352778,-0.879475,-0.707231)">
         <g id="use2" transform="translate(1.993,10.161)">
@@ -57,8 +57,8 @@
         </g>
       </g>
     </g>
-    <path style="opacity:1;fill:#0072B2;fill-opacity:1;stroke:#0072B2;stroke-width:0.25;stroke-opacity:1;marker-start:url(#Triangle)" d="M 64.999999,50.532153 V 65.000002" id="path7"/>
-    <path style="fill:#0072B2;fill-opacity:1;stroke:#0072B2;stroke-width:0.25;stroke-opacity:1;marker-start:url(#Triangle-7)" d="M 65.000001,8.1958332 V 65.000001" id="path7-2"/>
+    <path style="opacity:1;fill:#4477AA;fill-opacity:1;stroke:#4477AA;stroke-width:0.25;stroke-opacity:1;marker-start:url(#Triangle)" d="M 64.999999,50.532153 V 65.000002" id="path7"/>
+    <path style="fill:#4477AA;fill-opacity:1;stroke:#4477AA;stroke-width:0.25;stroke-opacity:1;marker-start:url(#Triangle-7)" d="M 65.000001,8.1958332 V 65.000001" id="path7-2"/>
     <g inkscape:label="" transform="translate(66.754717,9.5317735)" id="g17">
       <g fill="#000000" fill-opacity="1" id="g14" transform="matrix(0.352778,0,0,0.352778,-0.702799,-0.707231)">
         <g id="g13" transform="translate(1.993,10.161)">
@@ -72,7 +72,7 @@
         </g>
       </g>
     </g>
-    <path style="opacity:1;fill:#0072B2;fill-opacity:1;stroke:#D55E00;stroke-width:0.249998;stroke-opacity:1;marker-end:url(#Triangle-2)" d="M 65.000003,65.000004 H 98.735402" id="path17"/>
+    <path style="opacity:1;fill:#4477AA;fill-opacity:1;stroke:#CC3311;stroke-width:0.249998;stroke-opacity:1;marker-end:url(#Triangle-2)" d="M 65.000003,65.000004 H 98.735402" id="path17"/>
     <g inkscape:label="" transform="translate(88.343764,60.436847)" id="g22">
       <g fill="#000000" fill-opacity="1" id="g19" transform="matrix(0.352778,0,0,0.352778,-0.702799,-0.707231)">
         <g id="g18" transform="translate(1.993,10.161)">

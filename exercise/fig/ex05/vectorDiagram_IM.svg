@@ -12,7 +12,7 @@
     </marker>
   </defs>
   <g inkscape:label="Ebene 1" inkscape:groupmode="layer" id="layer1">
-    <path style="fill:none;stroke:#0072B2;stroke-width:0.25;stroke-opacity:1;marker-end:url(#Triangle)" d="M 9.9999998,25 33.868657,5.2190204" id="path2"/>
+    <path style="fill:none;stroke:#4477AA;stroke-width:0.25;stroke-opacity:1;marker-end:url(#Triangle)" d="M 9.9999998,25 33.868657,5.2190204" id="path2"/>
     <g inkscape:label="" transform="translate(79.481568,20.131379)" id="g8" style="stroke:none;stroke-opacity:1">
       <g fill="#000000" fill-opacity="1" id="g3" transform="matrix(0.352778,0,0,0.352778,-0.702799,-0.695193)" style="stroke:none;stroke-opacity:1">
         <g id="use2" transform="translate(1.993,9.8299999)" style="stroke:none;stroke-opacity:1">
@@ -70,9 +70,9 @@
         </g>
       </g>
     </g>
-    <path style="fill:#0072B2;fill-rule:evenodd;stroke:#000000;stroke-width:0.25;marker-start:url(#Triangle);stroke-opacity:1" d="M 9.9999997,1 V 38" id="path12"/>
-    <path style="fill:#0072B2;fill-rule:evenodd;stroke:#000000;stroke-width:0.249999;stroke-opacity:1;marker-start:url(#Triangle-4)" d="M 88.111044,25.000001 H 4.9999999" id="path12-8"/>
-    <path style="fill:none;stroke:#D55E00;stroke-width:0.25;stroke-opacity:1;marker-end:url(#Triangle)" d="M 9.9999998,25 H 86" id="path1"/>
+    <path style="fill:#4477AA;fill-rule:evenodd;stroke:#000000;stroke-width:0.25;marker-start:url(#Triangle);stroke-opacity:1" d="M 9.9999997,1 V 38" id="path12"/>
+    <path style="fill:#4477AA;fill-rule:evenodd;stroke:#000000;stroke-width:0.249999;stroke-opacity:1;marker-start:url(#Triangle-4)" d="M 88.111044,25.000001 H 4.9999999" id="path12-8"/>
+    <path style="fill:none;stroke:#CC3311;stroke-width:0.25;stroke-opacity:1;marker-end:url(#Triangle)" d="M 9.9999998,25 H 86" id="path1"/>
     <g inkscape:label="" transform="translate(85.199822,27.552603)" id="g25">
       <g fill="#000000" fill-opacity="1" id="g24" transform="matrix(0.352778,0,0,0.352778,-0.879475,-0.707231)">
         <g id="g21" transform="translate(1.993,10.161)">
@@ -94,7 +94,7 @@
       </g>
     </g>
     <path style="fill:none;stroke:#010001;stroke-width:0.25;stroke-dasharray:1.5, 1.5;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#Triangle)" d="M 9.9999998,25 30.219576,5.1995267" id="path1-5"/>
-    <path style="fill:#0072B2;fill-rule:evenodd;stroke:#010001;stroke-width:0.25;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#Triangle)" d="m 30.788217,4.6525386 h 2.846637" id="path29"/>
+    <path style="fill:#4477AA;fill-rule:evenodd;stroke:#010001;stroke-width:0.25;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#Triangle)" d="m 30.788217,4.6525386 h 2.846637" id="path29"/>
     <g inkscape:label="" transform="translate(28.784569,0.15939573)" id="g42">
       <g fill="#000000" fill-opacity="1" id="g37" transform="matrix(0.352778,0,0,0.352778,-0.901524,-0.707584)">
         <g id="g36" transform="translate(1.993,10.162)">
@@ -117,6 +117,6 @@
         </g>
       </g>
     </g>
-    <path style="fill:#0072B2;fill-rule:evenodd;stroke:#010001;stroke-width:0.25;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#Triangle)" d="m 9.9999997,25.000001 5.6785173,5.798711" id="path42"/>
+    <path style="fill:#4477AA;fill-rule:evenodd;stroke:#010001;stroke-width:0.25;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#Triangle)" d="m 9.9999997,25.000001 5.6785173,5.798711" id="path42"/>
   </g>
 </svg>

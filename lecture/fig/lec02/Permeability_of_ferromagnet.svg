@@ -20,34 +20,34 @@
     <inkscape:perspective id="perspective10" inkscape:persp3d-origin="372.04724 : 323.85001 : 1" inkscape:vp_z="744.09448 : 499.24371 : 1" inkscape:vp_y="0 : 1000 : 0" inkscape:vp_x="0 : 499.24371 : 1" sodipodi:type="inkscape:persp3d"/>
     <inkscape:perspective sodipodi:type="inkscape:persp3d" inkscape:vp_x="0 : 499.24371 : 1" inkscape:vp_y="0 : 1000 : 0" inkscape:vp_z="744.09448 : 499.24371 : 1" inkscape:persp3d-origin="372.04724 : 323.85001 : 1" id="perspective2390"/>
     <marker style="overflow:visible" id="TriangleInMD" refX="0" refY="0" orient="auto" inkscape:stockid="TriangleInMD">
-      <path transform="scale(-0.4)" style="fill:#D55E00;fill-rule:evenodd;stroke:#D55E00;stroke-width:1pt;marker-start:none" d="M 5.77,0 -2.88,5 V -5 Z" id="path7056"/>
+      <path transform="scale(-0.4)" style="fill:#CC3311;fill-rule:evenodd;stroke:#CC3311;stroke-width:1pt;marker-start:none" d="M 5.77,0 -2.88,5 V -5 Z" id="path7056"/>
     </marker>
     <marker style="overflow:visible" id="TriangleOutMu" refX="0" refY="0" orient="auto" inkscape:stockid="TriangleOutMu">
-      <path transform="scale(0.4)" style="fill:#D55E00;fill-rule:evenodd;stroke:#D55E00;stroke-width:1pt;marker-start:none" d="M 5.77,0 -2.88,5 V -5 Z" id="path7059"/>
+      <path transform="scale(0.4)" style="fill:#CC3311;fill-rule:evenodd;stroke:#CC3311;stroke-width:1pt;marker-start:none" d="M 5.77,0 -2.88,5 V -5 Z" id="path7059"/>
     </marker>
     <marker style="overflow:visible" id="TriangleInMF" refX="0" refY="0" orient="auto" inkscape:stockid="TriangleInMF">
-      <path transform="scale(-0.4)" style="fill:#0072B2;fill-rule:evenodd;stroke:#0072B2;stroke-width:1pt;marker-start:none" d="M 5.77,0 -2.88,5 V -5 Z" id="path8780"/>
+      <path transform="scale(-0.4)" style="fill:#4477AA;fill-rule:evenodd;stroke:#4477AA;stroke-width:1pt;marker-start:none" d="M 5.77,0 -2.88,5 V -5 Z" id="path8780"/>
     </marker>
     <marker style="overflow:visible" id="TriangleOutMuh" refX="0" refY="0" orient="auto" inkscape:stockid="TriangleOutMuh">
-      <path transform="scale(0.4)" style="fill:#0072B2;fill-rule:evenodd;stroke:#0072B2;stroke-width:1pt;marker-start:none" d="M 5.77,0 -2.88,5 V -5 Z" id="path8783"/>
+      <path transform="scale(0.4)" style="fill:#4477AA;fill-rule:evenodd;stroke:#4477AA;stroke-width:1pt;marker-start:none" d="M 5.77,0 -2.88,5 V -5 Z" id="path8783"/>
     </marker>
     <marker style="overflow:visible" id="TriangleInMDe" refX="0" refY="0" orient="auto" inkscape:stockid="TriangleInMDe">
-      <path transform="scale(-0.4)" style="fill:#F0E442;fill-rule:evenodd;stroke:#F0E442;stroke-width:1pt;marker-start:none" d="M 5.77,0 -2.88,5 V -5 Z" id="path8912"/>
+      <path transform="scale(-0.4)" style="fill:#CCBB44;fill-rule:evenodd;stroke:#CCBB44;stroke-width:1pt;marker-start:none" d="M 5.77,0 -2.88,5 V -5 Z" id="path8912"/>
     </marker>
     <marker style="overflow:visible" id="TriangleOutMuG" refX="0" refY="0" orient="auto" inkscape:stockid="TriangleOutMuG">
-      <path transform="scale(0.4)" style="fill:#F0E442;fill-rule:evenodd;stroke:#F0E442;stroke-width:1pt;marker-start:none" d="M 5.77,0 -2.88,5 V -5 Z" id="path8915"/>
+      <path transform="scale(0.4)" style="fill:#CCBB44;fill-rule:evenodd;stroke:#CCBB44;stroke-width:1pt;marker-start:none" d="M 5.77,0 -2.88,5 V -5 Z" id="path8915"/>
     </marker>
     <marker style="overflow:visible" id="TriangleInMDeA" refX="0" refY="0" orient="auto" inkscape:stockid="TriangleInMDeA">
-      <path transform="scale(-0.4)" style="fill:#F0E442;fill-rule:evenodd;stroke:#F0E442;stroke-width:1pt;marker-start:none" d="M 5.77,0 -2.88,5 V -5 Z" id="path9042"/>
+      <path transform="scale(-0.4)" style="fill:#CCBB44;fill-rule:evenodd;stroke:#CCBB44;stroke-width:1pt;marker-start:none" d="M 5.77,0 -2.88,5 V -5 Z" id="path9042"/>
     </marker>
     <marker style="overflow:visible" id="TriangleOutMuGb" refX="0" refY="0" orient="auto" inkscape:stockid="TriangleOutMuGb">
-      <path transform="scale(0.4)" style="fill:#F0E442;fill-rule:evenodd;stroke:#F0E442;stroke-width:1pt;marker-start:none" d="M 5.77,0 -2.88,5 V -5 Z" id="path9045"/>
+      <path transform="scale(0.4)" style="fill:#CCBB44;fill-rule:evenodd;stroke:#CCBB44;stroke-width:1pt;marker-start:none" d="M 5.77,0 -2.88,5 V -5 Z" id="path9045"/>
     </marker>
     <marker style="overflow:visible" id="TriangleInMDeAG" refX="0" refY="0" orient="auto" inkscape:stockid="TriangleInMDeAG">
-      <path transform="scale(-0.4)" style="fill:#009E73;fill-rule:evenodd;stroke:#009E73;stroke-width:1pt;marker-start:none" d="M 5.77,0 -2.88,5 V -5 Z" id="path9180"/>
+      <path transform="scale(-0.4)" style="fill:#009988;fill-rule:evenodd;stroke:#009988;stroke-width:1pt;marker-start:none" d="M 5.77,0 -2.88,5 V -5 Z" id="path9180"/>
     </marker>
     <marker style="overflow:visible" id="TriangleOutMuGbn" refX="0" refY="0" orient="auto" inkscape:stockid="TriangleOutMuGbn">
-      <path transform="scale(0.4)" style="fill:#009E73;fill-rule:evenodd;stroke:#009E73;stroke-width:1pt;marker-start:none" d="M 5.77,0 -2.88,5 V -5 Z" id="path9183"/>
+      <path transform="scale(0.4)" style="fill:#009988;fill-rule:evenodd;stroke:#009988;stroke-width:1pt;marker-start:none" d="M 5.77,0 -2.88,5 V -5 Z" id="path9183"/>
     </marker>
     <inkscape:perspective id="perspective3976" inkscape:persp3d-origin="372.04724 : 323.85001 : 1" inkscape:vp_z="744.09448 : 499.24371 : 1" inkscape:vp_y="0 : 1000 : 0" inkscape:vp_x="0 : 499.24371 : 1" sodipodi:type="inkscape:persp3d"/>
   </defs>
@@ -61,14 +61,14 @@
   </metadata>
   <g transform="translate(-51.038002,-34.387351)" id="layer1" inkscape:groupmode="layer" inkscape:label="Layer 1">
     <path style="display:inline;overflow:visible;visibility:visible;opacity:1;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#64727f;stroke-width:2.6;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:0;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;marker-start:none;marker-mid:none;marker-end:none;enable-background:accumulate" d="m 70.902417,248.46729 c 0,0 16.293097,-22.4465 29.261403,-56.88874 12.96832,-34.44223 17.99961,-69.82873 57.30115,-107.13949 37.5229,-33.006119 116.81891,-24.954178 188.66632,-28.014003" id="path4000" sodipodi:nodetypes="cscc"/>
-    <circle id="path2466" style="fill:#009E73;stroke:none" cx="7.6750903" cy="238.43594" r="0"/>
-    <circle id="path2470" style="fill:#009E73;stroke:none" cx="16.351353" cy="237.41522" r="0"/>
-    <circle id="path2472" style="fill:#009E73;stroke:none" cx="-15.291484" cy="234.35301" r="0"/>
-    <circle id="path2474" style="fill:#009E73;stroke:none" cx="-15.291484" cy="234.35301" r="0"/>
+    <circle id="path2466" style="fill:#009988;stroke:none" cx="7.6750903" cy="238.43594" r="0"/>
+    <circle id="path2470" style="fill:#009988;stroke:none" cx="16.351353" cy="237.41522" r="0"/>
+    <circle id="path2472" style="fill:#009988;stroke:none" cx="-15.291484" cy="234.35301" r="0"/>
+    <circle id="path2474" style="fill:#009988;stroke:none" cx="-15.291484" cy="234.35301" r="0"/>
     <path style="display:inline;overflow:visible;visibility:visible;opacity:1;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:2;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:0;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;marker-start:none;marker-mid:none;marker-end:url(#TriangleOutM);enable-background:accumulate" d="m 52.038002,251.70553 c 294.992888,0 294.992888,0 294.992888,0" id="path2476"/>
     <path style="display:inline;overflow:visible;visibility:visible;opacity:1;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:2;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:0;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;marker-start:none;marker-mid:none;marker-end:url(#TriangleOutM);enable-background:accumulate" d="m 69.390528,272.64716 c 0,-232.578089 0,-232.578089 0,-232.578089" id="path3937"/>
-    <path style="display:inline;overflow:visible;visibility:visible;opacity:1;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#0072B2;stroke-width:2.6;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:0;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;marker-start:none;marker-mid:none;marker-end:none;enable-background:accumulate" d="m 69.476357,143.99361 c 0,0 14.351195,-8.79305 23.767607,-21.57946 9.181956,-12.46806 11.194716,-37.761317 27.095066,-37.942971 15.91287,-0.181797 37.81952,41.327251 54.6655,61.886261 16.84598,20.55901 33.94894,48.41264 64.17253,65.12125 30.22359,16.7086 109.33099,26.53087 109.33099,26.53087" id="path3317" sodipodi:nodetypes="czzzzz"/>
-    <ellipse style="display:inline;overflow:visible;visibility:visible;opacity:1;fill:#0072B2;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:0;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;marker-start:none;marker-mid:none;marker-end:none;enable-background:accumulate" id="path3337" transform="translate(29.071428,24.576468)" cx="91.02993" cy="60.132042" rx="2.6144366" ry="3.0897887"/>
+    <path style="display:inline;overflow:visible;visibility:visible;opacity:1;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#4477AA;stroke-width:2.6;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:0;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;marker-start:none;marker-mid:none;marker-end:none;enable-background:accumulate" d="m 69.476357,143.99361 c 0,0 14.351195,-8.79305 23.767607,-21.57946 9.181956,-12.46806 11.194716,-37.761317 27.095066,-37.942971 15.91287,-0.181797 37.81952,41.327251 54.6655,61.886261 16.84598,20.55901 33.94894,48.41264 64.17253,65.12125 30.22359,16.7086 109.33099,26.53087 109.33099,26.53087" id="path3317" sodipodi:nodetypes="czzzzz"/>
+    <ellipse style="display:inline;overflow:visible;visibility:visible;opacity:1;fill:#4477AA;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:0;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;marker-start:none;marker-mid:none;marker-end:none;enable-background:accumulate" id="path3337" transform="translate(29.071428,24.576468)" cx="91.02993" cy="60.132042" rx="2.6144366" ry="3.0897887"/>
     <g inkscape:label="" transform="matrix(1.6104774,0,0,1.6104774,326.83461,61.799991)" id="g1" style="stroke-width:0.620934">
       <g fill="#000000" fill-opacity="1" id="g2" transform="matrix(1.33333,0,0,1.33333,-3.42817,-2.673)" style="stroke-width:0.620934">
         <g id="use1" transform="translate(1.993,10.161)" style="stroke-width:0.620934">

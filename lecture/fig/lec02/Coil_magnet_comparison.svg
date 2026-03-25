@@ -238,7 +238,7 @@
     <use width="100%" height="100%" transform="translate(364.968)" xlink:href="#q" id="use167"/>
   </g>
   <g stroke="#000" id="g169">
-    <path fill="#F0E442" stroke="none" d="M1068.07 200h383.86v200h-383.86z" id="path167"/>
+    <path fill="#CCBB44" stroke="none" d="M1068.07 200h383.86v200h-383.86z" id="path167"/>
     <path fill="red" stroke="none" d="M1260 200h191.93v200H1260z" id="path168"/>
     <path fill="url(#r)" stroke-width="3" d="M-295.32-106.169H88.54v200h-383.86z" transform="translate(1363.39 306.17)" id="path169"/>
   </g>
