@@ -7,7 +7,7 @@
    viewBox="0 0 48 35.868"
    version="1.1"
    id="svg1"
-   inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
+   inkscape:version="1.4.3 (0d15f75, 2025-12-25)"
    sodipodi:docname="Series_DC_machine_torque_speed.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -24,12 +24,12 @@
      inkscape:deskcolor="#505050"
      inkscape:document-units="mm"
      inkscape:zoom="4.1157408"
-     inkscape:cx="81.880765"
-     inkscape:cy="41.912261"
-     inkscape:window-width="2560"
-     inkscape:window-height="1351"
-     inkscape:window-x="2551"
-     inkscape:window-y="-9"
+     inkscape:cx="82.002249"
+     inkscape:cy="42.033745"
+     inkscape:window-width="1920"
+     inkscape:window-height="998"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
      inkscape:window-maximized="1"
      inkscape:current-layer="layer1" />
   <defs
@@ -406,7 +406,7 @@
       </g>
     </g>
     <path
-       style="fill:none;fill-rule:evenodd;stroke:#7d7d7d;stroke-width:0.264999;stroke-linecap:square;stroke-miterlimit:3.9;stroke-opacity:1"
+       style="fill:none;fill-rule:evenodd;stroke:#bbbbbb;stroke-width:0.264999;stroke-linecap:square;stroke-miterlimit:3.9;stroke-opacity:1"
        d="m 120.13972,136.28274 c 0.95758,14.54158 1.91514,29.08287 3.2978,37.84808 1.38267,8.76521 3.19029,11.75359 7.69255,13.37577 4.50226,1.62218 11.69877,1.87798 18.89543,2.13378"
        id="path3"
        inkscape:path-effect="#path-effect3"
@@ -414,7 +414,7 @@
        sodipodi:nodetypes="cccc"
        transform="translate(5.5935496)" />
     <path
-       style="fill:none;fill-rule:evenodd;stroke:#7d7d7d;stroke-width:0.264999;stroke-linecap:square;stroke-miterlimit:3.9;stroke-opacity:1"
+       style="fill:none;fill-rule:evenodd;stroke:#bbbbbb;stroke-width:0.264999;stroke-linecap:square;stroke-miterlimit:3.9;stroke-opacity:1"
        d="m 120.13972,136.28274 c 0.44764,14.73659 0.89527,29.47289 1.66828,38.36177 0.77302,8.88888 1.87133,11.92958 6.62857,13.45425 4.75723,1.52468 13.173,1.53314 21.58893,1.54161"
        id="path3-4"
        inkscape:path-effect="#path-effect3-1"
@@ -422,7 +422,7 @@
        sodipodi:nodetypes="cccc"
        transform="translate(5.5935496)" />
     <path
-       style="fill:none;fill-rule:evenodd;stroke:#7d7d7d;stroke-width:0.264999;stroke-linecap:square;stroke-miterlimit:3.9;stroke-opacity:1"
+       style="fill:none;fill-rule:evenodd;stroke:#bbbbbb;stroke-width:0.264999;stroke-linecap:square;stroke-miterlimit:3.9;stroke-opacity:1"
        d="m 120.13972,136.28274 c 1.90984,14.74416 3.81964,29.48804 5.35028,37.78976 1.53064,8.30172 2.68199,10.16058 6.70811,11.68147 4.02612,1.52088 10.92669,2.70363 17.82739,3.8864"
        id="path3-4-0"
        inkscape:path-effect="#path-effect3-1-5"
@@ -430,7 +430,7 @@
        sodipodi:nodetypes="cccc"
        transform="translate(5.5935496)" />
     <path
-       style="fill:none;fill-rule:evenodd;stroke:#7d7d7d;stroke-width:0.264999;stroke-linecap:square;stroke-miterlimit:3.9;stroke-opacity:1"
+       style="fill:none;fill-rule:evenodd;stroke:#bbbbbb;stroke-width:0.264999;stroke-linecap:square;stroke-miterlimit:3.9;stroke-opacity:1"
        d="m 120.13972,136.28274 c 0.95758,14.54158 1.91514,29.08287 3.2978,37.84808 1.38267,8.76521 3.19029,11.75359 7.69255,13.37577 4.50226,1.62218 11.69877,1.87798 18.89543,2.13378"
        id="path3-9"
        inkscape:path-effect="#path-effect3-18"
@@ -438,7 +438,7 @@
        sodipodi:nodetypes="cccc"
        transform="matrix(-1,0,0,1,245.87301,0)" />
     <path
-       style="fill:none;fill-rule:evenodd;stroke:#7d7d7d;stroke-width:0.264999;stroke-linecap:square;stroke-miterlimit:3.9;stroke-opacity:1"
+       style="fill:none;fill-rule:evenodd;stroke:#bbbbbb;stroke-width:0.264999;stroke-linecap:square;stroke-miterlimit:3.9;stroke-opacity:1"
        d="m 120.13972,136.28274 c 0.44764,14.73659 0.89527,29.47289 1.66828,38.36177 0.77302,8.88888 1.87133,11.92958 6.62857,13.45425 4.75723,1.52468 13.173,1.53314 21.58893,1.54161"
        id="path3-4-9"
        inkscape:path-effect="#path-effect3-1-9"
@@ -446,7 +446,7 @@
        sodipodi:nodetypes="cccc"
        transform="matrix(-1,0,0,1,245.87301,0)" />
     <path
-       style="fill:none;fill-rule:evenodd;stroke:#7d7d7d;stroke-width:0.264999;stroke-linecap:square;stroke-miterlimit:3.9;stroke-opacity:1"
+       style="fill:none;fill-rule:evenodd;stroke:#bbbbbb;stroke-width:0.264999;stroke-linecap:square;stroke-miterlimit:3.9;stroke-opacity:1"
        d="m 120.13972,136.28274 c 1.90984,14.74416 3.81964,29.48804 5.35028,37.78976 1.53064,8.30172 2.68199,10.16058 6.70811,11.68147 4.02612,1.52088 10.92669,2.70363 17.82739,3.8864"
        id="path3-4-0-1"
        inkscape:path-effect="#path-effect3-1-5-2"

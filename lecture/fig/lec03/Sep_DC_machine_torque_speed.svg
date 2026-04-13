@@ -7,7 +7,7 @@
    viewBox="0 0 51.068012 37.707066"
    version="1.1"
    id="svg1"
-   inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
+   inkscape:version="1.4.3 (0d15f75, 2025-12-25)"
    sodipodi:docname="Sep_DC_machine_torque_speed.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -24,12 +24,12 @@
      inkscape:deskcolor="#505050"
      inkscape:document-units="mm"
      inkscape:zoom="4.1157407"
-     inkscape:cx="69.975253"
-     inkscape:cy="94.636671"
-     inkscape:window-width="2560"
-     inkscape:window-height="1351"
-     inkscape:window-x="2551"
-     inkscape:window-y="-9"
+     inkscape:cx="70.096739"
+     inkscape:cy="75.077616"
+     inkscape:window-width="1920"
+     inkscape:window-height="998"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
      inkscape:window-maximized="1"
      inkscape:current-layer="layer1" />
   <defs
@@ -202,49 +202,49 @@
        d="M 159.57802,250.02703 V 214.65908"
        id="path1-3" />
     <path
-       style="fill:#000000;fill-rule:evenodd;stroke:#7d7d7d;stroke-width:0.309949;stroke-linecap:square;stroke-miterlimit:3.9;stroke-dasharray:none;stroke-opacity:1"
+       style="fill:#bbbbbb;fill-rule:evenodd;stroke:#bbbbbb;stroke-width:0.309949;stroke-linecap:square;stroke-miterlimit:3.9;stroke-dasharray:none;stroke-opacity:1"
        d="m 27.032143,45.803571 c 0,0 39.921428,-6.878572 39.921428,-6.878572"
        id="path2"
        inkscape:path-effect="#path-effect2"
        inkscape:original-d="M 27.032143,45.803571 66.953571,38.924999"
        transform="matrix(0,0.73098571,-1,0,202.04404,197.22345)" />
     <path
-       style="fill:#000000;fill-rule:evenodd;stroke:#7d7d7d;stroke-width:0.309949;stroke-linecap:square;stroke-miterlimit:3.9;stroke-dasharray:none;stroke-opacity:1"
+       style="fill:#bbbbbb;fill-rule:evenodd;stroke:#bbbbbb;stroke-width:0.309949;stroke-linecap:square;stroke-miterlimit:3.9;stroke-dasharray:none;stroke-opacity:1"
        d="m 27.032143,45.803571 c 0,0 39.921428,-6.878572 39.921428,-6.878572"
        id="path2-6"
        inkscape:path-effect="#path-effect2-5"
        inkscape:original-d="M 27.032143,45.803571 66.953571,38.924999"
        transform="matrix(0,0.73098571,-1,0,192.59235,197.22345)" />
     <path
-       style="fill:#000000;fill-rule:evenodd;stroke:#7d7d7d;stroke-width:0.309949;stroke-linecap:square;stroke-miterlimit:3.9;stroke-dasharray:none;stroke-opacity:1"
+       style="fill:#bbbbbb;fill-rule:evenodd;stroke:#bbbbbb;stroke-width:0.309949;stroke-linecap:square;stroke-miterlimit:3.9;stroke-dasharray:none;stroke-opacity:1"
        d="m 27.032143,45.803571 c 0,0 39.921428,-6.878572 39.921428,-6.878572"
        id="path2-6-5"
        inkscape:path-effect="#path-effect2-5-3"
        inkscape:original-d="M 27.032143,45.803571 66.953571,38.924999"
        transform="matrix(0,0.73098571,-1,0,197.32773,197.22345)" />
     <path
-       style="fill:#000000;fill-rule:evenodd;stroke:#7d7d7d;stroke-width:0.309949;stroke-linecap:square;stroke-miterlimit:3.9;stroke-dasharray:none;stroke-opacity:1"
+       style="fill:#bbbbbb;fill-rule:evenodd;stroke:#bbbbbb;stroke-width:0.309949;stroke-linecap:square;stroke-miterlimit:3.9;stroke-dasharray:none;stroke-opacity:1"
        d="m 27.032143,45.803571 c 0,0 39.921428,-6.878572 39.921428,-6.878572"
        id="path2-6-5-9"
        inkscape:path-effect="#path-effect2-5-3-2"
        inkscape:original-d="M 27.032143,45.803571 66.953571,38.924999"
        transform="matrix(0,0.73098571,-1,0,187.70664,197.22345)" />
     <path
-       style="fill:#000000;fill-rule:evenodd;stroke:#7d7d7d;stroke-width:0.309949;stroke-linecap:square;stroke-miterlimit:3.9;stroke-dasharray:none;stroke-opacity:1"
+       style="fill:#bbbbbb;fill-rule:evenodd;stroke:#bbbbbb;stroke-width:0.309949;stroke-linecap:square;stroke-miterlimit:3.9;stroke-dasharray:none;stroke-opacity:1"
        d="m 27.032143,45.803571 c 0,0 39.921428,-6.878572 39.921428,-6.878572"
        id="path2-0"
        inkscape:path-effect="#path-effect2-4"
        inkscape:original-d="M 27.032143,45.803571 66.953571,38.924999"
        transform="matrix(0,0.73098571,-1,0,206.77072,197.22345)" />
     <path
-       style="fill:#000000;fill-rule:evenodd;stroke:#7d7d7d;stroke-width:0.309949;stroke-linecap:square;stroke-miterlimit:3.9;stroke-dasharray:none;stroke-opacity:1"
+       style="fill:#bbbbbb;fill-rule:evenodd;stroke:#bbbbbb;stroke-width:0.309949;stroke-linecap:square;stroke-miterlimit:3.9;stroke-dasharray:none;stroke-opacity:1"
        d="m 27.032143,45.803571 c 0,0 39.921428,-6.878572 39.921428,-6.878572"
        id="path2-0-6"
        inkscape:path-effect="#path-effect2-4-7"
        inkscape:original-d="M 27.032143,45.803571 66.953571,38.924999"
        transform="matrix(0,0.73098571,-1,0,211.49572,197.22345)" />
     <path
-       style="fill:#000000;fill-rule:evenodd;stroke:#7d7d7d;stroke-width:0.309949;stroke-linecap:square;stroke-miterlimit:3.9;stroke-dasharray:none;stroke-opacity:1"
+       style="fill:#bbbbbb;fill-rule:evenodd;stroke:#bbbbbb;stroke-width:0.309949;stroke-linecap:square;stroke-miterlimit:3.9;stroke-dasharray:none;stroke-opacity:1"
        d="m 27.032143,45.803571 c 0,0 39.921428,-6.878572 39.921428,-6.878572"
        id="path2-0-6-3"
        inkscape:path-effect="#path-effect2-4-7-0"
