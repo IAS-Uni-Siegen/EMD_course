@@ -3,6 +3,13 @@ import matplotlib.pyplot as plt
 import numpy as np
 from matplotlib.patches import ConnectionPatch
 
+COLORS = {
+    "r": (204 / 255, 51 / 255, 17 / 255),  # Red
+    "b": (68 / 255, 119 / 255, 170 / 255),  # Blue
+    "g": (0 / 255, 153 / 255, 156 / 255),  # Green
+    "m": (170 / 255, 51 / 255, 119 / 255),  # Magenta
+}
+
 
 # Define the transformations
 def clarke_transform(i_a, i_b, i_c):
@@ -126,8 +133,8 @@ def update_plot(i):
         np.sin(theta),
         head_width=0.05,
         head_length=ahl,
-        fc="m",
-        ec="m",
+        fc=COLORS["m"],
+        ec=COLORS["m"],
         length_includes_head=True,
     )
     axes[0, 0].arrow(
@@ -137,8 +144,8 @@ def update_plot(i):
         0,
         head_width=0.05,
         head_length=ahl * 2 / 3,
-        fc="r",
-        ec="r",
+        fc=COLORS["r"],
+        ec=COLORS["r"],
         length_includes_head=True,
     )
     axes[0, 0].arrow(
@@ -148,8 +155,8 @@ def update_plot(i):
         i_b[i] * np.sin(2 / 3 * np.pi) * 2 / 3,
         head_width=0.05,
         head_length=ahl * 2 / 3,
-        fc="b",
-        ec="b",
+        fc=COLORS["b"],
+        ec=COLORS["b"],
         length_includes_head=True,
     )
     axes[0, 0].arrow(
@@ -159,8 +166,8 @@ def update_plot(i):
         i_c[i] * np.sin(4 / 3 * np.pi) * 2 / 3,
         head_width=0.05,
         head_length=ahl * 2 / 3,
-        fc="g",
-        ec="g",
+        fc=COLORS["g"],
+        ec=COLORS["g"],
         length_includes_head=True,
     )
     axes[0, 0].text(1.1, 0, "a", fontsize=12, va="center")
@@ -175,17 +182,17 @@ def update_plot(i):
     axes[0, 0].set_aspect("equal")
 
     # Top right: abc signals
-    axes[0, 1].plot(angles, i_a, "r")
-    axes[0, 1].plot(angles, i_b, "b")
-    axes[0, 1].plot(angles, i_c, "g")
+    axes[0, 1].plot(angles, i_a, color=COLORS["r"])
+    axes[0, 1].plot(angles, i_b, color=COLORS["b"])
+    axes[0, 1].plot(angles, i_c, color=COLORS["g"])
     axes[0, 1].set_xlim(0, 2 * np.pi)
     axes[0, 1].set_ylim(-1.1, 1.1)
     axes[0, 1].set_ylabel(r"$x_\mathrm{abc}$")
     axes[0, 1].set_title("abc signals")
     axes[0, 1].axvline(x=theta, color="m", linestyle="--")
-    axes[0, 1].scatter(theta, i_a[i], color="r", marker="o")
-    axes[0, 1].scatter(theta, i_b[i], color="b", marker="o")
-    axes[0, 1].scatter(theta, i_c[i], color="g", marker="o")
+    axes[0, 1].scatter(theta, i_a[i], color=COLORS["r"], marker="o")
+    axes[0, 1].scatter(theta, i_b[i], color=COLORS["b"], marker="o")
+    axes[0, 1].scatter(theta, i_c[i], color=COLORS["g"], marker="o")
     axes[0, 1].set_xticks([0, np.pi / 2, np.pi, 3 / 2 * np.pi, 2 * np.pi])
     axes[0, 1].set_xticklabels([r"0", r"$\pi/2$", r"$\pi$", r"$3\pi/2$", r"$2\pi$"])
     axes[0, 1].set_xlabel(r"$\varepsilon$")
@@ -230,8 +237,8 @@ def update_plot(i):
         np.sin(theta),
         head_width=0.05,
         head_length=ahl,
-        fc="m",
-        ec="m",
+        fc=COLORS["m"],
+        ec=COLORS["m"],
         length_includes_head=True,
     )
     axes[1, 0].arrow(
@@ -241,8 +248,8 @@ def update_plot(i):
         0,
         head_width=0.05,
         head_length=ahl,
-        fc="r",
-        ec="r",
+        fc=COLORS["r"],
+        ec=COLORS["r"],
         length_includes_head=True,
     )
     axes[1, 0].arrow(
@@ -252,8 +259,8 @@ def update_plot(i):
         clarke_transform(i_a[i], i_b[i], i_c[i])[1],
         head_width=0.05,
         head_length=ahl,
-        fc="b",
-        ec="b",
+        fc=COLORS["b"],
+        ec=COLORS["b"],
         length_includes_head=True,
     )
     axes[1, 0].set_xlim(-1.1, 1.1)
@@ -272,8 +279,12 @@ def update_plot(i):
     axes[1, 0].get_xaxis().set_visible(False)
 
     # Middle right: alpha-beta signals
-    axes[1, 1].plot(angles, clarke_transform(i_a[:], i_b[:], i_c[:])[0], "r")
-    axes[1, 1].plot(angles, clarke_transform(i_a[:], i_b[:], i_c[:])[1], "b")
+    axes[1, 1].plot(
+        angles, clarke_transform(i_a[:], i_b[:], i_c[:])[0], color=COLORS["r"]
+    )
+    axes[1, 1].plot(
+        angles, clarke_transform(i_a[:], i_b[:], i_c[:])[1], color=COLORS["b"]
+    )
     axes[1, 1].set_xlim(0, 2 * np.pi)
     axes[1, 1].set_ylim(-1.1, 1.1)
     axes[1, 1].set_ylabel(r"$x_\mathrm{abc}$")
@@ -284,12 +295,18 @@ def update_plot(i):
     axes[1, 1].grid(True)
     axes[1, 1].axhline(y=0, color="black", linestyle="--", lw=1)
     add_horizontal_lines(axes[1, 0], axes[1, 1])
-    axes[1, 1].axvline(x=theta, color="m", linestyle="--")
+    axes[1, 1].axvline(x=theta, color=COLORS["m"], linestyle="--")
     axes[1, 1].scatter(
-        theta, clarke_transform(i_a[i], i_b[i], i_c[i])[0], color="r", marker="o"
+        theta,
+        clarke_transform(i_a[i], i_b[i], i_c[i])[0],
+        color=COLORS["r"],
+        marker="o",
     )
     axes[1, 1].scatter(
-        theta, clarke_transform(i_a[i], i_b[i], i_c[i])[1], color="b", marker="o"
+        theta,
+        clarke_transform(i_a[i], i_b[i], i_c[i])[1],
+        color=COLORS["b"],
+        marker="o",
     )
 
     # Bottom left: dq phasor
@@ -322,8 +339,8 @@ def update_plot(i):
         np.sin(theta),
         head_width=0.05,
         head_length=ahl,
-        fc="m",
-        ec="m",
+        fc=COLORS["m"],
+        ec=COLORS["m"],
         length_includes_head=True,
     )
     axes[2, 0].arrow(
@@ -335,8 +352,8 @@ def update_plot(i):
         * np.sin(theta + deg_dq),
         head_width=0.05,
         head_length=ahl,
-        fc="r",
-        ec="r",
+        fc=COLORS["r"],
+        ec=COLORS["r"],
         length_includes_head=True,
     )
     axes[2, 0].arrow(
@@ -350,8 +367,8 @@ def update_plot(i):
         * np.sin(theta + deg_dq + np.pi / 2),
         head_width=0.05,
         head_length=ahl,
-        fc="b",
-        ec="b",
+        fc=COLORS["b"],
+        ec=COLORS["b"],
         length_includes_head=True,
     )
     axes[2, 0].set_xlim(-1.1, 1.1)
@@ -383,8 +400,8 @@ def update_plot(i):
     )
 
     # Bottom right: dq signals
-    axes[2, 1].plot(angles, ids, "b")
-    axes[2, 1].plot(angles, iqs, "r")
+    axes[2, 1].plot(angles, ids, color=COLORS["b"])
+    axes[2, 1].plot(angles, iqs, color=COLORS["r"])
     axes[2, 1].set_xlim(0, 2 * np.pi)
     axes[2, 1].set_ylim(-1.1, 1.1)
     axes[2, 1].set_ylabel(r"$x_\mathrm{dq}$")
@@ -394,17 +411,17 @@ def update_plot(i):
     axes[2, 1].set_xlabel(r"$\varepsilon$")
     axes[2, 1].grid(True)
     axes[2, 1].axhline(y=0, color="black", linestyle="--", lw=1)
-    axes[2, 1].axvline(x=theta, color="m", linestyle="--")
+    axes[2, 1].axvline(x=theta, color=COLORS["m"], linestyle="--")
     axes[2, 1].scatter(
         theta,
         park_transform(i_a[i], i_b[i], i_c[i], theta + deg_dq)[0],
-        color="b",
+        color=COLORS["b"],
         marker="o",
     )
     axes[2, 1].scatter(
         theta,
         park_transform(i_a[i], i_b[i], i_c[i], theta + deg_dq)[1],
-        color="r",
+        color=COLORS["r"],
         marker="o",
     )
     add_horizontal_lines(axes[2, 0], axes[2, 1])
