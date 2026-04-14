@@ -5,6 +5,14 @@ import matplotlib.patches as patches
 import matplotlib.pyplot as plt
 import numpy as np
 
+COLORS = {
+    "r": (204 / 255, 51 / 255, 17 / 255),  # Red
+    "b": (68 / 255, 119 / 255, 170 / 255),  # Blue
+    "g": (0 / 255, 153 / 255, 156 / 255),  # Green
+    "m": (170 / 255, 51 / 255, 119 / 255),  # Magenta
+    "gray": (187 / 255, 187 / 255, 187 / 255),  # Gray
+}
+
 # set global font to Times New Roman
 plt.rcParams["font.family"] = "Times New Roman"
 plt.rcParams["text.usetex"] = True
@@ -150,17 +158,17 @@ def update_plot(i):
     ax["motor"].axis("off")
 
     # plot stator currents
-    ax["isa"].plot(t_vec, i_sa, color="red")
-    ax["isb"].plot(t_vec, i_sb, color="blue")
-    ax["isc"].plot(t_vec, i_sc, color="green")
+    ax["isa"].plot(t_vec, i_sa, color=COLORS["r"])
+    ax["isb"].plot(t_vec, i_sb, color=COLORS["b"])
+    ax["isc"].plot(t_vec, i_sc, color=COLORS["g"])
 
     # add vertical lines and markers to indicate the current time step for stator currents
     ax["isa"].axvline(t, color="black", linestyle="--")
     ax["isb"].axvline(t, color="black", linestyle="--")
     ax["isc"].axvline(t, color="black", linestyle="--")
-    ax["isa"].plot(t, i_sa[i], "ro")
-    ax["isb"].plot(t, i_sb[i], "bo")
-    ax["isc"].plot(t, i_sc[i], "go")
+    ax["isa"].plot(t, i_sa[i], marker="o", ls="", color=COLORS["r"])
+    ax["isb"].plot(t, i_sb[i], marker="o", ls="", color=COLORS["b"])
+    ax["isc"].plot(t, i_sc[i], marker="o", ls="", color=COLORS["g"])
 
     # add y-axis labels is/ismax LaTeX labels to stator current subplots
     ax["isa"].set_ylabel(r"$i_{\mathrm{s,a}}(t)/i_{\mathrm{s,max}}$")
@@ -201,37 +209,45 @@ def update_plot(i):
             )
 
     # Plot a circle at (x=0, y=1) with radius 0.1 and a red border (Phase A upper coil)
-    circle = plt.Circle((0, 1), radius_coil, color="red", fill=False)
+    circle = plt.Circle((0, 1), radius_coil, color=COLORS["r"], fill=False)
     ax["motor"].add_artist(circle)
 
     # Plot a circle at (x=0, y=-1) with radius 0.1 and a red border (Phase A lower coil)
-    circle = plt.Circle((0, -1), radius_coil, color="red", fill=False)
+    circle = plt.Circle((0, -1), radius_coil, color=COLORS["r"], fill=False)
     ax["motor"].add_artist(circle)
 
     # plot filled circle at (x=0, y=1) with max radius scaled by the stator current (if positive) or a X with max radius scaled by the stator current (if negative)
     # plot filled circle at (x=0, y=-1) with max radius scaled by the stator current (if negative) or a X with max radius scaled by the stator current (if positive)
     if i_sa[i] > 0:
         circle = plt.Circle(
-            (0, 1), max_marker_size_circle * i_sa[i], color="red", fill=True
+            (0, 1), max_marker_size_circle * i_sa[i], color=COLORS["r"], fill=True
         )
         ax["motor"].plot(
-            0, -1, "x", markersize=max_marker_size_X * np.abs(i_sa[i]), color="red"
+            0,
+            -1,
+            "x",
+            markersize=max_marker_size_X * np.abs(i_sa[i]),
+            color=COLORS["r"],
         )
     else:
         ax["motor"].plot(
-            0, 1, "x", markersize=max_marker_size_X * np.abs(i_sa[i]), color="red"
+            0, 1, "x", markersize=max_marker_size_X * np.abs(i_sa[i]), color=COLORS["r"]
         )
         circle = plt.Circle(
-            (0, -1), max_marker_size_circle * i_sa[i], color="red", fill=True
+            (0, -1), max_marker_size_circle * i_sa[i], color=COLORS["r"], fill=True
         )
     ax["motor"].add_artist(circle)
 
     # Plot two circles 120 ° shifted from the first two circles with blue border  (Phase B upper coil)
-    circle = plt.Circle((np.sqrt(3) / 2, 0.5), radius_coil, color="blue", fill=False)
+    circle = plt.Circle(
+        (np.sqrt(3) / 2, 0.5), radius_coil, color=COLORS["b"], fill=False
+    )
     ax["motor"].add_artist(circle)
 
     # Plot two circles 120 ° shifted from the first two circles with blue border  (Phase B lower coil)
-    circle = plt.Circle((-np.sqrt(3) / 2, -0.5), radius_coil, color="blue", fill=False)
+    circle = plt.Circle(
+        (-np.sqrt(3) / 2, -0.5), radius_coil, color=COLORS["b"], fill=False
+    )
     ax["motor"].add_artist(circle)
 
     # plot filled circle at (np.sqrt(3)/2, 0.5) with max radius scaled by the stator current (if positive) or a X with max radius scaled by the stator current (if negative)
@@ -242,19 +258,19 @@ def update_plot(i):
             0.5,
             "x",
             markersize=max_marker_size_X * np.abs(i_sb[i]),
-            color="blue",
+            color=COLORS["b"],
         )
         circle = plt.Circle(
             (-np.sqrt(3) / 2, -0.5),
             max_marker_size_circle * i_sb[i],
-            color="blue",
+            color=COLORS["b"],
             fill=True,
         )
     else:
         circle = plt.Circle(
             (np.sqrt(3) / 2, 0.5),
             max_marker_size_circle * i_sb[i],
-            color="blue",
+            color=COLORS["b"],
             fill=True,
         )
         ax["motor"].plot(
@@ -262,17 +278,21 @@ def update_plot(i):
             -0.5,
             "x",
             markersize=max_marker_size_X * np.abs(i_sb[i]),
-            color="blue",
+            color=COLORS["b"],
         )
 
     ax["motor"].add_artist(circle)
 
     # Plot two circles 120 ° shifted from the first two circles with green border  (Phase C upper coil)
-    circle = plt.Circle((-np.sqrt(3) / 2, 0.5), radius_coil, color="green", fill=False)
+    circle = plt.Circle(
+        (-np.sqrt(3) / 2, 0.5), radius_coil, color=COLORS["g"], fill=False
+    )
     ax["motor"].add_artist(circle)
 
     # Plot two circles 120 ° shifted from the first two circles with green border  (Phase C lower coil)
-    circle = plt.Circle((np.sqrt(3) / 2, -0.5), radius_coil, color="green", fill=False)
+    circle = plt.Circle(
+        (np.sqrt(3) / 2, -0.5), radius_coil, color=COLORS["g"], fill=False
+    )
     ax["motor"].add_artist(circle)
 
     # plot filled circle at (-np.sqrt(3)/2, 0.5) with max radius scaled by the stator current (if positive) or a X with max radius scaled by the stator current (if negative)
@@ -283,19 +303,19 @@ def update_plot(i):
             0.5,
             "x",
             markersize=max_marker_size_X * np.abs(i_sc[i]),
-            color="green",
+            color=COLORS["g"],
         )
         circle = plt.Circle(
             (np.sqrt(3) / 2, -0.5),
             max_marker_size_circle * i_sc[i],
-            color="green",
+            color=COLORS["g"],
             fill=True,
         )
     else:
         circle = plt.Circle(
             (-np.sqrt(3) / 2, 0.5),
             max_marker_size_circle * i_sc[i],
-            color="green",
+            color=COLORS["g"],
             fill=True,
         )
         ax["motor"].plot(
@@ -303,7 +323,7 @@ def update_plot(i):
             -0.5,
             "x",
             markersize=max_marker_size_X * np.abs(i_sc[i]),
-            color="green",
+            color=COLORS["g"],
         )
     ax["motor"].add_artist(circle)
 
@@ -319,14 +339,14 @@ def update_plot(i):
     circle = plt.Circle(
         (rotor_pos_01_rot[0], rotor_pos_01_rot[1]),
         radius_coil,
-        color="gray",
+        color=COLORS["gray"],
         fill=False,
     )
     ax["motor"].add_artist(circle)
     circle = plt.Circle(
         (rotor_pos_01_rot[0], rotor_pos_01_rot[1]),
         max_marker_size_circle,
-        color="gray",
+        color=COLORS["gray"],
         fill=True,
     )
     ax["motor"].add_artist(circle)
@@ -335,14 +355,14 @@ def update_plot(i):
     circle = plt.Circle(
         (rotor_pos_02_rot[0], rotor_pos_02_rot[1]),
         radius_coil,
-        color="gray",
+        color=COLORS["gray"],
         fill=False,
     )
     ax["motor"].add_artist(circle)
     circle = plt.Circle(
         (rotor_pos_02_rot[0], rotor_pos_02_rot[1]),
         max_marker_size_circle,
-        color="gray",
+        color=COLORS["gray"],
         fill=True,
     )
     ax["motor"].add_artist(circle)
@@ -351,14 +371,14 @@ def update_plot(i):
     circle = plt.Circle(
         (rotor_pos_03_rot[0], rotor_pos_03_rot[1]),
         radius_coil,
-        color="gray",
+        color=COLORS["gray"],
         fill=False,
     )
     ax["motor"].add_artist(circle)
     circle = plt.Circle(
         (rotor_pos_03_rot[0], rotor_pos_03_rot[1]),
         max_marker_size_circle,
-        color="gray",
+        color=COLORS["gray"],
         fill=True,
     )
     ax["motor"].add_artist(circle)
@@ -367,14 +387,14 @@ def update_plot(i):
     circle = plt.Circle(
         (rotor_pos_04_rot[0], rotor_pos_04_rot[1]),
         radius_coil,
-        color="gray",
+        color=COLORS["gray"],
         fill=False,
     )
     ax["motor"].add_artist(circle)
     circle = plt.Circle(
         (rotor_pos_04_rot[0], rotor_pos_04_rot[1]),
         max_marker_size_circle,
-        color="gray",
+        color=COLORS["gray"],
         fill=True,
     )
     ax["motor"].add_artist(circle)
@@ -383,7 +403,7 @@ def update_plot(i):
     circle = plt.Circle(
         (rotor_neg_01_rot[0], rotor_neg_01_rot[1]),
         radius_coil,
-        color="gray",
+        color=COLORS["gray"],
         fill=False,
     )
     ax["motor"].add_artist(circle)
@@ -392,7 +412,7 @@ def update_plot(i):
         rotor_neg_01_rot[1],
         "x",
         markersize=max_marker_size_X,
-        color="gray",
+        color=COLORS["gray"],
     )
 
     # plot circle for the second rotor turn position with neg current and add a inner gray x-marker to represent the neg current
@@ -408,7 +428,7 @@ def update_plot(i):
         rotor_neg_02_rot[1],
         "x",
         markersize=max_marker_size_X,
-        color="gray",
+        color=COLORS["gray"],
     )
 
     # plot circle for the third rotor turn position with neg current and add a inner gray x-marker to represent the neg current
@@ -424,7 +444,7 @@ def update_plot(i):
         rotor_neg_03_rot[1],
         "x",
         markersize=max_marker_size_X,
-        color="gray",
+        color=COLORS["gray"],
     )
 
     # plot circle for the fourth rotor turn position with neg current and add a inner gray x-marker to represent the neg current
@@ -440,7 +460,7 @@ def update_plot(i):
         rotor_neg_04_rot[1],
         "x",
         markersize=max_marker_size_X,
-        color="gray",
+        color=COLORS["gray"],
     )
 
     # define left salient rotor edge
@@ -558,7 +578,7 @@ def update_plot(i):
             np.sin(theta_vec[j]) * radius_air_gap - B[j] * np.sin(theta_vec[j]) / 6,
             B[j] * np.cos(theta_vec[j]),
             B[j] * np.sin(theta_vec[j]),
-            color="gray",
+            color=COLORS["gray"],
             scale_units="xy",
             scale=3,
             width=0.005,
@@ -571,7 +591,7 @@ def update_plot(i):
         rotor_pos_01_rot[1],
         F_r_pos_01 * np.cos(B_theta_vec[idx_pos_01] + np.pi / 2),
         F_r_pos_01 * np.sin(B_theta_vec[idx_pos_01] + np.pi / 2),
-        color="#7401d8ff",
+        color=COLORS["m"],
         scale_units="xy",
         scale=3,
         width=0.005,
@@ -581,7 +601,7 @@ def update_plot(i):
         rotor_pos_02_rot[1],
         F_r_pos_02 * np.cos(B_theta_vec[idx_pos_02] + np.pi / 2),
         F_r_pos_02 * np.sin(B_theta_vec[idx_pos_02] + np.pi / 2),
-        color="#7401d8ff",
+        color=COLORS["m"],
         scale_units="xy",
         scale=3,
         width=0.005,
@@ -591,7 +611,7 @@ def update_plot(i):
         rotor_pos_03_rot[1],
         F_r_pos_03 * np.cos(B_theta_vec[idx_pos_03] + np.pi / 2),
         F_r_pos_03 * np.sin(B_theta_vec[idx_pos_03] + np.pi / 2),
-        color="#7401d8ff",
+        color=COLORS["m"],
         scale_units="xy",
         scale=3,
         width=0.005,
@@ -601,7 +621,7 @@ def update_plot(i):
         rotor_pos_04_rot[1],
         F_r_pos_04 * np.cos(B_theta_vec[idx_pos_04] + np.pi / 2),
         F_r_pos_04 * np.sin(B_theta_vec[idx_pos_04] + np.pi / 2),
-        color="#7401d8ff",
+        color=COLORS["m"],
         scale_units="xy",
         scale=3,
         width=0.005,
@@ -611,7 +631,7 @@ def update_plot(i):
         rotor_neg_01_rot[1],
         F_r_neg_01 * np.cos(B_theta_vec[idx_neg_01] - np.pi / 2),
         F_r_neg_01 * np.sin(B_theta_vec[idx_neg_01] - np.pi / 2),
-        color="#7401d8ff",
+        color=COLORS["m"],
         scale_units="xy",
         scale=3,
         width=0.005,
@@ -621,7 +641,7 @@ def update_plot(i):
         rotor_neg_02_rot[1],
         F_r_neg_02 * np.cos(B_theta_vec[idx_neg_02] - np.pi / 2),
         F_r_neg_02 * np.sin(B_theta_vec[idx_neg_02] - np.pi / 2),
-        color="#7401d8ff",
+        color=COLORS["m"],
         scale_units="xy",
         scale=3,
         width=0.005,
@@ -631,7 +651,7 @@ def update_plot(i):
         rotor_neg_03_rot[1],
         F_r_neg_03 * np.cos(B_theta_vec[idx_neg_03] - np.pi / 2),
         F_r_neg_03 * np.sin(B_theta_vec[idx_neg_03] - np.pi / 2),
-        color="#7401d8ff",
+        color=COLORS["m"],
         scale_units="xy",
         scale=3,
         width=0.005,
@@ -641,7 +661,7 @@ def update_plot(i):
         rotor_neg_04_rot[1],
         F_r_neg_04 * np.cos(B_theta_vec[idx_neg_04] - np.pi / 2),
         F_r_neg_04 * np.sin(B_theta_vec[idx_neg_04] - np.pi / 2),
-        color="#7401d8ff",
+        color=COLORS["m"],
         scale_units="xy",
         scale=3,
         width=0.005,
