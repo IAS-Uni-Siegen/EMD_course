@@ -124,7 +124,11 @@ for i in range(NUMBER_OF_TIME_STEPS):
 
     # Create axes for the sinusoidal plots
     axp = [fig.add_axes([D, k * ((1 - 4 * D) / 3 + D) + D, W1, H1]) for k in range(3)]
-    styles = ["r", "b", "g"]  # Colors for the coils
+    styles = [
+        (204 / 255, 51 / 255, 17 / 255),  # Red
+        (68 / 255, 119 / 255, 170 / 255),  # Blue
+        (0 / 255, 153 / 255, 156 / 255),  # Green
+    ]
     axi = fig.add_axes([W1 + 2 * D, D, 1 - 3 * D - W1, 1 - 2 * D])  # Main axes
     axi.set_axis_off()  # Turn off axis lines and labels
 
@@ -154,15 +158,10 @@ for i in range(NUMBER_OF_TIME_STEPS):
         xp = i * 2 * np.pi / NUMBER_OF_TIME_STEPS  # Current x position on the wave
         yp = np.cos(xp - j * 2 * np.pi / 3)  # Current y position on the wave
         if DRAWV[j]:
-            # Plot the wave and current point
-            plt.plot(
-                np.linspace(0, 2 * np.pi, 500),
-                y,
-                styles[j] + "-",
-                xp,
-                yp,
-                styles[j] + "o",
-            )
+            # Plot smooth line
+            plt.plot(np.linspace(0, 2 * np.pi, 500), y, color=styles[j], linestyle="-")
+            # Plot the moving dot
+            plt.plot(xp, yp, color=styles[j], marker="o")
             fig.sca(axi)
             dx = VL * yp * np.cos(j * 2 * np.pi / 3)  # Change in x for the vector
             dy = VL * yp * np.sin(-j * 2 * np.pi / 3)  # Change in y for the vector
