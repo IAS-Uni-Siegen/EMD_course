@@ -34,9 +34,9 @@ B = B_a + B_b + B_c
 
 # Plot the flux densities in seperate subplots stacked vertically
 fig, ax = plt.subplots(4, 1, figsize=(6, 8))
-ax[0].plot(theta_vec, B_a, "r")
-ax[1].plot(theta_vec, B_b, "b")
-ax[2].plot(theta_vec, B_c, "g")
+ax[0].plot(theta_vec, B_a, color=(204 / 255, 51 / 255, 17 / 255))
+ax[1].plot(theta_vec, B_b, color=(68 / 255, 119 / 255, 170 / 255))
+ax[2].plot(theta_vec, B_c, color=(0 / 255, 153 / 255, 156 / 255))
 ax[3].plot(theta_vec, B, "k")
 
 # plt.tight_layout()
