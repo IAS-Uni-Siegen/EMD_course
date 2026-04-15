@@ -2,9 +2,9 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="136.36501mm"
-   height="40.803177mm"
-   viewBox="0 0 136.365 40.803177"
+   width="142.9693mm"
+   height="43.374607mm"
+   viewBox="0 0 142.96929 43.374608"
    version="1.1"
    id="svg1"
    inkscape:version="1.4.3 (0d15f75, 2025-12-25)"
@@ -24,20 +24,21 @@
      inkscape:deskcolor="#505050"
      inkscape:document-units="mm"
      showgrid="true"
-     inkscape:zoom="2.0578704"
-     inkscape:cx="256.8189"
-     inkscape:cy="86.497187"
+     inkscape:zoom="4.1157408"
+     inkscape:cx="439.65354"
+     inkscape:cy="84.06749"
      inkscape:window-width="1920"
      inkscape:window-height="998"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
-     inkscape:current-layer="layer1">
+     inkscape:current-layer="layer1"
+     showguides="true">
     <inkscape:grid
        id="grid1"
        units="mm"
        originx="-7.9249997"
-       originy="-1.2912082"
+       originy="-1.2912081"
        spacingx="0.99999998"
        spacingy="1"
        empcolor="#0099e5"
@@ -1092,7 +1093,7 @@
     </g>
     <g
        inkscape:label=""
-       transform="translate(79.249054,38.002666)"
+       transform="translate(78.991911,40.831237)"
        id="g5-3">
       <g
          fill="#000000"
@@ -1110,7 +1111,7 @@
     </g>
     <g
        inkscape:label=""
-       transform="translate(124.74287,38.002666)"
+       transform="translate(124.67859,40.895523)"
        id="g5-3-3">
       <g
          fill="#000000"
@@ -1128,7 +1129,7 @@
     </g>
     <g
        inkscape:label=""
-       transform="translate(17.284354,38.924895)"
+       transform="translate(16.962925,41.496324)"
        id="g10">
       <g
          fill="#000000"
@@ -1166,7 +1167,7 @@
     </g>
     <g
        inkscape:label=""
-       transform="translate(40.808299,38.924895)"
+       transform="translate(40.422585,41.239181)"
        id="g10-9">
       <g
          fill="#000000"
@@ -1204,7 +1205,7 @@
     </g>
     <g
        inkscape:label=""
-       transform="translate(21.708229,8.4745433)"
+       transform="translate(25.501086,41.581686)"
        id="g13">
       <g
          fill="#000000"
@@ -1235,7 +1236,7 @@
     </g>
     <g
        inkscape:label=""
-       transform="translate(14.403737,8.4745433)"
+       transform="translate(48.539451,41.5174)"
        id="g18">
       <g
          fill="#000000"
@@ -3219,7 +3220,7 @@
          id="tspan37"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.175px;font-family:sans-serif;-inkscape-font-specification:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.1"
          x="32"
-         y="3.703464">Shell type (double E)</tspan></text>
+         y="3.703464">Shell type (EE)</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:3.175px;line-height:1.05;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, Normal';text-align:center;text-anchor:middle;fill:#ffdfbf;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.1;stroke-linecap:round;stroke-miterlimit:3.9;stroke-dasharray:none;stroke-opacity:1"
@@ -3230,7 +3231,7 @@
          id="tspan37-6"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.175px;font-family:sans-serif;-inkscape-font-specification:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.1"
          x="126.42835"
-         y="3.85989">Core type (double U)</tspan></text>
+         y="3.85989">Core type (UU) + distr. winding</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:3.175px;line-height:1.05;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, Normal';text-align:center;text-anchor:middle;fill:#ffdfbf;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.1;stroke-linecap:round;stroke-miterlimit:3.9;stroke-dasharray:none;stroke-opacity:1"
@@ -3241,6 +3242,48 @@
          id="tspan37-6-3"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.175px;font-family:sans-serif;-inkscape-font-specification:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.1"
          x="81.412498"
-         y="3.85989">Core type (double U)</tspan></text>
+         y="3.85989">Core type (UU)</tspan></text>
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.165;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+       d="m 19.432143,39.219779 v 1.992857"
+       id="path2"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.165;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+       d="m 43.217855,39.091207 v 1.735715"
+       id="path11"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.149278;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+       d="m 23.730781,33.943584 3.102723,7.145247"
+       id="path12"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.165421;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+       d="m 47.665157,33.501715 1.969684,7.064699"
+       id="path14"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+       d="m 80.439284,38.769778 v 1.414285"
+       id="path16"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.165;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+       d="M 80.824999,38.576921 80.50357,40.762636"
+       id="path17"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.165;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+       d="m 126.14643,38.705492 -0.12858,2.507144"
+       id="path18"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="0" />
   </g>
 </svg>
