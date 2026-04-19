@@ -1,0 +1,267 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Task 4 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\task{Stationary operation of a permanent magnet synchronous machine}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\taskGerman{Stationärer Betrieb einer permanentmagneterregten Synchronmaschine}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\autoref{fig:pmsm_time_pmsm} shows the mechanical rotor angle $\varepsilon_{\mathrm{r}}(t)$ and the three-phase stator currents $i_{\mathrm{s,a}}(t)$, $i_{\mathrm{s,b}}(t)$, $i_{\mathrm{s,c}}(t)$ of a permanent magnet synchronous motor (PMSM). The rotor angle sensor is aligned for $\varepsilon_{\mathrm{r}}=0$ with the $a$-phase winding current vector.
+Assume steady-state operation (constant speed) and a symmetric star-connected stator (zero-sequence-free currents). The PMSM parameters are given in \autoref{tab:para_pmsm}.
+Neglect iron losses, friction/windage, and converter losses. Consider only stator copper losses via $R_{\mathrm{s}}$.
+
+\begin{germanblock}
+	\autoref{fig:pmsm_time_pmsm} zeigt den mechanischen Rotorwinkel $\varepsilon_{\mathrm{r}}(t)$ sowie die dreiphasigen Statorströme $i_{\mathrm{s,a}}(t)$, $i_{\mathrm{s,b}}(t)$ und $i_{\mathrm{s,c}}(t)$ einer permanentmagneterregten Synchronmaschine (PMSM). Der Rotorwinkelsensor ist so ausgerichtet, dass $\varepsilon_{\mathrm{r}}=0$ mit der Stromvektorkomponente der $a$-Wicklung übereinstimmt.
+	Es gelte  stationärer Betrieb (konstante Drehzahl) und ein symmetrischer Sternanschluss (nullsystemfrei). Die PMSM-Parameter sind in \autoref{tab:para_pmsm} gegeben. Vernachlässigen Sie Eisenverluste, Reibungs-/Luftverluste und Umrichterverluste. Berücksichtigen Sie nur Kupferverluste über $R_{\mathrm{s}}$.
+\end{germanblock}
+
+\begin{table}[htb]
+	\caption{Given PMSM parameters.}
+	\centering
+	\begin{tabular}{lll}\toprule
+		Symbol               & Description       & Value                     \\
+		\midrule
+		$R_{\mathrm{s}}$     & Stator resistance & $\SI{30}{\milli\ohm}$     \\
+		$L'_{\mathrm{s,d}}$  & d-axis inductance & $\SI{0.25}{\milli\henry}$ \\
+		$L'_{\mathrm{s,q}}$  & q-axis inductance & $\SI{0.40}{\milli\henry}$ \\
+		$\psi_{\mathrm{pm}}$ & PM flux linkage   & $\SI{0.12}{\volt\second}$ \\
+		\bottomrule
+	\end{tabular}
+	\label{tab:para_pmsm}
+\end{table}
+%\vspace{-1.3em}
+
+\begin{figure}[htb]
+	\centering
+	\begin{tikzpicture}
+		\begin{groupplot}[
+				group style={group size=1 by 2, vertical sep=1.1cm},
+				width=0.95\linewidth,
+				height=0.28\linewidth,
+				xmin=-5, xmax=25,
+				xtick={-5, 0, 5, 10, 15, 20, 25},
+				xlabel={$t$ in ms},
+				grid=both,
+			]
+
+			% (i) mechanical rotor angle wrapped to [0,2pi)
+			\nextgroupplot[
+				ylabel={$\varepsilon_{\mathrm{r}}(t)$ in rad},
+				ymin=0, ymax=2*pi,
+				ytick={0,pi/4,pi/2,3*pi/4,pi,5*pi/4,3*pi/2,7*pi/4,2*pi},
+				yticklabels={$0$,$\nicefrac{\pi}{4}$,$\nicefrac{\pi}{2}$,$\nicefrac{3\pi}{4}$,$\pi$,$\nicefrac{5\pi}{4}$,$\nicefrac{3\pi}{2}$,$\nicefrac{7\pi}{4}$,$2\pi$}
+			]
+			% Choice (encoded in figure): f_r = 50 Hz -> T_me = 20 ms, plot 0..40 ms -> 2 periods
+			\addplot[thick, samples=1500, domain=-5:25]
+			{2*pi*(50*(x/1000) - floor(50*(x/1000)))};
+
+			% (ii) three-phase stator currents (4 electrical periods), amplitude 100 A
+			\nextgroupplot[
+				ylabel={$i_{\mathrm{s,a/b/c}}(t)$ in A},
+				ymin=-120, ymax=120,
+				legend style={at={(0.98,0.02)}, anchor=south east},
+			]
+			% Choice: p = 2 -> f_el = 100 Hz -> T_el = 10 ms, plot 0..40 ms -> 4 periods
+			% Electrical load angle (current space vector vs. d-axis / rotor PM flux): theta = 45 deg_el
+			\addplot[thick, solid, color=signaldelta, samples=900, domain=-5:25]
+			{100*cos(deg(2*pi*100*(x/1000) + (pi/2 - pi/8)*2))};
+			\addlegendentry{$i_{\mathrm{s,a}}$}
+
+			\addplot[thick, dashed, color=signalepsilon, samples=900, domain=-5:25]
+			{100*cos(deg(2*pi*100*(x/1000) + (pi/2 - pi/8)*2 - 2*pi/3))};
+			\addlegendentry{$i_{\mathrm{s,b}}$}
+
+			\addplot[thick, dotted, color=signalzeta, samples=900, domain=-5:25]
+			{100*cos(deg(2*pi*100*(x/1000) + (pi/2 - pi/8)*2 + 2*pi/3))};
+			\addlegendentry{$i_{\mathrm{s,c}}$}
+
+		\end{groupplot}
+	\end{tikzpicture}
+	\caption{Measured mechanical rotor angle $\varepsilon_{\mathrm{r}}(t)$ and three-phase stator currents $i_{\mathrm{s,a}}(t)$, $i_{\mathrm{s,b}}(t)$, $i_{\mathrm{s,c}}(t)$.}
+	\label{fig:pmsm_time_pmsm}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subtask{Determine the pole pair number $p$ as well as the mechanical and electrical rotational frequencies $f_{\mathrm{r}}$ and $f_{\mathrm{r,el}}$ from \autoref{fig:pmsm_time_pmsm}.}{3}
+\begin{hintblock}
+	If and if only you are not able to solve this task, use the following alternative values for the following tasks: $p=3$, $f_{\mathrm{r}}=\SI{25}{Hz}$, $f_{\mathrm{r,el}}=\SI{75}{Hz}$.
+\end{hintblock}
+
+\subtaskGerman{Bestimmen Sie aus \autoref{fig:pmsm_time_pmsm} die Polpaarzahl $p$ sowie die mechanische und elektrische Drehfrequenz $f_{\mathrm{r}}$ und $f_{\mathrm{r,el}}$.}
+
+\begin{germanhintblock}
+	Falls Sie diese Aufgabe nicht lösen können, verwenden Sie für die folgenden Aufgaben alternativ die folgenden Werte: $p=3$, $f_{\mathrm{r}}=\SI{25}{Hz}$, $f_{\mathrm{r,el}}=\SI{75}{Hz}$.
+\end{germanhintblock}
+
+\begin{solutionblock}
+	From the upper plot, one mechanical period occurs within $\SI{20}{ms}$, hence
+	$$T_{\mathrm{r}} = \SI{20}{ms}\;\Rightarrow\; f_{\mathrm{r}} = \frac{1}{T_{\mathrm{r}}}=\SI{50}{Hz}.$$
+	From the lower plot, two electrical current periods occur within $\SI{20}{ms}$, hence
+	$$T_{\mathrm{r,el}} = \frac{\SI{20}{ms}}{2} = \SI{10}{ms}\;\Rightarrow\; f_{\mathrm{r,el}} = \frac{1}{T_{\mathrm{r,el}}}=\SI{100}{Hz}.$$
+	Therefore, the pole pair number is
+	$$p = \frac{f_{\mathrm{r,el}}}{f_{\mathrm{r}}}=\frac{100}{50}=2.$$
+\end{solutionblock}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subtask{Determine the electrical load angle $\theta$ from \autoref{fig:pmsm_time_pmsm}, i.e., the angle between the rotor flux linkage and the stator current space vector.}{2}\begin{hintblock}
+	Due to the visual uncertainty, only an approximate estimate is expected. If and if only you are not able to solve this task, use the following alternative value for the following tasks: $\theta=\SI{225}{\degree}$.
+\end{hintblock}
+
+\subtaskGerman{Bestimmen Sie den elektrischen Lastwinkel $\theta$, d.h. den Winkel zwischen der Rotorflussverkettung und dem Statorstromraumzeiger.}
+
+\begin{germanhintblock}
+	Aufgrund der visuellen Unsicherheit beim Ablesen aus einer Abbildung wird nur ein näh\-er\-ungs\-wei\-ser Wert erwartet. Falls Sie diese Aufgabe nicht lösen können, verwenden Sie für die folgenden Aufgaben alternativ den folgenden Wert: $\theta=\SI{225}{\degree}$.
+\end{germanhintblock}
+
+\begin{solutionblock}
+	From \autoref{fig:pmsm_time_pmsm} it can be seen that the current period is leading the mechanical period by approximately $\SI{3.75}{ms}$, which corresponds to an a mechanical angle of
+	$$\varepsilon_{\mathrm{lead}} = \frac{\SI{3.75}{ms}}{\SI{20}{ms}}\cdot 360^\circ = 67.5^\circ.$$
+	The electrical angle is $p$ times the mechanical angle, hence
+	$$\theta = p \cdot \varepsilon_{\mathrm{lead}} = 2 \cdot 67.5^\circ = 135^\circ.$$
+\end{solutionblock}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subtask{Determine the steady-state dq-current components $i_{\mathrm{s,d}}$ and $i_{\mathrm{s,q}}$.}{1}
+\begin{hintblock}
+	If and if only you are not able to solve this task, use the following alternative values for the following tasks: $i_{\mathrm{s,d}}=\SI{-70.71}{A}$, $i_{\mathrm{s,q}}=\SI{-70.71}{A}$.
+\end{hintblock}
+
+\subtaskGerman{Bestimmen Sie die stationären dq-Stromkomponenten $i_{\mathrm{s,d}}$ und $i_{\mathrm{s,q}}$.}
+
+\begin{germanhintblock}
+	Falls Sie diese Aufgabe nicht lösen können, verwenden Sie für die folgenden Aufgaben alternativ die folgenden Werte: $i_{\mathrm{s,d}}=\SI{-70.71}{A}$, $i_{\mathrm{s,q}}=\SI{-70.71}{A}$.
+\end{germanhintblock}
+
+\begin{solutionblock}
+	With rotor-flux orientation, the d-axis is aligned with $\psi_{\mathrm{pm}}$,  hence the dq-currents can be computed from the stator current amplitude $\hat{i}_{\mathrm{s}}$ and the load angle $\theta$ as
+	\[
+		i_{\mathrm{s,d}}=\hat{i}_{\mathrm{s}}\cos(\theta),\qquad i_{\mathrm{s,q}}=\hat{i}_{\mathrm{s}}\sin(\theta).
+	\]
+	With $\hat{i}_{\mathrm{s}}=\SI{100}{A}$ and $\theta=\SI{135}{\degree}$, one obtains
+	\[
+		i_{\mathrm{s,d}}=\SI{100}{A}\cos(135^\circ)=\SI{-70.71}{A},\qquad
+		i_{\mathrm{s,q}}=\SI{100}{A}\sin(135^\circ)=\SI{70.71}{A}.
+	\]
+	\begin{solutionfigure}
+		\begin{center}
+			\begin{tikzpicture}[>=latex, line cap=round, line join=round, scale=1.05]
+				% scale: 100 A -> 3 cm
+				\def\Is{3.0}
+				\def\thetacalc{135}
+
+				% axes (rotor-flux orientation: d-axis aligned with psi_pm)
+				\draw[->, thick] (-3.4,0) -- (3.6,0) node[below right] {$i_{\mathrm{s,d}}$};
+				\draw[->, thick] (0,-0.4) -- (0,3.6) node[above left] {$i_{\mathrm{s,q}}$};
+
+				% indicate rotor flux direction (d-axis)
+				\draw[->, thick, gray] (0,0) -- (1.6,0) node[above] {$\psi_{\mathrm{pm}}$};
+
+				% current vector
+				\coordinate (I) at ({\Is*cos(\thetacalc)},{\Is*sin(\thetacalc)});
+				\draw[->, very thick, signalalpha] (0,0) -- (I) node[above left] {$\bm{i}_{\mathrm{s}}$};
+
+				% projections / components
+				\draw[densely dashed] (I) -- ({\Is*cos(\thetacalc)},0) node[midway, left] {};
+				\draw[densely dashed] (I) -- (0,{\Is*sin(\thetacalc)}) node[midway, above] {};
+				\fill ({\Is*cos(\thetacalc)},0) circle (1.0pt);
+				\fill (0,{\Is*sin(\thetacalc)}) circle (1.0pt);
+
+				\node[below] at ({\Is*cos(\thetacalc)},0) {$i_{\mathrm{s,d}}=\SI{-70.7}{A}$};
+				\node[right]  at (0,{\Is*sin(\thetacalc)}) {$i_{\mathrm{s,q}}=\SI{70.7}{A}$};
+
+				% load angle
+				\draw[->, thick] (1.1,0) arc (0:\thetacalc:1.1);
+				\node[anchor=west] at ({1.45*cos(\thetacalc/2)},{1.45*sin(\thetacalc/2)}) {$\theta=\SI{135}{\degree}$};
+			\end{tikzpicture}
+		\end{center}
+		\caption{Visual vector representation of the situation from \autoref{fig:pmsm_time_pmsm}}
+		\label{solfig:current_vector_pmsm}
+	\end{solutionfigure}
+\end{solutionblock}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subtask{Calculate the electromagnetic torque $T$ and the mechanical output power $P_{\mathrm{me}}$.}{2}
+\begin{hintblock}
+	If and if only you are not able to solve this task, use the following alternative values for the following tasks: $P_{\mathrm{me}}=\SI{-8.64}{kW}$.
+\end{hintblock}
+
+\subtaskGerman{Berechnen Sie das elektromagnetische Drehmoment $T$ sowie die mechanische Leistung $P_{\mathrm{me}}$.}
+
+\begin{germanhintblock}
+	Falls Sie diese Aufgabe nicht lösen können, verwenden Sie für die folgenden Aufgaben alternativ den folgenden Wert: $P_{\mathrm{me}}=\SI{-8.64}{kW}$.
+\end{germanhintblock}
+
+\begin{solutionblock}
+	The torque is
+	\[
+		T=\frac{3}{2}p\,i_{\mathrm{s,q}}\left(\psi_{\mathrm{pm}}+\left(L'_{\mathrm{s,d}}-L'_{\mathrm{s,q}}\right)i_{\mathrm{s,d}}\right).
+	\]
+	Inserting the given parameters and the computed dq-currents yields
+	\[
+		T=\frac{3}{2}\cdot 2 \cdot \SI{70.71}{A}\left(\SI{0.12}{Vs}+\left(\SI{0.25}{mH}-\SI{0.40}{mH}\right)\cdot \SI{-70.71}{A}\right)=\SI{27.71}{Nm}.
+	\]
+	The mechanical power is $P_{\mathrm{me}}=T\omega_{\mathrm{r}}$, where $\omega_{\mathrm{r}}=2\pi f_{\mathrm{r}}$ is the mechanical angular velocity. With $f_{\mathrm{r}}=\SI{50}{Hz}$, one obtains
+	\[
+		P_{\mathrm{me}}=\SI{27.71}{Nm}\cdot 2\pi \cdot \SI{50}{Hz}=\SI{8.70}{kW}.
+	\]
+\end{solutionblock}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subtask{Calculate the electrical input power $P_{\mathrm{el}}$ and the efficiency $\eta$.}{3}
+\subtaskGerman{Berechnen Sie die elektrische Eingangsleistung $P_{\mathrm{el}}$ sowie den Wirkungsgrad $\eta$.}
+
+\begin{solutionblock}
+	Flux linkages:
+	\[
+		\psi_{\mathrm{s,d}} = L'_{\mathrm{s,d}} i_{\mathrm{s,d}} + \psi_{\mathrm{pm}}
+		= \SI{0.25}{mH}\cdot \SI{-70.71}{A} + \SI{0.12}{Vs}
+		= \SI{-0.01768}{Vs}+\SI{0.12}{Vs}=\SI{0.10232}{Vs},
+	\]
+	\[
+		\psi_{\mathrm{s,q}} = L'_{\mathrm{s,q}} i_{\mathrm{s,q}}
+		= \SI{0.40}{mH}\cdot \SI{70.71}{A}
+		= \SI{0.02828}{Vs}.
+	\]
+	Voltages in steady state:
+	\[
+		u_{\mathrm{s,d}} = R_{\mathrm{s}} i_{\mathrm{s,d}} - \omega_{\mathrm{r,el}} \psi_{\mathrm{s,q}}
+		= \SI{30}{m\Omega}\cdot \SI{-70.71}{A} - \SI{628.32}{\per\second}\cdot \SI{0.02828}{Vs}
+		= \SI{-2.12}{V}-\SI{17.77}{V}=\SI{-19.89}{V},
+	\]
+	\[
+		u_{\mathrm{s,q}} = R_{\mathrm{s}} i_{\mathrm{s,q}} + \omega_{\mathrm{r,el}} \psi_{\mathrm{s,d}}
+		= \SI{30}{m\Omega}\cdot \SI{70.71}{A} + \SI{628.32}{\per\second}\cdot \SI{0.10232}{Vs}
+		= \SI{2.12}{V}+\SI{64.29}{V}=\SI{66.41}{V}.
+	\]
+	Electrical input power:
+	\[
+		P_{\mathrm{el}}=\frac{3}{2}\left(u_{\mathrm{s,d}}i_{\mathrm{s,d}}+u_{\mathrm{s,q}}i_{\mathrm{s,q}}\right)
+		=\frac{3}{2}\left(\SI{-19.89}{V}\cdot \SI{-70.71}{A}+\SI{66.41}{V}\cdot \SI{70.71}{A}\right)
+		=\SI{9.15}{kW}.
+	\]
+	Efficiency:
+	\[
+		\eta=\frac{P_{\mathrm{me}}}{P_{\mathrm{el}}}=\frac{\SI{8.70}{kW}}{\SI{9.15}{kW}}=0.951.
+	\]
+	Consistency check: copper loss $P_{\mathrm{Cu}}=P_{\mathrm{el}}-P_{\mathrm{me}} = \SI{0.45}{kW} = \frac{3}{2}R_{\mathrm{s}}(i_{\mathrm{s,d}}^2+i_{\mathrm{s,q}}^2)$.
+\end{solutionblock}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subtask{The PMSM is overheated above the Curie temperature, causing permanent demagnetization of the magnets. Qualitatively discuss the effect on torque and mechanical power at the same operating point. Is electromagnetic energy conversion still possible?}{2}
+\begin{hintblock}
+	This question is largely independent of the previous tasks and can be answered based on the general understanding of PMSMs and the torque equation.
+\end{hintblock}
+
+\subtaskGerman{In Folge einer Störung erhitzte die PMSM über die Curie-Temperatur; die Permanentmagnete wurden dauerhaft entmagnetisiert. Diskutieren Sie qualitativ die Auswirkungen auf Drehmoment und mechanische Leistung am gleichen Arbeitspunkt wie oben. Ist trotz entmagnetisierter Magnete noch eine elektromechanische Energiewandlung möglich?}
+
+\begin{germanhintblock}
+	Diese Frage ist weitgehend unabhängig von den vorherigen Aufgaben und kann auf der Grundlage des allgemeinen Verständnisses von PMSMs und der Drehmomentgleichung beantwortet werden.
+\end{germanhintblock}
+
+\begin{solutionblock}
+	A total demagnetization reduces the permanent magnet flux linkage to zero $\psi_{\mathrm{pm}}=0$. Hence, the torque equation simplifies to only the reluctance torque contribution:
+	\[
+		T=\frac{3}{2}p\,i_{\mathrm{s,q}}\left(\left(L'_{\mathrm{s,d}}-L'_{\mathrm{s,q}}\right)i_{\mathrm{s,d}}\right).
+	\]
+	Due to the motor's saliency some torque generation and energy conversion is still possible, however, for the above motors parameters, the PM-based torque is dominating for the given operating point, hence a significant reduction of torque and mechanical power is expected.
+\end{solutionblock}
