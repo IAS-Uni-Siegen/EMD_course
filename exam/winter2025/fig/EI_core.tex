@@ -1,0 +1,102 @@
+% 
+% \begin{figure}[htb]
+% \centering
+\begin{tikzpicture}[scale=.8]
+
+	\def\a{150/20}
+	\def\b{100/20}
+	\def\c{25/20}
+	\def\e{75/20}
+	\def\delta{0/20}
+	\def\threeD{10/20}
+
+	% I-core
+	\draw[thick,fill=gray!15] (0,{-\b-\delta}) -- (\a,{-\b-\delta})
+	-- (\a,{-\b-\delta-\c})  -- (0,{-\b-\delta-\c}) -- (0,{-\b-\delta});
+
+	\draw[thick,fill=gray!15,rounded corners=1pt] (0,{-\b-\delta}) -- ({cos(45)*\threeD},{sin(45)*\threeD-\b-\delta}) -- ({cos(45)*\threeD+\a},{sin(45)*\threeD-\b-\delta}) -- ({\a},{-\b-\delta}) -- ({0},{-\b-\delta});
+
+	\draw[thick,fill=gray!15,rounded corners=1pt] (\a,{-\b-\delta-\c}) -- (\a,{-\b-\delta}) -- ({\a+cos(45)*\threeD},{-\b-\delta+sin(45)*\threeD}) -- ({\a+cos(45)*\threeD},{-\b-\delta-\c+sin(45)*\threeD}) -- (\a,{-\b-\c-\delta});
+
+	% E-core
+	\draw[thick,fill=gray!15]
+	(0,0) -- (\a,0)
+	-- (\a,-\b)
+	-- ({\a-\c},-\b)
+	-- ({\a-\c},{-\b+\e})
+	-- ({\a-2*\c},{-\b+\e})
+	-- ({\a-2*\c},{-\b})
+	-- ({\a-4*\c},{-\b})
+	-- ({\a-4*\c},{-\b+\e})
+	-- ({\a-5*\c},{-\b+\e})
+	-- ({\a-5*\c},{-\b})
+	-- ({\a-6*\c},{-\b})
+	-- ({\a-6*\c},0);
+
+	\draw[thick,fill=gray!15,rounded corners=1pt]
+	(0,0) -- ({cos(45)*\threeD},{sin(45)*\threeD}) -- ({cos(45)*\threeD+\a},{sin(45)*\threeD}) -- (\a,0) -- (0,0);
+
+	\draw[thick,fill=gray!15,rounded corners=1pt] (\a,-\b) -- (\a,0) --({cos(45)*\threeD+\a},{sin(45)*\threeD}) -- ({cos(45)*\threeD+\a},{sin(45)*\threeD-\b}) -- (\a,-\b);
+
+	\draw[thick,fill=gray!15,rounded corners=1pt] ({\a-5*\c},{-\b}) -- ({\a-5*\c},{-\b+\e}) -- ({\a-5*\c+cos(45)*\threeD},{-\b+\e}) -- ({\a-5*\c+cos(45)*\threeD},{-\b+sin(45)*\threeD}) -- ({\a-5*\c},{-\b});
+
+	\draw[thick,fill=gray!15,rounded corners=1pt] ({\a-2*\c},{-\b}) -- ({\a-2*\c},{-\b+\e}) -- ({\a-2*\c+cos(45)*\threeD},{-\b+\e}) -- ({\a-2*\c+cos(45)*\threeD},{-\b+sin(45)*\threeD}) -- ({\a-2*\c},{-\b});
+
+	% a
+	\draw[|<->|] ({cos(45)*\threeD},{sin(45)*\threeD+0.2}) -- ({cos(45)*\threeD+\a},{sin(45)*\threeD+0.2}) node[midway, above] {$a = 84\,\text{mm}$};
+	% b
+	\draw[|<->|] (-.2,0) -- (-.2,-\b) node[midway, above, rotate=90] {$b = 56\,\text{mm}$};
+	% f
+	\draw[|<->] ({\a-2*\c},-1) -- ({\a-4*\c},-1) node[midway, above] {$d = 28\,\text{mm}$};
+	% g
+	\draw[|<->|] ({\a-4*\c},-1) -- ({\a-5*\c},-1) node[left, above] {$g = 14\,\text{mm}$};
+	% c
+	\draw[|<->|] ({\a},-1) -- ({\a-\c},-1) node[midway, above] {$c$};
+	% c in I-core
+	\draw[|<->|] ({\a/9},{-\b-\delta}) -- ({\a/9},{-\b-\delta-\c}) node[midway, right] {$c= 14\,\text{mm}$};
+
+	% e
+	\draw[<->] ({\a/4*3.2},{-\b+\e}) -- ({\a/4*3.2},{-\b}) node[midway, above, rotate=90] {$e= 42\,\text{mm}$};
+	\draw[-|] ({\a/4*3.2},{-\b}) -- ({\a/4*3.2},{-\b});
+
+	% w
+	\draw[>|-|<] ({\a},{-\b-\c-.4})--({\a + \threeD*cos(45)+.4},{-\b -\c -.4 +\threeD*sin(45)+.4}) node[left, below, rotate=45]{$w= 43.5\,\text{mm}$} ;
+
+	% average field length
+	\draw[dashed] ({\a-\c/2},-\c) -- ({\a-\c/2},-\b-\c/2-\delta) -- ({\a-2*\c-\c/2},-\b-\c/2-\delta) --({\a-2*\c-\c/2},-\c);
+	\draw[dashed] ({\a-\c},-\c/2) --({\a-2*\c},-\c/2);
+	\draw[thin] ({\a-\c/2},-\b/2) -- ({\a+\c/2},-\b/3) node[right] {$l_\mathrm{m}$};
+
+	\tikzmath{
+		real \lx, \ly, \dr;
+		\lx = 2*\c;
+		\ly = -\b;
+		\dr = 0.02;
+	}
+
+	\def\zz{0.24}
+	\draw [rounded corners=2pt,signalblue, thick]
+	({2*\c-0.09},{\ly+\zz}) -- (\lx, {\ly+\zz})--++({2*\c+0.43},0.5)
+	--++(-0.08, 0.05);
+
+	\foreach \z in {.48,.72,...,2.25}
+		{
+			\draw [rounded corners=2pt,signalblue, thick]
+			({2*\c},\ly+\z+0.08)--({2*\c-0.09},\ly+\z) -- (\lx, \ly+\z)--++({2*\c+0.43},0.5)
+			--++(-0.08, 0.05);
+		}
+
+	\def\zz{2.4}
+	\draw [rounded corners=2pt,signalblue, thick]
+	({2*\c-0.09},{\ly+\zz}) -- (\lx, {\ly+\zz})--++({2*\c+0.43},0.5)
+	--++(-0.08, 0.05);
+
+	\draw[thick,signalblue](2.5,{-\b+0.24}) -- (2,{-\b+0.24});
+	\draw[thick,signalblue](2.5,{-\b+2.4}) -- (2,{-\b+2.4});
+
+	\draw [thick,signalblue, <-](2.5,{-\b+0.24}) -- (2,{-\b+0.24});
+
+\end{tikzpicture}
+% \caption{Sketch of the EI-150 core.}
+% \label{fig:EI_core}
+% \end{figure}

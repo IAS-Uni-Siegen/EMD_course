@@ -1,0 +1,136 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Task 1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\task{Design of a singe phase transformer}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\taskGerman{Auslegung eines Einphasentransformators}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+An (older) smartphone charger is constructed as shown in \autoref{fig:charger}. The input (grid) voltage at the transformer is $U_\mathrm{1} = \SI{230}{\volt}$. The output voltage of the charger should have an average voltage of $U_\mathrm{out} = \SI{5}{\volt}$. The rectifier causes an average voltage drop of $U_\mathrm{rectifier} = \SI{0.7}{\volt}$ between $U_2$ and $U_\mathrm{out}$. The transformer has a rated apparent power of $\SI{100}{\volt\ampere}$.
+
+\begin{germanblock}
+	Ein (älteres) Smartphone-Ladegerät ist gemäß \autoref{fig:charger} aufgebaut. Die (Netz) Eingangsspannung am Transformator beträgt $U_\mathrm{1} = \SI{230}{\volt}$. Die Ausgangsspannung des Ladegeräts soll eine mittlere Spannung von $U_\mathrm{out} = \SI{5}{\volt}$ aufweisen. Der Gleichrichter verursacht eine mittlere Spannungsdifferenz von $U_\mathrm{rectifier} = \SI{0,7}{\volt}$ zwischen $U_2$ und $U_\mathrm{out}$. Der Transformator hat eine Scheinleistung von $\SI{100}{\volt\ampere}$.
+\end{germanblock}
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale=1.2]{fig/charger.pdf}
+	\caption{Simplified sketch of a smartphone charger.}
+	\label{fig:charger}
+\end{figure}
+
+\subtask{Calculate the secondary voltage, the turns ratio as well as the primary and secondary current of the transformer for rated and idealized conditions.}{2}
+\begin{hintblock}
+	if and only if you are not able to solve this task, use $I_\mathrm{1} = \SI{0.6}{\ampere}$, $I_\mathrm{2} = \SI{21}{\ampere}$ and $ü = 35$ as substitute results for the subsequent tasks.
+\end{hintblock}
+
+\subtaskGerman{Berechnen Sie die Sekundärspannung, das Übersetzungsverhältnis sowie den Primär- und Sek\-un\-där\-strom des Transformators für die Nennleistung unter idealisierten Bedingungen.}
+
+\begin{germanhintblock}
+	nur für den Fall, dass Sie kein Ergebnis ermitteln können, verwenden Sie $I_\mathrm{1} = \SI{0.6}{\ampere}$, $I_\mathrm{2} = \SI{21}{\ampere}$ und $ü = 35$ für die nachfolgenden Aufgaben.
+\end{germanhintblock}
+
+\begin{solutionblock}
+	The secondary voltage is calculated by
+	$$ U_\mathrm{2} = U_\mathrm{out} + U_\mathrm{rectifier}
+		= \SI{5}{\volt} + \SI{0.7}{\volt} = \SI{5.7}{\volt},
+	$$
+	resulting in the transformation ratio of:
+	$$ ü = \frac{N_1}{N_2} = \frac{U_1}{U_2} = 40.35.$$
+
+	The primary current is given by
+	$$ I_\mathrm{1} = \frac{S}{U_\mathrm{1}} = \SI{0.43}{\ampere},$$
+	and, the secondary current is calculated by:
+	$$ I_\mathrm{2} = \frac{S}{U_\mathrm{2}} = \SI{17.54}{\ampere}.$$
+
+\end{solutionblock}
+
+\subtask{The transformer's geometry and design is to be analyzed in more detail. The laminated core is specified as EI 84/43.5 with a magnetic flux density of $B_\mathrm{Fe} = \SI{1.2}{\tesla}$ in the middle yoke. There are no stray fluxes, and the output voltage remains constant when the transformer is loaded. Calculate the effective cross-sectional area $A_\mathrm{Fe}$ of the iron yoke, the magnetic flux $\phi_\mathrm{Fe}$ and the magnetomotive force $\theta$. The geometry and its dimensions are shown in \autoref{fig:EI_core}.}{3}
+\begin{hintblock}
+	if and only if you are not able to solve this task, use $\theta = \SI{100}{\ampere}$ as a substitute result for the subsequent tasks.
+\end{hintblock}
+\subtaskGerman{Zur Auslegung des Transformators wird nun die Geometrie genauer analysiert. Das Blechpaket ist mit EI 84/43,5 und einer Flussdichte $B_\mathrm{Fe} = \SI{1.2}{\tesla}$ im Mittelschenkel angegeben. Es gibt keine Streuflüsse, und die Ausgangsspannung bleibe bei Belastung des Transformators konstant. Berechnen Sie die effektive Querschnittsfläche $A_\mathrm{Fe}$ des Eisenjochs, den magnetischen Fluss $\phi_\mathrm{Fe}$ und die magnetische Spannung $\theta$. Die Geometrie und deren Abmessungen ist in \autoref{fig:EI_core} dargestellt.}
+
+\begin{germanhintblock}
+	nur für den Fall, dass Sie kein Ergebnis ermitteln können, verwenden Sie $\theta = \SI{100}{\ampere}$ für die nachfolgenden Aufgaben.
+\end{germanhintblock}
+
+\begin{figure}[htb]
+	\begin{subfigure}{.49\textwidth}
+		\centering
+		\input{./fig/EI_core.tex}
+		\caption{EI-84/43.5 core geometry.}
+		\label{fig:EI_core_sketch}
+	\end{subfigure}
+	\begin{subfigure}{.49\textwidth}
+		\centering
+		\input{./fig/magnetization.tex}
+		\caption{Magnetization curve.}
+		\label{fig:magnetization_curve}
+	\end{subfigure}
+	\caption{EI-84/43.5 core and electrical steel magnetization curve.}
+	\label{fig:EI_core}
+\end{figure}
+
+\begin{solutionblock}
+	The cross sectional area is given with:
+	$$ A_\mathrm{Fe} = d  w = \SI{0.0012}{\metre^2}. $$
+	Thus, the magnetic flux is calculated as
+	$$ \phi_\mathrm{Fe} = B_\mathrm{fe} A_\mathrm{Fe} = \SI{0.00146}{\weber}, $$
+	and, the magnetic field can be taken from the magnetization curve, which is $H_\mathrm{Fe} = \SI{500}{\ampere\per\metre}$.
+
+	The average length of the magnetic path in the E-core is given by
+	$$ l_\mathrm{E} =  2 e + g + 2c = \SI{0.126}{\metre},$$
+	and for the I-core as
+	$$ l_\mathrm{I} = 2c +g = \SI{0.042}{\metre}.$$
+	Thus, the average length of the magnetic path is given with
+	$$ l_\mathrm{m} = l_\mathrm{E} + l_\mathrm{I} = \SI{0.168}{\metre}, $$
+	therefore, the magnetomotive force is calculated as
+	$$ \theta = H_\mathrm{Fe} l_\mathrm{m} = \SI{84}{\ampere}.$$
+
+\end{solutionblock}
+
+\subtask{Calculate the integer number of winding turns on the primary and secondary side.} {1}
+
+\subtaskGerman{Berechnen Sie die ganzzahlige Anzahl der Windungen auf der Primär- und Sekundärseite.}
+
+\begin{solutionblock}
+	The primary winding turns are calculated by
+	$$ N_\mathrm{1} = \frac{\theta}{I_\mathrm{1}}  = 193.2, $$
+	and, for the secondary side as
+	$$ N_\mathrm{2} = \frac{N_\mathrm{1}}{ü} = 4.78,$$
+	which results in $N_\mathrm{1} = 193$ and $N_\mathrm{2} = 5$ turns, respectively.
+\end{solutionblock}
+
+\subtask{Determine the ohmic winding losses and wire diameters of the primary and secondary sides. First calculate the winding cross-sections assuming a current density of $J = \SI{3}{\ampere\per\milli\metre^2}$, an average turn length of $l_\mathrm{w} = \SI{0.25}{\metre}$, and an electrical conductivity of $\kappa_\mathrm{Cu} = \SI{50\cdot 10^6}{\siemens\per\metre}$.}{3}
+
+\subtaskGerman{Bestimmen Sie die ohmschen Verluste der Wicklungen und den Drahtdurchmesser auf der Primär- und Sekundärseite. Beginnen Sie mit der Berechnung des Querschnitts der Wicklungen unter der Annahme einer Stromdichte von $J = \SI{3}{\ampere\per\milli\metre^2}$ und einer durchschnittlichen Wickellänge pro Windung von $l_\mathrm{w} = \SI{0.25}{\metre}$. Die elektrische Leitfähigkeit ist mit $\kappa_\mathrm{Cu} = \SI{50\cdot 10^6}{\siemens\per\metre}$ gegeben.}
+
+\begin{solutionblock}
+	The cross section is given by:
+	$$ q_\mathrm{1} = \frac{I_\mathrm{1}}{J} = \SI{0.145\cdot10^{-6}}{\metre^2},$$
+	and, $q_\mathrm{2} = \SI{5.85\cdot10{^-6}}{\metre^2}$, respectively. The resistance is calculated with
+	$$ R_\mathrm{1} = \frac{1}{\kappa_\mathrm{Cu}} \frac{N_\mathrm{1}}{q_\mathrm{1}} l_\mathrm{w} = \SI{6.66}{\Omega},$$
+	and $R_\mathrm{2} = \SI{0.004}{\Omega}$, respectively. The wire diameters are calculated by
+	$$ d_\mathrm{1} = 2 \sqrt{\frac{q_\mathrm{1}}{\pi}} = \SI{0.42}{\milli\metre},$$
+	and $d_\mathrm{2} = \SI{2.73}{\milli\metre}$. With the winding resistance, the cupper losses result in
+	$$ P_\mathrm{1} = I_\mathrm{1}^2 R_\mathrm{1} = \SI{1.26}{\watt},$$
+	and,
+	$P_\mathrm{2} = \SI{1.32}{\watt}$.
+
+\end{solutionblock}
+
+\subtask{To also charge a laptop with a battery voltage of \SI{12}{\volt}, which transformer type would allow one charger to provide both output voltages?}{1}
+\begin{hintblock}
+	This task is independent of the previous tasks and can be solved qualitatively without reference to the previous results.
+\end{hintblock}
+\subtaskGerman{Sie möchten nun auch einen Laptop mit einer Batteriespannung von \SI{12}{\volt} laden. Welche Transformatorart ist geeignet, damit das Ladegerät beide Ausgangsspannungen bereitstellen kann?}
+
+\begin{germanhintblock}
+	Diese Aufgabe ist unabhängig von den vorherigen Aufgaben und kann qualitativ ohne Bezug auf die vorherigen Ergebnisse gelöst werden.
+\end{germanhintblock}
+
+\begin{solutionblock}
+	In this case a tap transformer could be used, which has two taps on the secondary winding, allowing to select between the different output voltages. The required output voltage can be selected by a switch that connects the two windings to the rectifier.
+\end{solutionblock}
