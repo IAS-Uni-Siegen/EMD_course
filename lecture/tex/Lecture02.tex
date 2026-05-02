@@ -988,14 +988,14 @@
 			% root of the the initial tree, level 1
 			\node[root] {Electrical machine losses}
 			% The first level, as children of the initial tree
-			child {node[level 2] (c1) {Copper losses}}
+			child {node[level 2] (c1) {Winding losses}}
 			child {node[level 2] (c2) {Iron losses}}
 			child {node[level 2] (c3) {Mechanical losses}};
 
 			% The second level, relatively positioned nodes
 			\begin{scope}[every node/.style={level 3}]
 				\node [below of = c1, xshift=25pt] (c11) {Stator winding};
-				\node [below of = c11] (c12) {(Rotor winding)};
+				\node [below of = c11] (c12) {Rotor winding};
 				\node [below of = c12] (c13) {(Skin effect)};
 				\node [below of = c13] (c14) {(Proximity effect)};
 
@@ -1102,7 +1102,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
 	\frametitle{Eddy currents: single sheet example (cont.)}
-	The average power loss per volume and time is then:
+	The \hl{average power loss density per volume and time} is then:
 	$$
 		p = \frac{1}{T}\int_0^T p(t) \mathrm{d}t = \frac{1}{24}\sigma\left(\omega d \hat{B}\right)^2.
 	$$\pause
