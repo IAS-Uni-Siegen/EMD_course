@@ -29,6 +29,7 @@ exam/summer2024/*.pdf
 exam/summer2024_mock-up/*.pdf
 exam/winter2024/*.pdf
 exam/summer2025/*.pdf
+exam/winter2025/*.pdf
 
 ## Bibliography auxiliary files (bibtex/biblatex/biber):
 *.bbl
