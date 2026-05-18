@@ -534,7 +534,7 @@ The nominal speed of the machine is $\nN$ = 1440 $\mathrm{min}^{-1}$, with an ar
 A four-pole DC machine on the board of a submarine with $U_{\mathrm{a,n}}$ = 440 V, $\Pn$ = 65 kW, $\nN$~=~1300~$\mathrm{min^{-1}}$ has an efficiency of $\eta_{\mathrm{n}}$ = 0.9. The total losses $\Pl$ are separated in the ohmic losses $\Pcu$ in the armature with 75 \% and the soft magnetic material, friction, and additional losses ($\Pfe$ + $P_{\mathrm{fr+add}}$) with 25 \% of the total losses $\Pl$. The field excitation losses are neglected in the following.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subtask{Calculate the armature current $I_{\mathrm{a,n}}$, the torque $\Tn$, the losses $P_{\mathrm{Cu,a}}$ and $P_{\mathrm{fr+add}}$, the armature winding resistance $R_{\mathrm{a}}$ and the no-load speed $n_{\mathrm{0}}$.}
+\subtask{Calculate the armature current $I_{\mathrm{a,n}}$, the torque $\Tn$, the losses $P_{\mathrm{Cu,a}}$ and $\Pfe$ + $P_{\mathrm{fr+add}}$, the armature winding resistance $R_{\mathrm{a}}$ and the no-load speed $n_{\mathrm{0}}$.}
 
 \begin{solutionblock}
 	The armature current calculates as follows
@@ -559,14 +559,14 @@ A four-pole DC machine on the board of a submarine with $U_{\mathrm{a,n}}$ = 440
 	\begin{equation}
 		\Pl = \left(\frac{1}{\eta_{n}} - 1 \right) \Pn
 		= \left(\frac{1}{0.9}-1 \right) \cdot 65\ \si{kW}
-		= 5416.7 \ \si{W}.
+		= 7222 \ \si{W}.
 	\end{equation}
 
 	As described in the task, the cupper losses are defined by
 	\begin{equation}
 		P_{\mathrm{Cu,a}} = 0.75 \Pl
 		= 0.75 \cdot 7222 \ \si{W}
-		= 477.5 \ \si{W},
+		= 5416.5 \ \si{W}.
 	\end{equation}
 	and, therefore, the other losses yield as follows:
 	\begin{equation}
