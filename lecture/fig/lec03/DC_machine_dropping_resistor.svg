@@ -7,7 +7,7 @@
    viewBox="0 0 114.33177 33.55217"
    version="1.1"
    id="svg1"
-   inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
+   inkscape:version="1.4.3 (0d15f75, 2025-12-25)"
    sodipodi:docname="DC_machine_dropping_resistor.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -24,14 +24,14 @@
      inkscape:deskcolor="#505050"
      inkscape:document-units="mm"
      inkscape:zoom="4.1157407"
-     inkscape:cx="231.79303"
-     inkscape:cy="20.773903"
-     inkscape:window-width="2560"
-     inkscape:window-height="1351"
-     inkscape:window-x="2551"
-     inkscape:window-y="-9"
+     inkscape:cx="204.45894"
+     inkscape:cy="59.770529"
+     inkscape:window-width="1920"
+     inkscape:window-height="998"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
      inkscape:window-maximized="1"
-     inkscape:current-layer="g145"
+     inkscape:current-layer="layer1"
      showgrid="true">
     <inkscape:grid
        id="grid165"
@@ -421,7 +421,7 @@
       </g>
     </g>
     <path
-       style="fill:#000000;fill-rule:evenodd;stroke:#7d7d7d;stroke-width:0.309949;stroke-linecap:round;stroke-miterlimit:3.9;stroke-dasharray:0.929847, 0.929847;stroke-dashoffset:0;stroke-opacity:1"
+       style="fill:#000000;fill-rule:evenodd;stroke:#bbbbbb;stroke-width:0.309949;stroke-linecap:round;stroke-miterlimit:3.9;stroke-dasharray:0.929847, 0.929847;stroke-dashoffset:0;stroke-opacity:1"
        d="M 25.415315,74.370183 C 34.590069,63.162646 43.764824,51.955107 52.939578,40.74757"
        id="path2-0-6-3"
        transform="matrix(0,0.73098571,-1,0,189.42999,160.63662)"
@@ -429,7 +429,7 @@
        inkscape:original-d="M 25.415315,74.370183 C 34.590069,63.162646 43.764824,51.955107 52.939578,40.74757"
        inkscape:path-effect="#path-effect2-4-7-0-0" />
     <path
-       style="fill:#000000;fill-rule:evenodd;stroke:#7d7d7d;stroke-width:0.309949;stroke-linecap:round;stroke-miterlimit:3.9;stroke-dasharray:0.929847, 0.929847;stroke-dashoffset:0;stroke-opacity:1"
+       style="fill:#000000;fill-rule:evenodd;stroke:#bbbbbb;stroke-width:0.309949;stroke-linecap:round;stroke-miterlimit:3.9;stroke-dasharray:0.929847, 0.929847;stroke-dashoffset:0;stroke-opacity:1"
        d="M 25.19755,72.939826 C 34.444892,65.759794 43.692236,58.579761 52.939578,51.39973"
        id="path2-0-6-3-3"
        transform="matrix(0,0.73098571,-1,0,200.08215,160.63662)"
@@ -437,7 +437,7 @@
        inkscape:original-d="M 25.19755,72.939826 C 34.444892,65.759794 43.692236,58.579761 52.939578,51.39973"
        inkscape:path-effect="#path-effect2-4-7-0-0-4" />
     <path
-       style="fill:#000000;fill-rule:evenodd;stroke:#7d7d7d;stroke-width:0.309949;stroke-linecap:round;stroke-miterlimit:3.9;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       style="fill:#000000;fill-rule:evenodd;stroke:#bbbbbb;stroke-width:0.309949;stroke-linecap:round;stroke-miterlimit:3.9;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        d="m 25.328782,72.15232 c 9.247311,-3.40435 18.494623,-6.8087 27.741934,-10.21305"
        id="path2-0-6-3-3-5"
        transform="matrix(0,0.73098571,-1,0,210.62169,160.54076)"
@@ -445,12 +445,12 @@
        inkscape:original-d="m 25.328782,72.15232 c 9.247311,-3.40435 18.494623,-6.8087 27.741934,-10.21305"
        inkscape:path-effect="#path-effect2-4-7-0-0-4-0" />
     <path
-       style="fill:none;fill-rule:evenodd;stroke:#7d7d7d;stroke-width:0.264999;stroke-linecap:round;stroke-miterlimit:3.9;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       style="fill:none;fill-rule:evenodd;stroke:#bbbbbb;stroke-width:0.264999;stroke-linecap:round;stroke-miterlimit:3.9;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        d="m 127.14233,179.05567 -0.0151,7.38035 -12.06747,-7.22117"
        id="path45"
        sodipodi:nodetypes="ccc" />
     <path
-       style="fill:none;fill-rule:evenodd;stroke:#7d7d7d;stroke-width:0.264999;stroke-linecap:round;stroke-miterlimit:3.9;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       style="fill:none;fill-rule:evenodd;stroke:#bbbbbb;stroke-width:0.264999;stroke-linecap:round;stroke-miterlimit:3.9;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        d="m 138.46937,179.05574 0.007,10.67032 -11.33396,-10.67039"
        id="path45-3"
        sodipodi:nodetypes="ccc" />

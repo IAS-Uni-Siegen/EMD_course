@@ -8,7 +8,7 @@
    height="168.30533"
    viewBox="0 0 290.78 168.30533"
    sodipodi:docname="Reluctance_element.svg"
-   inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
+   inkscape:version="1.4.3 (0d15f75, 2025-12-25)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -25,11 +25,11 @@
      inkscape:deskcolor="#505050"
      inkscape:zoom="3.0396983"
      inkscape:cx="155.11408"
-     inkscape:cy="57.078032"
-     inkscape:window-width="2560"
-     inkscape:window-height="1351"
-     inkscape:window-x="2551"
-     inkscape:window-y="-9"
+     inkscape:cy="56.913543"
+     inkscape:window-width="1920"
+     inkscape:window-height="998"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
      inkscape:window-maximized="1"
      inkscape:current-layer="g1">
     <inkscape:page
@@ -1051,42 +1051,42 @@
       <path
          id="path143"
          d="M 0,0 -83.35,-0.142"
-         style="fill:none;stroke:#2e74b5 icc-color(sRGB-IEC61966-2, 0.1, 0.17999268, 0.45498657, 0.70999146);stroke-width:1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:8;stroke-dasharray:none;stroke-opacity:1"
+         style="fill:none;stroke:#4477aa;stroke-width:1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:8;stroke-dasharray:none;stroke-opacity:1"
          transform="matrix(1.3333333,0,0,-1.3333333,200.844,79.042)" />
       <path
          id="path144"
          d="M 0,0 6.005,-2.99 0.01,-6 Z"
-         style="fill:#2e74b5 icc-color(sRGB-IEC61966-2, 0.1, 0.17999268, 0.45498657, 0.70999146);fill-opacity:1;fill-rule:evenodd;stroke:none"
+         style="fill:#4477aa;fill-opacity:1;fill-rule:evenodd;stroke:none"
          transform="matrix(1.3333333,0,0,-1.3333333,199.504,75.043867)" />
       <path
          id="path145"
          d="M 0,0 -83.35,-0.141"
-         style="fill:none;stroke:#2e74b5 icc-color(sRGB-IEC61966-2, 0.1, 0.17999268, 0.45498657, 0.70999146);stroke-width:1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:8;stroke-dasharray:none;stroke-opacity:1"
+         style="fill:none;stroke:#4477aa;stroke-width:1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:8;stroke-dasharray:none;stroke-opacity:1"
          transform="matrix(1.3333333,0,0,-1.3333333,208.51067,70.508667)" />
       <path
          id="path146"
          d="M 0,0 6.005,-2.99 0.01,-6 Z"
-         style="fill:#2e74b5 icc-color(sRGB-IEC61966-2, 0.1, 0.17999268, 0.45498657, 0.70999146);fill-opacity:1;fill-rule:evenodd;stroke:none"
+         style="fill:#4477aa;fill-opacity:1;fill-rule:evenodd;stroke:none"
          transform="matrix(1.3333333,0,0,-1.3333333,207.17067,66.510533)" />
       <path
          id="path147"
          d="M 0,0 -83.35,-0.141"
-         style="fill:none;stroke:#2e74b5 icc-color(sRGB-IEC61966-2, 0.1, 0.17999268, 0.45498657, 0.70999146);stroke-width:1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:8;stroke-dasharray:none;stroke-opacity:1"
+         style="fill:none;stroke:#4477aa;stroke-width:1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:8;stroke-dasharray:none;stroke-opacity:1"
          transform="matrix(1.3333333,0,0,-1.3333333,200.844,101.77533)" />
       <path
          id="path148"
          d="M 0,0 6.005,-2.99 0.01,-6 Z"
-         style="fill:#2e74b5 icc-color(sRGB-IEC61966-2, 0.1, 0.17999268, 0.45498657, 0.70999146);fill-opacity:1;fill-rule:evenodd;stroke:none"
+         style="fill:#4477aa;fill-opacity:1;fill-rule:evenodd;stroke:none"
          transform="matrix(1.3333333,0,0,-1.3333333,199.504,97.7772)" />
       <path
          id="path149"
          d="M 0,0 -83.35,-0.141"
-         style="fill:none;stroke:#2e74b5 icc-color(sRGB-IEC61966-2, 0.1, 0.17999268, 0.45498657, 0.70999146);stroke-width:1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:8;stroke-dasharray:none;stroke-opacity:1"
+         style="fill:none;stroke:#4477aa;stroke-width:1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:8;stroke-dasharray:none;stroke-opacity:1"
          transform="matrix(1.3333333,0,0,-1.3333333,208.51067,90.575333)" />
       <path
          id="path150"
          d="M 0,0 6.005,-2.99 0.01,-6 Z"
-         style="fill:#2e74b5 icc-color(sRGB-IEC61966-2, 0.1, 0.17999268, 0.45498657, 0.70999146);fill-opacity:1;fill-rule:evenodd;stroke:none"
+         style="fill:#4477aa;fill-opacity:1;fill-rule:evenodd;stroke:none"
          transform="matrix(1.3333333,0,0,-1.3333333,207.17067,86.5772)" />
       <path
          id="path151"

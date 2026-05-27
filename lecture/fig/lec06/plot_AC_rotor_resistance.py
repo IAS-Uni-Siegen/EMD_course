@@ -31,7 +31,7 @@ R_ratio = (
 
 # Plotting
 plt.figure(figsize=(10, 5))
-plt.plot(f_slip, R_ratio)
+plt.plot(f_slip, R_ratio, color=(68 / 255, 119 / 255, 170 / 255))
 plt.xlabel(r"$f_\mathrm{slip}$ in Hz")
 plt.ylabel(r"$\frac{R_\mathrm{r}(\omega_\mathrm{slip})}{R_\mathrm{r,DC}}$")
 plt.grid(True)

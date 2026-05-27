@@ -7,7 +7,7 @@
    viewBox="0 0 53.022937 22.331285"
    version="1.1"
    id="svg1"
-   inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
+   inkscape:version="1.4.3 (0d15f75, 2025-12-25)"
    sodipodi:docname="Separately_excited_DC_machine.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -24,12 +24,12 @@
      inkscape:deskcolor="#505050"
      inkscape:document-units="mm"
      inkscape:zoom="4.1157407"
-     inkscape:cx="86.011249"
-     inkscape:cy="103.86952"
-     inkscape:window-width="2560"
-     inkscape:window-height="1351"
-     inkscape:window-x="2551"
-     inkscape:window-y="-9"
+     inkscape:cx="85.889765"
+     inkscape:cy="103.74803"
+     inkscape:window-width="1920"
+     inkscape:window-height="998"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
      inkscape:window-maximized="1"
      inkscape:current-layer="layer1" />
   <defs
@@ -589,14 +589,14 @@
        d="m -197.98949,109.41807 a 2.9303143,3.2070622 0 0 1 -2.49241,1.21141 2.9303143,3.2070622 0 0 1 -2.32483,-1.56027"
        transform="rotate(-90)" />
     <rect
-       style="fill:#595959;fill-opacity:1;fill-rule:evenodd;stroke:#000100;stroke-width:0.264583;stroke-linecap:square;stroke-miterlimit:3.9"
+       style="fill:#009988;fill-opacity:1;fill-rule:evenodd;stroke:#000100;stroke-width:0.264583;stroke-linecap:square;stroke-miterlimit:3.9"
        id="rect1"
        width="6.7354169"
        height="6.7354169"
        x="64.114349"
        y="197.38879" />
     <rect
-       style="fill:#afafaf;fill-opacity:1;fill-rule:evenodd;stroke:#000100;stroke-width:0.264583;stroke-linecap:square;stroke-miterlimit:3.9"
+       style="fill:#cc3311;fill-opacity:1;fill-rule:evenodd;stroke:#000100;stroke-width:0.264583;stroke-linecap:square;stroke-miterlimit:3.9"
        id="rect1-0"
        width="6.7354169"
        height="6.7354169"
