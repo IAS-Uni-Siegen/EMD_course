@@ -7,7 +7,7 @@
    viewBox="0 0 80 59.999999"
    version="1.1"
    id="svg1"
-   inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
+   inkscape:version="1.4.3 (0d15f75, 2025-12-25)"
    sodipodi:docname="Phasor_diagrams_gen_oe.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -26,11 +26,11 @@
      showgrid="true"
      inkscape:zoom="2.8044402"
      inkscape:cx="206.10174"
-     inkscape:cy="114.28306"
+     inkscape:cy="114.46135"
      inkscape:window-width="1920"
-     inkscape:window-height="1009"
-     inkscape:window-x="-8"
-     inkscape:window-y="-8"
+     inkscape:window-height="998"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
      inkscape:window-maximized="1"
      inkscape:current-layer="layer1">
     <inkscape:grid
@@ -223,22 +223,22 @@
        d="M 136.26041,98.410961 V 155.34896"
        id="path3-4-8" />
     <path
-       style="fill:none;fill-rule:evenodd;stroke:#08008e;stroke-width:0.2;stroke-linecap:round;stroke-miterlimit:3.9;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#Triangle-69-8-5-6-8-2)"
+       style="fill:#4477aa;fill-rule:evenodd;stroke:#4477aa;stroke-width:0.2;stroke-linecap:round;stroke-miterlimit:3.9;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#Triangle-69-8-5-6-8-2)"
        d="m 136.26041,108.79072 v 34.08429"
        id="path1-2-8-6-3-32-6"
        sodipodi:nodetypes="cc" />
     <path
-       style="fill:none;fill-rule:evenodd;stroke:#08008e;stroke-width:0.2;stroke-linecap:round;stroke-miterlimit:3.9;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#Triangle-69-8-5-6-0-9-7)"
+       style="fill:#4477aa;fill-rule:evenodd;stroke:#4477aa;stroke-width:0.2;stroke-linecap:round;stroke-miterlimit:3.9;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#Triangle-69-8-5-6-0-9-7)"
        d="m 144.36785,124.16531 -8.10744,18.7097"
        id="path1-2-8-6-3-3-4-9"
        sodipodi:nodetypes="cc" />
     <path
-       style="fill:none;fill-rule:evenodd;stroke:#08008e;stroke-width:0.2;stroke-linecap:round;stroke-miterlimit:3.9;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#Triangle-69-8-5-6-5-8-9)"
+       style="fill:#4477aa;fill-rule:evenodd;stroke:#4477aa;stroke-width:0.2;stroke-linecap:round;stroke-miterlimit:3.9;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#Triangle-69-8-5-6-5-8-9)"
        d="m 144.36785,122.50106 -8.10744,-14.64824"
        id="path1-2-8-6-3-9-39-1"
        sodipodi:nodetypes="cc" />
     <path
-       style="fill:none;fill-rule:evenodd;stroke:#8e000c;stroke-width:0.2;stroke-linecap:round;stroke-miterlimit:3.9;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#Triangle-69-8-5-6-5-8-9-7)"
+       style="fill:#cc3311;fill-rule:evenodd;stroke:#cc3311;stroke-width:0.2;stroke-linecap:round;stroke-miterlimit:3.9;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#Triangle-69-8-5-6-5-8-9-7)"
        d="m 121.61218,150.98245 14.64823,-8.10744"
        id="path1-2-8-6-3-9-39-1-4"
        sodipodi:nodetypes="cc" />
@@ -491,7 +491,7 @@
        sodipodi:open="true"
        transform="rotate(29.999999)" />
     <path
-       style="fill:none;fill-rule:evenodd;stroke:#8e000c;stroke-width:0.2;stroke-linecap:round;stroke-miterlimit:3.9;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#Triangle-69-8-5-6-5-7-8-3)"
+       style="fill:#cc3311;fill-rule:evenodd;stroke:#cc3311;stroke-width:0.2;stroke-linecap:round;stroke-miterlimit:3.9;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#Triangle-69-8-5-6-5-7-8-3)"
        d="m 153.60773,142.87487 -17.34732,1.4e-4"
        id="path1-2-8-6-3-9-8-0-5"
        sodipodi:nodetypes="cc" />
