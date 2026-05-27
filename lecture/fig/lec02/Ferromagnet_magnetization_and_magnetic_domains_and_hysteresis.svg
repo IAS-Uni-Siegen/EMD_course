@@ -6,7 +6,7 @@
    height="585.54547"
    id="svg3675"
    sodipodi:version="0.32"
-   inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
+   inkscape:version="1.4.3 (0d15f75, 2025-12-25)"
    sodipodi:docname="Ferromagnet_magnetization_and_magnetic_domains_and_hysteresis.svg"
    inkscape:output_extension="org.inkscape.output.svg.inkscape"
    version="1.0"
@@ -24,18 +24,18 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="2.8"
-     inkscape:cx="270.17857"
-     inkscape:cy="409.46429"
+     inkscape:zoom="22.4"
+     inkscape:cx="617.61161"
+     inkscape:cy="377.27679"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="true"
      showguides="true"
      inkscape:guide-bbox="true"
-     inkscape:window-width="2560"
-     inkscape:window-height="1351"
-     inkscape:window-x="2551"
-     inkscape:window-y="-9"
+     inkscape:window-width="1920"
+     inkscape:window-height="998"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
      inkscape:window-maximized="1"
      inkscape:showpageshadow="0"
      inkscape:pagecheckerboard="0"
@@ -339,7 +339,7 @@
        id="path3687"
        sodipodi:nodetypes="ccc" />
     <path
-       style="opacity:0.744;fill:#4b9dde;fill-opacity:1;stroke:none"
+       style="opacity:0.744;fill:#4477aa;fill-opacity:1;stroke:none"
        d="m 176.51911,660.21918 21.41124,-79.82974 79.82974,21.41125 -21.41124,79.82973 z"
        id="rect7626" />
     <path
@@ -367,7 +367,7 @@
        d="m 250.01765,628.58359 6.00381,-22.38462"
        id="path7638" />
     <path
-       style="opacity:0.744;fill:#4b9dde;fill-opacity:1;stroke:none"
+       style="opacity:0.744;fill:#4477aa;fill-opacity:1;stroke:none"
        d="m 217.95094,493.85717 21.41125,-79.82973 79.82972,21.41124 -21.41124,79.82973 z"
        id="rect7658" />
     <path
@@ -395,7 +395,7 @@
        d="m 282.96553,447.60672 22.38462,6.00381"
        id="path7670" />
     <path
-       style="opacity:0.744;fill:#4b9dde;fill-opacity:1;stroke:none"
+       style="opacity:0.744;fill:#4477aa;fill-opacity:1;stroke:none"
        d="m 275.66523,357.7143 21.41124,-79.82973 79.82973,21.41124 -21.41124,79.82973 z"
        id="rect7690" />
     <path
@@ -415,7 +415,7 @@
        d="m 340.67981,311.46385 22.38462,6.00381"
        id="path7702" />
     <path
-       style="opacity:0.744;fill:#4b9dde;fill-opacity:1;stroke:none"
+       style="opacity:0.744;fill:#4477aa;fill-opacity:1;stroke:none"
        d="m 415.6652,282.71428 21.41124,-79.82973 79.82973,21.41123 -21.41125,79.82974 z"
        id="rect7722" />
     <path
@@ -427,7 +427,7 @@
        d="m 474.67252,238.39242 22.97676,3.03072"
        id="path7734" />
     <path
-       style="opacity:0.744;fill:#4b9dde;fill-opacity:1;stroke:none"
+       style="opacity:0.744;fill:#4477aa;fill-opacity:1;stroke:none"
        d="m 580.66531,252.7143 21.41124,-79.82973 79.82973,21.41124 -21.41124,79.82973 z"
        id="rect7759" />
     <path
@@ -461,26 +461,26 @@
          id="g2930"
          transform="matrix(1.5817477,0,0,1.5817477,-113.71694,-284.87915)">
         <path
-           style="fill:#33b544;fill-opacity:1;fill-rule:evenodd;stroke:#33b544;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#Arrow1Mstart)"
+           style="fill:#009988;fill-opacity:1;fill-rule:evenodd;stroke:#009988;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#Arrow1Mstart)"
            d="M 264.36087,504.69291 H 171.29813"
            id="path7793"
            sodipodi:nodetypes="cc" />
         <path
-           style="fill:#33b544;fill-opacity:1;stroke:#33b544;stroke-width:0.505076;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           style="fill:#009988;fill-opacity:1;stroke:#009988;stroke-width:0.505076;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
            d="m 252.59566,507.30015 2.64951,-2.70157 -2.79704,-2.85228 c -1.53838,-1.56876 -2.59789,-2.78531 -2.35446,-2.70344 0.24341,0.0818 4.52542,1.31767 9.51556,2.74622 4.99014,1.42854 9.07231,2.67846 9.07151,2.77759 -0.001,0.14831 -15.51819,4.68637 -17.99697,5.26335 -0.56386,0.13124 -0.11344,-0.46475 1.91188,-2.52987 z"
            id="path3439"
            inkscape:export-filename="/media/FRANCESCO/diagnostica e conservazione dei beni culturali/3° anno.diagnostica e conservazione dei beni culturali/Geofisica_Applicata/geofisica_immagini/processo_magnetizzazione.png"
            inkscape:export-xdpi="90"
            inkscape:export-ydpi="90" />
         <path
-           style="fill:#ff0000;fill-opacity:1;stroke:none"
+           style="fill:#cc3311;fill-opacity:1;stroke:none"
            d="m 116.88734,422.74264 0.29701,-3.74472 -3.9478,-0.3779 c -2.17131,-0.20784 -3.75345,-0.45434 -3.51585,-0.54776 0.23754,-0.0934 4.28664,-1.89203 8.99793,-3.99689 4.71127,-2.10487 8.61712,-3.76503 8.67966,-3.68924 0.0936,0.11339 -8.83493,13.47696 -10.35549,15.4994 -0.3459,0.46006 -0.38252,-0.28036 -0.15547,-3.14288 z"
            id="path3439-4"
            inkscape:export-filename="/media/FRANCESCO/diagnostica e conservazione dei beni culturali/3° anno.diagnostica e conservazione dei beni culturali/Geofisica_Applicata/geofisica_immagini/processo_magnetizzazione.png"
            inkscape:export-xdpi="90"
            inkscape:export-ydpi="90" />
         <path
-           style="fill:#ff0000;fill-opacity:1;stroke:none"
+           style="fill:#cc3311;fill-opacity:1;stroke:none"
            d="m 98.582501,407.37742 -3.886345,-0.37181 0.325688,-4.1088 c 0.17913,-2.25985 0.212388,-3.92365 0.07387,-3.69735 -0.08761,0.14314 -1.148858,1.72418 -2.677413,3.99113 -0.887838,1.31672 -1.933333,2.86484 -3.037292,4.49698 -3.004595,4.44213 -5.408662,8.14018 -5.342387,8.21786 0.09913,0.11628 15.388184,-6.61038 17.732598,-7.80169 0.53329,-0.27099 -0.21793,-0.4421 -3.188709,-0.72632 z"
            id="path3439-4-0"
            inkscape:export-filename="/media/FRANCESCO/diagnostica e conservazione dei beni culturali/3° anno.diagnostica e conservazione dei beni culturali/Geofisica_Applicata/geofisica_immagini/processo_magnetizzazione.png"
@@ -528,7 +528,7 @@
             <path
                d="m 6.0537491,-7.296875 c 0.109375,-0.40625 0.140625,-0.515625 0.984375,-0.515625 0.21875,0 0.328125,0 0.328125,-0.21875 0,-0.125 -0.109375,-0.125 -0.171875,-0.125 -0.21875,0 -0.46875,0.015625 -0.6875,0.015625 h -1.421875 c -0.21875,0 -0.46875,-0.015625 -0.703125,-0.015625 -0.078125,0 -0.21875,0 -0.21875,0.21875 0,0.125 0.078125,0.125 0.296875,0.125 0.71875,0 0.71875,0.09375 0.71875,0.21875 0,0.03125 0,0.09375 -0.046875,0.28125 l -0.71875,2.890625 H 0.80374906 l 0.71875004,-2.875 c 0.09375,-0.40625 0.125,-0.515625 0.96875,-0.515625 0.21875,0 0.34375,0 0.34375,-0.21875 0,-0.125 -0.109375,-0.125 -0.1875,-0.125 -0.21875,0 -0.46875,0.015625 -0.6875,0.015625 H 0.55374906 c -0.234375,0 -0.484375,-0.015625 -0.71875,-0.015625 -0.078125,0 -0.21875,0 -0.21875,0.21875 0,0.125 0.078125,0.125 0.3125,0.125 0.71875,0 0.71875,0.09375 0.71875,0.21875 0,0.03125 0,0.09375 -0.046875,0.28125 l -1.62499996,6.421875 c -0.109375,0.421875 -0.125,0.546875 -0.953125,0.546875 -0.265625,0 -0.359375,0 -0.359375,0.21875 0,0.125 0.140625,0.125 0.171875,0.125 0.21875,0 0.46875,-0.03125 0.6875,-0.03125 h 1.42187496 c 0.21875,0 0.46875,0.03125 0.703125,0.03125 0.09375,0 0.21875,0 0.21875,-0.234375 0,-0.109375 -0.109375,-0.109375 -0.28125,-0.109375 -0.734375,0 -0.734375,-0.09375 -0.734375,-0.21875 0,-0.015625 0,-0.09375 0.03125,-0.1875 l 0.8125,-3.328125 H 4.3193741 c -0.203125,0.796875 -0.8125,3.296875 -0.828125,3.359375 -0.140625,0.359375 -0.328125,0.359375 -1.03125,0.375 -0.140625,0 -0.25,0 -0.25,0.21875 0,0.125 0.125,0.125 0.171875,0.125 0.203125,0 0.453125,-0.03125 0.6875,-0.03125 h 1.40625 c 0.234375,0 0.484375,0.03125 0.703125,0.03125 0.09375,0 0.234375,0 0.234375,-0.234375 0,-0.109375 -0.109375,-0.109375 -0.28125,-0.109375 -0.734375,0 -0.734375,-0.09375 -0.734375,-0.21875 0,-0.015625 0,-0.09375 0.015625,-0.1875 z m 0,0"
                id="path2-3"
-               style="fill:#33b544;fill-opacity:1;stroke-width:0.32417;stroke-dasharray:none" />
+               style="fill:#009988;fill-opacity:1;stroke-width:0.32417;stroke-dasharray:none" />
           </g>
         </g>
       </g>
@@ -623,27 +623,27 @@
          rx="11.645764"
          ry="11.562037" />
       <path
-         style="fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#ff0000;stroke-width:1.333;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         style="fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#cc3311;stroke-width:1.333;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
          d="m 298.91936,696.82457 25,0 0,-15.66518"
          id="path16"
          sodipodi:nodetypes="ccc" />
       <path
-         style="fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#ff0000;stroke-width:1.333;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         style="fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#cc3311;stroke-width:1.333;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
          d="m 299.58587,696.17728 v 37.64729"
          id="path16-2"
          sodipodi:nodetypes="cc" />
       <path
-         style="fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#ff0000;stroke-width:1.333;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         style="fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#cc3311;stroke-width:1.333;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
          d="m 323.91936,681.82457 h 15 v -15 h 10 v -5 h 25 v -10 h 20 v -20"
          id="path17" />
       <path
-         style="fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#ff0000;stroke-width:1.333;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         style="fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#cc3311;stroke-width:1.333;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
          d="m 393.91936,631.82457 h 29.85206 l 0.14794,-5 h 10 v -10 h 15 v -10 h 10"
          id="path18"
          sodipodi:nodetypes="cccccccc" />
       <path
-         style="fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#ff0000;stroke-width:1.333;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-         d="m 458.91936,606.82457 v -5"
+         style="fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#cc3311;stroke-width:1.41946;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         d="m 458.91936,607.49421 v -5.66964"
          id="path19" />
       <text
          xml:space="preserve"
@@ -710,25 +710,25 @@
            style="font-size:24px;fill:#000000;fill-opacity:1;stroke:none"
            id="tspan4">shift</tspan></text>
       <path
-         style="fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#ff0000;stroke-width:1.333;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         style="fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#cc3311;stroke-width:1.333;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
          d="m 285.63365,733.15807 h 14.61872"
          id="path16-3"
          sodipodi:nodetypes="cc" />
     </g>
     <path
        id="path5499"
-       style="fill:none;stroke:#ff0000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       style="fill:none;stroke:#cc3311;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        d="m 151.91467,632.06827 c 0,0 96.65608,-322.46785 96.65608,-322.46785 8.3147,-27.73984 26.62245,-52.0552 50.26474,-71.42069 20.80262,-17.03951 45.73528,-30.2468 71.62451,-38.58275 92.37934,-29.74479 170.04186,-41.80623 351.54,-41.80623 -138.46977,6.96159 -274.54326,-15.57789 -407.10401,34.85641 -42.96725,19.56749 -90.49984,46.47473 -102.84989,92.98119 0,0 -59.88617,225.51273 -59.88617,225.51273"
        sodipodi:nodetypes="csssccsc" />
     <circle
-       style="fill:#ff0000;fill-opacity:1;stroke:none"
+       style="fill:#cc3311;fill-opacity:1;stroke:none"
        id="path2934"
        transform="translate(38.274134,-13.629723)"
        cx="113.39286"
        cy="526.25256"
        r="6.25" />
     <path
-       style="opacity:0.744;fill:#4b9dde;fill-opacity:1;stroke:none"
+       style="opacity:0.744;fill:#4477aa;fill-opacity:1;stroke:none"
        d="m 44.939359,483.86779 21.41125,-79.82973 79.829731,21.41124 -21.41125,79.82973 z"
        id="rect7658-8" />
     <path
@@ -756,7 +756,7 @@
        d="m 109.95395,437.61734 22.38462,6.00381"
        id="path7670-1" />
     <path
-       style="opacity:0.744;fill:#4b9dde;fill-opacity:1;stroke:none"
+       style="opacity:0.744;fill:#4477aa;fill-opacity:1;stroke:none"
        d="m 160.75738,201.74364 21.41124,-79.82973 79.82974,21.41123 -21.41126,79.82975 z"
        id="rect7722-1" />
     <path
@@ -776,7 +776,7 @@
        d="m 213.35228,189.05063 22.97677,3.03072"
        id="path7791-6" />
     <path
-       style="opacity:0.744;fill:#4b9dde;fill-opacity:1;stroke:none"
+       style="opacity:0.744;fill:#4477aa;fill-opacity:1;stroke:none"
        d="m 84.995946,330.03301 21.411244,-79.82973 79.82974,21.41124 -21.41125,79.82973 z"
        id="rect7690-3" />
     <path

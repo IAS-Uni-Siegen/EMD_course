@@ -7,7 +7,7 @@
    viewBox="0 0 104.80215 37.858501"
    version="1.1"
    id="svg1"
-   inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
+   inkscape:version="1.4.3 (0d15f75, 2025-12-25)"
    sodipodi:docname="Winding_turn_types.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -23,13 +23,13 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#505050"
      inkscape:document-units="mm"
-     inkscape:zoom="44.871044"
-     inkscape:cx="383.83328"
-     inkscape:cy="64.685368"
-     inkscape:window-width="2560"
-     inkscape:window-height="1351"
-     inkscape:window-x="2551"
-     inkscape:window-y="-9"
+     inkscape:zoom="7.9321549"
+     inkscape:cx="97.010209"
+     inkscape:cy="55.596494"
+     inkscape:window-width="1920"
+     inkscape:window-height="998"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
      inkscape:window-maximized="1"
      inkscape:current-layer="layer1" />
   <defs
@@ -577,211 +577,232 @@
     </g>
     <g
        id="g50"
-       transform="matrix(0.26458333,0,0,0.26458333,59.640641,46.839874)">
+       transform="matrix(0.26458333,0,0,0.26458333,59.640641,46.839874)"
+       style="fill:#cc3311">
       <path
          id="path51"
          d="M 0,0 C 0,1.174 0.951,2.125 2.125,2.125 3.299,2.125 4.25,1.174 4.25,0 4.25,-1.174 3.299,-2.125 2.125,-2.125 0.951,-2.125 0,-1.174 0,0"
-         style="fill:#ff9900;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.75;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+         style="fill:#cc3311;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.75;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
          transform="matrix(1.3333333,0,0,-1.3333333,73.451867,64.488667)"
          clip-path="url(#clipPath52)" />
     </g>
     <g
        id="g52"
-       transform="matrix(0.26458333,0,0,0.26458333,59.640641,46.839874)">
+       transform="matrix(0.26458333,0,0,0.26458333,59.640641,46.839874)"
+       style="fill:#cc3311">
       <path
          id="path53"
          d="M 0,0 C 0,1.174 0.951,2.125 2.125,2.125 3.299,2.125 4.25,1.174 4.25,0 4.25,-1.174 3.299,-2.125 2.125,-2.125 0.951,-2.125 0,-1.174 0,0"
-         style="fill:#ff9900;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.75;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+         style="fill:#cc3311;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.75;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
          transform="matrix(1.3333333,0,0,-1.3333333,79.718533,59.088667)"
          clip-path="url(#clipPath54)" />
     </g>
     <g
        id="g54"
-       transform="matrix(0.26458333,0,0,0.26458333,59.640641,46.839874)">
+       transform="matrix(0.26458333,0,0,0.26458333,59.640641,46.839874)"
+       style="fill:#cc3311">
       <path
          id="path55"
          d="M 0,0 C 0,1.174 0.951,2.125 2.125,2.125 3.299,2.125 4.25,1.174 4.25,0 4.25,-1.174 3.299,-2.125 2.125,-2.125 0.951,-2.125 0,-1.174 0,0"
-         style="fill:#ff9900;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.75;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+         style="fill:#cc3311;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.75;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
          transform="matrix(1.3333333,0,0,-1.3333333,68.451867,60.688667)"
          clip-path="url(#clipPath56)" />
     </g>
     <g
        id="g56"
-       transform="matrix(0.26458333,0,0,0.26458333,59.640641,46.839874)">
+       transform="matrix(0.26458333,0,0,0.26458333,59.640641,46.839874)"
+       style="fill:#cc3311">
       <path
          id="path57"
          d="M 0,0 C 0,1.174 0.951,2.125 2.125,2.125 3.299,2.125 4.25,1.174 4.25,0 4.25,-1.174 3.299,-2.125 2.125,-2.125 0.951,-2.125 0,-1.174 0,0"
-         style="fill:#ff9900;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.75;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+         style="fill:#cc3311;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.75;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
          transform="matrix(1.3333333,0,0,-1.3333333,80.651867,67.488667)"
          clip-path="url(#clipPath58)" />
     </g>
     <g
        id="g58"
-       transform="matrix(0.26458333,0,0,0.26458333,59.640641,46.839874)">
+       transform="matrix(0.26458333,0,0,0.26458333,59.640641,46.839874)"
+       style="fill:#cc3311">
       <path
          id="path59"
          d="M 0,0 C 0,1.174 0.951,2.125 2.125,2.125 3.299,2.125 4.25,1.174 4.25,0 4.25,-1.174 3.299,-2.125 2.125,-2.125 0.951,-2.125 0,-1.174 0,0"
-         style="fill:#ff9900;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.75;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+         style="fill:#cc3311;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.75;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
          transform="matrix(1.3333333,0,0,-1.3333333,63.9852,67.288667)"
          clip-path="url(#clipPath60)" />
     </g>
     <g
        id="g60"
-       transform="matrix(0.26458333,0,0,0.26458333,59.640641,46.839874)">
+       transform="matrix(0.26458333,0,0,0.26458333,59.640641,46.839874)"
+       style="fill:#cc3311">
       <path
          id="path61"
          d="M 0,0 C 0,1.174 0.951,2.125 2.125,2.125 3.299,2.125 4.25,1.174 4.25,0 4.25,-1.174 3.299,-2.125 2.125,-2.125 0.951,-2.125 0,-1.174 0,0"
-         style="fill:#ff9900;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.75;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+         style="fill:#cc3311;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.75;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
          transform="matrix(1.3333333,0,0,-1.3333333,63.918533,97.488667)"
          clip-path="url(#clipPath62)" />
     </g>
     <g
        id="g62"
-       transform="matrix(0.26458333,0,0,0.26458333,59.640641,46.839874)">
+       transform="matrix(0.26458333,0,0,0.26458333,59.640641,46.839874)"
+       style="fill:#cc3311">
       <path
          id="path63"
          d="M 0,0 C 0,1.174 0.951,2.125 2.125,2.125 3.299,2.125 4.25,1.174 4.25,0 4.25,-1.174 3.299,-2.125 2.125,-2.125 0.951,-2.125 0,-1.174 0,0"
-         style="fill:#ff9900;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.75;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+         style="fill:#cc3311;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.75;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
          transform="matrix(1.3333333,0,0,-1.3333333,76.318533,72.688667)"
          clip-path="url(#clipPath64)" />
     </g>
     <g
        id="g64"
-       transform="matrix(0.26458333,0,0,0.26458333,59.640641,46.839874)">
+       transform="matrix(0.26458333,0,0,0.26458333,59.640641,46.839874)"
+       style="fill:#cc3311">
       <path
          id="path65"
          d="M 0,0 C 0,1.174 0.951,2.125 2.125,2.125 3.299,2.125 4.25,1.174 4.25,0 4.25,-1.174 3.299,-2.125 2.125,-2.125 0.951,-2.125 0,-1.174 0,0"
-         style="fill:#ff9900;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.75;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+         style="fill:#cc3311;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.75;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
          transform="matrix(1.3333333,0,0,-1.3333333,85.7852,71.355333)"
          clip-path="url(#clipPath66)" />
     </g>
     <g
        id="g66"
-       transform="matrix(0.26458333,0,0,0.26458333,59.640641,46.839874)">
+       transform="matrix(0.26458333,0,0,0.26458333,59.640641,46.839874)"
+       style="fill:#cc3311">
       <path
          id="path67"
          d="M 0,0 C 0,1.174 0.951,2.125 2.125,2.125 3.299,2.125 4.25,1.174 4.25,0 4.25,-1.174 3.299,-2.125 2.125,-2.125 0.951,-2.125 0,-1.174 0,0"
-         style="fill:#ff9900;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.75;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+         style="fill:#cc3311;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.75;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
          transform="matrix(1.3333333,0,0,-1.3333333,69.518533,70.355333)"
          clip-path="url(#clipPath68)" />
     </g>
     <g
        id="g68"
-       transform="matrix(0.26458333,0,0,0.26458333,59.640641,46.839874)">
+       transform="matrix(0.26458333,0,0,0.26458333,59.640641,46.839874)"
+       style="fill:#cc3311">
       <path
          id="path69"
          d="M 0,0 C 0,1.174 0.951,2.125 2.125,2.125 3.299,2.125 4.25,1.174 4.25,0 4.25,-1.174 3.299,-2.125 2.125,-2.125 0.951,-2.125 0,-1.174 0,0"
-         style="fill:#ff9900;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.75;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+         style="fill:#cc3311;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.75;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
          transform="matrix(1.3333333,0,0,-1.3333333,65.1852,105.222)"
          clip-path="url(#clipPath70)" />
     </g>
     <g
        id="g70"
-       transform="matrix(0.26458333,0,0,0.26458333,59.640641,46.839874)">
+       transform="matrix(0.26458333,0,0,0.26458333,59.640641,46.839874)"
+       style="fill:#cc3311">
       <path
          id="path71"
          d="M 0,0 C 0,1.174 0.951,2.125 2.125,2.125 3.299,2.125 4.25,1.174 4.25,0 4.25,-1.174 3.299,-2.125 2.125,-2.125 0.951,-2.125 0,-1.174 0,0"
-         style="fill:#ff9900;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.75;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+         style="fill:#cc3311;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.75;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
          transform="matrix(1.3333333,0,0,-1.3333333,74.1852,108.68867)"
          clip-path="url(#clipPath72)" />
     </g>
     <g
        id="g72"
-       transform="matrix(0.26458333,0,0,0.26458333,59.640641,46.839874)">
+       transform="matrix(0.26458333,0,0,0.26458333,59.640641,46.839874)"
+       style="fill:#cc3311">
       <path
          id="path73"
          d="M 0,0 C 0,1.174 0.951,2.125 2.125,2.125 3.299,2.125 4.25,1.174 4.25,0 4.25,-1.174 3.299,-2.125 2.125,-2.125 0.951,-2.125 0,-1.174 0,0"
-         style="fill:#ff9900;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.75;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+         style="fill:#cc3311;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.75;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
          transform="matrix(1.3333333,0,0,-1.3333333,64.3852,74.488667)"
          clip-path="url(#clipPath74)" />
     </g>
     <g
        id="g74"
-       transform="matrix(0.26458333,0,0,0.26458333,59.640641,46.839874)">
+       transform="matrix(0.26458333,0,0,0.26458333,59.640641,46.839874)"
+       style="fill:#cc3311">
       <path
          id="path75"
          d="M 0,0 C 0,1.174 0.951,2.125 2.125,2.125 3.299,2.125 4.25,1.174 4.25,0 4.25,-1.174 3.299,-2.125 2.125,-2.125 0.951,-2.125 0,-1.174 0,0"
-         style="fill:#ff9900;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.75;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+         style="fill:#cc3311;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.75;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
          transform="matrix(1.3333333,0,0,-1.3333333,86.851867,77.422)"
          clip-path="url(#clipPath76)" />
     </g>
     <g
        id="g76"
-       transform="matrix(0.26458333,0,0,0.26458333,59.640641,46.839874)">
+       transform="matrix(0.26458333,0,0,0.26458333,59.640641,46.839874)"
+       style="fill:#cc3311">
       <path
          id="path77"
          d="M 0,0 C 0,1.174 0.951,2.125 2.125,2.125 3.299,2.125 4.25,1.174 4.25,0 4.25,-1.174 3.299,-2.125 2.125,-2.125 0.951,-2.125 0,-1.174 0,0"
-         style="fill:#ff9900;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.75;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+         style="fill:#cc3311;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.75;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
          transform="matrix(1.3333333,0,0,-1.3333333,83.851867,84.155333)"
          clip-path="url(#clipPath78)" />
     </g>
     <g
        id="g78"
-       transform="matrix(0.26458333,0,0,0.26458333,59.640641,46.839874)">
+       transform="matrix(0.26458333,0,0,0.26458333,59.640641,46.839874)"
+       style="fill:#cc3311">
       <path
          id="path79"
          d="M 0,0 C 0,1.174 0.951,2.125 2.125,2.125 3.299,2.125 4.25,1.174 4.25,0 4.25,-1.174 3.299,-2.125 2.125,-2.125 0.951,-2.125 0,-1.174 0,0"
-         style="fill:#ff9900;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.75;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+         style="fill:#cc3311;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.75;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
          transform="matrix(1.3333333,0,0,-1.3333333,79.851867,78.888667)"
          clip-path="url(#clipPath80)" />
     </g>
     <g
        id="g80"
-       transform="matrix(0.26458333,0,0,0.26458333,59.640641,46.839874)">
+       transform="matrix(0.26458333,0,0,0.26458333,59.640641,46.839874)"
+       style="fill:#cc3311">
       <path
          id="path81"
          d="M 0,0 C 0,1.174 0.951,2.125 2.125,2.125 3.299,2.125 4.25,1.174 4.25,0 4.25,-1.174 3.299,-2.125 2.125,-2.125 0.951,-2.125 0,-1.174 0,0"
-         style="fill:#ff9900;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.75;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+         style="fill:#cc3311;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.75;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
          transform="matrix(1.3333333,0,0,-1.3333333,63.918533,112.28867)"
          clip-path="url(#clipPath82)" />
     </g>
     <g
        id="g82"
-       transform="matrix(0.26458333,0,0,0.26458333,59.640641,46.839874)">
+       transform="matrix(0.26458333,0,0,0.26458333,59.640641,46.839874)"
+       style="fill:#cc3311">
       <path
          id="path83"
          d="M 0,0 C 0,1.174 0.951,2.125 2.125,2.125 3.299,2.125 4.25,1.174 4.25,0 4.25,-1.174 3.299,-2.125 2.125,-2.125 0.951,-2.125 0,-1.174 0,0"
-         style="fill:#ff9900;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.75;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+         style="fill:#cc3311;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.75;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
          transform="matrix(1.3333333,0,0,-1.3333333,88.251867,89.488667)"
          clip-path="url(#clipPath84)" />
     </g>
     <g
        id="g84"
-       transform="matrix(0.26458333,0,0,0.26458333,59.640641,46.839874)">
+       transform="matrix(0.26458333,0,0,0.26458333,59.640641,46.839874)"
+       style="fill:#cc3311">
       <path
          id="path85"
          d="M 0,0 C 0,1.174 0.951,2.125 2.125,2.125 3.299,2.125 4.25,1.174 4.25,0 4.25,-1.174 3.299,-2.125 2.125,-2.125 0.951,-2.125 0,-1.174 0,0"
-         style="fill:#ff9900;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.75;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+         style="fill:#cc3311;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.75;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
          transform="matrix(1.3333333,0,0,-1.3333333,75.318533,85.488667)"
          clip-path="url(#clipPath86)" />
     </g>
     <g
        id="g86"
-       transform="matrix(0.26458333,0,0,0.26458333,59.640641,46.839874)">
+       transform="matrix(0.26458333,0,0,0.26458333,59.640641,46.839874)"
+       style="fill:#cc3311">
       <path
          id="path87"
          d="M 0,0 C 0,1.174 0.951,2.125 2.125,2.125 3.299,2.125 4.25,1.174 4.25,0 4.25,-1.174 3.299,-2.125 2.125,-2.125 0.951,-2.125 0,-1.174 0,0"
-         style="fill:#ff9900;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.75;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+         style="fill:#cc3311;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.75;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
          transform="matrix(1.3333333,0,0,-1.3333333,71.118533,77.488667)"
          clip-path="url(#clipPath88)" />
     </g>
     <g
        id="g88"
-       transform="matrix(0.26458333,0,0,0.26458333,59.640641,46.839874)">
+       transform="matrix(0.26458333,0,0,0.26458333,59.640641,46.839874)"
+       style="fill:#cc3311">
       <path
          id="path89"
          d="M 0,0 C 0,1.174 0.951,2.125 2.125,2.125 3.299,2.125 4.25,1.174 4.25,0 4.25,-1.174 3.299,-2.125 2.125,-2.125 0.951,-2.125 0,-1.174 0,0"
-         style="fill:#ff9900;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.75;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+         style="fill:#cc3311;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.75;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
          transform="matrix(1.3333333,0,0,-1.3333333,82.1852,90.822)"
          clip-path="url(#clipPath90)" />
     </g>
     <g
        id="g90"
-       transform="matrix(0.26458333,0,0,0.26458333,59.640641,46.839874)">
+       transform="matrix(0.26458333,0,0,0.26458333,59.640641,46.839874)"
+       style="fill:#cc3311">
       <path
          id="path91"
          d="M 0,0 C 0,1.174 0.951,2.125 2.125,2.125 3.299,2.125 4.25,1.174 4.25,0 4.25,-1.174 3.299,-2.125 2.125,-2.125 0.951,-2.125 0,-1.174 0,0"
-         style="fill:#ff9900;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.75;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+         style="fill:#cc3311;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.75;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
          transform="matrix(1.3333333,0,0,-1.3333333,69.518533,88.488667)"
          clip-path="url(#clipPath92)" />
     </g>
@@ -809,70 +830,77 @@
       <path
          id="path96"
          d="m 385.8,244.628 h 14.25 v -4.75 H 385.8 Z"
-         style="fill:#ff9900;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.75;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:8;stroke-dasharray:none;stroke-opacity:1"
+         style="fill:#cc3311;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.75;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:8;stroke-dasharray:none;stroke-opacity:1"
          transform="matrix(1.3333333,0,0,-1.3333333,-206.01467,386.09333)" />
     </g>
     <g
        id="g96"
-       transform="matrix(0.26458333,0,0,0.26458333,59.640641,46.839874)">
+       transform="matrix(0.26458333,0,0,0.26458333,59.640641,46.839874)"
+       style="fill:#cc3311">
       <path
          id="path97"
          d="m 385.8,238.479 h 14.25 v -4.75 H 385.8 Z"
-         style="fill:#ff9900;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.75;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:8;stroke-dasharray:none;stroke-opacity:1"
+         style="fill:#cc3311;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.75;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:8;stroke-dasharray:none;stroke-opacity:1"
          transform="matrix(1.3333333,0,0,-1.3333333,-206.01467,386.09333)" />
     </g>
     <g
        id="g97"
-       transform="matrix(0.26458333,0,0,0.26458333,59.640641,46.839874)">
+       transform="matrix(0.26458333,0,0,0.26458333,59.640641,46.839874)"
+       style="fill:#cc3311">
       <path
          id="path98"
          d="m 385.8,232.029 h 14.25 v -4.75 H 385.8 Z"
-         style="fill:#ff9900;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.75;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:8;stroke-dasharray:none;stroke-opacity:1"
+         style="fill:#cc3311;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.75;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:8;stroke-dasharray:none;stroke-opacity:1"
          transform="matrix(1.3333333,0,0,-1.3333333,-206.01467,386.09333)" />
     </g>
     <g
        id="g98"
-       transform="matrix(0.26458333,0,0,0.26458333,59.640641,46.839874)">
+       transform="matrix(0.26458333,0,0,0.26458333,59.640641,46.839874)"
+       style="fill:#cc3311">
       <path
          id="path99"
          d="m 385.8,225.878 h 14.25 v -4.75 H 385.8 Z"
-         style="fill:#ff9900;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.75;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:8;stroke-dasharray:none;stroke-opacity:1"
+         style="fill:#cc3311;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.75;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:8;stroke-dasharray:none;stroke-opacity:1"
          transform="matrix(1.3333333,0,0,-1.3333333,-206.01467,386.09333)" />
     </g>
     <g
        id="g99"
-       transform="matrix(0.26458333,0,0,0.26458333,59.640641,46.839874)">
+       transform="matrix(0.26458333,0,0,0.26458333,59.640641,46.839874)"
+       style="fill:#cc3311">
       <path
          id="path100"
          d="m 385.8,219.428 h 14.25 v -4.75 H 385.8 Z"
-         style="fill:#ff9900;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.75;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:8;stroke-dasharray:none;stroke-opacity:1"
+         style="fill:#cc3311;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.75;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:8;stroke-dasharray:none;stroke-opacity:1"
          transform="matrix(1.3333333,0,0,-1.3333333,-206.01467,386.09333)" />
     </g>
     <g
        id="g100"
-       transform="matrix(0.26458333,0,0,0.26458333,59.640641,46.839874)">
+       transform="matrix(0.26458333,0,0,0.26458333,59.640641,46.839874)"
+       style="fill:#cc3311">
       <path
          id="path101"
          d="m 385.8,213.279 h 14.25 v -4.75 H 385.8 Z"
-         style="fill:#ff9900;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.75;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:8;stroke-dasharray:none;stroke-opacity:1"
+         style="fill:#cc3311;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.75;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:8;stroke-dasharray:none;stroke-opacity:1"
          transform="matrix(1.3333333,0,0,-1.3333333,-206.01467,386.09333)" />
     </g>
     <g
        id="g101"
-       transform="matrix(0.26458333,0,0,0.26458333,59.640641,46.839874)">
+       transform="matrix(0.26458333,0,0,0.26458333,59.640641,46.839874)"
+       style="fill:#cc3311">
       <path
          id="path102"
          d="m 385.8,206.828 h 14.25 v -4.75 H 385.8 Z"
-         style="fill:#ff9900;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.75;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:8;stroke-dasharray:none;stroke-opacity:1"
+         style="fill:#cc3311;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.75;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:8;stroke-dasharray:none;stroke-opacity:1"
          transform="matrix(1.3333333,0,0,-1.3333333,-206.01467,386.09333)" />
     </g>
     <g
        id="g102"
-       transform="matrix(0.26458333,0,0,0.26458333,59.640641,46.839874)">
+       transform="matrix(0.26458333,0,0,0.26458333,59.640641,46.839874)"
+       style="fill:#cc3311">
       <path
          id="path103"
          d="m 385.8,200.678 h 14.25 v -4.75 H 385.8 Z"
-         style="fill:#ff9900;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.75;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:8;stroke-dasharray:none;stroke-opacity:1"
+         style="fill:#cc3311;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.75;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:8;stroke-dasharray:none;stroke-opacity:1"
          transform="matrix(1.3333333,0,0,-1.3333333,-206.01467,386.09333)" />
     </g>
     <g
@@ -886,61 +914,67 @@
     </g>
     <g
        id="g105"
-       transform="matrix(0.26458333,0,0,0.26458333,59.640641,46.839874)">
+       transform="matrix(0.26458333,0,0,0.26458333,59.640641,46.839874)"
+       style="fill:#cc3311">
       <path
          id="path106"
          d="M 0,0 C 0,-1.174 0.951,-2.125 2.125,-2.125 3.299,-2.125 4.25,-1.174 4.25,0 4.25,1.174 3.299,2.125 2.125,2.125 0.951,2.125 0,1.174 0,0"
-         style="fill:#ff9900;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.75;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+         style="fill:#cc3311;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.75;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
          transform="matrix(1.3333333,0,0,-1.3333333,81.3852,106.35533)"
          clip-path="url(#clipPath107)" />
     </g>
     <g
        id="g107"
-       transform="matrix(0.26458333,0,0,0.26458333,59.640641,46.839874)">
+       transform="matrix(0.26458333,0,0,0.26458333,59.640641,46.839874)"
+       style="fill:#cc3311">
       <path
          id="path108"
          d="M 0,0 C 0,-1.174 0.951,-2.125 2.125,-2.125 3.299,-2.125 4.25,-1.174 4.25,0 4.25,1.174 3.299,2.125 2.125,2.125 0.951,2.125 0,1.174 0,0"
-         style="fill:#ff9900;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.75;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+         style="fill:#cc3311;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.75;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
          transform="matrix(1.3333333,0,0,-1.3333333,87.451867,103.35533)"
          clip-path="url(#clipPath109)" />
     </g>
     <g
        id="g109"
-       transform="matrix(0.26458333,0,0,0.26458333,59.640641,46.839874)">
+       transform="matrix(0.26458333,0,0,0.26458333,59.640641,46.839874)"
+       style="fill:#cc3311">
       <path
          id="path110"
          d="M 0,0 C 0,-1.174 0.951,-2.125 2.125,-2.125 3.299,-2.125 4.25,-1.174 4.25,0 4.25,1.174 3.299,2.125 2.125,2.125 0.951,2.125 0,1.174 0,0"
-         style="fill:#ff9900;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.75;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+         style="fill:#cc3311;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.75;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
          transform="matrix(1.3333333,0,0,-1.3333333,83.851867,97.488667)"
          clip-path="url(#clipPath111)" />
     </g>
     <g
        id="g111"
-       transform="matrix(0.26458333,0,0,0.26458333,59.640641,46.839874)">
+       transform="matrix(0.26458333,0,0,0.26458333,59.640641,46.839874)"
+       style="fill:#cc3311">
       <path
          id="path112"
          d="M 0,0 C 0,-1.174 0.951,-2.125 2.125,-2.125 3.299,-2.125 4.25,-1.174 4.25,0 4.25,1.174 3.299,2.125 2.125,2.125 0.951,2.125 0,1.174 0,0"
-         style="fill:#ff9900;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.75;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+         style="fill:#cc3311;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.75;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
          transform="matrix(1.3333333,0,0,-1.3333333,69.7852,95.088667)"
          clip-path="url(#clipPath113)" />
     </g>
     <g
        id="g113"
-       transform="matrix(0.26458333,0,0,0.26458333,59.640641,46.839874)">
+       transform="matrix(0.26458333,0,0,0.26458333,59.640641,46.839874)"
+       style="fill:#cc3311">
       <path
          id="path114"
          d="M 0,0 C 0,-1.174 0.951,-2.125 2.125,-2.125 3.299,-2.125 4.25,-1.174 4.25,0 4.25,1.174 3.299,2.125 2.125,2.125 0.951,2.125 0,1.174 0,0"
-         style="fill:#ff9900;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.75;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+         style="fill:#cc3311;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.75;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
          transform="matrix(1.3333333,0,0,-1.3333333,65.3852,118.48867)"
          clip-path="url(#clipPath115)" />
     </g>
     <g
        id="g115"
-       transform="matrix(0.26458333,0,0,0.26458333,59.640641,46.839874)">
+       transform="matrix(0.26458333,0,0,0.26458333,59.640641,46.839874)"
+       style="fill:#cc3311">
       <path
          id="path116"
          d="M 0,0 C 0,-1.174 0.951,-2.125 2.125,-2.125 3.299,-2.125 4.25,-1.174 4.25,0 4.25,1.174 3.299,2.125 2.125,2.125 0.951,2.125 0,1.174 0,0"
-         style="fill:#ff9900;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.75;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+         style="fill:#cc3311;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.75;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
          transform="matrix(1.3333333,0,0,-1.3333333,77.1852,95.022)"
          clip-path="url(#clipPath117)" />
     </g>
@@ -1048,111 +1082,122 @@
     </g>
     <g
        id="g156"
-       transform="matrix(0.26458333,0,0,0.26458333,59.640641,46.839874)">
+       transform="matrix(0.26458333,0,0,0.26458333,59.640641,46.839874)"
+       style="fill:#cc3311">
       <path
          id="path157"
          d="M 0,0 C 0,1.174 0.951,2.125 2.125,2.125 3.299,2.125 4.25,1.174 4.25,0 4.25,-1.174 3.299,-2.125 2.125,-2.125 0.951,-2.125 0,-1.174 0,0"
-         style="fill:#ff9900;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.75;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+         style="fill:#cc3311;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.75;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
          transform="matrix(1.3333333,0,0,-1.3333333,85.7852,63.155333)"
          clip-path="url(#clipPath158)" />
     </g>
     <g
        id="g158"
-       transform="matrix(0.26458333,0,0,0.26458333,59.640641,46.839874)">
+       transform="matrix(0.26458333,0,0,0.26458333,59.640641,46.839874)"
+       style="fill:#cc3311">
       <path
          id="path159"
          d="M 0,0 C 0,1.174 0.951,2.125 2.125,2.125 3.299,2.125 4.25,1.174 4.25,0 4.25,-1.174 3.299,-2.125 2.125,-2.125 0.951,-2.125 0,-1.174 0,0"
-         style="fill:#ff9900;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.75;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+         style="fill:#cc3311;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.75;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
          transform="matrix(1.3333333,0,0,-1.3333333,65.7852,81.288667)"
          clip-path="url(#clipPath160)" />
     </g>
     <g
        id="g160"
-       transform="matrix(0.26458333,0,0,0.26458333,59.640641,46.839874)">
+       transform="matrix(0.26458333,0,0,0.26458333,59.640641,46.839874)"
+       style="fill:#cc3311">
       <path
          id="path161"
          d="M 0,0 C 0,-1.174 0.951,-2.125 2.125,-2.125 3.299,-2.125 4.25,-1.174 4.25,0 4.25,1.174 3.299,2.125 2.125,2.125 0.951,2.125 0,1.174 0,0"
-         style="fill:#ff9900;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.75;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+         style="fill:#cc3311;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.75;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
          transform="matrix(1.3333333,0,0,-1.3333333,63.9852,87.488667)"
          clip-path="url(#clipPath162)" />
     </g>
     <g
        id="g162"
-       transform="matrix(0.26458333,0,0,0.26458333,59.640641,46.839874)">
+       transform="matrix(0.26458333,0,0,0.26458333,59.640641,46.839874)"
+       style="fill:#cc3311">
       <path
          id="path163"
          d="M 0,0 C 0,-1.174 0.951,-2.125 2.125,-2.125 3.299,-2.125 4.25,-1.174 4.25,0 4.25,1.174 3.299,2.125 2.125,2.125 0.951,2.125 0,1.174 0,0"
-         style="fill:#ff9900;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.75;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+         style="fill:#cc3311;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.75;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
          transform="matrix(1.3333333,0,0,-1.3333333,70.251867,101.55533)"
          clip-path="url(#clipPath164)" />
     </g>
     <g
        id="g164"
-       transform="matrix(0.26458333,0,0,0.26458333,59.640641,46.839874)">
+       transform="matrix(0.26458333,0,0,0.26458333,59.640641,46.839874)"
+       style="fill:#cc3311">
       <path
          id="path165"
          d="M 0,0 C 0,-1.174 0.951,-2.125 2.125,-2.125 3.299,-2.125 4.25,-1.174 4.25,0 4.25,1.174 3.299,2.125 2.125,2.125 0.951,2.125 0,1.174 0,0"
-         style="fill:#ff9900;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.75;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+         style="fill:#cc3311;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.75;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
          transform="matrix(1.3333333,0,0,-1.3333333,76.651867,101.55533)"
          clip-path="url(#clipPath166)" />
     </g>
     <g
        id="g166"
-       transform="matrix(0.26458333,0,0,0.26458333,59.640641,46.839874)">
+       transform="matrix(0.26458333,0,0,0.26458333,59.640641,46.839874)"
+       style="fill:#cc3311">
       <path
          id="path167"
          d="M 0,0 C 0,-1.174 0.951,-2.125 2.125,-2.125 3.299,-2.125 4.25,-1.174 4.25,0 4.25,1.174 3.299,2.125 2.125,2.125 0.951,2.125 0,1.174 0,0"
-         style="fill:#ff9900;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.75;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+         style="fill:#cc3311;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.75;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
          transform="matrix(1.3333333,0,0,-1.3333333,75.851867,118.822)"
          clip-path="url(#clipPath168)" />
     </g>
     <g
        id="g168"
-       transform="matrix(0.26458333,0,0,0.26458333,59.640641,46.839874)">
+       transform="matrix(0.26458333,0,0,0.26458333,59.640641,46.839874)"
+       style="fill:#cc3311">
       <path
          id="path169"
          d="M 0,0 C 0,-1.174 0.951,-2.125 2.125,-2.125 3.299,-2.125 4.25,-1.174 4.25,0 4.25,1.174 3.299,2.125 2.125,2.125 0.951,2.125 0,1.174 0,0"
-         style="fill:#ff9900;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.75;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+         style="fill:#cc3311;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.75;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
          transform="matrix(1.3333333,0,0,-1.3333333,70.851867,122.422)"
          clip-path="url(#clipPath170)" />
     </g>
     <g
        id="g170"
-       transform="matrix(0.26458333,0,0,0.26458333,59.640641,46.839874)">
+       transform="matrix(0.26458333,0,0,0.26458333,59.640641,46.839874)"
+       style="fill:#cc3311">
       <path
          id="path171"
          d="M 0,0 C 0,-1.174 0.951,-2.125 2.125,-2.125 3.299,-2.125 4.25,-1.174 4.25,0 4.25,1.174 3.299,2.125 2.125,2.125 0.951,2.125 0,1.174 0,0"
-         style="fill:#ff9900;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.75;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+         style="fill:#cc3311;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.75;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
          transform="matrix(1.3333333,0,0,-1.3333333,87.051867,115.08867)"
          clip-path="url(#clipPath172)" />
     </g>
     <g
        id="g172"
-       transform="matrix(0.26458333,0,0,0.26458333,59.640641,46.839874)">
+       transform="matrix(0.26458333,0,0,0.26458333,59.640641,46.839874)"
+       style="fill:#cc3311">
       <path
          id="path173"
          d="M 0,0 C 0,-1.174 0.951,-2.125 2.125,-2.125 3.299,-2.125 4.25,-1.174 4.25,0 4.25,1.174 3.299,2.125 2.125,2.125 0.951,2.125 0,1.174 0,0"
-         style="fill:#ff9900;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.75;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+         style="fill:#cc3311;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.75;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
          transform="matrix(1.3333333,0,0,-1.3333333,80.1852,113.35533)"
          clip-path="url(#clipPath174)" />
     </g>
     <g
        id="g174"
-       transform="matrix(0.26458333,0,0,0.26458333,59.640641,46.839874)">
+       transform="matrix(0.26458333,0,0,0.26458333,59.640641,46.839874)"
+       style="fill:#cc3311">
       <path
          id="path175"
          d="M 0,0 C 0,-1.174 0.951,-2.125 2.125,-2.125 3.299,-2.125 4.25,-1.174 4.25,0 4.25,1.174 3.299,2.125 2.125,2.125 0.951,2.125 0,1.174 0,0"
-         style="fill:#ff9900;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.75;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+         style="fill:#cc3311;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.75;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
          transform="matrix(1.3333333,0,0,-1.3333333,71.451867,114.08867)"
          clip-path="url(#clipPath176)" />
     </g>
     <g
        id="g176"
-       transform="matrix(0.26458333,0,0,0.26458333,59.640641,46.839874)">
+       transform="matrix(0.26458333,0,0,0.26458333,59.640641,46.839874)"
+       style="fill:#cc3311">
       <path
          id="path177"
          d="M 0,0 C 0,-1.174 0.951,-2.125 2.125,-2.125 3.299,-2.125 4.25,-1.174 4.25,0 4.25,1.174 3.299,2.125 2.125,2.125 0.951,2.125 0,1.174 0,0"
-         style="fill:#ff9900;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.75;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+         style="fill:#cc3311;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.75;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
          transform="matrix(1.3333333,0,0,-1.3333333,81.3852,121.08867)"
          clip-path="url(#clipPath178)" />
     </g>

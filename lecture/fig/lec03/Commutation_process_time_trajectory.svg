@@ -8,7 +8,7 @@
    height="126.00301"
    viewBox="0 0 428.79513 126.00302"
    sodipodi:docname="Commutation_process_time_trajectory.svg"
-   inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
+   inkscape:version="1.4.3 (0d15f75, 2025-12-25)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -23,12 +23,12 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#505050"
      inkscape:zoom="2.8284271"
-     inkscape:cx="166.17009"
-     inkscape:cy="113.31386"
+     inkscape:cx="310.59666"
+     inkscape:cy="56.922096"
      inkscape:window-width="1920"
-     inkscape:window-height="991"
-     inkscape:window-x="1911"
-     inkscape:window-y="-9"
+     inkscape:window-height="998"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
      inkscape:window-maximized="1"
      inkscape:current-layer="g226"
      showgrid="true">
@@ -1234,7 +1234,7 @@
        id="g226">
       <path
          d="m 319.145,460.996 h 1190.51 v 141.73 H 319.145 Z"
-         style="fill:#b1b1b1;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1.15777"
+         style="fill:#bbbbbb;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1.15777"
          transform="matrix(0.07957617,0,0,-0.10666667,220.51436,859.66544)"
          clip-path="url(#clipPath6)"
          id="path115" />
@@ -1396,7 +1396,7 @@
          id="path169-4"
          sodipodi:nodetypes="cc" />
       <path
-         style="fill:none;fill-rule:evenodd;stroke:#0a823b;stroke-width:1.008;stroke-linecap:round;stroke-miterlimit:3.9;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         style="fill:none;fill-rule:evenodd;stroke:#009988;stroke-width:1.008;stroke-linecap:round;stroke-miterlimit:3.9;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
          d="m 158.291,2.4439964 c 4.66667,22.3333326 9.33324,44.6662216 18.7347,58.8331686 9.40145,14.166947 23.53704,20.166826 37.67291,26.166825"
          id="path170"
          inkscape:path-effect="#path-effect170"
@@ -1404,7 +1404,7 @@
          sodipodi:nodetypes="ccc"
          transform="translate(345.21101,748.67277)" />
       <path
-         style="fill:none;fill-rule:evenodd;stroke:#8f4016;stroke-width:1.008;stroke-linecap:round;stroke-miterlimit:3.9;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         style="fill:none;fill-rule:evenodd;stroke:#cc3311;stroke-width:1.008;stroke-linecap:round;stroke-miterlimit:3.9;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
          d="M 214.61023,87.762655 C 201.30636,84.461485 188.00275,81.16038 178.70003,73.318918 169.39731,65.477456 164.09632,53.096507 161.36166,40.527063 158.62701,27.957619 158.45901,15.200933 158.29101,2.443992"
          id="path170-5"
          inkscape:path-effect="#path-effect170-8"
@@ -1919,7 +1919,7 @@
       </g>
       <text
          xml:space="preserve"
-         style="font-size:8.00001px;line-height:1.15;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, Normal';text-align:center;text-anchor:middle;fill:#0a823b;fill-opacity:0.933333;fill-rule:evenodd;stroke:none;stroke-width:0.508;stroke-linecap:round;stroke-miterlimit:3.9;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         style="font-size:8.00001px;line-height:1.15;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, Normal';text-align:center;text-anchor:middle;fill:#009988;fill-opacity:0.933333;fill-rule:evenodd;stroke:none;stroke-width:0.508;stroke-linecap:round;stroke-miterlimit:3.9;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
          x="531.50201"
          y="840.29797"
          id="text197"><tspan
@@ -1927,15 +1927,15 @@
            id="tspan197"
            x="531.50201"
            y="840.29797"
-           style="fill:#0a823b;fill-opacity:0.933333;stroke:none;stroke-opacity:1">Commutation</tspan><tspan
+           style="fill:#009988;fill-opacity:0.933333;stroke:none;stroke-opacity:1">Commutation</tspan><tspan
            sodipodi:role="line"
            x="531.50201"
            y="849.49799"
            id="tspan198"
-           style="fill:#0a823b;fill-opacity:0.933333;stroke:none;stroke-opacity:1">in time</tspan></text>
+           style="fill:#009988;fill-opacity:0.933333;stroke:none;stroke-opacity:1">in time</tspan></text>
       <text
          xml:space="preserve"
-         style="font-size:8.00001px;line-height:1.15;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, Normal';text-align:center;text-anchor:middle;fill:#8f4016;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.508;stroke-linecap:round;stroke-miterlimit:3.9;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         style="font-size:8.00001px;line-height:1.15;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, Normal';text-align:center;text-anchor:middle;fill:#cc3311;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.508;stroke-linecap:round;stroke-miterlimit:3.9;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
          x="585.21295"
          y="760.42297"
          id="text197-2"><tspan
@@ -1943,24 +1943,24 @@
            id="tspan197-5"
            x="585.21295"
            y="760.42297"
-           style="fill:#8f4016;fill-opacity:1;stroke:none;stroke-opacity:1">Commutation</tspan><tspan
+           style="fill:#cc3311;fill-opacity:1;stroke:none;stroke-opacity:1">Commutation</tspan><tspan
            sodipodi:role="line"
            x="585.21295"
            y="769.62299"
            id="tspan198-5"
-           style="fill:#8f4016;fill-opacity:1;stroke:none;stroke-opacity:1">incomplete</tspan><tspan
+           style="fill:#cc3311;fill-opacity:1;stroke:none;stroke-opacity:1">incomplete</tspan><tspan
            sodipodi:role="line"
            x="585.21295"
            y="778.823"
-           style="fill:#8f4016;fill-opacity:1;stroke:none;stroke-opacity:1"
+           style="fill:#cc3311;fill-opacity:1;stroke:none;stroke-opacity:1"
            id="tspan199">=</tspan><tspan
            sodipodi:role="line"
            x="585.21295"
            y="788.02301"
-           style="fill:#8f4016;fill-opacity:1;stroke:none;stroke-opacity:1"
+           style="fill:#cc3311;fill-opacity:1;stroke:none;stroke-opacity:1"
            id="tspan200">electric arc</tspan></text>
       <path
-         style="fill:#ff5901;fill-opacity:1;fill-rule:evenodd;stroke:#8f4016;stroke-width:0.508;stroke-linecap:round;stroke-miterlimit:3.9;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         style="fill:#cc3311;fill-opacity:1;fill-rule:evenodd;stroke:#cc3311;stroke-width:0.508;stroke-linecap:round;stroke-miterlimit:3.9;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
          d="M 574.26262,790.54436 563.502,802.29799"
          id="path201" />
       <g
@@ -2423,7 +2423,7 @@
         </g>
       </g>
       <path
-         style="fill:none;fill-rule:evenodd;stroke:#0a823b;stroke-width:1;stroke-linecap:square;stroke-miterlimit:3.9;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         style="fill:none;fill-rule:evenodd;stroke:#009988;stroke-width:1;stroke-linecap:square;stroke-miterlimit:3.9;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
          d="m 503.59041,750.79809 56.31922,85.31866"
          id="path135"
          sodipodi:nodetypes="cc" />

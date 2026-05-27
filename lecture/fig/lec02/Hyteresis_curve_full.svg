@@ -6,7 +6,7 @@
    height="585.54547"
    id="svg3675"
    sodipodi:version="0.32"
-   inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
+   inkscape:version="1.4.3 (0d15f75, 2025-12-25)"
    sodipodi:docname="Hyteresis_curve_full.svg"
    inkscape:output_extension="org.inkscape.output.svg.inkscape"
    version="1.0"
@@ -24,18 +24,18 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.979899"
-     inkscape:cx="294.712"
-     inkscape:cy="386.63589"
+     inkscape:zoom="0.9899495"
+     inkscape:cx="410.62701"
+     inkscape:cy="324.25896"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="true"
      showguides="true"
      inkscape:guide-bbox="true"
-     inkscape:window-width="2560"
-     inkscape:window-height="1351"
-     inkscape:window-x="2551"
-     inkscape:window-y="-9"
+     inkscape:window-width="1920"
+     inkscape:window-height="998"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
      inkscape:window-maximized="1"
      inkscape:showpageshadow="0"
      inkscape:pagecheckerboard="0"
@@ -440,11 +440,11 @@
      transform="translate(-44.9394, -97.8746)">
     <path
        id="path5499-9"
-       style="fill:#ff0000;stroke:#ff0000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;fill-opacity:0.25391304"
+       style="fill:#cc3311;stroke:#cc3311;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;fill-opacity:0.25391304"
        d="m 371.13936,212.27457 c 0,0 -66.65267,38.64888 -90.2,68.04165 -26.83327,33.49441 -53.2435,117.22727 -53.2435,117.22727 -7.27334,15.08701 -32.24275,109.29812 -31.7565,107.77273 6.56664,-20.59984 -10.60339,35.83031 -17.85714,59.36952 -17.14286,55.63049 -9.48226,80.63049 -132.142862,90.63049 121.946322,-10 116.798542,-6.20071 207.069792,-30 37.93021,-10 52.92894,-17.73992 77.93021,-30 l 40.21769,-19.72188 -1.21769,0.72188 c 0,0 66.49281,-38.98177 90,-68.44166 26.76808,-33.54654 53.2435,-117.22727 53.2435,-117.22727 7.27334,-15.08701 32.24275,-109.29812 31.7565,-107.77273 -6.56664,20.59984 10.60339,-35.83031 17.85714,-59.36952 17.14286,-55.63048 9.48226,-80.63048 132.14286,-90.63048 -121.94632,10 -116.79854,6.2007 -207.06979,30 -37.93021,10 -53.02442,17.5471 -77.93021,30 l -40,20 z"
        sodipodi:nodetypes="cassscssccassscsscc" />
     <path
-       style="opacity:0.744;fill:#4b9dde;fill-opacity:1;stroke:none"
+       style="opacity:0.744;fill:#4477aa;fill-opacity:1;stroke:none"
        d="m 610.76195,234.35441 21.41124,-79.82973 79.82973,21.41124 -21.41124,79.82973 z"
        id="rect7759" />
     <path
@@ -464,7 +464,7 @@
        d="m 663.44147,226.3075 23.17576,-0.034"
        id="path7776" />
     <path
-       style="opacity:0.744;fill:#4b9dde;fill-opacity:1;stroke:none"
+       style="opacity:0.744;fill:#4477aa;fill-opacity:1;stroke:none"
        d="M 155.94028,538.87179 134.52904,618.70152 54.699304,597.29028 76.110545,517.46055 Z"
        id="rect7759-1" />
     <path
@@ -533,59 +533,59 @@
        d="M 699.8991,390.37458 H 49.93936"
        id="path3-1" />
     <circle
-       style="fill:#ff0000;fill-opacity:1;stroke:none"
+       style="fill:#cc3311;fill-opacity:1;stroke:none"
        id="path2934"
        cx="369.93936"
        cy="575.98102"
        r="6.25" />
     <circle
-       style="fill:#ff0000;fill-opacity:1;stroke:none"
+       style="fill:#cc3311;fill-opacity:1;stroke:none"
        id="path2934-2"
        cx="369.93936"
        cy="214.12457"
        r="6.25" />
     <circle
-       style="fill:#ff0000;fill-opacity:1;stroke:none"
+       style="fill:#cc3311;fill-opacity:1;stroke:none"
        id="path2934-2-6"
        cx="230.15364"
        cy="390.37457"
        r="6.25" />
     <circle
-       style="fill:#ff0000;fill-opacity:1;stroke:none"
+       style="fill:#cc3311;fill-opacity:1;stroke:none"
        id="path2934-2-6-5"
        cx="513.44629"
        cy="390.64731"
        r="6.25" />
     <path
-       style="fill:#ff0000;fill-opacity:1;stroke:none;stroke-width:1.58175"
+       style="fill:#cc3311;fill-opacity:1;stroke:none;stroke-width:1.58175"
        d="m 546.03718,294.88 -2.9416,-5.16256 -5.50015,3.0164 c -3.02509,1.65903 -5.31389,2.74356 -5.08616,2.41006 0.22767,-0.33342 3.92476,-6.28698 8.21573,-13.23 4.29094,-6.94302 7.9238,-12.58807 8.073,-12.54454 0.22325,0.0651 0.42796,25.48584 0.23746,29.48358 -0.0434,0.9094 -0.74969,-0.0266 -2.99829,-3.97292 z"
        id="path3439-4"
        inkscape:export-filename="/media/FRANCESCO/diagnostica e conservazione dei beni culturali/3° anno.diagnostica e conservazione dei beni culturali/Geofisica_Applicata/geofisica_immagini/processo_magnetizzazione.png"
        inkscape:export-xdpi="90"
        inkscape:export-ydpi="90" />
     <path
-       style="fill:#ff0000;fill-opacity:1;stroke:none;stroke-width:1.58175"
+       style="fill:#cc3311;fill-opacity:1;stroke:none;stroke-width:1.58175"
        d="m 478.92606,336.68383 -0.004,-5.9418 -6.27222,-0.0975 c -3.44974,-0.0536 -5.97543,-0.24259 -5.61259,-0.41987 0.36276,-0.17725 6.51995,-3.52425 13.68256,-7.43765 7.16261,-3.91344 13.11142,-7.02401 13.21959,-6.91241 0.16187,0.16697 -12.22896,22.36434 -14.37114,25.74506 -0.48737,0.76901 -0.6385,-0.39378 -0.64184,-4.93578 z"
        id="path3439-4-3"
        inkscape:export-filename="/media/FRANCESCO/diagnostica e conservazione dei beni culturali/3° anno.diagnostica e conservazione dei beni culturali/Geofisica_Applicata/geofisica_immagini/processo_magnetizzazione.png"
        inkscape:export-xdpi="90"
        inkscape:export-ydpi="90" />
     <path
-       style="fill:#ff0000;fill-opacity:1;stroke:none;stroke-width:1.58175"
+       style="fill:#cc3311;fill-opacity:1;stroke:none;stroke-width:1.58175"
        d="m 453.25052,521.88116 -0.64312,-5.90689 -6.24636,0.57734 c -3.4355,0.31755 -5.96686,0.40146 -5.62519,0.18594 0.34159,-0.21522 6.10327,-4.20475 12.80367,-8.86551 6.70036,-4.66077 12.2803,-8.39286 12.39984,-8.29353 0.17887,0.1486 -9.75378,23.54941 -11.5201,27.14084 -0.40187,0.81694 -0.67713,-0.32287 -1.16874,-4.83817 z"
        id="path3439-4-01"
        inkscape:export-filename="/media/FRANCESCO/diagnostica e conservazione dei beni culturali/3° anno.diagnostica e conservazione dei beni culturali/Geofisica_Applicata/geofisica_immagini/processo_magnetizzazione.png"
        inkscape:export-xdpi="90"
        inkscape:export-ydpi="90" />
     <path
-       style="fill:#ff0000;fill-opacity:1;stroke:none;stroke-width:1.58175"
+       style="fill:#cc3311;fill-opacity:1;stroke:none;stroke-width:1.58175"
        d="m 261.0187,627.04899 2.92066,-5.17442 -5.41191,-3.172 c -2.97656,-1.74459 -5.08228,-3.15198 -4.67903,-3.12793 0.403,0.0242 7.41012,0.1412 15.57124,0.25995 8.1611,0.11873 14.87048,0.33892 14.9097,0.48931 0.0587,0.22501 -21.65259,13.44902 -25.18128,15.33756 -0.80274,0.42953 -0.36199,-0.65706 1.8706,-4.61245 z"
        id="path3439-4-01-9"
        inkscape:export-filename="/media/FRANCESCO/diagnostica e conservazione dei beni culturali/3° anno.diagnostica e conservazione dei beni culturali/Geofisica_Applicata/geofisica_immagini/processo_magnetizzazione.png"
        inkscape:export-xdpi="90"
        inkscape:export-ydpi="90" />
     <path
-       style="fill:#ff0000;fill-opacity:1;stroke:none;stroke-width:1.58175"
+       style="fill:#cc3311;fill-opacity:1;stroke:none;stroke-width:1.58175"
        d="m 479.45112,169.65928 -5.51176,-2.78471 2.84479,-5.86606 c 1.56464,-3.22634 2.57131,-5.65848 2.23698,-5.4048 -0.21148,0.16045 -2.68504,1.87898 -6.24188,4.33908 -2.06594,1.42891 -4.49734,3.10799 -7.06325,4.87721 -6.9835,4.81522 -12.65396,8.87984 -12.60103,9.03243 0.0791,0.22837 26.47632,-0.88194 30.61605,-1.28769 0.94168,-0.0923 -0.0666,-0.77679 -4.27988,-2.90546 z"
        id="path3439-4-0"
        inkscape:export-filename="/media/FRANCESCO/diagnostica e conservazione dei beni culturali/3° anno.diagnostica e conservazione dei beni culturali/Geofisica_Applicata/geofisica_immagini/processo_magnetizzazione.png"
@@ -593,7 +593,7 @@
        inkscape:export-ydpi="90"
        sodipodi:nodetypes="cccssssscc" />
     <path
-       style="fill:#ff0000;fill-opacity:1;stroke:none;stroke-width:1.58175"
+       style="fill:#cc3311;fill-opacity:1;stroke:none;stroke-width:1.58175"
        d="m 271.00997,302.45342 -5.84694,1.9868 -2.19776,-6.13786 c -1.20878,-3.37584 -2.24096,-5.79725 -2.29384,-5.38091 -0.0335,0.26334 -0.53772,3.23278 -1.27071,7.49493 -0.42575,2.47561 -0.92866,5.38733 -1.46136,8.45819 -1.44981,8.35786 -2.51653,15.2526 -2.3705,15.3216 0.21845,0.10338 17.90386,-19.52497 20.51196,-22.76531 0.59328,-0.73709 -0.60135,-0.4962 -5.07083,1.02255 z"
        id="path3439-4-0-9"
        inkscape:export-filename="/media/FRANCESCO/diagnostica e conservazione dei beni culturali/3° anno.diagnostica e conservazione dei beni culturali/Geofisica_Applicata/geofisica_immagini/processo_magnetizzazione.png"
@@ -601,7 +601,7 @@
        inkscape:export-ydpi="90"
        sodipodi:nodetypes="cccssssscc" />
     <path
-       style="fill:#ff0000;fill-opacity:1;stroke:none;stroke-width:1.58175"
+       style="fill:#cc3311;fill-opacity:1;stroke:none;stroke-width:1.58175"
        d="m 195.93733,519.62104 -5.49589,2.8159 -3.06692,-5.75304 c -1.68682,-3.16419 -3.06013,-5.40977 -3.05191,-4.99017 0.005,0.26542 -0.0619,3.27661 -0.16735,7.60005 -0.0612,2.5112 -0.13541,5.46511 -0.2159,8.58079 -0.21907,8.47984 -0.27187,15.45641 -0.11736,15.50345 0.23116,0.0705 14.87439,-21.92089 16.98359,-25.50603 0.47979,-0.81553 -0.66711,-0.40349 -4.86824,1.74904 z"
        id="path3439-4-0-9-1"
        inkscape:export-filename="/media/FRANCESCO/diagnostica e conservazione dei beni culturali/3° anno.diagnostica e conservazione dei beni culturali/Geofisica_Applicata/geofisica_immagini/processo_magnetizzazione.png"
@@ -685,7 +685,7 @@
       </g>
     </g>
     <path
-       style="fill:none;fill-opacity:0.253913;fill-rule:evenodd;stroke:#ff0000;stroke-width:2;stroke-dasharray:none;stroke-opacity:1"
+       style="fill:none;fill-opacity:0.253913;fill-rule:evenodd;stroke:#cc3311;stroke-width:2;stroke-dasharray:none;stroke-opacity:1"
        d="m 369.93936,390.37457 c 21.66668,-7.49999 43.33292,-14.99983 64.32246,-26.92658 20.98954,-11.92674 41.30034,-28.27916 59.94905,-47.77441 18.64872,-19.49525 35.63371,-42.13173 48.64458,-64.28852 13.01088,-22.15679 22.04738,-43.83353 31.08395,-65.51046"
        id="path8"
        inkscape:path-effect="#path-effect8"

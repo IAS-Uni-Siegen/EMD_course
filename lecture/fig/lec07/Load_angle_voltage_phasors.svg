@@ -7,7 +7,7 @@
    viewBox="0 0 59.064236 46.845597"
    version="1.1"
    id="svg1"
-   inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
+   inkscape:version="1.4.3 (0d15f75, 2025-12-25)"
    sodipodi:docname="Load_angle_voltage_phasors.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -25,12 +25,12 @@
      inkscape:document-units="mm"
      showgrid="true"
      inkscape:zoom="3.9660774"
-     inkscape:cx="88.248405"
-     inkscape:cy="81.314601"
-     inkscape:window-width="2560"
-     inkscape:window-height="1351"
-     inkscape:window-x="2551"
-     inkscape:window-y="-9"
+     inkscape:cx="88.248404"
+     inkscape:cy="141.95386"
+     inkscape:window-width="1920"
+     inkscape:window-height="998"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
      inkscape:window-maximized="1"
      inkscape:current-layer="layer1"
      inkscape:lockguides="true">
@@ -209,22 +209,22 @@
        d="m 42.333336,1.756287 v 45.80083"
        id="path1" />
     <path
-       style="fill:none;fill-rule:evenodd;stroke:#08008e;stroke-width:0.2;stroke-linecap:round;stroke-miterlimit:3.9;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#Triangle-69-8-5-6)"
+       style="fill:none;fill-rule:evenodd;stroke:#4477aa;stroke-width:0.2;stroke-linecap:round;stroke-miterlimit:3.9;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#Triangle-69-8-5-6)"
        d="M 42.333336,9.6038647 V 35.413645"
        id="path1-2-8-6-3"
        sodipodi:nodetypes="cc" />
     <path
-       style="fill:none;fill-rule:evenodd;stroke:#08008e;stroke-width:0.2;stroke-linecap:round;stroke-miterlimit:3.9;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#Triangle-69-8-5-6-0)"
+       style="fill:none;fill-rule:evenodd;stroke:#4477aa;stroke-width:0.2;stroke-linecap:round;stroke-miterlimit:3.9;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#Triangle-69-8-5-6-0)"
        d="M 22.489619,7.0924473 42.333336,35.413645"
        id="path1-2-8-6-3-3"
        sodipodi:nodetypes="cc" />
     <path
-       style="fill:none;fill-rule:evenodd;stroke:#08008e;stroke-width:0.2;stroke-linecap:round;stroke-miterlimit:3.9;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#Triangle-69-8-5-6-5)"
+       style="fill:none;fill-rule:evenodd;stroke:#4477aa;stroke-width:0.2;stroke-linecap:round;stroke-miterlimit:3.9;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#Triangle-69-8-5-6-5)"
        d="M 22.831948,6.5853459 42.333336,8.8936497"
        id="path1-2-8-6-3-9"
        sodipodi:nodetypes="cc" />
     <path
-       style="fill:none;fill-rule:evenodd;stroke:#8e000c;stroke-width:0.2;stroke-linecap:round;stroke-miterlimit:3.9;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#Triangle-69-8-5-6-5-6)"
+       style="fill:none;fill-rule:evenodd;stroke:#cc3311;stroke-width:0.2;stroke-linecap:round;stroke-miterlimit:3.9;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#Triangle-69-8-5-6-5-6)"
        d="M 44.64164,15.912257 42.333336,35.413645"
        id="path1-2-8-6-3-9-3"
        sodipodi:nodetypes="cc" />
@@ -444,7 +444,7 @@
        sodipodi:open="true"
        transform="matrix(-0.8660254,0.50000001,0.50000001,0.8660254,0,0)" />
     <path
-       style="fill:none;fill-rule:evenodd;stroke:#8e000c;stroke-width:0.2;stroke-linecap:round;stroke-miterlimit:3.9;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#Triangle-69-8-5-6-5-7)"
+       style="fill:none;fill-rule:evenodd;stroke:#cc3311;stroke-width:0.2;stroke-linecap:round;stroke-miterlimit:3.9;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#Triangle-69-8-5-6-5-7)"
        d="m 55.469309,35.413545 -13.135973,1e-4"
        id="path1-2-8-6-3-9-8"
        sodipodi:nodetypes="cc" />

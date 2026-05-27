@@ -8,7 +8,7 @@
    height="213.752"
    viewBox="0 0 282.69199 213.752"
    sodipodi:docname="Magnetic_actuator_example.svg"
-   inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
+   inkscape:version="1.4.3 (0d15f75, 2025-12-25)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -23,15 +23,15 @@
      inkscape:pageopacity="0"
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#505050"
-     inkscape:zoom="3.1266662"
-     inkscape:cx="141.68446"
-     inkscape:cy="144.40301"
-     inkscape:window-width="2560"
-     inkscape:window-height="1351"
-     inkscape:window-x="2551"
-     inkscape:window-y="-9"
+     inkscape:zoom="8.8435475"
+     inkscape:cx="136.08792"
+     inkscape:cy="132.63908"
+     inkscape:window-width="1920"
+     inkscape:window-height="998"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
      inkscape:window-maximized="1"
-     inkscape:current-layer="g130">
+     inkscape:current-layer="g1">
     <inkscape:page
        x="0"
        y="0"
@@ -644,13 +644,13 @@
       <path
          id="path105"
          d="m 0,0 c -4.528,0 -8.2,-3.671 -8.2,-8.2 v -29.2 c 0,-4.529 3.672,-8.2 8.2,-8.2 h 40.601 c 4.528,0 8.199,3.671 8.199,8.2 v 29.2 c 0,4.529 -3.671,8.2 -8.199,8.2 z"
-         style="fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#8496b0 icc-color(sRGB-IEC61966-2, 0.1, 0.51799011, 0.58799744, 0.68998718);stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:8;stroke-dasharray:none;stroke-opacity:1"
+         style="fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#bbbbbb;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:8;stroke-dasharray:none;stroke-opacity:1"
          transform="matrix(1.3333333,0,0,-1.3333333,94.6808,99.292)"
          clip-path="url(#clipPath106)" />
       <path
          id="path107"
          d="m 0,0 c -4.528,0 -8.2,-3.671 -8.2,-8.2 v -29.2 c 0,-4.529 3.672,-8.2 8.2,-8.2 h 40.601 c 4.528,0 8.199,3.671 8.199,8.2 v 29.2 c 0,4.529 -3.671,8.2 -8.199,8.2 z"
-         style="fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#8496b0 icc-color(sRGB-IEC61966-2, 0.1, 0.51799011, 0.58799744, 0.68998718);stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:8;stroke-dasharray:none;stroke-opacity:1"
+         style="fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#bbbbbb;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:8;stroke-dasharray:none;stroke-opacity:1"
          transform="matrix(1.3333333,0,0,-1.3333333,94.6808,30.958667)"
          clip-path="url(#clipPath108)" />
       <text
@@ -736,17 +736,17 @@
       <path
          id="path125"
          d="m 284.75,469.67 h -28.5 v -22.8 h 28.5 z"
-         style="fill:#ffcc99 icc-color(sRGB-IEC61966-2, 0.1, 1, 0.79998779, 0.59999084);fill-opacity:1;fill-rule:evenodd;stroke:#000000 icc-color(Gray-Gamma-2, 0.2, 0);stroke-width:0.75;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:8;stroke-dasharray:none;stroke-opacity:1"
+         style="fill:#ccbb44;fill-opacity:1;fill-rule:evenodd;stroke:#000000 icc-color(Gray-Gamma-2, 0.2, 0);stroke-width:0.75;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:8;stroke-dasharray:none;stroke-opacity:1"
          transform="matrix(1.3333333,0,0,-1.3333333,-238.78533,676.18533)" />
       <path
          id="path126"
          d="m 284.75,424.07 h -28.5 v -22.8 h 28.5 z"
-         style="fill:#ffcc99 icc-color(sRGB-IEC61966-2, 0.1, 1, 0.79998779, 0.59999084);fill-opacity:1;fill-rule:evenodd;stroke:#000000 icc-color(Gray-Gamma-2, 0.2, 0);stroke-width:0.75;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:8;stroke-dasharray:none;stroke-opacity:1"
+         style="fill:#ccbb44;fill-opacity:1;fill-rule:evenodd;stroke:#000000 icc-color(Gray-Gamma-2, 0.2, 0);stroke-width:0.75;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:8;stroke-dasharray:none;stroke-opacity:1"
          transform="matrix(1.3333333,0,0,-1.3333333,-238.78533,676.18533)" />
       <path
          id="path128"
          d="m 114.18253,34.993333 7.98267,-4.034667 -8.01734,-3.965333 z"
-         style="fill:#8496b0 icc-color(sRGB-IEC61966-2, 0.1, 0.51799011, 0.58799744, 0.68998718);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1.33333" />
+         style="fill:#bbbbbb;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1.33333" />
       <path
          id="path129"
          d="M 0,0 11.4,45.6"
@@ -923,15 +923,15 @@
       <path
          id="path136"
          d="m 114.18253,164.12667 7.98267,-4.03467 -8.01734,-3.96533 z"
-         style="fill:#8496b0 icc-color(sRGB-IEC61966-2, 0.1, 0.51799011, 0.58799744, 0.68998718);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1.33333" />
+         style="fill:#bbbbbb;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1.33333" />
       <path
          id="path138"
          d="m 114.06847,95.406 -8.024,3.953333 7.97733,4.046667 z"
-         style="fill:#8496b0 icc-color(sRGB-IEC61966-2, 0.1, 0.51799011, 0.58799744, 0.68998718);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1.33333" />
+         style="fill:#bbbbbb;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1.33333" />
       <path
          id="path140"
          d="m 114.14853,87.726042 -8.024,3.952 7.97733,4.048 z"
-         style="fill:#8496b0 icc-color(sRGB-IEC61966-2, 0.1, 0.51799011, 0.58799744, 0.68998718);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1.33333" />
+         style="fill:#bbbbbb;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1.33333" />
       <path
          id="path141"
          d="M 0,0 26.35,-0.042"
@@ -983,11 +983,7 @@
            transform="matrix(1.33333 0 0 1.33333 -3.17817 -2.65867)">
           <g
              id="g20"
-             transform="translate(1.993,8.1190004)">
-            <path
-               d="m 6.921875,-5.15625 c 0.09375,-0.375 0.265625,-0.671875 0.96875,-0.6875 0.046875,0 0.15625,-0.015625 0.15625,-0.171875 0,-0.0625 -0.0625,-0.109375 -0.125,-0.109375 -0.203125,0 -0.703125,0.03125 -0.90625,0.03125 -0.21875,0 -0.234375,0 -0.453125,-0.015625 -0.140625,0 -0.328125,-0.015625 -0.46875,-0.015625 -0.03125,0 -0.15625,0 -0.15625,0.15625 0,0.125 0.109375,0.125 0.15625,0.125 0.34375,0 0.609375,0.078125 0.609375,0.375 0,0.046875 -0.03125,0.171875 -0.03125,0.1875 l -1,3.984375 -2.0625,-4.65625 C 3.53125,-6.109375 3.53125,-6.125 3.3125,-6.125 H 2.125 c -0.171875,0 -0.265625,0 -0.265625,0.15625 0,0.125 0.09375,0.125 0.265625,0.125 0.046875,0 0.375,0 0.59375,0.046875 L 1.5,-0.953125 c -0.09375,0.4375 -0.328125,0.640625 -0.953125,0.671875 -0.03125,0 -0.15625,0.015625 -0.15625,0.171875 0,0.015625 0,0.109375 0.125,0.109375 C 0.625,0 0.859375,-0.015625 0.96875,-0.015625 1.109375,-0.03125 1.125,-0.03125 1.421875,-0.03125 c 0.21875,0 0.234375,0 0.453125,0.015625 C 2.015625,-0.015625 2.203125,0 2.34375,0 2.390625,0 2.5,0 2.5,-0.15625 c 0,-0.109375 -0.09375,-0.125 -0.171875,-0.125 -0.421875,0 -0.59375,-0.140625 -0.59375,-0.375 0,-0.0625 0.015625,-0.078125 0.046875,-0.203125 l 1.171875,-4.734375 2.40625,5.4375 C 5.421875,-0.015625 5.421875,0 5.515625,0 5.625,0 5.640625,-0.03125 5.671875,-0.1875 Z m 0,0"
-               id="path17" />
-          </g>
+             transform="translate(1.993,8.1190004)" />
         </g>
         <g
            fill="#000000"
@@ -996,11 +992,7 @@
            transform="matrix(1.33333 0 0 1.33333 -3.17817 -2.65867)">
           <g
              id="g22"
-             transform="translate(9.3590002,9.1149998)">
-            <path
-               d="M 3.21875,-1.125 H 3 C 2.984375,-1.03125 2.921875,-0.640625 2.84375,-0.578125 2.796875,-0.53125 2.3125,-0.53125 2.21875,-0.53125 H 1.109375 L 1.875,-1.15625 C 2.078125,-1.328125 2.609375,-1.703125 2.796875,-1.890625 2.96875,-2.0625 3.21875,-2.375 3.21875,-2.796875 c 0,-0.75 -0.671875,-1.1875 -1.484375,-1.1875 -0.765625,0 -1.296875,0.515625 -1.296875,1.078125 0,0.296875 0.25,0.34375 0.3125,0.34375 0.15625,0 0.328125,-0.109375 0.328125,-0.328125 C 1.078125,-3.015625 1,-3.21875 0.734375,-3.21875 0.875,-3.515625 1.234375,-3.75 1.65625,-3.75 c 0.625,0 0.953125,0.46875 0.953125,0.953125 0,0.421875 -0.28125,0.859375 -0.6875,1.25 L 0.5,-0.25 C 0.4375,-0.1875 0.4375,-0.1875 0.4375,0 h 2.59375 z m 0,0"
-               id="path21" />
-          </g>
+             transform="translate(9.3590002,9.1149998)" />
         </g>
       </g>
     </g>
