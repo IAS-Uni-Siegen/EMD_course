@@ -189,7 +189,7 @@ def update_plot(i):
     axes[0, 1].set_ylim(-1.1, 1.1)
     axes[0, 1].set_ylabel(r"$x_\mathrm{abc}$")
     axes[0, 1].set_title("abc signals")
-    axes[0, 1].axvline(x=theta, color="m", linestyle="--")
+    axes[0, 1].axvline(x=theta, color=COLORS["m"], linestyle="--")
     axes[0, 1].scatter(theta, i_a[i], color=COLORS["r"], marker="o")
     axes[0, 1].scatter(theta, i_b[i], color=COLORS["b"], marker="o")
     axes[0, 1].scatter(theta, i_c[i], color=COLORS["g"], marker="o")
