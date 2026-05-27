@@ -14,9 +14,9 @@
 		\coordinate (c) at (0,3);
 		\draw[->] (0,-2) -- (0,4) node[above]{$\mathrm{Im}$};
 		\draw[->] (-4,0) -- (4,0) node[right]{$\mathrm{Re}$};
-		\draw[-{Latex[length=3mm]}, blue, thick] (0,0) -- (0,3) node[left, text=black]{$\underline{U}_\mathrm{i}$};
-		\draw[-{Latex[length=3mm]}, blue, thick] (0,0) -- (1,2) node[right, text=black]{$\underline{U}_\mathrm{s}$};
-		\draw[-{Latex[length=3mm]}, blue, thick] (0,3) --  node[right, text=black]{$\Delta \underline{U}$} ++ (1,-1);
+		\draw[-{Latex[length=3mm]}, signalalpha, thick] (0,0) -- (0,3) node[left, text=black]{$\underline{U}_\mathrm{i}$};
+		\draw[-{Latex[length=3mm]}, signalalpha, thick] (0,0) -- (1,2) node[right, text=black]{$\underline{U}_\mathrm{s}$};
+		\draw[-{Latex[length=3mm]}, signalalpha, thick] (0,3) --  node[right, text=black]{$\Delta \underline{U}$} ++ (1,-1);
 		\pic[draw, <-, angle eccentricity=1.7, angle radius=1cm]{angle = a--b--c};
 		\node at (0.125,0.65) {$\theta$};
 	\end{tikzpicture}
@@ -61,13 +61,13 @@
 			\coordinate (d) at (0.11,0.62);
 			\draw[->] (0,-2) -- (0,4) node[above]{$\mathrm{Im}$};
 			\draw[->] (-4,0) -- (4,0) node[right]{$\mathrm{Re}$};
-			\draw[-{Latex[length=3mm]}, blue, thick] (0,0) -- (0,3) node[left, text=black]{$\underline{U}_\mathrm{i}$};
-			\draw[-{Latex[length=3mm]}, blue, thick] (0,0) -- (1,2) node[right, text=black]{$\underline{U}_\mathrm{s}$};
-			\draw[-{Latex[length=3mm]}, blue, thick] (0,3) --  node[right, text=black]{$\Delta \underline{U}$} ++ (1,-1);
+			\draw[-{Latex[length=3mm]}, signalalpha, thick] (0,0) -- (0,3) node[left, text=black]{$\underline{U}_\mathrm{i}$};
+			\draw[-{Latex[length=3mm]}, signalalpha, thick] (0,0) -- (1,2) node[right, text=black]{$\underline{U}_\mathrm{s}$};
+			\draw[-{Latex[length=3mm]}, signalalpha, thick] (0,3) --  node[right, text=black]{$\Delta \underline{U}$} ++ (1,-1);
 			\pic[draw, <-, angle eccentricity=1.7, angle radius=1cm]{angle = a--b--c};
 			\node at (0.65,0.8) {$\theta$};
-			\draw[-{Latex[length=3mm]}, red, thick] (0,0) -- (1.33,0) node[above, text=black]{$\underline{I}_\mathrm{s,sc}$};
-			\draw[-{Latex[length=3mm]}, red, thick] (0,0) -- (0.11,0.62) node[left, text=black]{$\underline{I}_\mathrm{s}$};
+			\draw[-{Latex[length=3mm]}, signaldelta, thick] (0,0) -- (1.33,0) node[above, text=black]{$\underline{I}_\mathrm{s,sc}$};
+			\draw[-{Latex[length=3mm]}, signaldelta, thick] (0,0) -- (0.11,0.62) node[left, text=black]{$\underline{I}_\mathrm{s}$};
 			\pic[draw, <-, angle eccentricity=1.7, angle radius=1.25cm]{angle = a--b--d};
 			\node at (0.45,1.5) {$\varphi$};
 		\end{tikzpicture}
