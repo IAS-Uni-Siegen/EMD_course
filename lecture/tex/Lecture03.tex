@@ -1073,7 +1073,7 @@
 			\includegraphics[scale=1.2]{fig/lec03/Shunt_DC_machine.pdf}
 			\caption{Shunt DC machine}
 		\end{subfigure}
-		\hfill
+		\hfill%
 		\begin{subfigure}[b]{0.49\textwidth}
 			\centering
 			\includegraphics[scale=1.2]{fig/lec03/Compound_DC_machine.pdf}
@@ -1090,7 +1090,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
 	\frametitle{Steady-state behavior: separately excited DC machine}
-	Assuming a \hl{fixed excitation $\psi_\mathrm{f}'$} (e.g., by a permanent magnet or constant field current), the separately excited DC machine's voltage demand for a certain speed is:
+	Assuming a \hl{fixed excitation $\psi_\mathrm{f}'$} (e.g., by a permanent magnet or constant field current), the separately excited DC machine's armature voltage demand for a certain speed is:
 	\begin{equation}
 		U_\mathrm{a} = R_\mathrm{a} I_\mathrm{a} + \omega \psi_\mathrm{f}'.
 	\end{equation} \pause
@@ -1195,7 +1195,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
 	\frametitle{Field weakening of the separately excited DC machine}
-	In the previous scenario, the no-load speed $\omega_0$ is limited by the maximum armature voltage $U_\mathrm{max}$. However, if the field winding current $I_\mathrm{f}$ is also controllable, the no-load speed can be increased by \hl{decreasing the excitation $\psi_\mathrm{f}'$} (so-called field weakening). \pause Consider an armature operation both at the voltage and current constraint:
+	In the previous scenario, the no-load speed $\omega_0$ is limited by the maximum armature voltage $U_\mathrm{max}$. However, if the field winding current $I_\mathrm{f}$ is also controllable, the no-load speed can be increased by \hl{decreasing the excitation $\psi_\mathrm{f}'$} (so-called \hl{field weakening}). \pause Consider an armature operation both at the voltage and current constraint:
 	\begin{equation}
 		U_\mathrm{max}  = R_\mathrm{a} I_\mathrm{max} + \omega \psi_\mathrm{f}'= R_\mathrm{a} I_\mathrm{max} + \omega L_\mathrm{f}' i_\mathrm{f}.
 	\end{equation} \pause
@@ -1370,7 +1370,7 @@
 	\end{equation} \pause
 	resulting in the instantaneous current (setting $\varphi_{\mathrm{u}}=0$)
 	\begin{align}
-		i(t) & = \mathrm{Re}\left\{ \sqrt{2}\underline{I} e^{\iu\omega_\mathrm{el}t}\right\}=\sqrt{2}\mathrm{Re}\left\{ \frac{U\left(R'(\omega)-\iu\omega_\mathrm{el}L\right)}{R'(\omega)^2+\omega_\mathrm{el}^2L^2} e^{\iu\omega_\mathrm{el}t}\right\} \\
+		i(t) & = \mathrm{Re}\left\{ \sqrt{2}\underline{I} e^{\iu\omega_\mathrm{el}t}\right\}\pause =\sqrt{2}\mathrm{Re}\left\{ \frac{U\left(R'(\omega)-\iu\omega_\mathrm{el}L\right)}{R'(\omega)^2+\omega_\mathrm{el}^2L^2} e^{\iu\omega_\mathrm{el}t}\right\} \pause \\
 		     & =\sqrt{2}\frac{U}{\sqrt{R'(\omega)^2+\omega_\mathrm{el}^2L^2}}\cos\left(\omega_\mathrm{el}(t-\frac{L}{R'(\omega)})\right).
 	\end{align}
 \end{frame}
@@ -1385,12 +1385,12 @@
 			The resulting instantaneous torque is
 			\begin{equation*}
 				\begin{split}
-					T(t) & = L_\mathrm{f}' i^2(t)                                                                                                                      \\
-					     & = 2L_\mathrm{f}'\frac{U^2}{R'(\omega)^2+\omega_\mathrm{el}^2L^2}\cos\left(\omega_\mathrm{el}(t-\frac{L}{R'(\omega)})\right)^2               \\
-					     & = L_\mathrm{f}'\frac{U^2}{R'(\omega)^2+\omega_\mathrm{el}^2L^2}\left[1+\cos\left(2\omega_\mathrm{el}(t-\frac{L}{R'(\omega)})\right)\right].
+					T(t) & = L_\mathrm{f}' i^2(t) \\
+					\onslide<2->{& = 2L_\mathrm{f}'\frac{U^2}{R'(\omega)^2+\omega_\mathrm{el}^2L^2}\cos\left(\omega_\mathrm{el}(t-\frac{L}{R'(\omega)})\right)^2               \\
+							           & = L_\mathrm{f}'\frac{U^2}{R'(\omega)^2+\omega_\mathrm{el}^2L^2}\left[1+\cos\left(2\omega_\mathrm{el}(t-\frac{L}{R'(\omega)})\right)\right].}
 				\end{split}
 			\end{equation*}
-			\onslide<2->{
+			\onslide<3->{
 					The peak and average torque are
 					\begin{equation}
 						\begin{split}
