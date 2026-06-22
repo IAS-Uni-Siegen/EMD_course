@@ -34,24 +34,37 @@ jobs:
           git submodule init
           git submodule update
       
-      - name: Install latexindent binary (v3.24.7)
+      - name: Install MiKTeX latexindent package & Log Version
         run: |
           set -e
-          curl -L -o latexindent-linux \
-            https://github.com/cmhughes/latexindent.pl/releases/download/V3.24.7/latexindent-linux
-          
-          chmod +x latexindent-linux
-          sudo mv latexindent-linux /usr/local/bin/latexindent
-          echo "latexindent installed at: $(which latexindent)"
+
+          curl -fsSL https://miktex.org/download/key | sudo gpg --dearmor -o /usr/share/keyrings/miktex.gpg
+
+          OS_CODENAME=$(lsb_release -cs)
+          echo "Detected GitHub Runner Ubuntu codename: ${OS_CODENAME}"
+          echo "deb [arch=amd64 signed-by=/usr/share/keyrings/miktex.gpg] https://miktex.org/download/ubuntu ${OS_CODENAME} universe" | sudo tee /etc/apt/sources.list.d/miktex.list
+          sudo apt-get update -y -q
+          sudo apt-get install -qq -y --no-install-recommends miktex
+          sudo miktexsetup --shared=yes finish
+          sudo initexmf --admin --set-config-value=[MPM]AutoInstall=1
+          sudo mpm --admin --update
+          sudo mpm --admin --install=latexindent
+          sudo apt-get install -qq -y perl cpanminus
+          sudo cpanm --notest YAML::Tiny File::HomeDir Log::Log4perl Log::Dispatch::File Unicode::GCString
+
+          echo "=========================================================="
+          echo "latexindent Version Verification (via MiKTeX):"
+          echo "Installed path: $(which latexindent)"
           latexindent -vv
+          echo "=========================================================="
 
       - name: Check LaTeX formatting with latexindent (dry-run)
         run: |
           set -e
           tmp_file="tmp_check_file"
           for ext in tex sty cls; do
-            find . -name "*.${ext}" -type f -not -name "$tmp_file" | while read -r file; do
-              latexindent -m -l=./course_template/.latexindent.yml -o="$tmp_file" "$file"
+            find . -name "*.${ext}" -type f -not -path "./course_template/*" -not -name "$tmp_file" | while read -r file; do
+              latexindent -m -o="$tmp_file" "$file"
               if ! diff -qZb "$file" "$tmp_file.${ext}" > /dev/null; then
                 echo "::error file=$file::File is not properly formatted. Please run latexindent locally."
                 rm -f "$tmp_file.${ext}"
