@@ -26,6 +26,11 @@ concurrency:
   group: pages-${{ github.ref }}
   cancel-in-progress: true
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
 jobs:
   format-check:
     runs-on: ubuntu-latest
@@ -127,6 +132,9 @@ jobs:
         run: |
           git submodule init
           git submodule update
+
+      - name: Set up GitHub Pages
+        uses: actions/configure-pages@v5
       
       - name: Compile LaTeX document    
         uses: xu-cheng/texlive-action@v2
