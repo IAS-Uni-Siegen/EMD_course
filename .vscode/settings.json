@@ -2,7 +2,6 @@
     "latex-workshop.formatting.latexindent.path": "latexindent",
     "latex-workshop.formatting.latexindent.args": [
         "-m",
-        "-l=%WORKSPACE_FOLDER%/course_template/.latexindent.yml",
         "%TMPFILE%",
         "-o=%TMPFILE%"
     ],
