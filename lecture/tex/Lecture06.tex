@@ -18,9 +18,9 @@
 				\item<4-> Index \enquote{s} for stator, \enquote{r} for rotor quantities
 			\end{itemize}
 			\onslide<5->{
-				\begin{varblock}{Fundamental wave model}
-					While the previous chapter has revealed that the magnetic flux distribution in the air gap is subject to plentiful harmonics, the following model limits itself to the fundamental wave.
-				\end{varblock}}
+					\begin{varblock}{Fundamental wave model}
+						While the previous chapter has revealed that the magnetic flux distribution in the air gap is subject to plentiful harmonics, the following model limits itself to the fundamental wave.
+					\end{varblock}}
 		\end{column}
 		\begin{column}{0.45\textwidth}
 			\begin{figure}
@@ -147,17 +147,17 @@
 		\renewcommand*{\arraystretch}{1.15}
 		\begin{split}
 			\uncover<+->{
-			\bm{\psi}^\mathrm{s}_\mathrm{s,abc}(t) & =\begin{bmatrix}
-					                                          L_\mathrm{s}            & -\frac{M_\mathrm{s}}{2} & -\frac{M_\mathrm{s}}{2} \\
-					                                          -\frac{M_\mathrm{s}}{2} & L_\mathrm{s}            & -\frac{M_\mathrm{s}}{2} \\
-					                                          -\frac{M_\mathrm{s}}{2} & -\frac{M_\mathrm{s}}{2} & L_\mathrm{s}
-				                                          \end{bmatrix} \bm{i}^\mathrm{s}_\mathrm{s,abc}(t)}\uncover<+->{ +  M_{\mathrm{r}}\frac{N_\mathrm{s}}{N_\mathrm{r}} \bm{\mathcal{R}}_\mathrm{abc}(\varepsilon_\mathrm{r,el}(t))\bm{i}^\mathrm{r}_\mathrm{r,abc}(t),} \\
+					           \bm{\psi}^\mathrm{s}_\mathrm{s,abc}(t) & =\begin{bmatrix}
+						           L_\mathrm{s}            & -\frac{M_\mathrm{s}}{2} & -\frac{M_\mathrm{s}}{2} \\
+						           -\frac{M_\mathrm{s}}{2} & L_\mathrm{s}            & -\frac{M_\mathrm{s}}{2} \\
+						           -\frac{M_\mathrm{s}}{2} & -\frac{M_\mathrm{s}}{2} & L_\mathrm{s}
+					           \end{bmatrix} \bm{i}^\mathrm{s}_\mathrm{s,abc}(t)}\uncover<+->{ +  M_{\mathrm{r}}\frac{N_\mathrm{s}}{N_\mathrm{r}} \bm{\mathcal{R}}_\mathrm{abc}(\varepsilon_\mathrm{r,el}(t))\bm{i}^\mathrm{r}_\mathrm{r,abc}(t),} \\
 			\uncover<+->{
-			\bm{\psi}^\mathrm{r}_\mathrm{r,abc}(t) & = \begin{bmatrix}
-					                                           L_\mathrm{r}            & -\frac{M_\mathrm{r}}{2} & -\frac{M_\mathrm{r}}{2} \\
-					                                           -\frac{M_\mathrm{r}}{2} & L_\mathrm{r}            & -\frac{M_\mathrm{r}}{2} \\
-					                                           -\frac{M_\mathrm{r}}{2} & -\frac{M_\mathrm{r}}{2} & L_\mathrm{r}
-				                                           \end{bmatrix} \bm{i}^\mathrm{r}_\mathrm{r,abc}(t) +  M_{\mathrm{s}}\frac{N_\mathrm{r}}{N_\mathrm{s}} \bm{\mathcal{R}}\T_\mathrm{abc}(\varepsilon_\mathrm{r,el}(t))\bm{i}^\mathrm{s}_\mathrm{s,abc}(t)}
+					           \bm{\psi}^\mathrm{r}_\mathrm{r,abc}(t) & = \begin{bmatrix}
+						           L_\mathrm{r}            & -\frac{M_\mathrm{r}}{2} & -\frac{M_\mathrm{r}}{2} \\
+						           -\frac{M_\mathrm{r}}{2} & L_\mathrm{r}            & -\frac{M_\mathrm{r}}{2} \\
+						           -\frac{M_\mathrm{r}}{2} & -\frac{M_\mathrm{r}}{2} & L_\mathrm{r}
+					           \end{bmatrix} \bm{i}^\mathrm{r}_\mathrm{r,abc}(t) +  M_{\mathrm{s}}\frac{N_\mathrm{r}}{N_\mathrm{s}} \bm{\mathcal{R}}\T_\mathrm{abc}(\varepsilon_\mathrm{r,el}(t))\bm{i}^\mathrm{s}_\mathrm{s,abc}(t)}
 		\end{split}
 		\label{eq:Flux_linkage_model_IM_abc}
 	\end{equation}
@@ -336,9 +336,9 @@
 		\label{eq:IM_stator_alpha_beta_voltage_equation}
 	\end{equation}
 	\onslide<4->
-	{
-		and
-	}
+		{
+			and
+		}
 	\begin{equation}
 		\begin{split}
 			\uncover<+->{\bm{T}_{23}\bm{u}^\mathrm{r}_\mathrm{r,abc}(t)                    & = R_\mathrm{r} \bm{T}_{23}\bm{i}^\mathrm{r}_\mathrm{r,abc}(t)+ \bm{T}_{23}\frac{\mathrm{d}}{\mathrm{d}t}\bm{\psi}^\mathrm{r}_\mathrm{r,abc}(t)} \\
@@ -402,13 +402,13 @@
 	\begin{align}
 		\renewcommand{\arraystretch}{1.1}
 		\uncover<+->{\frac{\mathrm{d}}{\mathrm{d}t}\bm{T}_\mathrm{p}(\varepsilon(t))      & = \begin{bmatrix}
-				                                                                                      -\sin(\varepsilon(t)) & -\cos(\varepsilon(t)) \\
-				                                                                                      \cos(\varepsilon(t))  & -\sin(\varepsilon(t))
-			                                                                                      \end{bmatrix} \frac{\mathrm{d}}{\mathrm{d}t}\varepsilon(t)}  \uncover<+->{= \bm{T}_\mathrm{p}(\varepsilon(t)) \bm{J}\omega(t),} \\
+					           -\sin(\varepsilon(t)) & -\cos(\varepsilon(t)) \\
+					           \cos(\varepsilon(t))  & -\sin(\varepsilon(t))
+				           \end{bmatrix} \frac{\mathrm{d}}{\mathrm{d}t}\varepsilon(t)}  \uncover<+->{= \bm{T}_\mathrm{p}(\varepsilon(t)) \bm{J}\omega(t),} \\
 		\uncover<+->{\frac{\mathrm{d}}{\mathrm{d}t}\bm{T}_\mathrm{p}^{-1}(\varepsilon(t)) & = \begin{bmatrix}
-			                                                                                      -\sin(\varepsilon(t)) & \cos(\varepsilon(t))  \\
-			                                                                                      -\cos(\varepsilon(t)) & -\sin(\varepsilon(t))
-		                                                                                      \end{bmatrix} \frac{\mathrm{d}}{\mathrm{d}t}\varepsilon(t)  = -\bm{T}_\mathrm{p}^{-1}(\varepsilon(t)) \bm{J}\omega(t).}
+					           -\sin(\varepsilon(t)) & \cos(\varepsilon(t))  \\
+					           -\cos(\varepsilon(t)) & -\sin(\varepsilon(t))
+				           \end{bmatrix} \frac{\mathrm{d}}{\mathrm{d}t}\varepsilon(t)  = -\bm{T}_\mathrm{p}^{-1}(\varepsilon(t)) \bm{J}\omega(t).}
 		\label{eq:Park_transformation_derivative}
 	\end{align}
 \end{frame}
@@ -423,7 +423,7 @@
 	\begin{equation}
 		\begin{split}
 			\uncover<+->{
-			T_\mathrm{p}(\varepsilon_\mathrm{r,el}(t))\bm{u}^\mathrm{r}_\mathrm{r,\alpha\beta}(t) & = T_\mathrm{p}(\varepsilon_\mathrm{r,el}(t))R_\mathrm{r} \bm{i}^\mathrm{r}_\mathrm{r,\alpha\beta}(t)+ T_\mathrm{p}(\varepsilon_\mathrm{r,el}(t))\frac{\mathrm{d}}{\mathrm{d}t}\bm{\psi}^\mathrm{r}_\mathrm{r,\alpha\beta}(t)} \\
+					           T_\mathrm{p}(\varepsilon_\mathrm{r,el}(t))\bm{u}^\mathrm{r}_\mathrm{r,\alpha\beta}(t) & = T_\mathrm{p}(\varepsilon_\mathrm{r,el}(t))R_\mathrm{r} \bm{i}^\mathrm{r}_\mathrm{r,\alpha\beta}(t)+ T_\mathrm{p}(\varepsilon_\mathrm{r,el}(t))\frac{\mathrm{d}}{\mathrm{d}t}\bm{\psi}^\mathrm{r}_\mathrm{r,\alpha\beta}(t)} \\
 			\uncover<+->{\Leftrightarrow\quad  \bm{u}^\mathrm{s}_\mathrm{r,\alpha\beta}(t)        & = R_\mathrm{r} \bm{i}^\mathrm{s}_\mathrm{r,\alpha\beta}(t)+ T_\mathrm{p}(\varepsilon_\mathrm{r,el}(t))\frac{\mathrm{d}}{\mathrm{d}t}\bm{\psi}^\mathrm{r}_\mathrm{r,\alpha\beta}(t).}
 			\label{eq:IM_rotor_alpha_beta_voltage_equation_coord_transf_intermediate}
 		\end{split}
@@ -432,7 +432,7 @@
 	The last term of \eqref{eq:IM_rotor_alpha_beta_voltage_equation_coord_transf_intermediate} is rewritten as
 	\begin{align*}
 		\uncover<+->{
-		T_\mathrm{p}(\varepsilon_\mathrm{r,el}(t))\frac{\mathrm{d}}{\mathrm{d}t}\bm{\psi}^\mathrm{r}_\mathrm{r,\alpha\beta}(t) & = T_\mathrm{p}(\varepsilon_\mathrm{r,el}(t))\frac{\mathrm{d}}{\mathrm{d}t}\left[T_\mathrm{p}^{-1}(\varepsilon_\mathrm{r,el}(t))\bm{\psi}^\mathrm{s}_\mathrm{r,\alpha\beta}(t)\right]} \\   & \uncover<+->{=  T_\mathrm{p}(\varepsilon_\mathrm{r,el}(t))\left[\frac{\mathrm{d}}{\mathrm{d}t}\left(T_\mathrm{p}^{-1}(\varepsilon_\mathrm{r,el}(t))\right)\bm{\psi}^\mathrm{s}_\mathrm{r,\alpha\beta}(t) + T_\mathrm{p}^{-1}(\varepsilon_\mathrm{r,el}(t)) \frac{\mathrm{d}}{\mathrm{d}t}\left(\bm{\psi}^\mathrm{s}_\mathrm{r,\alpha\beta}(t)\right)\right]}
+				           T_\mathrm{p}(\varepsilon_\mathrm{r,el}(t))\frac{\mathrm{d}}{\mathrm{d}t}\bm{\psi}^\mathrm{r}_\mathrm{r,\alpha\beta}(t) & = T_\mathrm{p}(\varepsilon_\mathrm{r,el}(t))\frac{\mathrm{d}}{\mathrm{d}t}\left[T_\mathrm{p}^{-1}(\varepsilon_\mathrm{r,el}(t))\bm{\psi}^\mathrm{s}_\mathrm{r,\alpha\beta}(t)\right]} \\   & \uncover<+->{=  T_\mathrm{p}(\varepsilon_\mathrm{r,el}(t))\left[\frac{\mathrm{d}}{\mathrm{d}t}\left(T_\mathrm{p}^{-1}(\varepsilon_\mathrm{r,el}(t))\right)\bm{\psi}^\mathrm{s}_\mathrm{r,\alpha\beta}(t) + T_\mathrm{p}^{-1}(\varepsilon_\mathrm{r,el}(t)) \frac{\mathrm{d}}{\mathrm{d}t}\left(\bm{\psi}^\mathrm{s}_\mathrm{r,\alpha\beta}(t)\right)\right]}
 		\\ \uncover<+->{&= -\omega_\mathrm{r,el}(t)\bm{J}\bm{\psi}^\mathrm{s}_\mathrm{r,\alpha\beta}(t) +\frac{\mathrm{d}}{\mathrm{d}t}\bm{\psi}^\mathrm{s}_\mathrm{r,\alpha\beta}(t).}
 	\end{align*}
 \end{frame}
@@ -486,7 +486,7 @@
 			\bm{\mathcal{R}}^\mathrm{s}_{\alpha\beta}(\varepsilon_\mathrm{r,el}(t)) & = \bm{T}_{23}\bm{\mathcal{R}}_\mathrm{abc}(\varepsilon_\mathrm{r,el}(t))\bm{T}_{32}   &  & = \frac{3}{2}\begin{bmatrix}
 				                                                                                                                                                                                  \cos(\varepsilon_\mathrm{r,el}(t)) & -\sin(\varepsilon_\mathrm{r,el}(t)) \\
 				                                                                                                                                                                                  \sin(\varepsilon_\mathrm{r,el}(t)) & \cos(\varepsilon_\mathrm{r,el}(t))
-			                                                                                                                                                                                  \end{bmatrix} = \frac{3}{2}\bm{T}_\mathrm{p}(\varepsilon_\mathrm{r,el}(t)), \\
+			                                                                                                                                                                                  \end{bmatrix} = \frac{3}{2}\bm{T}_\mathrm{p}(\varepsilon_\mathrm{r,el}(t)),      \\
 			\bm{\mathcal{R}}^\mathrm{r}_{\alpha\beta}(\varepsilon_\mathrm{r,el}(t)) & = \bm{T}_{23}\bm{\mathcal{R}}_\mathrm{abc}(\varepsilon_\mathrm{r,el}(t))\T\bm{T}_{32} &  & = \frac{3}{2}\begin{bmatrix}
 				                                                                                                                                                                                  \cos(\varepsilon_\mathrm{r,el}(t))  & \sin(\varepsilon_\mathrm{r,el}(t)) \\
 				                                                                                                                                                                                  -\sin(\varepsilon_\mathrm{r,el}(t)) & \cos(\varepsilon_\mathrm{r,el}(t))
@@ -534,7 +534,7 @@
 	\begin{equation}
 		\begin{split}
 			\uncover<2->{
-			(\bm{i}^\mathrm{s}_\mathrm{s,\alpha\beta})\T\bm{u}^\mathrm{s}_\mathrm{s,\alpha\beta}              & = R_\mathrm{s} (\bm{i}^\mathrm{s}_\mathrm{s,\alpha\beta})\T\bm{i}^\mathrm{s}_\mathrm{s,\alpha\beta}(t)+ (\bm{i}^\mathrm{s}_\mathrm{s,\alpha\beta})\T\frac{\mathrm{d}}{\mathrm{d}t}\bm{\psi}^\mathrm{s}_\mathrm{s,\alpha\beta},}                                                                                                                 \\
+					           (\bm{i}^\mathrm{s}_\mathrm{s,\alpha\beta})\T\bm{u}^\mathrm{s}_\mathrm{s,\alpha\beta}              & = R_\mathrm{s} (\bm{i}^\mathrm{s}_\mathrm{s,\alpha\beta})\T\bm{i}^\mathrm{s}_\mathrm{s,\alpha\beta}(t)+ (\bm{i}^\mathrm{s}_\mathrm{s,\alpha\beta})\T\frac{\mathrm{d}}{\mathrm{d}t}\bm{\psi}^\mathrm{s}_\mathrm{s,\alpha\beta},} \\
 			\uncover<3->{(\bm{i}^\mathrm{s}_\mathrm{r,\alpha\beta})\T\bm{u}^\mathrm{s}_\mathrm{r,\alpha\beta} & = R_\mathrm{r} (\bm{i}^\mathrm{s}_\mathrm{r,\alpha\beta})\T\bm{i}^\mathrm{s}_\mathrm{r,\alpha\beta}-\omega_\mathrm{r,el}(\bm{i}^\mathrm{s}_\mathrm{r,\alpha\beta})\T\bm{J}\bm{\psi}^\mathrm{s}_\mathrm{r,\alpha\beta} + (\bm{i}^\mathrm{s}_\mathrm{r,\alpha\beta})\T\frac{\mathrm{d}}{\mathrm{d}t}\bm{\psi}^\mathrm{s}_\mathrm{r,\alpha\beta}.}
 		\end{split}
 	\end{equation}
@@ -708,9 +708,9 @@
 	\begin{equation*}
 		\begin{alignedat}{4}
 			\uncover<+->{ &  & \mbox{Stator voltage:}      &  & \quad\bm{u}^\mathrm{s}_\mathrm{s,\alpha\beta}(        & t) &  & = R_\mathrm{s} \bm{i}^\mathrm{s}_\mathrm{s,\alpha\beta}(t)+ \frac{\mathrm{d}}{\mathrm{d}t}\bm{\psi}^\mathrm{s}_\mathrm{s,\alpha\beta}(t),\\}
-			\uncover<+->{ &  & \mbox{Rotor voltage:}       &  & \quad\bm{u}^{\mathrm{s}'}_\mathrm{r,\alpha\beta}(     & t) &  & = R_\mathrm{r} \bm{i}^{\mathrm{s}'}_\mathrm{r,\alpha\beta}(t)-\omega_\mathrm{r,el}(t)\bm{J}\bm{\psi}^{\mathrm{s}'}_\mathrm{r,\alpha\beta}(t) +\frac{\mathrm{d}}{\mathrm{d}t}\bm{\psi}^{\mathrm{s}'}_\mathrm{r,\alpha\beta}(t),}                                                          \\
-			\uncover<+->{ &  & \mbox{Stator flux linkage:} &  & \quad \bm{\psi}^\mathrm{s}_\mathrm{s,\alpha\beta}(    & t) &  & = (L_{\sigma,\mathrm{s}} +M) \bm{i}^\mathrm{s}_{\mathrm{s},\alpha\beta}(t) +  M\bm{i}^{\mathrm{s}'}_{\mathrm{r},\alpha\beta}(t),\vphantom{\frac{\mathrm{d}}{\mathrm{d}t}}}                                                                                                               \\
-			\uncover<+->{ &  & \mbox{Rotor flux linkage:}  &  & \quad \bm{\psi}^{\mathrm{s}'}_\mathrm{r,\alpha\beta}( & t) &  & = (L'_{\sigma,\mathrm{r}} + M) \bm{i}^{\mathrm{s}'}_{\mathrm{r},\alpha\beta}(t) +  M \bm{i}^\mathrm{s}_{\mathrm{s},\alpha\beta}(t)\vphantom{\frac{\mathrm{d}}{\mathrm{d}t}},}                                                                                                            \\
+			\uncover<+->{ &  & \mbox{Rotor voltage:}       &  & \quad\bm{u}^{\mathrm{s}'}_\mathrm{r,\alpha\beta}(     & t) &  & = R'_\mathrm{r} \bm{i}^{\mathrm{s}'}_\mathrm{r,\alpha\beta}(t)-\omega_\mathrm{r,el}(t)\bm{J}\bm{\psi}^{\mathrm{s}'}_\mathrm{r,\alpha\beta}(t) +\frac{\mathrm{d}}{\mathrm{d}t}\bm{\psi}^{\mathrm{s}'}_\mathrm{r,\alpha\beta}(t),} \\
+			\uncover<+->{ &  & \mbox{Stator flux linkage:} &  & \quad \bm{\psi}^\mathrm{s}_\mathrm{s,\alpha\beta}(    & t) &  & = (L_{\sigma,\mathrm{s}} +M) \bm{i}^\mathrm{s}_{\mathrm{s},\alpha\beta}(t) +  M\bm{i}^{\mathrm{s}'}_{\mathrm{r},\alpha\beta}(t),\vphantom{\frac{\mathrm{d}}{\mathrm{d}t}}}                                                       \\
+			\uncover<+->{ &  & \mbox{Rotor flux linkage:}  &  & \quad \bm{\psi}^{\mathrm{s}'}_\mathrm{r,\alpha\beta}( & t) &  & = (L'_{\sigma,\mathrm{r}} + M) \bm{i}^{\mathrm{s}'}_{\mathrm{r},\alpha\beta}(t) +  M \bm{i}^\mathrm{s}_{\mathrm{s},\alpha\beta}(t)\vphantom{\frac{\mathrm{d}}{\mathrm{d}t}},}                                                    \\
 			\uncover<+->{ &  & \mbox{Torque:}              &  & \quad T(                                              & t) &  & = \frac{3}{2} p (\bm{i}_\mathrm{s,\alpha\beta}^\mathrm{s}(t))\T\bm{J}\bm{\psi}_\mathrm{s,\alpha\beta}^\mathrm{s}(t)=-\frac{3}{2} p (\bm{i}^{\mathrm{s}'}_\mathrm{r,\alpha\beta}(t))\T\bm{J}\bm{\psi}^{\mathrm{s}'}_\mathrm{r,\alpha\beta}(t) \vphantom{\frac{\mathrm{d}}{\mathrm{d}t}}.}
 		\end{alignedat}
 	\end{equation*}
@@ -731,7 +731,7 @@
 		\centering
 		\includegraphics[width=0.4\textwidth]{fig/lec06/Alphabeta_dq_vectors.pdf}
 		\caption{Geometrical interpretation of the Park
-		transformation: mapping $\bm{x}_{\alpha\beta}\in\mathbb{R}^2$ to $\bm{x}_{\mathrm{dq}}\in\mathbb{R}^2$ (adapted from J.~B\"ocker, \textit{Controlled Three-Phase Drives}, Paderborn University, 2021)}
+			transformation: mapping $\bm{x}_{\alpha\beta}\in\mathbb{R}^2$ to $\bm{x}_{\mathrm{dq}}\in\mathbb{R}^2$ (adapted from J.~B\"ocker, \textit{Controlled Three-Phase Drives}, Paderborn University, 2021)}
 		\label{fig:Alphabeta_dq_vectors}
 	\end{figure}
 \end{frame}
@@ -763,20 +763,20 @@
 			\end{itemize}
 			\vspace{-0.4cm}
 			\onslide<2->{
-				\begin{varblock}{K coordinate system}
-					To simplify the machine analysis, a general rotating coordinate system k is introduced. The orientation of the d-axis of that coordinate system can be chosen freely, however, if aligned to the stator or rotor flux linkage vector all quantities become constant during steady state (cf.  \figref{fig:Clarke_Park_animation}).
-				\end{varblock}
-			}
+					\begin{varblock}{K coordinate system}
+						To simplify the machine analysis, a general rotating coordinate system k is introduced. The orientation of the d-axis of that coordinate system can be chosen freely, however, if aligned to the stator or rotor flux linkage vector all quantities become constant during steady state (cf.  \figref{fig:Clarke_Park_animation}).
+					\end{varblock}
+				}
 		\end{column}
 		\begin{column}{0.45\textwidth}
 			\onslide<2->{
-				\begin{figure}
-					\centering
-					\includegraphics[width=0.85\textwidth]{fig/lec06/K_coordinates.pdf}
-					\caption{Comparison of coordinate systems}
-					\label{fig:K_coordinates}
-				\end{figure}
-			}
+					\begin{figure}
+						\centering
+						\includegraphics[width=0.85\textwidth]{fig/lec06/K_coordinates.pdf}
+						\caption{Comparison of coordinate systems}
+						\label{fig:K_coordinates}
+					\end{figure}
+				}
 		\end{column}
 	\end{columns}
 \end{frame}
@@ -791,7 +791,7 @@
 	\begin{equation}
 		\begin{alignedat}{3}
 			\uncover<1->{
-			\bm{u}^\mathrm{k}_\mathrm{s,dq}              & = \bm{T}^{-1}_\mathrm{p}(\varepsilon_\mathrm{k,el})\bm{u}^\mathrm{s}_\mathrm{s,\alpha\beta}, \quad}\uncover<+->{ \bm{i}^\mathrm{k}_\mathrm{s,dq} & = \bm{T}^{-1}_\mathrm{p}(\varepsilon_\mathrm{k,el})\bm{i}^\mathrm{s}_\mathrm{s,\alpha\beta}, \quad \bm{\psi}^\mathrm{k}_\mathrm{s,dq} & = \bm{T}^{-1}_\mathrm{p}(\varepsilon_\mathrm{k,el})\bm{\psi}^\mathrm{s}_\mathrm{s,\alpha\beta},\\}
+					           \bm{u}^\mathrm{k}_\mathrm{s,dq}              & = \bm{T}^{-1}_\mathrm{p}(\varepsilon_\mathrm{k,el})\bm{u}^\mathrm{s}_\mathrm{s,\alpha\beta}, \quad}\uncover<+->{ \bm{i}^\mathrm{k}_\mathrm{s,dq} & = \bm{T}^{-1}_\mathrm{p}(\varepsilon_\mathrm{k,el})\bm{i}^\mathrm{s}_\mathrm{s,\alpha\beta}, \quad \bm{\psi}^\mathrm{k}_\mathrm{s,dq} & = \bm{T}^{-1}_\mathrm{p}(\varepsilon_\mathrm{k,el})\bm{\psi}^\mathrm{s}_\mathrm{s,\alpha\beta},\\}
 			\uncover<+->{\bm{u}^\mathrm{k}_\mathrm{r,dq} & = \bm{T}^{-1}_\mathrm{p}(\varepsilon_\mathrm{k,el})\bm{u}^\mathrm{s}_\mathrm{r,\alpha\beta}, \quad \bm{i}^\mathrm{k}_\mathrm{r,dq}               & = \bm{T}^{-1}_\mathrm{p}(\varepsilon_\mathrm{k,el})\bm{i}^\mathrm{s}_\mathrm{r,\alpha\beta}, \quad \bm{\psi}^\mathrm{k}_\mathrm{r,dq} & = \bm{T}^{-1}_\mathrm{p}(\varepsilon_\mathrm{k,el})\bm{\psi}^\mathrm{s}_\mathrm{r,\alpha\beta}.}
 		\end{alignedat}
 	\end{equation}
@@ -865,9 +865,9 @@
 	\begin{equation*}
 		\begin{alignedat}{4}
 			\uncover<+->{ &  & \mbox{Stator voltage:}      &  & \quad\bm{u}^\mathrm{k}_\mathrm{s,dq}(        & t) &  & = R_\mathrm{s} \bm{i}^\mathrm{k}_\mathrm{s,dq}(t)+ \omega_\mathrm{k,el}(t)\bm{J}\bm{\psi}^\mathrm{k}_\mathrm{s,dq}(t) + \frac{\mathrm{d}}{\mathrm{d}t}\bm{\psi}^\mathrm{k}_\mathrm{s,dq}(t),                                                                      \\
-			              &  & \mbox{Rotor voltage:}       &  & \quad\bm{u}^{\mathrm{k}'}_\mathrm{r,dq}(     & t) &  & = R_\mathrm{r} \bm{i}^{\mathrm{k}'}_\mathrm{r,dq}(t)+\left(\omega_\mathrm{k,el}(t)-\omega_\mathrm{r,el}(t)\right)\bm{J}\bm{\psi}^{\mathrm{k}'}_\mathrm{r,dq}(t) +\frac{\mathrm{d}}{\mathrm{d}t}\bm{\psi}^{\mathrm{k}'}_\mathrm{r,dq}(t),\\}
+					           &  & \mbox{Rotor voltage:}       &  & \quad\bm{u}^{\mathrm{k}'}_\mathrm{r,dq}(     & t) &  & = R'_\mathrm{r} \bm{i}^{\mathrm{k}'}_\mathrm{r,dq}(t)+\left(\omega_\mathrm{k,el}(t)-\omega_\mathrm{r,el}(t)\right)\bm{J}\bm{\psi}^{\mathrm{k}'}_\mathrm{r,dq}(t) +\frac{\mathrm{d}}{\mathrm{d}t}\bm{\psi}^{\mathrm{k}'}_\mathrm{r,dq}(t),\\}
 			\uncover<+->{ &  & \mbox{Stator flux linkage:} &  & \quad \bm{\psi}^\mathrm{k}_\mathrm{s,dq}(    & t) &  & = (L_{\sigma,\mathrm{s}} +M) \bm{i}^\mathrm{k}_\mathrm{s,dq}(t) +  M\bm{i}^{\mathrm{k}'}_\mathrm{r,dq}(t),\vphantom{\frac{\mathrm{d}}{\mathrm{d}t}}                                                                                                               \\
-			              &  & \mbox{Rotor flux linkage:}  &  & \quad \bm{\psi}^{\mathrm{k}'}_\mathrm{r,dq}( & t) &  & = (L'_{\sigma,\mathrm{r}} + M) \bm{i}^{\mathrm{k}'}_\mathrm{r,dq}(t) +  M \bm{i}^\mathrm{k}_\mathrm{s,dq}(t)\vphantom{\frac{\mathrm{d}}{\mathrm{d}t}},\\}
+					           &  & \mbox{Rotor flux linkage:}  &  & \quad \bm{\psi}^{\mathrm{k}'}_\mathrm{r,dq}( & t) &  & = (L'_{\sigma,\mathrm{r}} + M) \bm{i}^{\mathrm{k}'}_\mathrm{r,dq}(t) +  M \bm{i}^\mathrm{k}_\mathrm{s,dq}(t)\vphantom{\frac{\mathrm{d}}{\mathrm{d}t}},\\}
 			\uncover<+->{ &  & \mbox{Torque:}              &  & \quad T(                                     & t) &  & = \frac{3}{2} p (\bm{i}_\mathrm{s,dq}^\mathrm{k}(t))\T\bm{J}\bm{\psi}_\mathrm{s,dq}^\mathrm{k}(t)=-\frac{3}{2} p (\bm{i}^{\mathrm{k}'}_\mathrm{r,dq}(t))\T\bm{J}\bm{\psi}^{\mathrm{k}'}_\mathrm{r,dq}(t) \vphantom{\frac{\mathrm{d}}{\mathrm{d}t}}.}
 		\end{alignedat}
 	\end{equation*}
@@ -904,15 +904,15 @@
 				\end{split}
 			\end{equation}
 			\onslide<2->{
-				In this case, the torque expression simplifies to
-				\begin{equation}
-					\begin{split}
-						T(t) & = \frac{3}{2} p (\bm{i}_\mathrm{s,dq}^\mathrm{k}(t))\T\bm{J}\bm{\psi}_\mathrm{s,dq}^\mathrm{k}(t) \\
-						     & = \frac{3}{2} p i_{\mathrm{s,q}}^\mathrm{k}(t)\psi_{\mathrm{s,d}}^\mathrm{k}(t) .
-					\end{split}
-					\label{eq:IM_model_k_torque_stator_flux_orientation}
-				\end{equation}
-			}
+					In this case, the torque expression simplifies to
+					\begin{equation}
+						\begin{split}
+							T(t) & = \frac{3}{2} p (\bm{i}_\mathrm{s,dq}^\mathrm{k}(t))\T\bm{J}\bm{\psi}_\mathrm{s,dq}^\mathrm{k}(t) \\
+							     & = \frac{3}{2} p i_{\mathrm{s,q}}^\mathrm{k}(t)\psi_{\mathrm{s,d}}^\mathrm{k}(t) .
+						\end{split}
+						\label{eq:IM_model_k_torque_stator_flux_orientation}
+					\end{equation}
+				}
 		\end{column}
 		\begin{column}{0.5\textwidth}
 			\begin{figure}
@@ -941,14 +941,14 @@
 				\end{split}
 			\end{equation}
 			\onslide<2->{
-				In this case, the torque expression simplifies to
-				\begin{equation}
-					\begin{split}
-						T(t) & = -\frac{3}{2} p (\bm{i}^\mathrm{k}_\mathrm{r,dq}(t))\T\bm{J}\bm{\psi}^\mathrm{k}_\mathrm{r,dq}(t) \\
-						     & = -\frac{3}{2} p i_{\mathrm{r,q}}^\mathrm{k}(t)\psi_{\mathrm{r,d}}^\mathrm{k}(t) .
-					\end{split}
-				\end{equation}
-			}
+					In this case, the torque expression simplifies to
+					\begin{equation}
+						\begin{split}
+							T(t) & = -\frac{3}{2} p (\bm{i}^\mathrm{k}_\mathrm{r,dq}(t))\T\bm{J}\bm{\psi}^\mathrm{k}_\mathrm{r,dq}(t) \\
+							     & = -\frac{3}{2} p i_{\mathrm{r,q}}^\mathrm{k}(t)\psi_{\mathrm{r,d}}^\mathrm{k}(t) .
+						\end{split}
+					\end{equation}
+				}
 		\end{column}
 		\begin{column}{0.5\textwidth}
 			\begin{figure}
@@ -1126,7 +1126,7 @@
 	\small
 	\begin{align}
 		\uncover<+->{
-		I_\mathrm{s,d}                 & = \frac{U_\mathrm{s}}{\omega_\mathrm{s}}\frac{\sigma^2 \omega^2_\mathrm{slip} (L_{\sigma,\mathrm{s}} +M)(L'_{\sigma,\mathrm{r}} +M)^3 + (L'_{\sigma,\mathrm{r}} +M)(L_{\sigma,\mathrm{s}} +M)(R'_\mathrm{r})^2 - M^2(R'_\mathrm{r})^2}{\sigma (L_{\sigma,\mathrm{s}} +M)^2(L'_{\sigma,\mathrm{r}} +M) \omega_\mathrm{slip}(\sigma^2 \omega^2_\mathrm{slip}(L'_{\sigma,\mathrm{r}} +M)^2 + (R'_\mathrm{r})^2)},\\}
+				           I_\mathrm{s,d}                 & = \frac{U_\mathrm{s}}{\omega_\mathrm{s}}\frac{\sigma^2 \omega^2_\mathrm{slip} (L_{\sigma,\mathrm{s}} +M)(L'_{\sigma,\mathrm{r}} +M)^3 + (L'_{\sigma,\mathrm{r}} +M)(L_{\sigma,\mathrm{s}} +M)(R'_\mathrm{r})^2 - M^2(R'_\mathrm{r})^2}{\sigma (L_{\sigma,\mathrm{s}} +M)^2(L'_{\sigma,\mathrm{r}} +M) \omega_\mathrm{slip}(\sigma^2 \omega^2_\mathrm{slip}(L'_{\sigma,\mathrm{r}} +M)^2 + (R'_\mathrm{r})^2)},\\}
 		\uncover<+->{I_\mathrm{s,q}    & = \frac{U_\mathrm{s}}{\omega_\mathrm{s}} \frac{M^2 \omega_\mathrm{slip}R'_\mathrm{r}}{(L_{\sigma,\mathrm{s}} +M)^2(\sigma^2 (L'_{\sigma,\mathrm{r}} +M)^2\omega_\mathrm{slip}^2 + (R'_\mathrm{r})^2)},\\}
 		\uncover<+->{I_\mathrm{r,d}    & = -\frac{U_\mathrm{s}}{\omega_\mathrm{s}} \frac{\sigma M  \omega_\mathrm{slip}^2(L'_{\sigma,\mathrm{r}} +M)}{(L_{\sigma,\mathrm{s}} +M)(\sigma^2 (L'_{\sigma,\mathrm{r}} +M)^2\omega_\mathrm{slip}^2 + (R'_\mathrm{r})^2)},\\}
 		\uncover<+->{I_\mathrm{r,q}    & = -\frac{U_\mathrm{s}}{\omega_\mathrm{s}} \frac{M R'_\mathrm{r} \omega_\mathrm{slip}}{(L_{\sigma,\mathrm{s}} +M)(\sigma^2 (L'_{\sigma,\mathrm{r}} +M)^2\omega_\mathrm{slip}^2 + (R'_\mathrm{r})^2)},\\}
@@ -1284,7 +1284,7 @@
 	\begin{figure}
 		\centering
 		\includegraphics[width=0.75\textwidth]{fig/lec06/AC_rotor_resistance.pdf}
-		\caption{Rotor resistance of a squirrel cage IM as a function of the slip frequency (example based on the following values: $\kappa = \SI{3.7e7}{\siemens\per\metre}$, $h_\mathrm{bar} = \SI{50}{\milli\metre}$, $w_\mathrm{bar} = \SI{10}{\milli\metre}$, $w_\mathrm{slot} = \SI{15}{\milli\metre}$)}
+		\caption{Rotor resistance of a squirrel cage IM as a function of the slip frequency (example based on the following values: $\kappa = \SI{3.7\cdot10^7}{\siemens\per\metre}$, $h_\mathrm{bar} = \SI{50}{\milli\metre}$, $w_\mathrm{bar} = \SI{10}{\milli\metre}$, $w_\mathrm{slot} = \SI{15}{\milli\metre}$)}
 		\label{fig:AC_rotor_resistance}
 	\end{figure}
 \end{frame}
