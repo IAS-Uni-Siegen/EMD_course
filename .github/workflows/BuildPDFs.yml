@@ -21,7 +21,11 @@ on:
       - '**.ipynb'
       - '**.yml'
   workflow_dispatch:
-  
+
+concurrency:
+  group: pages-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   format-check:
     runs-on: ubuntu-latest
@@ -163,3 +167,5 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+        with:
+          timeout: 600000
