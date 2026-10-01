@@ -1,0 +1,218 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Task 2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\task{Regenerative braking with a shunt DC drive}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\taskGerman{Rekuperatives Bremsen mit einem Gleichstrom-Nebenschlussantrieb}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+A shunt DC machine is connected to a \SI{240}{\volt} DC link. The field winding is supplied directly from the DC link. A lossless four-quadrant DC/DC converter supplies the armature from the DC link. Positive armature power $P_{\mathrm{a}}=U_{\mathrm{a}}I_{\mathrm{a}}$ enters the machine. Use the parameters in \autoref{tab:regen_dc_parameters}. Neglect mechanical, iron, and converter losses. During braking, $I_{\mathrm{f}}$ and $I_{\mathrm{a}}$ are constant.
+
+\begin{germanblock}
+	Eine Gleichstrom-Nebenschlussmaschine ist an einen \SI{240}{\volt} Zwischenkreis angeschlossen. Die Erregerwicklung wird direkt aus dem Zwischenkreis gespeist. Ein verlustfreier Vierquadranten-DC/DC-Umrichter speist den Anker aus dem Zwischenkreis. Positive Ankerleistung $P_{\mathrm{a}}=U_{\mathrm{a}}I_{\mathrm{a}}$ fließt in die Maschine. Verwenden Sie die Parameter aus \autoref{tab:regen_dc_parameters}. Vernachlässigen Sie mechanische Verluste, Eisenverluste und Umrichterverluste. Während des Bremsens sind $I_{\mathrm{f}}$ und $I_{\mathrm{a}}$ konstant.
+\end{germanblock}
+
+\begin{table}[htb]
+	\caption{Parameters of the DC drive.}
+	\centering
+	\begin{tabular}{lll}
+		\toprule
+		Symbol            & Description                & Value                             \\
+		\midrule
+		$U_{\mathrm{dc}}$ & DC-link voltage            & \SI{240}{\volt}                   \\
+		$R_{\mathrm{a}}$  & Armature resistance        & \SI{0.5}{\ohm}                    \\
+		$L_{\mathrm{a}}$  & Armature inductance        & \SI{15}{\milli\henry}             \\
+		$R_{\mathrm{f}}$  & Field resistance           & \SI{120}{\ohm}                    \\
+		$L'_{\mathrm{f}}$ & Effective field inductance & \SI{0.6}{\henry}                  \\
+		$J$               & Effective inertia          & \SI{2.0}{\kilogram\metre\squared} \\
+		\bottomrule
+	\end{tabular}
+	\label{tab:regen_dc_parameters}
+\end{table}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subtask{Draw the described drive layout incl. the equivalent circuit diagrams of the field winding and the armature (the DC/DC converter's internal structure shall not be sketched).}{1}
+\subtaskGerman{Zeichnen Sie die beschriebene Antriebsarchitektur einschließlich der Ersatzschaltbilder von Erreger und Anker (die interne Struktur des DC/DC-Umrichters muss nicht gezeichnet werden).}
+
+\begin{solutionblock}
+	\begin{solutionfigure}[htb]
+		\centering
+		\begin{circuitikz}[european resistors,scale=0.9,transform shape]
+			% DC link
+			\draw (0,0) to[V,l=$U_{\mathrm{dc}}$] (0,4);
+			\draw (0,4) -- (2.8,4);
+			\draw (0,0) -- (2.8,0);
+
+			% Field branch
+			\draw (1.35,4)
+			to [L,l=$L_{\mathrm{f}}$, i>^=$I_{\mathrm{f}}$,*-] (1.35,2)
+			to [R,l=$R_{\mathrm{f}}$,-*] (1.35,0);
+
+			% Standard CircuiTikZ DC/DC-converter symbol as a four-terminal block
+			\node[sdcdcshape,scale=0.82] (conv) at (4.0,2) {};
+			\draw (2.8,4) |- (conv.dc up in);
+			\draw (2.8,0) |- (conv.dc down in);
+
+			% Converter output and closed armature circuit
+			\coordinate (ap) at (5.2,4);
+			\coordinate (an) at (5.2,0);
+			\draw (conv.dc up out) -| (ap);
+			\draw (conv.dc down out) -| (an);
+			\draw (ap)
+			to[L,l=$L_{\mathrm{a}}$,i>^=$I_{\mathrm{a}}$] ++(2,0)
+			to[R,l=$R_{\mathrm{a}}$] ++(2,0)
+			to[V,l=$U_{\mathrm{i}}$] ++(0,-4)
+			-- (an);
+			\draw[->] (5.5,2.5) to [short, l=$U_{\mathrm{a}}$] ++(0,-1);
+		\end{circuitikz}
+		\caption{DC shunt drive}
+		\label{fig:regen_dc_drive_solution_r04}
+	\end{solutionfigure}
+\end{solutionblock}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subtask{Calculate the steady-state field current $I_{\mathrm{f}}$ and the effective flux $\psi'_{\mathrm{f}}$.}{1}
+\begin{hintblock}
+	if and only if you cannot solve this subtask, use
+	$I_{\mathrm{f}}=\SI{1}{\ampere}$ and
+	$\psi'_{\mathrm{f}}=\SI{0.6}{\volt\second}$ in the next subtasks.
+\end{hintblock}
+\subtaskGerman{Berechnen Sie den stationären Erregerstrom $I_{\mathrm{f}}$ und den effektiven Fluss $\psi'_{\mathrm{f}}$.}
+
+\begin{germanhintblock}
+	nur wenn Sie diese Teilaufgabe nicht lösen können, verwenden Sie in den
+	folgenden Teilaufgaben $I_{\mathrm{f}}=\SI{1}{\ampere}$ und
+	$\psi'_{\mathrm{f}}=\SI{0.6}{\volt\second}$.
+\end{germanhintblock}
+
+\begin{solutionblock}
+	The field branch is connected directly to the DC link. Hence,
+	\begin{equation*}
+		I_{\mathrm{f}}=\frac{U_{\mathrm{dc}}}{R_{\mathrm{f}}}
+		=\SI{2}{\ampere},
+		\qquad
+		\psi'_{\mathrm{f}}=L'_{\mathrm{f}}I_{\mathrm{f}}
+		=\SI{1.2}{\volt\second}.
+	\end{equation*}
+\end{solutionblock}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subtask{At $n=\SI[per-mode=fraction, fraction-function=\nicefrac]{1500}{\per\minute}$, the converter sets
+	$I_{\mathrm{a}}=\SI{-20}{\ampere}$. What armature voltage $U_{\mathrm{a}}$ is required to maintain this current? What is the resulting torque $T$?}{2}
+\begin{hintblock}
+	if and only if you cannot solve this subtask, use
+	$U_{\mathrm{a}}=\SI{150}{\volt}$ and
+	$T=\SI{-20}{\newton\metre}$ in the next subtasks.
+\end{hintblock}
+\subtaskGerman{Bei $n=\SI[per-mode=fraction, fraction-function=\nicefrac]{1500}{\per\minute}$ regelt der Umrichter
+	$I_{\mathrm{a}}=\SI{-20}{\ampere}$. Welche Ankerspannung $U_{\mathrm{a}}$ ist erforderlich, um diesen Strom zu halten? Welches resultierende Drehmoment $T$ ergibt sich?}
+
+\begin{germanhintblock}
+	nur wenn Sie diese Teilaufgabe nicht lösen können, verwenden Sie in den
+	folgenden Teilaufgaben $U_{\mathrm{a}}=\SI{150}{\volt}$ und $T=\SI{-20}{\newton\metre}$.
+\end{germanhintblock}
+
+\begin{solutionblock}
+	\begin{equation*}
+		\omega=\SI{\frac{2\pi n}{60}}{\minute\per\second}=\SI{157.08}{\per\second},
+		\qquad U_{\mathrm{i}}=\omega\psi'_{\mathrm{f}}=\SI{188.50}{\volt},
+	\end{equation*}
+	\begin{equation*}
+		U_{\mathrm{a}}=R_{\mathrm{a}}I_{\mathrm{a}}+U_{\mathrm{i}}
+		=\SI{178.50}{\volt},
+		\qquad T=\psi'_{\mathrm{f}}I_{\mathrm{a}}=\SI{-24}{\newton\metre}.
+	\end{equation*}
+\end{solutionblock}
+
+\subtask{Determine the resulting armature power $P_{\mathrm{a}}$, mechanical power $P_{\mathrm{me}}$, the total copper losses $P_{\mathrm{Cu}}$ as well as the resulting efficiency $\eta$ for the given operating point.}{2}
+\subtaskGerman{Bestimmen Sie die resultierende Ankerleistung $P_{\mathrm{a}}$, die mechanische Leistung $P_{\mathrm{me}}$, die gesamten Kupferverluste $P_{\mathrm{Cu}}$ sowie den resultierenden Wirkungsgrad $\eta$ für den gegebenen Arbeitspunkt.}
+
+\begin{solutionblock}
+	The relevant power terms are
+	\begin{equation*}
+		P_{\mathrm{a}}=U_{\mathrm{a}}I_{\mathrm{a}}
+		=\SI{-3.57}{\kilo\watt},
+		\quad
+		P_{\mathrm{me}}=T\omega=\SI{-3.77}{\kilo\watt}, \quad P_{\mathrm{Cu}}=R_{\mathrm{a}}I_{\mathrm{a}}^2+R_{\mathrm{f}}I_{\mathrm{f}}^2=\SI{200}{\watt}+\SI{480}{\watt}=\SI{680}{\watt},
+	\end{equation*}
+	resulting in an efficiency of
+	\begin{equation*}
+		\eta=\frac{P_{\mathrm{a}}+P_{\mathrm{Cu,f}}}{P_{\mathrm{me}}}=\frac{\SI{-3.57}{\kilo\watt}+\SI{0.48}{\kilo\watt}}{\SI{-3.77}{\kilo\watt}}=\frac{\SI{-3.09}{\kilo\watt}}{\SI{-3.77}{\kilo\watt}}=\SI{82.0}{\percent}.
+	\end{equation*}
+	Here, it must be considered that the drive is operating in generation mode, so that the mechanical power is negative. The copper losses of the field winding are added to the armature power, since they are supplied from the DC link.
+\end{solutionblock}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subtask{During a stopping procedure, the speed falls from $n_1=\SI[per-mode=fraction, fraction-function=\nicefrac]{1500}{\per\minute}$ to
+	$n_2=\SI[per-mode=fraction, fraction-function=\nicefrac]{0}{\per\minute}$ at constant
+	$I_{\mathrm{a}}=\SI{-20}{\ampere}$. Assuming zero load torque during the procedure, the machine's torque changes the speed according
+	to
+	\begin{equation*}
+		J\frac{\mathrm{d}\omega}{\mathrm{d}t}=T.
+	\end{equation*}
+	What time $\Delta t$ does it take to stop and what is the resulting kinetic energy change $\Delta E_{\mathrm{kin}}$?}{2}
+\begin{hintblock}
+	if and only if you cannot solve this subtask, use
+	$\Delta t=\SI{10}{\second}$ and
+	$\Delta E_{\mathrm{kin}}=\SI{-30}{\kilo\joule}$ in the next subtask.
+\end{hintblock}
+\subtaskGerman{Während eines Bremsvorgangs fällt die Drehzahl von $n_1=\SI[per-mode=fraction, fraction-function=\nicefrac]{1500}{\per\minute}$ auf
+	$n_2=\SI[per-mode=fraction, fraction-function=\nicefrac]{0}{\per\minute}$ bei konstantem
+	$I_{\mathrm{a}}=\SI{-20}{\ampere}$. Unter der Annahme eines fehlenden Lastmoments während des Vorgangs ändert das Drehmoment der Maschine die Drehzahl gemäß der obigen Differentialgleichung. Wie  $\Delta t$ lange dauert es, bis die Maschine stoppt, und wie groß ist die resultierende kinetische Energieänderung $\Delta E_{\mathrm{kin}}$?}
+
+\begin{germanhintblock}
+	nur wenn Sie diese Teilaufgabe nicht lösen können, verwenden Sie in der
+	folgenden Teilaufgabe $\Delta t=\SI{10}{\second}$ und
+	$\Delta E_{\mathrm{kin}}=\SI{-30}{\kilo\joule}$.
+\end{germanhintblock}
+
+\begin{solutionblock}
+	Since $T=\SI{-24}{\newton\metre}$ is constant,
+	\begin{equation*}
+		\Delta t=\frac{J(\omega_2-\omega_1)}{T}
+		=\SI{13.09}{\second}.
+	\end{equation*}
+	The kinetic-energy decrease is
+	\begin{equation*}
+		\Delta E_{\mathrm{kin}}
+		=\frac{J}{2}\left(\omega_2^2-\omega_1^2\right)
+		=\SI{-24.67}{\kilo\joule}.
+	\end{equation*}
+\end{solutionblock}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subtask{How much electrical energy $E_{\mathrm{rec}}$ is recovered during the procedure?}{1}
+\subtaskGerman{Wie viel elektrische Energie $E_{\mathrm{rec}}$ wird während des Bremsvorgangs zurückgewonnen?}
+\begin{solutionblock}
+	The loss work during the stopping procedure is
+	\begin{equation*}
+		W_{\mathrm{Cu}}=P_{\mathrm{Cu}}\Delta t
+		=\SI{680}{\watt}\cdot\SI{13.09}{\second}
+		=\SI{8.89}{\kilo\joule}.
+	\end{equation*}
+	The recovered energy is then
+	\begin{equation*}
+		E_{\mathrm{rec}}=|\Delta E_{\mathrm{kin}}|-W_{\mathrm{Cu}}
+		=\SI{24.67}{\kilo\joule}-\SI{8.89}{\kilo\joule}
+		=\SI{15.78}{\kilo\joule}.
+	\end{equation*}
+\end{solutionblock}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subtask{Calculate the maximum achievable speed $n_{\mathrm{max}}$ with the given drive setup considering the electrical constraints and neglecting mechanical limitations. What component could be added to the drive to extend its speed range?}{2}
+\subtaskGerman{Berechnen Sie die maximal erreichbare Drehzahl $n_{\mathrm{max}}$ mit der gegebenen Antriebsarchitektur unter Berücksichtigung der elektrischen Randbedingungen und Vernachlässigung mechanischer Einschränkungen. Welche Komponente könnte dem Antrieb hinzugefügt werden, um seinen Drehzahlbereich zu erweitern?}
+
+\begin{solutionblock}
+	At no load, $I_{\mathrm{a}}=0$ and
+	$U_{\mathrm{a}}=U_{\mathrm{i}}=\omega\psi'_{\mathrm{f}}$. Hence,
+	\begin{equation*}
+		\omega_{\mathrm{max}}=\frac{U_{\mathrm{dc}}}{\psi'_{\mathrm{f}}}
+		=\SI{200}{\per\second},
+		\qquad
+		n_{\mathrm{max}}=\omega_{\mathrm{max}}\frac{60}{2\pi}
+		=\SI{1909.9}{\per\minute}.
+	\end{equation*}
+	A controllable DC/DC converter could be added to the field circuit to reduce $I_{\mathrm{f}}$ and
+	$\psi'_{\mathrm{f}}$ above base speed. The available torque then decreases.
+\end{solutionblock}

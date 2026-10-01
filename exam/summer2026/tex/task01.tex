@@ -1,0 +1,234 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Task 1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\task{Inductive distance measurement}
+\taskGerman{Induktive Abstandsmessung}
+An inductive distance measurement system is given in \autoref{fig:inductive_measurement}, where the iron core is at a fixed position and the target can be moved. The iron core is excited by the coil, which generates a magnetic field in the core and the air gap. The parameters of the system are given in \autoref{tab:inductive_measurement_parameters}.
+
+\begin{germanblock}
+	In \autoref{fig:inductive_measurement} ist ein induktives Abstandsmesssystem dargestellt, bei dem sich der Eisenkern an einer festen Position befindet und das Messobjekt bewegt werden kann. Der Eisenkern wird durch die Spule angeregt und erzeugt ein Magnetfeld im Kern und im Luftspalt. Die Parameter des Systems sind in \autoref{tab:inductive_measurement_parameters} angegeben.
+\end{germanblock}
+
+\begin{table}[htb]
+	\caption{Parameters of the inductive measurement system.}
+	\centering
+	\begin{tabular}{lll}
+		\toprule
+		Symbol           & Description             & Value                                               \\
+		\midrule
+		$l_{\mathrm{x}}$ & Air gap length          & \SI{0.01}{\metre}                                   \\
+		$A_{\mathrm{x}}$ & Air gap cross section   & \SI{0.0001}{\metre\squared}                         \\
+		$N$              & Winding turns           & 500                                                 \\
+		$\mu_0$          & Magnetic field constant & \SI{4\pi10^{-7}}{\volt\second\per\ampere\per\metre} \\
+		$J$              & Current density         & \SI{3}{\ampere\per\milli\metre\squared}             \\
+		\bottomrule
+	\end{tabular}
+	\label{tab:inductive_measurement_parameters}
+\end{table}
+\begin{figure}[htb]
+	\centering
+	\begin{tikzpicture}
+		% core
+		\fill [gray!40] (0,0) -- (5,0) -- (5,1) -- (1,1) -- (1,5) -- (5,5) -- (5,6) -- (0,6) -- (0,0);
+		\draw (3,0.5) node[above] {Iron core};
+		% target
+		\fill[gray!40] (7,0) -- (8,0) -- (8,6) -- (7,6) -- (7,0);
+		\draw (7.8,4) node {} -- (9,4) node[right] {Target};
+		% flux line
+		\draw [dashed, blue!60] (0.5,0.5) -- (7.5,0.5) -- (7.5,5.5) -- (0.5,5.5) -- (0.5,0.5);
+		\draw [dashed, blue!60] (6,5.6) -- (6,6)node[above] {Magnetic flux};
+		% air gap
+		\draw (5,3) node {|} -- (7,3) node{|};
+		\draw (6,3) node[above] {$l_\mathrm{x}$};
+		% coil
+		\draw[thick, decorate, decoration={coil, aspect=0.35, segment length=6pt, amplitude=20pt}]
+		(0.5,1.5) -- (0.5,4.5);
+		\draw[thick] (0.5,1.5) -- (2,1.5);
+		\draw[thick] (2.1,1.5) circle (0.1);
+		\draw[thick] (2.1,4.5) circle (0.1);
+		\draw[thick] (0.5,4.5) -- (2,4.5);
+		\draw[thick, signalred, ->] (1.8,4.5) node[above] {$I$} -- (1.3,4.5);
+	\end{tikzpicture}
+	\caption{Inductive distance measurement system.}
+	\label{fig:inductive_measurement}
+\end{figure}
+
+\subtask{Calculate the inductance value $L_\mathrm{x}$ for the given air gap length $l_\mathrm{x}$. For simplicity, neglect the reluctances of the iron core and target.}{1}
+
+\begin{hintblock}
+	if and only if you cannot solve this subtask, use $L_\mathrm{x} = \SI{3.14}{\milli\henry}$ for the following tasks.
+\end{hintblock}
+
+\subtaskGerman{Berechnen Sie den Induktivitätswert $L_\mathrm{x}$ für die angegebene Luftspaltlänge $l_\mathrm{x}$. Vernachlässigen Sie zur Vereinfachung die Reluktanzen des Eisenkerns und des Messobjekts.}
+
+\begin{germanhintblock}
+	Wenn und nur wenn Sie diese Teilaufgabe nicht lösen können, verwenden Sie $L_\mathrm{x} = \SI{3.14}{\milli\henry}$ für die nachfolgenden Aufgaben.
+\end{germanhintblock}
+
+\begin{solutionblock}
+	The inductance of a coil is given by:
+	$$
+		L_\mathrm{x} = \frac{N^2}{R_{\mathrm{m}}} = \frac{N^2}{\frac{2l_{\mathrm{x}}}{\mu_0 A_{\mathrm{x}}}} = \frac{N^2 \mu_0 A_{\mathrm{x}}}{2 l_{\mathrm{x}}} = \SI{1.57}{\milli\henry}.
+	$$
+\end{solutionblock}
+
+\subtask{The coil is excited with a sinusoidal voltage (represented as a complex phasor) of $\underline{U} = \SI{10}{\volt}$ at a frequency of \SI{1}{\kilo\hertz}. Neglect the ohmic resistance of the coil and calculate the current  $\underline{I}$ through it using complex numbers.}{1}
+\begin{hintblock}
+	if and only if you cannot solve this subtask, use $\underline{I} = \SI{-2.1 \mathrm{j}}{\ampere}$ for the following tasks.
+\end{hintblock}
+
+\subtaskGerman{Die Spule wird mit einer sinusförmigen Spannung (dargestellt als komplexer Zeiger) von $\underline{U} = \SI{10}{\volt}$ bei einer Frequenz von \SI{1}{\kilo\hertz} angeregt. Vernachlässigen Sie den ohmschen Widerstand der Spule und berechnen Sie den durch sie fließenden Strom $\underline{I}$ unter Verwendung komplexer Zahlen.}
+
+\begin{germanhintblock}
+	Wenn und nur wenn Sie diese Teilaufgabe nicht lösen können, verwenden Sie $\underline{I} = \SI{-2.1 \mathrm{j}}{\ampere}$ für die nachfolgenden Aufgaben.
+\end{germanhintblock}
+
+\begin{solutionblock}
+	The complex resistance is given with
+	$$
+		\underline{Z}_\mathrm{L} = \mathrm{j} 2 \pi f L_\mathrm{x} = \SI{9.9\mathrm{j}}{\ohm},
+	$$
+	resulting in a complex current of:
+	$$
+		\underline{I} = \frac{\underline{U}}{\underline{Z}_\mathrm{L}} = \SI{-1.013\mathrm{j}}{\ampere}.
+	$$
+\end{solutionblock}
+
+\subtask{Calculate the complex magnetic flux linkage $\underline{\Psi}$ of the coil based on the previous subtask's simplifications.}{1}
+\subtaskGerman{Berechnen Sie die komplexe magnetische Flussverkettung $\underline{\Psi}$ der Spule basierend auf den vorherigen Vereinfachungen.}
+\begin{solutionblock}
+	The complex flux linkage is given as:
+	$$
+		\underline{\Psi} = L_\mathrm{x} \underline{I} = \SI{-1.6 \mathrm{j}}{\milli\volt\second}.
+	$$
+\end{solutionblock}
+
+\subtask{Use the magnitude of the calculated current $\underline{I}$ from the previous subtask and determine the ohmic winding resistance based on that. Then, calculate the impedance of the coil and the resulting new current $I^\prime$. The average winding length is given with $l_\mathrm{w} = \SI{0.2}{\metre}$ and an electrical conductivity of $\kappa_\mathrm{Cu} = \SI{50\cdot10^6}{\siemens\per\metre}$. The permissible current density $J$ for the application is given in \autoref{tab:inductive_measurement_parameters}.}{2}
+
+\begin{hintblock}
+	if and only if you cannot solve this subtask, use $R = \SI{1.4}{\ohm}$ for the following tasks.
+\end{hintblock}
+
+\subtaskGerman{Verwenden Sie den Betrag des berechneten Stroms $\underline{I}$ aus der vorherigen Teilaufgabe und bestimmen Sie den ohmschen Wicklungswiderstand auf dieser Grundlage. Berechnen Sie dann die Impedanz der Spule und den resultierenden neuen Strom $I^\prime$. Die mittlere Windungslänge ist mit $l_\mathrm{w} = \SI{0.2}{\metre}$ und einer elektrischen Leitfähigkeit von $\kappa_\mathrm{Cu} = \SI{50\cdot10^6}{\siemens\per\metre}$ gegeben. Die für die Anwendung zulässige Stromdichte $J$ ist in \autoref{tab:inductive_measurement_parameters} angegeben.}
+
+\begin{germanhintblock}
+	Wenn und nur wenn Sie diese Teilaufgabe nicht lösen können, verwenden Sie $R = \SI{1.4}{\ohm}$ für die nachfolgenden Aufgaben.
+\end{germanhintblock}
+
+\begin{solutionblock}
+	Given the current density, the required cross-sectional area is calculated as follows:
+	$$
+		q = \frac{|\underline{I}|}{J} = \SI{0.338}{\milli\metre\squared},
+	$$
+	and the resistance as
+	$$
+		R = \frac{1}{\kappa_\mathrm{Cu}} \frac{N l_\mathrm{w}}{q} = \SI{5.9}{\ohm},
+	$$
+	which leads to an absolute impedance of:
+	$$
+		Z = \sqrt{R^2 + Z_\mathrm{L}^2} = \SI{11.51}{\ohm}.
+	$$
+	Therefore, the current is calculated by:
+	$$
+		I^\prime = \frac{|\underline{U}|}{Z} = \SI{0.87}{\ampere}.
+	$$
+
+\end{solutionblock}
+
+\subtask{Calculate the ohmic power loss of the coil with the new current $I^\prime$.}{1}
+\subtaskGerman{Berechnen Sie die ohmsche Verlustleistung der Spule mit dem neuen Strom $I^\prime$.}
+\begin{solutionblock}
+	The power loss is given with:
+	$$
+		P = R I^{\prime 2} = \SI{4.5}{\watt}.
+	$$
+\end{solutionblock}
+
+\subtask{What is the minimum distance to the target? Due to the measurement uncertainty, the coil current should not fall below the minimum measurable current $I_{\mathrm{min}} = \SI{10}{\milli\ampere}$. The frequency $f$ and the applied voltage $\underline{U}$ to the coil remain unchanged.}{2}
+\subtaskGerman{
+	Was ist der minimale Abstand zum Messobjekt? Aufgrund der Messunsicherheit sollte der Spulenstrom nicht unter den minimal messbaren Strom $I_{\mathrm{min}} = \SI{10}{\milli\ampere}$ fallen. Die an die Spule angelegte Frequenz $f$ und Spannung $\underline{U}$ bleiben unverändert.
+}
+
+\begin{solutionblock}
+	With the minimum current the maximum impedance can be calculated with
+	$$
+		Z_\mathrm{max} = \frac{|\underline{U}|}{I_\mathrm{min}},
+	$$
+	which results in the reactance resistance as:
+	$$
+		X_\mathrm{L,max} = \sqrt{Z_\mathrm{max}^2 - R^2}.
+	$$
+	The maximum inductance is given by:
+	$$
+		L_\mathrm{max} = \frac{X_\mathrm{L,max}}{2 \pi f},
+	$$
+	which results in a minimum distance of:
+	$$
+		l_\mathrm{min} = \frac{N^2 \mu_0 A_\mathrm{x}}{2 L_\mathrm{max}} = \SI{98.7}{\micro\metre}.
+	$$
+
+\end{solutionblock}
+
+\subtask{Is the maximum distance to the target limited? If yes, by what?}{2}
+\subtaskGerman{Ist der maximale Abstand zum Ziel begrenzt? Wenn ja, durch was?}
+
+\begin{solutionblock}
+	A larger air gap leads to smaller inductance values, which results in larger currents. Therefore, the maximum distance is limited by the maximum current that can be provided by
+	\begin{itemize}
+		\item the power supply and
+		\item that can be measured by the measurement system.
+	\end{itemize}
+
+	If the power supply and the measurement system are powerful enough, the maximum distance is limited by the dimensions of the iron core. If the distance from the iron core to the target is larger than the high $h$ of the iron core, the magnetic field lines are no longer closed through the target, but through the iron core and its inner air gap. The corresponding sketch is visualized in \autoref{fig:sol_inductive_measurement}.
+
+	\begin{solutionfigure}[htb]
+		\centering
+		\begin{tikzpicture}
+
+			% coordinates core
+			\coordinate (CLT) at (0,0);
+			\coordinate (CRT) at (5,0);
+			\coordinate (CRTL) at (5,1);
+			\coordinate (CLTL) at (1,1);
+			\coordinate (CLB) at (0,6);
+			\coordinate (CRB) at (5,6);
+			\coordinate (CRBL) at (5,5);
+			\coordinate (CLBL) at (1,5);
+
+			% cordinates target
+			\coordinate (TLT) at (10,0);
+			\coordinate (TRT) at (11,0);
+			\coordinate (TLB) at (10,6);
+			\coordinate (TRB) at (11,6);
+
+			% core
+			\fill [gray!40] (CLT) to (CRT) to (CRTL) to (CLTL) to (CLBL) to (CRBL) to (CRB) to (CLB) to (CLT);
+			\draw (3,0.5) node[above] {Iron core};
+			% target
+			\fill[gray!40] (TLT) -- (TRT) -- (TRB) -- (TLB) -- (TLT);
+			\draw (10.8,4) node {} -- (12,4) node[right] {Target};
+			% magnetic flux
+			\draw [dashed, blue!60] (0.5,0.5) -- (5.5,0.5) -- (5.5,5.5) -- (0.5,5.5) -- (0.5,0.5);
+			\draw [dashed, blue!60] (4,5.6) -- (4,6)node[above] {Magnetic flux};
+			% air gap
+			\draw (5,3) node {|} -- (10,3) node{|};
+			\draw (7.5,3) node[above] {$l_\mathrm{x}$};
+			% high core
+			\draw (3,1) node {} -- (3,5) node {};
+			\draw (3,3) node[right] {$h$};
+			\draw (2.8,1) -- (3.2,1);
+			\draw (2.8,5) -- (3.2,5);
+			% coil
+			\draw[thick, decorate, decoration={coil, aspect=0.35, segment length=6pt, amplitude=20pt}]
+			(0.5,1.5) -- (0.5,4.5);
+			\draw[thick] (0.5,1.5) -- (2,1.5);
+			\draw[thick] (2.1,1.5) circle (0.1);
+			\draw[thick] (2.1,4.5) circle (0.1);
+			\draw[thick] (0.5,4.5) -- (2,4.5);
+			\draw[thick, signalred, ->] (1.8,4.5) node[above] {$I$} -- (1.3,4.5);
+		\end{tikzpicture}
+		\caption{Inductive distance measurement system with $l_\mathrm{x} \gg h$.}
+		\label{fig:sol_inductive_measurement}
+	\end{solutionfigure}
+
+\end{solutionblock}

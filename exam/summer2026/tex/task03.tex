@@ -1,0 +1,242 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Task 3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\task{Three-phase stator winding design for harmonic suppression}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\taskGerman{Dreiphasige Statorwicklungsauslegung zur Harmonischenunterdrückung}
+
+%% Preleminaries / aux helpers
+\definecolor{phaseA}{RGB}{196,30,58}
+\definecolor{phaseB}{RGB}{0,105,92}
+\definecolor{phaseC}{RGB}{0,88,156}
+
+\newcommand{\WindingMarkQXVIII}[4]{%
+	% #1 slot number, #2 phase label, #3 sign (+/- as 1/0), #4 color
+	\pgfmathsetmacro{\markangle}{90-(#1-1)*20}
+	\pgfmathsetmacro{\markradius}{1.78}
+	\coordinate (wm) at ({\markradius*cos(\markangle)},{\markradius*sin(\markangle)});
+	\draw[#4,line width=0.75pt] (wm) circle (0.105);
+	\ifnum#3=1
+		\fill[#4] (wm) circle (0.027);
+	\else
+		\draw[#4,line width=0.75pt] ($(wm)+(-0.062,-0.062)$)--($(wm)+(0.062,0.062)$);
+		\draw[#4,line width=0.75pt] ($(wm)+(-0.062,0.062)$)--($(wm)+(0.062,-0.062)$);
+	\fi
+	\node[font=\scriptsize\bfseries,text=#4]
+	at ({2.01*cos(\markangle)},{2.01*sin(\markangle)}) {$#2$};
+}
+
+\newcommand{\DrawSingleLayerWindingQXVIII}[1]{%
+	\begin{tikzpicture}[line cap=round,line join=round]
+		\def\Rstator{2.45}
+		\def\RslotOut{2.12}
+		\def\RslotIn{1.43}
+		\def\Rrotor{1.14}
+		\def\Rshaft{0.18}
+
+		% Stator and slot region.
+		\fill[gray!25] (0,0) circle (\Rstator);
+		\fill[white] (0,0) circle (\RslotIn);
+		\draw[thick] (0,0) circle (\Rstator);
+		\draw[thick] (0,0) circle (\RslotOut);
+		\draw[thick] (0,0) circle (\RslotIn);
+		\foreach \i in {0,...,17}{
+				\pgfmathsetmacro{\boundary}{100-20*\i}
+				\draw[thick]
+				({\RslotIn*cos(\boundary)},{\RslotIn*sin(\boundary)}) --
+				({\RslotOut*cos(\boundary)},{\RslotOut*sin(\boundary)});
+			}
+
+		% Slot numbers, clockwise from the upper sector.
+		\foreach \i in {1,...,18}{
+				\pgfmathsetmacro{\numangle}{90-(\i-1)*20}
+				\node[font=\tiny]
+				at ({2.64*cos(\numangle)},{2.64*sin(\numangle)}) {\i};
+			}
+
+		% Two-pole rotor reference.
+		\fill[gray!45] (0,0) circle (\Rrotor);
+		\draw[thick] (0,0) circle (\Rrotor);
+		\draw[thick] (-\Rrotor,0)--(\Rrotor,0);
+		\node[font=\small\bfseries] at (0,0.58) {N};
+		\node[font=\small\bfseries] at (0,-0.58) {S};
+		\fill[black] (0,0) circle (\Rshaft);
+
+		% Empty placeholders in all slots.
+		\foreach \i in {1,...,18}{
+				\pgfmathsetmacro{\emptyangle}{90-(\i-1)*20}
+				\draw[gray!55]
+				({1.78*cos(\emptyangle)},{1.78*sin(\emptyangle)}) circle (0.105);
+			}
+
+		% Slot 1 is given in both versions.
+		\WindingMarkQXVIII{1}{a}{1}{phaseA}
+		\WindingMarkQXVIII{13}{b}{1}{phaseB}
+		\WindingMarkQXVIII{7}{c}{1}{phaseC}
+
+		% Complete balanced single-layer winding with y_s = 7.
+		\ifnum#1=1
+			\WindingMarkQXVIII{2}{b}{0}{phaseB}
+			\WindingMarkQXVIII{3}{b}{0}{phaseB}
+			\WindingMarkQXVIII{4}{c}{1}{phaseC}
+			\WindingMarkQXVIII{5}{c}{1}{phaseC}
+			\WindingMarkQXVIII{6}{a}{0}{phaseA}
+			\WindingMarkQXVIII{7}{c}{1}{phaseC}
+			\WindingMarkQXVIII{8}{a}{0}{phaseA}
+			\WindingMarkQXVIII{9}{a}{0}{phaseA}
+			\WindingMarkQXVIII{10}{b}{1}{phaseB}
+			\WindingMarkQXVIII{11}{b}{1}{phaseB}
+			\WindingMarkQXVIII{12}{c}{0}{phaseC}
+			\WindingMarkQXVIII{13}{b}{1}{phaseB}
+			\WindingMarkQXVIII{14}{c}{0}{phaseC}
+			\WindingMarkQXVIII{15}{c}{0}{phaseC}
+			\WindingMarkQXVIII{16}{a}{1}{phaseA}
+			\WindingMarkQXVIII{17}{a}{1}{phaseA}
+			\WindingMarkQXVIII{18}{b}{0}{phaseB}
+		\fi
+	\end{tikzpicture}%
+}
+%%%
+
+%%% Actual Task 3 content %%%
+
+A two-pole, three-phase stator has $Q=18$ uniformly spaced slots and is supplied at $f=\SI{50}{\hertz}$. Assuming a single-layer winding: each slot contains one coil side and all nine coils have the same integer span $y_{\mathrm{s}}$. The phase sequence is $a$-$b$-$c$. The design goal is to minimize the fifth space harmonic while maintaining a high fundamental winding factor. The relative reduction of the $k$-th harmonic $r_k$ is given by
+$$
+	r_k=\frac{|\hat B^{(k)}|}{|\hat B^{(1)}|}
+	=\frac{|\xi_{\mathrm{w},k}|}{k|\xi_{\mathrm{w},1}|}.
+$$
+
+\begin{germanblock}
+	Ein zweipoliger, dreiphasiger Stator besitzt $Q=18$ gleichmäßig verteilte Nuten und wird mit $f=\SI{50}{\hertz}$ gespeist. Verwenden Sie eine Einschichtwicklung: Jede Nut enthält eine Spulenseite und alle neun Spulen haben dieselbe ganzzahlige Spulenweite $y_{\mathrm{s}}$. Die Phasenfolge ist $a$-$b$-$c$.  Ziel ist eine minimale fünfte Raumoberwelle bei hohem Grundwellen-Wicklungsfaktor. Der relative Flussharmonische-Abbau $r_k$ ist oben definiert.
+\end{germanblock}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subtask{Determine the direction and synchronous mechanical speed of the fifth and seventh flux space harmonics, i.e., the mechanical speed at which the corresponding harmonic rotates synchronously with the fundamental excitation frequency. In addition, name at least two adverse effects of harmonics on the machine operation.}{2}
+\subtaskGerman{Bestimmen Sie die Drehrichtung und die synchrone mechanische Drehzahl der fünften und siebten Flussoberwelle, d. h. die mechanische Drehzahl, bei der die entsprechende Oberwelle synchron mit der Speisefrequenz rotiert. Nennen Sie zudem mindestens zwei nachteilige Auswirkungen von Oberwellen auf den Maschinenbetrieb.}
+
+\begin{solutionblock}
+	\[
+		n_1=\frac{f}{p}\cdot\SI{60}{\second\per\minute}=\SI{3000}{\per\minute}.
+	\]
+	The fifth harmonic is negative sequence and the seventh is positive sequence:
+	\[
+		n_5=-\frac{n_1}{5}=\SI{-600}{\per\minute},
+		\qquad
+		n_7=\frac{n_1}{7}=\SI{428.6}{\per\minute}.
+	\]
+	Possible adverse effects are current harmonics, torque harmonics, additional losses, acoustic noise, and vibration.
+\end{solutionblock}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subtask{Determine the pole-pair number $p$, the number of slots per phase and pole $q$ as well as the pole pitch $\rho_\mathrm{p}$}{3}
+\begin{hintblock}
+	if and only if you are not able to solve this task, make reasonable assumptions for the addressed parameters in the following subtasks.
+\end{hintblock}
+\subtaskGerman{Bestimmen Sie die Polpaarzahl $p$, die Anzahl der Nuten je Phase und Pol $q$ sowie die Polteilung $\rho_\mathrm{p}$.}
+
+\begin{germanhintblock}
+	nur wenn Sie diese Aufgabe nicht lösen können, treffen Sie für die nachfolgenden Unteraufgaben sinnvolle Annahmen zu den unbekannten Parametern.
+\end{germanhintblock}
+
+\begin{solutionblock}
+	Two poles give $p=1$. For a three-phase winding with $m=3$ we further have
+	$$
+		q=\frac{Q}{2pm}=\frac{18}{2\cdot1\cdot3}=3.
+	$$
+	The pole pitch in number of slots is then
+	$$
+		\rho_\mathrm{p}=\frac{Q}{2p}=\frac{18}{2\cdot1}=9,
+	$$
+	which corresponds to $\rho_\mathrm{p}=180^\circ$ in electrical degrees.
+\end{solutionblock}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subtask{Check whether an integer coil span can cancel the fifth harmonic exactly in this stator. Explain the result.}{2}
+\subtaskGerman{Prüfen Sie, ob eine ganzzahlige Spulenweite die fünfte Oberwelle in diesem Stator vollständig auslöschen kann. Begründen Sie das Ergebnis.}
+
+\begin{solutionblock}
+	For $q=3$, the distribution factor for the fifth harmonic is
+	\[
+		\xi_{\mathrm{d},5}
+		=\frac{\sin(5\pi/6)}{3\sin(5\pi/18)}=0.2176\neq0.
+	\]
+	Exact cancellation therefore requires a pitch factor of $\xi_{\mathrm{p},5}=0$:
+	\[
+		\sin\!\left(\frac{5\pi}{2}\frac{y}{9}\right)=0
+		\quad\Rightarrow\quad
+		y=\frac{18r}{5},\qquad r\in\mathbb Z.
+	\]
+	Within one pole pitch, the target values are $3.6$ and $7.2$ slots. Neither is an integer. Exact cancellation is impossible with a uniform integer-span winding in this stator.
+\end{solutionblock}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subtask{Subject to $|\xi_{\mathrm{w},1}|\geq0.8$, compare the practical single-layer spans $y_{\mathrm{s}}=5,7,9$ for the  $Q=18$ stator design and select the span with the smallest $r_5$.}{2}
+\subtaskGerman{Unter der Voraussetzung $|\xi_{\mathrm{w},1}|\geq0{,}8$: Vergleichen Sie die praktisch ausführbaren Einschicht-Spulenweiten $y_{\mathrm{s}}=5,7,9$ für das $Q=18$ Stator-Design und wählen Sie die Spulenweite mit dem kleinsten $r_5$.}
+\begin{solutionblock}
+	\[
+		\begin{array}{c|c|c|c}
+			y_{\mathrm{s}} & |\xi_{\mathrm{w},1}| & |\xi_{\mathrm{w},5}| & r_5      \\ \hline
+			5              & 0.7352               & 0.2044               & 5.56\,\% \\
+			7              & 0.9019               & 0.0378               & 0.84\,\% \\
+			9              & 0.9598               & 0.2176               & 4.53\,\%
+		\end{array}
+	\]
+	The best realizable choice is
+	\[
+		y_{\mathrm{s}}=7.
+	\]
+\end{solutionblock}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subtask{Complete the single-layer winding layout in \autoref{fig:winding_template_q18}. Enter phase and current direction in every slot. Use the phase sequence $a$-$b$-$c$ and $y_{\mathrm{s}}=7$. The end-winding connections are not required to be sketched; a valid symmetric layout is sufficient.}{3}
+\subtaskGerman{Vervollständigen Sie die einlagige Wicklungsbelegung in \autoref{fig:winding_template_q18}. Tragen Sie Phase und Stromrichtung in jede Nut ein. Verwenden Sie die Phasenfolge $a$-$b$-$c$ und $y_{\mathrm{s}}=7$. Die Endwicklungsanschlüsse müssen nicht skizziert werden; eine gültige symmetrische Belegung ist ausreichend.}
+
+\begin{figure}[htb]
+	\centering
+	\resizebox{0.5\linewidth}{!}{\DrawSingleLayerWindingQXVIII{0}}
+	\caption{Winding-layout template with given starting conductors per phase.}
+	\label{fig:winding_template_q18}
+\end{figure}
+
+\begin{solutionblock}
+	For phase $a$, the positive conductor side $a^+$ in slot~1 is given.
+	With the selected coil span $y=7$, the corresponding negative coil side is located seven slots further:
+	\[
+		1:a^+ \leftrightarrow 8:a^-.
+	\]
+
+	Since $q=3$, phase $a$ consists of three distributed coils. The corresponding coil phasors are displaced by one electrical slot angle. Starting from the first coil, the two remaining phase-$a$ coils are therefore chosen as
+	\[
+		16:a^+ \leftrightarrow 9:a^-,
+		\qquad
+		17:a^+ \leftrightarrow 6:a^-.
+	\]
+
+	Thus, the complete phase-$a$ winding is
+	\[
+		1:a^+,\;
+		6:a^-,\;
+		8:a^-,\;
+		9:a^-,\;
+		16:a^+,\;
+		17:a^+.
+	\]
+	The phases $b$ and $c$ are constructed analogously by applying the required $120^\circ$ electrical phase displacement to the complete phase-$a$ winding. This corresponds to a shift of six slots. Using the given reference conductors	$b^+$ in slot~13 and $c^+$ in slot~7 yields the complete symmetric three-phase single-layer winding. Hence, the results are shown in the following table and in \autoref{fig:winding_solution_q18}.
+	\[
+		\begin{array}{c|ccc}
+			\text{phase} & \text{coil 1} & \text{coil 2} & \text{coil 3} \\ \hline
+			a            & 1^+\!\!-8^-   & 16^+\!\!-9^-  & 17^+\!\!-6^-  \\
+			b            & 10^+\!\!-3^-  & 11^+\!\!-18^- & 13^+\!\!-2^-  \\
+			c            & 4^+\!\!-15^-  & 5^+\!\!-12^-  & 7^+\!\!-14^-
+		\end{array}
+	\]
+	\begin{solutionfigure}[htb]
+		\centering
+		\resizebox{0.5\linewidth}{!}{\DrawSingleLayerWindingQXVIII{1}}
+		\caption{Completed 18-slot single-layer winding layout.}
+		\label{fig:winding_solution_q18}
+	\end{solutionfigure}
+
+\end{solutionblock}
+

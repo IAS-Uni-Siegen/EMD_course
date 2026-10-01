@@ -1,0 +1,281 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Task 4 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\task{Induction machine}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\taskGerman{Asynchronmaschine}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Given is a three-phase squirrel cage induction machine with the following parameters in \autoref{tab:IM_parameters}.
+
+\begin{germanblock}
+	Gegeben ist eine dreiphasige Käfigläufer-Asynchronmaschine mit den Parametern in \autoref{tab:IM_parameters}.
+\end{germanblock}
+
+\begin{table}[htb]
+	\caption{Parameters of the induction machine.}
+	\centering
+	\begin{tabular}{lll}
+		\toprule
+		Symbol             & Description              & Value                  \\
+		\midrule
+		$U_{\mathrm{LL}}$  & Line-to-line voltage     & \SI{400}{\volt}        \\
+		$f_{\mathrm{s,n}}$ & Nominal stator frequency & \SI{50}{\hertz}        \\
+		$n_{\mathrm{n}}$   & Nominal rotor speed      & \SI{926}{\per\minute}  \\
+		$T_{\mathrm{n}}$   & Nominal torque           & \SI{25}{\newton\metre} \\
+		\bottomrule
+	\end{tabular}
+	\label{tab:IM_parameters}
+\end{table}
+
+\subtask{Draw the equivalent circuit diagram of the induction machine in steady state and label its components.}{2}
+\subtaskGerman{Zeichnen Sie das Ersatzschaltbild der Asynchronmaschine im stationären Zustand und beschriften Sie dessen Komponenten.}
+
+\begin{solutionblock}
+	The equivalent circuit diagram of the induction machine in steady state is shown in \autoref{fig:IM_equivalent_circuit}.
+	\begin{solutionfigure}[htb]
+		\centering
+		\begin{circuitikz}[straight voltages, color=blue]
+
+			% coordinates
+			\coordinate (LT) at (0,2.5);
+			\coordinate (LB) at (0,0);
+			\coordinate (A)  at (1.0,2.5);
+			\coordinate (B)  at (3.0,2.5);
+			\coordinate (C)  at (5.0,2.5);
+			\coordinate (N)  at (5.0,2.5);
+			\coordinate (D)  at (7.0,2.5);
+			\coordinate (E)  at (9.0,2.5);
+			\coordinate (RT) at (10,2.5);
+			\coordinate (RB) at (10.0,0);
+
+			% main upper electrical path
+			\draw
+			(LT) to[short, i>^=$\underline{I}_{\mathrm{s}}$] (A)
+			to[R, l=$R_{s}$] (B)
+			to[L, l=$L_{\sigma \mathrm{s}}$] (C)
+			to[short] (N)
+			to[L, l=$L^\prime_{\sigma \mathrm{r}}$] (D)
+			to[R, l=$R^\prime_{r} / s$] (E)
+			to[short, i<^=$\underline{I}^\prime_{\mathrm{r}}$] (RT);
+
+			% lower return path
+			\draw (LB) to (RB);
+
+			% side connections
+			\draw (LT) to[open, v=$\underline{U}_{\mathrm{s}}$, o-o] (LB);
+			\draw (RT) to[short] (RB);
+
+			% magnetizing branch
+			\draw
+			(N) to[L, l_=$M$] (N |- LB);
+
+			% connection dots
+			\fill (N) circle[radius=1.6pt];
+			\fill (N |- LB) circle[radius=1.6pt];
+		\end{circuitikz}
+		\caption{Equivalent circuit diagram of the induction machine in steady state.}
+		\label{fig:IM_equivalent_circuit}
+	\end{solutionfigure}
+\end{solutionblock}
+
+\subtask{Calculate the number of pole pairs and the synchronous (no-load) speed of the machine.}{1}
+
+\subtaskGerman{Berechnen Sie die Polpaarzahl und die synchrone (Leerlauf-)Drehzahl der Maschine.}
+
+\begin{solutionblock}
+	The stator frequency is given with $f_\mathrm{s,n} = \SI{50}{\hertz}$, which leads to a synchronous speed of:
+	$$
+		n_\mathrm{syn,el} = f_\mathrm{s,n} \cdot \SI{60}{\second\per\minute} = \SI{3000}{\per\minute}.
+	$$
+
+	The nominal speed is given with $n_\mathrm{n} = \SI{926}{\per\minute}$, which is associated with a synchronous speed of $n_\mathrm{syn,mech} = \SI{1000}{\per\minute}$. Therefore, the pole pair number results in:
+	$$
+		p = \frac{n_\mathrm{syn,el}}{n_\mathrm{syn,mech}} = 3.
+	$$
+\end{solutionblock}
+
+\subtask{Determine the slip frequency and the slip ratio at the nominal operating point.}{1}
+\subtaskGerman{Bestimmen Sie die Schlupffrequenz und den normierten Schlupf am Nennarbeitspunkt.}
+\begin{solutionblock}
+	The slip frequency is calculated with
+	$$
+		\omega_\mathrm{slip,n} = \omega_\mathrm{s,n} - \omega_\mathrm{r,el} = \SI{23.2}{\per\second},
+	$$
+	which leads to the slip ratio as:
+	$$
+		\omega_\mathrm{slip,n} = s \omega_\mathrm{s,n} \Rightarrow s_\mathrm{n} = \frac{\omega_\mathrm{slip,n}}{\omega_\mathrm{s,n}} = 0.074.
+	$$
+\end{solutionblock}
+
+\subtask{\autoref{fig:IM} shows the quadratic load curve for a pump application (green) and the torque curve of the induction motor (orange). It is assumed that the induction motor operates in steady state with the same values for $U_\mathrm{s}$ and $\omega_\mathrm{s}$ as in the previous subtasks. Determine the torque and speed of the machine at the resulting operating point. What is the normalized slip at this point?}{2}
+
+\subtaskGerman{In \autoref{fig:IM} sind die quadratische Lastkurve einer Pumpenanwendung (grün) und die Drehmomentkennlinie des Asynchronmotor (orange) dargestellt. Es wird angenommen, dass der Asynchronmotor im stationären Betrieb mit denselben Werten für $U_\mathrm{s}$ und $\omega_\mathrm{s}$ wie in den vorherigen Teilaufgaben arbeitet. Bestimmen Sie das Drehmoment und die Drehzahl der Maschine am resultierenden Arbeitspunkt. Welcher normierte Schlupf ergibt sich an diesem Punkt?}
+
+\pgfmathsetmacro{\M}{0.1}
+\pgfmathsetmacro{\Rs}{1.26}
+\pgfmathsetmacro{\Rrprime}{1.8}
+\pgfmathsetmacro{\LsigmaS}{0.03}
+\pgfmathsetmacro{\LsigmaRprime}{0.03}
+\pgfmathsetmacro{\omegaS}{2*pi*50}
+\pgfmathsetmacro{\ULL}{400}
+\pgfmathsetmacro{\p}{3}
+
+% sigmaVal
+\pgfmathsetmacro{\sigmaVal}{
+	1 - \M^2 / ((\M + \LsigmaS) * (\M + \LsigmaRprime))
+}
+
+% Tmax
+\pgfkeys{/pgf/fpu=true}
+\pgfmathsetmacro{\Tmax}{%
+	3/2 *\p* (\ULL/sqrt(3))^2 /  \omegaS^2 * \M^2 / (\sigmaVal*((\LsigmaS + \M)^2 * (\LsigmaRprime + \M )))
+}
+\pgfkeys{/pgf/fpu=false}
+
+% 
+\pgfmathsetmacro{\sMax}{%
+	\Rrprime / (\sigmaVal * (\LsigmaRprime + \M) * \omegaS)
+}
+
+\pgfmathsetmacro{\omegaMax}{%
+	\Rrprime / (\sigmaVal * (\LsigmaRprime + \M))
+}
+
+\pgfmathdeclarefunction{T}{1}{%
+	\pgfmathparse{%
+		\Tmax * 2 / ((\omegaS - \p* #1)/\omegaMax + (\omegaMax)/(\omegaS - \p* #1))
+	}%
+}
+
+\pgfmathdeclarefunction{Tsol}{1}{%
+	\pgfmathparse{%
+		\Tmax * 2 / ((\omegaS - \p* #1)/\omegaMax + (\omegaMax)/(\omegaS - \p* #1))
+	}%
+}
+
+\pgfmathdeclarefunction{Tsolmax}{1}{%
+	\pgfmathparse{%
+		\Tmax * (314/\omegaS)^2 * 2 / ((\omegaS - \p* #1)/\omegaMax + (\omegaMax)/(\omegaS - \p* #1))
+	}%
+}
+
+\begin{figure}[htb]
+	\centering
+	\begin{tikzpicture}
+		\begin{axis}[
+				axis lines = middle,
+				grid=both,
+				xlabel = $\omega_\mathrm{r}$ in $\SI{}{\per\second}$,
+				ylabel = $T$ in Nm,
+				xmin=0, xmax=(30*2*pi),
+				ymin=-30, ymax=30,
+				samples=100,
+				domain=0:(40*2*pi),
+			]
+
+			\addplot[signalgreen, thick] {1/500*x^2} node (load) {};
+			\node [signalgreen,right] at (120,25) {$T_\mathrm{load}$};
+			\addplot[
+				signalorange,
+				thick,
+				domain=1:(30*2*pi),
+				samples=100,
+				smooth
+			] {T(x)};
+			\node [signalorange,right] at (1,10) {$T_\mathrm{m}$};
+		\end{axis}
+	\end{tikzpicture}
+	\caption{Visualization of the quadratic load curve in green and the IM torque curve in orange.}
+	\label{fig:IM}
+\end{figure}
+
+\begin{solutionblock}
+	The operating point is determined at the intersection of the load curve and the torque curve. Thus,
+	$$
+		T = \SI{20}{\newton\metre}, \hspace{1em} \omega_\mathrm{r} = \SI{100}{\per\second},
+	$$
+	and, the slip frequency and normalized slip are calculated as follows:
+	$$
+		\omega_\mathrm{slip} = \omega_\mathrm{s} - \omega_\mathrm{r,el} = \SI{14.2}{\per\second}, \hspace{1em}
+		s = \frac{\omega_\mathrm{slip}}{\omega_\mathrm{s}} = \SI{0.045}{}.
+	$$
+
+\end{solutionblock}
+
+\subtask{Assuming that the pump drive is operated via a voltage source inverter operating at its maximum output voltage (i.e., $U_\mathrm{s}$ is fixed), what can be done to increase the drive's speed beyond the above operating point? What is the resulting effect on the torque?}{2}
+\subtaskGerman{Angenommen, der Pumpenantrieb wird über einen spannungsgeführten Wechselrichter betrieben, der mit seiner maximalen Ausgangsspannung arbeitet (d.h., $U_\mathrm{s}$ ist fest), was kann dann getan werden, um die Drehzahl des Antriebs über den in der vorherigen Teilaufgabe ermittelten Betriebspunkt hinaus zu erhöhen? Was passiert in diesem Fall mit dem Drehmoment?}
+\begin{solutionblock}
+	To accelerate the machine further, the stator frequency must be increased and due to the limited (DC-link) voltage, flux weakening must be applied. During flux weakening, the flux decreases with $\Psi_\mathrm{s} \sim \nicefrac{1}{\omega_\mathrm{s}}$, which leads to a decrease in torque with $T_\mathrm{max} \sim \nicefrac{1}{\omega_\mathrm{s}^2}$.
+\end{solutionblock}
+
+\subtask{Sketch the torque-speed characteristic of the induction machine for the operating point at maximum speed and $s = s_\mathrm{max}$ for the given load curve in \autoref{fig:IM_max}.}{1}
+\begin{hintblock}
+	a qualitative sketch that captures the essential features is sufficient.
+\end{hintblock}
+\subtaskGerman{Skizzieren Sie die Drehmoment-Drehzahl-Kennlinie der Asynchronmaschine für den Betriebspunkt bei maximaler Drehzahl und $s = s_\mathrm{max}$ für die gegebene Lastkurve in \autoref{fig:IM_max}.}
+
+\begin{germanhintblock}
+	Eine qualitative Skizze, welche die wesentlichen Merkmale abbildet ist ausreichend.
+\end{germanhintblock}
+
+\begin{figure}[htb]
+	\centering
+	\begin{tikzpicture}
+		\begin{axis}[
+				axis lines = middle,
+				grid=both,
+				xlabel = $\omega_\mathrm{r}$ in $\SI{}{\per\second}$,
+				ylabel = $T$ in Nm,
+				xmin=0, xmax=(30*2*pi),
+				ymin=-30, ymax=30,
+				samples=100,
+				domain=0:(40*2*pi),
+				ylabel style={yshift=+2ex}
+			]
+			\addplot[signalgreen, thick] {1/500*x^2} node (load) {};
+			\node [signalgreen,right] at (120,25) {$T_\mathrm{load}$};
+		\end{axis}
+	\end{tikzpicture}
+	\caption{Given quadratic load curve in green.}
+	\label{fig:IM_max}
+\end{figure}
+
+\begin{solutionblock}
+	At slip $s = s_\mathrm{max}$ the maximum torque is reached. Therefore, the maximum torque must have an intersection with the load curve as shown in \autoref{fig:sol_IM_max}.
+
+	% omegaS
+	\pgfmathsetmacro{\omegaS}{2*pi*55.7}
+
+	\begin{solutionfigure}[htb]
+		\centering
+		\begin{tikzpicture}
+			\begin{axis}[
+					axis lines = middle,
+					grid=both,
+					xlabel = $\omega_\mathrm{r}$ in $\SI{}{\per\second}$,
+					ylabel = $T$ in Nm,
+					xmin=0, xmax=(30*2*pi),
+					ymin=-30, ymax=30,
+					samples=100,
+					domain=0:(40*2*pi),
+					ylabel style={yshift=+2ex}
+				]
+
+				\addplot[signalgreen, thick] {1/500*x^2} node (load) {};
+				\node [signalgreen,right] at (120,25) {$T_\mathrm{load}$};
+				\addplot[
+					blue,
+					thick,
+					domain=1:(30*2*pi),
+					samples=100,
+					smooth
+				] {Tsolmax(x)};
+				\node [blue,right] at (1,10) {$T_\mathrm{sol}$};
+			\end{axis}
+		\end{tikzpicture}
+		\caption{Maximum speed at $s = s_\mathrm{max}$ for the given operating point.}
+		\label{fig:sol_IM_max}
+	\end{solutionfigure}
+
+\end{solutionblock}
